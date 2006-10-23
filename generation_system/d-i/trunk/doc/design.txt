@@ -1,0 +1,131 @@
+Design of debian-images-generator
+=================================
+
+*** DRAFTING ***
+
+debian-images-generator (from now, dig) is a tool to generate images that 
+contents an installable debian system as debian-cd does.
+
+This project is mainly in python. The libraries of this program is 
+organised by components. Each component is focused in one step of the 
+proccess.
+
+
+                    ============
+                    General view
+                    ============
+
+===============     ===========     ===================
+|   config    | --> | sweeper | --> |     aptlogic    |
+|(load config)|     | (clean) |     | (load apt info) |
+===============     ===========     ===================
+      |  _ _ _ _ _ _ _ _ _ _ _ _ _ _ |       | 
+                                            \|/
+      | |                                    '
+                                 ==========================
+      | |  _ _ _ _ _ _ _ _ _ _ _ |         media          |
+                                 | (generate logics sets) |
+      | | |                      ==========================
+    --------                        |        |
+   | Memory |                       |        
+    --------                        |        |
+                                    |         
+         ___________________________|       \|/
+        |                                    '
+        |                             ---------------
+        |                            | Set of images |
+        |                             ---------------
+        |                                   /|\
+        |                                 /  |  \
+        |                               /    |    \
+        |                          Image1  Image2  ...
+        |                            _,     _,
+       \|/                           /|     /|     
+        '                           /      /      ._
+     ========                      /      /       |\
+     | boot | --------------------´------´          \
+     ========                                        \
+        |                                             \
+        |                                    =====================
+        '----------------------------------> |      images       |
+                                             | (generate images) |
+                                             =====================
+                                                       |
+                                                      \|/
+                                                       '
+                                               -------------------
+                                              | .iso, .jigdo, ... |
+                                               -------------------
+Components:
+
+  o config
+      Parser of dig.conf. Load and make public the variables.
+
+      This component is based on configobj libraries. Thanks to this, it's 
+      easy to add new types of variables, add and remove variables, ...
+
+      The objective of this component is to control that the configuration file
+      is well formed and the values are ok. Also, it provides a dictionary 
+      where are defined all the variables loaded from the configuration file.
+
+      This component is a little bit clever, if there is any problem with the
+      configuraion file, it may warn about the exact problem.
+ 
+  o sweeper
+      Clean the work space.
+
+      This component set a new work space removing the dirty directories and 
+      making new ones.
+
+      It should consider to conserve some files or directories if there
+      is a special command line argument or a variable loaded from the 
+      configuration file. The objetive is to save time in some cases.
+
+  o aptlogic
+      Load apt info of the packages that we have access.
+
+      Using the variables loaded from dig.conf, retreive packages lists 
+      using apt power. After that, make accesible the packages info.
+ 
+      You can get a dictionary with info abouts packages that we have access. 
+
+
+  o media
+      Defines the set of images, the elements of a set. Also, decides what 
+      packages to include/exclude.
+
+      There are two relevants elements: MediaSet and MediaElement. MediaSet 
+      represents a set of MediaElements. 
+
+      Each MediaElement can has one packages tree, doc, extra files, be 
+      bootable...
+     
+      The objective of this element is very ambitious, with the information
+      loaded from the config file, it may generate packages list for each
+      media. Also, it may consider source and binary mix.
+
+      # TODO
+      Multi-arch bootable?  
+
+  o boot
+      Make a media bootable
+
+      This component add to an element of a set the capacity to be a bootable
+      media.
+
+  o images
+      Generate images from a MediaSet. It generates iso, jigdo and torrents 
+      images.
+
+      This component read all the information about the MediaSet and 
+      MediaElements, then copy the files needed to a temporal dir. Then,
+      generate each images.
+
+#  o packagestree 
+#      Description: generate Tree objects.
+#      Args: list of packages to include. 
+#            list of packages to exclude.
+#            sections to include.
+#            sections to exclude.
+#
+#     The order of the lists worths.

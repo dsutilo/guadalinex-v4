@@ -1,0 +1,10 @@
+aptlogic.py 		Retrieve information about the packages of the 'Mirror'
+auxiliar.py		Auxiliar functions
+config.py		Load info of dig.conf
+dig.spec		It defines the variables of dig.conf
+media.py		All the logic with the medias
+mediatype.py		Define media types
+packagestree.py		Define a tree of packages in a PackagesTree
+sweeper.py		Clean the workspace
+tasks.py		Work with tasks
+util			External tools

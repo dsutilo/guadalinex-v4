@@ -1,0 +1,13 @@
+It's necessary to have the next vars in the config file:
+
+*  CodeName
+*  DebVersion
+*  Official
+*  Mirror
+*  Components
+*  TDir
+
+Optative:
+
+  Out = By default, $TDir/out 
+  AptTmp = By default, $TDir/apt

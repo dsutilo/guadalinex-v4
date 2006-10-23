@@ -1,0 +1,7 @@
+* Looking for packages, try to get the most recent version.
+* add catches in every place i open a file
+* Finish design
+* Add Verbose levels
+* Add Complete var
+* Add doc (python strings)
+* Have a look at `fgrep -r TODO * | grep -v .svn`
