@@ -1,8 +1,12 @@
 #!/usr/bin/python
 # -*- coding: utf8 -*- 
 
-# $LastChangedDate$
-# $Author$
+# Authors: 
+#     Gumersindo Coronel Pérez (gcoronel) <gcoronel@emergya.es> 
+#
+# Last modified: 
+#     $Date$ 
+#     $Author$
 
 # Módulo hermes_hardware - Notificador de cambios en el hardware
 # 
