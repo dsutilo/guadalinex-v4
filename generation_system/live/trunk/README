@@ -1,0 +1,32 @@
+GLIG is a Guadalinex Live Image Generator
+
+
+Description:
+
+It means with this software you can generate a Live sytem based on Guadalinex
+or Ubuntu (6.10 or higher).
+
+
+NOTE: This is on a very early stage of the development so dont't expect an hole
+and complex system. It's just starting, but soon it's be a fully operative
+version.
+
+How does it work?:
+
+This is a common debian/ubuntu package wich depend of a few other packages
+(syslinux, mkisofs, squashfs-tools, debootstrap and maybe another one). And
+also is a python script who can be used automatically, by using a config
+file, or on the fly, by passing options as parameters.
+
+The process is... the script call to 'debootstrap' program indicating a 
+few metapackages (the ones who make the difference berween the base system
+and your distro) and their dependencies (which are automatically located
+by the system itself).
+
+What that means is the GLIG is going to create a fresh installation of
+your distro in a directory from the packages repository you choice.
+
+Once your distro is installed a directory, GLIG generate the compressed image
+of it, and the rest of stuff you may need for a "Ubuntu alike" live system,
+as the usplash and isolinux/gfxboot themes for the booting, the md5sum file
+for the cd integrity checking and so on.
