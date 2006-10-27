@@ -1,0 +1,203 @@
+#! /bin/sh
+set -e
+
+export CDIMAGE_ROOT="${CDIMAGE_ROOT:-/var/cdimage}"
+. "$CDIMAGE_ROOT/etc/config"
+
+if [ -z "$1" ] || [ -z "$2" ]; then
+	echo 'Usage: find-live-filesystem ARCH cloop|squashfs|kernel|initrd|manifest|manifest-desktop|winfoss' >&2
+	exit 1
+fi
+ARCH="$1"
+ITEM="$2"
+
+case $ARCH in
+	amd64)
+		LIVECD=http://king.buildd/~buildd/LiveCD
+		case $DIST in
+			warty|hoary|breezy|dapper)
+				SUBARCHES=amd64-generic ;;
+			*)
+				SUBARCHES=generic ;;
+		esac
+		;;
+	hppa)
+		LIVECD=http://castilla.buildd/~buildd/LiveCD
+		SUBARCHES='hppa32 hppa64'
+		;;
+	i386)
+		LIVECD=http://terranova.buildd/~buildd/LiveCD
+		case $DIST in
+			warty|hoary|breezy|dapper)
+				SUBARCHES=386 ;;
+			*)
+				SUBARCHES=generic ;;
+		esac
+		;;
+	ia64)
+		LIVECD=http://weddell.buildd/~buildd/LiveCD
+		SUBARCHES='itanium-smp mckinley-smp'
+		;;
+	powerpc)
+		LIVECD=http://royal.buildd/~buildd/LiveCD
+		SUBARCHES='powerpc powerpc64-smp'
+		;;
+	sparc)
+		LIVECD=http://vivies.buildd/~buildd/LiveCD
+		SUBARCHES=sparc64
+		;;
+	*)
+		echo "No live filesystem source known for $ARCH" >&2
+		exit 1
+		;;
+esac
+
+case $PROJECT in
+	livecd-base)
+		LIVEPROJECT=base
+		;;
+	tocd3.1)
+		LIVEPROJECT=tocd
+		;;
+	*)
+		LIVEPROJECT="$PROJECT"
+		;;
+esac
+
+case $ITEM in
+	cloop|squashfs|manifest|manifest-desktop)
+		case $PROJECT in
+			tocd3)
+				# auto-purged - reverting to plan B
+				echo "/home/cjwatson/tocd3/livecd.tocd3.$ITEM"
+				;;
+			ubuntu)
+				case $DIST in
+					breezy)
+						# auto-purged - reverting to plan B
+						echo "/home/cjwatson/breezy-live/ubuntu/livecd.$ARCH.$ITEM"
+						;;
+					*)
+						echo "$LIVECD/$DIST/$LIVEPROJECT/current/livecd.$LIVEPROJECT.$ITEM"
+						;;
+				esac
+				;;
+			*)
+				echo "$LIVECD/$DIST/$LIVEPROJECT/current/livecd.$LIVEPROJECT.$ITEM"
+				;;
+		esac
+		;;
+	kernel|initrd)
+		for subarch in $SUBARCHES; do
+			echo "$LIVECD/$DIST/$LIVEPROJECT/current/livecd.$LIVEPROJECT.$ITEM-$subarch"
+		done
+		;;
+	winfoss)
+		if [ "$DIST" = warty ]; then
+			exit 1
+		fi
+		case $PROJECT in
+			ubuntu)
+				case $DIST in
+					hoary)
+						case $ARCH in
+							i386)
+								echo http://maitri.ubuntu.com/theopencd/ubuntu/winfoss/latest/Hoary-WinFOSS.tgz
+								;;
+							amd64)
+								echo http://maitri.ubuntu.com/theopencd/ubuntu/amd64/latest/Hoary-WinFOSS-amd64.tgz
+								;;
+							*)	exit 1 ;;
+						esac
+						;;
+					breezy)
+						case $ARCH in
+							i386|amd64)
+								echo http://maitri.ubuntu.com/theopencd/winfoss/ubuntu/current/Ubuntu-WinFOSS-5.10.tgz
+								;;
+							*)	exit 1 ;;
+						esac
+						;;
+					dapper)
+						case $ARCH in
+							i386|amd64)
+								echo http://people.ubuntu.com/~henrik/winfoss/dapper/ubuntu/current/ubuntu-winfoss-6.06.tar.gz
+								;;
+							*)	exit 1 ;;
+						esac
+						;;
+					edgy)
+						case $ARCH in
+							i386|amd64)
+								echo http://people.ubuntu.com/~henrik/winfoss/edgy/ubuntu/current/ubuntu-winfoss-6.10.tar.gz
+								;;
+							*)	exit 1 ;;
+						esac
+						;;
+				esac
+				;;
+			kubuntu)
+				case $DIST in
+					hoary)
+						case $ARCH in
+							i386)
+								echo http://maitri.ubuntu.com/theopencd/kubuntu/winfoss/latest/Kubuntu-WinFOSS-i386.tgz
+								;;
+							*)	exit 1 ;;
+						esac
+						;;
+					breezy)
+						case $ARCH in
+							i386)
+								echo http://maitri.ubuntu.com/theopencd/winfoss/kubuntu/current/Kubuntu-WinFOSS-5.10.tgz
+								;;
+							amd64)
+								echo http://maitri.ubuntu.com/theopencd/winfoss/kubuntu-AMD/current/Kubuntu-WinFOSS-5.10-AMD.tgz
+								;;
+							*)	exit 1 ;;
+						esac
+						;;
+					dapper)
+						case $ARCH in
+							i386|amd64)
+								echo http://people.ubuntu.com/~henrik/winfoss/dapper/kubuntu/current/kubuntu-winfoss-6.06.tar.gz
+								;;
+							*)	exit 1 ;;
+						esac
+						;;
+					edgy)
+						case $ARCH in
+							i386|amd64)
+								echo http://people.ubuntu.com/~henrik/winfoss/edgy/kubuntu/current/kubuntu-winfoss-6.10.tar.gz
+								;;
+							*)	exit 1 ;;
+						esac
+						;;
+				esac
+				;;
+			tocd3)
+				case $ARCH in
+					i386)
+						echo http://maitri.ubuntu.com/theopencd/tocd3/fsm/TOCD3.tgz
+						;;
+					*)	exit 1 ;;
+				esac
+				;;
+			tocd3.1)
+				case $ARCH in
+					i386)
+						echo http://maitri.ubuntu.com/theopencd/winfoss/tocd3.1/current/TOCD-31.tgz
+						;;
+					*)	exit 1 ;;
+				esac
+				;;
+			*)	exit 1 ;;
+		esac
+		;;
+	*)
+		echo "Unknown live filesystem item '$ITEM'" >&2
+		exit 1
+		;;
+esac
+
+exit 0

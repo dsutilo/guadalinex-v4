@@ -1,0 +1,25 @@
+#ifdef ARCH_i386
+apache2
+apache2-common
+apache2-mpm-prefork
+apache2-utils
+libapache2-mod-php5
+libapr0
+libdbd-mysql-perl
+libdbi-perl
+libexpat1
+libmysqlclient15off
+libnet-daemon-perl
+libpcre3
+libplrpc-perl
+libxml2
+mysql-client-5.0
+mysql-common
+mysql-server
+mysql-server-5.0
+openssl
+php5-common
+php5-mysql
+php5-mysqli
+ssl-cert
+#endif /* ARCH_i386 */

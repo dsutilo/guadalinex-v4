@@ -1,0 +1,23 @@
+#! /bin/sh
+
+export CDIMAGE_ROOT="${CDIMAGE_ROOT:-/var/cdimage}"
+. "$CDIMAGE_ROOT/etc/config"
+
+SECRET="$CDIMAGE_ROOT/secret"
+if [ -d "$HOME/secret" ]; then
+	SECRET="$HOME/secret"
+fi
+
+trigger () {
+	echo "$2:"
+	ssh -i "$SECRET/auckland" -o 'StrictHostKeyChecking no' -o 'BatchMode yes' "$1@$2" sleep 1
+}
+
+for host in $TRIGGER_MIRRORS ; do
+	trigger archvsync $host
+done
+
+for host in $TRIGGER_MIRRORS_ASYNC ; do
+	trigger archvsync $host &
+done
+

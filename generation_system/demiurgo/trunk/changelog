@@ -1,0 +1,9 @@
+* instalado libapt-pkg-dev
+* instalado grep-dctrl
+* instalado python2.4-dev
+* instalado debootstrap
+* cambiada arquitecturas en debian-cd/build_all.sh unicamente a i386
+* cambiado debian-cd/build_all.sh: no genera fuentes
+* cambiado debian-cd/Makefile: regla bin-doc, se ha comentado
+* instalado fakeroot
+* instalado mkisofs

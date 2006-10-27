@@ -1,0 +1,84 @@
+#! /bin/sh
+set -e
+
+export CDIMAGE_ROOT="${CDIMAGE_ROOT:-/var/cdimage}"
+. "$CDIMAGE_ROOT/etc/config"
+
+if [ -z "$1" ] || [ -z "$2" ]; then
+	echo 'Usage: list-seeds structure all|tasks|installer|debootstrap|base|ship-live' >&2
+	exit 1
+fi
+
+STRUCTURE="$1"
+MODE="$2"
+
+case $MODE in
+	all)
+		grep -v '^#' "$STRUCTURE" | cut -d: -f1
+		;;
+	tasks)
+		SHIP=ship
+		case $PROJECT in
+			ubuntu-server)
+				case $DIST in
+					warty|hoary|breezy)
+						;;
+					dapper)
+						SHIP=server
+						;;
+					*)
+						SHIP=server-ship
+						;;
+				esac
+				;;
+		esac
+		grep "^$SHIP:" "$STRUCTURE" | cut -d' ' -f2-
+		echo "$SHIP"
+		;;
+	installer)
+		if [ "$CDIMAGE_INSTALL_BASE" ]; then
+			echo 'installer'
+		fi
+		if [ "$CDIMAGE_LIVE" ]; then
+			case $DIST in
+				hoary|breezy)
+					echo 'casper'
+					;;
+			esac
+		fi
+		;;
+	debootstrap)
+		case $DIST in
+			warty|hoary)
+				echo 'base'
+				;;
+			*)
+				echo 'minimal'
+				;;
+		esac
+		;;
+	base)
+		case $DIST in
+			warty|hoary)
+				echo 'base'
+				;;
+			breezy)
+				echo 'minimal standard'
+				;;
+			*)
+				echo 'boot minimal standard'
+				;;
+		esac
+		;;
+	ship-live)
+		case $DIST in
+			warty|hoary|breezy)
+				;;
+			*)
+				echo 'ship-live'
+				;;
+		esac
+		;;
+esac
+
+exit 0

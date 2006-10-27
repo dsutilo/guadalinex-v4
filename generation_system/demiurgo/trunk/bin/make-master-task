@@ -1,0 +1,45 @@
+#! /bin/sh
+set -e
+
+export CDIMAGE_ROOT="${CDIMAGE_ROOT:-/var/cdimage}"
+. "$CDIMAGE_ROOT/etc/config"
+
+if [ -z "$1" ]; then
+	echo 'Usage: make-master-task structure' >&2
+	exit 1
+fi
+
+STRUCTURE="$1"
+
+SEEDS="$(list-seeds "$STRUCTURE" installer)"
+
+echo "SEEDS: $SEEDS" >> /tmp/inf
+echo "CDIMAGE_DVD: $CDIMAGE_DVD" >> /tmp/inf
+echo "CDIMAGE_INSTALL: $CDIMAGE_INSTALL" >> /tmp/inf
+echo "CDIMAGE_INSTALL_BASE: $CDIMAGE_INSTALL_BASE" >> /tmp/inf
+echo "CDIMAGE_LIVE: $CDIMAGE_LIVE" >> /tmp/inf
+
+if [ "$CDIMAGE_DVD" ]; then
+	SEEDS="$SEEDS $(list-seeds "$STRUCTURE" all | egrep -v '^(installer|casper)$' || true)"
+elif [ "$CDIMAGE_INSTALL" ]; then
+	SEEDS="$SEEDS $(list-seeds "$STRUCTURE" tasks)"
+else
+	if [ "$CDIMAGE_INSTALL_BASE" = 1 ]; then
+		SEEDS="$SEEDS $(list-seeds "$STRUCTURE" base)"
+	fi
+	if [ "$CDIMAGE_LIVE" = 1 ]; then
+		SEEDS="$SEEDS $(list-seeds "$STRUCTURE" ship-live)"
+	fi
+fi
+
+echo "SEEDS: $SEEDS" >> /tmp/inf
+
+for seed in $SEEDS; do
+	echo "#include <$PROJECT/$DIST/$seed>"
+done
+
+
+
+
+
+exit 0

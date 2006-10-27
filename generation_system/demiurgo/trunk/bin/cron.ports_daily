@@ -1,0 +1,34 @@
+#! /bin/sh
+set -e
+
+case $PROJECT in
+	ubuntu-server)
+		case $DIST in
+			warty|hoary|breezy|dapper)
+				export ARCHES="${ARCHES:-hppa ia64}"
+				;;
+			*)
+				export ARCHES="${ARCHES:-ia64}"
+				;;
+		esac
+		;;
+	*)
+		case $DIST in
+			warty|hoary|breezy|dapper)
+				export ARCHES="${ARCHES:-hppa ia64 sparc}"
+				;;
+			*)
+				export ARCHES="${ARCHES:-ia64 sparc}"
+				;;
+		esac
+		;;
+esac
+
+export CDIMAGE_ROOT="${CDIMAGE_ROOT:-/var/cdimage}"
+. "$CDIMAGE_ROOT/etc/config"
+
+PATH="$CDIMAGE_ROOT/bin:${PATH:+:$PATH}"
+
+export CDIMAGE_INSTALL=1
+
+build-image-set ports_daily

@@ -1,0 +1,17 @@
+#! /bin/sh
+set -e
+
+case $PROJECT in
+	ubuntu-server)
+		export ARCHES="${ARCHES:-i386}"
+		;;
+esac
+
+export CDIMAGE_ROOT="${CDIMAGE_ROOT:-/var/cdimage}"
+. "$CDIMAGE_ROOT/etc/config"
+
+PATH="$CDIMAGE_ROOT/bin:${PATH:+:$PATH}"
+
+export CDIMAGE_INSTALL=1
+
+build-image-set daily

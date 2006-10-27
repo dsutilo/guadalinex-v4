@@ -1,0 +1,108 @@
+#! /bin/sh
+set -e
+
+export CDIMAGE_ROOT="${CDIMAGE_ROOT:-/var/cdimage}"
+. "$CDIMAGE_ROOT/etc/config"
+. "$CDIMAGE_ROOT/bin/functions.sh"
+
+GERMINATE_OUT="$CDIMAGE_ROOT/scratch/$PROJECT/$IMAGE_TYPE/germinate"
+SEED_SOURCE=http://people.ubuntu.com/~cjwatson/seeds/
+if [ "$LOCAL_SEEDS" ]; then
+	SEED_SOURCE="$LOCAL_SEEDS"
+fi
+
+case $DIST in
+	warty|hoary|breezy)
+		GERMINATE_DISTS="${GERMINATE_DISTS:-$DIST,$DIST-security,$DIST-updates}"
+		;;
+	dapper)
+		GERMINATE_DISTS="${GERMINATE_DISTS:-$DIST,$DIST-security,$DIST-updates}"
+		#GERMINATE_DISTS="${GERMINATE_DISTS:-$DIST,$DIST-security,$DIST-updates,$DIST-proposed}"
+		;;
+	*)
+		GERMINATE_DISTS="${GERMINATE_DISTS:-$DIST}"
+		;;
+esac
+
+case $PROJECT in
+	ubuntu)
+		# for legacy purposes
+		GERMINATE_SEED_DIST="$DIST"
+		;;
+	ubuntu-server)
+		if [ "$DIST" = breezy ]; then
+			GERMINATE_SEED_DIST="$PROJECT-$DIST"
+		else
+			GERMINATE_SEED_DIST="$DIST"
+		fi
+		;;
+	gnubuntu)
+		# GNUbuntu uses Ubuntu seeds.
+		GERMINATE_SEED_DIST="$DIST"
+		;;
+	*)
+		GERMINATE_SEED_DIST="$PROJECT-$DIST"
+		;;
+esac
+
+mkindex () {
+	target="$1"
+	subdir="${target%/*}"
+
+	mkemptydir "$GERMINATE_OUT/$subdir"
+	for file in "$@"; do
+		if [ "${file#/}" = "$file" ]; then
+			absfile="$(find-mirror "$arch")/$file"
+		else
+			absfile="$file"
+		fi
+		if [ -f "$absfile" ]; then
+			zcat "$absfile"
+		fi
+	done | gzip -c > "$GERMINATE_OUT/$target"
+}
+
+for arch in $CPUARCHES; do
+	echo "Germinating for $DIST/$arch ..."
+
+	IFS_SAVE="$IFS"
+	IFS=,
+	for germinate_dist in $GERMINATE_DISTS; do
+		IFS="$IFS_SAVE"
+		for suffix in "binary-$arch/Packages.gz" "source/Sources.gz" "debian-installer/binary-$arch/Packages.gz"; do
+			files="dists/$germinate_dist/main/$suffix"
+			if [ -z "$CDIMAGE_ONLYFREE" ]; then
+				files="$files dists/$germinate_dist/restricted/$suffix"
+			fi
+			if [ "$LOCAL" ]; then
+				files="$files $LOCALDEBS/dists/$germinate_dist/local/$suffix"
+			fi
+			mkindex $files
+		done
+		IFS=,
+	done
+	IFS="$IFS_SAVE"
+
+	mkemptydir "$GERMINATE_OUT/$DIST/$arch"
+	cd "$GERMINATE_OUT/$DIST/$arch"
+	if [ "$GERMINATE_HINTS" ] && [ -f "$GERMINATE_HINTS" ]; then
+		cp -a "$GERMINATE_HINTS" hints
+	fi
+	"$CDIMAGE_ROOT/germinate/germinate.py" --seed-source "$SEED_SOURCE" --mirror "file://$GERMINATE_OUT/" --seed-dist "$GERMINATE_SEED_DIST" --dist "$GERMINATE_DISTS" --arch "$arch" --components main --no-rdepends
+
+	if [ "$DIST" = breezy ]; then
+		# Unfortunately, we now need a second germinate run to
+		# figure out the dependencies of language packs and the
+		# like.
+		echo "Re-germinating for $DIST/$arch language pack dependencies ..."
+		> ship.acsets
+		EXTRAS=
+		for pkg in $(< ship.seed tail -n +3 | head -n -2 | cut -d' ' -f1 | egrep '^(language-pack-[^-]+|language-pack-gnome-[^-]+|language-pack-kde-[^-]+|kde-i18n-.+|language-support-[^-]+|oem-config)$'); do
+			EXTRAS="${EXTRAS:+$EXTRAS,}desktop/$pkg"
+			echo "$pkg" >> ship.acsets
+		done
+		"$CDIMAGE_ROOT/germinate/germinate.py" --seed-source "$SEED_SOURCE" --mirror "file://$GERMINATE_OUT/" --seed-dist "$GERMINATE_SEED_DIST" --dist "$GERMINATE_DISTS" --arch "$arch" --components main --no-rdepends ${EXTRAS:+--seed-packages "$EXTRAS"}
+	fi
+done
+
+wget -nv -O "$GERMINATE_OUT/$DIST/STRUCTURE" "${SEED_SOURCE%/}/$GERMINATE_SEED_DIST/STRUCTURE"
