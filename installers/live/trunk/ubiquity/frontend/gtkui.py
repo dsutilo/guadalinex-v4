@@ -113,6 +113,7 @@ class Wizard:
         self.manual_partitioning = False
         self.password = ''
         self.hostname_edited = False
+        self.username_edited = False
         self.gparted_fstype = {}
         self.gparted_flags = {}
         self.mountpoint_widgets = []
@@ -247,6 +248,11 @@ class Wizard:
             'delete_text', self.on_hostname_delete_text)
         self.hostname_insert_text_id = self.hostname.connect(
             'insert_text', self.on_hostname_insert_text)
+        self.username_delete_text_id = self.username.connect(
+            'delete_text', self.on_username_delete_text)
+        self.username_insert_text_id = self.username.connect(
+            'insert_text', self.on_username_insert_text)
+
 
         # Start the interface
         if got_intro:
@@ -257,7 +263,8 @@ class Wizard:
             BREADCRUMB_MAX_STEP += 1
             first_step = self.stepWelcome
         else:
-            first_step = self.stepLanguage
+            #first_step = self.stepLanguage
+            first_step = self.stepUserInfo
         self.steps.set_current_page(self.steps.page_num(first_step))
 
         while self.current_page is not None:
@@ -756,11 +763,38 @@ class Wizard:
             self.hostname.handler_unblock(self.hostname_insert_text_id)
             self.hostname.handler_unblock(self.hostname_delete_text_id)
 
+        # Create default username from fullname
+        if (widget is not None  and  widget.get_name() == "fullname" and
+            not self.username_edited):
+            self.username.handler_block(self.username_delete_text_id)
+            self.username.handler_block(self.username_insert_text_id)
+
+            username = self.parse_full_name(self.fullname.get_text())
+            self.username.set_text(username)
+
+            self.username.handler_unblock(self.username_insert_text_id)
+            self.username.handler_unblock(self.username_delete_text_id)
+
         complete = True
         for name in ('username', 'password', 'verified_password', 'hostname'):
             if getattr(self, name).get_text() == '':
                 complete = False
         self.allow_go_forward(complete)
+
+
+    def parse_full_name(self, username):
+        newusername = ''
+        username = username.lower()
+        username = username.replace(' ','')
+        for unicode_char in username:
+            try:
+                unicode_char.decode()
+                if len(newusername) <= 8:
+                    newusername += unicode_char
+            except:
+                pass
+        return newusername
+
 
     def on_hostname_delete_text(self, widget, start, end):
         self.hostname_edited = True
@@ -768,6 +802,14 @@ class Wizard:
     def on_hostname_insert_text(self, widget,
                                 new_text, new_text_length, position):
         self.hostname_edited = True
+
+    def on_username_delete_text(self, widget, start, end):
+        self.username_edited = True
+
+    def on_username_insert_text(self, widget,
+            new_text, new_text_length, position):
+        self.username_edited = True
+
 
     def on_next_clicked(self, widget):
         """Callback to control the installation process between steps."""
