@@ -54,7 +54,6 @@ def get_packages(mirror, codename, component='main', arch='i386'):
     elif protocol == 'file':
         packages = open(path, 'r')
     else:
-        # FIXME: I have to improve/create the logs system
         print "Error: must be http:// , ftp:// or file://" >> sys.stderr
         return -1        # A code of error 
 
@@ -149,23 +148,25 @@ def create_debootstrap(mirror, codename, packages=None, components='main'):
     from subprocess import Popen, PIPE
 
     # Get the debootstrap base package list
-    base = get_base_dependencies(mirror, codename)
-    depends = set(base)
+    base_list = get_base_dependencies(mirror, codename)
+    base = set(base_list)
+    depends = set() 
 
     # Get the dependencies of all the passed packages
     if packages is not None:
         for pkg in packages:
             sub_depends = get_all_dependencies(pkg)
+            sub_depends.add(pkg)
             depends.update(sub_depends)
-    package_list = ','.join(depends)
+    package_list = ','.join(depends - base)
 
     # Call the debootstrap program and pray ;-)
     proc = Popen(["/usr/bin/sudo", "/usr/sbin/debootstrap", "--include=%s" % package_list, \
                  "--components=%s" % components, "--print-debs", codename, \
-                 "/tmp/test", mirror], \
+                 "/tmp/sources", mirror], \
                  stdin=PIPE, stdout=PIPE, stderr=PIPE, close_fds=True)
-    output = proc.stdout.readline().strip()
-    errors = proc.stderr.readline().strip()
+    output = proc.stdout.readlines()
+    errors = proc.stderr.readlines()
 
     return (output, errors)
 
@@ -185,18 +186,18 @@ def test_it():
     codename = 'edgy'
     get_packages(mirror, codename)
 
-    # FIXME: Do this in a better way
     pkg_name = []
-    pkg_name.append(sys.argv[1])
+    if len(sys.argv) > 1:
+        pkg_name = sys.argv[1:]
 
     output, errors = create_debootstrap(mirror, codename, pkg_name)
-    print "Outputs: \n\n" + output
-    print "Errors: \n\n" + errors
+    print "Outputs: \n"
+    for line in output:
+        print line
+    print "\nErrors: \n"
+    for line in errors:
+        print line
     
-    # depends = get_base_dependencies(mirror, codename)
-    # depends =  get_all_dependencies(pkg_name, depends)
-    # print ", ".join(depends)
-
 
 if __name__ == '__main__':
 
