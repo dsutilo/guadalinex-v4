@@ -1,5 +1,7 @@
 * Finish the main program (glig.py)
 * Sorting and making up a bit the code
+* Separate some functions on libraries or modules
+* Accept parameters
 * Create the debian directory stuff
 * Create the config system (based on objconf?)
 * Add all the stuff we need to ship with the code (gfxboot,artwork,etc)
