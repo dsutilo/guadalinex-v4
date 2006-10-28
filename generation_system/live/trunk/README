@@ -34,3 +34,7 @@ Once your distro is installed a directory, GLIG generate the compressed image
 of it, and the rest of stuff you may need for a "Ubuntu alike" live system,
 as the usplash and isolinux/gfxboot themes for the booting, the md5sum file
 for the cd integrity checking and so on.
+
+TRACE:
+
+
