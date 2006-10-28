@@ -24,50 +24,40 @@ import sys
 import apt
 import apt_pkg
 import os.path
-import urllib2
-import bz2
+from decompress import get_content
 
 
 __revision__ = "0.01"
 
-def get_packages(mirror, codename, component='main', arch='i386'):
-    """get_packages(mirror, codename[, component="main"[, arch="i386"]])
+def get_packages_file(mirror, codename, \
+                 components='main,restricted,universe,multiverse', arch='i386'):
+    """get_packages_file(mirror, codename[, components=['main'][, arch="i386"]])
     
-    get_packages get the Packages.bz2 from the mirror. Either local or remote.
-    After decompress the file it writes a file /tmp/status with the content.
-    
-    TODO: To support more kind of files: Packages, Packages.gz
+    get_packages_file get the Packages[.bz2|gz] from the mirror. Either local or 
+remote. After decompress the file it writes a file /tmp/status with the content.
     
     """
     
     # Create a URI like 
     # http://mirror.server.org/ubuntu/dists/edgy/main/binary-i386/Packages.bz2
-    uri = os.path.join(mirror, 'dists', codename, component, \
-                       'binary-' + arch, 'Packages.bz2')
+    status_content = ''
+    for component in components.split(','):
+        for ext in ['.bz2', '.gz', '']:
+            uri = os.path.join(mirror, 'dists', codename, component, \
+                               'binary-' + arch, 'Packages' + ext)
 
-    # Extract the protocol from the URI
-    protocol, path = urllib2.splittype(uri)
+            content = get_content(uri)
+            if content is not None:
+                break
 
-    # Get the Packages.bz2
-    if protocol in ['http', 'ftp']:
-        packages = urllib2.urlopen(uri)
-    elif protocol == 'file':
-        packages = open(path, 'r')
-    else:
-        print "Error: must be http:// , ftp:// or file://" >> sys.stderr
-        return -1        # A code of error 
-
-    # Decompress the Packages.bz2
-    compress_file = packages.read()
-    plane = bz2.decompress(compress_file)
+        status_content += "\n" + content
 
     # Create the status file
-    status = open('/tmp/status', 'w')
-    status.write(plane)
+    status_file = open('/tmp/status', 'w')
+    status_file.write(status_content)
+    status_file.close()
 
-    # Close the open file descriptors
-    status.close()
-    packages.close()
+    return 0
 
 
 def get_base_dependencies(mirror, codename):
@@ -137,8 +127,10 @@ def get_all_dependencies(package_name):
     return deps
 
 
-def create_debootstrap(mirror, codename, packages=None, components='main'):
-    """create_debootstrap(mirror, codename, packages=None, component='main')
+def create_debootstrap(mirror, codename, packages=None, \
+                       components='main,restricted,universe,multiverse'):
+    """create_debootstrap(mirror, codename, packages=None, \
+                          component='main,restricted,universe,multiverse')
 
     Create a debootstrap with the base system plus the packages and their
     dependencies.
@@ -161,8 +153,8 @@ def create_debootstrap(mirror, codename, packages=None, components='main'):
     package_list = ','.join(depends - base)
 
     # Call the debootstrap program and pray ;-)
-    proc = Popen(["/usr/bin/sudo", "/usr/sbin/debootstrap", "--include=%s" % package_list, \
-                 "--components=%s" % components, "--print-debs", codename, \
+    proc = Popen(["/usr/sbin/debootstrap", "--include=%s" % package_list, \
+                 "--components=%s" % components, codename, \
                  "/tmp/sources", mirror], \
                  stdin=PIPE, stdout=PIPE, stderr=PIPE, close_fds=True)
     output = proc.stdout.readlines()
@@ -184,7 +176,9 @@ def test_it():
     # mirror = 'http://mirror.emergya.info/ubuntu'
     mirror = 'file:///var/mirror/ubuntu'
     codename = 'edgy'
-    get_packages(mirror, codename)
+    if get_packages_file(mirror, codename) < 0:
+        print >> sys.stderr, "Error: It was imposible to get the Packages.bz2"
+        sys.exit(1)
 
     pkg_name = []
     if len(sys.argv) > 1:
