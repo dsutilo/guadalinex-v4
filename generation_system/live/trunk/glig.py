@@ -40,7 +40,7 @@ remote. After decompress the file it writes a file /tmp/status with the content.
     
     # Create a URI like 
     # http://mirror.server.org/ubuntu/dists/edgy/main/binary-i386/Packages.bz2
-    status_content = ''
+    status_content = None
     for component in components.split(','):
         for ext in ['.bz2', '.gz', '']:
             uri = os.path.join(mirror, 'dists', codename, component, \
@@ -50,7 +50,13 @@ remote. After decompress the file it writes a file /tmp/status with the content.
             if content is not None:
                 break
 
-        status_content += "\n" + content
+        if content is not None:
+            if status_content is None:
+                status_content = ''
+            status_content += "\n" + content
+
+    if status_content is None:
+        return -1
 
     # Create the status file
     status_file = open('/tmp/status', 'w')
