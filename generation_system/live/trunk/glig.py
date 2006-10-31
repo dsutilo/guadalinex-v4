@@ -34,7 +34,8 @@ def get_packages_file(mirror, codename, \
     """get_packages_file(mirror, codename[, components=['main'][, arch="i386"]])
     
     get_packages_file get the Packages[.bz2|gz] from the mirror. Either local or 
-remote. After decompress the file it writes a file /tmp/status with the content.
+    remote. After decompress the file it writes a file /tmp/status with the 
+    content.
     
     """
     
@@ -202,3 +203,5 @@ def test_it():
 if __name__ == '__main__':
 
     test_it()
+
+# vim:ai:et:sts=4:tw=80:sw=4:

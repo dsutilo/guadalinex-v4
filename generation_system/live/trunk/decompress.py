@@ -93,3 +93,4 @@ def decompress_bz2(file_content):
 
     return content
 
+# vim:ai:et:sts=4:tw=80:sw=4:
