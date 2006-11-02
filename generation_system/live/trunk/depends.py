@@ -6,7 +6,7 @@
 #
 # Last modified: 
 #     $Date:  $ 
-#     $Author:  $
+#     $Author$
 #
 
 """ Module Depends.

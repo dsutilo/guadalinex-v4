@@ -6,7 +6,7 @@
 #
 # Last modified: 
 #     $Date:  $ 
-#     $Author:  $
+#     $Author$
 #
 
 """ Decompress is a module for decompressing bz2 or gz compressed files.
