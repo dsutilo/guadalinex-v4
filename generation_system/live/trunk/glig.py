@@ -21,7 +21,10 @@ things we need to control before doing the main stuff.
 """  
 
 import sys
+from subprocess import Popen, PIPE
 import depends
+import utils
+
 
 __revision__ = "0.01"
 
@@ -32,8 +35,6 @@ def create_debootstrap(repo, packages=None):
     dependencies.
 
     """
-
-    from subprocess import Popen, PIPE
 
     # Get the debootstrap base package list
     base_list = repo.get_base_dependencies()
@@ -53,10 +54,39 @@ def create_debootstrap(repo, packages=None):
                  "--components=%s" % repo.components, repo.codename, \
                  "/tmp/sources", repo.mirror], \
                  stdin=PIPE, stdout=PIPE, stderr=PIPE, close_fds=True)
-    output = proc.stdout.readlines()
-    errors = proc.stderr.readlines()
 
-    return (output, errors)
+    ret = proc.wait()
+
+    if ret > 0:
+        output = proc.stdout.readlines()
+        errors = proc.stderr.readlines()
+        return (output, errors)
+
+    return None
+
+
+def create_squashfs():
+    """create_squashfs() -> bool
+
+    Create a squashfs file from a sources directory
+
+    """
+
+    binary = 'mksquashfs'
+    sources = '/tmp/sources'
+    filesystem = '/tmp/filesystem.squashfs'
+
+    path = utils.get_path(binary)
+    if path is None:
+        return False
+
+    proc = Popen([path, sources, filesystem], \
+                  stdin=PIPE, stdout=PIPE, stderr=PIPE, close_fds=True)
+    ret = proc.wait()
+    if ret == 0:
+        return True
+    else:
+        return False
 
 
 def test_it():
@@ -78,13 +108,20 @@ def test_it():
     if len(sys.argv) > 1:
         pkg_name = sys.argv[1:]
 
-    output, errors = create_debootstrap(repo, pkg_name)
-    print "Outputs: \n"
-    for line in output:
-        print line
-    print "\nErrors: \n"
-    for line in errors:
-        print line
+    ret = create_debootstrap(repo, pkg_name)
+    if ret is not None:
+        output, errors = ret
+        print "Outputs: \n"
+        for line in output:
+            print line
+        print "\nErrors: \n"
+        for line in errors:
+            print line
+    else:
+        ret = create_squashfs()
+        if ret is False:
+            print >> sys.stderr, \
+                     "Error: It was imposible to create a squashfs file"
     
 
 if __name__ == '__main__':
