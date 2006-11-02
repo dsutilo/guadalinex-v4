@@ -5,7 +5,7 @@
 #     Juan Jesús Ojeda Croissier (juanje) <jojeda@emergya.es>   
 #
 # Last modified: 
-#     $Date:  $ 
+#     $Date$ 
 #     $Author$
 #
 
