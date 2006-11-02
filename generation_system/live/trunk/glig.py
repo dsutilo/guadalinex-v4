@@ -21,123 +21,12 @@ things we need to control before doing the main stuff.
 """  
 
 import sys
-import apt
-import apt_pkg
-import os.path
-from decompress import get_content
-
+import depends
 
 __revision__ = "0.01"
 
-def get_packages_file(mirror, codename, \
-                 components='main,restricted,universe,multiverse', arch='i386'):
-    """get_packages_file(mirror, codename[, components=['main'][, arch="i386"]])
-    
-    get_packages_file get the Packages[.bz2|gz] from the mirror. Either local or 
-    remote. After decompress the file it writes a file /tmp/status with the 
-    content.
-    
-    """
-    
-    # Create a URI like 
-    # http://mirror.server.org/ubuntu/dists/edgy/main/binary-i386/Packages.bz2
-    status_content = None
-    for component in components.split(','):
-        for ext in ['.bz2', '.gz', '']:
-            uri = os.path.join(mirror, 'dists', codename, component, \
-                               'binary-' + arch, 'Packages' + ext)
-
-            content = get_content(uri)
-            if content is not None:
-                break
-
-        if content is not None:
-            if status_content is None:
-                status_content = ''
-            status_content += "\n" + content
-
-    if status_content is None:
-        return -1
-
-    # Create the status file
-    status_file = open('/tmp/status', 'w')
-    status_file.write(status_content)
-    status_file.close()
-
-    return 0
-
-
-def get_base_dependencies(mirror, codename):
-    """get_base_dpendencies(mirror, codename) -> list
-
-    Get the list of packages which the debootstrap try to install
-    
-    """
-
-    from subprocess import Popen, PIPE
-
-    # Simulate a standar debootstrap for getting the list of packages
-    # are going to be installed as a base system
-    proc = Popen(["/usr/sbin/debootstrap", "--print-debs", codename, \
-                 "/tmp/test", mirror], stdin=PIPE, stdout=PIPE, \
-                 stderr=PIPE, close_fds=True)
-    output = proc.stdout.readline().strip()
-    packages = output.split()
-
-    return packages
-
-
-def get_all_dependencies(package_name):
-    """get_all_dependencies(package_name) -> set
-
-    Get a set of packages from which the package
-    package_name depends.
-
-    """
-
-    # Set the Packages file as apt's status file
-    status_file = "/tmp/status"
-    if not os.path.isfile(status_file):
-        print "Error: %s doesn't exist" % status_file >> sys.stderr
-        return set()
-    apt_pkg.Config.Set("Dir::State::status", status_file)
-    cache = apt.Cache()
-    pkg = cache[package_name]
- 
-    def get_dependencies(cache, pkg, deps, key):
-        """get_dependencies(cache, pkg, key) -> set
-
-        Get the dependencies or predependencies for a specific package.
-
-        """
-
-        candidate_ver = cache._depcache.GetCandidateVer(pkg._pkg)
-        if candidate_ver == None:
-            return deps
-        depends_list = candidate_ver.DependsList
-        if depends_list.has_key(key):
-            for depends_ver_list in depends_list[key]:
-                for dep in depends_ver_list:
-                    if cache.has_key(dep.TargetPkg.Name):
-                        if pkg.name != dep.TargetPkg.Name and \
-                           not dep.TargetPkg.Name in deps:
-                            deps.add(dep.TargetPkg.Name)
-                            get_dependencies(cache, \
-                            cache[dep.TargetPkg.Name], deps, key)
-        return deps
-     
-    deps = set()
-   
-    deps = get_dependencies(cache, pkg, deps, "Depends")
-    deps = get_dependencies(cache, pkg, deps, "PreDepends")
-
-    return deps
-
-
-def create_debootstrap(mirror, codename, packages=None, \
-                       components='main,restricted,universe,multiverse'):
-    """create_debootstrap(mirror, codename, packages=None, \
-                          component='main,restricted,universe,multiverse')
+def create_debootstrap(repo, packages=None):
+    """create_debootstrap(repo, packages=None) -> tuple(list, list)
 
     Create a debootstrap with the base system plus the packages and their
     dependencies.
@@ -147,22 +36,22 @@ def create_debootstrap(mirror, codename, packages=None, \
     from subprocess import Popen, PIPE
 
     # Get the debootstrap base package list
-    base_list = get_base_dependencies(mirror, codename)
+    base_list = repo.get_base_dependencies()
     base = set(base_list)
-    depends = set() 
+    deps = set() 
 
     # Get the dependencies of all the passed packages
     if packages is not None:
         for pkg in packages:
-            sub_depends = get_all_dependencies(pkg)
-            sub_depends.add(pkg)
-            depends.update(sub_depends)
-    package_list = ','.join(depends - base)
+            sub_deps = repo.get_all_dependencies(pkg)
+            sub_deps.add(pkg)
+            deps.update(sub_deps)
+    package_list = ','.join(deps - base)
 
     # Call the debootstrap program and pray ;-)
     proc = Popen(["/usr/sbin/debootstrap", "--include=%s" % package_list, \
-                 "--components=%s" % components, codename, \
-                 "/tmp/sources", mirror], \
+                 "--components=%s" % repo.components, repo.codename, \
+                 "/tmp/sources", repo.mirror], \
                  stdin=PIPE, stdout=PIPE, stderr=PIPE, close_fds=True)
     output = proc.stdout.readlines()
     errors = proc.stderr.readlines()
@@ -183,15 +72,13 @@ def test_it():
     # mirror = 'http://mirror.emergya.info/ubuntu'
     mirror = 'file:///var/mirror/ubuntu'
     codename = 'edgy'
-    if get_packages_file(mirror, codename) < 0:
-        print >> sys.stderr, "Error: It was imposible to get the Packages.bz2"
-        sys.exit(1)
+    repo = depends.Depends(mirror, codename)
 
     pkg_name = []
     if len(sys.argv) > 1:
         pkg_name = sys.argv[1:]
 
-    output, errors = create_debootstrap(mirror, codename, pkg_name)
+    output, errors = create_debootstrap(repo, pkg_name)
     print "Outputs: \n"
     for line in output:
         print line
