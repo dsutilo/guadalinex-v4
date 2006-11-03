@@ -25,10 +25,12 @@ fetch () {
 
 mkemptydir "$LIVE_OUT"
 for arch in $CPUARCHES; do
-	if fetch "$(find-live-filesystem "$arch" cloop)" \
-			"$LIVE_OUT/$arch.cloop"; then
-		:
-	elif fetch "$(find-live-filesystem "$arch" squashfs)" \
+#	if fetch "$(find-live-filesystem "$arch" cloop)" \
+#			"$LIVE_OUT/$arch.cloop"; then
+#		:
+#	elif fetch "$(find-live-filesystem "$arch" squashfs)" \
+#			"$LIVE_OUT/$arch.squashfs"; then
+	if fetch "$(find-live-filesystem "$arch" squashfs)" \
 			"$LIVE_OUT/$arch.squashfs"; then
 		:
 	else

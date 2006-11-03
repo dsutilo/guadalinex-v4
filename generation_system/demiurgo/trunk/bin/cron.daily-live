@@ -3,6 +3,7 @@ set -e
 
 export CDIMAGE_ROOT="${CDIMAGE_ROOT:-/var/cdimage}"
 . "$CDIMAGE_ROOT/etc/config"
+. "$CDIMAGE_ROOT/etc/guada"
 
 PATH="$CDIMAGE_ROOT/bin:${PATH:+:$PATH}"
 

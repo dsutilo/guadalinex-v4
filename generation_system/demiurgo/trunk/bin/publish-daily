@@ -37,6 +37,7 @@ PUBLISH="$CDIMAGE_ROOT/www/$FULL_TREE/$IMAGE_TYPE_DIR/$DATE"
 
 case $IMAGE_TYPE in
 	*-live)
+#####		TYPE=livecd
 		case $PROJECT in
 			edubuntu|ubuntu-server)
 				TYPE=live
@@ -54,9 +55,11 @@ case $IMAGE_TYPE in
 		esac
 		;;
 	*_dvd|dvd)
+####		TYPE=livedvd
 		TYPE=dvd
 		;;
 	*)
+####		TYPE=di
 		case $PROJECT in
 			edubuntu)
 				TYPE=install
@@ -120,22 +123,38 @@ if [ -d "$PUBLISH/source" ]; then
 	> "$PUBLISH/source/MD5SUMS"
 fi
 
+DATE_AND_TIME=$(date +%Y%m%d%H%M)
+
 for arch in $ARCHES; do
 	if [ -e "$CDOUT/$arch/$DIST-$TYPE-$arch.raw" ]; then
 		echo "Publishing $arch ..."
 		mkdir -p "$PUBLISH"
+
+#		mv "$CDOUT/$arch/$DIST-$TYPE-$arch.raw" \
+#		   "$PUBLISH/$DIST-$TYPE-$arch.iso"
+
 		mv "$CDOUT/$arch/$DIST-$TYPE-$arch.raw" \
-		   "$PUBLISH/$DIST-$TYPE-$arch.iso"
+		   "$PUBLISH/guadalinex-v4-$TYPE-$DATE_AND_TIME.iso"
+		   
+#		mv "$CDOUT/$arch/$DIST-$TYPE-$arch.list" \
+#		   "$PUBLISH/$DIST-$TYPE-$arch.list"
+
 		mv "$CDOUT/$arch/$DIST-$TYPE-$arch.list" \
-		   "$PUBLISH/$DIST-$TYPE-$arch.list"
+		   "$PUBLISH/guadalinex-v4-$TYPE-$DATE_AND_TIME.list"
+
+#		md5sum="$(grep -qs " $DIST-$TYPE-$arch\.raw\$" \
+#				   "$CDOUT/$arch/MD5SUMS" | cut -d' ' -f1)" \
+#			|| true
+
 		md5sum="$(grep -qs " $DIST-$TYPE-$arch\.raw\$" \
 				   "$CDOUT/$arch/MD5SUMS" | cut -d' ' -f1)" \
 			|| true
+
 		if [ "$md5sum" ]; then
-			echo "$md5sum  $DIST-$TYPE-$arch.iso" \
+			echo "$md5sum  guadalinex-v4-$TYPE-$DATE_AND_TIME.iso" \
 				>> "$PUBLISH/MD5SUMS"
 		else
-			(cd "$PUBLISH" && md5sum "$DIST-$TYPE-$arch.iso" \
+			(cd "$PUBLISH" && md5sum "guadalinex-v4-$TYPE-$DATE_AND_TIME.iso" \
 				>> MD5SUMS)
 		fi
 
@@ -160,11 +179,11 @@ for arch in $ARCHES; do
 			rm -f "$PUBLISH/$DIST-$TYPE-$arch.manifest"
 		fi
 
-		SIZE="$(stat -c %s "$PUBLISH/$DIST-$TYPE-$arch.iso")"
+		SIZE="$(stat -c %s "$PUBLISH/guadalinex-v4-$TYPE-$DATE_AND_TIME.iso")"
 		if [ "$SIZE" -gt "$SIZELIMIT" ]; then
-			touch "$PUBLISH/$DIST-$TYPE-$arch.OVERSIZED"
+			touch "$PUBLISH/guadalinex-v4-$TYPE-$DATE_AND_TIME.OVERSIZED"
 		else
-			rm -f "$PUBLISH/$DIST-$TYPE-$arch.OVERSIZED"
+			rm -f "$PUBLISH/guadalinex-v4-$TYPE-$DATE_AND_TIME.OVERSIZED"
 		fi
 	else
 		echo "No CD for $arch!" >&2

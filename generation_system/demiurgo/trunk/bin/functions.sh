@@ -18,3 +18,8 @@ confirm () {
 			;;
 	esac
 }
+
+get_svn_rev () {
+	SVN_ROOT_DIR=$1
+	cat $SVN_ROOT_DIR/.svn/entries | grep committed-rev | sed -e 's/\"//g' | sed -e 's/.*\=//g'
+}
