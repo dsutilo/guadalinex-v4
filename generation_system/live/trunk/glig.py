@@ -27,7 +27,7 @@ import depends
 import utils
 
 
-__revision__ = "$Rev"
+__revision__ = "$Rev$"
 
 def create_debootstrap(repo, packages=None):
     """create_debootstrap(repo, packages=None) -> tuple(list, list)
