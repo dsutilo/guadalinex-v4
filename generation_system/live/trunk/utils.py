@@ -17,6 +17,7 @@ List of functons:
 """
 
 
+import sys
 import os.path
 import os
 
@@ -32,15 +33,19 @@ def get_path(binary):
     """
 
     # Get the PATH of the current user
-    full_path = os.environ['PATH'].split(':')
+    full_path = os.environ['PATH']
+    path_list = full_path.split(':')
 
-    for path in full_path:
+    for path in path_list:
         bin = os.path.join(path, binary)
         if os.path.isfile(bin):
             return bin
 
+    print >> sys.stderr, \
+             "Error: It was imposible to find the binary %s in your PATH=%s\n" \
+             % (binary, full_path), \
+             "Please, check if you have installed this program"
     return None
     
-
 
 # vim:ai:et:sts=4:tw=80:sw=4:
