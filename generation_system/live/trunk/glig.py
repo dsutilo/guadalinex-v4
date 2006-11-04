@@ -21,6 +21,7 @@ things we need to control before doing the main stuff.
 """  
 
 import sys
+import os
 from subprocess import Popen, PIPE
 import depends
 import utils
@@ -36,18 +37,12 @@ def create_debootstrap(repo, packages=None):
 
     """
 
-    # Get the debootstrap base package list
-    base_list = repo.get_base_dependencies()
-    base = set(base_list)
-    deps = set() 
-
     # Get the dependencies of all the passed packages
-    if packages is not None:
-        for pkg in packages:
-            sub_deps = repo.get_all_dependencies(pkg)
-            sub_deps.add(pkg)
-            deps.update(sub_deps)
-    package_list = ','.join(deps - base)
+    deps = repo.get_dependencies_for_list(packages)
+    if deps is None:
+        deps = set()   # If deps is None we put a empty set for the merge_lists
+    merged_list = repo.merge_lists(deps)
+    package_list = ','.join(merged_list)
 
     # Call the debootstrap program and pray ;-)
     proc = Popen(["/usr/sbin/debootstrap", "--include=%s" % package_list, \
@@ -76,11 +71,14 @@ def create_squashfs():
     sources = '/tmp/sources'
     filesystem = '/tmp/filesystem.squashfs'
 
-    path = utils.get_path(binary)
-    if path is None:
+    mksquashfs = utils.get_path(binary)
+    if mksquashfs is None:
         return False
 
-    proc = Popen([path, sources, filesystem], \
+    # Remove olds squashfs files if any
+    if os.path.isfile(filesystem):
+        os.remove(filesystem)
+    proc = Popen([mksquashfs, sources, filesystem], \
                   stdin=PIPE, stdout=PIPE, stderr=PIPE, close_fds=True)
     ret = proc.wait()
     if ret == 0:

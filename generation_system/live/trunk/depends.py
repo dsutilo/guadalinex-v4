@@ -22,9 +22,11 @@ import apt
 import apt_pkg
 import os.path
 from decompress import get_content
+import utils
 
 
 __revision__ = "0.01"
+STATUS_FILE = '/tmp/status'
 
 class Depends:
     """Depends
@@ -46,22 +48,26 @@ class Depends:
         self.components = components
         self.arch = arch
         self.live_packages = ['ubiquity', 'casper']
-        self.status_file = '/tmp/status'
+        self.base = set()
 
-        if not self.get_packages_file():
+        if not self._get_base_dependencies():
+            print >> sys.stderr, \
+                     "Error: It was imposible to get the base dependencies"
+
+        if not self._get_packages_file():
             print >> sys.stderr, \
                      "Error: It was imposible to get the Packages file"
 
         # Set the Packages file as apt's status file
-        if not os.path.isfile(self.status_file):
-            print >> sys.stderr, "Error: %s doesn't exist" % self.status_file
+        if not os.path.isfile(STATUS_FILE):
+            print >> sys.stderr, "Error: %s doesn't exist" % STATUS_FILE
 
-        apt_pkg.Config.Set("Dir::State::status", self.status_file)
+        apt_pkg.Config.Set("Dir::State::status", STATUS_FILE)
         self.cache = apt.Cache()
 
 
-    def get_packages_file(self):
-        """get_packages_file(self) -> bool
+    def _get_packages_file(self):
+        """_get_packages_file(self) -> bool
         
         get_packages_file get the Packages[.bz2|gz] from the mirror. Either 
         local or remote. After decompress the file it writes a file /tmp/status
@@ -94,15 +100,15 @@ class Depends:
             return False
     
         # Create the status file
-        status_file = open(self.status_file, 'w')
+        status_file = open(STATUS_FILE, 'w')
         status_file.write(status_content)
         status_file.close()
     
         return True
     
     
-    def get_base_dependencies(self):
-        """get_base_dpendencies(self) -> set
+    def _get_base_dependencies(self):
+        """_get_base_dependencies(self) -> bool
     
         Get the list of packages which the debootstrap try to install
         
@@ -113,15 +119,31 @@ class Depends:
         # Simulate a standar debootstrap for getting the list of packages
         # are going to be installed as a base system
         temp_dir = '/tmp/fake_chroot'
-        proc = Popen(["/usr/sbin/debootstrap", "--print-debs", self.codename, \
+        debootstrap = utils.get_path('debootstrap')
+        if debootstrap is None:
+            return False
+        proc = Popen([debootstrap, '--print-debs', self.codename, \
                      temp_dir, self.mirror], stdin=PIPE, stdout=PIPE, \
                      stderr=PIPE, close_fds=True)
+        ret = proc.wait()
+        if ret != 0:
+            return False
+
         output = proc.stdout.readline().strip()
-        packages = set(output.split())   # Put the list into a set
+        self.base = set(output.split())   # Put the list into a set
+
+        return True
     
-        return packages
     
-    
+    def get_base_dependencies(self):
+        """get_base_dependencies(self) -> set
+
+        Return the self.base set of dpenendecies with the debootstrap install
+        as a base system.
+
+        """
+
+        return self.base
     def set_live_packages(self, packages_list=None):
         """set_live_packages(self, packages_list)
 
@@ -137,7 +159,7 @@ class Depends:
         return True
 
      
-    def __get_dependencies(self, pkg, deps, key):
+    def _get_dependencies(self, pkg, deps, key):
         """get_dependencies(self, pkg, deps, key) -> set
 
         Get the dependencies or predependencies for a specific package.
@@ -155,8 +177,8 @@ class Depends:
                         if pkg.name != dep.TargetPkg.Name and \
                            not dep.TargetPkg.Name in deps:
                             deps.add(dep.TargetPkg.Name)
-                            self.__get_dependencies(self.cache, \
-                            self.cache[dep.TargetPkg.Name], deps, key)
+                            self._get_dependencies( \
+                                      self.cache[dep.TargetPkg.Name], deps, key)
         return deps
  
 
@@ -170,7 +192,7 @@ class Depends:
         for package_name in self.live_packages:
             pkg = self.cache[package_name]
             for key in ['Depends', 'Predepends']:
-                depends = self.__get_dependencies(pkg, depends, key)
+                depends = self._get_dependencies(pkg, depends, key)
 
         return depends
     
@@ -188,9 +210,45 @@ class Depends:
         deps = set()
        
         for key in ['Depends', 'PreDepends']:
-            deps = self.__get_dependencies(pkg, deps, key)
+            deps = self._get_dependencies(pkg, deps, key)
     
         return deps
     
+
+    def get_dependencies_for_list(self, package_list=None):
+        """get_dependencies_for_list(self, package_list=None) -> set
+
+        Get a set with the list of dependencies for a list of packages
+
+        """
+
+        deps = set()
+        # Get the dependencies of all the passed packages
+        if package_list is not None:
+            for pkg in package_list:
+                sub_deps = self.get_all_dependencies(pkg)
+                sub_deps.add(pkg)
+                deps.update(sub_deps)
+ 
+        return deps
+
+
+    def merge_lists(self, extra_deps=None):
+        """merge_list(self, extra_deps=None) -> set
+
+        Merge the list from the base package list with the extra package list.
+
+        """
+
+        base_list = self.get_base_dependencies()
+        base_deps = set(base_list)
+
+        if extra_deps is None:
+            return base_deps
+
+        total_deps = extra_deps - base_deps
+
+        return total_deps
+
 
 # vim:ai:et:sts=4:tw=80:sw=4:
