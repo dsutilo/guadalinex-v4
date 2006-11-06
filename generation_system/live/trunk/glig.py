@@ -23,6 +23,7 @@ things we need to control before doing the main stuff.
 import sys
 import os
 from subprocess import Popen, PIPE
+from shutil import copy
 import depends
 import utils
 
@@ -86,6 +87,47 @@ def create_squashfs(sources='/tmp/sources', \
         return True
     else:
         return False
+
+
+def generate_initrd(uname=None, chroot_dir='/tmp/sources'):
+    """generte_initrd(uname=None, chroot_dir='/tmp/sources') -> bool
+
+    Generate a initramfs file inside of the chroot, in order to use the kernel,
+    modules, usplash theme and so on of the chrooted system.
+
+    This function copy the resulted initrd.gz and his vmlinuz to outside of the
+    chroot directory.
+
+    """
+
+    files = ['vmlinuz', 'initrd.gz']
+    initrd_path = '/tmp/initrd.gz'
+
+    mkinitramfs_binary = 'mkinitramfs'
+    mkinitramfs = utils.get_path(mkinitramfs_binary)
+    chrooted_mkinitramfs = os.path.join(chroot_dir, mkinitramfs)
+    if chrooted_mkinitramfs is None:
+        return False
+
+    chroot_binary = 'chroot'
+    chroot = utils.get_path(chroot_binary)
+    if chroot is None:
+        return False
+
+    if uname is None:
+        uname = utils.chroot_uname()
+
+    proc = Popen([chroot, sources, mkinitramfs, '-o', initrd_path, uname], \
+                  stdin=PIPE, stdout=PIPE, stderr=PIPE, close_fds=True)
+    ret = proc.wait()
+    if ret != 0:
+        return False
+
+    chrooted_initrd = os.path.join(chroot_dir, initrd_path)
+    if not copy(chrooted_initrd, initrd_path):
+        return False
+
+    return True
 
 
 def test_it():
