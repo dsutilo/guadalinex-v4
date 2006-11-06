@@ -27,7 +27,9 @@ import depends
 import utils
 
 
-__revision__ = "$Rev$"
+_svn_revision = "$Rev$"
+__revision__ = _svn_revision.split()[1]
+
 
 def create_debootstrap(repo, packages=None):
     """create_debootstrap(repo, packages=None) -> tuple(list, list)
