@@ -62,17 +62,16 @@ def create_debootstrap(repo, packages=None):
     return None
 
 
-def create_squashfs():
-    """create_squashfs() -> bool
+def create_squashfs(sources='/tmp/sources', \
+                    filesystem='/tmp/filesystem.squashfs'):
+    """create_squashfs(sources='/tmp/sources', 
+                       filesystem='/tmp/filesystem.squashfs') -> bool
 
     Create a squashfs file from a sources directory
 
     """
 
     binary = 'mksquashfs'
-    sources = '/tmp/sources'
-    filesystem = '/tmp/filesystem.squashfs'
-
     mksquashfs = utils.get_path(binary)
     if mksquashfs is None:
         return False
