@@ -15,8 +15,13 @@ This program generate a chroot system from a debian repository in order
 to create a squashfs compressed image of that system for being able to run
 as a live GNU/Linux system.
 
-NOTE: It's not just a draft. It is NOT functional at all. It just does some
-things we need to control before doing the main stuff.
+NOTE: It's not yet a full functional program, but almost. At todays time is be
+able to:
+ - Generate a chrooted directory with the base system plus the packages we pass 
+   as a parameters.
+ - Generate a Squashfs compressed image of the chrooted directory.
+ - Generate a initrd file with the kernel, modules and so on from the chrooted
+   directory.
 
 """  
 
