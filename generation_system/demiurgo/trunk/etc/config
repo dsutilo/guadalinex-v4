@@ -37,4 +37,8 @@ export DEBOOTSTRAPROOT
 PATH="$CDIMAGE_ROOT/bin:$PATH"
 export PATH
 
+#if [ -d $CDIMAGE_ROOT/seeds ]; then
+#	LOCAL_SEEDS="file://$CDIMAGE_ROOT/seeds"
+#fi
+
 umask 002
