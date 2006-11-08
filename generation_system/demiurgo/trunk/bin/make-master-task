@@ -23,6 +23,8 @@ if [ "$CDIMAGE_DVD" ]; then
 	SEEDS="$SEEDS $(list-seeds "$STRUCTURE" all | egrep -v '^(installer|casper)$' || true)"
 elif [ "$CDIMAGE_INSTALL" ]; then
 	SEEDS="$SEEDS $(list-seeds "$STRUCTURE" tasks)"
+elif [ "$CDIMAGE_MINI" ]; then
+	SEEDS="$SEEDS $(list-seeds "$STRUCTURE" mini)"
 else
 	if [ "$CDIMAGE_INSTALL_BASE" = 1 ]; then
 		SEEDS="$SEEDS $(list-seeds "$STRUCTURE" base)"
