@@ -60,7 +60,7 @@ def chroot_uname(chroot_dir='/tmp/sources'):
     kernel_dir = '/boot/'
     kernel_prefix = 'vmlinuz-'
 
-    chroot_kernel_dir = os.path.join(chroot_dir, kernel_dir)
+    chroot_kernel_dir = join_path(chroot_dir, kernel_dir)
     dir_ls = os.listdir(chroot_kernel_dir)
 
     kernels_list = []
@@ -73,6 +73,25 @@ def chroot_uname(chroot_dir='/tmp/sources'):
     uname = kernel_split[1]                   # '2.6.??-??-386'
 
     return uname
+
+
+def join_path(pre_path, post_path):
+    """join_path(pre_path, post_path) -> string
+
+    Take two path and join them.
+
+    The difference between os.path.join() and join_path() is the second one
+    check if the second path start with '/' or not. If so, it takes off from the
+    path before to join.
+
+    """
+
+    if post_path.startswith('/'):
+        post_path = post_path[1:]
+
+    final_path = os.path.join(pre_path, post_path)
+
+    return final_path
 
 
 # vim:ai:et:sts=4:tw=80:sw=4:

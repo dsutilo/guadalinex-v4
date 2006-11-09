@@ -1,0 +1,1 @@
+Makefile langlist *.config *.fnt *.inc *.jpg install/bootlogo.tar.gz usr/share/gfxboot-theme-guadalinex

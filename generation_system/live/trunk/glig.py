@@ -49,21 +49,26 @@ def create_debootstrap(repo, packages=None):
     deps = repo.get_dependencies_for_list(packages)
     if deps is None:
         deps = set()   # If deps is None we put a empty set for the merge_lists
-    merged_list = repo.merge_lists(deps)
+    merged_list = repo.merge_lists()
     package_list = ','.join(merged_list)
+    
+    # Generate the filesystem.manifest and filesystem.manifest-desktop
+    repo.create_manifests()
 
     # Call the debootstrap program and pray ;-)
     proc = Popen(["/usr/sbin/debootstrap", "--include=%s" % package_list, \
                  "--components=%s" % repo.components, repo.codename, \
                  "/tmp/sources", repo.mirror], \
-                 stdin=PIPE, stdout=PIPE, stderr=PIPE, close_fds=True)
+                 # stdin=PIPE, stdout=PIPE, stderr=PIPE, close_fds=True)
+                 stdin=PIPE, stdout=PIPE, close_fds=True)
 
     ret = proc.wait()
 
     if ret > 0:
         output = proc.stdout.readlines()
-        errors = proc.stderr.readlines()
-        return (output, errors)
+        # errors = proc.stderr.readlines()
+        # return (output, errors)
+        return (output, '')
 
     return None
 
@@ -106,11 +111,12 @@ def generate_initrd(uname=None, chroot_dir='/tmp/sources'):
     """
 
     files = ['vmlinuz', 'initrd.gz']
+    boot_dir = '/boot'
     initrd_path = '/tmp/initrd.gz'
 
     mkinitramfs_binary = 'mkinitramfs'
     mkinitramfs = utils.get_path(mkinitramfs_binary)
-    chrooted_mkinitramfs = os.path.join(chroot_dir, mkinitramfs)
+    chrooted_mkinitramfs = utils.join_path(chroot_dir, mkinitramfs)
     if chrooted_mkinitramfs is None:
         return False
 
@@ -122,15 +128,22 @@ def generate_initrd(uname=None, chroot_dir='/tmp/sources'):
     if uname is None:
         uname = utils.chroot_uname()
 
-    proc = Popen([chroot, sources, mkinitramfs, '-o', initrd_path, uname], \
+    proc = Popen([chroot, chroot_dir, mkinitramfs, '-o', initrd_path, uname], \
                   stdin=PIPE, stdout=PIPE, stderr=PIPE, close_fds=True)
     ret = proc.wait()
     if ret != 0:
         return False
 
-    chrooted_initrd = os.path.join(chroot_dir, initrd_path)
+    chrooted_initrd = utils.join_path(chroot_dir, initrd_path)
     if not copy(chrooted_initrd, initrd_path):
         return False
+
+    chrooted_boot = utils.join_path(chroot_dir, boot_dir)
+    dest_dir = os.path.dirname(initrd_path)
+    for file_ in files:
+        orig_file = utils.join_path(chrooted_boot, file_)
+        if not copy(orig_file, dest_dir):
+            return False
 
     return True
 
@@ -148,13 +161,13 @@ def test_it():
     # mirror = 'http://mirror.emergya.info/ubuntu'
     mirror = 'file:///var/mirror/ubuntu'
     codename = 'edgy'
-    repo = depends.Depends(mirror, codename)
 
     pkg_name = []
     if len(sys.argv) > 1:
         pkg_name = sys.argv[1:]
 
-    ret = create_debootstrap(repo, pkg_name)
+    repo = depends.Depends(pkg_name, mirror, codename)
+    ret = create_debootstrap(repo)
     if ret is not None:
         output, errors = ret
         print "Outputs: \n"
@@ -168,10 +181,18 @@ def test_it():
         if ret is False:
             print >> sys.stderr, \
                      "Error: It was imposible to create a squashfs file"
+
+#        ret = generate_initrd()
+#        if ret is False:
+#            print >> sys.stderr, \
+#                     "Error: It was imposible to generate the initrd.gz file"
+#
+
     
 
 if __name__ == '__main__':
 
     test_it()
+    #generate_initrd()
 
 # vim:ai:et:sts=4:tw=80:sw=4:

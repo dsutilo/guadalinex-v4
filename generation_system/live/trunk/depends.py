@@ -40,14 +40,18 @@ class Depends:
 
     """
 
-    def __init__(self, mirror, codename,
+    def __init__(self, extra_pkgs, mirror, codename,
                  components='main,restricted,universe,multiverse', arch='i386'):
 
+        self.extra_pkgs = extra_pkgs
         self.mirror = mirror
         self.codename = codename
         self.components = components
         self.arch = arch
-        self.live_packages = ['ubiquity', 'casper']
+        self.live_packages = ['ubiquity', 'casper',
+                              'grub',
+                              'linux-image-generic',
+                              'linux-restricted-modules-generic']
         self.base = set()
 
         if not self._get_base_dependencies():
@@ -122,8 +126,8 @@ class Depends:
         debootstrap = utils.get_path('debootstrap')
         if debootstrap is None:
             return False
-        proc = Popen([debootstrap, '--print-debs', self.codename, \
-                     temp_dir, self.mirror], stdin=PIPE, stdout=PIPE, \
+        proc = Popen([debootstrap, '--print-debs', self.codename, 
+                     temp_dir, self.mirror], stdin=PIPE, stdout=PIPE, 
                      stderr=PIPE, close_fds=True)
         ret = proc.wait()
         if ret != 0:
@@ -144,6 +148,8 @@ class Depends:
         """
 
         return self.base
+
+
     def set_live_packages(self, packages_list=None):
         """set_live_packages(self, packages_list)
 
@@ -160,7 +166,7 @@ class Depends:
 
      
     def _get_dependencies(self, pkg, deps, key):
-        """get_dependencies(self, pkg, deps, key) -> set
+        """_get_dependencies(self, pkg, deps, key) -> set
 
         Get the dependencies or predependencies for a specific package.
 
@@ -182,18 +188,22 @@ class Depends:
         return deps
  
 
-    def get_live_dependecies(self):
+    def get_live_dependencies(self):
         """get_live_dependencies(self) -> set
 
         """
 
-        depends = set()
+        # depends = set()
 
-        for package_name in self.live_packages:
-            pkg = self.cache[package_name]
-            for key in ['Depends', 'Predepends']:
-                depends = self._get_dependencies(pkg, depends, key)
+        # for package_name in self.live_packages:
+        #     pkg = self.cache[package_name]
+        #     depends.add(package_name)
+        #     for key in ['Depends', 'Predepends']:
+        #         depends = self._get_dependencies(pkg, depends, key)
 
+        # return depends
+
+        depends = self.get_dependencies_for_list(self.live_packages)
         return depends
     
 
@@ -233,8 +243,8 @@ class Depends:
         return deps
 
 
-    def merge_lists(self, extra_deps=None):
-        """merge_list(self, extra_deps=None) -> set
+    def merge_lists(self):
+        """merge_list(self) -> set
 
         Merge the list from the base package list with the extra package list.
 
@@ -243,12 +253,69 @@ class Depends:
         base_list = self.get_base_dependencies()
         base_deps = set(base_list)
 
+        extra_deps = self.get_dependencies_for_list(self.extra_pkgs)
+
         if extra_deps is None:
             return base_deps
 
         total_deps = extra_deps - base_deps
 
+        live_deps = self.get_live_dependencies()
+
+        total_deps = total_deps.union(live_deps)
+
         return total_deps
 
+
+    def create_manifests(self):
+        """create_manifests(self) -> bool
+
+        Create the filesystem.manifest and filesystem.manifest-desktp.
+
+        """
+
+        dest_dir = '/tmp'
+        manifest_file = utils.join_path(dest_dir, 'filesystem.manifest')
+
+
+        manifest = open(manifest_file, 'w')
+
+        base_list = self.get_base_dependencies()
+        base_deps = set(base_list)
+        print "base_deps size: %d" % len(base_deps)
+
+        extra_deps = self.get_dependencies_for_list(self.extra_pkgs)
+        print "extra_deps size: %d" % len(extra_deps)
+
+        live_depends = self.get_live_dependencies()
+
+        manifest_set = base_deps.union(extra_deps)
+        manifest_set.update(live_depends)
+        print "manifest_sets size: %d" % len(manifest_set)
+        manifest_list = list(manifest_set)
+        print "manifest_list size: %d" % len(manifest_list)
+        manifest.write('\n'.join(manifest_list))
+        manifest.close()
+
+
+        manifest_desktop_file = utils.join_path(dest_dir,
+                                                'filesystem.manifest-desktop')
+
+
+        manifest_desktop = open(manifest_desktop_file, 'w')
+
+        print "live_depends size: %d" % len(live_depends)
+        manifest_desktop_list = manifest_set.difference(live_depends)
+        print "manifest_desktop_list size: %d" % len(manifest_desktop_list)
+        manifest_desktop_list = list(manifest_desktop_list)
+        manifest_desktop.write('\n'.join(manifest_desktop_list))
+        manifest_desktop.close()
+
+
+        # FIXME: Just for testing purposes
+        f = open('/tmp/live.pkgs', 'w')
+        f.write('\n'.join(list(live_depends.difference(manifest_set))))
+        f.close()
+        return True
 
 # vim:ai:et:sts=4:tw=80:sw=4:
