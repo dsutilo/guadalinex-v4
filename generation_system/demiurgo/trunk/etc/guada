@@ -2,5 +2,5 @@
 # export SVN_ROOT_DIR="/path/to/svn/root/dir"
 
 # Name of the derivative distribution 
-# export DERIVATIVE="guadalinex"
+export DERIVATIVE="guadalinex"
 
