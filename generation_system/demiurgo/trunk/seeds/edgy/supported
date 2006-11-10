@@ -1,0 +1,460 @@
+= Hardware =
+
+ * i855-crt        # crack to enable video out on i855 chipsets
+ * mdetect         # formerly used by X for mouse autodetection
+ * irda-utils
+ * wacom-tools
+ * palo            # hppa boot loader, but needed on other architectures to build hppa CD images
+
+== Bluetooth ==
+
+ * bluez-passkey-gnome	# To do Bluetooth pairing
+
+== Filesystems ==
+
+ * xfsdump # only useful when machine is setup and working, and only for xfs people
+ * cloop-utils # for LiveCD
+ * squashfs-tools
+ * reiser4progs
+ * hfsplus
+
+== Cluster ==
+
+ * ocfs2console
+ * system-config-cluster
+
+= Servers and Daemons =
+
+Database:
+
+ * mdbtools				# OOo2 supports the JET format
+ * mdbtools-gmdb
+
+Email:
+
+ * fetchmail
+ * procmail
+ * bogofilter
+
+Must also consider webmail and so on...
+
+Other:
+
+ * racoon
+ * sysvinit  # ScottJamesRemnant retain support for now
+ * linuxprinting.org-ppds # We want those in main, but not for desktop.
+
+Utilities:
+
+ * analog                 # essential for any web server, possible candidate for desktop integration
+ * graphviz
+ * logcheck		  # great security tool for any server
+ * logcheck-database	  # useful for above
+
+= Network =
+
+ * irssi
+
+Security:
+
+ * nessus                 # client for nessus security testing and monitoring framework
+
+Download:
+
+ * bittorrent             # rapid p2p download, for efficient large file distribution, perhaps for desktop
+ * jigit                  # specialised Debian/Ubuntu CD image download
+
+= Desktop =
+
+ * openoffice.org-gcj
+ * openoffice.org-filter-so52
+
+= Standards =
+
+ * lsb
+
+= Development =
+
+== Development Tools ==
+
+ * bicyclerepair          # python refactoring tool for vim & emacs
+ * bison
+ * debconf-english   # for minimal buildd chroots, without i18n cruft
+ * flex
+ * patchutils
+ * gdb
+ * valgrind
+ * autoconf
+ * autoconf-doc      # Debian has this in non-free due to GFDL, but we're OK
+ * automake1.9
+ * autotools-dev
+ * libtool
+ * ccache            # C/C++ development, package development
+ * kernel-package
+ * pychecker
+ * exuberant-ctags   # ColinWatson
+ * dpkg-dev-el
+ * ant
+ * linux32		# without it, biarch buildds can go wonky
+ * ocaml-native-compilers  # we support the source package anyway
+ * pymacs                 # makes bicyclerepair work with emacs
+ * bootchart         # boot speed profiling
+ * indent
+ * g++-3.3		# compiling and linking against older abis
+ * ecj-bootstrap-gcj
+ * autopkgtest
+
+== Mono ==
+
+ * mono-devel
+ * mono-jay
+ * mono-classlib-1.0
+
+== Revision Control ==
+
+ * subversion
+ * subversion-tools
+ * python2.4-subversion
+ * git-core
+ * gitk
+ * git-email
+ * bzrtools
+ * python2.4-paramiko	# for bzr sftp support
+
+== Package Maintainance ==
+
+ * debhelper         # ColinWatson
+ * dh-make
+ * dupload           # ColinWatson
+ * linda             # python-based replacement for lintian
+ * lintian
+ * pbuilder          # ColinWatson
+ * apt-listchanges
+ * dput
+ * pkgstriptranslations # for removing gettext data on the buildds
+ * pkg-create-dbgsym # automatic creation of debug symbols
+ * hello
+ * hello-debhelper
+
+== Seed Management ==
+
+ * germinate         # quis custodiet ipsos custodes?
+
+= Shells =
+
+ * zsh
+
+= Desktop =
+
+ * epiphany-browser
+ * epiphany-extensions
+ * xchat-gnome
+ * mozilla-thunderbird # world favourite mail client
+ * mozilla-thunderbird-enigmail # gpg integration for thunderbird
+ * mozilla-thunderbird-offline  # offline use of thunderbird
+ * mozilla-thunderbird-typeaheadfind # neat usability enhancement for thunderbird
+ * mozilla-thunderbird-inspector     # used for extension development and debugging
+ * nautilus-gksu
+ * gnopernicus
+
+Other:
+
+ * devhelp
+ * dia-gnome           # useful but a bit specialist
+ * finger
+ * gftp-gtk
+ * glade-gnome-2
+ * memprof
+ * pan
+ * workrave            # RSI-avoidance
+ * xnest
+ * xrestop
+ * unclutter           # super useful for anti-mouse freaks
+ * emacs               # won't fit on CDs
+ * emacs-el
+ * emacs-nox
+ * evms-gui            # gui tools for storage drive volume management
+ * inkscape            # SVG drawing application
+ * gtranslator             # we want Ubuntu users to participate in Rosetta!
+ * screem                  # MRS, our default html editor
+ * vim-gnome
+ * vim-tiny
+ * vorbis-tools
+ * vorbisgain
+ * enscript
+ * emacs-goodies-el
+ * bbdb
+ * calc
+ * gnus
+ * auctex
+ * lbdb
+ * dictd
+ * dict-gcide
+ * dict-moby-thesaurus
+ * dict-foldoc
+ * dict-jargon
+ * dict-vera
+ * kino
+ * sabayon            # desktop profile management
+ * tomboy
+
+GNOME Office:
+
+ * abiword-gnome
+ * abiword-help
+ * abiword-plugins
+ * abiword-plugins-gnome
+ * gnumeric
+ * gnumeric-plugins-extra
+ * planner
+
+Ubuntu artwork:
+
+ * ubuntu-calendar
+ * ubuntu-calendar-january
+ * ubuntu-calendar-february
+ * ubuntu-calendar-march
+ * ubuntu-calendar-april
+ * ubuntu-calendar-may
+ * ubuntu-calendar-june
+ * ubuntu-calendar-july
+ * ubuntu-calendar-august
+ * ubuntu-calendar-september
+ * ubuntu-calendar-october
+ * ubuntu-calendar-november
+ * ubuntu-calendar-december
+
+= Console Tools =
+
+ * freecdb
+ * dict
+ * wdiff
+ * libdb3-util
+
+= Libraries =
+
+ * libcrypt-blowfish-perl
+ * libdate-manip-perl
+ * libnet-ldap-perl
+ * libchart-perl
+ * libgd-graph-perl
+ * libtemplate-perl
+ * libfile-rsyncp-perl
+ * libnss-db
+ * tdsodbc
+ * tk8.3-dev
+ * libsdl1.2debian-all
+ * libsdl1.2debian-alsa
+ * libsdl1.2debian-esd
+ * libsdl1.2debian-oss
+
+= System Administration Tools =
+
+ * attr                 # will move to base if we go to selinux
+ * quota
+ * backuppc             # RobertCollins
+ * debian-goodies
+ * whois                # FabioMassimoDiNitto
+ * minicom              # useful for serial access to anything
+ * cu                   # super-basic serial access
+ * john                 # detects weak passwords, might be needed in desktop
+ * libpam-cracklib      # enables weak password checking during password change, should it be in desktop?
+ * chkrootkit           # forensic detection of rootkit
+ * xinetd               # JamesTroup, from hoglet
+ * system-config-kickstart # Kickstart configuration GUI
+ * mknbi                # for creating etherboot images for LTSP
+
+= Documentation =
+
+We need a consistent policy for -doc. At the least, any -doc package produced by a source package that also generates a binary package in one of our seed lists should absolutely go into supported.
+
+ * doc-linux-html          # ColinWatson; basic HOWTOs and stuff from LDP
+ * manpages-dev            # ColinWatson
+ * ubuntu-faqguide
+ * monodoc
+ * monodoc-browser
+ * diveintopython-zh
+
+= Rescued from Extra =
+
+ * Extra-Include: *-dbg *-debug *-dev *-doc
+
+... and some miscellaneous exclusions for things we don't want to drag in
+automatically:
+
+ * Extra-Exclude: lib*stdc++*   # we want to consider these individually
+ * Extra-Exclude: *gfortran* gpc*-doc libgnat*-dev libmudflap* gnat-doc
+ * Extra-Exclude: libavformat-dev libpostproc-dev
+ * Extra-Exclude: libgdchart-gd2-xpm-dev
+ * Extra-Exclude: libgdome2-ocaml-dev
+ * Extra-Exclude: libmpich-mpd1.0-dev libmpich-shmem1.0-dev
+ * Extra-Exclude: libnetpbm9-dev
+ * Extra-Exclude: libavahi-compat-howl-dev
+ * Extra-Exclude: libboost-*-dev
+ * Extra-Exclude: libcairo-directfb2-dev
+ * Extra-Exclude: libcdio-*-dev libiso9660-dev
+ * Extra-Exclude: libxaw6*		# built from the same source as libxaw7*
+ * Extra-Exclude: nvidia-glx-legacy-dev # nvidia-glx-legacy is unsupportable
+
+Transitional packages:
+
+ * Extra-Exclude: atm-dev
+ * Extra-Exclude: mozilla-firefox-dev
+
+Exclude some KDE-specific pieces:
+
+ * Extra-Exclude: libdbus-qt-1-dev
+ * Extra-Exclude: libdcop3-java-dev
+ * Extra-Exclude: libindex0-dev
+ * Extra-Exclude: libpoppler-qt-dev
+ * Extra-Exclude: libqt4-debug-dev
+ * Extra-Exclude: libsmokekde-dev
+
+== Development ==
+
+ * python-mode
+ * libc6-prof [amd64 i386 powerpc sparc hppa]
+ * libc6.1-prof [ia64]
+ * libstdc++6-4.1-dbg
+ * openoffice.org-qa-tools
+ * openoffice.org-qa-api-tests
+ * openoffice.org-officebean
+ * openoffice.org-help-br
+ * openoffice.org-l10n-br
+ * libxsltc-java
+
+== Documentation ==
+
+ * gimp-manual
+ * gimp-help-en
+ * gimp-help-de
+ * gimp-help-sv
+ * gimp-help-fr
+ * doc-linux-text
+ * gimp-helpbrowser
+ * glade-doc-2
+ * exim4-doc-html
+ * libstdc++6-4.1-doc
+
+These *-doc packages are in separate source packages, so Extra-Includes won't catch them and they need to be listed explicitly.
+
+ * bison-doc
+ * diff-doc
+ * gawk-doc
+ * gdb-doc
+ * glibc-doc-reference
+ * gnupg-doc
+ * make-doc
+ * python-gtk2-doc
+ * python-gtk2-tutorial
+ * tar-doc
+
+== System Administration ==
+
+ * evms-cli
+ * fbset
+ * libcap-bin
+ * libpam-opie
+ * opie-client
+ * opie-server
+ * sasl2-bin
+ * libsasl2-modules-sql
+ * autofs
+ * awstats
+ * acct
+ * authbind                     # BIGGER SECURITAH REVIEW
+ * siege
+ * bonnie++
+
+== Multimedia ==
+
+ * flac
+ * esound-clients
+
+== Kernel ==
+
+ * %linux-meta
+ * linux-kernel-devel
+ * linux-image-debug-*
+
+= Database =
+
+ * libqt3c102-mt-mysql
+ * libqt3c102-mt-psql
+
+= Localisation =
+
+ * aspell-de
+ * aspell-de-alt
+ * gettext-el
+ * myspell-de-de-oldspell # non-default alternative for language-support-de
+ * myspell-fr # myspell-fr-gut preferred
+ * ttf-alee
+ * ttf-unfonts
+ * ttf-arphic-bkai00mp
+ * ttf-arphic-bsmi00lp
+ * ttf-arphic-gbsn00lp
+ * ttf-arphic-gkai00mp
+ * nabi
+ * imhangul
+ * culmus
+ * latex-ucs # UTF-8 support for LaTeX
+ * latex-ucs-uninames
+ * latex-ucs-contrib
+ * openoffice.org-help-en-gb
+ * openoffice.org-l10n-en-gb
+
+= Transitional packages =
+
+= Miscellaneous =
+
+ * ia32-libs [amd64 ia64]
+ * ia32-libs-dev [amd64 ia64]
+ * miscfiles
+
+= Germinate workarounds =
+
+ * mono-jit # germinate likes pnet better, but we want mono-mcs -mdz
+
+= Not quite ready for the default install yet =
+
+ * utf8-migration-tool
+
+= Language packs =
+
+ * /^language-pack-[^-]+$/
+ * /^language-pack-gnome-[^-]+$/
+ * /^language-support-[^-]+$/
+ * openoffice.org-l10n-nr      # does not match a valid locale, so no l-support-*
+ * openoffice.org-l10n-sh-yu   # does not match a valid locale, so no l-support-*
+
+= Installer =
+
+ # Too late for edgy, but will become the default kernel udeb set later
+ * Kernel-Version: 2.6.17-10-generic
+ * /^.*-firmware-.*-generic-di/ [i386]
+ * /^.*-modules-.*-generic-di/ [i386]
+
+ * debian-installer # also has side-effect of pulling in installer image build system
+ * gfxboot
+ * gfxboot-theme-ubuntu
+ * cdebconf # useful for testing, but not used by default yet
+
+ * casper # needed by live CD build system
+
+ * installation-guide-amd64 [amd64]
+ * installation-guide-hppa [hppa]
+ * installation-guide-i386 [i386]
+ * installation-guide-ia64 [ia64]
+ * installation-guide-powerpc [powerpc]
+ * installation-guide-sparc [sparc]
+
+= LTSP =
+
+ * ltsp-server
+ * ltsp-server-standalone
+ * ltsp-client
+
+= OMG! =
+
+ * firefox-themes-ubuntu

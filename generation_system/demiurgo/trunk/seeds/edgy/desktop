@@ -1,0 +1,289 @@
+Task-Per-Derivative: 1
+Task-Section: user
+Task-Description: Ubuntu desktop
+Task-Extended-Description: This task provides the Ubuntu desktop environment.
+Task-Key: ubuntu-desktop
+
+= Hardware and Architecture Support =
+
+== Architecture-independent ==
+
+ * hotkey-setup
+
+Power management:
+
+ * acpi-support
+ * (powernowd)
+ * powermanagement-interface [i386 amd64 powerpc ia64]
+
+Bluetooth:
+
+ * (bluez-utils) # base for bluetooth support
+ * (bluez-pin)   # bluetooth traffic disassembly
+ * (bluez-cups)  # allow connecting to bluetooth printers from CUPS
+
+== i386, i686, amd64 ==
+
+ * acpi
+ * acpid
+ * apmd [i386]
+
+== ppc32, ppc64 ==
+
+ * pbbuttonsd [powerpc]
+
+= Console-Based Tools =
+
+These tools are very commonly used by people who drop into a console shell to do some work.
+
+ * bc
+ * dc
+ * mkisofs
+ * cdrecord
+ * cdparanoia
+ * dvd+rw-tools
+ * screen
+ * lftp
+ * slocate              # tool to index user files
+ * zip
+ * unzip                # also used for .zip support in file-roller
+ * emergya-vim
+
+= Network Services =
+
+Basic network services and Windows integration.
+
+ * smbclient           # to access files on other SAMBA and Windows servers
+ * wvdial              # for automatic dialup configuration via g-s-t
+
+These packages help with system integration
+
+ * libsasl2-modules    # allows integration with MTA and login system
+ * avahi-daemon
+
+= Printing =
+
+Printing and printer configuration is a real weak spot in Debian, and in Linux in general. We will need to stay at the front of the curve here.
+
+ * cupsys                       # our preferred printer management infrastructure
+ * cupsys-bsd                   # gives us lpc, lpq, lpr, lprm
+ * cupsys-client                # gives us cancel, cupstestppd, lp, lpoptions, lppasswd, lpstat, cupsaddsmb, accept, lpadmin, lpinfo, lpmove
+ * foomatic-db-engine           # integrate the foomatic printer driver engine
+ * foomatic-db                  # the foomatic printer driver database
+ * foomatic-filters             # converter from postscript to printer-specific formats
+ * foomatic-db-hpijs            # printer drivers from the hp inkjet project
+ * cupsys-driver-gutenprint     # a ton of cupsys ppds, for real comprehensive printer support
+ * pnm2ppa                      # several ppds require this
+ * gs-esp			# some ppds require this, in place of standard gs
+ * (hplip)     			# support for HP all-in-one printers
+ * min12xxw			# support for KonicaMinolta PagePro 1200W, 1300W printers
+ * foo2zjs			# Support for printing to ZjStream-based printers
+
+= GUI infrastructure =
+
+ * xorg                          # this includes xserver-xorg->xserver-xorg-{input|video}-* (no need to add specific drivers manually)
+ * xterm                         # Provide a backup terminal and complete X env.
+ * xkeyboard-config              # XKB data now lives here
+
+Fonts:
+
+ * x-ttcidfont-conf
+ * ttf-bitstream-vera
+ * ttf-dejavu                    # includes characters missing in Vera
+ * ttf-freefont
+ * (ttf-kochi-gothic)
+ * (ttf-kochi-mincho)
+ * (ttf-arphic-uming)
+ * (ttf-arphic-ukai)
+ * (ttf-arabeyes)
+ * (ttf-baekmuk)
+ * (ttf-indic-fonts)
+ * (ttf-malayalam-fonts)
+ * (ttf-mgopen)
+ * (ttf-thai-tlwg)
+ * (ttf-lao)
+ * (ttf-gentium)
+
+Input methods:
+
+ * (scim)
+ * (scim-gtk2-immodule)
+
+= Desktop GNOME Apps =
+
+We've chosen GNOME as our desktop user interface of choice. Rather than using the meta-packages they are deliberately expanded so that we can select things a bit better.
+
+ * bug-buddy             # potentially replaced with reportbug + b-b-like pygtk gui
+ * apport-gtk
+ * contact-lookup-applet
+ * deskbar-applet
+ * desktop-file-utils
+ * eog
+ * evolution
+ * evolution-plugins
+ * evolution-exchange
+ * evolution-webcal
+ * file-roller           # SebastienBacher
+ * gaim
+ * gcalctool             # SebastienBacher
+ * gconf-editor          # SebastienBacher
+ * gdm
+ * gedit
+ * gimp
+ * gimp-print		# DanielHolbach: enable printing in gimp (part of gutenprint package)
+ * gnome-about
+ * gnome-applets
+ * gnome-app-install
+ * gnome-btdownload       # simple GNOME frontend for bittorrent downloads
+ * gnome-control-center
+ * gnome-cups-manager
+ * (gnome-games)
+ * gnome-icon-theme
+ * gnome-media
+ * gnome-menus
+ * gnome-netstatus-applet
+ * gnome-nettool            # part of 2.8
+ * gnome-panel
+ * gnome-pilot-conduits
+ * gnome-session
+ * gnome-spell
+ * gnome-keyring-manager    # DanielHolbach (was never seeded, now even more important, that evolution uses it)
+ * gnome-system-monitor     # SebastienBacher
+ * gnome-volume-manager     # JeffWaugh, gives us an efficient autoplay framework
+ * gnome-power-manager		# OliverGrawert finally ready for shipment
+ * gnome-system-tools
+ * gnome-terminal
+ * gnome-utils
+ * gnome2-user-guide
+ * ekiga
+ * libgnomevfs2-bin
+ * libgnomevfs2-extra
+ * libpt-plugins-v4l       # V4L1 plugins for use with ekiga
+ * libpt-plugins-v4l2      # V4L2 plugins for use with ekiga
+ * gthumb                  # efficient thumbnailing tool
+ * gucharmap               # SebastienBacher
+ * hal
+ * hal-device-manager
+ * hwdb-client-gnome
+ * language-selector	   # MichaelVogt
+ * metacity                # SebastienBacher
+ * firefox
+ * firefox-gnome-support
+ * nautilus                # SebastienBacher
+ * nautilus-cd-burner      # SebastienBacher
+ * nautilus-sendto
+ * notification-daemon           # backend for libnotify
+ * rhythmbox               # SebastienBacher
+ * serpentine		   # Oliver Grawert
+ * scrollkeeper
+ * alacarte		   # default menu editor
+ * sound-juicer
+ * ssh-askpass-gnome
+ * synaptic                # default GUI package manager
+ * libgnome2-perl          # so that the debconf GNOME frontend can be used from synaptic
+ * totem                   # SebastienBacher
+ * totem-mozilla
+ * update-notifier
+ * gdebi                   # view/install deb packages
+ * vino # vnc server
+ * yelp
+ * zenity
+ * esound
+
+Themes: we will ship only the very best looking themes. We won't ship everything that Debian ships, just a custom package that includes the themes we want. These packages are included for size guidance until we have Ubuntu-specific packages.
+
+ * gnome-themes
+ * gtk2-engines			# DanielHolbach (gtk2-engines were merged into one package)
+ * ubuntu-artwork
+ * ubuntu-sounds
+ * tangerine-icon-theme		# DanielHolbach (Mark's request)
+ * tango-icon-theme		# DanielHolbach (Mark's request, if Tangerine is good enough, maybe we can drop it out)
+ * tango-icon-theme-common	# DanielHolbach: split off of tangerine-icon-theme, so people from Xubuntu can use it too.
+
+The gstreamer0.10 packages we want to install:
+
+ * gstreamer0.10-alsa
+ * gstreamer0.10-esd
+ * gstreamer0.10-plugins-base-apps
+
+Accessibility tools:
+
+ * (gnome-accessibility-themes)
+ * (gnome-mag)
+ * (gnome-orca)
+ * (onboard)
+ * (brltty)
+ * (brltty-x11)
+ * (xcursor-themes)
+
+= Other Desktop GUI Apps =
+
+ * openoffice.org-gnome [i386 powerpc amd64]  # before OOo to avoid openoffice.org-style-default
+ * openoffice.org [i386 powerpc amd64]
+ * openoffice.org-evolution [i386 powerpc]
+ * xsane           # scanner utils
+ * evince
+ * (gnome-screensaver) # recommends to allow for xscreensaver to be used
+ * rss-glx         # MRS, very slick screensavers
+ * xscreensaver-gl # MRS, we will only ship a subset of the screensavers from rss-glx and xscreensaver
+ * xscreensaver-data # subset package for the non-gl screensavers we ship
+ * screensaver-default-images
+ * tsclient        # rdesktop/vnc/xdmcp client gui
+ * xvncviewer      # needed by tsclient
+ * tomboy [i386 powerpc amd64 ia64 sparc]  # Sebastian Dröge, approved by mdz
+ * f-spot [i386 powerpc amd64 ia64 sparc]  # Andrew Mitchell, approved by mdz
+
+= Games =
+
+ * fortune-mod		# Needed by some screensavers
+
+= Python =
+
+Python is a significant commitment, we will present Python wherever we can.
+
+Python Integrated Applications:
+
+ * gimp-python
+
+Documentation:
+
+ * diveintopython
+ * doc-base			# integrates with scrollkeeper
+ * ubuntu-docs
+
+= Development =
+
+Here we provide a minimal development environment sufficient to build kernel
+drivers, so that this is possible on the live CD and in scenarios where
+it is problematic to get these packages onto the installed system in order
+to compile a driver. -mdz
+
+ * (gcc)
+ * (make)
+ * (linux-headers-generic) [i386]
+ * (linux-headers-powerpc) [powerpc]
+ * (linux-headers-powerpc64-smp) [powerpc]
+ * (linux-headers-generic) [amd64]
+ * (linux-headers-itanium) [ia64]
+ * (linux-headers-mckinley) [ia64]
+ * (linux-headers-sparc64) [sparc]
+ * (linux-headers-hppa32) [hppa]
+ * (linux-headers-hppa64) [hppa]
+
+= Other =
+
+ * ubuntu-desktop # metapackage for everything here
+ * anacron # generally appropriate for desktops
+ * usplash
+ * usplash-theme-ubuntu
+ * libxp6 # required for some third party apps. See #15739
+ * libpam-foreground
+ * (example-content) # dholbach: dapper feature goal (wiki.ubuntu.com/ExampleContent)
+ * libstdc++5 [i386]	# doko: requested from some closed source applications
+ * landscape-client
+ * readahead
+
+= Germinate workarounds =
+
+ * libglut3 # depended upon by freeglut3
+ * libgl1-mesa-glx # depended upon by freeglut3

@@ -1,0 +1,124 @@
+== Kernel ==
+
+ * linux [amd64 i386 ia64 sparc]
+
+== Desktop ==
+
+A small first step to comprehensive certification. Unfortunately, lsb
+includes lsb-desktop, which pulls in both gtk and qt, so we pick individual
+modules instead.
+
+ * lsb-core
+ * lsb-cxx
+ * lsb-graphics
+
+== Server ==
+
+ * ssh
+ * lilo [amd64 i386]   # MattZimmerman wants this for server admins; needed for LVM installs
+ * ntp                 # FabioMassimoDiNitto
+ * ntp-simple
+ * ntp-server
+ * nfs-kernel-server   # need an NFS server
+ * apache2-mpm-worker  # ThomMay; for simple file/web serving -> add zeroconf and we have swish mac os x style :-)
+ * samba               # for Windows filesharing and integration
+ * nis                 # allows Kickstart to configure NIS
+ * postfix             # LaMontJones; our chosen mail server
+ * ltsp-server-standalone # for LTSP-on-install
+ * ltsp-client            # for LTSP-on-install
+ * ldm 				   # seeded because its not a hard dependency of ltsp-client anymore
+
+== Filesystems ==
+
+ * xfsprogs
+ * jfsutils
+ * hfsplus [powerpc]  # ColinWatson
+ * lvm2
+ * mdadm
+ * dmsetup
+
+== Networking ==
+
+ * mailx
+ * mutt                # ThomMay; we need a basic mail client, this is the best-smallest
+
+== NetworkManager ==
+
+ * network-manager        # magical network configuration - if it works for you
+ * network-manager-gnome  # desktop integration for network-manager
+
+== Development ==
+
+ * build-essential
+ * fakeroot
+ * devscripts          # Debian package development
+ * bzr                 # Obvious
+ * cvs                 # RobertCollins
+ * linux-headers-386 [i386]
+
+== Common UNIX stuff ==
+
+ * nfs-common		  # allows people to access NFS filesystems
+ * vim                    # vim-tiny is in minimal; vim includes syntax highlighting, help files, etc.
+
+== For X preconfiguration ==
+
+ * xresprobe
+ * laptop-detect
+ * discover1
+
+== For language support in the installer ==
+
+ * console-terminus
+ * unifont
+
+== Hardware & Network Access ==
+
+ * pptp-linux             # client for Microsoft-compatible VPN's, needed for some ISPs
+ * eagle-usb-utils        # needed for some ADSL modems
+ * bpalogin
+ * ndiswrapper-utils [amd64 i386]
+ * ndiswrapper-utils-1.8 [amd64 i386]
+
+ * nvidia-glx    # nvidia drivers, for multiseat, but also easy access
+
+ * ipppd
+ * isdnutils-xtools
+ * capiutils
+ * pppdcapiplugin
+ * linux-wlan-ng
+ * avm-fritz-firmware
+ * drdsl
+ * libatm1	# suggested by ppp for PPP-over-ATM
+ * setserial	# needed by folks with nonstandard serial ports
+
+== Common language packs ==
+
+ # must have
+ * Languages: en
+ * language-pack-${Languages}
+ * language-pack-gnome-${Languages}
+ * language-support-${Languages}
+
+ # most popular languages
+ * Languages: zh es bn hi ar xh pt ru ja de fr
+ * language-pack-${Languages}
+ * language-pack-gnome-${Languages}
+
+ # other languages, alphabetically, up to CD limit
+ * Languages: aa af am as az be bg br bs ca co cs cy da el eo et eu fa fi fil fo fur fy ga gd gl grc gu he
+ * language-pack-${Languages} [i386 amd64]
+ * language-pack-gnome-${Languages} [i386 amd64]
+ * Languages: hr hu hy ia id is it jbo jv
+ * language-pack-${Languages} [amd64]
+ * language-pack-gnome-${Languages} [amd64]
+
+== Installer ==
+
+ * oem-config-gtk
+
+== Transitional packages ==
+
+ * openoffice.org-gtk-gnome [i386 powerpc amd64 sparc]
+ * openoffice.org-l10n-en-us	# mvo: make dapper->edgy cdrom upgrades happy
+ * linux-image-amd64-generic [amd64]
