@@ -2,6 +2,9 @@
 set -e
 
 /var/mirror/bin/update-ubuntu-edgy-mirror
+cd /var/mirror/bin/
+./update-derivative-repository
+cd -
 
 ########## This script originates from http://www.debian.org/mirror/anonftpsync
 #########
