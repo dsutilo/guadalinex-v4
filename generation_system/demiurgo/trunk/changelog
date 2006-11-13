@@ -7,3 +7,7 @@
 * cambiado debian-cd/Makefile: regla bin-doc, se ha comentado
 * instalado fakeroot
 * instalado mkisofs
+* Añadida funcion get_svn_rev en bin/functions
+
+* generado bin/get-seeds
+* instalado procmail, se requiere un ejecutable llamado lockfile que provee procmail
