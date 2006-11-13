@@ -19,7 +19,7 @@
 
 
 revision="$Rev$"
-log_file="/var/log/glig-$(date +%Y%d%M%H%M).log"
+log_file="/var/log/glig-$(date +%Y%m%d%H%M).log"
 
 # Functions
 function error() {
