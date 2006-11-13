@@ -1,0 +1,31 @@
+#ifdef ARCH_i386
+avm-fritz-firmware
+avm-fritz-firmware-2.6.17-10
+bpalogin
+build-essential
+capiutils
+dpkg-dev
+drdsl
+eagle-usb-data
+eagle-usb-utils
+fakeroot
+g++
+g++-4.1
+ipppd
+isdnutils-base
+isdnutils-xtools
+libatm1
+libc6-dev
+libcapi20-3
+libcapi20-dev
+libstdc++6-4.1-dev
+linux-libc-dev
+linux-wlan-ng
+ndiswrapper-common
+ndiswrapper-utils
+ndiswrapper-utils-1.1
+ndiswrapper-utils-1.8
+pppdcapiplugin
+pptp-linux
+setserial
+#endif /* ARCH_i386 */

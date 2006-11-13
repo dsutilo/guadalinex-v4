@@ -42,6 +42,8 @@ if [ "${RESTRICTED:-0}" != "0" ]; then
 	sections="$sections restricted"
 fi
 
+sections="$sections toro"
+
 # Check for the necessary dirs and files ...
 if [ ! -d "$APTTMP/$CODENAME-$FULLARCH/apt-state/lists/partial" ]; then
 	mkdir -p "$APTTMP/$CODENAME-$FULLARCH/apt-state/lists/partial"
@@ -101,6 +103,18 @@ if [ ! -e "$APTTMP/$CODENAME-$FULLARCH/apt/sources.list" ]; then
 	  fi
 	  if [ "${UPDATES:-0}" != "0" ]; then
 	    echo "deb file:$MIRROR $DI_CODENAME-updates restricted/debian-installer" \
+	    >> $APTTMP/$CODENAME-$FULLARCH/apt/sources.list
+	  fi
+	fi
+	if [ -e "$MIRROR/dists/$DI_CODENAME/toro/debian-installer" ]; then
+	  echo "deb file:$MIRROR $DI_CODENAME toro/debian-installer" \
+	  >> $APTTMP/$CODENAME-$FULLARCH/apt/sources.list
+	  if [ -n "$SECURITY" ]; then
+	    echo "deb file:${SECURITY:-$MIRROR} $DI_CODENAME-security toro/debian-installer" \
+	    >> $APTTMP/$CODENAME-$FULLARCH/apt/sources.list
+	  fi
+	  if [ "${UPDATES:-0}" != "0" ]; then
+	    echo "deb file:$MIRROR $DI_CODENAME-updates toro/debian-installer" \
 	    >> $APTTMP/$CODENAME-$FULLARCH/apt/sources.list
 	  fi
 	fi

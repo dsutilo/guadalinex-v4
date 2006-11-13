@@ -251,6 +251,8 @@ gettext-el
 gettext-kde
 gftp-common
 gftp-gtk
+gfxboot
+gfxboot-theme-guadalinex
 gimp-dbg
 gimp-help-common
 gimp-help-cs

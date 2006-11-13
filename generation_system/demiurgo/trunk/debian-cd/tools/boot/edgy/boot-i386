@@ -26,7 +26,6 @@ fi
 default_preseed
 
 cd $CDDIR/..
-
 #
 # This script is called with $1 (now $N) as the CD to 
 # make bootable.  N may be in the form "n" or "n_NONUS"
@@ -78,11 +77,12 @@ if [ "$NN" = "1" ]; then
 	tar zxf - -C . ./usr/lib/syslinux/isolinux.bin)
     mv usr/lib/syslinux/isolinux.bin boot$N/isolinux/
 
+    GFXBOOT_PKG="gfxboot-theme-$DERIVATIVE"
     GFXBOOT=
-    if THEMEDEB="$($BASEDIR/tools/apt-selection cache show gfxboot-theme-ubuntu)"; then
+    if THEMEDEB="$($BASEDIR/tools/apt-selection cache show $GFXBOOT_PKG)"; then
 	THEMEDEB="$(echo "$THEMEDEB" | grep ^Filename | awk '{print $2}')"
-	ar p "$MIRROR/$THEMEDEB" data.tar.gz | tar zxf - -C . ./usr/share/gfxboot-theme-ubuntu/bootlogo.tar.gz
-	tar zxf usr/share/gfxboot-theme-ubuntu/bootlogo.tar.gz -C boot$N/isolinux
+	ar p "$MIRROR/$THEMEDEB" data.tar.gz | tar zxf - -C . ./usr/share/$GFXBOOT_PKG/bootlogo.tar.gz
+	tar zxf usr/share/$GFXBOOT_PKG/bootlogo.tar.gz -C boot$N/isolinux
 	GFXBOOT=1
     fi
 

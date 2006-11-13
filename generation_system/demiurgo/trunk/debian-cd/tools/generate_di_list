@@ -46,6 +46,12 @@ foreach my $arch (@ARCHES) {
 			push @udebs, map { chomp; $_ } `zcat \Q$restrictedpackagefile\E | grep-dctrl -n -s Package ''`;
 		}
 	}
+
+	$toropackagefile = "$ENV{MIRROR}/dists/$ENV{DI_CODENAME}/toro/debian-installer/binary-$arch/Packages.gz";
+	if (-f $packagefile) {
+		push @udebs, map { chomp; $_ } `zcat \Q$toropackagefile\E | grep-dctrl -n -s Package ''`;
+	}
+
 	if (defined $ENV{LOCALDEBS}) {
 		$localpackagefile = "$ENV{LOCALDEBS}/dists/$ENV{DI_CODENAME}/local/debian-installer/binary-$arch/Packages.gz";
 		if (-f $packagefile) {
