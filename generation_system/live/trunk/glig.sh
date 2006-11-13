@@ -157,17 +157,17 @@ function copy_files() {
     if [ -f "${live_dir}livecd.ubuntu.initrd-generic" ]; then
         rm -f ${live_dir}livecd.ubuntu.initrd-generic
     fi
-    intrd=$(reaidlink ${sources}initrd.img)
-    test -a $"initrd" && error "${sources}initrd.img not found"
-    cp ${initrd} ${live_dir}livecd.ubuntu.initrd-generic 
+    intrd=$(readlink ${sources}initrd.img)
+    test -a "${sources}${initrd}" && error "${sources}initrd.img not found"
+    cp ${sources}${initrd} ${live_dir}livecd.ubuntu.initrd-generic 
     log_it "$?" "copy initrd"
 
     if [ -f "${live_dir}livecd.ubuntu.kernel-generic" ]; then
-        rm -f ${live_dir}livecd.ubuntu.kernel-generic
+    	rm -f ${live_dir}livecd.ubuntu.kernel-generic
     fi
     kernel=$(readlink ${sources}vmlinuz)
-    test -a "$kernel" && error "${sources}vmlinuz not found"
-    cp ${kernel} ${live_dir}livecd.ubuntu.kernel-generic 
+    test -a "${sources}${kernel}" && error "${sources}vmlinuz not found"
+    cp ${sources}${kernel} ${live_dir}livecd.ubuntu.kernel-generic 
     log_it "$?" "copy kernel"
 
 }
@@ -176,16 +176,16 @@ function usage() {
 
     cat <<EOF
 Usage:
-    $0 [-h] [-d | --deboostrap] [-s | --squashfs] [-k | --keep-sources]
+    $0 [-h] [-d | --no-deboostrap] [-s | --no-squashfs] [-k | --keep-sources] \
+       [-q | --quiet] [-v | --verbose]
 
 Options:
-    -h                   Show this help
-    -d, --debootstrap    Build from the packages
-    -s, --squashfs       Create the squashfs image
-    -k, --keep-sources   Keep the sources directory after finish
-    -q, --quiet          Don't show any messages
-    -k, --keep-sources   Keep the sources directory after finish
-
+    -h                     Show this help
+    -d, --no-debootstrap   Not to build from the packages
+    -s, --no-squashfs      Not to create the squashfs image
+    -k, --keep-sources     Keep the sources directory after finish
+    -q, --quiet            Don't show any messages
+    -v, --verbose          Show more information about the execution
 
 EOF
 
@@ -203,9 +203,9 @@ do
         h) usage
             exit 0
             ;;
-        d) debootstrap="yes"
+        d) debootstrap="no"
             ;;
-        s) squashfs="yes"
+        s) squashfs="no"
             ;;
         k) keep_sources="yes"
             ;;
