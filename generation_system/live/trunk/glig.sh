@@ -129,7 +129,7 @@ function create_manifests() {
     if [ -f "$filter" ]; then
         rm -f $filter
     fi
-    for i in {$live}
+    for i in $(echo $live | tr ',' ' ' );
         do
         echo "/$i/d" >> $filter
     done
@@ -157,8 +157,8 @@ function copy_files() {
     if [ -f "${live_dir}livecd.ubuntu.initrd-generic" ]; then
         rm -f ${live_dir}livecd.ubuntu.initrd-generic
     fi
-    intrd=$(readlink ${sources}initrd.img)
-    test -a "${sources}${initrd}" && error "${sources}initrd.img not found"
+    initrd=$(readlink ${sources}initrd.img)
+    test -f "${sources}${initrd}" || error "${sources}initrd.img not found"
     cp ${sources}${initrd} ${live_dir}livecd.ubuntu.initrd-generic 
     log_it "$?" "copy initrd"
 
@@ -166,7 +166,7 @@ function copy_files() {
     	rm -f ${live_dir}livecd.ubuntu.kernel-generic
     fi
     kernel=$(readlink ${sources}vmlinuz)
-    test -a "${sources}${kernel}" && error "${sources}vmlinuz not found"
+    test -f "${sources}${kernel}" || error "${sources}vmlinuz not found"
     cp ${sources}${kernel} ${live_dir}livecd.ubuntu.kernel-generic 
     log_it "$?" "copy kernel"
 
