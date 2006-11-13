@@ -13,12 +13,12 @@
 #
 # Last modified: 
 #   $Date$ 
-#   $Author:  $
+#   $Author$
 #
 
 
 
-revision="$Rev: $"
+revision="$Rev$"
 log_file="/var/log/glig-$(date +%Y%d%M%H%M).log"
 
 # Functions
