@@ -1,0 +1,15 @@
+Source: glig
+Section: admin
+Priority: optional
+Maintainer: Junta de Andalucía <packmaster@guadalinex.org>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.2.1
+
+Package: glig
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, debootstrap, mkisofs, squashfs-tools
+Recommends: 
+Description: Guadalinex Live Image Generator system
+ GLIG is a system for generating all the files the software cdimage needs to
+ create a live CD or DVD.
+
