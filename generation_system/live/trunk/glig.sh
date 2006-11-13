@@ -1,25 +1,50 @@
 #!/bin/bash
 
-# Define variables
-mirror="file:///var/mirror/ubuntu/"
-live_dir="/var/cdimage/live/edgy/ubuntu/current/"
-
-sources="/tmp/sources/"
-escaped_sources=$(echo $sources | sed 's|/|\\/|g')
-
-base="ubuntu-desktop,linux-image-generic"
-live="casper,ubiquity-frontend-gtk,ubiquity-ubuntu-artwork,xfsprogs,jfsutils,ntfsprogs,discover1,xresprobe,laptop-detect"
-
-# Parameters vars to default values
-debootstrap="yes"
-squashfs="yes"
-keep_sources="no"
+log_file="/var/log/glig-$(date +%Y%d%M%H%M).log"
 
 # Functions
 function error() {
 
 	echo "Error: $*"
 	exit
+
+}
+
+function log_it() {
+
+	code="$1"
+	shift
+	msg="$*"
+	case $code in
+		0)
+			echo "${msg} ($(date +'%b %e %H:%M:%S')): OK" | tee -a $log_file
+			;;
+		*)
+			echo "${msg} ($(date +'%b %e %H:%M:%S')): Fail" | tee -a $log_file #FIXME: Hacer echo por stderr?
+			;;
+	esac
+}
+
+function get_config() {
+
+	paths="/etc/glig:$HOME/glig:."
+	
+	any_path=false
+	for path in paths:
+		do
+		if [ -f "${path}/conf" ]; then
+			. ${path}/conf
+			any_path=true
+		fi
+	done
+	
+	if [ $any_path = false ]; then
+		error "There is not any conf file in $paths"
+		exit
+	fi
+	
+	escaped_sources=$(echo $sources | sed 's|/|\\/|g')
+	log_it "$?" "get_config"
 
 }
 
@@ -41,6 +66,8 @@ function do_debootstrap() {
 
 	debootstrap --include=${base},${live} edgy ${sources} ${mirror}
 
+	log_it "$?" "do debootstrap"
+
 	# HACK: This is a ugly hack for avoiding the debconf ask to configure 
         # the kernel package
 	cat <<EOF > ${sources}/etc/kernel-img.conf
@@ -54,15 +81,21 @@ EOF
 
 	# Force install and clean
 	apt_get install 
+	log_it "$?" "force apt-get install"
 	apt_get clean
+	log_it "$?" "force apt-get clean"
 	
 	# Umount pocfs inside sources, if any
 	umount_sources
+	log_it "$?" "force umount"
+
 }
 
 function create_manifests() {
 
 	chroot ${sources} dpkg-query -W --showformat='${Package} ${Version}\n' > ${live_dir}livecd.ubuntu.manifest
+
+	log_it "$?" "create manifest"
 
 	filter="/tmp/filter"
 	if [ -f "$filter" ]; then
@@ -74,6 +107,9 @@ function create_manifests() {
 	done
 	
 	sed -f $filter < ${live_dir}livecd.ubuntu.manifest > ${live_dir}livecd.ubuntu.manifest-desktop 
+
+	log_it "$?" "create manifest-desktop"
+
 	rm -f $filter
 }
 
@@ -83,6 +119,8 @@ function create_squashfs() {
 		rm -f ${live_dir}livecd.ubuntu.squashfs
 	fi
 	mksquashfs ${sources} ${live_dir}livecd.ubuntu.squashfs
+
+	log_it "$?" "create squashfs"
 
 }
 
@@ -94,6 +132,7 @@ function copy_files() {
 	intrd=$(reaidlink ${sources}initrd.img)
 	test -a $"initrd" && error "${sources}initrd.img not found"
 	cp ${initrd} ${live_dir}livecd.ubuntu.initrd-generic 
+	log_it "$?" "copy initrd"
 
 	if [ -f "${live_dir}livecd.ubuntu.kernel-generic" ]; then
 		rm -f ${live_dir}livecd.ubuntu.kernel-generic
@@ -101,6 +140,7 @@ function copy_files() {
 	kernel=$(readlink ${sources}vmlinuz)
 	test -a "$kernel" && error "${sources}vmlinuz not found"
 	cp ${kernel} ${live_dir}livecd.ubuntu.kernel-generic 
+	log_it "$?" "copy kernel"
 
 }
 
@@ -114,14 +154,18 @@ Options:
 	-d, --debootstrap    Build from the packages
 	-s, --squashfs       Create the squashfs image
         -k, --keep-sources   Keep the sources directory after finish
+        -q, --quiet         Don't show any messages
+        -k, --keep-sources   Keep the sources directory after finish
 
 
 EOF
 }
 
-########
+######## Here starts the script ########
 
-while getopts "hdsk" options
+get_config
+
+while getopts "hdskqv" options
 do
 	case $options in
 		h) usage
@@ -133,12 +177,24 @@ do
 			;;
 		k) keep_sources="yes"
 			;;
+		q) quiet="yes"
+			;;
+		v) verbose="yes"
+			;;
 		*) usage
 			exit 0
 			;;
 	esac
 done
 
+
+if [ "$quiet" = "yes" ]; then
+	exec 2> $log_file
+fi
+
+if [ "$verbose" = "yes" ]; then
+	set -x
+fi
 
 if [ "$debootstrap" = "yes" ]; then
 	do_debootstrap

@@ -1,0 +1,16 @@
+# Define variables
+mirror="file:///var/mirror/ubuntu/"
+live_dir="/var/cdimage/live/edgy/ubuntu/current/"
+
+sources="/tmp/sources/"
+
+base="ubuntu-desktop,linux-image-generic"
+live="casper,ubiquity-frontend-gtk,ubiquity-ubuntu-artwork,xfsprogs,jfsutils,ntfsprogs,discover1,xresprobe,laptop-detect"
+
+# Parameters vars to default values
+debootstrap="yes"
+squashfs="yes"
+keep_sources="no"
+verbose="no"
+
+
