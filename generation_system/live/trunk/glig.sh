@@ -24,7 +24,7 @@ log_file="/var/log/glig-$(date +%Y%m%d%H%M).log"
 # Functions
 function error() {
 
-    echo "Error: $*"
+    echo "Error: $*" >&2 
     exit
 
 }
@@ -48,7 +48,7 @@ function log_it() {
             echo "${msg} ($(date +'%b %e %H:%M:%S')): OK" | tee -a $log_file
             ;;
         *)
-            echo "${msg} ($(date +'%b %e %H:%M:%S')): Fail" | tee -a $log_file #FIXME: Hacer echo por stderr?
+            echo "${msg} ($(date +'%b %e %H:%M:%S')): Fail" | tee -a $log_file >&2
             ;;
     esac
 }
