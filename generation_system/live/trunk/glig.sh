@@ -27,10 +27,10 @@ function log_it() {
 
 function get_config() {
 
-	paths="/etc/glig:$HOME/glig:."
+	paths="/etc/glig $HOME/glig ."
 	
 	any_path=false
-	for path in paths:
+	for path in $paths;
 		do
 		if [ -f "${path}/conf" ]; then
 			. ${path}/conf
