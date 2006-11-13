@@ -172,6 +172,8 @@ EOF
 
 ######## Here starts the script ########
 
+must_be_root
+
 get_config
 
 while getopts "hdskqv" options
@@ -204,8 +206,6 @@ fi
 if [ "$verbose" = "yes" ]; then
 	set -x
 fi
-
-must_be_root
 
 if [ "$debootstrap" = "yes" ]; then
 	do_debootstrap
