@@ -10,6 +10,15 @@ function error() {
 
 }
 
+function must_be_root() {
+
+	id=$(id -u)
+	if [ "$id" != 0 ]; then
+		error "You are not a root and you need to be root to run this script"
+	fi
+
+}
+
 function log_it() {
 
 	code="$1"
@@ -189,12 +198,14 @@ done
 
 
 if [ "$quiet" = "yes" ]; then
-	exec 2> $log_file
+	exec &> $log_file
 fi
 
 if [ "$verbose" = "yes" ]; then
 	set -x
 fi
+
+must_be_root
 
 if [ "$debootstrap" = "yes" ]; then
 	do_debootstrap
