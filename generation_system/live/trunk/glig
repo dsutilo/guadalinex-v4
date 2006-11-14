@@ -202,9 +202,10 @@ function copy_files() {
 
 function usage() {
 
+    program=$(basename $0)
     cat <<EOF
 Usage:
-    $0 [-h] [-d | --no-deboostrap] [-s | --no-squashfs] [-k | --keep-sources] \
+    $program [-h] [-d | --no-deboostrap] [-s | --no-squashfs] [-k | --keep-sources] \
 [-q | --quiet] [-v | --verbose]
 
 Options:
