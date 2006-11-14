@@ -76,6 +76,34 @@ function get_config() {
 
 }
 
+function set_config() {
+
+    debootstrap=${_debootstrap:-${debootstrap}}
+    squashfs=${_squashfs:-${squashfs}}
+    keep_sources=${_keep_sources:-${keep_sources}}
+    quiet=${_quiet:-${quiet}}
+    verbose=${_verbose:-${verbose}}
+
+    cat <<EOF > $log_file
+
+Configuration values:
+  mirror       = $mirror
+  live_dir     = $live_dir
+  sources      = $sources
+  base         = $base
+  live         = $live
+  debootstrap  = $debootstrap
+  squashfs     = $squashfs
+  keep_sources = $keep_sources
+  quiet        = $quiet
+  verbose      = $verbose
+
+EOF
+
+    log_it "$?" "Setting the config"
+
+}
+
 function apt_get() {
 
     export LC_ALL=C LANGUAGE=C LANG=C DEBIAN_FRONTEND=noninteractive 
@@ -193,10 +221,6 @@ EOF
 
 ######## Here starts the script ########
 
-must_be_root
-
-get_config
-
 while [ "$#" -gt 0 ]
 do
     case $1 in
@@ -205,23 +229,23 @@ do
                 exit 0
                 ;;
         -d|--no-debootstrap)
-                debootstrap="no"
+                _debootstrap="no"
                 shift
                 ;;
         -s|--no-squashfs) 
-                squashfs="no"
+                _squashfs="no"
                 shift
                 ;;
         -k|--keep-sources) 
-                keep_sources="yes"
+                _keep_sources="yes"
                 shift
                 ;;
         -q|--quiet)  
-                quiet="yes"
+                _quiet="yes"
                 shift
                 ;;
         -v|--verbose) 
-                verbose="yes"
+                _verbose="yes"
                 shift
                 ;;
         *) 
@@ -231,6 +255,11 @@ do
     esac
 done
 
+must_be_root
+
+get_config
+
+set_config
 
 if [ "$quiet" = "yes" ]; then
     exec &> $log_file
