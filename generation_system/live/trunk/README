@@ -6,20 +6,27 @@ Description:
 It means with this software you can generate a Live system based on Guadalinex
 or Ubuntu (6.10 or higher).
 
+This program is complementary part of cdimage, the system for generating Ubuntu
+CD/DVDs. What it makes is generate all the files the cdimage needs to create a
+live CD/DVD version of a distro.
+
+The files that are generates by this system are:
+- livecd.ubuntu.kernel-generic
+- livecd.ubuntu.manifest
+- livecd.ubuntu.manifest-desktop
+- livecd.ubuntu.squashfs
+
+
 IMPORTANT: GLIG is definitive not a remaster system and neither an "I install
 whatever I want, by hand, into a chrooted directory and customized, also by hand,
 all the artwork stuff" system.
 This is a packages based and repository oriented system.
 
-NOTE: This is on a very early stage of the development so don't expect an hole
-and complex system. It's just starting, but soon it's be a fully operative
-version.
-
 How does it work?:
 
 This is a common Debian/Ubuntu package which depend of a few other packages
 (syslinux, mkisofs, squashfs-tools, debootstrap and maybe another one). And
-also is a python script who can be used automatically, by using a config
+also is a shell script who can be used automatically, by using a config
 file, or on the fly, by passing options as parameters.
 
 The process is... the script call to 'debootstrap' program indicating a 
@@ -35,6 +42,6 @@ of it, and the rest of stuff you may need for a "Ubuntu alike" live system,
 as the usplash and isolinux/gfxboot themes for the booting, the md5sum file
 for the cd integrity checking and so on.
 
-TRACE:
+
 
 
