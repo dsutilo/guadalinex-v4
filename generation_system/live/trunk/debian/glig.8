@@ -1,0 +1,54 @@
+.TH "glig" "8" "0.1" "Juan Jesús Ojeda Croissier" ""
+.SH "NAME"
+.LP 
+GLIG \- Guadalinex Live Image Generator
+.SH "SYNTAX"
+.LP 
+glig [\-h] [\-d|\-\-no\-deboostrap] [\-s|\-\-no\-squashfs] [\-k|\-\-keep\-sources] [\-q|\-\-quiet] [\-v|\-\-verbose]
+.br 
+.SH "DESCRIPTION"
+.LP 
+This program generate a chroot system from a debian repository in order
+to create a squashfs compressed image of that system for being able to run
+as a live GNU/Linux system.
+
+.SH "OPTIONS"
+.LP 
+.TP 
+\fB\-h, \-\-help\fR
+Show this help
+.TP 
+\fB\-d, \-\-no\-debootstrap\fR
+Not to build from the packages
+.TP 
+\fB\-s, \-\-no\-squashfs\fR
+Not to create the squashfs image
+.TP 
+\fB\-k, \-\-keep\-sources\fR
+Keep the sources directory after finish
+.TP 
+\fB\-q, \-\-quiet\fR
+Don't show any messages
+.TP 
+\fB\-v, \-\-verbose\fR
+Show more information about the execution
+.TP 
+.SH "FILES"
+.LP 
+\fI/etc/glig/conf\fP 
+.br 
+.SH "EXAMPLES"
+.LP 
+To run this program the standard way type:
+.LP 
+glig
+.LP 
+Alternativly you can run it as:
+.LP 
+glig \-dsk
+.SH "AUTHORS"
+.LP 
+Juan Jesús Ojeda Croissier <jojeda@emergya.es>
+.SH "SEE ALSO"
+.LP 
+mkisofs(8) mksquashfs(8)

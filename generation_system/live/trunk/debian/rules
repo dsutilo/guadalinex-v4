@@ -3,8 +3,7 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 export DEB_DH_ALWAYS_EXCLUDE=".svn"
+DEB_INSTALL_MANPAGES_glig := debian/glig.8
 
 include /usr/share/cdbs/1/rules/debhelper.mk
 
-pre-build::
-	chmod +x glig.sh
