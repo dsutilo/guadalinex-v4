@@ -177,10 +177,10 @@ function usage() {
     cat <<EOF
 Usage:
     $0 [-h] [-d | --no-deboostrap] [-s | --no-squashfs] [-k | --keep-sources] \
-       [-q | --quiet] [-v | --verbose]
+[-q | --quiet] [-v | --verbose]
 
 Options:
-    -h                     Show this help
+    -h, --help             Show this help
     -d, --no-debootstrap   Not to build from the packages
     -s, --no-squashfs      Not to create the squashfs image
     -k, --keep-sources     Keep the sources directory after finish
@@ -197,25 +197,37 @@ must_be_root
 
 get_config
 
-while getopts "hdskqv" options
+while [ "$#" -gt 0 ]
 do
-    case $options in
-        h) usage
-            exit 0
-            ;;
-        d) debootstrap="no"
-            ;;
-        s) squashfs="no"
-            ;;
-        k) keep_sources="yes"
-            ;;
-        q) quiet="yes"
-            ;;
-        v) verbose="yes"
-            ;;
-        *) usage
-            exit 0
-            ;;
+    case $1 in
+        -h|--help) 
+                usage
+                exit 0
+                ;;
+        -d|--no-debootstrap)
+                debootstrap="no"
+                shift
+                ;;
+        -s|--no-squashfs) 
+                squashfs="no"
+                shift
+                ;;
+        -k|--keep-sources) 
+                keep_sources="yes"
+                shift
+                ;;
+        -q|--quiet)  
+                quiet="yes"
+                shift
+                ;;
+        -v|--verbose) 
+                verbose="yes"
+                shift
+                ;;
+        *) 
+                usage
+                exit 0
+                ;;
     esac
 done
 
