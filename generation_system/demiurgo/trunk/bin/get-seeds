@@ -1,7 +1,7 @@
 #!/bin/sh
 
 SEEDS_URL="http://people.ubuntu.com/~cjwatson/seeds/edgy"
-SEEDS="blacklist  boot  desktop  development  dns-server  installer  lamp-server  live  minimal  server-ship  ship  ship-live  standard  STRUCTURE  supported"
+SEEDS="blacklist  boot  desktop  development  dns-server  installer  lamp-server  live  minimal  server-ship  ship  ship-live  standard  STRUCTURE  supported guada"
 
 [ ! -d $CDIMAGE_ROOT/seeds/edgy ] && mkdir -p $CDIMAGE_ROOT/seeds/edgy
 cd $CDIMAGE_ROOT/seeds/edgy
