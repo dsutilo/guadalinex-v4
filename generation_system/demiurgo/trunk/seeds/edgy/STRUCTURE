@@ -1,11 +1,12 @@
 minimal:
 boot:
+guada:
 standard: minimal
 desktop: minimal standard
 dns-server: minimal standard
 lamp-server: minimal standard
 server-ship: boot minimal standard dns-server lamp-server
-ship: boot minimal standard desktop
+ship: boot minimal standard desktop guada
 live: minimal standard desktop
 ship-live: boot minimal standard desktop live
 installer:

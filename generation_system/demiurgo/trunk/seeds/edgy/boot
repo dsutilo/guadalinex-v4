@@ -15,7 +15,6 @@ restricted modules.
 
  * grub [amd64 i386]                      # lilo will be in supported
  * ${Kernel-Stem}-386 [i386]              # our chosen default install kernel
- * gfxboot-theme-guadalinex
 
 == powerpc ==
 
