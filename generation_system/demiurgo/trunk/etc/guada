@@ -3,4 +3,5 @@
 
 # Name of the derivative distribution 
 export DERIVATIVE="guadalinex"
+export DERIVATIVE_CN="toro"
 
