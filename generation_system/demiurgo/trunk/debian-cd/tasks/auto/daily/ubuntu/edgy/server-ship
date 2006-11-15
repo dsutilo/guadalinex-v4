@@ -243,7 +243,11 @@ libtimedate-perl
 libtool
 liburi-perl
 libwww-perl
+libx11-6
+libx11-data
+libxau6
 libxaw7
+libxdmcp6
 libxext6
 libxml2-dev
 libxmu6

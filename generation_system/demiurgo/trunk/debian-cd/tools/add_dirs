@@ -49,8 +49,8 @@ if [ "${RESTRICTED:-0}" != "0" ]; then
     mkdir -p dists/$CODENAME/restricted/source
 fi
 
-mkdir -p dists/$CODENAME/toro/binary-$ARCH
-mkdir -p dists/$CODENAME/toro/source
+mkdir -p dists/$CODENAME/$DERIVATIVE_CN/binary-$ARCH
+mkdir -p dists/$CODENAME/$DERIVATIVE_CN/source
 
 if [ -n "$LOCAL"  -a -e "${LOCALDEBS:-$MIRROR}/dists/$DI_CODENAME/local/debian-installer" ]; then
     mkdir -p dists/$CODENAME/local/debian-installer/binary-$ARCH
@@ -63,8 +63,8 @@ if [ "${RESTRICTED:-0}" != "0" ] && \
     mkdir -p dists/$CODENAME/restricted/debian-installer/binary-$ARCH
 fi
 
-[ -e "$MIRROR/dists/$DI_CODENAME/toro/debian-installer" ] &&
-    mkdir -p dists/$CODENAME/toro/debian-installer/binary-$ARCH   
+[ -e "$MIRROR/dists/$DI_CODENAME/$DERIVATIVE_CN/debian-installer" ] &&
+    mkdir -p dists/$CODENAME/$DERIVATIVE_CN/debian-installer/binary-$ARCH   
 
 if [ -n "$NONUS" ]; then
     mkdir -p dists/$CODENAME/non-US/main/binary-$ARCH

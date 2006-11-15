@@ -563,7 +563,7 @@ ifeq ($(CDIMAGE_INSTALL_BASE),1)
 	    if [ "$$RESTRICTED" = 1 ]; then \
 		echo 'restricted' >> $(BDIR)/CD$$DISK/.disk/base_components; \
 	    fi; \
-	    echo 'toro' >>  $(BDIR)/CD$$DISK/.disk/base_components; \
+	    echo "$(DERIVATIVE_CN)" >>  $(BDIR)/CD$$DISK/.disk/base_components; \
 	    if [ -n "$(UDEB_INCLUDE)" ] ; then \
 		if [ -r "$(UDEB_INCLUDE)" ] ; then \
 		    cp -af "$(UDEB_INCLUDE)" \

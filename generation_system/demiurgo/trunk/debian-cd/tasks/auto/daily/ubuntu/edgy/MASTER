@@ -3,4 +3,5 @@
 #include <ubuntu/edgy/minimal>
 #include <ubuntu/edgy/standard>
 #include <ubuntu/edgy/desktop>
+#include <ubuntu/edgy/guada>
 #include <ubuntu/edgy/ship>

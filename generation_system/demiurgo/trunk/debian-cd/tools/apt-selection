@@ -42,7 +42,7 @@ if [ "${RESTRICTED:-0}" != "0" ]; then
 	sections="$sections restricted"
 fi
 
-sections="$sections toro"
+sections="$sections $DERIVATIVE_CN"
 
 # Check for the necessary dirs and files ...
 if [ ! -d "$APTTMP/$CODENAME-$FULLARCH/apt-state/lists/partial" ]; then
@@ -106,15 +106,15 @@ if [ ! -e "$APTTMP/$CODENAME-$FULLARCH/apt/sources.list" ]; then
 	    >> $APTTMP/$CODENAME-$FULLARCH/apt/sources.list
 	  fi
 	fi
-	if [ -e "$MIRROR/dists/$DI_CODENAME/toro/debian-installer" ]; then
-	  echo "deb file:$MIRROR $DI_CODENAME toro/debian-installer" \
+	if [ -e "$MIRROR/dists/$DI_CODENAME/$DERIVATIVE_CN/debian-installer" ]; then
+	  echo "deb file:$MIRROR $DI_CODENAME $DERIVATIVE_CN/debian-installer" \
 	  >> $APTTMP/$CODENAME-$FULLARCH/apt/sources.list
 	  if [ -n "$SECURITY" ]; then
-	    echo "deb file:${SECURITY:-$MIRROR} $DI_CODENAME-security toro/debian-installer" \
+	    echo "deb file:${SECURITY:-$MIRROR} $DI_CODENAME-security $DERIVATIVE_CN/debian-installer" \
 	    >> $APTTMP/$CODENAME-$FULLARCH/apt/sources.list
 	  fi
 	  if [ "${UPDATES:-0}" != "0" ]; then
-	    echo "deb file:$MIRROR $DI_CODENAME-updates toro/debian-installer" \
+	    echo "deb file:$MIRROR $DI_CODENAME-updates $DERIVATIVE_CN/debian-installer" \
 	    >> $APTTMP/$CODENAME-$FULLARCH/apt/sources.list
 	  fi
 	fi

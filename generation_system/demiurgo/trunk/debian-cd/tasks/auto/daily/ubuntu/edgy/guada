@@ -1,0 +1,31 @@
+#ifdef ARCH_i386
+belocs-locales-bin
+coreutils
+debconf
+debconf-i18n
+debianutils
+gfxboot
+gfxboot-theme-guadalinex
+libacl1
+libattr1
+libc6
+liblocale-gettext-perl
+libncurses5
+libselinux1
+libsepol1
+libtext-charwidth-perl
+libtext-iconv-perl
+libtext-wrapi18n-perl
+libx11-6
+libx11-data
+libxau6
+libxdmcp6
+locales
+lsb-base
+mktemp
+ncurses-bin
+perl-base
+sed
+tzdata
+x11-common
+#endif /* ARCH_i386 */

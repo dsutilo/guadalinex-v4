@@ -24,7 +24,7 @@ base-passwd  Task  ubuntu-minimal
 bash  Task  ubuntu-minimal
 bc  Task  ubuntu-desktop
 beforelight  Task  ubuntu-desktop
-belocs-locales-bin  Task  ubuntu-minimal
+belocs-locales-bin  Task  ubuntu-minimal, guada
 bind9-host  Task  ubuntu-standard
 binfmt-support  Task  ubuntu-desktop
 binutils  Task  ubuntu-desktop
@@ -51,7 +51,7 @@ console-setup  Task  ubuntu-minimal
 console-terminus  Task  ubuntu-minimal
 console-tools  Task  ubuntu-minimal
 contact-lookup-applet  Task  ubuntu-desktop
-coreutils  Task  ubuntu-minimal
+coreutils  Task  ubuntu-minimal, guada
 cpio  Task  ubuntu-minimal
 cpp  Task  ubuntu-desktop
 cpp-4.1  Task  ubuntu-desktop
@@ -65,9 +65,9 @@ dash  Task  ubuntu-minimal
 dbus  Task  ubuntu-desktop
 dbus-1-utils  Task  ubuntu-desktop
 dc  Task  ubuntu-desktop
-debconf  Task  ubuntu-minimal
-debconf-i18n  Task  ubuntu-minimal
-debianutils  Task  ubuntu-minimal
+debconf  Task  ubuntu-minimal, guada
+debconf-i18n  Task  ubuntu-minimal, guada
+debianutils  Task  ubuntu-minimal, guada
 defoma  Task  ubuntu-desktop
 deskbar-applet  Task  ubuntu-desktop
 desktop-file-utils  Task  ubuntu-desktop
@@ -150,6 +150,8 @@ gedit  Task  ubuntu-desktop
 gedit-common  Task  ubuntu-desktop
 gettext  Task  ubuntu-desktop
 gettext-base  Task  ubuntu-minimal
+gfxboot  Task  guada
+gfxboot-theme-guadalinex  Task  guada
 gij  Task  ubuntu-desktop
 gij-4.1  Task  ubuntu-desktop
 gimp  Task  ubuntu-desktop
@@ -261,7 +263,7 @@ legacyhuman-theme  Task  ubuntu-desktop
 less  Task  ubuntu-minimal
 lftp  Task  ubuntu-desktop
 libaa1  Task  ubuntu-desktop
-libacl1  Task  ubuntu-minimal
+libacl1  Task  ubuntu-minimal, guada
 libao2  Task  ubuntu-desktop
 libapm1  Task  ubuntu-desktop
 libart-2.0-2  Task  ubuntu-desktop
@@ -270,7 +272,7 @@ libaspell15  Task  ubuntu-desktop
 libatk1.0-0  Task  ubuntu-desktop
 libatm1  Task  ubuntu-minimal
 libatspi1.0-0  Task  ubuntu-desktop
-libattr1  Task  ubuntu-minimal
+libattr1  Task  ubuntu-minimal, guada
 libaudio2  Task  ubuntu-desktop
 libaudiofile0  Task  ubuntu-desktop
 libavahi-client3  Task  ubuntu-desktop
@@ -290,7 +292,7 @@ libbonoboui2-common  Task  ubuntu-desktop
 libbrlapi1  Task  ubuntu-desktop
 libbtctl4  Task  ubuntu-desktop
 libbz2-1.0  Task  ubuntu-minimal
-libc6  Task  ubuntu-minimal
+libc6  Task  ubuntu-minimal, guada
 libc6-i686  Task  ubuntu-minimal
 libcairo-perl  Task  ubuntu-desktop
 libcairo2  Task  ubuntu-desktop
@@ -456,7 +458,7 @@ liblaunchpad-integration0  Task  ubuntu-desktop
 liblcms1  Task  ubuntu-desktop
 libldap2  Task  ubuntu-minimal
 liblircclient0  Task  ubuntu-desktop
-liblocale-gettext-perl  Task  ubuntu-minimal
+liblocale-gettext-perl  Task  ubuntu-minimal, guada
 liblpint-bonobo0  Task  ubuntu-desktop
 liblwres9  Task  ubuntu-standard
 liblzo1  Task  ubuntu-minimal
@@ -481,7 +483,7 @@ libmusicbrainz4c2a  Task  ubuntu-desktop
 libmyspell3c2  Task  ubuntu-desktop
 libnautilus-burn4  Task  ubuntu-desktop
 libnautilus-extension1  Task  ubuntu-desktop
-libncurses5  Task  ubuntu-minimal
+libncurses5  Task  ubuntu-minimal, guada
 libncursesw5  Task  ubuntu-minimal
 libneon25  Task  ubuntu-desktop
 libnet-dbus-perl  Task  ubuntu-desktop
@@ -532,9 +534,9 @@ libscim8c2a  Task  ubuntu-desktop
 libscrollkeeper0  Task  ubuntu-desktop
 libsdl1.2debian  Task  ubuntu-desktop
 libsdl1.2debian-alsa  Task  ubuntu-desktop
-libselinux1  Task  ubuntu-minimal
+libselinux1  Task  ubuntu-minimal, guada
 libsensors3  Task  ubuntu-desktop
-libsepol1  Task  ubuntu-minimal
+libsepol1  Task  ubuntu-minimal, guada
 libservlet2.3-java  Task  ubuntu-desktop
 libsexy2  Task  ubuntu-desktop
 libshout3  Task  ubuntu-desktop
@@ -558,9 +560,9 @@ libstlport4.6c2  Task  ubuntu-desktop
 libsysfs2  Task  ubuntu-minimal
 libtag1c2a  Task  ubuntu-desktop
 libtasn1-3  Task  ubuntu-minimal
-libtext-charwidth-perl  Task  ubuntu-minimal
-libtext-iconv-perl  Task  ubuntu-minimal
-libtext-wrapi18n-perl  Task  ubuntu-minimal
+libtext-charwidth-perl  Task  ubuntu-minimal, guada
+libtext-iconv-perl  Task  ubuntu-minimal, guada
+libtext-wrapi18n-perl  Task  ubuntu-minimal, guada
 libtheora0  Task  ubuntu-desktop
 libtiff4  Task  ubuntu-desktop
 libtotem-plparser1  Task  ubuntu-desktop
@@ -582,14 +584,14 @@ libwrap0  Task  ubuntu-minimal
 libwvstreams4.2-base  Task  ubuntu-desktop
 libwvstreams4.2-extras  Task  ubuntu-desktop
 libwww-perl  Task  ubuntu-desktop
-libx11-6  Task  ubuntu-desktop
-libx11-data  Task  ubuntu-desktop
+libx11-6  Task  ubuntu-desktop, guada
+libx11-data  Task  ubuntu-desktop, guada
 libxalan2-java  Task  ubuntu-desktop
-libxau6  Task  ubuntu-desktop
+libxau6  Task  ubuntu-desktop, guada
 libxaw7  Task  ubuntu-desktop
 libxcursor1  Task  ubuntu-desktop
 libxdamage1  Task  ubuntu-desktop
-libxdmcp6  Task  ubuntu-desktop
+libxdmcp6  Task  ubuntu-desktop, guada
 libxerces2-java  Task  ubuntu-desktop
 libxevie1  Task  ubuntu-desktop
 libxext6  Task  ubuntu-desktop
@@ -631,10 +633,10 @@ linux-headers-2.6.17-10-generic  Task  ubuntu-desktop
 linux-headers-generic  Task  ubuntu-desktop
 linux-sound-base  Task  ubuntu-minimal
 listres  Task  ubuntu-desktop
-locales  Task  ubuntu-minimal
+locales  Task  ubuntu-minimal, guada
 login  Task  ubuntu-minimal
 logrotate  Task  ubuntu-standard
-lsb-base  Task  ubuntu-minimal
+lsb-base  Task  ubuntu-minimal, guada
 lsb-release  Task  ubuntu-minimal
 lshw  Task  ubuntu-standard
 lsof  Task  ubuntu-minimal
@@ -653,7 +655,7 @@ mii-diag  Task  ubuntu-minimal
 mime-support  Task  ubuntu-minimal
 min12xxw  Task  ubuntu-desktop
 mkisofs  Task  ubuntu-desktop
-mktemp  Task  ubuntu-minimal
+mktemp  Task  ubuntu-minimal, guada
 module-init-tools  Task  ubuntu-minimal
 mono-common  Task  ubuntu-desktop
 mono-gac  Task  ubuntu-desktop
@@ -667,7 +669,7 @@ nautilus-cd-burner  Task  ubuntu-desktop
 nautilus-data  Task  ubuntu-desktop
 nautilus-sendto  Task  ubuntu-desktop
 ncurses-base  Task  ubuntu-minimal
-ncurses-bin  Task  ubuntu-minimal
+ncurses-bin  Task  ubuntu-minimal, guada
 net-tools  Task  ubuntu-minimal
 netbase  Task  ubuntu-minimal
 netcat  Task  ubuntu-minimal
@@ -699,7 +701,7 @@ patch  Task  ubuntu-desktop
 pciutils  Task  ubuntu-minimal
 pcmciautils  Task  ubuntu-minimal
 perl  Task  ubuntu-minimal
-perl-base  Task  ubuntu-minimal
+perl-base  Task  ubuntu-minimal, guada
 perl-modules  Task  ubuntu-minimal
 pkg-config  Task  ubuntu-desktop
 pmount  Task  ubuntu-desktop
@@ -765,7 +767,7 @@ scim-modules-socket  Task  ubuntu-desktop
 screen  Task  ubuntu-desktop
 screensaver-default-images  Task  ubuntu-desktop
 scrollkeeper  Task  ubuntu-desktop
-sed  Task  ubuntu-minimal
+sed  Task  ubuntu-minimal, guada
 serpentine  Task  ubuntu-desktop
 sessreg  Task  ubuntu-desktop
 sgml-base  Task  ubuntu-desktop
@@ -828,7 +830,7 @@ ttf-punjabi-fonts  Task  ubuntu-desktop
 ttf-tamil-fonts  Task  ubuntu-desktop
 ttf-telugu-fonts  Task  ubuntu-desktop
 ttf-thai-tlwg  Task  ubuntu-desktop
-tzdata  Task  ubuntu-minimal
+tzdata  Task  ubuntu-minimal, guada
 ubuntu-artwork  Task  ubuntu-desktop
 ubuntu-desktop  Task  ubuntu-desktop
 ubuntu-docs  Task  ubuntu-desktop
@@ -865,7 +867,7 @@ wireless-tools  Task  ubuntu-minimal
 wpasupplicant  Task  ubuntu-minimal
 wvdial  Task  ubuntu-desktop
 x-ttcidfont-conf  Task  ubuntu-desktop
-x11-common  Task  ubuntu-minimal
+x11-common  Task  ubuntu-minimal, guada
 x11perf  Task  ubuntu-desktop
 xauth  Task  ubuntu-desktop
 xbase-clients  Task  ubuntu-desktop

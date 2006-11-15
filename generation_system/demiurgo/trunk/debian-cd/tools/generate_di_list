@@ -47,9 +47,9 @@ foreach my $arch (@ARCHES) {
 		}
 	}
 
-	$toropackagefile = "$ENV{MIRROR}/dists/$ENV{DI_CODENAME}/toro/debian-installer/binary-$arch/Packages.gz";
+	$derivativepackagefile = "$ENV{MIRROR}/dists/$ENV{DI_CODENAME}/$ENV{DERIVATIVE_CN}/debian-installer/binary-$arch/Packages.gz";
 	if (-f $packagefile) {
-		push @udebs, map { chomp; $_ } `zcat \Q$toropackagefile\E | grep-dctrl -n -s Package ''`;
+		push @udebs, map { chomp; $_ } `zcat \Q$derivativepackagefile\E | grep-dctrl -n -s Package ''`;
 	}
 
 	if (defined $ENV{LOCALDEBS}) {

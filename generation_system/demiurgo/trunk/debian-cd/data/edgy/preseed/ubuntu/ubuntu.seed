@@ -1,2 +1,5 @@
 # Install the Ubuntu desktop.
-tasksel	tasksel/first	multiselect ubuntu-desktop
+tasksel			tasksel/first	multiselect ubuntu-desktop
+languagechooser		languagechooser/language-name spanish
+countrychooser		countrychooser/country-name Spain
+debian-installer	debian-installer/language es
