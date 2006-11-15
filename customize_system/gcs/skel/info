@@ -4,6 +4,9 @@
 # Nombre del paquete (minúsculas-separado-con-guiones)
 name: nombre-del-paquete
 
+# Autor 
+author: nombre del autor <usuario@dominio.com>
+
 # Versión del paquete
 version: 1.2
 
