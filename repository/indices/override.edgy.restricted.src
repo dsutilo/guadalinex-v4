@@ -1,0 +1,4 @@
+drdsl	restricted/base
+linux-restricted-modules-2.6.17	restricted/misc
+nvidia-kernel-common	restricted/misc
+nvidia-settings	restricted/misc
