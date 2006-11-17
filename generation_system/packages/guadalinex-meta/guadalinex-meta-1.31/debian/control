@@ -6,6 +6,7 @@ Standards-Version: 3.7.2
 Build-Depends: debhelper (>= 4), germinate (>= 0.21ubuntu1)
 
 Package: guadalinex-minimal
+Priority: important
 Architecture: any
 Depends: ${guadalinex-minimal:Depends}
 Recommends: ${guadalinex-minimal:Recommends}
@@ -23,6 +24,7 @@ Description: Minimal core of Guadalinex
  it not be removed.
 
 Package: guadalinex-standard
+Priority: standard
 Architecture: any
 Depends: ${guadalinex-standard:Depends}
 Recommends: ${guadalinex-standard:Recommends}
