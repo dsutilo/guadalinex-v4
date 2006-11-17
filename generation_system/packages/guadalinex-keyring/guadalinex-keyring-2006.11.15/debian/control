@@ -5,6 +5,7 @@ Maintainer: Carlos Parra Camargo <cparra@emergya.info>
 Standards-Version: 3.7.2
 
 Package: guadalinex-keyring
+Priority: important
 Provides: ubuntu-keyring
 Architecture: all
 Depends: gnupg (>= 1.0.6-4)
