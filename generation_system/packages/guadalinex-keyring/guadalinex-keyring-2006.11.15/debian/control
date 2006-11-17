@@ -1,0 +1,23 @@
+Source: guadalinex-keyring
+Section: misc
+Priority: optional
+Maintainer: Carlos Parra Camargo <cparra@emergya.info>
+Standards-Version: 3.7.2
+
+Package: guadalinex-keyring
+Provides: ubuntu-keyring
+Architecture: all
+Depends: gnupg (>= 1.0.6-4)
+Description: GnuPG keys of the Guadalinex archive
+ The Guadalinex project digitally signs its Release files. This package
+ contains the archive keys used for that.
+
+Package: guadalinex-keyring-udeb
+Provides: ubuntu-keyring-udeb
+Architecture: all
+Section: debian-installer
+Recommends: gpgv-udeb
+Description: GnuPG keys of the Guadalinex archive
+ The Guadalinex project digitally signs its Release files. This package
+ contains the archive keys used for that, in a minimal form for use
+ in the installer.
