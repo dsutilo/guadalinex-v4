@@ -77,4 +77,4 @@ These are used for debugging problems or examining the system.
 = Other =
 
  * popularity-contest
- * ubuntu-standard # metapackage for everything here
+# * ubuntu-standard # metapackage for everything here

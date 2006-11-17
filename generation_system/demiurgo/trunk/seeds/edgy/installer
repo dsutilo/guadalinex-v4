@@ -134,7 +134,6 @@ This list was originally constructed based on a [http://people.debian.org/~cjwat
 = Release File Authentication =
 
  * gpgv-udeb
- * ubuntu-keyring-udeb
 
 = Kickstart Compatibility =
 

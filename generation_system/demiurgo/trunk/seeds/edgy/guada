@@ -3,3 +3,8 @@
 This packages makes the Guadalinex flavour.
 
  * gfxboot-theme-guadalinex
+ * guadalinex-keyring
+ * guadalinex-keyring-udeb
+ * guadalinex-minimal
+ * guadalinex-standard
+ * guadalinex-desktop
