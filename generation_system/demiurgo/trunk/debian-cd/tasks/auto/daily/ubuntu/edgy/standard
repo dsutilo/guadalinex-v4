@@ -52,7 +52,6 @@ strace
 tcpdump
 telnet
 time
-ubuntu-standard
 w3m
 wget
 #endif /* ARCH_i386 */
