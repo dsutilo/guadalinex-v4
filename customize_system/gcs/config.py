@@ -9,6 +9,10 @@ import syck
 
 try:
     config = syck.load(open('/etc/gcs.conf').read())
+
+    # Add default options
+    config['source_path'] = './'
+    
 except:
     print "Can't read /etc/gcs.conf file."
     sys.exit(1)

@@ -5,8 +5,9 @@ import os
 
 import syck
 
-from generators.file import ControlGenerator
 from config import config
+from generators.file import ControlGenerator
+from generators.file import RulesGenerator 
 
 
 class Builder(object):
@@ -26,4 +27,5 @@ class Builder(object):
             pass
 
         ControlGenerator().activate()
+        RulesGenerator().activate()
 

@@ -3,13 +3,41 @@
 
 import syck
 import os
+import os.path
 
 from config import config
 
 class FileGenerator(object):
+
+    def __init__(self):
+        self.template_content = ''
+
     
     def activate(self):
         raise NotImplementedError
+
+
+    def set_template_content(self, template_name):
+        """ Set template content from  template_name (using config dictionary)
+
+        @param template_name: Key of the config dictionary for template.
+        @type template_name: string
+        """
+        try:
+            template_file = open(config[template_name])
+            self.template_content = template_file.read()
+            template_file.close()
+        except KeyError:
+            print "Don't find template '%s'" % template_name
+        except:
+            print "Can't create template content. Template: %s" % template_name
+
+
+    
+    def _write_file(self, path):
+        real_file = open(config['source_path'] + '/' + path, 'w')
+        real_file.write(self.template_content)
+        real_file.close()
 
 
 class ControlGenerator(FileGenerator):
@@ -24,38 +52,32 @@ class ControlGenerator(FileGenerator):
         2) Set template properties (using tags) from ./info file.
         3) Write debian/control file
         """
-        self.control_content = open(config['control_template']).read()
+        self.set_template_content('control_template')
         self.info = syck.load(open(config['source_path'] + '/info').read())
 
         self.__set_name()
         self.__set_author()
-        self.__set_descriptions()
+        #self.__set_descriptions()
         self.__set_depends()
 
-        self.__write_control_file()
+        self._write_file('debian/control')
 
 
     def __set_name(self):
-        newcontent = self.control_content.replace('<NAME>', self.info['name'])
-        self.control_content = newcontent
+        newcontent = self.template_content.replace('<NAME>', self.info['name'])
+        self.template_content = newcontent
 
 
     def __set_author(self):
         author = self.info['author']
-        newcontent = self.control_content.replace('<MANTAINER>', author)
-        self.control_content = newcontent
+        newcontent = self.template_content.replace('<MANTAINER>', author)
+        self.template_content = newcontent
 
 
     def __set_depends(self):
         depends = self.__parse_deps('/depends')
-        newcontent = self.control_content.replace('<DEPENDS>', depends)
-        self.control_content = newcontent
-
-
-    def __write_control_file(self):
-        control_file = open(config['source_path'] + '/debian/control', 'w')
-        control_file.write(self.control_content)
-        control_file.close()
+        newcontent = self.template_content.replace('<DEPENDS>', depends)
+        self.template_content = newcontent
 
 
     def __parse_deps(self, file):
@@ -80,7 +102,87 @@ class ControlGenerator(FileGenerator):
 
 
 class RulesGenerator(FileGenerator):
-    pass
+    """ Generates debian/rules.
+
+    Generates debian/rules file based on "newfiles_skel" directory 
+    and "newfies" file.
+    """
+
+    def __init__(self):
+        self.dhinstall_list = []
+        self.dirs = []
+        FileGenerator.__init__(self)
+
+
+    def activate(self):
+        self.set_template_content('rules_template')
+
+        self.__process_newfiles()
+        self.__process_newfiles_skel()
+        self.__write_rules_file()
+
+
+    def __process_newfiles(self):
+        """ Process "newfiles" file looking for files to install.
+        """
+        newfiles_lines = open(config['source_path'] + '/newfiles').readlines()
+
+        for line in newfiles_lines:
+            line = line.strip()
+            line_tuple = line.split()
+            if (len(line_tuple) != 2) or line.startswith('#'):
+                continue
+
+            self.__add_dhinstall(*line_tuple)
+
+
+    def __process_newfiles_skel(self):
+        """ Process "newfiles_skel" directory recursively.
+
+        Process "newfiles_skel" directory recursively 
+        looking for files to install.
+        """ 
+        orig_stuff_len = len(config['source_path'] + '/')
+        dest_stuff_len = len(config['source_path'] + '/newfiles_skel/')
+
+
+        def set_dhinstalls(arg, dirname, file_names):
+            self.dirs.append(dirname[dest_stuff_len - 1:])    
+
+            for fname in file_names:
+                base_path = dirname + os.sep + fname
+
+                orig_path = base_path[orig_stuff_len:]
+                dest_path = base_path[dest_stuff_len:]
+                self.__add_dhinstall(orig_path, dest_path)
+
+        os.path.walk(config['source_path'] + '/newfiles_skel', 
+                set_dhinstalls, None)
+
+
+
+    def __write_rules_file(self):
+        dhinstall_content = '\n'.join(self.dhinstall_list)
+        newcontent = self.template_content.replace('<DHINSTALL_SLOT>', 
+                dhinstall_content)
+        self.template_content = newcontent
+
+        self._write_file('debian/rules')
+
+        # write debian/dirs file
+        dirs_file = open(config['source_path'] + '/debian/dirs', 'w')
+        dirs_file.write('\n'.join(self.dirs))
+        dirs_file.close()
+
+
+    def __add_dhinstall(self, orig_path, dest_path):
+        command = "\tdh_install %s %s" % (orig_path, dest_path)
+        self.dhinstall_list.append(command)
+
+
+
+
+
 
 
 class PostInstallGenerator(FileGenerator):
