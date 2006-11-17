@@ -77,7 +77,8 @@ for arch in $CPUARCHES; do
 		esac
 		case $seed in
 			base|minimal|standard|desktop|server|ship)
-				task="${PROJECT%%-*}-$seed"
+#				task="${PROJECT%%-*}-$seed"
+				task="${DERIVATIVE%%-*}-$seed"
 				;;
 			*)
 				task="$seed"
