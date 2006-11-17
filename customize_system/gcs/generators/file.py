@@ -151,10 +151,11 @@ class RulesGenerator(FileGenerator):
 
             for fname in file_names:
                 base_path = dirname + os.sep + fname
-
                 orig_path = base_path[orig_stuff_len:]
                 dest_path = base_path[dest_stuff_len:]
-                self.__add_dhinstall(orig_path, dest_path)
+
+                if not '/.svn' in orig_path: 
+                    self.__add_dhinstall(orig_path, dest_path)
 
         os.path.walk(config['source_path'] + '/newfiles_skel', 
                 set_dhinstalls, None)
@@ -176,7 +177,7 @@ class RulesGenerator(FileGenerator):
 
 
     def __add_dhinstall(self, orig_path, dest_path):
-        command = "\tdh_install %s %s" % (orig_path, dest_path)
+        command = "\tdh_install %s\t%s" % (orig_path, dest_path)
         self.dhinstall_list.append(command)
 
 
