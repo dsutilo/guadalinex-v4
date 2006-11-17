@@ -391,7 +391,6 @@ endif
 		$(DEBOOTSTRAPROOT) /usr/sbin/debootstrap --arch $(ARCH) --print-debs $(CODENAME) /tmp/debian-cd-debootstrap file://$(MIRROR) $(DEBOOTSTRAP)/$(CODENAME)-$(FULLARCH) \
 		| tr ' ' '\n' >>$(BDIR)/rawlist.debootstrap; \
 	fi
-	@echo "###### perl -npe 's/\@ARCH\@/$(ARCH)/g' $(TASK) | cpp -nostdinc -nostdinc++ -P -undef -D ARCH=$(ARCH) -D ARCH_$(subst -,_,$(ARCH)) -U $(ARCH) -U i386 -U linux -U unix -DFORCENONUSONCD1=$(forcenonusoncd1) -I $(BASEDIR)/tasks/auto/$(IMAGE_TYPE) -I $(BASEDIR)/tasks -I $(BDIR)"
 	$(Q)perl -npe 's/\@ARCH\@/$(ARCH)/g' $(TASK) | \
 	 cpp -nostdinc -nostdinc++ -P -undef -D ARCH=$(ARCH) -D ARCH_$(subst -,_,$(ARCH)) \
 	     -U $(ARCH) -U i386 -U linux -U unix \
@@ -539,7 +538,7 @@ ifeq ($(CDIMAGE_INSTALL_BASE),1)
 	    if [ -x "/usr/sbin/debootstrap" ]; then \
 	        ok=yes; \
 		mkdir -p /tmp/debian-cd-debootstrap ; \
-	        for p in `$(DEBOOTSTRAPROOT) /usr/sbin/debootstrap --arch $(ARCH) --print-debs $(CODENAME) /tmp/debian-cd-debootstrap file://$(MIRROR) $(DEBOOTSTRAP)/$(CODENAME)-$(FULLARCH)`; do \
+	        for p in `$(DEBOOTSTRAPROOT) /usr/sbin/debootstrap --arch $(ARCH) --components=main,$(DERIVATIVE_CN) --print-debs $(CODENAME) /tmp/debian-cd-debootstrap file://$(MIRROR) $(DEBOOTSTRAP)/$(CODENAME)-$(FULLARCH) | sed -e s/ubuntu-keyring\ //g | sed -e s/ubuntu-minimal\ //g`; do \
 		    if ! grep -q ^$$p$$ $(BDIR)/$$DISK.packages; then \
 			if [ -n "$(BASE_EXCLUDE)" ] && grep -q ^$$p$$ $(BASE_EXCLUDE); then \
 				echo "Missing debootstrap-required $$p but included in $(BASE_EXCLUDE)"; \
