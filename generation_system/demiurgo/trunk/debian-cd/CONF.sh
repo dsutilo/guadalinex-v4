@@ -186,7 +186,7 @@ case $DIST in
   *)
     export SECRET_KEYRING=$CDIMAGE_ROOT/secret/dot-gnupg/secring.gpg
     export PUBLIC_KEYRING=$CDIMAGE_ROOT/secret/dot-gnupg/pubring.gpg
-    export SIGNING_KEYID=FBB75451
+    export SIGNING_KEYID=8CB1684F
     ;;
 esac
 
@@ -382,7 +382,7 @@ done
 # debian-installer). One package per line.  Lines starting with '#'
 # are comments.  The package order is important, as the packages will
 # be installed in the given order.
-#export BASE_INCLUDE="$BASEDIR"/data/$CODENAME/base_include
+export BASE_INCLUDE="$BASEDIR"/data/$CODENAME/base_include
 
 # File with list of packages to exclude as above.
 #export BASE_EXCLUDE="$BASEDIR"/data/$CODENAME/base_exclude
