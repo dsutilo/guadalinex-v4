@@ -1,5 +1,9 @@
 # Install the Ubuntu desktop.
-tasksel			tasksel/first	multiselect ubuntu-desktop
-languagechooser		languagechooser/language-name spanish
-countrychooser		countrychooser/country-name Spain
-debian-installer	debian-installer/language es
+tasksel			tasksel/first			multiselect ubuntu-desktop
+countrychooser		countrychooser/country-name	string Spain
+countrychooser		countrychooser/shortlist	string ES
+debconf			debconf/language		string es
+debian-installer	debian-installer/country	string ES
+debian-installer	debian-installer/language	string es
+languagechooser		languagechooser/language-name	string Spanish
+#netcfg			netcfg/get_hostname		string guadalinex
