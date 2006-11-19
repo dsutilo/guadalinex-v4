@@ -8,6 +8,7 @@ import syck
 from config import config
 from generators.file import ControlGenerator
 from generators.file import RulesGenerator 
+from generators.file import ChangelogGenerator 
 
 
 class Builder(object):
@@ -28,4 +29,5 @@ class Builder(object):
 
         ControlGenerator().activate()
         RulesGenerator().activate()
+        ChangelogGenerator().activate()
 

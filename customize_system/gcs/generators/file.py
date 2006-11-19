@@ -182,7 +182,45 @@ class RulesGenerator(FileGenerator):
 
 
 
+class ChangelogGenerator(FileGenerator):
 
+    def __init__(self):
+        self.info = syck.load(open(config['source_path'] + '/info').read())
+        self.actual_content = open(config['source_path'] + \
+                '/debian/changelog').read()
+
+        FileGenerator.__init__(self)
+
+
+    def activate(self):
+        self.set_template_content('changelog_template')
+
+        self.__set_basic_info()
+        self.__set_changes()
+
+        self.template_content += '\n\n' + self.actual_content
+        self._write_file('debian/changelog')
+
+
+    def __set_basic_info(self):
+        newcontent = self.template_content.replace('<NAME>',
+                self.info['name'])
+        newcontent = newcontent.replace('<VERSION>', 
+                str(self.info['version']))
+        newcontent = newcontent.replace('<AUTHOR>', 
+                self.info['author'])
+
+        self.template_content = newcontent
+
+
+    def __set_changes(self):
+        changes_str = ''
+        for change in self.info['changes']:
+            changes_str += '  * %s\n' % change
+
+        newcontent = self.template_content.replace('<CHANGES>',
+                changes_str)
+        self.template_content = newcontent
 
 
 
@@ -190,5 +228,8 @@ class PostInstallGenerator(FileGenerator):
     pass
 
 
+
 class PreRemoveGenerator(FileGenerator):
     pass
+
+
