@@ -140,29 +140,31 @@ class RulesGenerator(FileGenerator):
 
 
     def __process_skel(self, skel_name):
-        """ Process "newfiles_skel" directory recursively.
+        """ Process skel_name directory recursively.
 
-        Process "newfiles_skel" directory recursively 
+        Process skel_name directory recursively 
         looking for files to install.
         """ 
         orig_stuff_len = len(config['source_path'] + '/')
         dest_stuff_len = len(config['source_path'] + '/gcs/' + \
                 skel_name + '/')
 
-        def set_dhinstalls(arg, dirname, file_names):
+        def set_dhinstall(arg, dirname, file_names):
             if not '/.svn' in dirname:
-                self.dirs.append(dirname[dest_stuff_len - 1:])    
+                dir_to_add = dirname[dest_stuff_len - 1:]
+                if dir_to_add:
+                    self.dirs.append(dirname[dest_stuff_len - 1:])    
 
             for fname in file_names:
                 base_path = dirname + os.sep + fname
                 orig_path = base_path[orig_stuff_len:]
                 dest_path = base_path[dest_stuff_len:]
 
-                if not '/.svn' in orig_path: 
+                if (not '/.svn' in orig_path):
                     self.__add_dhinstall(orig_path, dest_path)
 
         os.path.walk(config['source_path'] + '/gcs/' + skel_name, 
-                set_dhinstalls, None)
+                set_dhinstall, None)
 
 
     def __write_rules_file(self):
@@ -181,8 +183,14 @@ class RulesGenerator(FileGenerator):
 
     def __add_dhinstall(self, orig_path, dest_path):
         dest_path = os.path.dirname(dest_path)
-        command = "\tdh_install %s\t%s" % (orig_path, dest_path)
-        self.dhinstall_list.append(command)
+        command = ''
+        if ('gcs/conffiles_skel/' in orig_path):
+            if orig_path.endswith(config['config_extension']):
+                command = "\tdh_install %s %s" % (orig_path, dest_path)
+        else:
+            command = "\tdh_install %s\t%s" % (orig_path, dest_path)
+        if command:
+            self.dhinstall_list.append(command)
 
 
 

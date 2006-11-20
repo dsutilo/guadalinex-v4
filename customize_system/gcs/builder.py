@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import os
+import os.path
+import shutil
 
 import syck
 
@@ -30,6 +32,8 @@ class Builder(object):
         except:
             pass
 
+        self.__prepare_conffiles()
+
         ControlGenerator().activate()
         RulesGenerator().activate()
         ChangelogGenerator().activate()
@@ -37,4 +41,20 @@ class Builder(object):
         PostRmGenerator().activate()
 
         #os.system('debuild -us -uc')
+
+    def __prepare_conffiles(self):
+        """ Add .gv4 extension at all conffiles (making a copy)
+        """
+        def copy_file(arg, dirname, file_names):
+
+            for fname in file_names:
+                abs_path = dirname + os.sep + fname
+
+                if (not '/.svn' in abs_path) and \
+                        (not abs_path.endswith(config['config_extension']))\
+                        and (os.path.isfile(abs_path)):
+                    shutil.copy(abs_path, abs_path + '.gv4')
+
+        os.path.walk(config['source_path'] + '/gcs/conffiles_skel/',
+                copy_file, None)
 
