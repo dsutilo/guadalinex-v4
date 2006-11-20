@@ -2,3 +2,5 @@
 set -e
 
 <DIVERT_SLOT>
+
+<SCRIPTS_SLOT>

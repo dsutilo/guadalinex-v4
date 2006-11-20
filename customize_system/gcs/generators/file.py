@@ -8,6 +8,7 @@ import re
 
 from config import config
 from generators.part import DivertPart
+from generators.part import ScriptsPart 
 
 class FileGenerator(object):
 
@@ -55,7 +56,7 @@ class ControlGenerator(FileGenerator):
         3) Write debian/control file
         """
         self.set_template_content('control_template')
-        self.info = syck.load(open(config['source_path'] + '/gcs/info').read())
+        config['info'] = syck.load(open(config['source_path'] + '/gcs/info').read())
 
         self.__set_name()
         self.__set_author()
@@ -66,12 +67,12 @@ class ControlGenerator(FileGenerator):
 
 
     def __set_name(self):
-        newcontent = self.template_content.replace('<NAME>', self.info['name'])
+        newcontent = self.template_content.replace('<NAME>', config['info']['name'])
         self.template_content = newcontent
 
 
     def __set_author(self):
-        author = self.info['author']
+        author = config['info']['author']
         newcontent = self.template_content.replace('<MANTAINER>', author)
         self.template_content = newcontent
 
@@ -198,7 +199,6 @@ class RulesGenerator(FileGenerator):
 class ChangelogGenerator(FileGenerator):
 
     def __init__(self):
-        self.info = syck.load(open(config['source_path'] + '/gcs/info').read())
         try:
             self.actual_content = open(config['source_path'] + \
                 '/debian/changelog').read()
@@ -220,21 +220,22 @@ class ChangelogGenerator(FileGenerator):
 
 
     def __set_basic_info(self):
+        info = config['info']
         newcontent = self.template_content.replace('<NAME>',
-                self.info['name'])
+                info['name'])
         newcontent = newcontent.replace('<VERSION>', 
-                str(self.info['version']))
+                str(info['version']))
         newcontent = newcontent.replace('<AUTHOR>', 
-                self.info['author'])
+                info['author'])
 
         self.template_content = newcontent
 
 
     def __set_changes(self):
         changes_str = ''
-        if not self.info['changes']: 
-            self.info['changes'] = ['No changes']
-        for change in self.info['changes']:
+        if not config['info']['changes']: 
+            config['info']['changes'] = ['No changes']
+        for change in config['info']['changes']:
             changes_str += '  * %s\n' % change
 
         newcontent = self.template_content.replace('<CHANGES>',
@@ -254,7 +255,7 @@ class ChangelogGenerator(FileGenerator):
         if not content: return True
 
         old_version = re.findall('\((.*)\)', content[0])[0]
-        new_version = str(self.info['version'])
+        new_version = str(config['info']['version'])
 
         if old_version == new_version:
             return False
@@ -265,14 +266,31 @@ class ChangelogGenerator(FileGenerator):
 
 class PostInstGenerator(FileGenerator):
 
+    def __init__(self):
+        self.scripts = []
+
     def activate(self):
         self.set_template_content('postinst_template')
         
+        self.__set_divert()
+        self.__set_install_scripts()
+        self._write_file('debian/postinst')
+
+
+    def __set_divert(self):
         newcontent = self.template_content.replace('<DIVERT_SLOT>', 
                 DivertPart().get_postinst_content())
         self.template_content = newcontent
 
-        self._write_file('debian/postinst')
+
+    def __set_install_scripts(self):
+        scripts_part = ScriptsPart(config['source_path'] + \
+                '/gcs/install_scripts')
+
+        newcontent = self.template_content.replace('<SCRIPTS_SLOT>',
+                scripts_part.get_scripts_content())
+        self.template_content = newcontent
+
 
 
 class PostRmGenerator(FileGenerator):
@@ -280,11 +298,25 @@ class PostRmGenerator(FileGenerator):
     def activate(self):
         self.set_template_content('postrm_template')
         
+        self.__set_divert()
+        self.__set_install_scripts()
+        self._write_file('debian/postrm')
+
+
+    def __set_divert(self):
         newcontent = self.template_content.replace('<DIVERT_SLOT>', 
                 DivertPart().get_postrm_content())
         self.template_content = newcontent
 
-        self._write_file('debian/postrm')
-    pass
+
+
+    def __set_install_scripts(self):
+        scripts_part = ScriptsPart(config['source_path'] + \
+                '/gcs/remove_scripts')
+
+        newcontent = self.template_content.replace('<SCRIPTS_SLOT>',
+                scripts_part.get_scripts_content())
+        self.template_content = newcontent
+
 
 

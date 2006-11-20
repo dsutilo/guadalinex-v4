@@ -7,14 +7,21 @@ Este sistema se divide en dos partes. La primera es la encargada de generar una 
 La plantilla que se deberá rellenar es en realidad un conjunto de directorios y ficheros, encargados cada uno de ellos de configurar una parte del paquete final. Los elementos que se encuentran en esta plantilla son:
 
   * Directorio //conffiles_skel//. Contiene un skel con los ficheros de configuración. Estos ficheros de configuración sustituirán a los presentes en el sistema, y en general se deben utilizar para configurar el comportamiento de aplicaciones no incluidas en este paquete, pero presentes en  el sistema. Por ejemplo, para configurar el servidor //samba//, aquí se incluiría nuestra configuración del smb.conf, que estaría en ///conffiles_skel/etc/smb.conf//.
+  
   * Directorio //newfiles_skel//. Este directorio debe contener un skel con los ficheros nuevos  a instalar en  el sistema, que no pertenecen a ningún otro paquete. Estos ficheros generalmente serán imágenes, temas, fondos de escritorio, etc. 
-  * Directorio //install_scripts//. Contienen scripts  que se ejecutarán cuando el paquete se esté instalando.  Estos scripts se ejecutarán en orden alfabético, por lo que si se le quiere asignar un orden, bastaría con poner nombres que empiecen por números (01_..., 02_..., etc.).
-  * Directorio //remove_scripts//. Contiene scripts que se ejecutarán cuando el paquete se esté desinstalando.
+
+  * Directorio //install_scripts//. Contienen scripts  que se ejecutarán cuando el paquete se esté instalando.  Estos scripts se ejecutarán en orden alfabético, por lo que si se le quiere asignar un orden, bastaría con poner nombres que empiecen por números (01_..., 02_..., etc.). Estos scripts se incorporan al fichero debian/postinst, es decir, se concatenan uno detrás de otro dentro del mismo script.
+
+  * Directorio //remove_scripts//. Contiene scripts que se ejecutarán cuando el paquete se esté desinstalando. Funciona de la misma forma que los scripts de install_scripts.
 
   * Fichero //info//.  Contendrá información  sobre nuestro paquete, como por ejemplo el nombre, la versión, cambios  de esta versión, etc.
+
   * Fichero //changelog//. Contendrá los cambios realizados por las distintas versiones. Se genera automáticamente. No se debería tocar.
+
   * Fichero //depends//. Contendrá las dependencias de nuestro paquete.
+
   * Fichero //predepends//. Contendrá las pre-dependencias de nuestro paquete.
+
 
 La sintaxis de cada fichero y una información más detallada están incluidos en cada uno de ellos.
 

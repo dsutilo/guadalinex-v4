@@ -92,3 +92,30 @@ class DivertPart(Part):
         # dpkg-divert --package dummy-conf --rename --quiet --remove /etc/ejemplo.conf
         self.removes.append(command)
 
+
+
+
+class ScriptsPart(Part):
+
+    def __init__(self, scripts_dir_path):
+        self.scripts_dir_path = scripts_dir_path
+        self.scripts = []
+
+
+    def get_scripts_content(self):
+
+        def insert_script(arg, dirname, filenames):
+            for fname in filenames:
+                abs_path = dirname + '/' + fname
+                if os.path.isfile(abs_path) and \
+                        (not '/.svn' in abs_path):
+                    self.__insert_script(abs_path)
+
+        os.path.walk(self.scripts_dir_path, insert_script, None)
+
+        return '\n'.join(self.scripts)
+
+    
+    def __insert_script(self, script_path):
+        content = open(script_path).read() + '\n'
+        self.scripts.append(content)
