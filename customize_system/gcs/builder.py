@@ -40,7 +40,7 @@ class Builder(object):
         PostInstGenerator().activate()
         PostRmGenerator().activate()
 
-        #os.system('debuild -us -uc')
+        os.system('debuild -us -uc')
 
     def __prepare_conffiles(self):
         """ Add .gv4 extension at all conffiles (making a copy)
