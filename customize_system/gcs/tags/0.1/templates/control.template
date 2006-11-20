@@ -1,0 +1,12 @@
+Source: <NAME>
+Section: doc
+Priority: optional
+Maintainer: <MANTAINER>
+Build-Depends: debhelper (>> 3.0.0)
+Standards-Version: 3.5.2 
+
+Package: <NAME>
+Architecture: i386
+Depends: <DEPENDS>
+Description: <SHORTDESC> 
+ <LONGDESC>

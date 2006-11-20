@@ -1,0 +1,5 @@
+#!/bin/sh
+
+<DIVERT_SLOT>
+
+<SCRIPTS_SLOT>

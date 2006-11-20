@@ -1,0 +1,16 @@
+# YAML 1.1
+# Fichero de configuración de paquetes de personalización de Guadalinex v4
+
+# Nombre del paquete (minúsculas-separado-con-guiones)
+name: nombre-del-paquete
+
+# Autor 
+author: nombre del autor <usuario@dominio.com>
+
+# Versión del paquete
+version: 0.1
+
+# Cambios en esta versión
+changes:
+    - cambio1
+    - cambio2
