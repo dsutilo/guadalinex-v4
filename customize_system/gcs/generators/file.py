@@ -7,6 +7,7 @@ import os.path
 import re
 
 from config import config
+from generators.part import DivertPart
 
 class FileGenerator(object):
 
@@ -42,7 +43,7 @@ class FileGenerator(object):
 
 
 class ControlGenerator(FileGenerator):
-    """ Generate debian/control file from ./info file.
+    """ Generate debian/control file from gcs/info file.
     """
     def activate(self):
         """ Generate debian/control file
@@ -50,11 +51,11 @@ class ControlGenerator(FileGenerator):
         Steps:
 
         1) Obtain control template
-        2) Set template properties (using tags) from ./info file.
+        2) Set template properties (using tags) from gcs/info file.
         3) Write debian/control file
         """
         self.set_template_content('control_template')
-        self.info = syck.load(open(config['source_path'] + '/info').read())
+        self.info = syck.load(open(config['source_path'] + '/gcs/info').read())
 
         self.__set_name()
         self.__set_author()
@@ -76,7 +77,7 @@ class ControlGenerator(FileGenerator):
 
 
     def __set_depends(self):
-        depends = self.__parse_deps('/depends')
+        depends = self.__parse_deps('/gcs/depends')
         newcontent = self.template_content.replace('<DEPENDS>', depends)
         self.template_content = newcontent
 
@@ -105,8 +106,8 @@ class ControlGenerator(FileGenerator):
 class RulesGenerator(FileGenerator):
     """ Generates debian/rules.
 
-    Generates debian/rules file based on "newfiles_skel" directory 
-    and "newfies" file.
+    Generates debian/rules file based on "newfiles_skel" 
+    and "conffiles_skel" directories, and "newfiles" file.
     """
 
     def __init__(self):
@@ -119,14 +120,15 @@ class RulesGenerator(FileGenerator):
         self.set_template_content('rules_template')
 
         self.__process_newfiles()
-        self.__process_newfiles_skel()
+        self.__process_skel('newfiles_skel')
+        self.__process_skel('conffiles_skel')
         self.__write_rules_file()
 
 
     def __process_newfiles(self):
         """ Process "newfiles" file looking for files to install.
         """
-        newfiles_lines = open(config['source_path'] + '/newfiles').readlines()
+        newfiles_lines = open(config['source_path'] + '/gcs/newfiles').readlines()
 
         for line in newfiles_lines:
             line = line.strip()
@@ -137,18 +139,19 @@ class RulesGenerator(FileGenerator):
             self.__add_dhinstall(*line_tuple)
 
 
-    def __process_newfiles_skel(self):
+    def __process_skel(self, skel_name):
         """ Process "newfiles_skel" directory recursively.
 
         Process "newfiles_skel" directory recursively 
         looking for files to install.
         """ 
         orig_stuff_len = len(config['source_path'] + '/')
-        dest_stuff_len = len(config['source_path'] + '/newfiles_skel/')
-
+        dest_stuff_len = len(config['source_path'] + '/gcs/' + \
+                skel_name + '/')
 
         def set_dhinstalls(arg, dirname, file_names):
-            self.dirs.append(dirname[dest_stuff_len - 1:])    
+            if not '/.svn' in dirname:
+                self.dirs.append(dirname[dest_stuff_len - 1:])    
 
             for fname in file_names:
                 base_path = dirname + os.sep + fname
@@ -158,9 +161,8 @@ class RulesGenerator(FileGenerator):
                 if not '/.svn' in orig_path: 
                     self.__add_dhinstall(orig_path, dest_path)
 
-        os.path.walk(config['source_path'] + '/newfiles_skel', 
+        os.path.walk(config['source_path'] + '/gcs/' + skel_name, 
                 set_dhinstalls, None)
-
 
 
     def __write_rules_file(self):
@@ -178,6 +180,7 @@ class RulesGenerator(FileGenerator):
 
 
     def __add_dhinstall(self, orig_path, dest_path):
+        dest_path = os.path.dirname(dest_path)
         command = "\tdh_install %s\t%s" % (orig_path, dest_path)
         self.dhinstall_list.append(command)
 
@@ -186,9 +189,12 @@ class RulesGenerator(FileGenerator):
 class ChangelogGenerator(FileGenerator):
 
     def __init__(self):
-        self.info = syck.load(open(config['source_path'] + '/info').read())
-        self.actual_content = open(config['source_path'] + \
+        self.info = syck.load(open(config['source_path'] + '/gcs/info').read())
+        try:
+            self.actual_content = open(config['source_path'] + \
                 '/debian/changelog').read()
+        except:
+            self.actual_content = ''
 
         FileGenerator.__init__(self)
 
@@ -248,15 +254,28 @@ class ChangelogGenerator(FileGenerator):
 
 
 
+class PostInstGenerator(FileGenerator):
+
+    def activate(self):
+        self.set_template_content('postinst_template')
+        
+        newcontent = self.template_content.replace('<DIVERT_SLOT>', 
+                DivertPart().get_postinst_content())
+        self.template_content = newcontent
+
+        self._write_file('debian/postinst')
 
 
+class PostRmGenerator(FileGenerator):
 
-class PostInstallGenerator(FileGenerator):
-    pass
+    def activate(self):
+        self.set_template_content('postrm_template')
+        
+        newcontent = self.template_content.replace('<DIVERT_SLOT>', 
+                DivertPart().get_postrm_content())
+        self.template_content = newcontent
 
-
-
-class PreRemoveGenerator(FileGenerator):
+        self._write_file('debian/postrm')
     pass
 
 

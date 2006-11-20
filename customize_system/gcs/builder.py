@@ -9,6 +9,8 @@ from config import config
 from generators.file import ControlGenerator
 from generators.file import RulesGenerator 
 from generators.file import ChangelogGenerator 
+from generators.file import PostInstGenerator
+from generators.file import PostRmGenerator
 
 
 class Builder(object):
@@ -17,6 +19,7 @@ class Builder(object):
 
     def __init__(self, path):
         config['source_path'] = path
+        config['info'] = syck.load(open(path + '/gcs/info').read())
 
 
     def make_package(self):
@@ -30,4 +33,8 @@ class Builder(object):
         ControlGenerator().activate()
         RulesGenerator().activate()
         ChangelogGenerator().activate()
+        PostInstGenerator().activate()
+        PostRmGenerator().activate()
+
+        #os.system('debuild -us -uc')
 

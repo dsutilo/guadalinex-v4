@@ -12,6 +12,7 @@ try:
 
     # Add default options
     config['source_path'] = './'
+    config['info'] = {}
     
 except:
     print "Can't read /etc/gcs.conf file."
