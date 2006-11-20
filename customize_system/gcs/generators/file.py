@@ -4,6 +4,7 @@
 import syck
 import os
 import os.path
+import re
 
 from config import config
 
@@ -193,13 +194,14 @@ class ChangelogGenerator(FileGenerator):
 
 
     def activate(self):
-        self.set_template_content('changelog_template')
+        if self.__is_new_version():
+            self.set_template_content('changelog_template')
 
-        self.__set_basic_info()
-        self.__set_changes()
+            self.__set_basic_info()
+            self.__set_changes()
 
-        self.template_content += '\n\n' + self.actual_content
-        self._write_file('debian/changelog')
+            self.template_content += '\n\n' + self.actual_content
+            self._write_file('debian/changelog')
 
 
     def __set_basic_info(self):
@@ -215,12 +217,37 @@ class ChangelogGenerator(FileGenerator):
 
     def __set_changes(self):
         changes_str = ''
+        if not self.info['changes']: 
+            self.info['changes'] = ['No changes']
         for change in self.info['changes']:
             changes_str += '  * %s\n' % change
 
         newcontent = self.template_content.replace('<CHANGES>',
                 changes_str)
         self.template_content = newcontent
+
+
+    def __is_new_version(self):
+        """ Check if there is a new version of package.
+        """
+        content = None
+        try:
+            content = open('debian/changelog').readlines()
+        except:
+            pass
+        
+        if not content: return True
+
+        old_version = re.findall('\((.*)\)', content[0])[0]
+        new_version = str(self.info['version'])
+
+        if old_version == new_version:
+            return False
+        else:
+            return True
+
+
+
 
 
 
