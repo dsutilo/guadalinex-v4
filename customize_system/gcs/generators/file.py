@@ -5,6 +5,8 @@ import syck
 import os
 import os.path
 import re
+import datetime
+import email.Utils
 
 from config import config
 from generators.part import DivertPart
@@ -202,8 +204,10 @@ class ChangelogGenerator(FileGenerator):
         try:
             self.actual_content = open(config['source_path'] + \
                 '/debian/changelog').read()
+            self.changelog_exists = True
         except:
             self.actual_content = ''
+            self.changelog_exists = False
 
         FileGenerator.__init__(self)
 
@@ -227,6 +231,8 @@ class ChangelogGenerator(FileGenerator):
                 str(info['version']))
         newcontent = newcontent.replace('<AUTHOR>', 
                 info['author'])
+        newcontent = newcontent.replace('<DATE>',
+                email.Utils.formatdate()) 
 
         self.template_content = newcontent
 
