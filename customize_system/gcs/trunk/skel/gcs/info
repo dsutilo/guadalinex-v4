@@ -8,7 +8,7 @@ name: nombre-del-paquete
 author: nombre del autor <usuario@dominio.com>
 
 # Versión del paquete
-version: 1.2
+version: 0.1
 
 # Cambios en esta versión
 changes:

@@ -1,7 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import syck
 import os
 import os.path
 import re
@@ -58,7 +57,6 @@ class ControlGenerator(FileGenerator):
         3) Write debian/control file
         """
         self.set_template_content('control_template')
-        config['info'] = syck.load(open(config['source_path'] + '/gcs/info').read())
 
         self.__set_name()
         self.__set_author()
