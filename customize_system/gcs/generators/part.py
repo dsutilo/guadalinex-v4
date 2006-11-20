@@ -54,7 +54,8 @@ class DivertPart(Part):
 
                 abs_path = dirname + '/' +fname
                 if (not '/.svn' in orig_path) and\
-                        os.path.isfile(abs_path):
+                        os.path.isfile(abs_path) and\
+                        abs_path.endswith(config['config_extension']):
                     divert_method(dest_path)
 
         os.path.walk(config['source_path'] + '/gcs/conffiles_skel', 

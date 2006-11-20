@@ -187,6 +187,7 @@ class RulesGenerator(FileGenerator):
         if ('gcs/conffiles_skel/' in orig_path):
             if orig_path.endswith(config['config_extension']):
                 command = "\tdh_install %s %s" % (orig_path, dest_path)
+                print command
         else:
             command = "\tdh_install %s\t%s" % (orig_path, dest_path)
         if command:
