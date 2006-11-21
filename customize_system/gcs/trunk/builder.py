@@ -33,6 +33,7 @@ class Builder(object):
             pass
 
         self.__prepare_conffiles()
+        self.__set_compat()
 
         ControlGenerator().activate()
         RulesGenerator().activate()
@@ -41,6 +42,14 @@ class Builder(object):
         PostRmGenerator().activate()
 
         os.system('debuild -us -uc')
+
+
+    def __set_compat(self):
+        fcompat = open(config['source_path'] + \
+                '/debian/compat', 'w')
+        fcompat.write('4')
+        fcompat.close()
+
 
     def __prepare_conffiles(self):
         """ Add .gv4 extension at all conffiles (making a copy)
