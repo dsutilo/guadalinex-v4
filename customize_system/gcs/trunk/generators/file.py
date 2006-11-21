@@ -184,6 +184,8 @@ class RulesGenerator(FileGenerator):
 
 
     def __add_dhinstall(self, orig_path, dest_path):
+        if not dest_path:
+            return
         #dest_path = os.path.dirname(dest_path)
         command = ''
         if ('gcs/conffiles_skel/' in orig_path):
