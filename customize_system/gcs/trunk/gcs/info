@@ -7,6 +7,12 @@ name: gcs
 # Autor 
 author: Gumersindo Coronel Pérez <gcoronel@emergya.info>
 
+# Priority
+priority: optional
+
+# Section
+section: admin
+
 # Versión del paquete
 version: 0.3
 

@@ -62,6 +62,8 @@ class ControlGenerator(FileGenerator):
         self.__set_author()
         #self.__set_descriptions()
         self.__set_depends()
+        self.__set_section()
+        self.__set_priority()
 
         self._write_file('debian/control')
 
@@ -82,6 +84,15 @@ class ControlGenerator(FileGenerator):
         newcontent = self.template_content.replace('<DEPENDS>', depends)
         self.template_content = newcontent
 
+    def __set_section(self):
+        section = config['info']['section']
+        newcontent = self.template_content.replace('<SECTION>', section)
+        self.template_content = newcontent
+
+    def __set_priority(self):
+        priority = config['info']['priority']
+        newcontent = self.template_content.replace('<PRIORITY>', priority)
+        self.template_content = newcontent
 
     def __parse_deps(self, file):
         depends_list = open(config['source_path'] + file).readlines()

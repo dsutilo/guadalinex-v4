@@ -7,6 +7,12 @@ name: nombre-del-paquete
 # Autor 
 author: nombre del autor <usuario@dominio.com>
 
+# Priority
+priority: optional
+
+# Section
+section: seccion de la aplicacion
+
 # Versión del paquete
 version: 0.1
 
