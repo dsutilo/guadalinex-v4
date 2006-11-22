@@ -1,0 +1,3 @@
+#!/bin/bash
+
+gconftool-2 -t str --set /desktop/gnome/background/picture_filename /usr/share/backgrounds/guadalinex_v4_bg.jpg
