@@ -299,10 +299,12 @@ class PostInstGenerator(FileGenerator):
 
     def activate(self):
         self.set_template_content('postinst_template')
+        initial_content = self.template_content
         
         self.__set_divert()
         self.__set_install_scripts()
-        self._write_file('debian/postinst')
+        if initial_content != self.template_content:
+            self._write_file('debian/postinst')
 
 
     def __set_divert(self):
@@ -325,10 +327,12 @@ class PostRmGenerator(FileGenerator):
 
     def activate(self):
         self.set_template_content('postrm_template')
+        initial_content = self.template_content
         
         self.__set_divert()
         self.__set_install_scripts()
-        self._write_file('debian/postrm')
+        if initial_content != self.template_content:
+            self._write_file('debian/postrm')
 
 
     def __set_divert(self):
