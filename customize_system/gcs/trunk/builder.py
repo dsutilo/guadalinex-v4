@@ -11,6 +11,7 @@ from config import config
 from generators.file import ControlGenerator
 from generators.file import RulesGenerator 
 from generators.file import ChangelogGenerator 
+from generators.file import CompatGenerator 
 from generators.file import PostInstGenerator
 from generators.file import PostRmGenerator
 
