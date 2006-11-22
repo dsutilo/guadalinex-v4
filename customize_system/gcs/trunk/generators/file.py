@@ -340,9 +340,17 @@ class PostRmGenerator(FileGenerator):
         self.template_content = newcontent
 
 
+
 class CompatGenerator(FileGenerator):
 
     def activate(self):
         self.set_template_content('compat_template')
-
         self._write_file('debian/compat')
+
+
+
+class CopyrightGenerator(FileGenerator):
+
+    def activate(self):
+        self.set_template_content('copyright_template')
+        self._write_file('debian/copyright')

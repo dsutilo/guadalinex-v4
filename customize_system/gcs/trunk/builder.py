@@ -15,6 +15,7 @@ from generators.file import CompatGenerator
 from generators.file import PostInstGenerator
 from generators.file import PostRmGenerator
 from generators.file import CompatGenerator
+from generators.file import CopyrightGenerator
 
 
 class Builder(object):
@@ -43,6 +44,7 @@ class Builder(object):
         PostInstGenerator().activate()
         PostRmGenerator().activate()
         CompatGenerator().activate()
+        CopyrightGenerator().activate()
 
         os.system('debuild -us -uc')
 
