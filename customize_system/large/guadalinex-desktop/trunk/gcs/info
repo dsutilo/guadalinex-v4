@@ -5,11 +5,23 @@
 name: guadalinex-desktop
 
 # Autor 
-author: Gumersindo Coronel Pérez <gcoronel@emergya.info>
+author: Carlos Parra Camargo <cparra@emergya.info>
+
+# Priority
+priority: optional
+
+# Section
+section: base
+
+# Descripción corta
+shortdesc: "The Guadalinex desktop system"
+
+# Descipción larga, las lineas han de estar separadas por "\n "
+longdesc: "This package depends on all of the packages in the Guadalinex desktop system\n  .\n  It is also used to help ensure proper upgrades, so it is recommended that\n  it not be removed."
 
 # Versión del paquete
 version: 0.1
 
 # Cambios en esta versión
 changes:
-    - Initial release
+    - Initial package
