@@ -1,0 +1,14 @@
+Task: danish
+Test-lang: da
+Section: l10n
+Description: Danish environment
+ This task installs packages and documentation in Danish
+ to help Danish speaking people use Debian.
+Key:
+ language-env
+Packages: task-fields
+Packages-list:
+ aspell-da
+ idanish
+ wdanish
+ util-linux-locales

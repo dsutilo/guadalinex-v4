@@ -1,0 +1,9 @@
+Task: kubuntu-live
+Section: user
+Description: Kubuntu live CD
+ This task provides the extra packages installed on the Kubuntu live CD. It is neither useful nor recommended to install this task in other environments.
+Relevance: 2
+Key:
+ ubiquity-frontend-kde
+Test-new-install: skip show
+Packages: task-fields

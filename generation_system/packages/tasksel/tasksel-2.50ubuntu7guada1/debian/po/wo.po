@@ -1,0 +1,71 @@
+# translation of tasksel_debian_po.po to Wolof
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans#
+#    Developers do not need to manually edit POT or PO files.
+# Mouhamadou Mamoune Mbacke <mouhamadoumamoune@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tasksel_debian_po\n"
+"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"POT-Creation-Date: 2006-01-19 14:32-0500\n"
+"PO-Revision-Date: 2005-07-08 18:40+0000\n"
+"Last-Translator: Mouhamadou Mamoune Mbacke <mouhamadoumamoune@gmail.com>\n"
+"Language-Team: Wolof\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+
+#. Type: multiselect
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid ""
+"At the moment, only the core of Ubuntu is installed. To tune the system to "
+"your needs, you can choose to install one or more of the following "
+"predefined collections of software."
+msgstr ""
+"Fimune nii, xol u Ubuntu rekk la ñu istaleegun. Ngir dëppale istalaasioŋ bi "
+"ak say soxla, man ngaa tann a istale benn walla luko ëppu ci koleksioŋ u "
+"porogaraam yii ñu dajale ba noppi. Jëfandikoo kat yi am ekperyaas amaana ñu "
+"bëgg a tann paket yi ak seen loxo."
+
+#. Type: multiselect
+#. Choices
+#. Translators: translate ORIGCHOICES as CHOICES.
+#: ../templates:13
+msgid "${ORIGCHOICES}"
+msgstr "${CHOICES}"
+
+#. Type: multiselect
+#. Description
+#: ../templates:14
+msgid "Choose software to install:"
+msgstr "Tannal porogaraam booy istale:"
+
+#. Type: multiselect
+#. Description
+#: ../templates:14
+msgid ""
+"You can choose to install one or more of the following predefined "
+"collections of software."
+msgstr ""
+"Man ngaa tann a istale benn walla luko ëppu ci koleksioŋ u porogaraam yi ñu "
+"dajale yii di ñëw."
+
+#. Type: title
+#. Description
+#: ../templates:20
+msgid "Ubuntu software selection"
+msgstr "Tann porogaraam yu Ubuntu"
+
+#~ msgid "${CHOICES}, manual package selection"
+#~ msgstr "${CHOICES}, paket yi ñuy tann ak loxo"

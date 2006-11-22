@@ -1,0 +1,22 @@
+Task: italian
+Test-lang: it
+Section: l10n
+Description: Italian environment
+ This task installs packages and documentation in Italian
+ to help Italian speaking people use Debian.
+Key:
+ language-env
+ manpages-it
+Packages: task-fields
+Packages-list:
+ apt-howto-it
+ aspell-it
+ debian-reference-it
+ doc-linux-it
+ doc-linux-it-text
+ fortunes-it
+ iitalian
+ maint-guide-it
+ manpages-it
+ myspell-it
+ witalian

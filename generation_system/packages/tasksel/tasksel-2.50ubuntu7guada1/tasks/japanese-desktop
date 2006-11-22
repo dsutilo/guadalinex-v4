@@ -1,0 +1,16 @@
+Task: japanese-desktop
+Enhances: desktop, japanese
+Section: l10n
+Description: Japanese desktop
+ This task localises the desktop in Japanese.
+Key:
+Packages: task-fields
+Packages-list:
+ kde-i18n-ja
+ firefox-locale-ja
+ doc-linux-ja-html
+ ttf-kochi-gothic
+ ttf-kochi-mincho
+ uim
+ openoffice.org-l10n-ja
+ openoffice.org-help-ja

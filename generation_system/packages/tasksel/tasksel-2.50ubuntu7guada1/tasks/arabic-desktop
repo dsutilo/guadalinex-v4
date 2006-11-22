@@ -1,0 +1,13 @@
+Task: arabic-desktop
+Enhances: desktop, arabic
+Section: l10n
+Description: Arabic desktop
+ This task localises the desktop in Arabic.
+Key:
+Packages: task-fields
+Packages-list:
+  ttf-kacst
+  ttf-farsiweb
+  kde-i18n-ar
+  openoffice.org-l10n-ar
+  firefox-locale-ar

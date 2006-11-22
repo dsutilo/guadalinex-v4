@@ -1,0 +1,2351 @@
+tasksel (2.50ubuntu7guada1) edgy; urgency=low
+
+  * Initial Guadalinex fork
+
+ -- Carlos Parra Camargo <cparra@emergya.info>  Tue, 21 Nov 2006 16:59:48 +0100
+
+tasksel (2.50ubuntu7) edgy; urgency=low
+
+  * Update Ubuntu tasks from seeds, collapsing *-standard into a single
+    standard task (closes: Malone #66214).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Sun, 15 Oct 2006 22:50:31 +0100
+
+tasksel (2.50ubuntu6) edgy; urgency=low
+
+  * Use apt-get rather than aptitude to install tasks (closes: Malone
+    #61684). (This means that "Packages: standard" will no longer work, but
+    we don't use that in Ubuntu anyway.)
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 13 Oct 2006 10:40:48 +0100
+
+tasksel (2.50ubuntu5) edgy; urgency=low
+
+  * Update Ubuntu tasks from seeds, refreshing *-live descriptions.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 12 Oct 2006 03:45:06 +0100
+
+tasksel (2.50ubuntu4) edgy; urgency=low
+
+  * Add --debconf-apt-from and --debconf-apt-to options to tasksel. If
+    provided, tasksel will use them to allocate regions of the
+    debconf-apt-progress progress bar to task scripts.
+  * Adjust desktop.preinst to allow use of debconf-apt-progress, and make
+    its already-installed check a bit more robust. This isn't perfect
+    because it uses the same progress bar endpoints for each package, so the
+    progress bar will jump back and forth a little; but this is better than
+    nothing.
+  * Install xserver-xorg in desktop.preinst.
+  * Update Ubuntu tasks from seeds, adding minimal and
+    {ubuntu,kubuntu,edubuntu,xubuntu}-live.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri,  6 Oct 2006 12:13:36 +0100
+
+tasksel (2.50ubuntu3) edgy; urgency=low
+
+  * Ubuntu branding (Debian bug filed).
+  * Update Ubuntu tasks from seeds, adding edubuntu-server.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 27 Jul 2006 15:24:45 +0100
+
+tasksel (2.50ubuntu2) edgy; urgency=low
+
+  * Don't install mdetect or read-edid in desktop.preinst.
+  * Install {ubuntu,kubuntu,edubuntu,xubuntu}-desktop.preinst as symlinks to
+    desktop.preinst.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 26 Jul 2006 13:05:57 +0100
+
+tasksel (2.50ubuntu1) edgy; urgency=low
+
+  * Generate ubuntu-tasks.desc from special headers in the Ubuntu seeds.
+    Don't install debian-tasks.desc.
+  * Add debian/rules update target to update the above.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 25 Jul 2006 20:16:19 +0100
+
+tasksel (2.50) unstable; urgency=low
+
+  [ Translations of programs ]
+    - updated Malagasy (Jaonary Rabarisoa)
+
+  [ Translations of tasks ]
+    - Updated French (Christian Perrier)
+    - Updated Czech (Miroslav Kure)
+    - Updated Romanian (Eddy Petrişor)
+    - Updated Japanese (Kenshi Muto)
+    - Updated Galician (Jacobo Tarrio)
+    - Updated Dzongkha (Kinley Tshering)
+    - Updated Dutch (Bart Cornelis)
+
+  [ Christian Perrier ]
+  * Correct the description of several -desktop tasks to use
+    "XXXX desktop" instead of "XXXX environment"
+  * Add "nb" to languages which trigger the "norwegian" task so
+    that it's used for Bokmal
+  * Added tasks for languages supported in D-I:
+    - khmer-desktop
+    - dzongkha-desktop
+    - xhosa-desktop
+    - georgian-desktop
+    - latvian-desktop
+    - nepali-desktop
+    - northern-sami-desktop
+    - vietnamese-desktop
+  * Add fonts:
+    - ttf-indic-fonts to -desktop tasks for supported Indic languages
+    - ttf-dejavu:
+      bulgarian-desktop
+      macedonian-desktop
+  * Add openoffice.org-l10n-xx to:
+    - bosnian-desktop
+    - farsi-desktop
+    - irish-desktop
+    - croatian-desktop
+    - macedonian-desktop
+  * Add openoffice.org-hyphenation-xx to:
+    - finnish-desktop (the real package is openoffice.org-soikko)
+  * Add openoffice.org-help-xx to:
+    - estonian-desktop
+  * Add openoffice.org-thesaurus-xx to:
+    - desktop
+    - czech-desktop
+    - italian-desktop
+    - slovak-desktop
+  * Add firefox-locale-xx to:
+    - desktop (the -en-gb and -en-us ones)
+    - arabic-desktop
+    - bulgarian-desktop
+    - french-desktop
+    - lithuanian-desktop
+    - norwegian-desktop
+    - punjabi-desktop
+    - polish-desktop
+    - romanian-desktop
+    - slovak-desktop
+    - swedish-desktop
+    - turkish-desktop
+    - chinese-s-desktop
+    - chinese-t-desktop
+  * Add koffice-i18n-xx to:
+    - finnish-desktop
+  * Add kde-i18n-xx to:
+    - irish-desktop
+    - korean-desktop
+    - macedonian-desktop
+    - portuguese-desktop
+  * Replace mozilla-locale-xx by firefox-locale-x in:
+    - catalan-desktop
+    - danish-desktop
+    - german-desktop
+    - greek-desktop
+    - spanish-desktop (both es-es and es-ar)
+    - japanese-desktop
+    - korean-desktop
+    - brazilian-portuguese-desktop
+  * Remove Thunderbird l10n (no Thunderbird in the desktop task) from:
+    - greek-desktop
+    - ukrainian-desktop
+  * Remove koffice-i18n-* (no koffice in the default KDE install)
+    - turkish-desktop
+    - swedish-desktop
+    - romanian-desktop (was commented)
+    - persian-desktop
+    - italian-desktop
+    - hebrew-desktop
+    - greek-desktop
+    - finnish-desktop
+    - danish-desktop
+    - catalan-desktop
+  * Remove non existing openoffice.org-help-xx in:
+    - greek-desktop
+    - basque-desktop
+    - portuguese-desktop
+  * Remove non-existing/uninstallable openoffice.org-l10n-xx in:
+    - galician-desktop
+    - portuguese-desktop
+  * Remove non existing myspell-xx in:
+    - galician-desktop
+  * Move myspell-xx from the base task to the desktop task for:
+    - swedish-desktop
+
+  [ Kenshi Muto ]
+  * Updated japanese and japanese-desktop tasks.
+    - removed legacy xfonts packages from desktop task.
+    - bumped up lv for key package because less command or any other
+      pager can't handle Japanese manpage.
+    - took uim+anthy for default input method instead of canna.
+      There is an alternative, "scim". But scim can't run on CUI.
+    - removed ja-trans, doc-debian-ja, xmanpages-ja because they aren't
+      maintained for a long time.
+    - removed kterm and mlterm from desktop task. kterm can't support UTF8.
+      mlterm has too huge dependencies and GNOME or KDE will provide a good
+      UTF8 support terminal by default.
+
+  [ Joey Hess ]
+  * Include full CUPS support in the desktop task. This is functionally the
+    same as the print-server task due to how CUPS works, although the intent
+    is only to provide local printing support. Closes: #304845
+
+ -- Joey Hess <joeyh@debian.org>  Mon,  3 Jul 2006 20:36:39 -0400
+
+tasksel (2.49) unstable; urgency=low
+
+  [ Joey Hess ]
+  * Add hardinfo to gnome-desktop task. Closes: #370318
+  * Add acpi-support to laptop task.
+  * Thai tasks update by Theppitak Karoonboonyanan. Closes: #374339
+  * Patch from bubulle to add a lot of basic language and/or language-desktop
+    tasks for lackages that lacked one: icelandic, welsh, bosnian,
+    finnish (Closes: #264986) slovenian, esperanto, galician, albanian, irish,
+    macedonian, portuguese, tagalong, estonian, croatian, belarusian, basque,
+    tamil. Closes: #325218
+
+  [ Rene Engelhard ]
+  * add myspell-sk to slovak task
+
+  [ Translations of tasks ]
+    - Updated Bengali (Baishampayan Ghose)
+
+ -- Joey Hess <joeyh@debian.org>  Mon, 26 Jun 2006 22:26:24 -0400
+
+tasksel (2.48) unstable; urgency=low
+
+  * More description-fu. Closes: #368853
+  * Add pbbuttonsd to laptop task for powerpc.
+  * Add openoffice.org-evolution to gnome desktop task for integration of
+    those two.
+  * Add grdesktop to gnome desktop task for remote logins, both to windows
+    and X.
+  * Add gparted to gnome desktop task so users can fiddle with partitions.
+  * Drop gnome metapackage, so that gnome-office isn't pulled in (we have
+    OOo), but re-include most of its other deps: gnome-cups-manager,
+    gnome-screensaver, gnome-themes-extras, rhythmbox.
+  * Above suggestions from Gustavo Franco.
+  * Add firefox-gnome-support to gnome desktop task.
+
+  [ Translations of tasks ]
+    - Updated Lithuanian (Kęstutis Biliūnas)
+    - Updated Slovak (Peter Mann)
+
+ -- Joey Hess <joeyh@debian.org>  Sat,  3 Jun 2006 14:41:31 -0400
+
+tasksel (2.47) unstable; urgency=low
+
+  * The "thanks ATL for the open port 22" release.
+  * Rewrite package descriptions. Closes: #368440
+
+ -- Joey Hess <joeyh@debian.org>  Tue, 23 May 2006 21:09:46 -0400
+
+tasksel (2.46) unstable; urgency=low
+
+  [ Jordi Mallach ]
+  * [ Translations of tasks ]
+    - updated Catalan translation (Jordi Mallach)
+
+  [ Joey Hess ]
+  * tasksel-data: Conflict with old versions of tasksel.
+    Closes: #368408
+  * Move laptop-detect depends to tasksel-data as that's what uses it.
+  * Loosen dependencies between tasksel and -data, think this should be ok.
+
+ -- Joey Hess <joeyh@debian.org>  Sun, 21 May 2006 21:26:43 -0500
+
+tasksel (2.45) unstable; urgency=low
+
+  * Change debhelper compatibility level to 5.
+  * Update Standards version to 3.7.2.
+  * Create tasksel-data so will be easier to CDDs to override the Debian
+    default without need to use diversion or other ugly hacks.
+
+ -- Otavio Salvador <otavio@debian.org>  Fri, 12 May 2006 18:44:52 -0300
+
+tasksel (2.44) unstable; urgency=low
+
+  * [ Translations of tasks ]
+    - updated Dutch translation (Bart Cornelis)
+    - updated Romanian translation (Eddy Petrişor)
+    - updated Danish translation (Claus Hindsgaul)
+
+  * Switch gnome-desktop to gnome-screensaver, remove fortune-mod which
+    hopefully isn't needed with that. Thanks, Gustavo Franco
+  * Added rather a lot of stuff to round out the capabilities of the gnome
+    task: alacarte, gdebi, update-notifier, gnome-btdownload, liferea, gaim,
+    evolution-exchange, evolution-plugins, evolution-webcal, deskbar-appletp.
+    Thanks, Gustavo Franco
+
+ -- Joey Hess <joeyh@debian.org>  Fri, 12 May 2006 00:57:55 -0500
+
+tasksel (2.43) unstable; urgency=low
+
+  [ Miroslav Kure ]
+    - Added aspell-cs to the Czech task
+
+  [ Translations of tasks ]
+    - updated italian (Giuseppe Sacco)
+    - updated Khmer (Khoem Sokhem)
+    - updated Albanian (Elian Myftiu)
+    - updated Galician (Jacobo Tarrio)
+    - updated French (Christian Perrier)
+    - updated Japanese (Kenshi Muto)
+
+  [ Translations of programs ]
+    - updated Albanian (Elian Myftiu)
+
+  [ Translations of debconf templates ]
+    - updated Khmer (Khoem Sokhem)
+    - updated Albanian (Elian Myftiu)
+
+  [ Christian Perrier ]
+  * Fix the description of the Dutch desktop task to match other
+    desktop tasks. Unfuzzy translations.
+
+  [ Joey Hess ]
+  * Add menu-xdg to gnome desktop task to enable Debian menus there.
+  * Switch back to x-window-system-core until xorg reaches testing.
+  * Rename the "Depends" field to "Enhances" which is much closer to what it's
+    actually used for. A task such as french-desktop enchances systems with
+    the desktop and french tasks installed on it.
+  * Remove the old mozilla-firefox package from the desktop task, firefox is
+    the new one & in testing now.
+  * Run test scripts for enhancing tasks after task selection, to determine
+    whether to install them.
+  * kde-desktop task is back. Not installed as part of the desktop task, and
+    still hidden from the menu. But:
+  * Support preseeding tasks to install using the task name, which is shorter
+    and nicer for preseeding than the short description. So for example,
+    you can boot with tasksel/first=kde-desktop ..
+  * Add kpackage to kde-desktop.
+  * Move synaptic to gnome-desktop.
+  * Add kdm to kde-desktop. Note that gdm is pulled in via gnome-desktop only.
+  * Add a Provides field, this is used to let tasksel know if two alternate
+    tasks, such as gnome-desktop and kde-desktop provide the same essential
+    thing. If so, tasksel will try to avoid selecting both for install.
+  * If an enhancing task is selected (by preseeding), make sure to select
+    the tasks it enhances too. The add any other tasks that also enhnce
+    those tasks, unless they provide the same thing. In other words, this
+    allows preseeding kde-desktop, and getting desktop and any appropriate
+    lang-desktop, but not gnome-desktop.
+
+ -- Joey Hess <joeyh@debian.org>  Tue, 25 Apr 2006 18:41:13 -0400
+
+tasksel (2.42) unstable; urgency=low
+
+  [ Translations of tasks ]
+    - Added Esperanto (Serge Leblanc)
+      Closes: #355120
+    - Updated Spanish (Javier Fernandez-Sanguino)
+    - Updated Polish (Bartosz Fenski). Closes: #359750
+    - Updated Romanian (Eddy Petrişor)
+
+  [ Translations of programs ]
+    - Added Esperanto (Serge Leblanc)
+
+  [ Translations of debconf templates ]
+    - Added Esperanto (Serge Leblanc)
+
+  [ Christian Perrier ]
+    - Rename the Punjabi translation file name from pa_IN to pa
+      to fit a decision taken in -i18n
+    - change the Test-lang for punjabi from pa_IN to pa for consistency
+
+  [ Rene Engelhard ]
+    - update tasks for OOo 2.0.x (closes: #337161)
+
+  [ Translation of tasks ]
+   - Added Dzongkha by Pema Geyleg
+
+  [ Translation of programs ]
+   - Added Dzongkha by Pema Geyleg
+
+  [ Translation of debconf templates ]
+   - Added Dzongkha by Pema Geyleg
+
+  [ Joey Hess ]
+  * Switch desktop task to new xorg metapackage.
+  * Fix pa_IN Makefile pain.
+
+ -- Joey Hess <joeyh@debian.org>  Thu, 13 Apr 2006 12:18:39 +0200
+
+tasksel (2.41) unstable; urgency=low
+
+  [ Translations of tasks ]
+    - Corrected Punjabi (Gurmukhi).
+    - Add Bengali, Estonian, Malagasy, Punjabi, Vietnamese to LANG variables
+      in the Makefile
+    - Completed French
+    - Updated Catalan (Jordi Mallach)
+    - Updated Danish
+    - Updated Galician (Jacobo Tarrio)
+    - Updated Lithuanian (Kęstutis Biliūnas)
+    - Updated Spanish (Javier Fernandez-Sanguino)
+    - Updated Swedish Closes: #350597
+    - Updated Bulgarian
+    - Updated Dutch
+    - Updated Italian (Giuseppe Sacco)
+    - Updated Japanese (Kenshi Muto)
+    - Updated Brazilian Portuguese (André Luís Lopes)
+    - Updated Slovak (Peter Mann)
+    - Updated Danish (Claus Hindsgaul)
+    - Updated Bulgarian (Ognyan Kulev)
+    - Updated Dutch (Bart Cornelis)
+    - Updated Ukrainian (Eugeniy Meshcheryakov)
+
+  [ Translations of debconf templates ]
+    - Updated Catalan (Jordi Mallach)
+    - Updated Swedish. Closes: #350597
+
+  [ Translations of programs ]
+    - Updated Catalan (Jordi Mallach)
+
+  [ Joey Hess ]
+  * Add basic Persian and Hindi locale tasks by bubulle.
+    Closes: #350121, #350171
+
+  [ Christian Perrier ]
+  * Remove non-existent kde-i18n-th for Thai
+  * Add basic Punjabi locale tasks
+  * Add basic Bengali locale tasks
+  * Add aspell-fr to the French task
+  * Stop building "no" translations (no more supported in etch)
+
+  [ Joey Hess ]
+  * Add hibernate package to laptop task.
+
+  [ Kęstutis Biliūnas ]
+  * tasks/lithuanian-desktop: uncommented kde-i18n-lt
+
+  [ SZERVÁC Attila ]
+  * added hungarian and hungarian-desktop tasks. Closes: #352265
+
+  [ Joey Hess ]
+  * Add hotkey-setup to laptop and destop task. Closes: #354143
+  * Add alsa-utils to desktop so it will unmute the mixer. Closes: #354143
+  * Add alsa-base to desktop.
+
+ -- Joey Hess <joeyh@debian.org>  Thu, 23 Feb 2006 15:01:11 -0500
+
+tasksel (2.40) unstable; urgency=low
+
+  [ Translations of debconf templates ]
+    - Added Punjabi (Gurmukhi).
+
+  [ Translations of tasks ]
+    - Updated Punjabi (Gurmukhi).
+
+  [ Translations of programs ]
+    - Updated Punjabi (Gurmukhi).
+
+  [ Joey Hess ]
+  * Use df -P to avoid line wrapped df. Closes: #349623
+
+ -- Joey Hess <joeyh@debian.org>  Tue, 24 Jan 2006 14:20:34 -0500
+
+tasksel (2.39) unstable; urgency=low
+
+  [ Translations of debconf templates ]
+    - Updated Lithuanian. (Kęstutis Biliūnas)
+    - Updated Japanese. (Kenshi Muto)
+    - Updated Bengali.
+    - Updated Dutch. (Bart Cornelis)
+    - Updated Slovak.
+    - Updated Bulgarian.
+    - Updated Ukrainian.
+    - Updated Hebrew.
+    - Updated Vietnamese.
+
+  [ Translations of tasks ]
+    - Updated Lithuanian. (Kęstutis Biliūnas)
+    - Updated Japanese. (Kenshi Muto)
+    - Updated Norwegian Bokmal.
+    - Added Punjabi. (Amanpreet Singh Alam)
+    - Updated Bengali.
+    - Updated Hebrew.
+    - Updated Dutch. (Bart Cornelis)
+    - Updated Vietnamese.
+    - Updated Slovak.
+    - Updated Bulgarian.
+    - Updated Ukrainian.
+
+  [ Translations of programs ]
+    - Updated Lithuanian. (Kęstutis Biliūnas)
+    - Updated Japanese. (Kenshi Muto)
+    - Added Punjabi. (Amanpreet Singh Alam)
+    - Updated Hebrew.
+    - Updated Dutch. (Bart Cornelis)
+    - Updated Slovak.
+    - Updated Bulgarian.
+    - Updated Ukrainian.
+
+  [ Joey Hess ]
+  * Uncomment the now-available sa-exim in mail server task.
+  * Add cpufrequtils to laptop.
+  * Add support for preinst, postinst, prerm and postrm scripts for tasks.
+  * Add preinst script for desktop task, to install read-edid and mdetect
+    for X server autoconfiguration.
+  * Clean up executation of commands.
+  * Install discover1 and xresprobe in desktop.preinst if not already
+    installed, both of these as well as laptop-detect are used by xserver-org
+    if available (tasksel already depends on laptop-detect, so it will already
+    be available).
+
+  [ Eugeniy Meshcheryakov ]
+  * Replaced aspell-ukr by aspell-uk in 'ukrainian' task.
+
+  [ Joey Hess ]
+  * Patch from Kenshi Muto to make translated task names be displayed.
+    Closes: #348716
+
+ -- Joey Hess <joeyh@debian.org>  Thu, 19 Jan 2006 14:31:32 -0500
+
+tasksel (2.38) unstable; urgency=low
+
+  * mozilla-firefox is being renamed to firefox. Added firefox but left the
+    mozilla-firefox package in for now, until firefox reaches testing.
+  * mozilla-psm is not needed for firefox so removed it from the desktop task
+
+  [ Translations of debconf templates ]
+  * Polish updated. Closes: #344140
+  * Greek updated.
+  * Italian updated. Closes: #344669
+
+  [ Translations of tasks ]
+  * Polish updated. Closes: #344140
+  * Greek updated.
+
+  [ Translations of programs ]
+  * Vietnamese updated. Closes: #343848
+  * Polish updated. Closes: #344140
+  * Greek updated.
+
+  [ Joey Hess ]
+  * When running aptitude in debconf-apt-progress, pass -q to it to disable
+    incremental progress displays being logged to stderr, since eg in d-i that
+    results in a lot (possibly many megabytes) of download progress info in
+    the logs.
+  * Support backing up from tasksel if it is run as part of a larger
+    debconf-using program such as d-i; while tasksel will not enable the
+    backup capb itself, if it is enabled and the user chooses to back up, it
+    will exit with code 10. Note that this code, rather than 30, was chosen
+    to interoperate with d-i, which rather inexplicably uses 10 instead of 30
+    to signal backup across process boundries.
+
+ -- Joey Hess <joeyh@debian.org>  Sun, 25 Dec 2005 17:19:07 -0500
+
+tasksel (2.37) unstable; urgency=low
+
+  * In debconf test, also test for DEBCONF_READFD being set, to detect when
+    tasksel is being run with a passthrough debconf frontend configured,
+
+ -- Joey Hess <joeyh@debian.org>  Sun,  4 Dec 2005 17:27:59 -0500
+
+tasksel (2.36) unstable; urgency=low
+
+  * Hmm, remove --logfile and --logstderr, add more general
+    --debconf-apt-progress="options" setting.
+
+ -- Joey Hess <joeyh@debian.org>  Sun,  4 Dec 2005 16:46:40 -0500
+
+tasksel (2.35) unstable; urgency=low
+
+  * Set section to admin to match overrides.
+  * Add --logfile and --logstderr options.
+
+ -- Joey Hess <joeyh@debian.org>  Sun,  4 Dec 2005 16:10:33 -0500
+
+tasksel (2.34) unstable; urgency=low
+
+  [ Joey Hess ]
+  * Manual package selection is now less of a special case, with an actual
+    task entry for it that can have test scripts like other task entries,
+    etc.
+  * Check for running under the debconf frontend and if it is, do as much as
+    possible to avoid outputting non-debconf protocol to stdout, including:
+    - Don't display the manual task.
+    - Don't clear the screen before running aptitude.
+  * Use debconf-apt-progress during installs if available (except if the user
+    chooses manual selection), to get a fancy progress bar and completly limit
+    output when run inside debconf to debconf protocol output.
+  * Use debconf-apt-progress for removals too.
+  * Pass -y to aptitude remove.
+  * Remove fairly obsolete screen clearing code
+
+  [ Translations of tasks ]
+  * French updated
+  * Czech updated
+  * Danish updated
+  * Brazilian Portuguese updated
+  * Simplified Chinese updated. Closes: #340806
+  * Bengali added
+  * Italian updated
+  * Galician updated
+  * Spanish updated
+
+  [ Translations of programs ]
+  * French updated
+  * Czech updated
+  * Danish updated
+  * Brazilian Portuguese updated
+  * Simplified Chinese updated
+  * Italian updated
+  * Galician updated
+  * Spanish updated
+
+  [ Translations of debconf templates ]
+  * French updated
+  * Czech updated
+  * Danish updated
+  * Brazilian Portuguese updated
+  * Simplified Chinese updated
+  * Bengali added
+  * Galician updated
+  * Spanish updated
+
+ -- Joey Hess <joeyh@debian.org>  Sat,  3 Dec 2005 18:56:10 -0500
+
+tasksel (2.33) unstable; urgency=low
+
+  [ Joey Hess ]
+  * Update Hebrew tasks. Closes: #323241
+  * Remove doc-debian-ko. Closes: #330111
+  * Remove openoffice.org-kde from desktop task (was already in kde-desktop
+    task).
+
+  [ Translations of tasks ]
+    - Updated Japanese translation. (Kenshi Muto)
+    - Updated Dutch translation (Bart Cornelis)
+    - Updated Italian translation (Giuseppe Sacco)
+    - Updated Norwegian Bokmal translation (Bjorn Steensrud). Closes: #316734
+    - Updated Tagalog translation (Eric Pareja)
+    - Updated Russian translation (Yuri Kozlov). Closes: #334251
+    - Updated Swedish translation (Daniel Nylander). Closes: #333810, #333815
+    - Updated Galician translation (Jacobo Tarrio)
+
+  [ Translations of programs ]
+    - Updated Russian translation (Yuri Kozlov). Closes: #334251
+    - Updated Swedish translation (Daniel Nylander). Closes: #333810, #333815
+
+ -- Jacobo Tarrio <jtarrio@trasno.net>  Sun, 13 Nov 2005 19:25:56 +0100
+
+tasksel (2.32) unstable; urgency=low
+
+  [ Translations of tasks ]
+    - Updated Brazilian Portuguese translation (André Luís Lopes)
+    - Updated Ukrainian translation (Eugeniy Meshcheryakov)
+    - Updated Danish translation (Claus Hindsgaul)
+    - Updated Lithuanian translation (Kęstutis Biliūnas)
+
+  [ Joey Hess ]
+  * Temporarily disabled kde-desktop task since kdegraphics is uninstallable
+    even in testing ATM.
+
+ -- Joey Hess <joeyh@debian.org>  Thu, 22 Sep 2005 10:03:10 +0200
+
+tasksel (2.31) unstable; urgency=low
+
+  [ Translations of tasks ]
+    - Updated Simplified Chinese translation (Carlos Z.F. Liu)
+    - Updated Czech translation (Miroslav Kure)
+    - Updated Romanian translation (Eddy Petris�or. Closes: #323412
+    - Updated French translation (Christian Perrier)
+    - Updated Vietnamese translation (Clytie Siddall)
+    - Updated Spanish translation (Javier Fernandez-Sanguino)
+
+  [ Joey Hess ]
+  * Fix dutch tasks. Closes: #323415
+  * Explicitly add Packages: task-fields lines to all the tasks in tasks/
+    so it's less of a special case from how task definitions generally work.
+  * Key packages are always included in a task, and need not be explicitly
+    listed by the Packages field, although it's ok if they are.
+  * Allow package list programs to output the list separated by any
+    whitespace, not just newlines.
+  * Pass params from Packages: fields to the program that is run.
+  * Add a "list" method, supporting easy user-defined tasks with no coding
+    or overrides hacking needed, vis:
+      Packages: list
+        package-1
+        package-2
+        ...
+  * Some docs improvements in this area.
+
+ -- Joey Hess <joeyh@debian.org>  Wed, 24 Aug 2005 17:31:01 -0400
+
+tasksel (2.30) unstable; urgency=low
+
+  * Add synaptic to desktop task, as it's very well suited to letting desktop
+    users manage their software
+  * Uncomment openoffice localised help packages, as their dependencies on
+    openoffice.org have been weakened to suggests. So of the openoffice stuff
+    commented out in 2.11, only openoffice.org itself remains as an arch all
+    package depending on the arch any openoffice.org-bin.
+  * Remove openoffice.org-gtk-gnome and openoffice.org-kde from greek-desktop
+    as they not greek specific. But they do seem useful, so add them to
+    desktop.
+  * Split out kde and gnome stuff from desktop into kde-desktop and
+    gnome-desktop.
+  * Both depend on the main desktop task (so both will be installed if
+    available when the desktop task is selected), and both are hidden since
+    a user should not need to choose between them.
+  * This allows CDs to leave off either KDE or Gnome (or both!) and still
+    get a working desktop task.
+  * It also allows derivitives to more easily choose to include only one of
+    the environments (via preseeding or by unhiding the tasks).
+
+ -- Joey Hess <joeyh@debian.org>  Mon,  8 Aug 2005 19:11:10 -0400
+
+tasksel (2.29) unstable; urgency=low
+
+  * [ Program translations ]
+    - Updated Brazilian Portuguese translation (André Luís Lopes)
+    - Updated German translation (Dennis Stampfer)
+    - Updated Spanish translation (Javier Fernandez-Sanguino)
+  * [ Translations of tasks ]
+    - Updated Vietnamese translation (Clytie Siddall). Closes: #317627
+    - Updated German translation (Dennis Stampfer)
+    - Updated Spanish translation (Javier Fernandez-Sanguino)
+    - Updated Romanian translation (Eddy Petrisor). Closes: #321248
+
+  [ Joey Hess ]
+  * Priority inflation a-la-debootstrap. Closes: #318753
+  * gimpprint rename
+  * Add anacron to laptop.
+  * Remove force test script since as Free pointed out it's a subet of the
+    functionality of new-install. Closes: #317753
+  * Count installed packages as available even if apt cannot re-install them.
+  * Fix name of laptop task.
+  * Add Romanian tasks by Eddy Petrisor. Closes: #321418
+  * Add Dutch tasks by Frans Pop. Closes: #319914
+
+ -- Joey Hess <joeyh@debian.org>  Mon,  8 Aug 2005 14:10:09 -0400
+
+tasksel (2.28) unstable; urgency=low
+
+  * [ Translations of tasks ]
+    - Updated Bulgarian translation (Ognyan Kulev)
+    - Updated Danish translation (Claus Hindsgaul)
+    - Updated Lithuanian translation (Kęstutis Biliūnas)
+    - Updated Hebres translation (Lior Kaplan)
+    - Updated Galician translation (Jacobo Tarrio)
+
+ -- Joey Hess <joeyh@debian.org>  Sun, 17 Jul 2005 14:53:14 +0300
+
+tasksel (2.27) unstable; urgency=low
+
+  [ Joey Hess ]
+  * Automatically default to selecting desktop task on new installs
+    if the machine has sufficient ram, disk, and other characteristics that
+    suggest it will be used as a desktop. This is just a guess, but is better
+    than no guess.
+  * Add slovak task by Peter Mann. Closes: #315813
+
+  [ Otavio Salvador ]
+  * Switch Brazilian timezone selection back to cities.
+
+  [ Translations of tasks ]
+    - Updated Bulgarian translation (Ognyan Kulev)
+    - Updated Simplified Chinese translation (Carlos Z.F. Liu)
+    - Updated French translation (Christian Perrier)
+  [ Program translations ]
+    - Updated Bulgarian translation (Ognyan Kulev)
+    - Added Wolof translation (Mouhamadou Mamoune Mbacke)
+  [ Debconf translations ]
+    - Added Wolof translation (Mouhamadou Mamoune Mbacke)
+
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 10 Jul 2005 00:38:55 +0200
+
+tasksel (2.26) unstable; urgency=low
+
+  * Joey Hess
+    - Remove doc-linux-zh-s, mozilla-locale-auto, debian-guide-es,
+      debrecipes-es, doc-es-misc, linux-tutorial-es, and kde-i18n-th
+      from tasks as none of those packages exist anymore. Anyone know of
+      replacements?
+    - Removed kbedic and cbedic from bulgarian since they are
+      a) in contrib b) require manual downloads of data files so do not work
+      out of the box so are not appropriate for a task anyway.
+    - That's all the cruft in tasks. Closes: #260250
+    - Add Czech tasks by Miroslav Kure. Closes: #313181
+    - Add laptop task, with autodetection. Depend on laptop-detect.
+      Closes: #287414
+  * Konstantinos Margaritis
+    - Updated Greek task, specifically:
+      - Added fonts ttf-mgopen (higher quality than ttf-freefont)
+      - Added packages openoffice.org-gtk-gnome and openoffice.org-kde
+        as a workaround for bug #252014, the bug is still in OO, but it appears
+        to be fixed this way.
+      - Added mozilla-firefox-locale-el and mozilla-thunderbird-locale-el
+  * Eugeniy Meshcheryakov
+    - Added missing dots in task descriptions.
+  * Christian Perrier
+    - Rewrite the standard task description to better fit the policy
+      definition
+    - "standard system" becomes "Standard system", preseeders please note.
+    - Make the Arbaic and Bulgarian desktop tasks descriptions consistent
+      with other desktop tasks descriptions. Thanks to Eddy Petrisor for
+      reporting this.
+  * Translations of tasks
+    - Updated French translation (Christian Perrier)
+    - Updated Greek translation (Konstantinos Margaritis)
+    - Updated Japanese translation (Kenshi Muto)
+    - Updated Ukrainian translation (Eugeniy Meshcheryakov)
+    - Updated Danish translation (Claus Hindsgaul)
+    - Updated Romanian translation (Eddy Petrisor)
+    - Updated Galician translation (Jacobo Tarrio)
+    - Updated Vietnamese translation (Phan Vinh Thinh). Closes: #316687
+    - Updated Lithuanian translation (Kęstutis Biliūnas)
+    - Updated Simplified Chinese translation (Carlos Z.F. Liu)
+  * Program translations
+    - Updated French translation (Christian Perrier)
+    - Updated Japanese translation (Kenshi Muto)
+    - Updated Ukrainian translation (Eugeniy Meshcheryakov)
+    - Updated Danish translation (Claus Hindsgaul)
+    - Updated Romannian translation (Eddy Petrisor)
+    - Updated Galician translation (Jacobo Tarrio)
+    - Updated Vietnamese translation (Phan Vinh Thinh). Closes: #316686
+    - Updated Lithuanian translation (Kęstutis Biliūnas)
+    - Updated Simplified Chinese translation (Carlos Z.F. Liu)
+
+ -- Joey Hess <joeyh@debian.org>  Thu,  7 Jul 2005 11:44:20 +0300
+
+tasksel (2.25) unstable; urgency=low
+
+  * Joey Hess
+    - Add libtheora0 to desktop task so totem can play these files.
+      (See #301262)
+    - Add Bulgarian language and desktop language tasks contributed by
+      Anton Zinoviev. Closes: #271178
+    - Add tf2pt1, ttf2pt1-chinese and ttfprint to chinese-s an chinese-t to
+      support printing of asian fonts. Closes: #305148
+    - Remove language-env from chinese-t, since language-env does not support
+      Chinese simplified yet. See #301496
+    - Add scim-chewing and m17n-env to chinese-t-desktop, remove old cpanel
+      and chinput input methods. Closes: #301496
+    - Also remove language-env from chinese-s as it doesn't support that
+      either, and remove obsolete cpanel from chinese-s-desktop too.
+    - Add basic Arabic tasks. Closes: #282493
+    - Add printconf to print-server for automatic printer setup. Closes: #293108
+    - Add windbind to file-server since it's commonly used with samba.
+      Closes: #292936
+    - Look for desc files in /usr/local/share/tasksel too. Closes: #286170
+    - Replace mozilla with firefox in desktop task. Closes: #282166
+    - Add "force" test script contributed by Free Ekanayaka. This allows
+      adding Test-force lines to tasks that force them to be installed,
+      skipped, marked, or shown, without needing to write any code,
+      and may be useful for CDDs. Closes: #275303
+    - Allow later task descs to override earlier ones, useful if you
+      want to blow away the standard Debian tasks, perhaps by using Test-force
+      to hide them. Closes: #274936
+    - Add a "new-install" test script (and export NEW_INSTALL for test
+      scripts), to allow special control of tasks during new installs.
+    - Add a new "standard" task which defaults to being marked for install
+      on new installs and is otherwise hidden (because removing it makes
+      little sense), and which causes all standard or above priority packages
+      to be installed. Closes: #301273, #298702
+    - Remove the -r, -i, and -s switches as unnecessary given the standard
+      task.
+    - Remove the -n switch since it was intended to be used with other removed
+      switches.
+    - Make the lang test only do anything on new installs, to avoid tasksel
+      looking at the LANG variable in everyday use.
+    - Rename Packages field in input task files to Packages-list to allow
+      really specifying a Packages value.
+    - Deal better with ctrl-c cancel while in debconf.
+  * Kęstutis Biliūnas
+    - Added openoffice.org-l10n-lt to lithuanian-desktop task.
+    - Commented out kde-i18n-lt as the Lithuanian language currently is
+      not supported by upstream.
+    - Added aspell-lt to lithuanian task.
+  * Christian Perrier
+    - Fix errors in English descriptions of tasks:
+      - web-server: "select packages"
+      - *-desktop : "localises the desktop"
+                    "that make it"
+      - thai      : "for Thai speaking people"
+      All translations unfuzzied
+      Closes: #306081
+  * Translations
+    - All Bosnian translations completed by Safir Secerovic
+    - All Malagasy translations added by Jaonary Rabarisoa
+    - Fixes to Danish translations of language tasks by Claus Hindsgaul
+    - All Vietnamese translations added by Clytie Siddall
+    - Estonian translations of debconf templates by Siim Põder. Closes: #312464
+    - Estonian translations of tasks by Siim Põder. Closes: #312463
+    - Estonian translations of tasksel by Siim Põder. Closes: #312462
+
+ -- Joey Hess <joeyh@debian.org>  Thu,  9 Jun 2005 19:30:45 -0400
+
+tasksel (2.24) unstable; urgency=low
+
+  * Joey Hess
+    - Removed xprt from desktop task after discussion on -devel.
+  * Translations
+    - Simplifed Chinese translation (po/zh_CN.po) updated by Carlos Z.F. Liu
+    - Galician translation updates by Jacobo Tarrio
+
+ -- Joey Hess <joeyh@debian.org>  Thu, 10 Mar 2005 20:03:05 -0500
+
+tasksel (2.23) unstable; urgency=low
+
+  * Fix some small logic errors in when the screen clear happens.
+  * Don't let -ris parameters interfere with running aptitude w/o
+    --visual-preview if manual install is selected. Closes: #295111
+
+ -- Joey Hess <joeyh@debian.org>  Tue, 15 Feb 2005 13:04:35 -0500
+
+tasksel (2.22) unstable; urgency=low
+
+  * Removed manpages-zh from Key in chinese-[ts], since it has been removed
+    from unstable. Left in task in case it is added back.
+  * Removed obsolete mozilla-xft package from desktop task.
+  * Konstantinos Margaritis:
+    - Added myspell-el-gr to greek-desktop task
+
+ -- Joey Hess <joeyh@debian.org>  Fri, 21 Jan 2005 15:22:36 -0500
+
+tasksel (2.21) unstable; urgency=low
+
+  * Joey Hess
+    - Chinese tasks reworked by Carlos Liu. Closes: #291092
+    	- Dropped xcin, pydict from chinese-s and stardic from chinese-t
+        - Dropped yiyantang, yh, kon2, chdrv, tfm-arphic-*, cce,
+          gs-cjk-resource, cmap-adobe-gb1, cmap-adobe-cns1, psfontmgr
+          from both tasks.
+        - Added scim-chinese, fcitx to chinese-s-desktop
+        - Added scim-tables-zh and rxvt-unicode-ml into both chinese-s-desktop
+          and chinese-t-desktop
+        - Moved all X-dependent packages from chinese-* to chinese-*-desktop.
+    - Add myspell-* back to all language tasks since #283923 is fixed.
+    - Uncommented the openoffice l10n packages since they no longer depend
+      on openoffice.org, but only recommend it.
+
+ -- Joey Hess <joeyh@debian.org>  Thu, 20 Jan 2005 15:10:42 -0500
+
+tasksel (2.20) unstable; urgency=low
+
+  * Joey Hess
+    - Include return code if aptitude run fails.
+
+ -- Joey Hess <joeyh@debian.org>  Fri,  7 Jan 2005 17:46:59 -0500
+
+tasksel (2.19) unstable; urgency=low
+
+  * Christian Perrier
+    - Fix typo in README. Closes: #286053
+    - Add missing languages in Makefile. Closes: #286539
+  * Joey Hess
+    - Don't require whitespace after keys with multiline values. Closes: #286054
+    - Patch from Denis to always use untranslated values in the debconf
+      choices list of tasks, as used for preseeding. Closes: #278186
+    - If the user chooses manual selection and does not change any other task
+      selections, run aptitude without --visual-preview parameter, as that
+      parameter made it skip the package browser. Closes: #272360
+  * Translations
+    - Bosnian translation updates by Safir Secerovic
+    - Tagalog translation files by Eric Pareja
+
+ -- Joey Hess <joeyh@debian.org>  Tue,  4 Jan 2005 19:37:37 -0500
+
+tasksel (2.18) unstable; urgency=low
+
+  * Joey Hess
+    - Comment out mysell-* from all language tasks to work around bug #283923.
+      Closes: #285881
+
+ -- Joey Hess <joeyh@debian.org>  Thu, 16 Dec 2004 22:11:08 -0500
+
+tasksel (2.17) unstable; urgency=low
+
+  * Joey Hess
+    - Don't clear screen in test mode.
+    - Fix behavior of tasks whose test script returns 2 in --new-install mode; 
+      do not install these tasks if the user de-selects them. Closes: #284895
+
+ -- Joey Hess <joeyh@debian.org>  Thu,  9 Dec 2004 14:25:25 -0500
+
+tasksel (2.16) unstable; urgency=low
+
+  * Translations:
+    - Welsh updates in po/ and tasks/po. Welsh translation for debian/po
+      added. Closes: #282181
+  * Christian Perrier
+    - Fix double spaces in some tasks descriptions
+    - Fix ending dot in chinese-t-desktop
+      Closes: #282182
+    - Unfuzzy translations as translators obviously didn't
+      follow inconsistencies
+
+ -- Joey Hess <joeyh@debian.org>  Mon,  6 Dec 2004 18:12:09 -0500
+
+tasksel (2.15) unstable; urgency=high
+
+  * Joey Hess
+    - Fix email address. Closes: #276031
+    - Drop apparently useless libecpg4 from database-server. Closes: #275890
+    - Reduce set of kde stuff that is key for the desktop task, in an attempt
+      to make CD 1 continue to fit, similar to what was done with gnome
+      earlier.
+
+ -- Joey Hess <joeyh@debian.org>  Thu, 11 Nov 2004 22:19:50 -0500
+
+tasksel (2.14) unstable; urgency=medium
+
+  * Joey Hess
+    - Add mozilla-xft to desktop task, needed for antialiasing in gnome
+      browser as well as mozilla.
+
+ -- Joey Hess <joeyh@debian.org>  Fri,  8 Oct 2004 19:38:14 -0400
+
+tasksel (2.13) unstable; urgency=medium
+
+  * Joey Hess
+    - Fix use of test programs to mark a task to be installed by default.
+      Only done for --new-install though. Closes: #274933
+    - To allow tasks with such test programs to co-exist with preseeding
+      (and not override preseeded values) use the seen flag to tell if
+      tasksel/first is preseeded.
+  * Translations
+    - Elian Myftiu
+      - Added Albanian(sq) translation in debian/po
+    - Stefano Canepa
+      - Italian updated (debian/po). Closes: #270123
+    - Carlos Z.F. Liu
+      - Updated Simplified Chinese translation. (tasks/po/zh_CN.po)
+    - Correct typo in Norwegian Nynork translations
+      Closes: #274409
+    - Correct case in French debconf translation
+    
+ -- Joey Hess <joeyh@debian.org>  Tue,  5 Oct 2004 20:46:42 -0400
+
+tasksel (2.12) unstable; urgency=low
+
+  * Joey Hess
+    - Support preseeding of tasksel/first.
+    - Remove samba stuff from print-server, since CUPS can talk directly to
+      windows clients via ipp.
+  * Anton Zinoviev
+    cyrillic:
+     - add additional languages in Test-lang - Belarusian, Kazakh,
+       Macedonian and Mongolian - they all are supported by
+       console-cyrillic.  I haven't updated the description of the package
+       though in order not to bother the translators.
+     - me as a maintainer of this task
+     - move language-env from the Key: section to the Packages: section
+       cyrillic-desktop:
+     - me as a maintainer of this task
+     - add "t1-cyrillic" in the Key: section
+     - add more scalable fonts in the Packages: section
+     - uncomment the bitmap fonts for Unicode
+    Closes: #271174
+  * Translations
+    - Bartosz Fenski
+      - Polish updated (po and tasks/po). Closes: #270123
+
+ -- Joey Hess <joeyh@debian.org>  Sun, 12 Sep 2004 17:49:21 -0400
+
+tasksel (2.11) unstable; urgency=low
+
+  * Joey Hess
+    - Remove openoffice.org (leaving -bin), and remove all OOo -help- and
+      -l10n- packages from all tasks. This is necessary because these packages
+      are available for all architectures, but have broken dependencies on
+      many architectures (openoffice.org-bin is only built on a few), which
+      breaks installation of the tasks of which they are a part on many
+      architectures.
+  * Translations:
+    - Håvard Korsvoll
+      - Norwegian Nynorsk updates/added. Closes: #269906
+    - Axel Bojer
+      - Norwegian Bokmal updates/added. Closes: #269906
+
+ -- Christian Perrier <bubulle@debian.org>  Sat,  4 Sep 2004 15:06:51 +0200
+
+tasksel (2.10) unstable; urgency=low
+
+  * Otavio Salvador
+    - Include which file have a parser error.
+  * Christian Perrier
+    - Corrected typo in tasksel.pod. Closes: #266234
+  * Eugeniy Meshcheryakov
+    - Added iukrainian to ukrainian task
+    - Added myspell-uk to ukrainian-desktop task
+  * Translations:
+    - Jordi Mallach:
+      - Update Catalan translation of tasks, program and debconf templates.
+    - Miguel Figueiredo
+      - Portuguese translation pt.po: Initial program, debconf update.
+    - Christian Perrier
+      - Typo correction in fr.po
+    - Yuri Kozlov
+      - Added Russian debconf translation. Closes: #268187
+    - Giuseppe Sacco
+      - Update both italian translation files.
+    - Miguel Figueiredo
+      - Update tasks/po/pt.po
+
+ -- Christian Perrier <bubulle@debian.org>  Thu, 26 Aug 2004 14:05:33 +0200
+
+tasksel (2.09) unstable; urgency=critical
+
+  * Forgot to make this arch all when it was rewritten in perl.
+
+ -- Joey Hess <joeyh@debian.org>  Fri, 30 Jul 2004 17:58:31 -0400
+
+tasksel (2.08) unstable; urgency=critical
+
+  * Joey Hess
+    - Clear screen before running aptitude for better display
+      with dialog frontend.
+    - Anchor ~t expressions for aptitude to avoid matching *-desktop
+      when only desktop is wanted. Closes: #261927
+  * Kenshi Muto
+    - Update Japanese and Japanese-desktop task.
+      Removed some optional packages because there is no chance to
+      choice install or not them.
+
+ -- Joey Hess <joeyh@debian.org>  Mon, 26 Jul 2004 22:15:33 -0400
+
+tasksel (2.07) unstable; urgency=high
+
+  * Joey Hess
+    - Add --list-tasks switch.
+    - Document --new-install and long format switches.
+    - Add --task-packages switch, may be used by Synaptic.
+    - Add --task-desc switch. Closes: #259664
+    - Re-organised the documentation.
+    - Modularised how the list of packages in a task is determined.
+    - Play with server relevance values a bit to order web server and print
+      server to the top.
+    - Use aptitude's new --visual-preview option to allow selection and then
+      fine-tuning of tasks.
+    - Add tasksel remove command. Closes: #259664
+    - Mark already installed tasks. Closes: #54233
+  * Per Olofsson
+    - Added openoffice.org-help-sv and gimp-help-sv to swedish-desktop.
+      Closes: #259832.
+  * Changwoo Ryu
+    - Moved X applications/fonts to Korean-desktop from Korean.
+  * Rene Engelhard
+    - Added myspell-ru to russian task
+    - Added openoffice.org-l10n-he to hebrew-desktop task
+    - Added openoffice.org-l10n-{nb,nn} to norwegian-desktop task
+  * Recai Oktas
+    - Added kde-i18n-tr, koffice-i18n-tr and openoffice.org-l10n-tr
+      to the turkish-desktop task
+  * Translations
+    - Kęstutis Biliūnas
+      - Updated Lithuanian debconf and tasks translations.
+    - Claus Hindsgaul
+      - Updated Danish translation of tasks and program translation.
+    - Eugeniy Meshcheryakov
+      - Updated Ukrainian tasks and program translation.
+    - Kruno
+      - Initial Croatian tasks, debconf and program translation hr.po
+      - Update of program and tasks translations
+    - Dennis Stampfer
+      - Updated German program and tasks. Initial debconf translation.
+    - Christian Perrier
+      - Updated French program and tasks.
+    - André Luís Lopes
+      - Updated Brazilian Portuguese translation (program and tasks).
+    - Arabeyes translators
+      - Added Arabic translations (programs, debconf and tasks)
+    - Carlos Z.F. Liu
+      - Updated Simplified Chinese debconf translations.
+    - Per Olofsson
+      - Updated Swedish program, debconf and tasks.
+  * Christian Perrier
+    - Corrected Japanese desktop task description. Closes: #260233
+  * Kenshi Muto
+    - Modify Choices to _Choices in templates for l10n.
+
+ -- Joey Hess <joeyh@debian.org>  Sun, 25 Jul 2004 18:30:44 -0400
+
+tasksel (2.06) unstable; urgency=medium
+
+  * Joey Hess
+    - Switch mozilla to mozilla-browser.
+    - Run aptitude --without-recommends when noninteractively installing
+      tasks, since tasks should be usable w/o recommends and recommends may
+      pull in unintended packages.
+  * Kenshi Muto
+    - Modified Japanese and Japanese-desktop (moved X applications to
+      Japanese-desktop)
+  * Translations
+    - André Luís Lopes
+      - Updated Brazilian Portuguese tasks translation.
+
+ -- Joey Hess <joeyh@debian.org>  Wed, 14 Jul 2004 19:13:52 -0400
+
+tasksel (2.05) unstable; urgency=low
+
+  * Joey Hess
+    - Add support for inter-task dependencies.
+    - Add a bunch of lang-desktop tasks, will be auto-installed if the desktop
+      task and given language are installed. Closes: #202907, #257863
+    - Add a Swedish task by Per Olofsson. Closes: #251536
+  * Translations
+    - André Luís Lopes
+      - Updated Brazilian Portuguese translation.
+
+ -- Joey Hess <joeyh@debian.org>  Wed, 14 Jul 2004 15:31:32 -0400
+
+tasksel (2.04) unstable; urgency=low
+
+  * Matt Kraai
+    - Fix typos in warning and error functions. Closes: #256774
+  * Joey Hess
+    - Remove -a option in usage help until it's re-implemented. Closes: #257986
+    - Remove -a and -q from man page.
+  * Translations
+    - Jordi Mallach
+      - Updated Catalan translation of tasks.
+    - Javier Fernandez-Sanguino
+      - Updated Spanish translation
+    - Eugeniy Meshcheryakov
+      - Updated Ukrainian translation.
+    - Kęstutis Biliūnas
+      - Updated Lithuanian translation of tasks.
+
+ -- Joey Hess <joeyh@debian.org>  Mon, 28 Jun 2004 21:13:08 -0400
+
+tasksel (2.03) unstable; urgency=low
+
+  * Otavio Salvador
+    - Add brazilian-portuguese task.
+    - Fix how aptitude is called when using manual selection. 
+      Closes: #256604
+    - Enquote the required, important and standard options because this
+      was missed.  
+  * Translations
+    - André Luís Lopes
+      - Updated Brazilian Portuguese translation of tasks.
+    - Christian Perrier
+      - Updated French translation of tasks.
+    - Carlos Z.F. Liu
+      - Updated Simplified Chinese translation of tasks.
+
+ -- Joey Hess <joeyh@debian.org>  Mon, 28 Jun 2004 15:10:28 -0400
+
+tasksel (2.02) unstable; urgency=medium
+
+  * Joey Hess
+    - Save some space in desktop task by making it use
+      gnome-desktop-environment as the key package for gnome, and only include
+      all the rest of gnome if it's available.
+    - Fix broken Test-lang for italian, spanish, which justifies the medium
+      urgency. Closes: #256346
+  * Translations
+    - Carlos Z.F. Liu
+      - Updated Simplified Chinese programs, tasks and debconf translations
+    - Claus Hindsgaul
+      - Initial Danish version 2 debconf translation
+    - André Luís Lopes
+      - Added Brazilian Portuguese translation (debian/po/pt_BR.po).
+    (some others not listed)
+
+ -- Joey Hess <joeyh@debian.org>  Sat, 26 Jun 2004 09:34:07 -0400
+
+tasksel (2.01) unstable; urgency=low
+
+  * Joey Hess
+    - Add hspell-gui to Hebrew task.
+    - Merge office with desktop task, dropping gnucash.
+    - First release of rewritten tasksel to unstable.
+    - Fix base-config conflicts; 2.32 is the first released version to support
+      this tasksel.
+  * Translations
+    - Eugeniy Meshcheryakov
+      - Updated Ukrainian translation
+    - Christian Perrier
+      - Updated POT files and PO files accordingly
+      - Updated French programs and debconf translations
+   - Kęstutis Biliūnas
+      - Updated Lithuanian programs and debconf translations
+    - Claus Hindsgaul
+      - Updated Danish translation
+    - Håvard Korsvoll
+      - Updated Norwegian nynorsk translation of tasks. Closes: #249684
+
+ -- Joey Hess <joeyh@debian.org>  Wed, 23 Jun 2004 11:41:16 -0400
+
+tasksel (2.00) experimental; urgency=low
+
+  * Joey Hess
+    - Rewrote tasksel to use debconf for the UI, and support test programs
+      for flexible automatic task selection, etc.
+      Closes: #65992, #103363, #105718, #234216, #251419, #251638, #251639
+      Closes: #244949, #251743
+    - Tagged all the language tasks with Test-lang fields holding the
+      language that the task is useful for, to allow for autoselection
+      of languages matching the installation language.
+    - Add fortune-mod to the desktop task as a gnome or kde screensaver does
+      very silly things w/o it.
+    - Adopted new, stricter criteria for task additions. Removed the following
+      tasks, which did not meet it: c-dev, java-dev, python-dev, broadband,
+      dialup, laptop, junior, kernel-compile, science, tex, games, lsb,
+      unix-server. Some of these (laptop, etc) could be reinstated if tests
+      were developed for them.
+      Closes: #192747, #249309, #234393, #202878, #249702, #142873, #186085
+      Closes: #237255, #245649, #254329
+    - Added a dependency on liblocale-gettext-perl.
+    - Added a dependency on aptitude, which is used to do the work of
+      installing tasks, etc.
+    - Added a conflicts with older debconf versions that do not work
+      with tasksel.
+    - Tasksel now accepts long options in addition to the short ones.
+    - The -q option is not yet re-implemented, and I hope not to implement
+      it, as to do so would mean a lot more messing with the package
+      database. This breaks older base-config's, so conflict with them.
+    - The -a option is also not yet re-implemented.
+    - Add --new-install option, intended to be used by base-config to make
+      tasksel enter a special mode more suited for initial system installs.
+    - Fixes "tasksel install". Closes: #165628
+    - Fix man page internal section.
+    - Rejiggered the maintainer and uploader fields.
+    - Update copyright.
+    - Add Italian task.
+  * Changwoo Ryu
+    - Replaced old IM ami from Korean task with descent nabi and imhangul.
+    - Added more fonts and docs to Korean task.
+  * Translations
+    - Jordi Mallach
+      - Updated Catalan tasks translation.
+    - Safir Secerovic
+      - Updated Bosnian tasks translation.
+    - Miguel Figueiredo
+      - Updated Portuguese tasks translation.
+    - Tomohiro KUBOTA (久保田智広)
+      - Updated Japanese tasks translation
+
+ -- Joey Hess <joeyh@debian.org>  Tue,  8 Jun 2004 13:32:12 -0400
+
+tasksel (1.52) unstable; urgency=high
+
+  * Recai Oktas
+    - Remove openoffice.org-l10n-tr from Turkish task to make it lighter.
+    - Remove fonty from Turkish task because it only handles iso* fonts,
+      and debian-installer sets Turkish font to a better alternative
+      (ter-916f) which is overridden if fonty is installed.
+      Closes: #247928
+   * Joey Hess
+     - openoffice.org is arch all, and so not a good candidate for the key
+       package of the office task. Add openoffice.org-bin, to ensure that the
+       task is only available on arches that have a full OOo build.
+     - The basic-desktop task is confusing, violates the one task per use of
+       the system tenet, does not interoperate well with the desktop task,
+       and is now removed. Closes: #249344 Users who want plain X should be
+       comfortable selecting the package by hand.
+  * Translations
+    - Kęstutis Biliūnas
+      - Updated Lithuanian translation (tasks/po/lt.po).
+
+ -- Tollef Fog Heen <tfheen@debian.org>  Mon, 24 May 2004 17:52:31 +0200
+
+tasksel (1.51) unstable; urgency=medium
+
+  * Joey Hess
+    - Update kernel source version in custom kernel task once more.
+    - Add a Turkish task from Recai Oktas. Closes: #243113
+    - Fix Portuguese translation of "Finish". Closes: #241550
+    - Switch mail task to use exim4. Closes: #242704
+    - Add openoffice.org-help-en to the office task for English help files.
+      Closes: #246106
+    - Add resolvconf to the dialup and broadband tasks. Closes: #229617
+    - Add myspell-en-{us,gb} to office task, by analogy with the language
+      tasks that include the myspell stuff.
+  * Rene Engelhard
+    - Updated 'greek', 'korean', 'norwegian' and 'thai' tasks
+  * Eugeniy Meshcheryakov
+    - Updated 'ukrainian' task
+  * Translations
+    - Miguel Figueiredo
+      - Updated Portuguese tasks translation
+    - Christian Perrier
+      - Updated French tasks translation
+    - Carlos Z.F. Liu
+      - Updated Simplified Chinese tasks translation
+    - Claus Hindsgaul
+      - Updated Danish tasks translation
+    - Eugeniy Meshcheryakov
+      - Updated Ukrainian tasks translation
+    - Rene Engelhard
+      - Updated German tasks translation
+    - Miroslav Kure
+      - Updated Czech tasks translation
+    - André Luís Lopes
+      - Updated Brazilian Pourtuguese tasks translation
+    - Peter Mann
+      - Updated Slovak tasks translation.  Closes: #247110
+    - Tomohiro KUBOTA (久保田智広)
+      - Updated Japanese tasks translation
+
+ -- Joey Hess <joeyh@debian.org>  Thu,  6 May 2004 21:30:59 -0400
+
+tasksel (1.50) unstable; urgency=low
+
+  * Tasks
+    - Konstantinos Margaritis
+      - Updated 'greek' task
+    - Eugeniy Meshcheryako
+      - Added 'ukrainian' task.  Closes: #242921
+  * Translations
+    - Russian Translation Team (committed by Nikolai Prokoschenko)
+      - Updated russian translation
+    - Denis Barbier
+      - Updated French translation
+    - Eugeniy Meshcheryakov
+      - Updated Ukrainian translation
+    - André Luís Lopes
+      - Updated Brazilian Portuguese translation.
+    - Tomohiro KUBOTA (久保田智広)
+      - Updated Japanese translation
+    - Carlos Z.F. Liu
+      - Updated Simplified Chinese translation
+    - Kęstutis Biliūnas
+      - Updated Lithuanian translation (tasks/po/lt.po).
+    - Konstantinos Margaritis
+      - Updated Greek translation (tasks/po/el.po).
+    - Miroslav Kure
+      - Updated Czech translation
+
+ -- Joey Hess <joeyh@debian.org>  Fri, 23 Apr 2004 13:34:43 -0400
+
+tasksel (1.49) unstable; urgency=low
+
+  * Translations
+    - Dennis Stampfer
+      - Updated German translation (tasks/po/de.po).
+    - André Luís Lopes
+      - Updated Brazilian Portuguese translation (tasks/po/pt_BR.po)
+
+ -- Joey Hess <joeyh@debian.org>  Sat, 10 Apr 2004 00:32:54 -0400
+
+tasksel (1.48) unstable; urgency=low
+
+  * Eugeniy Meshcheryakov
+    - Fix utf8 support. Closes: #238739, #235433
+  * Joey Hess
+    - Move Debian Jr. to the misc ghetto.
+    - Dropped the tcl/tk task as not being a popular enough language these
+      days.
+  * Translations:
+    - Kęstutis Biliūnas
+      - Updated Lithuanian translation (tasks/po/lt.po).
+    - Denis Barbier
+      - Updated French translation (tasks/po/fr.po).
+    - Jordi Mallach
+      - Updated Catalan translation (tasks/po/ca.po).
+    - Eddy Petrysor
+      - Added Romanian translation (po/ro.po)
+    - Miguel Figueiredo
+      - Update Portuguese translation (tasks/po/pt.po)
+    - André Dahlqvist
+      - Updated Swedish translation (tasks/po/sv.po).
+    - Peter Mann
+      - Updated Slovak translation (tasks/po/sk.po)
+    - Carlos Z.F. Liu
+      - Updated Simplified Chinese translation (tasks/po/zh_CN.po)
+
+ -- Joey Hess <joeyh@debian.org>  Thu,  1 Apr 2004 17:48:14 -0500
+
+tasksel (1.47) unstable; urgency=low
+
+  * Joey Hess
+    - Update kernel to 2.4.25. Remove bin86. Closes: #240383
+    - Add ifplugd to laptop task.
+    - Add a Hebrew task. Closes: #235450
+    - Some touchups based on #225357
+    - After discussing it with the apache maintainers, switched to apache2 for
+      the web task. Added mod-perl, mod-pytohn, and php4 to that task.
+    - libecpg3 is not available, update database task to libecpg4
+    - Switch laptop task to use irda-utils.
+  * dann frazier:
+    - Fix segfault when it detects a package name w/ a task- prefix, that
+      doesn't have a corresponding Section: tasks-foo field. Closes: #236397
+  * Kęstutis Biliūnas
+    - Added Lithuanian task
+  * Eddy Petrysor
+    - Added Romanian tasks translation
+  * Translations:
+    - Eugeniy Meshcheryakov
+      - Updated Ukrainian translation (tasks/po/uk.po)
+    - Kęstutis Biliūnas
+      - Updated Lithuanian translation (tasks/po/lt.po)
+    - Carlos Z.F. Liu
+      - Updated Simplified Chinese translation (tasks/po/zh_CN.po)
+    - Giuseppe Sacco
+      - Updated italian translation (tasks/po/it.po)
+    - Claus Hindsgaul
+      - Updated Danish translation (tasks/po/da.po)
+
+ -- Joey Hess <joeyh@debian.org>  Mon, 29 Mar 2004 10:38:17 -0500
+
+tasksel (1.46) unstable; urgency=low
+
+  * Denis Barbier
+    - Lists all available languages in LANGS and LANGS_DESC variables
+  * Joey Hess
+    - Copyright date update.
+  * Translations:
+    - André Dahlqvist
+      - Add Swedish translation of tasks descriptions.
+    - Dennis Stampfer
+      - Update German translation (po/de.po and tasks/po/de.po)
+    - Kęstutis Biliūnas
+      - Updated Lithuanian translation (tasks/po/lt.po)
+    - Giuseppe Sacco
+      - First italian translation for tasks/po/it.po
+      - Updated translation after the first and second reviews.
+    - Jure Cuhalev
+      - Added slovenian translations (both po/sl.po and tasks/po/sl.po)
+    - Petter reinholdtsen
+      - Updated Norwegian Bokmal translation (po/nb.po). Closes: #237840
+ 
+ -- Joey Hess <joeyh@debian.org>  Thu, 18 Mar 2004 16:49:06 -0500
+
+tasksel (1.45) unstable; urgency=HIGH
+
+  * Joey Hess
+    - Add myspell-fr-gut to french task.
+    - Add subversion to the c-dev task.
+    - Fix mysterious tab damange in rules file.
+    - Move the no.po linking code to before build.
+    - High urgency upload to get to testing in time.
+  * Updated translations:
+    - Rene Engelhard
+      - Updated and unfuzzied German translations.
+    - Håvard Korsvoll
+      - Updated and added Norwegian nynorsk translations (nn.po)
+    - Christian Perrier on behalf of Petter Reinholdtsen
+      - Move to nb.po for Norwegian Bokmal. Temporarily copy nb.po to no.po
+        at build time during the no->nb locale transition
+    - Giuseppe Sacco
+      - updated italian translation (it.po) by riccardo Fabris
+    - Changwoo Ryu
+      - Added Korean translations (po/ko.po and tasks/po/ko.po).
+    - Ognyan Kulev
+      - Updated Bulgarian translation (tasks/po/bg.po).
+    - Carlos Z.F. Liu
+      - Added Traditional Chinese transaltion (tasks/po/zh_TW.po) and updated
+        po/zh_TW.po, by Tetralet.
+
+ -- Joey Hess <joeyh@debian.org>  Mon,  8 Mar 2004 20:53:33 -0500
+
+tasksel (1.44) unstable; urgency=low
+
+  * Joey Hess
+    - Change from lynx to w3m in unix-server, as the priorities have changed.
+    - Remove abiword-gnome from the desktop task, since it is pulled in by
+      the gnome metapackage.
+    - Kde is fixed, uncomment.
+    - Added "pl" to LANGS_DESC in Makefile.
+    - Hack up \n's in po/bg.po to satisfy msgfmt.
+  * Jordi Mallach
+    - Add myspell-ca to catalan.
+    - Set myself as Maintainer: for catalan.
+  * Denis Barbier
+    - Convert this changelog to UTF-8.
+  * Ognyan Kulev
+    - Mention LANGS and LANGS_DESC in README.translators.
+  * GOTO Masanori
+    - Upate Japanese task based on user feedback:
+        (1) removing unexisted packages (ttf-xtt-wadalab-gothic,
+            ttf-xtt-watanabe-mincho)
+        (2) adding useful Japanese fonts (xfonts-ayu, xfonts-kaname,
+            xfonts-mplus, ttf-kochi-gothic, ttf-kochi-mincho)
+        (3) add mozilla-locale-ja.
+      Closes: #229923
+
+  * Updated translations:
+    - Konstantinos Margaritis
+      - Update tasks/po/el.po.  Closes: #230305
+    - Jordi Mallach
+      - Update Catalan translations (tasks/po/ca.po and po/ca.po).
+    - Miguel Figueiredo
+      - Add portuguese translations (tasks/po/pt.po and po/pt.po)
+      - Add "pt" to LANGS and LANGS_DESC in Makefile.
+    - Carlos Z.F. Liu
+      - Update Simplified Chinese translations (tasks/po/zh_CN.po)
+    - André Luís Lopes
+      - Updated Brazilian Portuguese translation (tasks/po/pt_BR.po).
+    - Kęstutis Biliūnas
+      - Initial Lithuanian translation (tasks/po/lt.po and po/lt.po).
+    - Safir Secerovic
+      - Initial Bosnian translation (po/bs.po and tasks/po/bs.po).
+      - Add "bs" to LANGS and LANGS_DESC in Makefile.
+    - Claus Hindsgaul
+      - Update Danish translation (tasks/po/da.po)
+    - Eugeniy Meshcheryakov
+      - Add Ukrainian translations (tasks/po/uk.po and po/uk.po)
+      - Add "uk" to LANGS and LANGS_DESC in Makefile.
+    - Ognyan Kulev
+      - Initial Bulgarian translation (po/bg.po and tasks/po/bg.po)
+      - Added "bg" to LANGS and LANGS_DESC in Makefile.
+    - André Dahlqvist
+      - Updated Swedish translation (po/sv.po). Closes: #232528
+    - Bartosz Fenski
+      - Added Polish tasks translation (tasks/po/pl.po) and updated
+        po/pl.po. Closes: #231139
+
+ -- Joey Hess <joeyh@debian.org>  Sun, 22 Feb 2004 11:41:39 -0500
+
+tasksel (1.43) unstable; urgency=high
+
+  * Denis Barbier
+    - Rename po/C.po into po/tasksel.pot.
+    - Rename tasks/po/C.po into tasks/po/debian-tasks.pot.
+    - Add po/tasksel.pot and tasks/po/debian-tasks.pot into subversion
+      repository to help translators, but they are not updated if only
+      POT-Creation-Date has changed.
+    - Sort tasks when generating debian-tasks.desc so that number lines
+      in generated PO files do not change when different users build this
+      file.
+    - Remove \r characters from printed strings in macros.h.
+  * Joey Hess
+    - Temporarily comment out kde in the desktop task, since it's too broken
+      in testing to be installable riht now. It will be re-enabled when it's
+      fixed.
+    - High priority because the above is breaking sarge installs.
+
+  Updated translations:
+
+  * Updated pt_BR.po from Andre Luis Lopes. Closes: #229627
+  * Denis Barbier
+    - Update tasks/po/fr.po.
+    - Add "sk" to LANGS in Makefile.
+    - Add "cs es nl ru sk" to LANGS_DESC in Makefile.
+  * Konstantinos Margaritis
+    - Update Greek translations.
+  * Miroslav Kure
+    - Update Czech translation
+  * Peter Mann
+    - Initial Slovak translation
+
+ -- Joey Hess <joeyh@debian.org>  Wed, 28 Jan 2004 22:41:57 -0500
+
+tasksel (1.42) unstable; urgency=low
+
+  * The gnome metapackage has finally went into testing; make it Kay for the
+    desktop task.
+  * Dutch translation from cobaco.
+
+ -- Joey Hess <joeyh@debian.org>  Mon, 26 Jan 2004 11:55:50 -0500
+
+tasksel (1.41) unstable; urgency=low
+
+  * Javier Fernandez-Sanguino:
+    - Fixed typo in po/es.po and added tasks/po/es.po which should
+      now provide a full translation of tasksel to Spanish.
+  * Konstantinos Margaritis
+    - Add po/el.po and tasks/po/el.po translations  Closes: #226861
+    - Add Greek task.
+  * Bart Cornelis
+    - Update po/nl.po translation  Closes: #228301
+    - Added Initial tasks/po/nl.po translation
+  * Claus Hindsgaul
+    - Update da.po (Danish translation)
+  * Miroslav Kure
+    - Update po/cs.po
+  * Carlos Z.F. Liu
+    - Add po/zh_CN.po and tasks/po/zh_CN.po translations  Closes: #228730
+  * VEROK Istvan
+    - Update po/hu.po and add new tasks/po/hu.po translation  Closes: #228736
+  * Joey Hess
+    - Moved the repository to svn.debian.org (alioth).
+    - Misc changes for subversion.
+    - Add xprt-xprintorg to the desktop and office tasks. Closes: #226605
+
+ -- Bart Cornelis <cobaco@linux.be>  Fri, 23 Jan 2004 10:55:46 +0100
+
+tasksel (1.40) unstable; urgency=low
+
+  * Christian Perrier
+    - Update tasks/po/fr.po  Closes: #221301
+  * A few other language updates too: cs, da.
+
+ -- Joey Hess <joeyh@debian.org>  Fri, 26 Dec 2003 15:12:27 -0500
+
+tasksel (1.39) unstable; urgency=low
+
+  * Jordi Mallach:
+    - Add Catalan translation of task descriptions.
+    - Update the Catalan translation of tasksel.
+    - Add "catalan" task.
+  * Built on a system with only unstable in sources.list, and found and
+    removed the followimg packages that are only in stable:
+      qtcupts
+      cxterm-gb
+      cedictgb
+      kde-i18n-zhcngb2312
+      automake (replaced with automake1.7)
+      doc-linux-zh-text (replaced with kde-i18n-zhcn)
+      cxterm-big5
+      cedictb5
+      kde-i18n-zhtwbig5 (replaced with kde-i18n-zhtw)
+      scalable-cyrfonts-x11
+      openoffice.org-hyphenation-da
+      doc-linux-fr (replaced with -text)
+      gnome-card-games (merged into gnome-games)
+      lincity-x (replaced by lincity)
+      wgerman (replaced by wngerman)
+      igerman
+      cxterm-ks
+      ami-gnome
+      kde-i18n-ko
+      cupsys-pstoraster
+      kdelibs3-cups
+      python-gdk-imlib
+      python-glade
+      python-gnome
+      python-gtk
+      openoffice.org-hyphenation-ru
+      hyperlatex
+      kde-i18n-no (replacements -nn and -mb already listed)
+  * I welcome and solicit replacements for anything in the above list.
+  * Use cups client packages to satisfy the lpd requirement of the lsb
+    package.
+  * Claus Hindsgaul
+    - Update da.po (Danish translation)
+
+ -- Joey Hess <joeyh@debian.org>  Mon, 10 Nov 2003 17:17:05 +0100
+
+tasksel (1.38) unstable; urgency=low
+
+   * Rene Engelhard:
+     - add openoffice.org-help-* and -hyphenation into the language tasks
+       not yet having them
+     - subsitute openoffice.org-spellcheck-* through myspell-*, add
+       it back for german
+     - update/fix german translations.
+     - add mozilla-locale-de-at into german task
+
+ -- Joey Hess <joeyh@debian.org>  Fri, 31 Oct 2003 18:58:07 -0500
+
+tasksel (1.37) unstable; urgency=low
+
+  * Miroslav Kure
+    - Update po/cs.po
+    - Add tasks/po/cs.po
+  * Denis Barbier
+    - Set LANGS_DESC="de fi fr ja no pt_BR" in top-level Makefile
+      to build and ship all translated tasks files, only de and ja
+      were previously installed.  Patch provided by Andre Luis Lopes.
+      Closes: #214108
+    - Add ca, gl and nl to $LANGS in top-level Makefile.
+  * Claus Hindsgaul
+    - Add openoffice.org-hyphenation-da and koffice-i18n-da to
+      Danish task.
+    - Add complete Danish task translations from ddtp.org.
+    - Add da to LANGS_DESC in top-level Makefile.
+    - Update da.po ("a" as a shortcut key for quit was overridden by
+      the "choose all tasks" behaviour. Used "f" instead)
+  * Santiago Vila
+    - Define PATH_MAX if it is not, to allow building onthe Hurd
+      Closes: #218334
+  * Joey Hess
+    - Switch nethack-console for nethack, as the latter is only a
+      dummy package. Closes: #189785
+  * OOo is in main, office task will be useable. Hallelujah!
+
+ -- Joey Hess <joeyh@debian.org>  Fri, 31 Oct 2003 15:20:12 -0500
+
+tasksel (1.36) unstable; urgency=low
+
+  * At the suggestion of Chris Lawrence, added foomatic-gui, 
+    foomatic-db-engine, and foomatic-db-hpijs to the print task.
+  * Also add the (huge) foomatic-filters-ppds.
+  * Remove obsolete cupsomatic-ppd package.
+  * A few po file changes.
+
+ -- Joey Hess <joeyh@debian.org>  Thu,  9 Oct 2003 16:36:31 -0400
+
+tasksel (1.35) unstable; urgency=low
+
+  * Applied a patch from Tomohiro KUBOTA <debian@tmail.plala.or.jp> to
+    make tasksel use libtextwrap, for wrapping that properly supports
+    multibyte and no whitespace encodings. It also includes a Japanese
+    translation update.
+  * Add pt_BR translation of the tasks file by Andre Luis Lopes
+    <andrelop@debian.org>. Closes: #213048
+
+ -- Joey Hess <joeyh@debian.org>  Tue, 30 Sep 2003 13:38:12 -0400
+
+tasksel (1.34) unstable; urgency=HiGH
+
+  * Approximatly no changes, but this really needs to get into testing ASAP.
+
+ -- Joey Hess <joeyh@debian.org>  Tue, 23 Sep 2003 12:43:00 -0400
+
+tasksel (1.33) unstable; urgency=low
+
+  * Joey Hess
+    - Added dnsmasq to the dialup task, since it is useful to have a caching
+      name server, and dnsmasq is very easy to configure (and can block
+      verisign's bogus wildcard). Closes: #202883
+  * Denis Barbier
+    - Update tasks/po/fr.po and po/fr.po
+
+ -- Joey Hess <joeyh@debian.org>  Sun, 21 Sep 2003 18:33:40 -0400
+
+tasksel (1.32) unstable; urgency=low
+
+  * Denis Barbier
+    - Remove a trailing space in tasks/{c-dev,chinese-t,python-dev}
+      and update tasks/po/{de,no}.po
+    - Add tasks/po/fr.po.  Closes: #204554
+    - Fix a typo in news-server. Closes: #204145
+    - Patched data.c to split multi-paragraph descriptions into
+      separate gettext calls. Closes: #203829
+  * Joey Hess
+    - Remove openoffice.org-spellcheck-de-* from German task, no such packages
+      any more, and I cannot find a replacement.
+    - Add a Norwegian language task from Petter Reinholdtsen. Closes: #205360
+    - Provisionally switched print server task to CUPS. We're not sure
+      which is the better choice, and continue to solicit comments on this
+      change. Closes: #205358
+    - Use apt-cache dumpavail via popen, instead of reading the often
+      outdated available file. Closes: #114721, #192306, #211072
+    - Doc updates for above change.
+
+ -- Denis Barbier <barbier@debian.org>  Sun, 14 Sep 2003 00:15:52 +0200
+
+tasksel (1.31) unstable; urgency=low
+
+  * Add longrun to increasingly bloated laptop task.
+  * Matthias Urlichs is taking care of the python task; added
+    python-docutils.
+  * Petter Reinholdtsen
+    - Updated po/nn.po and po/no.po.
+    - Added README.translators document the two translation directories.
+    - Started on tasks/po/no.po
+  * Several translation updates: at least da es and nn were updated.
+
+ -- Joey Hess <joeyh@debian.org>  Tue, 16 Sep 2003 19:35:07 -0400
+
+tasksel (1.30) unstable; urgency=low
+
+  * Fix translations of long descriptions. Unfortunaly, aj's dontmakemethink
+    thing made me think. :-P
+  * No need to translate the Task fields after all.
+  * Strip empty tags from debian-tasks.desc file.
+
+ -- Joey Hess <joeyh@debian.org>  Thu, 31 Jul 2003 22:11:19 -0400
+
+tasksel (1.28) unstable; urgency=low
+
+  * Patch from Denis Barbier adds infrastructure for translated task names
+    and descriptions. This info is stored in the debian-tasks domain, for use
+    by any program that needs it.
+  * Modified data.c to set the domain to match the task file it is reading,
+    and use gettext on translatable strings. Closes: #157848
+  * Included a slighlty outdated tasks/po/de.po.
+  * laptop: to support specific laptop HW, add tcp, mwavem, tpctl, 
+    thinkpad-base, i8kutils, and sjog. vaiostat is left commented until
+    more than a source package is available. Closes: #201398
+  * dialup: Remove anacron. Closes: #202882
+  * Patch from Denis Barbier to fix encoding problems in it.po, ja.po.
+    This also adds an updatepo target. Closes: #203398
+  * Split broadband task out of dialup. Closes: #201764
+  * Moved broadband, dialup, and laptop into hardware.
+  * Moved science to misc.
+  * Change task sorting for display: Sort first on a new Relevance field,
+    then by short description (not name).
+  * Add bluez-utils to laptop task. Closes: #202881
+
+ -- Joey Hess <joeyh@debian.org>  Thu, 31 Jul 2003 21:38:07 -0400
+
+tasksel (1.27) unstable; urgency=low
+
+  * Remove gnome from desktop Key since neither the metapackage nor all of
+    its deps has gone into testing yet, and some deps are not even available
+    on some architectures. Closes: #202965
+  * Stop #including the deps of packages in Key, since it's pointless and
+    only makes it more fragile. #including in Packages is still ok.
+  * Don't fail to build on missing key packages, since there might not be an
+    apt cache to look at on some buildd's, or it might not include contrib.
+  * The gnome-office metapackage vanished. The desktop task already includes
+    koffice. OOo is still mired in contrib. Took the best of a bad lot and
+    put OOo in as the only office software in the office task.
+  * Commented out mozilla-locale-es as the package is currently broken.
+  * Rene Engelhard
+    - Make all the language tasks pull in OOo and kde langage packages
+      consistently.
+    - Replace toshutils with toshset which does not need X or a kernel
+      interface.
+
+ -- Joey Hess <joeyh@debian.org>  Sun, 27 Jul 2003 10:41:21 -0400
+
+tasksel (1.26) unstable; urgency=low
+
+  * Petter Reinholdtsen
+    - Completed no.po.
+  * Javier Fernández-Sanguino
+    - Added missing useful packages to the spanish task
+  * Joey Hess
+    - Updated copyright date range.
+    - Make unselected buttons be the same color as the window itself.
+      Matches look of new, fixed whiptail, and Closes: #122212
+    - Note in README that the way to get a task added is a bug report against
+      this package. Closes: #144533
+    - Removed broken python-bobo from python task. Closes: #180925
+    - The python task is retargeted at providing a subset of the more useful
+      python tools, instead of everything. Semi-randomly removed some stuff.
+      Someone who uses python might want to take over maintainership of this
+      task.
+    - Capitalised first letter of every task, in an effort to look
+      "professional". Closes: #183109
+    - Removed the fortran task, not sufficiently used.
+    - Added mutt and spamassassin to mail server task.
+    - Fixed menu entry to give full path to su-to-root as it is in sbin for
+      some reason. Closes: #188367
+    - Replace gnome-gnomines with gnome-games in games task, package rename.
+      Closes: #190874
+    - Replace xtris with the currently popular tetrinet in games task.
+    - Make "available file" message recommend running dselect update.
+      Closes: #153016, #183690
+    - Replace netenv (with its nasty boot-time prompt) with guessnet (with
+      its slick new ifupdown integration) in laptop task.
+    - Add hdparm to laptop task, since many laptop users will want to use it
+      to speed up (or turn off!) their disks. Closes: #87450
+    - Add menu to office task.
+    - Added a java task. Closes: #108061
+    - Removed inlined Spanish translation of spanish task. However we should
+      add translations, it's not like that!
+    - Added a Thai task. Closes: #122663. Needs review since the bug's package
+      list was 2 years old.
+    - Cleaned up bad wording in most of the descriptions of the
+      language-specific tasks.
+    - Added sudo to unix-server.
+    - Added kernel-compile task for custom kernel building. Closes: #184428
+    - Blessed the idea of putting Maintainer fields in individual task files.
+    - Removed nonexistant packages from tasks: netscape-zh-resource-477, 
+      dialdcost, hanterm, tktabble-dev
+    - Put cxterm-ks in korean task to replace hanterm. I hope that's right.
+    - Rename mozilla-locale-es to mozilla-locale-es-es.
+    - For chinese-t, use doc-linux-zh-text, which provides traditional
+      chinese. doc-linux-zh-t went away.
+    - doincludes.pl and makedesc.pl use apt-cache dumpavail instead of
+      dselect available file, for more up-to-date information.
+    - Shortended the description of c-dev.
+    - Renamed Essential field to Key, to prevent confusion.
+    - Implemented dropping of tasks that are missing key packages.
+    - Enhanced listpackages.pl with support for listing key packages.
+    - makedesc.pl too.
+    - Key packages do not need to be listed under Packages too.
+    - Updated tcl/tk to 8.4.
+    - Removed localces from language tasks; language-env depends on it.
+    - Changed around what is Key and what is not, more changes than I can
+      record here.
+    - Don't expand lsb package's deps, we want the whole thing or nothing.
+    - Added makeoverride.pl, which will generate an override file from a
+      directory of task files.
+    - Remove user-de and user-es, language-env superscedes.
+    - Back to just gimp for desktop task.
+    - If a task is not in the task desc files, but is in the available file
+      as a Task: line, do not display it.
+
+ -- Joey Hess <joeyh@debian.org>  Fri, 25 Jul 2003 20:27:46 -0400
+
+tasksel (1.25) unstable; urgency=low
+
+  * Add a LSB task.
+
+ -- Joey Hess <joeyh@debian.org>  Sun, 16 Mar 2003 23:07:53 -0800
+
+tasksel (1.24) unstable; urgency=low
+
+  * Add mozilla-locale-da to danish task and removed openoffice stuff.
+  * Fixed man page formatting.
+
+ -- Joey Hess <joeyh@debian.org>  Wed, 26 Feb 2003 12:39:18 -0500
+
+tasksel (1.23) unstable; urgency=low
+
+  * Added to games task:
+    - vecteroids (asteroids clone)
+    - frozen-bubble
+  * Rebuilt against current gnome and kde metapackages.
+
+ -- Joey Hess <joeyh@debian.org>  Sat,  8 Feb 2003 12:29:07 -0500
+
+tasksel (1.22) unstable; urgency=low
+
+  * Switched from emacs20 to emacs21. Closes: #152018
+  * Added Danish language task by Claus Hindsgaul <claus_h@image.dk>.
+  * Fixed OOo name. Closes: #158936
+  * Patch from Jeff Licquia <licquia@progeny.com> to make tasksel use all
+    *.desc files in /usr/share/tasksel, to allow third parties to drop in
+     their own additional tasks.
+  * This build, at least, will not contain CVS dirs in the source package
+    (because I build with DH_ALWAYS_EXCLUDE=CVS set, and pass -ICVS to
+    dpkg-buildpackage. Closes: #148759
+  * Added wireless-tools to the laptop task as laptops increasingly use
+    wireless cards. I think adding wavemon too is a bit too much.
+    Closes: #168948
+  * Make the tasksel menu entry work as non-root. Closes: #144340
+
+ -- Joey Hess <joeyh@debian.org>  Thu,  5 Dec 2002 13:44:43 -0500
+
+tasksel (1.21) unstable; urgency=low
+
+  * This is aimed at sid, not woody.
+  * #include gnome metapackage in desktop task, no need to track gnome
+    anymore.
+  * Added an "office" task, which will include openoffice when it is in
+    debian, and currently includes the stuff in gnome-office. IIRC we three
+    talked about such a package for woody, but there did not seem to be enough
+    to put in it; there certianly is now.
+
+ -- Joey Hess <joeyh@debian.org>  Thu, 20 Jun 2002 16:59:22 -0400
+
+tasksel (1.20) unstable; urgency=low
+
+  * Added Essential: fields to all task files. The idea is to skip display of
+    a task if all of its essential packages are not available, which will make
+    it easier to make CD's that include some package that happens to be in a
+    task, without having to drag in that whole task or get the confusing
+    situation of having tasksel display the task, but install only one
+    ancillary package from it.
+  * Changed python task to use python instead of non-existant python-base.
+    This task still needs a lot of work.
+  * Updated Danish translation da.po by Claus Hindsgaul <claus_h@image.dk>
+  * Updated to use debhelper v4 and misc:Depends; removed outdated copyright
+    info from debian/rules.
+
+ -- Joey Hess <joeyh@debian.org>  Mon, 18 Mar 2002 01:36:16 -0500
+
+tasksel (1.19) unstable; urgency=low
+
+  * (NOT YET UPLOADED)
+  * (re-)added french translations. Closes: #136758
+  * Renamed Norwegian translations; added nn.po 
+    Closes: #134075
+
+ -- Randolph Chung <tausq@debian.org>  Mon,  4 Mar 2002 08:54:30 -0800
+
+tasksel (1.18) unstable; urgency=medium
+
+  * Should fix issues with doincludes.pl failing on autobuilders that
+    either have no available file, or don't have kde in the availabe file
+    (woody systems).
+
+ -- Joey Hess <joeyh@debian.org>  Tue, 26 Feb 2002 19:46:02 -0500
+
+tasksel (1.17) unstable; urgency=medium
+
+  * Removed junkbuster from dialup; probably not going to ship with woody, if
+    it manages to somehow it is really in too bad shape to expose newbies to
+    it. Closes: #131295
+  * (Slipstream release foiled by the NI system. :-)
+
+ -- Joey Hess <joeyh@debian.org>  Tue, 26 Feb 2002 13:30:42 -0500
+
+tasksel (1.16) unstable; urgency=medium
+
+  * Added doincludes.pl, and let the desktop task use it to explode the
+    kde metapackage, so its entire dep list is put in the task, and if it does
+    not ship with woody, we still will get kde. Closes: #135797
+  * The same include mechanism should probably be used for the other
+    metapackages, like the junior stuff (and X?). But not right now.
+
+ -- Joey Hess <joeyh@debian.org>  Tue, 26 Feb 2002 11:17:36 -0500
+
+tasksel (1.15) unstable; urgency=low
+
+  * Include sawfish-gnome in desktop task so gnome will have a WM.
+    Closes: #116609, #129999
+  * Make the basic-desktop task incude all of x-window-system (so it gets a
+    WM and xterm and so on), while the desktop task uses just
+    x-window-system-core (because it already has a WM and so on from
+    gnome and kde). Closes: #129217
+  * Removed pydb from python task, because Colin Watson said to. 
+    Closes: #129520
+  * it.po translation added, da.po added (Closes: #122668), ja.po updated,
+    pt_BR updated (Closes: #122965)
+
+ -- Joey Hess <joeyh@debian.org>  Sun, 27 Jan 2002 14:55:51 -0500
+
+tasksel (1.13) unstable; urgency=low
+
+  * python-dev addition. Closes: #72972 
+  * Marcin Owsiany: updated pl.po
+  * Jordi Mallach: added Catalan translation.
+  * Galician translation from Jacobo Tarrio <jtarrio@debian.org>.
+
+ -- Randolph Chung <tausq@debian.org>  Thu, 22 Nov 2001 04:36:14 -0800
+
+tasksel (1.12) unstable; urgency=low
+
+  * The i18n release. :-)
+  * Danish translation from Morten Brix Pedersen <morten@wtf.dk>.
+  * Norwegian (bokmål) translation from Petter Reinholdtsen 
+    <pere@hungry.com>. Closes: #120328
+  * Brazilian translation from Andre Luis Lopes 
+    <andrelop@ig.com.br>.
+  * i18n fixes from Tommi Vainikainen <thv+debian@iki.fi>
+    Closes: #100343
+  * Traditional chinese translation from 
+    Anthony Wong <ypwong@ypwong.org>. Closes: #75284
+  * French translation from Nicolas SABOURET 
+    <Nicolas.Sabouret@limsi.fr>. Closes: #105988
+  * Improve manpage. Closes: #108392
+
+ -- Randolph Chung <tausq@debian.org>  Wed, 21 Nov 2001 00:40:00 -0800
+
+tasksel (1.11) unstable; urgency=low
+
+  * Added Cyrillic task.
+
+ -- Joey Hess <joeyh@debian.org>  Sun, 30 Sep 2001 15:33:00 -0400
+
+tasksel (1.10) unstable; urgency=low
+
+  * Marcin Owsiany: updated Polish translation.
+
+ -- Marcin Owsiany <porridge@debian.org>  Sun,  7 Oct 2001 16:34:15 +0200
+
+tasksel (1.9) unstable; urgency=low
+
+  * Add build-depends on gettext (Closes: #110918) 
+  * remove swig and saml from python-dev (Closes: #111683)
+  * desktop task uses gimp1.2 rather than gimp (Closes: #111655)
+
+ -- David Kimdon <dwhedon@debian.org>  Sun, 16 Sep 2001 20:23:45 +0000
+
+tasksel (1.8) unstable; urgency=low
+
+  * Add build-depends. Closes: #105475
+  * Code fixes. Closes: #103974 
+  * task changes. Closes: #107830
+  * add su-to-root to menu entry. Closes: #71993
+
+ -- Randolph Chung <tausq@debian.org>  Thu, 30 Aug 2001 21:24:23 -0700
+
+tasksel (1.7) unstable; urgency=medium
+
+  * Use new X meta packages. Closes: #103773 (RC base bug)
+
+ -- Joey Hess <joeyh@debian.org>  Mon, 20 Aug 2001 12:44:45 -0400
+
+tasksel (1.6) unstable; urgency=low
+
+  * Various task cleanups. Dealt with missing and renamed packages, etc.
+  * Added new Debian Jr. metapackages.
+  * Added French task.
+  * Merged C and C++ tasks, removed Objective C task.
+
+ -- Joey Hess <joeyh@debian.org>  Wed, 18 Jul 2001 19:22:13 -0400
+
+tasksel (1.5) unstable; urgency=high
+
+  * tasksel changes by Anthony Towns
+    - data.c: Made tasksel process fields after the long description. This was
+      stopping tasksel for handling the new Packages files that actually
+      include Task: headers, so it's kinda useful. :)
+    - tasksel.c: When no tasks are present, print a trailing newline.
+
+ -- Anthony Towns <aj@azure.humbug.org.au>  Mon,  2 Jul 2001 13:38:27 +1000
+
+tasksel (1.4) unstable; urgency=high
+
+  * Modifications to existing tasks by Joey Hess
+    - added language-env to all language tasks that it supports
+    - added netatalk to file-server and print-server
+    - renamed modem to dialup, and added stuff for isdn and pppoe to it.
+      Also removed a few things like lynx from the task.
+    - added aviword to desktop, so there is a basic word processor in there
+    - added gimp to desktop too, it's too handy not to be there
+    - added lyx to tex
+  * New tasks by Joey Hess:
+    - web-server -- currently includes only the bare basics, suggestions
+      appreciated.
+    - unix-server -- a conventional unix server, fully loaded with most of
+      the standard unix daemons and userland for console users.
+  * Adam Di Carlo:
+    - stop shipping upstream ChangeLog
+    - number this like a Debian package
+    - set urgency to high to cram this into woody for base freeze
+    - update our description
+
+ -- Adam Di Carlo <aph@debian.org>  Mon, 28 May 2001 21:03:47 -0400
+
+tasksel (1.3-2) unstable; urgency=low
+
+  * Modifications to existing tasks:
+    - Replaced talk of "this [meta]package" with "this task", and like
+      changes.
+    - In l10n tasks, s/-speaking// for consistency.
+    - Make all l10n tasks include locales. It's in base, so this is of
+      dubious utility, but some had it and some not.
+    - Changed short descriptions of basic-desktop and desktop in an attempt
+      to clarify how they're different.
+    - Added some comments here and there for unresolved issues.
+    - Largely rewrote Debian Jr. descriptions.
+    - Added menu to desktop task.
+    - Rejiggered mail-server, to be a general purpose mail server, not just
+      imap.
+    - Moved samba-server to file-server, and made that include nfs stuff
+      too.
+    - Added a print-server task, that also includes samba, along with other
+      stuff.
+    - Killed debian-dev(el) task, since it does not meet our task criteria
+      -- nowhere near 10% of debian users are debian developers (we hope!),
+      and probably not enough regular users will use this package to make
+      up the difference. This is my own package, so I'm willing to be
+      persuaded otherwise, though..
+    - Removed misc window managers from the desktop task. It is unnecessary
+      to list them there, since anXious will let the user choose.
+    - Killed the demo tasks.
+    - Went for consistent capitalization of the short descriptions. Just
+      capitalize proper names. I'm not sure if I like this effect, we may
+      want to capitalize the first word of each description too.
+    - Sundry other changes of little note.
+  * Replaced several occurrances of "task packages" with "tasks" elsewhere
+    in tasksel.
+  * Added -a switch, to show all tasks, even empties. Mostly useful before
+    we get tasks into the Packages files, for a global overview of how the
+    system will eventually look.
+  * Added lint check to makedesc.pl -- it will warn at build time
+    about tasks that list unavailable packages. This caught several
+    references to virtual packages, etc already, that need to be fixed..
+  * VERSION in Makefile automatically tracks this changelog.
+
+ -- Joey Hess <joeyh@debian.org>  Tue, 22 May 2001 22:36:00 -0400
+
+tasksel (1.3-1) unstable; urgency=low
+
+  * Joey Hess:
+    - Added support for task description files.
+    - Read in /usr/share/tasksel/debian-tasks.desc as a task description
+      file.
+    - Added makedesc.pl, a program to generate a task description file from
+      a set of task descriptions.
+    - Got rid of all the name prettification code since it is no longer used
+      anyway.
+    - Killed filterdescription, the task packages in woody actually don't
+      have that problem anymore.
+    - Don't move cursor to the right after a task is selected.
+    - Removed unused tasksel.man from source package (keep pod).
+    - Fixed an obscure bug if a task package happened to be the last thing in
+      the available file.
+    - Enable debug mode by default, but turn it off when building from the
+      rules file.
+
+  * Anthony Towns:
+    - Fix memory allocation bug when do a fake task- package
+    - Port most of the interesting tasks to the tasks file.
+    - Fix makedesc.pl to cope with +'s in a task name (c++-dev)
+
+ -- Joey Hess <joeyh@debian.org>  Thu, 17 May 2001 14:47:06 -0400
+
+tasksel (1.2-1) unstable; urgency=low
+
+  * Use "Section:" fields to break tasks into different sections. Have a
+    hardcoded list of default sections, with a defined order; remaining
+    sections get added to the end, in alphabetical order. Sections that
+    don't match "tasks-*" are ignored.
+
+  * "tasksel install foo bar baz" as a replacement for "apt-get install
+    task-foo task-bar task-baz"
+
+  * Increase the size of the "apt-get install" command line buffer.
+
+ -- Anthony Towns <aj@azure.humbug.org.au>  Tue, 15 May 2001 15:02:01 +1000
+
+tasksel (1.1-1) unstable; urgency=low
+
+  * Support "Task:" headers to include a package in a task.
+    .
+    Syntax is:
+        Package: foo
+        Task: bar, baz, quux
+    .
+    Note that tasks still require a task-* package in order to have a
+    description. Frontends could conceivably treat a task-foo package
+    being installed as meaning "automatically install new packages with
+    a Task: foo field, but don't worry about old packages that weren't
+    installed", similar to dselect's Standard handling, I think.
+    .
+    Patch thanks to Anthony Towns <aj@azure.humbug.org.au> 
+
+ -- Randolph Chung <tausq@debian.org>  Mon, 23 Apr 2001 23:34:57 -0700
+
+tasksel (1.0-10) frozen unstable; urgency=low
+
+  * Release manager: needed for potato boot-floppies
+  * More translations
+
+ -- Randolph Chung <tausq@debian.org>  Thu, 22 Jun 2000 18:10:37 -0700
+
+tasksel (1.0-9) frozen unstable; urgency=low
+
+  * Release manager: needed for potato boot-floppies
+  * I18n fixes. tasksel is finally correctly I18n-ized
+  * Lots of translations. My thanks to all the translators
+
+ -- Randolph Chung <tausq@debian.org>  Sun,  7 May 2000 13:26:39 -0700
+
+tasksel (1.0-8) frozen unstable; urgency=low
+
+  * Changed the Quit button into a Finished button - karlheg.
+  * catch SIGINT and exit gracefully
+
+ -- Randolph Chung <tausq@debian.org>  Fri, 21 Apr 2000 17:49:59 -0700
+
+tasksel (1.0-7) frozen unstable; urgency=low
+
+  * Adds -r, -i and -s switches for installing required, important and
+    standard priority packages
+  * Adds -n option for non-interactive runs (for use with -r or -i)
+  * Make data.c read priority settings; made packages_enumerate 
+    reentrant
+
+ -- Randolph Chung <tausq@debian.org>  Sun,  6 Feb 2000 15:08:43 -0700
+
+tasksel (1.0-6) frozen unstable; urgency=low
+
+  * Fixed some really stupid bugs
+  * removed cvs build target from debian/rules (closes: #55621) [RC]
+  * fixed -q option to properly queue package installs
+
+ -- Randolph Chung <tausq@debian.org>  Wed, 19 Jan 2000 21:19:11 -0700
+
+tasksel (1.0-5) frozen unstable; urgency=low
+
+  * Adds option to queue installs instead of running them immediately (-q)
+  * Fixed a segfault that occurs when no task packages are found on the system
+
+ -- Randolph Chung <tausq@debian.org>  Sun, 16 Jan 2000 00:27:30 -0700
+
+tasksel (1.0-4) frozen unstable; urgency=low
+
+  * More changes from Joey Hess; adds buttons to clear up main screen;
+    more consistency changes
+  * Adds scroll support to dialogs and main menu
+
+ -- Randolph Chung <tausq@debian.org>  Sat, 15 Jan 2000 14:33:56 -0700
+
+tasksel (1.0-3) unstable; urgency=low
+
+  * Lots of changes from Joey Hess: (re bug#54250)
+    - Uses [ ] instead of ( ) for consistency with dbootstrap
+    - Changed highlighting, buttons and prompting behavior
+    - left justify screen title
+    - cosmetic changes to list display
+  * tasksel now has its own cvs respository
+
+ -- Randolph Chung <tausq@debian.org>  Sun,  9 Jan 2000 22:58:22 -0700
+
+tasksel (1.0-2) unstable; urgency=low
+
+  * Alpha sorts package names (closes: #52960)
+  * Make color scheme more consistent with dbootstrap (closes: #52898)
+
+ -- Randolph Chung <tausq@debian.org>  Wed, 29 Dec 1999 09:32:52 -0700
+
+tasksel (1.0-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Randolph Chung <tausq@debian.org>  Wed,  8 Dec 1999 21:49:42 -0700

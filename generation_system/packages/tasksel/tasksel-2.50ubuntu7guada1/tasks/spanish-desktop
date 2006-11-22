@@ -1,0 +1,13 @@
+Task: spanish-desktop
+Enhances: desktop, spanish
+Section: l10n
+Description: Spanish desktop
+ This task localises the desktop in Spanish.
+Key:
+Packages: task-fields
+Packages-list: 
+ kde-i18n-es
+ openoffice.org-l10n-es
+ openoffice.org-help-es
+ firefox-locale-es-ar
+ firefox-locale-es-es

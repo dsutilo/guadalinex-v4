@@ -1,0 +1,59 @@
+#
+# Spanish translation for tasksel/debian
+# Copyright (C) 2000 Software in the Public Interest, Inc.
+# Javier Fernandez-Sanguino <jfs@debian.org>
+msgid ""
+msgstr ""
+"Project-Id-Version: tasksel 2.04\n"
+"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"POT-Creation-Date: 2006-01-19 14:32-0500\n"
+"PO-Revision-Date: 2005-12-01 00:41+0100\n"
+"Last-Translator: Javier Fernandez-Sanguino <jfs@debian.org>\n"
+"Language-Team: Debian Spanish Team <debian-l10n-spanish@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#. Type: multiselect
+#. Description
+#: ../templates:5
+msgid ""
+"At the moment, only the core of Ubuntu is installed. To tune the system to "
+"your needs, you can choose to install one or more of the following "
+"predefined collections of software."
+msgstr ""
+"De momento sólo está instalado el núcleo de Ubuntu. Puede escoger la "
+"instalación de las siguientes colecciones predefinidas de programas ara "
+"adaptar más la instalación a sus necesidades."
+
+#. Type: multiselect
+#. Choices
+#. Translators: translate ORIGCHOICES as CHOICES.
+#: ../templates:13
+msgid "${ORIGCHOICES}"
+msgstr "${CHOICES}"
+
+#. Type: multiselect
+#. Description
+#: ../templates:14
+msgid "Choose software to install:"
+msgstr "Elegir los programas a instalar:"
+
+#. Type: multiselect
+#. Description
+#: ../templates:14
+msgid ""
+"You can choose to install one or more of the following predefined "
+"collections of software."
+msgstr ""
+"Puede elegir instalar una o más de las siguientes colecciones de programas "
+"predefinidas."
+
+#. Type: title
+#. Description
+#: ../templates:20
+msgid "Ubuntu software selection"
+msgstr "Selección de programas Ubuntu"
+
+#~ msgid "${CHOICES}, manual package selection"
+#~ msgstr "${CHOICES}, selección manual de paquetes"

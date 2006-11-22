@@ -1,0 +1,22 @@
+Task: spanish
+Test-lang: es
+Section: l10n
+Description: Spanish environment
+ This task installs programs, data files, and
+ documentation that make it easier for Spanish speakers to use Debian.
+Key:
+ language-env
+ manpages-es
+Packages: task-fields
+Packages-list: 
+# Dictionaries
+ ispanish
+ wspanish
+ aspell-es
+# Useful documentation for spanish-speakers
+ debian-reference-es
+ doc-debian-es
+ doc-linux-es
+# Other packages to i18n common software
+ util-linux-locales
+ myspell-es

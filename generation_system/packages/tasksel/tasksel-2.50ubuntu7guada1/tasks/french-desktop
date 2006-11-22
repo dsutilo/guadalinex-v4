@@ -1,0 +1,13 @@
+Task: french-desktop
+Enhances: french, desktop
+Section: l10n
+Description: French desktop
+ This task localises the desktop in French.
+Key:
+Packages: task-fields
+Packages-list:
+ xfonts-intl-european
+ kde-i18n-fr
+ openoffice.org-l10n-fr
+ openoffice.org-help-fr
+ firefox-locale-fr

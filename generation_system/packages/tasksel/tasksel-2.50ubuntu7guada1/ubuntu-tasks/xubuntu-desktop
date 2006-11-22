@@ -1,0 +1,7 @@
+Task: xubuntu-desktop
+Section: user
+Description: Xubuntu desktop
+ This task provides the Xubuntu desktop environment.
+Key:
+ xubuntu-desktop
+Packages: task-fields

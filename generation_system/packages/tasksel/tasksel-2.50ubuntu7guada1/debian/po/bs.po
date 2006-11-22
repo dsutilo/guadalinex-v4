@@ -1,0 +1,68 @@
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+#    Developers do not need to manually edit POT or PO files.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tasksel_debian\n"
+"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"POT-Creation-Date: 2006-01-19 14:32-0500\n"
+"PO-Revision-Date: 2004-12-25 13:20+0100\n"
+"Last-Translator: Safir Šećerović <sapphire@linux.org.ba>\n"
+"Language-Team: Bosnian <lokal@linux.org.ba>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: multiselect
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid ""
+"At the moment, only the core of Ubuntu is installed. To tune the system to "
+"your needs, you can choose to install one or more of the following "
+"predefined collections of software."
+msgstr ""
+"Do sada je instalirana samo osnova Debiana. Da biste prilagodili instalaciju "
+"svojim potrebama, možete odabrati da instalirate jednu ili više sljedećih "
+"predefinisanih kolekcija softwarea. Iskusni korisnici mogu preferirati da "
+"ručno izaberu pakete."
+
+#. Type: multiselect
+#. Choices
+#. Translators: translate ORIGCHOICES as CHOICES.
+#: ../templates:13
+msgid "${ORIGCHOICES}"
+msgstr "${CHOICES}"
+
+#. Type: multiselect
+#. Description
+#: ../templates:14
+msgid "Choose software to install:"
+msgstr "Odaberite software za instaliranje:"
+
+#. Type: multiselect
+#. Description
+#: ../templates:14
+msgid ""
+"You can choose to install one or more of the following predefined "
+"collections of software."
+msgstr "Možete odabrati jednu ili više predefinisanih kolekcija softwarea."
+
+#. Type: title
+#. Description
+#: ../templates:20
+msgid "Ubuntu software selection"
+msgstr "Izbor softwarea Debiana"
+
+#~ msgid "${CHOICES}, manual package selection"
+#~ msgstr "${CHOICES}, ručni odabir paketa"

@@ -1,0 +1,27 @@
+Task: chinese-s-desktop
+Enhances: desktop, chinese-s
+Section: l10n
+Description: Simplified Chinese desktop
+ This task localises the desktop in Simplified Chinese.
+Key:
+Packages: task-fields
+Packages-list:
+  rxvt-ml
+  mlterm
+  rxvt-unicode-ml
+  fcitx
+  scim-chinese
+  scim-tables-zh
+  chinput
+  stardic
+  kde-i18n-zhcn
+  x-ttcidfont-conf
+  xfonts-intl-chinese
+  xfonts-intl-chinese-big
+  ttf-arphic-gbsn00lp
+  ttf-arphic-gkai00mp
+  unifont
+  bg5ps
+  openoffice.org-l10n-zh-cn
+  openoffice.org-help-zh-cn
+  firefox-locale-zh-cn

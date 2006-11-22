@@ -1,0 +1,7 @@
+Task: dns-server
+Section: server
+Description: DNS server
+ Selects the BIND DNS server and its documentation.
+Key:
+ bind9
+Packages: task-fields

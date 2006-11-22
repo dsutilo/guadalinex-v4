@@ -1,0 +1,7 @@
+Task: guadalinex-desktop
+Section: user
+Description: Guadalinex desktop
+ This task provides the Guadalinex desktop environment.
+Key:
+ guadalinex-desktop
+Packages: task-fields

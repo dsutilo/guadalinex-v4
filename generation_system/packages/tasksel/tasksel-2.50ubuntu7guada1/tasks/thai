@@ -1,0 +1,12 @@
+Task: thai
+Test-lang: th
+Section: l10n
+Description: Thai environment
+ This task installs packages that make it easier for Thai speaking
+ people to use Debian.
+Key:
+ language-env
+Packages: task-fields
+Packages-list:
+ myspell-th
+ swath

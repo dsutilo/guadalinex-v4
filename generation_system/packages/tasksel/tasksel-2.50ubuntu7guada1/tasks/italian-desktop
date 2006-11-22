@@ -1,0 +1,14 @@
+Task: italian-desktop
+Enhances: desktop, italian
+Section: l10n
+Description: Italian desktop
+ This task localises the desktop in Italian.
+Key:
+Packages: task-fields
+Packages-list:
+ xfonts-intl-european
+ firefox-locale-it
+ kde-i18n-it
+ openoffice.org-help-it
+ openoffice.org-l10n-it
+ openoffice.org-thesaurus-it

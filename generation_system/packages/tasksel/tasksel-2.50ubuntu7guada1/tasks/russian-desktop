@@ -1,0 +1,18 @@
+Task: russian-desktop
+Enhances: desktop, russian
+Section: l10n
+Description: Russian desktop
+ This task localises the desktop in Russian.
+Maintainer: Peter Novodvorsky <nidd@debian.org>
+Key:
+Packages: task-fields
+Packages-list:
+ # This package is rarely used, but the Russian support of
+ # language-env requires it:
+ xfonts-intl-european
+ kde-i18n-ru
+ xfonts-bolkhov-koi8r-75dpi
+ xfonts-bolkhov-koi8r-misc
+ xfonts-cronyx-koi8r-100dpi
+ openoffice.org-l10n-ru
+ firefox-locale-ru

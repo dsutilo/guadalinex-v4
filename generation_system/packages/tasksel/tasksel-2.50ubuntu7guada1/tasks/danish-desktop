@@ -1,0 +1,11 @@
+Task: danish-desktop
+Enhances: desktop, danish
+Section: l10n
+Description: Danish desktop
+ This task localises the desktop in Danish.
+Packages: task-fields
+Packages-list:
+ kde-i18n-da
+ firefox-locale-da
+ openoffice.org-l10n-da
+ openoffice.org-help-da

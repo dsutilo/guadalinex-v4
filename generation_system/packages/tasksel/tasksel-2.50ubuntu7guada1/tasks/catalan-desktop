@@ -1,0 +1,12 @@
+Task: catalan-desktop
+Enhances: desktop, catalan
+Section: l10n
+Maintainer: Jordi Mallach <jordi@debian.org>
+Description: Catalan desktop
+ This task localises the desktop in Catalan.
+Key:
+Packages: task-fields
+Packages-list:
+ kde-i18n-ca
+ firefox-locale-ca
+ openoffice.org-l10n-ca

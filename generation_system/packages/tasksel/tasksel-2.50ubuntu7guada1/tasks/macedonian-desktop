@@ -1,0 +1,12 @@
+Task: macedonian-desktop
+Depends: desktop, macedonian
+Section: l10n
+Description: Macedonian desktop
+ This task localises the desktop in Macedonian.
+Key:
+Packages: task-fields
+Packages-list:
+ firefox-locale-mk
+ kde-i18n-mk
+ openoffice.org-l10n-mk
+ ttf-dejavu

@@ -1,0 +1,15 @@
+Task: german-desktop
+Enhances: desktop, german
+Section: l10n
+Description: German desktop
+ This task localises the desktop in German.
+Key:
+Packages: task-fields
+Packages-list:
+ kde-i18n-de
+ firefox-locale-de
+ openoffice.org-help-de
+ openoffice.org-l10n-de
+ openoffice.org-thesaurus-de
+ openoffice.org-thesaurus-de-ch
+ openoffice.org-hyhenation-de

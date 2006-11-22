@@ -1,0 +1,9 @@
+Task: galician-desktop
+Depends: galician, desktop
+Section: l10n
+Description: Galician desktop
+ This task localises the desktop in Galician.
+Key:
+Packages: task-fields
+Packages-list:
+ kde-i18n-gl

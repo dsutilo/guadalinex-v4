@@ -1,0 +1,70 @@
+# translation of nn.po to Norwegian Nynorsk
+# translation of tasksel_debian.po to Norsk Bokmål
+# translation of tasksel_debian.po to Norwegian nynorsk
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans#
+#    Developers do not need to manually edit POT or PO files.
+# Håvard Korsvoll <korsvoll@skulelinux.no>, 2004, 2006.
+# Axel Bojer <axelb@skolelinux.no>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nn\n"
+"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"POT-Creation-Date: 2006-01-19 14:32-0500\n"
+"PO-Revision-Date: 2006-05-14 18:42+0200\n"
+"Last-Translator: Håvard Korsvoll <korsvoll@skulelinux.no>\n"
+"Language-Team: Norwegian Nynorsk <nn@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+
+#. Type: multiselect
+#. Description
+#: ../templates:5
+msgid ""
+"At the moment, only the core of Ubuntu is installed. To tune the system to "
+"your needs, you can choose to install one or more of the following "
+"predefined collections of software."
+msgstr ""
+"I denne utgåva er det berre hovudkomponentane i Ubuntu som vert installert. "
+"For å tilpassa installasjonen til dine behov, kan du installere ein eller "
+"fleire førehandsdefinerte samlingar med programvare."
+
+#. Type: multiselect
+#. Choices
+#. Translators: translate ORIGCHOICES as CHOICES.
+#: ../templates:13
+msgid "${ORIGCHOICES}"
+msgstr "${CHOICES}"
+
+#. Type: multiselect
+#. Description
+#: ../templates:14
+msgid "Choose software to install:"
+msgstr "Vel programvare som skal installerast:"
+
+#. Type: multiselect
+#. Description
+#: ../templates:14
+msgid ""
+"You can choose to install one or more of the following predefined "
+"collections of software."
+msgstr ""
+"Du kan velje å installere ein eller fleire av desse førehandsdefinerte "
+"samlingane med programvare."
+
+#. Type: title
+#. Description
+#: ../templates:20
+msgid "Ubuntu software selection"
+msgstr "Programvareutval for Ubuntu"
+

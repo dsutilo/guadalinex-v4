@@ -1,0 +1,12 @@
+Task: punjabi-desktop
+Enhances: desktop, punjabi
+Section: l10n
+Description: Punjabi desktop
+ This task localises the desktop in Punjabi.
+Key:
+Packages: task-fields
+Packages-list:
+  kde-i18n-pa
+  openoffice.org-l10n-pa-in
+  ttf-punjabi-fonts
+  firefox-locale-pa-in

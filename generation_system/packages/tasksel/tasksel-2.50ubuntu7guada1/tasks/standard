@@ -1,0 +1,6 @@
+Task: standard
+Section: user
+Description: Standard system
+ This task installs a reasonably small character-mode system.
+Packages: standard
+Test-new-install: mark skip

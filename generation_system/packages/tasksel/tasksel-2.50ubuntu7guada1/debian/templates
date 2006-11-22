@@ -1,0 +1,20 @@
+Template: tasksel/first
+Type: multiselect
+# Translators: translate ORIGCHOICES as CHOICES.
+_Choices: ${ORIGCHOICES}
+_Description: Choose software to install:
+ At the moment, only the core of Ubuntu is installed. To tune the
+ system to your needs, you can choose to install one or more of the
+ following predefined collections of software.
+
+Template: tasksel/tasks
+Type: multiselect
+# Translators: translate ORIGCHOICES as CHOICES.
+_Choices: ${ORIGCHOICES}
+_Description: Choose software to install:
+ You can choose to install one or more of the following predefined
+ collections of software.
+
+Template: tasksel/title
+Type: title
+_Description: Ubuntu software selection

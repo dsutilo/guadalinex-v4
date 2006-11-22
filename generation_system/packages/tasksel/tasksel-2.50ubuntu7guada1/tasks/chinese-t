@@ -1,0 +1,20 @@
+Task: chinese-t
+Test-lang: zh_TW
+Section: l10n
+Description: Traditional Chinese environment
+ This task installs programs, data files, fonts, and
+ documentation that make it easier for Chinese speakers
+ to use Debian, using the traditional Chinese encoding.
+Key:
+  jfbterm
+  zhcon
+Packages: task-fields
+Packages-list:
+  zh-autoconvert
+  debian-zh-faq-t
+  manpages-zh
+  fortune-zh
+# Printing support
+  ttf2pt1
+  ttf2pt1-chinese
+  ttfprint

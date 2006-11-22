@@ -1,0 +1,10 @@
+Task: persian-desktop
+Enhances: desktop, persian
+Section: l10n
+Description: Persian desktop
+ This task localises the desktop in Persian.
+Key:
+Packages: task-fields
+Packages-list:
+  kde-i18n-fa
+  openoffice.org-l10n-fa

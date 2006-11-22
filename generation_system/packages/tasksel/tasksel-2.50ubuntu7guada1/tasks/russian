@@ -1,0 +1,18 @@
+Task: russian
+Test-lang: ru
+Section: l10n
+Description: Russian environment
+ This task installs programs and documentation in Russian
+ to help Russian speaking people use Debian.
+Maintainer: Peter Novodvorsky <nidd@debian.org>
+Key:
+ language-env
+ manpages-ru
+Packages: task-fields
+Packages-list:
+ console-cyrillic
+ irussian
+ mueller7-dict
+ konwert
+ re
+ myspell-ru

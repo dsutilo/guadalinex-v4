@@ -1,0 +1,7 @@
+Task: edubuntu-server
+Section: server
+Description: Edubuntu server
+ This task provides the Edubuntu classroom server.
+Key:
+ edubuntu-server
+Packages: task-fields

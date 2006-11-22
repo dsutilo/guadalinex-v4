@@ -1,0 +1,7 @@
+Task: kubuntu-desktop
+Section: user
+Description: Kubuntu desktop
+ This task provides the Kubuntu desktop environment.
+Key:
+ kubuntu-desktop
+Packages: task-fields

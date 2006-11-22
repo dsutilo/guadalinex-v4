@@ -1,0 +1,20 @@
+Some notes for translators
+==========================
+
+There are two directories containing translations:
+
+  po/
+
+    Contains the phrases used in the tasksel program.
+
+  tasks/po/
+
+    Contain the phrases used in the tasks themselves.
+
+The text in both these directories need to be translated for the
+translation to be complete. You'll also need to translate the debconf
+templates, of course.
+
+Your language should be listed in LANGS and LANGS_DESC variables
+in Makefile.  (LANGS is for translations in po/, and LANGS_DESC
+is for translations in tasks/po/.)

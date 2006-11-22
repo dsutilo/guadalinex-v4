@@ -1,0 +1,8 @@
+Task: lamp-server
+Section: server
+Description: LAMP server
+ Selects a ready-made Linux/Apache/MySQL/PHP server.
+Key:
+ apache2
+ mysql-server
+Packages: task-fields

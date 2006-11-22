@@ -1,0 +1,17 @@
+Task: cyrillic
+Test-lang: bg by kz mk mn ru sr uk
+Section: l10n
+Description: Cyrillic environment
+ This task provides Cyrillic fonts and other software you will need in
+ order to use Cyrillic.  It supports Belarusian, Bulgarian,
+ Macedonian, Russian, Serbian and Ukrainian.
+Maintainer: Anton Zinoviev <zinoviev@debian.org>
+Key:
+ # Cyrillic on the console:
+ console-cyrillic
+Packages: task-fields
+Packages-list:
+ # Easy configuration for some languages:
+ language-env
+ # Translates Cyrillic encodings.
+ konwert

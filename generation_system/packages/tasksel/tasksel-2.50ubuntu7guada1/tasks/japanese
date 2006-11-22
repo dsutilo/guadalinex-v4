@@ -1,0 +1,21 @@
+Task: japanese
+Test-lang: ja
+Section: l10n
+Description: Japanese environment
+ This task installs packages that make it easier for Japanese speakers
+ to use Debian.
+Key:
+ language-env
+ jfbterm
+ unifont
+ manpages-ja
+# lv is required package for Japanese to see manpage. less can't handle.
+ lv
+Packages: task-fields
+Packages-list:
+ nkf
+ doc-linux-ja-text
+ anthy
+ uim-fep
+ uim-utils
+ manpages-ja-dev

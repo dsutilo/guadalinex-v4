@@ -1,0 +1,10 @@
+Task: portuguese-desktop
+Depends: portuguese, desktop
+Section: l10n
+Description: Portuguese desktop
+ This task localises the desktop in Portuguese.
+Key:
+Packages: task-fields
+Packages-list:
+ xfonts-intl-european
+ kde-i18n-pt

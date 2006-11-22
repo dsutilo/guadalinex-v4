@@ -1,0 +1,53 @@
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tasksel\n"
+"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"POT-Creation-Date: 2006-01-19 14:32-0500\n"
+"PO-Revision-Date: 2006-01-30 06:44+0100\n"
+"Last-Translator: Peter Mann <Peter.Mann@tuke.sk>\n"
+"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: multiselect
+#. Description
+#: ../templates:5
+msgid ""
+"At the moment, only the core of Ubuntu is installed. To tune the system to "
+"your needs, you can choose to install one or more of the following "
+"predefined collections of software."
+msgstr ""
+"Momentálne je nainštalovaný iba základ Ubuntu. Aby ste si vyladili systém "
+"podľa svojich potrieb, môžete teraz inštalovať jednu alebo viac pripravených "
+"kolekcií súvisiaceho softvéru."
+
+#. Type: multiselect
+#. Choices
+#. Translators: translate ORIGCHOICES as CHOICES.
+#: ../templates:13
+msgid "${ORIGCHOICES}"
+msgstr "${CHOICES}"
+
+#. Type: multiselect
+#. Description
+#: ../templates:14
+msgid "Choose software to install:"
+msgstr "Zvoľte programy na inštaláciu:"
+
+#. Type: multiselect
+#. Description
+#: ../templates:14
+msgid ""
+"You can choose to install one or more of the following predefined "
+"collections of software."
+msgstr ""
+"Teraz môžete inštalovať jednu alebo viac pripravených kolekcií softvéru."
+
+#. Type: title
+#. Description
+#: ../templates:20
+msgid "Ubuntu software selection"
+msgstr "Voľba programov pre Ubuntu"

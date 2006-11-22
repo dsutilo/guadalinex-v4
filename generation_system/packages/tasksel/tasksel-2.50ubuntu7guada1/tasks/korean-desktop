@@ -1,0 +1,18 @@
+Task: korean-desktop
+Enhances: desktop, korean
+Section: l10n
+Description: Korean desktop
+ This task localises the desktop in Korean.
+Key:
+Packages: task-fields
+Packages-list:
+ imhangul
+ nabi
+ ttf-unfonts
+ imhangul-status-applet
+ firefox-locale-ko
+ xfonts-baekmuk
+ ttf-baekmuk
+ openoffice.org-help-ko
+ openoffice.org-l10n-ko
+ kde-i18n-ko

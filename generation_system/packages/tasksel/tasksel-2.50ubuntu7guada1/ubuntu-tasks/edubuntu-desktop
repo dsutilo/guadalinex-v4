@@ -1,0 +1,7 @@
+Task: edubuntu-desktop
+Section: user
+Description: Edubuntu desktop
+ This task provides the Edubuntu desktop environment.
+Key:
+ edubuntu-desktop
+Packages: task-fields

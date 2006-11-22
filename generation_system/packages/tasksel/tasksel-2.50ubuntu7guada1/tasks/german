@@ -1,0 +1,20 @@
+Task: german
+Test-lang: de
+Section: l10n
+Description: German environment
+ This task installs packages and documentation in German
+ to help German speaking people use Debian.
+Key:
+ language-env
+ manpages-de
+Packages: task-fields
+Packages-list:
+ wngerman
+ wngerman
+ ingerman
+ doc-linux-de
+ trans-de-en
+ ding
+ myspell-de-de
+ myspell-de-at
+ myspell-de-ch

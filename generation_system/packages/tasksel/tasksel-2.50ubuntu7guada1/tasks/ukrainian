@@ -1,0 +1,15 @@
+Task: ukrainian
+Test-lang: uk
+Section: l10n
+Description: Ukrainian environment
+ This task installs programs and documentation in Ukrainian
+ to help Ukrainian speaking people use Debian.
+Maintainer: Eugeniy Meshcheryakov <eugen@univ.kiev.ua>
+Key:
+ language-env
+Packages: task-fields
+Packages-list:
+ console-cyrillic
+ aspell-uk
+ konwert
+ iukrainian

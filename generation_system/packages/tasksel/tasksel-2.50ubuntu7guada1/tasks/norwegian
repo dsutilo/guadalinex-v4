@@ -1,0 +1,18 @@
+Task: norwegian
+Test-lang: no, nb, nn
+Section: l10n
+Description: Norwegian (Bokmaal and Nynorsk) environment
+ This task installs packages and documentation in Norwegian
+ to help Norwegian speaking people use Debian.
+Maintainer: Petter Reinholdtsen <pere@debian.org>
+Key:
+ locales
+ language-env
+Packages: task-fields
+Packages-list:
+ util-linux-locales
+ wnorwegian
+ inorwegian
+ aspell-no
+ myspell-nn
+ myspell-nb
