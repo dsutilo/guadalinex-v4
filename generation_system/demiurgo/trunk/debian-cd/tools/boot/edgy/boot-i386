@@ -221,7 +221,11 @@ GFXBOOT bootlogo
 EOF
     if [ "$PROJECT" = ubuntu ]; then
 	cat >> boot$N/isolinux/isolinux.cfg <<EOF
-GFXBOOT-BACKGROUND 0xB6875A
+# Ubuntu original
+#GFXBOOT-BACKGROUND 0xB6875A
+# Guadalinex one
+GFXBOOT-BACKGROUND 0x2E8735
+
 EOF
     fi
     if [ "$PROJECT" = kubuntu ]; then
