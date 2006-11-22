@@ -7,6 +7,18 @@ name: guadalinex-doc
 # Autor 
 author: Gumersindo Coronel Pérez <gcoronel@emergya.info>
 
+# Priority
+priority: optional
+
+# Section
+section: doc
+
+# Descripción corta
+shortdesc: "The Guadalinex doc"
+
+# Descipción larga, las lineas han de estar separadas por "\n "
+longdesc: "This package includes all the Guadalinex doc."
+
 # Versión del paquete
 version: 0.1
 
