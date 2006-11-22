@@ -1,5 +1,5 @@
 # Install the Ubuntu desktop.
-tasksel			tasksel/first			multiselect ubuntu-desktop
+tasksel			tasksel/first			multiselect guadalinex-desktop
 countrychooser		countrychooser/country-name	string Spain
 countrychooser		countrychooser/shortlist	string ES
 debconf			debconf/language		string es
