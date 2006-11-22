@@ -2,8 +2,8 @@ Source: glig
 Section: admin
 Priority: optional
 Maintainer: Junta de Andalucía <packmaster@guadalinex.org>
-Build-Depends: debhelper (>= 4.0.0)
-Standards-Version: 3.6.2.1
+Standards-Version: 3.7.2
+Build-Depends: debhelper (>= 4), cdbs
 
 Package: glig
 Architecture: all
