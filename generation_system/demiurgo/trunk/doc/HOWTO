@@ -1,3 +1,43 @@
 ¿Cómo modificar el aspecto de GFXBOOT: fondo, color de letras,...?
 
+* demiurgo/trunk/debian-cd/tools/boot/edgy/boot-i386
+
+En este fichero, se configuran diferentes aspectos relacionados con el arranque del CD (live, d-i,...). Una parte importante es la generación de la configuración de isolinux, donde se configura, entre otras cosas, algunos aspectos gráficos de GFXBOOT.
+
+GFXBOOT-BACKGROUND: ¿Color de las fuentes de GFXBOOT? (pte comprobación)
+
+* demiurgo/trunk/debian-cd/data/edgy/splash.pcx
+
+Imagen de fondo para GFXBOOT.
+
+Para modificarlo, lo mejor es crear una imagen con nombre "distro.pcx" y cambiar el enlace simbólico:
+
+splash.pcx -> distro.pcx
+
+En principio, la imagen debe cumplir con los siguientes requisitos:
+
+- 640x480
+- 16 colores
+- Formato PCX
+
+* demiurgo/trunk/debian-cd/data/edgy/splash.rle
+
+Imagen de fondo para ISOLINUX
+
+Para modificarlo, lo mejor es crear una imagen con nombre "distro.rle" y cambiar el enlace simbólico:
+
+splash.rle -> distro.rle
+
+Para generarla:
+
+1) Imagen 640x400
+2) Aplanar (flattern) la imagen
+3) Indexar a 14 colores
+4) Guardar como PPM (crudo (raw))
+5) Conversión a RLE:
+
+ppmtolss16 '#d0d0d0=7' < splash.ppm > splash.rle
+
+donde "#d0d0d0" es el color que usa isolinux para el texto.
+
 
