@@ -189,11 +189,14 @@ class RulesGenerator(FileGenerator):
             return
         #dest_path = os.path.dirname(dest_path)
         command = ''
-        if ('gcs/conffiles_skel/' in orig_path) and \
-                (not orig_path.endswith(config['config_extension'])):
-            pass
-        else:
-            command = "\tdh_install %s\t%s" % (orig_path, dest_path)
+	# If we aren't working with config files or we are working with them but has the appropiate
+	# extension fill the command
+        if not ('gcs/conffiles_skel/' in orig_path) or orig_path.endswith(config['config_extension']):
+            exclude_arg = ''
+            if os.path.isdir(orig_path + '/.svn'):
+                exclude_arg = '--exclude=.svn'
+            command = "\tdh_install %s %s %s" % (exclude_arg, orig_path, dest_path)
+
         if command:
             self.dhinstall_list.append(command)
 
