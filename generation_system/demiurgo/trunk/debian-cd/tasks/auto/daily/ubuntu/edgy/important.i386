@@ -35,6 +35,8 @@ gettext-base
 gnupg
 grep
 grepmap
+guadalinex-keyring
+guadalinex-minimal
 gzip
 hostname
 ifupdown
