@@ -3,7 +3,7 @@ Section: <SECTION>
 Priority: <PRIORITY>
 Maintainer: <MANTAINER>
 Build-Depends: debhelper (>> 3.0.0)
-Standards-Version: 3.5.2 
+Standards-Version: 3.7.2
 
 Package: <NAME>
 Architecture: i386
