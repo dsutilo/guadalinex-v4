@@ -8,8 +8,8 @@ name: gcs
 author: Gumersindo Coronel Pérez <gcoronel@emergya.info>
 
 # Versión del paquete
-version: 0.1 
+version: 0.3
 
 # Cambios en esta versión
 changes:
-    - Initial release.
+    - Development release.

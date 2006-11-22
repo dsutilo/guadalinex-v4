@@ -14,6 +14,7 @@ from generators.file import ChangelogGenerator
 from generators.file import CompatGenerator 
 from generators.file import PostInstGenerator
 from generators.file import PostRmGenerator
+from generators.file import CompatGenerator
 
 
 class Builder(object):
@@ -34,7 +35,6 @@ class Builder(object):
             pass
 
         self.__prepare_conffiles()
-        self.__set_compat()
 
         ControlGenerator().activate()
         RulesGenerator().activate()
@@ -42,15 +42,11 @@ class Builder(object):
         CompatGenerator().activate()
         PostInstGenerator().activate()
         PostRmGenerator().activate()
+        CompatGenerator().activate()
 
         os.system('debuild -us -uc')
 
 
-    def __set_compat(self):
-        fcompat = open(config['source_path'] + \
-                '/debian/compat', 'w')
-        fcompat.write('4')
-        fcompat.close()
 
 
     def __prepare_conffiles(self):
