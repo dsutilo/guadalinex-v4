@@ -38,6 +38,7 @@ class Builder(object):
         ControlGenerator().activate()
         RulesGenerator().activate()
         ChangelogGenerator().activate()
+        CompatGenerator().activate()
         PostInstGenerator().activate()
         PostRmGenerator().activate()
 
