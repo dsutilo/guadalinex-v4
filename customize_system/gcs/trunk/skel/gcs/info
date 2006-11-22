@@ -13,6 +13,12 @@ priority: optional
 # Section
 section: seccion de la aplicacion
 
+# Descripción corta
+shortdesc: "descripción corta"
+
+# Descipción larga, las lineas han de estar separadas por "\n "
+longdesc: "descripción larga\n linea1\n linea2"
+
 # Versión del paquete
 version: 0.1
 

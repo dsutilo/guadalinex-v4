@@ -60,10 +60,10 @@ class ControlGenerator(FileGenerator):
 
         self.__set_name()
         self.__set_author()
-        #self.__set_descriptions()
         self.__set_depends()
         self.__set_section()
         self.__set_priority()
+        self.__set_descriptions()
 
         self._write_file('debian/control')
 
@@ -92,6 +92,13 @@ class ControlGenerator(FileGenerator):
     def __set_priority(self):
         priority = config['info']['priority']
         newcontent = self.template_content.replace('<PRIORITY>', priority)
+        self.template_content = newcontent
+
+    def __set_descriptions(self):
+        shortdesc = config['info']['shortdesc']
+        longdesc = config['info']['longdesc']
+        newcontent = self.template_content.replace('<SHORTDESC>', shortdesc)
+        newcontent = newcontent.replace('<LONGDESC>', longdesc)
         self.template_content = newcontent
 
     def __parse_deps(self, file):

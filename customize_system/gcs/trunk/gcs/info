@@ -13,6 +13,10 @@ priority: optional
 # Section
 section: admin
 
+shortdesc: "Sistema de configuración de Guadalinex v4"
+
+longdesc: "Consiste en un conjunto de herramientas que facilitan\n la creacion de metapaquetes y paquetes de configuración."
+
 # Versión del paquete
 version: 0.3
 
