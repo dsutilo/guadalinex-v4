@@ -21,6 +21,8 @@ En principio, la imagen debe cumplir con los siguientes requisitos:
 - Formato PCX
 - Parece ser que también es necesario que el primer color de la paleta sea el negro.
 
+NOTA: La opción más recomendable es partir del fichero "ubuntu.pcx", "desindexarla" (RGB) y copiar y pegar la nueva imagen en la anterior, asegurando que queden 16 colores. Si la imagen no es muy "compleja", normalmente funcionará.
+
 * demiurgo/trunk/debian-cd/data/edgy/splash.rle
 
 Imagen de fondo para ISOLINUX
