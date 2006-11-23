@@ -5,8 +5,9 @@ live_dir="/var/cdimage/live/edgy/ubuntu/current/"
 
 sources="/tmp/sources/"
 
-#base=""
-#live=""
+base=""
+live="casper ubiquity-frontend-gtk ubiquity-ubuntu-artwork xfsprogs jfsutils ntfsprogs discover1 xresprobe laptop-detect"
+
 packages="linux-image-generic guadalinex-desktop guadalinex-minimal-conf guadalinex-desktop-conf guadalinex-artwork guadalinex-doc casper ubiquity-frontend-gtk ubiquity-ubuntu-artwork xfsprogs jfsutils ntfsprogs discover1 xresprobe laptop-detect"
 exclude="guadalinex-minimal-conf,ubuntu-desktop,ubuntu-artwork,ubuntu-keyring,ubuntu-minimal,ubuntu-standard"
 
