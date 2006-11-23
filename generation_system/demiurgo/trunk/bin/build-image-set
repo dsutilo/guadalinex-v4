@@ -138,9 +138,11 @@ if [ "$CDIMAGE_LIVE" ]; then
 fi
 
 if [ -z "$SPLASHRLE" ]; then
-	if [ -e "$CDIMAGE_ROOT/debian-cd/data/$DIST/$PROJECT.rle" ]; then
-		export SPLASHRLE="$CDIMAGE_ROOT/debian-cd/data/$DIST/$PROJECT.rle"
-	else
+# Hack for Guadalinex (rmartin 061123)
+#	if [ -e "$CDIMAGE_ROOT/debian-cd/data/$DIST/$PROJECT.rle" ]; then
+#		export SPLASHRLE="$CDIMAGE_ROOT/debian-cd/data/$DIST/$PROJECT.rle"
+#	else
+	if [ -e "$CDIMAGE_ROOT/debian-cd/data/$DIST/splash.rle" ]; then
 		export SPLASHRLE="$CDIMAGE_ROOT/debian-cd/data/$DIST/splash.rle"
 	fi
 fi
