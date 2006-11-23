@@ -154,8 +154,19 @@ EOF
     apt_get update
     apt_get install
     apt_get install linux-image-generic
+    apt_get install acpi-support
     chroot ${sources} mount /proc
-    apt_get install guadalinex-desktop guadalinex-minimal-conf guadalinex-desktop-conf guadalinex-artwork guadalinex-doc casper ubiquity-frontend-gtk ubiquity-ubuntu-artwork xfsprogs jfsutils ntfsprogs discover1 xresprobe laptop-detect 
+    apt_get install guadalinex-minimal-conf
+    apt_get install
+    apt_get install guadalinex-artwork guadalinex-doc casper ubiquity-frontend-gtk ubiquity-ubuntu-artwork xfsprogs jfsutils ntfsprogs discover1 xresprobe laptop-detect
+    apt_get install
+    apt_get install guadalinex-desktop
+    apt_get install
+    apt_get install guadalinex-desktop-conf
+    apt_get install
+
+    chroot ${sources} umount /proc
+    apt_get install
 
     log_it "$?" "force apt-get install"
     apt_get clean
@@ -163,7 +174,9 @@ EOF
   
     sed -i "s/$APT_LINE//g" ${sources}/etc/apt/sources.list
 
-    chroot ${sources} umount /proc
+    #chroot ${sources} umount /proc
+
+
     umount ${sources}/var/mirror
     rmdir ${sources}/var/mirror
 
