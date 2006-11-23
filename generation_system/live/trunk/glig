@@ -109,6 +109,7 @@ function apt_get() {
 
     export LC_ALL=C LANGUAGE=C LANG=C DEBIAN_FRONTEND=noninteractive 
     chroot ${sources} apt-get -f -y --force-yes $*
+    log_it "$?" "apt-get -f -y --force-yes $*"
 
 }
 
@@ -144,45 +145,46 @@ EOF
 
     if [[ $mirror =~ ^file\:\/\/\/ ]]; then
         [ ! -d ${sources}/var/mirror ] && mkdir -p ${sources}/var/mirror
-        # mount --bind ${mirror#file://} ${sources}/var/mirror
-        mount --bind $(echo ${mirror} | sed -e 's/^file\:\/\///g') ${sources}/var/mirror
+        mount --bind ${mirror#file://} ${sources}/var/mirror
         APT_LINE="deb file:///var/mirror edgy $(echo $components | sed -e 's/,/ /g')"
         echo "$APT_LINE" > ${sources}/etc/apt/sources.list
     fi
 
     # Force update, install and clean
     apt_get update
+    
     apt_get install
     apt_get install linux-image-generic
+    
     apt_get install acpi-support
-    chroot ${sources} mount /proc
+    
+    mount --bind /proc ${sources}/proc
+    log_it "$?" "mount ${sources}/proc"
+    mount --bind /sys ${sources}/sys
+    log_it "$?" "mount ${sources}/sys"
+
     apt_get install guadalinex-minimal-conf
     apt_get install
+    
     apt_get install guadalinex-artwork guadalinex-doc casper ubiquity-frontend-gtk ubiquity-ubuntu-artwork xfsprogs jfsutils ntfsprogs discover1 xresprobe laptop-detect
     apt_get install
+
     apt_get install guadalinex-desktop
     apt_get install
+    
     apt_get install guadalinex-desktop-conf
     apt_get install
 
-    chroot ${sources} umount /proc
-    apt_get install
-
-    log_it "$?" "force apt-get install"
     apt_get clean
-    log_it "$?" "force apt-get clean"
   
     sed -i "s/$APT_LINE//g" ${sources}/etc/apt/sources.list
 
-    #chroot ${sources} umount /proc
-
-
-    umount ${sources}/var/mirror
-    rmdir ${sources}/var/mirror
-
     # Umount pocfs inside sources, if any
     umount_sources
-    log_it "$?" "force umount"
+
+    # Delete empty mirror directory
+    rmdir ${sources}/var/mirror
+    log_it "$?" "Delete ${sources}/var/mirror"
 
 }
 
@@ -236,6 +238,12 @@ function copy_files() {
     test -f "${sources}${kernel}" || error "${sources}vmlinuz not found"
     cp ${sources}${kernel} ${live_dir}livecd.ubuntu.kernel-generic 
     log_it "$?" "copy kernel"
+
+}
+
+function set_perms() {
+
+    chmod 666 ${live_dir}/*
 
 }
 
@@ -320,6 +328,8 @@ if [ "$squashfs" = "yes" ]; then
 fi
 
 copy_files
+
+set_perms
 
 if [ "$keep_sources" != "yes" ]; then
     rm -fr ${sources}
