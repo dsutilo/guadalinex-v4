@@ -106,6 +106,8 @@ esac
 
 # Start with copy of previous published tree so that single-architecture
 # rebuilds can carry over other architectures from previous builds.
+# Guadalinex v4 (rmartin 061123) -> To avoid copying current to new imagen: CDIMAGE_NOCOPY="1"
+CDIMAGE_NOCOPY="1"
 if [ -z "$CDIMAGE_NOCOPY" ] && \
    [ -d "$CDIMAGE_ROOT/www/$FULL_TREE/$IMAGE_TYPE_DIR/current/" ]; then
 	cp -alL "$CDIMAGE_ROOT/www/$FULL_TREE/$IMAGE_TYPE_DIR/current" \
