@@ -7,5 +7,9 @@ This packages makes the Guadalinex flavour.
 # * tasksel
  * guadalinex-keyring-udeb
 # * guadalinex-minimal
+ * guadalinex-minimal-conf
  * guadalinex-standard
  * guadalinex-desktop
+ * guadalinex-desktop-conf
+ * guadalinex-doc
+ * guadalinex-artwork
