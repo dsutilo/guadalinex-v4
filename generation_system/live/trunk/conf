@@ -1,11 +1,17 @@
 # Define variables
-mirror="file:///var/mirror/ubuntu/"
+mirror="file:///var/mirror/ubuntu"
+components="main,toro"
 live_dir="/var/cdimage/live/edgy/ubuntu/current/"
 
 sources="/tmp/sources/"
 
-base="ubuntu-desktop,linux-image-generic"
-live="casper,ubiquity-frontend-gtk,ubiquity-ubuntu-artwork,xfsprogs,jfsutils,ntfsprogs,discover1,xresprobe,laptop-detect"
+#base=""
+#live=""
+packages="linux-image-generic guadalinex-desktop guadalinex-minimal-conf guadalinex-desktop-conf guadalinex-artwork guadalinex-doc casper ubiquity-frontend-gtk ubiquity-ubuntu-artwork xfsprogs jfsutils ntfsprogs discover1 xresprobe laptop-detect"
+exclude="guadalinex-minimal-conf,ubuntu-desktop,ubuntu-artwork,ubuntu-keyring,ubuntu-minimal,ubuntu-standard"
+
+# guadalinex-desktop,guadalinex-minimal,guadalinex-desktop-conf,guadalinex-minimal-conf,guadalinex-artwork,guadalinex-doc
+# casper,ubiquity-frontend-gtk,ubiquity-ubuntu-artwork,xfsprogs,jfsutils,ntfsprogs,discover1,xresprobe,laptop-detect
 
 # Parameters vars to default values
 debootstrap="yes"

@@ -88,6 +88,7 @@ function set_config() {
 
 Configuration values:
   mirror       = $mirror
+  components   = $components
   live_dir     = $live_dir
   sources      = $sources
   base         = $base
@@ -120,7 +121,13 @@ function umount_sources() {
 
 function do_debootstrap() {
 
-    debootstrap --include=${base},${live} edgy ${sources} ${mirror}
+#    debootstrap --components=${components} --include=${base},${live} \
+#    --exclude=ubuntu-desktop,ubuntu-artwork,ubuntu-keyring,ubuntu-minimal,ubuntu-standard edgy ${sources} ${mirror}
+
+
+    debootstrap --components=${components} \
+    --exclude=guadalinex-minimal-conf,ubuntu-desktop,ubuntu-artwork,ubuntu-keyring,ubuntu-minimal,ubuntu-standard edgy ${sources} ${mirror}
+
 
     log_it "$?" "do debootstrap"
 
@@ -135,12 +142,31 @@ do_initrd = yes
 link_in_boot = no
 EOF
 
-    # Force install and clean
-    apt_get install 
+    if [[ $mirror =~ ^file\:\/\/\/ ]]; then
+        [ ! -d ${sources}/var/mirror ] && mkdir -p ${sources}/var/mirror
+        # mount --bind ${mirror#file://} ${sources}/var/mirror
+        mount --bind $(echo ${mirror} | sed -e 's/^file\:\/\///g') ${sources}/var/mirror
+        APT_LINE="deb file:///var/mirror edgy $(echo $components | sed -e 's/,/ /g')"
+        echo "$APT_LINE" > ${sources}/etc/apt/sources.list
+    fi
+
+    # Force update, install and clean
+    apt_get update
+    apt_get install
+    apt_get install linux-image-generic
+    chroot ${sources} mount /proc
+    apt_get install guadalinex-desktop guadalinex-minimal-conf guadalinex-desktop-conf guadalinex-artwork guadalinex-doc casper ubiquity-frontend-gtk ubiquity-ubuntu-artwork xfsprogs jfsutils ntfsprogs discover1 xresprobe laptop-detect 
+
     log_it "$?" "force apt-get install"
     apt_get clean
     log_it "$?" "force apt-get clean"
-    
+  
+    sed -i "s/$APT_LINE//g" ${sources}/etc/apt/sources.list
+
+    chroot ${sources} umount /proc
+    umount ${sources}/var/mirror
+    rmdir ${sources}/var/mirror
+
     # Umount pocfs inside sources, if any
     umount_sources
     log_it "$?" "force umount"
