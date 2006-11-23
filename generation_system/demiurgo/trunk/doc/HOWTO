@@ -19,6 +19,7 @@ En principio, la imagen debe cumplir con los siguientes requisitos:
 - 640x480
 - 16 colores
 - Formato PCX
+- Parece ser que también es necesario que el primer color de la paleta sea el negro.
 
 * demiurgo/trunk/debian-cd/data/edgy/splash.rle
 
