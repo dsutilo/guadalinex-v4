@@ -145,9 +145,11 @@ if [ -z "$SPLASHRLE" ]; then
 	fi
 fi
 if [ -z "$GFXSPLASH" ]; then
-	if [ -e "$CDIMAGE_ROOT/debian-cd/data/$DIST/$PROJECT.pcx" ]; then
-		export GFXSPLASH="$CDIMAGE_ROOT/debian-cd/data/$DIST/$PROJECT.pcx"
-	else
+# Hack for Guadalinex (rmartin 061123)
+#	if [ -e "$CDIMAGE_ROOT/debian-cd/data/$DIST/$PROJECT.pcx" ]; then
+#		export GFXSPLASH="$CDIMAGE_ROOT/debian-cd/data/$DIST/$PROJECT.pcx"
+#	else
+	if [ -e "$CDIMAGE_ROOT/debian-cd/data/$DIST/splash.pcx" ]; then
 		export GFXSPLASH="$CDIMAGE_ROOT/debian-cd/data/$DIST/splash.pcx"
 	fi
 fi
