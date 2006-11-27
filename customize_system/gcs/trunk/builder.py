@@ -48,6 +48,8 @@ class Builder(object):
 
         os.system('debuild -us -uc')
 
+        self.__delete_tmpfiles()
+
 
 
 
@@ -66,4 +68,19 @@ class Builder(object):
 
         os.path.walk(config['source_path'] + '/gcs/conffiles_skel/',
                 copy_file, None)
+
+
+    def __delete_tmpfiles(self):
+        """ Add .gv4 extension at all conffiles (making a copy)
+        """
+        def delete_file(arg, dirname, file_names):
+
+            for fname in file_names:
+                abs_path = dirname + os.sep + fname
+
+                if abs_path.endswith(".gv4"):
+                    os.remove(abs_path)
+
+        os.path.walk(config['source_path'] + '/gcs/conffiles_skel/',
+                delete_file, None)
 

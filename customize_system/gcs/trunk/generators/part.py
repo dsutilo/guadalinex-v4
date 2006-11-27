@@ -86,7 +86,7 @@ class DivertPart(Part):
         pkg_name = config['info']['name']
         command = "rm -f %s\n" % real_conf_path
         command += "dpkg-divert --package %s " % pkg_name
-        command += "--rename --quiet --remove %s" % real_conf_path
+        command += "--rename --quiet --remove %s\n" % real_conf_path
 
         # rm -f /etc/ejemplo.conf
         # dpkg-divert --package dummy-conf --rename --quiet --remove /etc/ejemplo.conf

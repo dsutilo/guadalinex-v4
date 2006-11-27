@@ -7,7 +7,8 @@ import os
 class TestMainProcess(unittest.TestCase):
 
     def test_all(self):
-        command = "cd test_pkg;gcs_build > /dev/null;diff -ur debian.orig debian" 
+        command = "cd test_pkg;gcs_build > /dev/null;"
+        command += "diff -ur --exclude=changelog* debian.orig/ debian/" 
         
         (stdint, stdout, stderr) = os.popen3(command)
         self.assertEqual(stderr.read(), '')
