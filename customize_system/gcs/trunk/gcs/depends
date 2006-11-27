@@ -4,5 +4,7 @@
 # gnome-terminal
 # nautilus  >=2.6.10
 #
+python
 python-syck
 debhelper
+make
