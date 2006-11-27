@@ -1,8 +1,9 @@
 #! /bin/sh
 set -e
 
-/var/mirror/bin/update-ubuntu-edgy-mirror
 cd /var/mirror/bin/
+./update-ubuntu-edgy-mirror
+./compile-svn
 ./update-derivative-repository
 cd -
 
