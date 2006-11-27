@@ -36,6 +36,8 @@ gettext-base
 gnupg
 grep
 grepmap
+guadalinex-keyring
+guadalinex-minimal
 gzip
 hostname
 ifupdown
@@ -144,8 +146,6 @@ tasksel
 tasksel-data
 tcpd
 tzdata
-ubuntu-keyring
-ubuntu-minimal
 udev
 upstart
 upstart-compat-sysv
