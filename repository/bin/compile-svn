@@ -45,6 +45,6 @@ do
 	debuild -uc -us
 	debclean
 	cp $x/../../*deb $GUADA_PACKAGES
-	rm $TAG_DIR/$TAG_VERSION/../*
+	rm $x/../../* 
 	cd -
 done
