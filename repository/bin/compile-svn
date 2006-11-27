@@ -5,6 +5,16 @@
 # Steady...
 [ ! -d $GUADA_PACKAGES ] && mkdir -p $GUADA_PACKAGES
 
+DATE=$(date +%Y%m%d)
+
+
+# Get the 
+cd $SVN_ROOT > /dev/null
+svn up > /tmp/repository-stuff.$USER.$DATE
+[ "$?" != "0" ] && echo " * * * * * Problems updating repository * * * * *" && exit 1
+REPO_VERSION=$(cat /tmp/repository-stuff.$USER.$DATE | awk '{print $4}' | sed -e 's/\.//g')
+cd - > /dev/null
+
 # Look for all the packages under customize_system, compile it and include and copy to guada-packages.
 for x in $(find $SVN_ROOT/customize_system -name trunk)
 do
@@ -13,7 +23,10 @@ do
 	echo
 	if [ -d $x/gcs ]; then
 	        cd $x
+		cp gcs/info gcs/info.back
+		sed -i "s/^version\:.*/version: r$REPO_VERSION/g" gcs/info
 	        gcs_build
+		mv gcs/info.back gcs/info
 	        cp $x/../*deb $GUADA_PACKAGES
 		rm $x/../*
 		rm -rf $x/debian
