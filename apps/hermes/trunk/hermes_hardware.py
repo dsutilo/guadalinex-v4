@@ -60,6 +60,20 @@ import sys
 import traceback
 
 
+# Internacionalización
+import gettext, locale
+
+gettext.bindtextdomain('hermes-hardware', abspath(join(hermes.defs.DATA_DIR, "locale")))
+if hasattr(gettext, 'bind_textdomain_codeset'):
+        gettext.bind_textdomain_codeset('hermes-hardware','UTF-8')
+gettext.textdomain('hermes-hardware')
+
+locale.bindtextdomain('hermes-harware', abspath(join(hermes.defs.DATA_DIR, "locale")))
+if hasattr(locale, 'bind_textdomain_codeset'):
+        locale.bind_textdomain_codeset('hermes-hardware','UTF-8')
+locale.textdomain('hermes-hardware')
+
+
 from utils import DeviceList, ColdPlugListener, CaptureLogGui
 from optparse import OptionParser
 from utils.notification import NotificationDaemon, FileNotification
@@ -86,6 +100,9 @@ from utils.notification import NotificationDaemon, FileNotification
 #        '', # hints
 #        0  #expire_timeout
 #        )
+
+
+
 
 
 class DeviceListener:
