@@ -1,0 +1,50 @@
+#!/bin/sh
+
+. ./repo.conf
+
+# Steady...
+[ ! -d $GUADA_PACKAGES ] && mkdir -p $GUADA_PACKAGES
+
+# Look for all the packages under customize_system, compile it and include and copy to guada-packages.
+for x in $(find $SVN_ROOT/customize_system -name trunk)
+do
+	echo
+	echo "Going to $x..."
+	echo
+	if [ -d $x/gcs ]; then
+	        cd $x
+	        gcs_build
+	        cp $x/../*deb $GUADA_PACKAGES
+		rm $x/../*
+		rm -rf $x/debian
+	        cd -
+	fi
+done
+
+# Look for all the application released (under a tag dir), compile it and include and copy to guada-packages.
+for TAG_DIR in $(find $SVN_ROOT -name tags | grep -v customize_system)
+do
+	for TAG_VERSION in $(ls $TAG_DIR)
+	do
+		echo
+		echo "Going to $TAG_DIR/$TAG_VERSION"
+		echo
+		cd $TAG_DIR/$TAG_VERSION
+		debuild -uc -us
+		debclean
+		cp $TAG_DIR/$TAG_VERSION/../*deb $GUADA_PACKAGES
+		rm $TAG_DIR/$TAG_VERSION/../*
+		cd -
+	done
+done
+
+# Packages needed by the installer or generation system
+for x in $(find $SVN_ROOT/generation_system/packages -name debian)
+do
+	cd $x/..
+	debuild -uc -us
+	debclean
+	cp $x/../../*deb $GUADA_PACKAGES
+	rm $TAG_DIR/$TAG_VERSION/../*
+	cd -
+done
