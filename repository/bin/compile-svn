@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 . ./repo.conf
 
@@ -12,8 +12,10 @@ DATE=$(date +%Y%m%d)
 cd $SVN_ROOT > /dev/null
 svn up > /tmp/repository-stuff.$USER.$DATE
 [ "$?" != "0" ] && echo " * * * * * Problems updating repository * * * * *" && exit 1
-REPO_VERSION=$(cat /tmp/repository-stuff.$USER.$DATE | awk '{print $4}' | sed -e 's/\.//g')
+REPO_VERSION=$(cat /tmp/repository-stuff.$USER.$DATE | tail -1 | sed -e 's/.*\ //g' | sed -e 's/\.//g')
 cd - > /dev/null
+
+echo "Repository version: $REPO_VERSION"
 
 # Look for all the packages under customize_system, compile it and include and copy to guada-packages.
 for x in $(find $SVN_ROOT/customize_system -name trunk)
