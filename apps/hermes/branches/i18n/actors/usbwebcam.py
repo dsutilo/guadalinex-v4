@@ -111,11 +111,11 @@ class UsbWebcamActorHack(object):
 
         actions = {}
         if synaptic.check(UsbWebcamActorHack.PACKAGES):
-            actions = {"Ejecutar programa de captura": run_camorama}
+            actions = {_("Run capture program"): run_camorama}
         else:
-            actions = {"Instalar el software necesario": install_packages}
+            actions = {_("Install required packages"): install_packages}
 
-        usb_actor.msg_render.show("WEBCAM", "Webcam detectada",
+        usb_actor.msg_render.show(_("WEBCAM"), _("Webcam detected"),
                                 WEBCAMICON, actions = actions)
 
 
@@ -124,7 +124,7 @@ class UsbWebcamActorHack(object):
         usb_actor.logger.debug("UsbWebcamActorHack: hack_on_removed")
         assert(isinstance(usb_actor, Actor))
 
-        usb_actor.msg_render.show("WEBCAM", "Webcam desconectada",
+        usb_actor.msg_render.show(_("WEBCAM"), _("Webcam disconnected"),
                                 WEBCAMICONOFF)
 
 

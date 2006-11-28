@@ -15,7 +15,7 @@ class BluetoothActorTest(ActorTest):
 
     def setUp(self):
         ActorTest.setUp(self)
-        print "Configurado:", PROPERTIES
+        print _("Configuring:"), PROPERTIES
 
     def test_add_actor_from_properties(self):
         """Testing DeviceListener.add_actor_from_propertites
@@ -26,7 +26,7 @@ class BluetoothActorTest(ActorTest):
 
 
     def test_on_added(self):
-        print "Añadiendo:", PROPERTIES['info.udi']
+        print _("Adding:"), PROPERTIES['info.udi']
         ActorTest.devicelistener.on_device_added(PROPERTIES['info.udi'])
 
 

@@ -58,11 +58,11 @@ class Actor(DeviceActor):
     }
 
     def on_added(self):
-        self.msg_render.show("PCMCIA", "Dispositivo PCMCIA conectado",
-                PCMCIAICON)
+        self.msg_render.show(_("PCMCIA"), _("PCMCIA device connected"),
+                PCMCIAICON))
 
     def on_removed(self):
-        self.msg_render.show("PCMCIA", "Dispositivo PCMCIA desconectado",
+        self.msg_render.show(_("PCMCIA"), _("PCMCIA device disconnected"),
                 PCMCIAICONOFF)
 
 

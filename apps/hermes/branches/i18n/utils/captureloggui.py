@@ -34,7 +34,7 @@ class CaptureLogGui(object):
     def on_capturelog(self, *args):
         self.logfile.close()
 
-        devname = self.devnameentry.get_text() or 'nuevodispositivo'
+        devname = self.devnameentry.get_text() or 'newdevice'
 
         content = open(self.logfilepath).read()
         newfile = open(os.path.expanduser('~') + \

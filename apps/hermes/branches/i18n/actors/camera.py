@@ -71,13 +71,13 @@ class Actor(DeviceActor):
         if s.check(packages):
             actions = {}
         else:
-            actions = {"Instalar los paquetes necesarios": install_packages}
+            actions = {_("Install required packages"): install_packages}
 
-        self.msg_render.show("CAMARA", 
-             "Cámara digital conectada.",
+        self.msg_render.show(_("CAMERA"), 
+             _("Digital camera connected."),
              CAMERAICON, actions = actions)
 
 
     def on_removed(self):
-        self.msg_render.show("CAMARA", "Cámara digital desconectada",
+        self.msg_render.show(_("CAMERA"), _("Digital camera disconected"),
                 CAMERAICONOFF)

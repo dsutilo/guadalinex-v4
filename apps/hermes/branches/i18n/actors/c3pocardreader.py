@@ -68,16 +68,16 @@ class Actor(DeviceActor):
             s.install(packages)
 
         if s.check(packages):
-            self.msg_render.show("C3PO", 
-                    "Lector de tarjetas detectado",
+            self.msg_render.show(_("C3PO"), 
+                    _("Detected card reader"),
                     C3POICON)
         else:
-            actions = {"Instalar los paquetes necesarios": install_packages}
-            self.msg_render.show("C3PO", "Lector de tarjetas detectado", 
+            actions = {_("Install required packages"): install_packages}
+            self.msg_render.show(_("C3PO"), _("Card reader detected"), 
                     C3POICON,
                     actions = actions)
 
     def on_removed(self):
-        self.msg_render.show("C3PO", 
-                "Lector de tarjetas desconectado",
+        self.msg_render.show(_("C3PO"), 
+                _("Card reader disconnected"),
                 C3POICONOFF)

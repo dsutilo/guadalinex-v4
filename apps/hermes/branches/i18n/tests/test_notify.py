@@ -25,7 +25,7 @@ class NotifyTest(unittest.TestCase):
 
         actions = {"Click me": None}
         # Test stock icons
-        nid = self.msg_render.show("Test", "Test message", 
+        nid = self.msg_render.show(_("Test"), _("Test message"), 
                 "gtk-dialog-info", actions = actions)
         self.failUnless(isinstance(nid, int))
         time.sleep(TIMEOUT)
@@ -38,7 +38,7 @@ class NotifyTest(unittest.TestCase):
 
         actions = {"Click me": None}
         # Test stock icons
-        nid = self.msg_render.show("Test", "Test message", 
+        nid = self.msg_render.show(_("Test"), _("Test message"), 
                 ICON, actions = actions)
         self.failUnless(isinstance(nid, int))
         time.sleep(TIMEOUT)
@@ -49,7 +49,7 @@ class NotifyTest(unittest.TestCase):
         """Testing NotificationDaemon.show_info method
         """
 
-        nid = self.msg_render.show_info("Information", "Test message")
+        nid = self.msg_render.show_info(_("Information"), _("Test message"))
         self.failUnless(isinstance(nid, int))
         time.sleep(TIMEOUT)
         self.msg_render.close(nid)
@@ -59,7 +59,7 @@ class NotifyTest(unittest.TestCase):
         """Testing NotificationDaemon.show_info method
         """
 
-        nid = self.msg_render.show_warning("Warning", "Test message")
+        nid = self.msg_render.show_warning(_("Warning"), _("Test message"))
         self.failUnless(isinstance(nid, int))
         time.sleep(TIMEOUT)
         self.msg_render.close(nid)
@@ -68,7 +68,7 @@ class NotifyTest(unittest.TestCase):
     def test_error(self):
         """Testing NotificationDaemon.show_info method
         """
-        nid = self.msg_render.show_error("Error", "Test message")
+        nid = self.msg_render.show_error(_("Error"), _("Test message"))
         self.failUnless(isinstance(nid, int))
         time.sleep(TIMEOUT)
         self.msg_render.close(nid)

@@ -34,8 +34,8 @@
 	<widget class="GnomeDruidPageEdge" id="druidpagestart">
 	  <property name="visible">True</property>
 	  <property name="position">GNOME_EDGE_START</property>
-	  <property name="title" translatable="yes">Bienvenido</property>
-	  <property name="text" translatable="yes">Bienvenido al asistente para la recogida de datos sobre dispositivos para Hermes.</property>
+	  <property name="title" translatable="yes">Welcome</property>
+	  <property name="text" translatable="yes">Welcome to the data harvester wizard about Hermes devices.</property>
 	  <property name="background_color">#0807706f2121</property>
 	  <property name="logo_background_color">#0807706f2121</property>
 	  <property name="textbox_color">#ffffffffffff</property>
@@ -45,7 +45,7 @@
       <child>
 	<widget class="GnomeDruidPageStandard" id="druidpagestandard1">
 	  <property name="visible">True</property>
-	  <property name="title" translatable="yes">Recogida de datos</property>
+	  <property name="title" translatable="yes">Data harvesting</property>
 	  <property name="background">#0807706f2121</property>
 	  <property name="logo_background">#0807706f2121</property>
 	  <property name="contents_background">#ffffffffffff</property>
@@ -67,7 +67,7 @@
 		  <child>
 		    <widget class="GtkLabel" id="label2">
 		      <property name="visible">True</property>
-		      <property name="label" translatable="yes">Nombre del dispositivo:</property>
+		      <property name="label" translatable="yes">Device Name:</property>
 		      <property name="use_underline">False</property>
 		      <property name="use_markup">False</property>
 		      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -96,7 +96,7 @@
 		      <property name="editable">True</property>
 		      <property name="visibility">True</property>
 		      <property name="max_length">0</property>
-		      <property name="text" translatable="yes">nuevodispositivo</property>
+		      <property name="text" translatable="yes">newdevice</property>
 		      <property name="has_frame">True</property>
 		      <property name="invisible_char">*</property>
 		      <property name="activates_default">False</property>
@@ -129,15 +129,14 @@
 	      <child>
 		<widget class="GtkLabel" id="label1">
 		  <property name="visible">True</property>
-		  <property name="label" translatable="yes">Para capturar correctamente los datos 
-de un dispositivo es necesario que siga los 
-siguientes pasos:
+		  <property name="label" translatable="yes">Harvesting correct data about a device
+requires to follow the next steps:
 
-&lt;b&gt;1)&lt;/b&gt; Conecte el dispositivo.
+&lt;b&gt;1)&lt;/b&gt; Attach the device.
 
-&lt;b&gt;2)&lt;/b&gt; Espere unos 10 segundos.
+&lt;b&gt;2)&lt;/b&gt; Wait about 10 seconds.
 
-&lt;b&gt;3)&lt;/b&gt; Desconecte el dispositivo.
+&lt;b&gt;3)&lt;/b&gt; Detach the device.
 </property>
 		  <property name="use_underline">False</property>
 		  <property name="use_markup">True</property>
@@ -168,19 +167,16 @@ siguientes pasos:
 	<widget class="GnomeDruidPageEdge" id="druidpagefinish">
 	  <property name="visible">True</property>
 	  <property name="position">GNOME_EDGE_FINISH</property>
-	  <property name="title" translatable="yes">Gracias por todo</property>
-	  <property name="text" translatable="yes">En su escritorio se encuentra un fichero con la
-información necesaria sobre su dispositivo:
+	  <property name="title" translatable="yes">Thanks!</property>
+	  <property name="text" translatable="yes">On your Desktop it is located a file with the required informationabout your device:
 
-     &lt;NOMBRE DISPOSITIVO&gt;.log
+     &lt;DEVICENAME&gt;.log
 
-Por favor,  háganos llegar este fichero para 
-poder mejorar la notificación de cambios en
-el hardware de Hermes.
+Please, send us that file so we can improve hardware changes notification in Hermes.
 
-Para más información, pulse ayuda.
+For more information, click Help.
 
-Gracias.</property>
+Thank you.</property>
 	  <property name="background_color">#0807706f2121</property>
 	  <property name="logo_background_color">#efefebeae7e7</property>
 	  <property name="textbox_color">#ffffffffffff</property>

@@ -165,7 +165,7 @@ class HermesTray (egg.trayicon.TrayIcon):
         gtk.gdk.threads_enter()
         self.show_all()
 
-        dlg = gtk.Dialog( "Entrada",
+        dlg = gtk.Dialog( _("Input"),
                 parent = self,
                 flags = gtk.DIALOG_MODAL,
                 buttons = (gtk.STOCK_APPLY, gtk.RESPONSE_OK))
@@ -279,7 +279,7 @@ class HermesTray2:
         if not ask:
             close_button = gtk.Button(stock = gtk.STOCK_CLOSE)
             close_button.connect("clicked", lambda *args: self.__remove_message(vbox))
-            tooltips.set_tip(close_button, "Cerrar el mensaje")
+            tooltips.set_tip(close_button, _("Close message"))
         else:
             queue = Queue()
 
@@ -289,7 +289,7 @@ class HermesTray2:
 
             close_button = gtk.Button(stock = gtk.STOCK_EXECUTE)
             close_button.connect("clicked", execute)
-            tooltips.set_tip(close_button, "Ejecutar la acción del mesaje")
+            tooltips.set_tip(close_button, _("Run action messaje"))
 
            
         close_button.modify_bg(gtk.STATE_NORMAL, HermesTray2.BACKGROUND_COLOR)
@@ -431,7 +431,7 @@ def main():
     parser.add_option('-d', '--debug', 
             action = 'store_true',
             dest = 'debug',
-            help = 'start in debug mode')
+            help = _('start in debug mode'))
 
     (options, args) = parser.parse_args()
     

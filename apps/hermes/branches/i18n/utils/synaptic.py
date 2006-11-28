@@ -21,9 +21,9 @@ class Synaptic(object):
 
         cmd.append("--set-selections")
         cmd.append("--progress-str")
-        cmd.append("Instalando paquetes")
+        cmd.append(_("Installing packages"))
         cmd.append("--finish-str")
-        cmd.append("Paquetes instalados")
+        cmd.append(_"Installed packages"))
         proc = subprocess.Popen(cmd, stdin = subprocess.PIPE)
         print proc
         f = proc.stdin

@@ -15,10 +15,10 @@ def get_sudo():
 
     # Errno 768: Bad password
     while res == 768 and attemps < 3:
-        res = os.system('gksudo -m "Introduzca contraseña" /bin/true')
+        res = os.system('gksudo -m _("Type password") /bin/true')
         # Errno 512: User press cancel
         if res == 512:
-            logger.debug("User press cancel")
+            logger.debug("User pressed cancel")
             return False
         attemps += 1
 

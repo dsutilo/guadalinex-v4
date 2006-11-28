@@ -107,11 +107,11 @@ class UsbScannerActorHack(object):
 
         actions = {}
         if synaptic.check(UsbScannerActorHack.PACKAGES):
-            actions = {"Ejecutar programa de digitalización": run_xsane}
+            actions = {_("Run rendering program"): run_xsane}
         else:
-            actions = {"Instalar el software necesario": install_packages}
+            actions = {_("Install required software"): install_packages}
 
-        usb_actor.msg_render.show("ESCÁNER", "Dispositivo escáner detectado",
+        usb_actor.msg_render.show(_("SCANNER"), _("Scanner device detected"),
                                 SCANNERICON, actions = actions)
 
 
@@ -119,7 +119,7 @@ class UsbScannerActorHack(object):
         "usbdevice.Actor.on_removed hack"
         assert(isinstance(usb_actor, Actor))
 
-        usb_actor.msg_render.show("ESCÁNER", "Dispositivo escáner desconectado",
+        usb_actor.msg_render.show(_("SCANNER"), _("Scanner device disconnected"),
                                 SCANNERICONOFF)
 
 

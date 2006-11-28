@@ -70,15 +70,15 @@ class Actor(DeviceActor):
             os.system('gtkpod &')
 
         if s.check(packages):
-            actions = {"Abrir administrador iPod": open_gtkpod}
+            actions = {_("Open iPod Manager"): open_gtkpod}
         else:
-            actions = {"Instalar los paquetes necesarios": install_packages}
+            actions = {_("Install required packages"): install_packages}
 
-        self.msg_render.show("iPod", 
-             "Dispositivo iPod detectado",
+        self.msg_render.show(_("iPod"), 
+             _("iPod device detected"),
              ICON, actions = actions)
 
 
     def on_removed(self):
-        self.msg_render.show("iPod", "Dispositivo iPod desconectado.",
+        self.msg_render.show(_("iPod"), _("iPod device disconnected."),
                 ICONOFF)

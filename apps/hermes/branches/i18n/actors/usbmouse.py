@@ -57,7 +57,7 @@ class Actor (DeviceActor):
                     'usb.product':'USB HID Interface'}
 
     def on_added(self):
-        self.msg_render.show("Ratón", "Ratón usb configurado",
+        self.msg_render.show(_("Mouse"), _("USB mouse configured"),
                 icon = MOUSEICON)
 
 

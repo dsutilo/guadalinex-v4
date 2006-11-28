@@ -80,13 +80,13 @@ class Actor(DeviceActor):
                 os.system('sudo gnome-cups-add &')
 
         if s.check(packages):
-            actions = {"Añadir": open_printer_dialog}
+            actions = {_("Add"): open_printer_dialog}
         else:
-            actions = {"Instalar los paquetes necesarios": install_packages}
+            actions = {_("Install required packages"): install_packages}
 
-        self.msg_render.show("IMPRESORA", "Impresora detectada",
+        self.msg_render.show(_("PRINTER"), _("Printer detected"),
              PRINTERICON, actions = actions)
 
 
     def on_removed(self):
-        self.msg_render.show("IMPRESORA", "Impresora desconectada", PRINTERICONOFF)
+        self.msg_render.show(_("PRINTER"), _("Printer disconnected"), PRINTERICONOFF)

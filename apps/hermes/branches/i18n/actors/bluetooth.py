@@ -71,22 +71,22 @@ class Actor(DeviceActor):
 
         if s.check(packages):
             os.system('gnome-obex-server &')
-            actions = {"Abrir el administrador bluetooth": open_scan}
+            actions = {_("Open bluetooth manager"): open_scan}
         else:
-            actions = {"Instalar los paquetes necesarios": install_packages}
+            actions = {_("Install required packages"): install_packages}
 
         if self.properties.has_key('bluetooth_hci.interface_name'):
             interface = ': ' + self.properties['bluetooth_hci.interface_name']
         else:
             interface = ''
         print self.msg_render
-        self.msg_render.show("BLUETOOTH", 
-             "Nueva interfaz bluetooth configurada " + str(interface) +
+        self.msg_render.show(_("BLUETOOTH"), 
+             _("New bluetooth interface configured ") + str(interface) +
              '.',
              BLUEICON, actions = actions)
 
 
     def on_removed(self):
-        self.msg_render.show("BLUETOOTH", "Interfaz bluetooth desconectada",
+        self.msg_render.show(_("BLUETOOTH"), _("Bluetooth interface disconnected"),
                 BLUEICONOFF)
         os.system('killall gnome-obex-server')
