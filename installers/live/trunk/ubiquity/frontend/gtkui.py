@@ -84,13 +84,13 @@ LOCALEDIR = "/usr/share/locale"
 BREADCRUMB_STEPS = {}
 db = debconf.DebconfCommunicator("ubiquity")
 counter = 1
-if not db.exist("ubiquity/language") OR not db.fget("ubiquity/language","seen")=="true":
+if db.exist("ubiquity/language")=="false" or not db.fget("ubiquity/language","seen")=="true":
     BREADCRUMB_STEPS["stepLanguage"]=counter
     counter+=1
-if not db.exist("ubiquity/location") OR not db.fget("ubiquity/location","seen")=="true":
+if db.exist("ubiquity/location")=="false" or not db.fget("ubiquity/location","seen")=="true":
     BREADCRUMB_STEPS["stepLocation"]=counter
     counter+=1
-if not db.exist("ubiquity/keyboardconf") OR not db.fget("ubiquity/keyboardconf","seen")=="true":
+if db.exist("ubiquity/keyboardconf")=="false" or not db.fget("ubiquity/keyboardconf","seen")=="true":
     BREADCRUMB_STEPS["stepKeyboardConf"]=counter
     counter+=1
 BREADCRUMB_STEPS["stepUserInfo"]=counter
