@@ -43,4 +43,6 @@ ppmtolss16 '#d0d0d0=7' < splash.ppm > splash.rle
 
 donde "#d0d0d0" es el color que usa isolinux para el texto.
 
+* generation_system/packages/gfxboot-theme-guadalinex/gfxboot-theme-guadalinex_0.2.10guada1/Makefile
 
+DEFAULT_LANG = es -> Para que aparezca el idioma por defecto en castellano
