@@ -1,0 +1,23 @@
+# Firefox plugin file
+#
+# Wikipedia search
+# by Ian Jackson for Ubuntu copying code 
+# by Fergus McKenzie-Kay copying code 
+# by Spencer Wysinger <http://wysinger.com/>
+# ported to Ubuntu by Alex Converse
+#
+# Last updated: June 5, 2005
+
+<search 
+	name="Diccionario de la RAE"
+	description="Buscar en el DRAE"
+	action="http://buscon.rae.es/draeI/SrvltGUIBusUsual"
+	searchForm="http://www.rae.es"
+	queryEncoding="utf-8"
+	queryCharset="utf-8"
+	method="GET"
+>
+
+<input name="LEMA" user="{searchTerms}">
+
+</search>
