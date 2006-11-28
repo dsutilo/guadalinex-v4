@@ -81,18 +81,29 @@ GLADEDIR = os.path.join(PATH, 'glade')
 # Define locale path
 LOCALEDIR = "/usr/share/locale"
 
-BREADCRUMB_STEPS = {
-    "stepLanguage": 1,
-    "stepLocation": 2,
-    "stepKeyboardConf": 3,
-    "stepUserInfo": 4,
-    "stepPartDisk": 5,
-    "stepPartAuto": 5,
-    "stepPartAdvanced": 5,
-    "stepPartMountpoints": 5,
-    "stepReady": 6
-}
-BREADCRUMB_MAX_STEP = 6
+BREADCRUMB_STEPS = {}
+db = debconf.DebconfCommunicator("ubiquity")
+counter = 1
+if not db.fget("ubiquity/language","seen")=="true":
+    BREADCRUMB_STEPS["stepLanguage"]=counter
+    counter+=1
+if not db.fget("ubiquity/location","seen")=="true":
+    BREADCRUMB_STEPS["stepLocation"]=counter
+    counter+=1
+if not db.fget("ubiquity/keyboardconf","seen")=="true":
+    BREADCRUMB_STEPS["stepKeyboardConf"]=counter
+    counter+=1
+BREADCRUMB_STEPS["stepUserInfo"]=counter
+counter+=1
+BREADCRUMB_STEPS["stepPartDisk"]=counter
+BREADCRUMB_STEPS["stepPartAuto"]=counter
+BREADCRUMB_STEPS["stepPartAdvanced"]=counter
+BREADCRUMB_STEPS["stepPartMountpoints"]=counter
+counter+=1
+BREADCRUMB_STEPS["stepReady"]=counter
+BREADCRUMB_MAX_STEP = counter
+
+db.shutdown()
 
 # For the font wibbling later
 import pango
@@ -265,6 +276,11 @@ class Wizard:
         else:
             #first_step = self.stepLanguage
             first_step = self.stepUserInfo
+
+	for step in BREADCRUMB_STEPS.keys():
+		if BREADCRUMB_STEPS[step] == 1:
+			first_step = self.glade.get_widget(step)
+
         self.steps.set_current_page(self.steps.page_num(first_step))
 
         while self.current_page is not None:
@@ -858,45 +874,49 @@ class Wizard:
         if step.startswith("stepPart"):
             self.previous_partitioning_page = step_num
 
+        global BREADCRUMB_STEPS, BREADCRUMB_MAX_STEP
         # Welcome
-        if step == "stepWelcome":
+	first_cicle=True
+	while(not self.step_name(self.steps.get_current_page()) in BREADCRUMB_STEPS.keys() or first_cicle):
+	    step = self.step_name(self.steps.get_current_page())
+	    first_cicle=False
+
+            # Language
+            if step == "stepLanguage":
+                self.translate_widgets()
+                self.back.show()
+                self.allow_go_forward(self.get_timezone() is not None)
+            # Location
+            if step == "stepLocation":
+                self.allow_go_forward(True)
+            # Keyboard
+            elif step == "stepKeyboardConf":
+                self.info_loop(None)
+            # Identification
+            elif step == "stepUserInfo":
+                self.process_identification()
+                self.got_disk_choices = False
+            # Disk selection
+            elif step == "stepPartDisk":
+                self.process_disk_selection()
+            # Automatic partitioning
+            elif step == "stepPartAuto":
+                self.process_autopartitioning()
+            # Advanced partitioning
+            elif step == "stepPartAdvanced":
+                self.gparted_to_mountpoints()
+            # Mountpoints
+            elif step == "stepPartMountpoints":
+                self.mountpoints_to_summary()
+            # Ready to install
+            elif step == "stepReady":
+                self.live_installer.hide()
+                self.current_page = None
+                self.installing = True
+                self.progress_loop()
+                return
+
             self.steps.next_page()
-        # Language
-        elif step == "stepLanguage":
-            self.translate_widgets()
-            self.steps.next_page()
-            self.back.show()
-            self.allow_go_forward(self.get_timezone() is not None)
-        # Location
-        elif step == "stepLocation":
-            self.steps.next_page()
-        # Keyboard
-        elif step == "stepKeyboardConf":
-            self.steps.next_page()
-            self.info_loop(None)
-        # Identification
-        elif step == "stepUserInfo":
-            self.process_identification()
-            self.got_disk_choices = False
-        # Disk selection
-        elif step == "stepPartDisk":
-            self.process_disk_selection()
-        # Automatic partitioning
-        elif step == "stepPartAuto":
-            self.process_autopartitioning()
-        # Advanced partitioning
-        elif step == "stepPartAdvanced":
-            self.gparted_to_mountpoints()
-        # Mountpoints
-        elif step == "stepPartMountpoints":
-            self.mountpoints_to_summary()
-        # Ready to install
-        elif step == "stepReady":
-            self.live_installer.hide()
-            self.current_page = None
-            self.installing = True
-            self.progress_loop()
-            return
 
         step = self.step_name(self.steps.get_current_page())
         syslog.syslog('Step_after = %s' % step)
@@ -926,8 +946,6 @@ class Wizard:
         if len(error_msg) != 0:
             self.hostname_error_reason.set_text("\n".join(error_msg))
             self.hostname_error_box.show()
-        else:
-            self.steps.next_page()
 
 
     def process_disk_selection (self):
@@ -941,8 +959,6 @@ class Wizard:
             self.gparted_loop()
             self.steps.set_current_page(
                 self.steps.page_num(self.stepPartAdvanced))
-        else:
-            self.steps.next_page()
 
 
     def process_autopartitioning(self):
@@ -956,7 +972,6 @@ class Wizard:
         choice = self.get_autopartition_choice()
         if self.manual_choice is None or choice == self.manual_choice:
             self.gparted_loop()
-            self.steps.next_page()
         else:
             # TODO cjwatson 2006-01-10: extract mountpoints from partman
             self.manual_partitioning = False
@@ -1124,8 +1139,6 @@ class Wizard:
         self.mountpoint_error_reason.hide()
         self.mountpoint_error_image.hide()
 
-        self.steps.next_page()
-
 
     def mountpoints_to_summary(self):
         """Processing mountpoints to summary step tasks."""
@@ -1262,8 +1275,6 @@ class Wizard:
             self.mountpoint_error_image.hide()
 
         self.manual_partitioning = True
-        self.steps.next_page()
-
 
     def on_back_clicked(self, widget):
         """Callback to set previous screen."""
@@ -1309,8 +1320,13 @@ class Wizard:
             self.steps.set_current_page(self.previous_partitioning_page)
             changed_page = True
 
+        global BREADCRUMB_STEPS, BREADCRUMB_MAX_STEP
         if not changed_page:
             self.steps.prev_page()
+            while(not self.step_name(self.steps.get_current_page()) in BREADCRUMB_STEPS.keys()):
+                self.steps.prev_page()
+                if BREADCRUMB_STEPS[self.step_name(self.steps.get_current_page())] == 1:
+                    self.back.hide()
 
         if self.dbfilter is not None:
             self.dbfilter.cancel_handler()
