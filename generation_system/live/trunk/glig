@@ -150,6 +150,13 @@ EOF
         echo "$APT_LINE" > ${sources}/etc/apt/sources.list
     fi
 
+    mv ${sources}/sbin/start-stop-daemon ${sources}/sbin/start-stop-daemon.REAL
+    echo \
+"#!/bin/sh
+echo
+echo \"Warning: Fake start-stop-daemon called, doing nothing\"" > ${sources}/sbin/start-stop-daemon
+    chmod 755 ${sources}/sbin/start-stop-daemon
+
     # Force update, install and clean
     apt_get update
     
@@ -187,6 +194,7 @@ EOF
     rmdir ${sources}/var/mirror
     log_it "$?" "Delete ${sources}/var/mirror"
 
+    mv ${sources}/sbin/start-stop-daemon.REAL ${sources}/sbin/start-stop-daemon
 }
 
 function create_manifests() {
