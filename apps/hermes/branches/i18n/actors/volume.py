@@ -1,28 +1,30 @@
-#-*- coding: utf8 -*-
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
-#MÃ³dulo volumeactor- MÃ³dulo que implementa el "actor hardware" para los
-#dispositivos de volumen (dispositivos que se montan como unidades de disco) 
+
+#Módulo volume- Módulo que implementa el "actor hardware" para los dispositivos
+#volúmenes.
 #
-#Copyright (C) 2005 Junta de AndalucÃ­a
+#Copyright (C) 2005 Junta de Andalucía
 #
 #Autor/es (Author/s):
 #
-#- Gumersindo Coronel PÃ©rez <gcoronel@emergya.info>
+#- Gumersindo Coronel Pérez <gcoronel@emergya.info>
 #
-#Este fichero es parte de DetecciÃ³n de Hardware de Guadalinex 2005 
+#Este fichero es parte de Detección de Hardware de Guadalinex 2005 
 #
-#DetecciÃ³n de Hardware de Guadalinex 2005  es software libre. Puede redistribuirlo y/o modificarlo 
-#bajo los tÃ©rminos de la Licencia PÃºblica General de GNU segÃºn es 
-#publicada por la Free Software Foundation, bien de la versiÃ³n 2 de dicha
-#Licencia o bien (segÃºn su elecciÃ³n) de cualquier versiÃ³n posterior. 
+#Detección de Hardware de Guadalinex 2005  es software libre. Puede redistribuirlo y/o modificarlo 
+#bajo los términos de la Licencia Pública General de GNU según es 
+#publicada por la Free Software Foundation, bien de la versión 2 de dicha
+#Licencia o bien (según su elección) de cualquier versión posterior. 
 #
-#DetecciÃ³n de Hardware de Guadalinex 2005  se distribuye con la esperanza de que sea Ãºtil, 
-#pero SIN NINGUNA GARANTÃA, incluso sin la garantÃ­a MERCANTIL 
-#implÃ­cita o sin garantizar la CONVENIENCIA PARA UN PROPÃSITO 
-#PARTICULAR. VÃ©ase la Licencia PÃºblica General de GNU para mÃ¡s detalles. 
+#Detección de Hardware de Guadalinex 2005  se distribuye con la esperanza de que sea útil, 
+#pero SIN NINGUNA GARANTÍA, incluso sin la garantía MERCANTIL 
+#implícita o sin garantizar la CONVENIENCIA PARA UN PROPÓSITO 
+#PARTICULAR. Véase la Licencia Pública General de GNU para más detalles. 
 #
-#DeberÃ­a haber recibido una copia de la Licencia PÃºblica General 
-#junto con DetecciÃ³n de Hardware de Guadalinex 2005 . Si no ha sido asÃ­, escriba a la Free Software
+#Debería haber recibido una copia de la Licencia Pública General 
+#junto con Detección de Hardware de Guadalinex 2005 . Si no ha sido así, escriba a la Free Software
 #Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA.
 #
 #-------------------------------------------------------------------------
@@ -46,6 +48,7 @@
 import os.path
 
 from deviceactor import DeviceActor
+from gettext import gettext as _
 
 VOLUMEICON = os.path.abspath('actors/img/volume.png') 
 

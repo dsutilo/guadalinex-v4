@@ -49,6 +49,7 @@ import os.path
 
 from utils.synaptic import Synaptic
 from deviceactor import DeviceActor
+from gettext import gettext as _
 
 ICON = os.path.abspath('actors/img/ipod.png')
 ICONOFF = os.path.abspath('actors/img/ipodoff.png')

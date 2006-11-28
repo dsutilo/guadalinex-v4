@@ -49,6 +49,7 @@ import os.path
 
 from utils.synaptic import Synaptic
 from deviceactor import DeviceActor
+from gettext import gettext as _
 
 BLUEICON = os.path.abspath('actors/img/bluetooth.png')
 BLUEICONOFF = os.path.abspath('actors/img/bluetoothoff.png')
@@ -71,7 +72,7 @@ class Actor(DeviceActor):
 
         if s.check(packages):
             os.system('gnome-obex-server &')
-            actions = {_("Open bluetooth manager"): open_scan}
+            actions = {_("Open Bluetooth manager"): open_scan}
         else:
             actions = {_("Install required packages"): install_packages}
 
@@ -81,7 +82,7 @@ class Actor(DeviceActor):
             interface = ''
         print self.msg_render
         self.msg_render.show(_("BLUETOOTH"), 
-             _("New bluetooth interface configured ") + str(interface) +
+             _("New Bluetooth interface configured ") + str(interface) +
              '.',
              BLUEICON, actions = actions)
 

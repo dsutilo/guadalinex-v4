@@ -10,7 +10,7 @@ import time
 import os.path
 
 from utils.notification import NotificationDaemon
-
+from gettext import gettext as _
 ICON = os.path.abspath('test_icon.svg')
 TIMEOUT = 0.3
 

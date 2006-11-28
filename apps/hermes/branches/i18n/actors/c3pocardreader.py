@@ -48,6 +48,7 @@ import os.path
 
 from deviceactor import DeviceActor
 from utils.synaptic import Synaptic
+from gettext import gettext as _
 
 C3POICON = os.path.abspath('actors/img/ltc31.png')
 C3POICONOFF = os.path.abspath('actors/img/ltc31off.png')
@@ -69,7 +70,7 @@ class Actor(DeviceActor):
 
         if s.check(packages):
             self.msg_render.show(_("C3PO"), 
-                    _("Detected card reader"),
+                    _("Card reader detected"),
                     C3POICON)
         else:
             actions = {_("Install required packages"): install_packages}

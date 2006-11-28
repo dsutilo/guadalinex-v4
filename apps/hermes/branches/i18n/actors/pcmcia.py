@@ -47,6 +47,7 @@
 import os.path
 
 from deviceactor import DeviceActor
+from gettext import gettext as _
 
 PCMCIAICON = os.path.abspath('actors/img/pcmcia.png')
 PCMCIAICONOFF = os.path.abspath('actors/img/pcmciaoff.png')

@@ -47,6 +47,7 @@
 import os.path
 
 from deviceactor import DeviceActor
+from gettext import gettext as _
 
 MOUSEICON = os.path.abspath('actors/img/mouse.png')
 

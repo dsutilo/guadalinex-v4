@@ -4,6 +4,7 @@
 import os.path
 
 from deviceactor import DeviceActor
+from gettext import gettext as _
 
 NETWORKICON = os.path.abspath('actors/img/network.png')
 NETWORKICONOFF = os.path.abspath('actors/img/networkoff.png')

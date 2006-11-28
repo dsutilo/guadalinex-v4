@@ -53,6 +53,8 @@ from utils.grepmap import UsbGrepMap
 
 from usbdevice import Actor
 
+from gettext import gettext as _
+
 SCANNERICON = os.path.abspath('actors/img/scanner.png')
 SCANNERICONOFF = os.path.abspath('actors/img/scanneroff.png')
 
@@ -109,7 +111,7 @@ class UsbScannerActorHack(object):
         if synaptic.check(UsbScannerActorHack.PACKAGES):
             actions = {_("Run rendering program"): run_xsane}
         else:
-            actions = {_("Install required software"): install_packages}
+            actions = {_("Install required packages"): install_packages}
 
         usb_actor.msg_render.show(_("SCANNER"), _("Scanner device detected"),
                                 SCANNERICON, actions = actions)

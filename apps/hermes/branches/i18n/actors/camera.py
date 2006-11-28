@@ -49,6 +49,7 @@ import os.path
 from utils.synaptic import Synaptic
 
 from deviceactor import DeviceActor
+from gettext import gettext as _
 
 CAMERAICON = os.path.abspath('actors/img/camera.png')
 CAMERAICONOFF = os.path.abspath('actors/img/cameraoff.png')
@@ -79,5 +80,5 @@ class Actor(DeviceActor):
 
 
     def on_removed(self):
-        self.msg_render.show(_("CAMERA"), _("Digital camera disconected"),
+        self.msg_render.show(_("CAMERA"), _("Digital camera disconnected"),
                 CAMERAICONOFF)

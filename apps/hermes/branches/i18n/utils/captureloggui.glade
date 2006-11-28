@@ -8,7 +8,7 @@
   <property name="width_request">500</property>
   <property name="height_request">350</property>
   <property name="visible">True</property>
-  <property name="title" translatable="yes">Hermes Información</property>
+  <property name="title" translatable="yes">Hermes Information</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER_ALWAYS</property>
   <property name="modal">False</property>
@@ -168,7 +168,7 @@ requires to follow the next steps:
 	  <property name="visible">True</property>
 	  <property name="position">GNOME_EDGE_FINISH</property>
 	  <property name="title" translatable="yes">Thanks!</property>
-	  <property name="text" translatable="yes">On your Desktop it is located a file with the required informationabout your device:
+	  <property name="text" translatable="yes">On your Desktop it is located a file with the required information about your device:
 
      &lt;DEVICENAME&gt;.log
 

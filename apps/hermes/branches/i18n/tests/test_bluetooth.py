@@ -9,7 +9,7 @@ import actors
 
 from actortest import ActorTest
 from dev_bluetooth import PROPERTIES
-
+from gettext import gettext as _
 
 class BluetoothActorTest(ActorTest):
 

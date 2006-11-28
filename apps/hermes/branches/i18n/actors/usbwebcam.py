@@ -50,6 +50,7 @@ import os.path
 from utils.synaptic import Synaptic
 from deviceactor import DeviceActor
 from utils.grepmap import UsbGrepMap
+from gettext import gettext as _
 
 from usbactor import Actor
 

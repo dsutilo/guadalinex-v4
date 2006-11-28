@@ -11,6 +11,7 @@ import gobject
 import os
 import logging
 
+from gettext import gettext as _
 from optparse import OptionParser
 from Queue import Queue
 
@@ -86,7 +87,7 @@ class HermesTray (egg.trayicon.TrayIcon):
             Timeout handler than hide messagedialog
             """
             dlg.response(0)
-            return False #Para que sólo se ejecute una vez
+            return False # So only is executed once
 
 
         def timeout_2():
@@ -108,7 +109,7 @@ class HermesTray (egg.trayicon.TrayIcon):
 
 
     def show_question(self, question, default = 1):
-        #Mostramos el trayicon
+        #Show trayicon
         gtk.gdk.threads_enter()
         self.show_all()
 
@@ -128,7 +129,7 @@ class HermesTray (egg.trayicon.TrayIcon):
                 dlg.response(gtk.RESPONSE_NO)
             else:
                 dlg.response(gtk.RESPONSE_YES)
-            return False #Para que sólo se ejecute una vez
+            return False #Only execute once
 
         def timeout_2():
             """
@@ -157,10 +158,10 @@ class HermesTray (egg.trayicon.TrayIcon):
 
     def show_entry(self, message):
         """
-        Muestra un diálogo con una entrada de texto para que el usuario
-        introduzca algún dato
+        Shows a dialig with a text entry so the user can
+        input any data
 
-        Devuelve el texto introducido por el usuario
+        Returns the text introduced by the user
         """
         gtk.gdk.threads_enter()
         self.show_all()
@@ -183,7 +184,7 @@ class HermesTray (egg.trayicon.TrayIcon):
             Timeout handler than hide messagedialog
             """
             dlg.response(gtk.RESPONSE_CANCEL)
-            return False #Para que sólo se ejecute una vez
+            return False #Only execute once
 
         def timeout_2():
             """
@@ -289,7 +290,7 @@ class HermesTray2:
 
             close_button = gtk.Button(stock = gtk.STOCK_EXECUTE)
             close_button.connect("clicked", execute)
-            tooltips.set_tip(close_button, _("Run action messaje"))
+            tooltips.set_tip(close_button, _("Run action message"))
 
            
         close_button.modify_bg(gtk.STATE_NORMAL, HermesTray2.BACKGROUND_COLOR)
@@ -313,7 +314,7 @@ class HermesTray2:
                 queue.put(0)
 
             self.__remove_message(vbox)
-            return False #Para que sólo se ejecute una vez
+            return False #Only execute once
 
 
         def timeout_2():

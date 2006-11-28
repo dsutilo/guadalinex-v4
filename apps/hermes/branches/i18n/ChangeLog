@@ -1,3 +1,7 @@
+2006-11-28  Francisco Javier F. Serrador  <serrador@openshine.com>
+
+	* all: Internacionalización
+
 2006-11-27  Francisco Javier F. Serrador  <serrador@openshine.com>
 
 	* m4/intltool.m4, m4/python.m4: Added customized m4 macros.

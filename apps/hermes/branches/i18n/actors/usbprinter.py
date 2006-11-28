@@ -52,7 +52,7 @@ import time
 from utils.synaptic import Synaptic
 from utils import get_sudo
 from deviceactor import DeviceActor
-
+from gettext import gettext as _
 
 PRINTERICON = os.path.abspath('actors/img/printer.png')
 PRINTERICONOFF = os.path.abspath('actors/img/printeroff.png')
