@@ -1,0 +1,3 @@
+#!/bin/bash
+update-alternatives --remove firefox-homepage /usr/share/guadalinex-artwork/home/firefox-index.html
+rm /usr/share/ubuntu-artwork/home/files

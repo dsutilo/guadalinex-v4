@@ -1,0 +1,3 @@
+update-alternatives --install /usr/share/ubuntu-artwork/home/index.html firefox-homepage /usr/share/guadalinex-artwork/home/firefox-index.html 40
+update-alternatives --set firefox-homepage /usr/share/guadalinex-artwork/home/firefox-index.html
+ln -s /usr/share/guadalinex-artwork/home/files /usr/share/ubuntu-artwork/home/files
