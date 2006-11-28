@@ -31,6 +31,7 @@ FILES_BOOT   = $(FILES_CORE) langlist $(TRANSLATIONS) 16x16.fnt \
 FILES_BOOT_EN = $(FILES_CORE) en.tr 16x16.fnt $(PIC_COMMON)
 
 ifdef DEFAULT_LANG
+INST_EXT += lang
 FILES_INST += lang
 FILES_BOOT += lang
 FILES_BOOT_EN += lang $(DEFAULT_LANG).tr
