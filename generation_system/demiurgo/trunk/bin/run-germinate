@@ -78,6 +78,8 @@ for arch in $CPUARCHES; do
 			if [ "$LOCAL" ]; then
 				files="$files $LOCALDEBS/dists/$germinate_dist/local/$suffix"
 			fi
+			files="$files dists/$germinate_dist/universe/$suffix"
+			files="$files dists/$germinate_dist/multiverse/$suffix"
 			files="$files dists/$germinate_dist/$DERIVATIVE_CN/$suffix"
 			mkindex $files
 		done
