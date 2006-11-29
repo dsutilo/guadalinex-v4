@@ -1,3 +1,12 @@
+glig (0.2) unstable; urgency=low
+
+  * exclude some packages of the debootstrap process
+  * work with a local repository (file:///...)
+  * debootstrap process splited in various "apt-get install ..."
+  * sub start-stop-daemon by an empty script during the install
+
+ -- Carlos Parra Camargo <cparra@emergya.info>  Tue, 28 Nov 2006 19:40:37 +0100
+
 glig (0.1) unstable; urgency=low
 
   * Initial Release.
