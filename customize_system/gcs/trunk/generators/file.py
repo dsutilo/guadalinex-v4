@@ -323,7 +323,7 @@ class PrePostGenerator(FileGenerator):
 
     def _set_install_scripts(self):
         scripts_part = ScriptsPart(config['source_path'] + \
-                self.scripts_path)
+                '/' + self.scripts_path)
 
         newcontent = self.template_content.replace('<SCRIPTS_SLOT>',
                 scripts_part.get_scripts_content())
@@ -336,9 +336,10 @@ class PreInstGenerator(PrePostGenerator):
     def __init__(self):
         PrePostGenerator.__init__(self)
 
-        self.template_name = 'reinst_template'
+        self.template_name = 'preinst_template'
         self.file_path = 'debian/preinst'
-        self.scripts_path = 'gcs/install_scripts/pre'
+        self.scripts_path = 'gcs/install_scripts/pre/'
+
 
 
 class PostInstGenerator(PrePostGenerator):
@@ -349,7 +350,8 @@ class PostInstGenerator(PrePostGenerator):
         self.template_name = 'postinst_template'
         self.file_path = 'debian/postinst'
         self.divert_content = DivertPart().get_postinst_content()
-        self.scripts_path = 'gcs/install_scripts/pos'
+        self.scripts_path = 'gcs/install_scripts/pos/'
+
 
 
 class PreRmGenerator(PrePostGenerator):
@@ -360,7 +362,7 @@ class PreRmGenerator(PrePostGenerator):
         self.template_name = 'prerm_template'
         self.file_path = 'debian/prerm'
         self.divert_content = DivertPart().get_prerm_content()
-        self.scripts_path = 'gcs/install_scripts/pre'
+        self.scripts_path = 'gcs/remove_scripts/pre/'
 
 
 
@@ -371,7 +373,7 @@ class PostRmGenerator(PrePostGenerator):
 
         self.template_name = 'postrm_template'
         self.file_path = 'debian/postrm'
-        self.scripts_path = 'gcs/remove_scripts/'
+        self.scripts_path = 'gcs/remove_scripts/pos/'
 
 
 
