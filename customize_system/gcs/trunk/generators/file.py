@@ -291,32 +291,38 @@ class ChangelogGenerator(FileGenerator):
         else:
             return True
 
-
-
-class PostInstGenerator(FileGenerator):
+class PrePostGenerator(FileGenerator):
+    """<abstract>
+    """
 
     def __init__(self):
         self.scripts = []
 
+        # Params for derivated classes.
+        self.template_name = ''
+        self.file_path = ''
+        self.divert_content = ''
+        self.scripts_path = ''
+
     def activate(self):
-        self.set_template_content('postinst_template')
+        self.set_template_content(self.template_name)
         initial_content = self.template_content
         
-        self.__set_divert()
-        self.__set_install_scripts()
+        self._set_divert()
+        self._set_install_scripts()
         if initial_content != self.template_content:
-            self._write_file('debian/postinst')
+            self._write_file(self.file_path)
 
 
-    def __set_divert(self):
+    def _set_divert(self):
         newcontent = self.template_content.replace('<DIVERT_SLOT>', 
-                DivertPart().get_postinst_content())
+                self.divert_content)
         self.template_content = newcontent
 
 
-    def __set_install_scripts(self):
+    def _set_install_scripts(self):
         scripts_part = ScriptsPart(config['source_path'] + \
-                '/gcs/install_scripts')
+                self.scripts_path)
 
         newcontent = self.template_content.replace('<SCRIPTS_SLOT>',
                 scripts_part.get_scripts_content())
@@ -324,32 +330,27 @@ class PostInstGenerator(FileGenerator):
 
 
 
-class PostRmGenerator(FileGenerator):
+class PostInstGenerator(PrePostGenerator):
 
-    def activate(self):
-        self.set_template_content('postrm_template')
-        initial_content = self.template_content
-        
-        self.__set_divert()
-        self.__set_install_scripts()
-        if initial_content != self.template_content:
-            self._write_file('debian/postrm')
+    def __init__(self):
+        PrePostGenerator.__init__(self)
 
-
-    def __set_divert(self):
-        newcontent = self.template_content.replace('<DIVERT_SLOT>', 
-                DivertPart().get_postrm_content())
-        self.template_content = newcontent
+        self.template_name = 'postinst_template'
+        self.file_path = 'debian/postinst'
+        self.divert_content = DivertPart().get_postinst_content()
+        self.scripts_path = 'gcs/install_scripts/'
 
 
 
-    def __set_install_scripts(self):
-        scripts_part = ScriptsPart(config['source_path'] + \
-                '/gcs/remove_scripts')
+class PostRmGenerator(PrePostGenerator):
 
-        newcontent = self.template_content.replace('<SCRIPTS_SLOT>',
-                scripts_part.get_scripts_content())
-        self.template_content = newcontent
+    def __init__(self):
+        PrePostGenerator.__init__(self)
+
+        self.template_name = 'postrm_template'
+        self.file_path = 'debian/postrm'
+        self.divert_content = DivertPart().get_postrm_content()
+        self.scripts_path = 'gcs/remove_scripts/'
 
 
 
