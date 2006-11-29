@@ -14,7 +14,7 @@ class Part(object):
         raise NotImplementedError
 
 
-    def get_postrm_content(self):
+    def get_prerm_content(self):
         raise NotImplementedError
 
 
@@ -36,7 +36,7 @@ class DivertPart(Part):
         return ''.join(self.diverts)
 
 
-    def get_postrm_content(self):
+    def get_prerm_content(self):
         self.__add_divert_content(self.__rm_divert)
         return ''.join(self.removes)
 

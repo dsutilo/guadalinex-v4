@@ -12,7 +12,9 @@ from generators.file import ControlGenerator
 from generators.file import RulesGenerator 
 from generators.file import ChangelogGenerator 
 from generators.file import CompatGenerator 
+from generators.file import PreInstGenerator
 from generators.file import PostInstGenerator
+from generators.file import PreRmGenerator
 from generators.file import PostRmGenerator
 from generators.file import CompatGenerator
 from generators.file import CopyrightGenerator
@@ -41,7 +43,9 @@ class Builder(object):
         RulesGenerator().activate()
         ChangelogGenerator().activate()
         CompatGenerator().activate()
+        PreInstGenerator().activate()
         PostInstGenerator().activate()
+        PreRmGenerator().activate()
         PostRmGenerator().activate()
         CompatGenerator().activate()
         CopyrightGenerator().activate()

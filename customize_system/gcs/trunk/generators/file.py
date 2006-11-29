@@ -296,6 +296,7 @@ class PrePostGenerator(FileGenerator):
     """
 
     def __init__(self):
+        FileGenerator.__init__(self)
         self.scripts = []
 
         # Params for derivated classes.
@@ -330,6 +331,16 @@ class PrePostGenerator(FileGenerator):
 
 
 
+class PreInstGenerator(PrePostGenerator):
+
+    def __init__(self):
+        PrePostGenerator.__init__(self)
+
+        self.template_name = 'reinst_template'
+        self.file_path = 'debian/preinst'
+        self.scripts_path = 'gcs/install_scripts/pre'
+
+
 class PostInstGenerator(PrePostGenerator):
 
     def __init__(self):
@@ -338,7 +349,18 @@ class PostInstGenerator(PrePostGenerator):
         self.template_name = 'postinst_template'
         self.file_path = 'debian/postinst'
         self.divert_content = DivertPart().get_postinst_content()
-        self.scripts_path = 'gcs/install_scripts/'
+        self.scripts_path = 'gcs/install_scripts/pos'
+
+
+class PreRmGenerator(PrePostGenerator):
+
+    def __init__(self):
+        PrePostGenerator.__init__(self)
+
+        self.template_name = 'prerm_template'
+        self.file_path = 'debian/prerm'
+        self.divert_content = DivertPart().get_prerm_content()
+        self.scripts_path = 'gcs/install_scripts/pre'
 
 
 
@@ -349,7 +371,6 @@ class PostRmGenerator(PrePostGenerator):
 
         self.template_name = 'postrm_template'
         self.file_path = 'debian/postrm'
-        self.divert_content = DivertPart().get_postrm_content()
         self.scripts_path = 'gcs/remove_scripts/'
 
 
