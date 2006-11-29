@@ -195,6 +195,7 @@ class RulesGenerator(FileGenerator):
         self.template_content = newcontent
 
         self._write_file('debian/rules')
+        os.chmod(config['source_path'] + '/' + 'debian/rules', 0755)
 
         # write debian/dirs file
         dirs_file = open(config['source_path'] + '/debian/dirs', 'w')
