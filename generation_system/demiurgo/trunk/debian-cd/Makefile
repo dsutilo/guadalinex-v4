@@ -562,6 +562,8 @@ ifeq ($(CDIMAGE_INSTALL_BASE),1)
 	    if [ "$$RESTRICTED" = 1 ]; then \
 		echo 'restricted' >> $(BDIR)/CD$$DISK/.disk/base_components; \
 	    fi; \
+	    echo 'universe' >>  $(BDIR)/CD$$DISK/.disk/base_components; \
+	    echo 'multiverse' >>  $(BDIR)/CD$$DISK/.disk/base_components; \
 	    echo "$(DERIVATIVE_CN)" >>  $(BDIR)/CD$$DISK/.disk/base_components; \
 	    if [ -n "$(UDEB_INCLUDE)" ] ; then \
 		if [ -r "$(UDEB_INCLUDE)" ] ; then \

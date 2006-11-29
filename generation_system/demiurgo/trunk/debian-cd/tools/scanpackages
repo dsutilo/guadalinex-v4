@@ -28,6 +28,12 @@ if [ "${RESTRICTED:-0}" != "0" ]; then
   SECTIONSNONUS="${SECTIONSNONUS} non-US/restricted"
 fi
 
+SECTIONS="${SECTIONS} universe"
+SECTIONSNONUS="${SECTIONSNONUS} non-US/universe"
+
+SECTIONS="${SECTIONS} multiverse"
+SECTIONSNONUS="${SECTIONSNONUS} non-US/multiverse"
+
 SECTIONS="${SECTIONS} $DERIVATIVE_CN"
 SECTIONSNONUS="${SECTIONSNONUS} non-US/$DERIVATIVE_CN"
 
@@ -150,6 +156,8 @@ for i in `cd dists; echo *; cd ..`; do
 	     -d "dists/$i/non-free/binary-$ARCH" -o \
 	     -d "dists/$i/contrib/binary-$ARCH" -o \
 	     -d "dists/$i/restricted/binary-$ARCH" -o \
+	     -d "dists/$i/universe/binary-$ARCH" -o \
+	     -d "dists/$i/multiverse/binary-$ARCH" -o \
 	     -d "dists/$i/$DERIVATIVE_CN/binary-$ARCH" ]; then
 	    DISTS="$DISTS $i"
 	fi
@@ -157,6 +165,8 @@ for i in `cd dists; echo *; cd ..`; do
 	     -d "dists/$i/non-US/non-free/binary-$ARCH" -o \
 	     -d "dists/$i/non-US/contrib/binary-$ARCH" -o \
 	     -d "dists/$i/non-US/restricted/binary-$ARCH" -o \
+	     -d "dists/$i/non-US/universe/binary-$ARCH" -o \
+	     -d "dists/$i/non-US/multiverse/binary-$ARCH" -o \
 	     -d "dists/$i/non-US/$DERIVATIVE_CN/binary-$ARCH" ]; then
 	    DISTSNONUS="$DISTSNONUS $i"
 	fi

@@ -35,9 +35,9 @@ do
 	echo " ... checking your mirror"
 	if [ "$SKIPMIRRORCHECK" != "yes" ] ; then 
 		make mirrorcheck-binary
-      	if [ "$FULLARCH" = "i386" ]; then
-            make mirrorcheck-source
-        fi
+#      	if [ "$FULLARCH" = "i386" ]; then
+#            make mirrorcheck-source
+#        fi
 	else
 		echo "WARNING: skipping mirrorcheck"
 	fi

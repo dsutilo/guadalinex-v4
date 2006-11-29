@@ -2,6 +2,7 @@
 acpi
 acpi-support
 acpid
+acroread
 adduser
 alacarte
 alsa-base
@@ -42,6 +43,8 @@ cdparanoia
 cdrdao
 cdrecord
 cli-common
+console-common
+console-data
 console-setup
 console-terminus
 console-tools
@@ -238,6 +241,7 @@ iputils-arping
 iputils-ping
 iputils-tracepath
 iso-codes
+kbd
 klibc-utils
 klogd
 landscape-client
@@ -792,6 +796,7 @@ upstart-compat-sysv
 upstart-logd
 usbutils
 usplash
+usplash-theme-guadalinex
 usplash-theme-ubuntu
 util-linux
 util-linux-locales

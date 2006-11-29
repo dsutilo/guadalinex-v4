@@ -1,6 +1,7 @@
 acpi  Task  guadalinex-desktop, guada
 acpi-support  Task  guadalinex-desktop, guada
 acpid  Task  guadalinex-desktop, guada
+acroread  Task  guada
 adduser  Task  guadalinex-minimal, guada
 alacarte  Task  guadalinex-desktop, guada
 alsa-base  Task  guadalinex-minimal, guada
@@ -47,6 +48,8 @@ cdparanoia  Task  guadalinex-desktop, guada
 cdrdao  Task  guadalinex-desktop, guada
 cdrecord  Task  guadalinex-desktop, guada
 cli-common  Task  guadalinex-desktop, guada
+console-common  Task  guada
+console-data  Task  guada
 console-setup  Task  guadalinex-minimal, guada
 console-terminus  Task  guadalinex-minimal, guada
 console-tools  Task  guadalinex-minimal, guada
@@ -261,6 +264,7 @@ iputils-arping  Task  guadalinex-standard, guada
 iputils-ping  Task  guadalinex-minimal, guada
 iputils-tracepath  Task  guadalinex-standard, guada
 iso-codes  Task  guadalinex-desktop, guada
+kbd  Task  guada
 klibc-utils  Task  guadalinex-minimal, guada
 klogd  Task  guadalinex-minimal, guada
 landscape-client  Task  guadalinex-desktop, guada
@@ -856,6 +860,7 @@ upstart-compat-sysv  Task  guadalinex-minimal, guada
 upstart-logd  Task  guadalinex-minimal, guada
 usbutils  Task  guadalinex-minimal, guada
 usplash  Task  guadalinex-desktop, guada
+usplash-theme-guadalinex  Task  guada
 usplash-theme-ubuntu  Task  guadalinex-desktop, guada
 util-linux  Task  guadalinex-minimal, guada
 util-linux-locales  Task  guadalinex-minimal, guada

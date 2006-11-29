@@ -24,6 +24,10 @@ if [ "$LOCAL" ]; then
 	SECTIONS="$SECTIONS local"
 fi
 
+SECTIONS="$SECTIONS universe"
+SECTIONS="$SECTIONS multiverse"
+SECTIONS="$SECTIONS $DERIVATIVE_CN"
+
 rm -f "$BDIR/$CD.weights_in" "$BDIR/$CD.weights"
 
 i="$#"

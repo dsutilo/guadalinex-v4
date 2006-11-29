@@ -49,6 +49,12 @@ if [ "${RESTRICTED:-0}" != "0" ]; then
     mkdir -p dists/$CODENAME/restricted/source
 fi
 
+mkdir -p dists/$CODENAME/universe/binary-$ARCH
+mkdir -p dists/$CODENAME/universe/source
+
+mkdir -p dists/$CODENAME/multiverse/binary-$ARCH
+mkdir -p dists/$CODENAME/multiverse/source
+
 mkdir -p dists/$CODENAME/$DERIVATIVE_CN/binary-$ARCH
 mkdir -p dists/$CODENAME/$DERIVATIVE_CN/source
 
@@ -81,6 +87,15 @@ if [ -n "$NONUS" ]; then
 	    mkdir -p dists/$CODENAME/non-US/restricted/binary-$ARCH
 	    mkdir -p dists/$CODENAME/non-US/restricted/source
     fi
+
+    mkdir -p dists/$CODENAME/non-US/universe/binary-$ARCH
+    mkdir -p dists/$CODENAME/non-US/universe/source
+
+    mkdir -p dists/$CODENAME/non-US/multiverse/binary-$ARCH
+    mkdir -p dists/$CODENAME/non-US/multiverse/source
+
+    mkdir -p dists/$CODENAME/non-US/$DERIVATIVE_CN/binary-$ARCH
+    mkdir -p dists/$CODENAME/non-US/$DERIVATIVE_CN/source
 fi
 
 if [ -n "$LOCAL" ]; then
