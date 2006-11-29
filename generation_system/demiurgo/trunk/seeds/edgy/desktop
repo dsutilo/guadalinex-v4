@@ -90,23 +90,6 @@ Fonts:
  * ttf-bitstream-vera
  * ttf-dejavu                    # includes characters missing in Vera
  * ttf-freefont
- * (ttf-kochi-gothic)
- * (ttf-kochi-mincho)
- * (ttf-arphic-uming)
- * (ttf-arphic-ukai)
- * (ttf-arabeyes)
- * (ttf-baekmuk)
- * (ttf-indic-fonts)
- * (ttf-malayalam-fonts)
- * (ttf-mgopen)
- * (ttf-thai-tlwg)
- * (ttf-lao)
- * (ttf-gentium)
-
-Input methods:
-
- * (scim)
- * (scim-gtk2-immodule)
 
 = Desktop GNOME Apps =
 
@@ -120,7 +103,6 @@ We've chosen GNOME as our desktop user interface of choice. Rather than using th
  * eog
  * evolution
  * evolution-plugins
- * evolution-exchange
  * evolution-webcal
  * file-roller           # SebastienBacher
  * gaim
@@ -246,7 +228,6 @@ Python Integrated Applications:
 
 Documentation:
 
- * diveintopython
  * doc-base			# integrates with scrollkeeper
  * ubuntu-docs
 
