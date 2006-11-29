@@ -1,5 +1,8 @@
-#! /bin/sh
+#!/bin/bash
 set -e
+
+# If we receive this arg, we won't regenerate all the packages under svn 
+[ "$1" == "--no-gen-pkgs" ] && export REGENERATE_REPO=0
 
 export CDIMAGE_ROOT="${CDIMAGE_ROOT:-/var/cdimage}"
 . "$CDIMAGE_ROOT/etc/config"
