@@ -99,6 +99,12 @@ case $DIST in
     ;;
 esac
 
+# Guada section
+CAPPROJECT="Guadalinex"
+CAPCODENAME="Toro"
+DEBVERSION="v4"
+OFFICIAL="Alpha"
+
 # By default use Debian installer packages from $CODENAME
 if [ ! "$DI_CODENAME" ]
 then
