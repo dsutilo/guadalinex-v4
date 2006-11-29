@@ -129,8 +129,11 @@ case $ITEM in
 					edgy)
 						case $ARCH in
 							i386|amd64)
-#								echo http://people.ubuntu.com/~henrik/winfoss/edgy/ubuntu/current/ubuntu-winfoss-6.10.tar.gz
-		                                                echo "$LIVECD/$DIST/$LIVEPROJECT/current/ubuntu-winfoss-6.10.tar.gz"
+								if [ -f $LIVECD/$DIST/$LIVEPROJECT/current/ubuntu-winfoss-6.10.tar.gz ]; then
+		                        	                        echo "$LIVECD/$DIST/$LIVEPROJECT/current/ubuntu-winfoss-6.10.tar.gz"
+								else
+									echo http://people.ubuntu.com/~henrik/winfoss/edgy/ubuntu/current/ubuntu-winfoss-6.10.tar.gz
+								fi
 								;;
 							*)	exit 1 ;;
 						esac
