@@ -1,6 +1,7 @@
 acpi
 acpi-support
 acpid
+acroread
 alacarte
 anacron
 apmd
@@ -86,6 +87,8 @@ hotkey-setup
 hwdb-client-gnome
 landscape-client
 language-selector
+language-pack-es
+language-pack-gnome-es
 lftp
 libgl1-mesa-glx
 libglut3
@@ -108,6 +111,7 @@ notification-daemon
 openoffice.org
 openoffice.org-evolution
 openoffice.org-gnome
+openoffice.org-l10n-es
 pnm2ppa
 powermanagement-interface
 readahead
