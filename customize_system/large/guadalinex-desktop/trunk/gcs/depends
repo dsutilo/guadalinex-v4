@@ -78,6 +78,7 @@ gstreamer0.10-esd
 gstreamer0.10-plugins-base-apps
 gthumb
 gtk2-engines
+guadalinex-example-content
 gucharmap
 hal
 hal-device-manager
