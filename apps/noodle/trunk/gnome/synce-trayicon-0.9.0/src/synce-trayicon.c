@@ -1,5 +1,5 @@
 /*
-
+ 
 	 Copyright (c) 2002 David Eriksson <twogood@users.sourceforge.net>
 
 	 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -60,6 +60,7 @@ GConfClient *synce_conf_client = NULL;
 static bool in_background = true;
 static bool is_connected = false;
 static char* device_name = NULL;
+static char* device_name_lower = NULL;
 
 static EggTrayIcon* tray_icon = NULL;
 static GtkTooltips* tooltips = NULL;
@@ -161,9 +162,11 @@ static void menu_explore (GtkWidget *button, EggTrayIcon *icon)
 
 static void menu_kcemirror (GtkWidget *button, EggTrayIcon *icon)
 {
+
   char *argv[2] = {
-    "kcemirror",stolower (device_name)
+    "kcemirror", device_name_lower
   };
+
   if (gnome_execute_async(NULL,2, argv) == -1) {
     synce_error_dialog(_("Can't connect to remote desktop on the PDA,\naake sure you have kcemirror installed"));
   }
@@ -419,7 +422,9 @@ static void update()
 	}
 	 
 	wstr_free_string(device_name);
+	wstr_free_string(device_name_lower);
 	device_name = wstr_to_ascii(buffer);
+	device_name_lower = stolower(wstr_to_ascii(buffer));
 
 	set_status_tooltips();
 
