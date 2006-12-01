@@ -49,9 +49,11 @@
 #include "eggtrayicon.h"
 #include "gtop_stuff.h"
 #include "properties.h"
-
+#include "synce_string.h"
 
 #define SYNCE_SOFTWARE_MANAGER "synce-software-manager"
+#define SYNCE_DATA_SYNCRO "multisync"
+#define SYNCE_KCEMIRROR "kcemirror"
 
 GConfClient *synce_conf_client = NULL;
 
@@ -157,6 +159,26 @@ static void menu_explore (GtkWidget *button, EggTrayIcon *icon)
 	}
 }
 
+static void menu_kcemirror (GtkWidget *button, EggTrayIcon *icon)
+{
+  char *argv[2] = {
+    "kcemirror",stolower (device_name)
+  };
+  if (gnome_execute_async(NULL,2, argv) == -1) {
+    synce_error_dialog(_("Can't connect to remote desktop on the PDA,\naake sure you have kcemirror installed"));
+  }
+}
+
+static void menu_sync (GtkWidget *button, EggTrayIcon *icon)
+{
+  char *argv[1] = {
+    "multisync"
+  };
+  if (gnome_execute_async(NULL,2, argv) == -1) {
+    synce_error_dialog(_("Can't sync with the  PDA,\nmake sure you have multisync installed"));
+  }
+}
+
 static void menu_software (GtkWidget *button, EggTrayIcon *icon)
 {	
 	char *argv[1] = {
@@ -236,6 +258,30 @@ static void trayicon_menu(GdkEventButton *event)
 	g_signal_connect(G_OBJECT(entry), "activate", G_CALLBACK(menu_explore), NULL);
 	gtk_widget_set_sensitive(entry, is_connected);
 	gtk_menu_append(GTK_MENU(menu), entry);
+	
+	entry = gtk_menu_item_new_with_label(_("Sync Personal Data"));
+        g_signal_connect(G_OBJECT(entry), "activate", G_CALLBACK(menu_sync), NULL);
+        gtk_widget_set_sensitive(entry, is_connected);
+
+	gtk_menu_append(GTK_MENU(menu), entry);
+	if (g_find_program_in_path(SYNCE_DATA_SYNCRO) != NULL && 
+	    is_connected) {
+	  gtk_widget_set_sensitive(entry, TRUE);
+        } else { 
+	  gtk_widget_set_sensitive(entry, FALSE);
+        }
+   
+	entry = gtk_menu_item_new_with_label(_("Remote Desktop to PDA"));
+        g_signal_connect(G_OBJECT(entry), "activate", G_CALLBACK(menu_kcemirror), NULL);
+        gtk_widget_set_sensitive(entry, is_connected);
+
+        gtk_menu_append(GTK_MENU(menu), entry);
+	if (g_find_program_in_path(SYNCE_KCEMIRROR) != NULL &&
+            is_connected) {
+          gtk_widget_set_sensitive(entry, TRUE);
+        } else {
+          gtk_widget_set_sensitive(entry, FALSE);
+        }
 	
 	entry = gtk_menu_item_new_with_label(_("Add/Remove Programs"));
 	g_signal_connect(G_OBJECT(entry), "activate", G_CALLBACK(menu_software), NULL);
