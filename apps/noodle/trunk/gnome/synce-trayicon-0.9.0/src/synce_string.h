@@ -30,4 +30,4 @@ char * stolower (char * str)
 	return str;
 }
 
-#endif /* __EGG_TRAY_ICON_H__ */
+#endif /* __SYNCE_STRING_H__ */
