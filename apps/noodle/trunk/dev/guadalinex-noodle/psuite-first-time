@@ -1,0 +1,45 @@
+#!/bin/sh
+
+USERNAME=`whoami`
+
+[[ -e $HOME ]] && cd $HOME || exit 1
+
+[[ ! -e .multisync ]] &&  mkdir .multisync
+
+cd .multisync
+
+[[ ! -e "old" ]] && mkdir old
+
+[[ -e "1" ]] && mv 1 old/1.`date +%Y%m%e_%H%M`
+
+mkdir 1 && cd 1
+
+echo "remoteclient = synce-plugin
+localclient = evolution2-sync
+syncinterval = 1800
+dwelltime = 5
+manualonly = yes
+reconninterval = 10
+object_types = 0x7
+syncsound =
+welcomesound =
+displayname =
+playsyncsound = no
+playwelcomesound = no
+filter = 1,1,1,\"CATEGORIES\",\"*\"
+filter = 1,2,1,\"CATEGORIES\",\"*\"
+filter = 2,1,1,\"CATEGORIES\",\"*\"
+filter = 2,2,1,\"CATEGORIES\",\"*\"
+filter = 4,1,1,\"CATEGORIES\",\"*\"
+filter = 4,2,1,\"CATEGORIES\",\"*\"
+duplicatemode = 0" > syncpair
+
+echo "<?xml version=\"1.0\"?>
+<config><adress_path>file://$HOME/.evolution/addressbook/local/system</adress_path><calendar_path>file://$HOME/.evolution/calendar/local/system</calendar_path><tasks_path>file://$HOME/.evolution/tasks/local/system</tasks_path></config>" > localsettings
+
+chown -R $USERNAME.$USERNAME $HOME/.multisync
+
+
+touch $HOME/.psuite
+
+exit 0

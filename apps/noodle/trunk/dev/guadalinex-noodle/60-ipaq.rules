@@ -1,0 +1,6 @@
+# udev rules file for SynCE
+BUS!="usb", ACTION!="add", KERNEL!="ttyUSB*", GOTO="synce_rules_end"
+# Establish the connection
+RUN+="/usr/bin/psuite"
+LABEL="synce_rules_end"
+#DRIVER="ipaq", NAME="ipaq", SYMLINK="ttyUSB%n", GROUP="tty", MODE="0600"
