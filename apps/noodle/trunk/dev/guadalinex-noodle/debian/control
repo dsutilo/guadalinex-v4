@@ -1,0 +1,12 @@
+Source: guadalinex-noodle
+Section: unknown
+Priority: optional
+Maintainer: Ghe Rivero <ghernando@yaco.es>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.2
+
+Package: guadalinex-noodle
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Sincornización de PDAs y móviles en Guadalinex
+ Sincornización de PDAs y móviles en Guadalinex

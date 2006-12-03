@@ -1,0 +1,3 @@
+etc/udev/rules.d
+usr/share/gconf/defaults
+usr/bin
