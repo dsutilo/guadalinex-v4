@@ -460,7 +460,6 @@ class Wizard:
                 curstep = '?'
                 if self.current_page is not None:
 		    curstep = self.get_curstep()
-                        curstep = str(BREADCRUMB_STEPS[current_name])
                 text = text.replace('${INDEX}', curstep)
                 text = text.replace('${TOTAL}', str(BREADCRUMB_MAX_STEP))
             widget.set_text(text)
