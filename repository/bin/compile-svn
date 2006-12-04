@@ -24,19 +24,22 @@ function retrieve_debian_files ()
 	echo " === Retrieve deb files under $DIR ==="
 	echo
 
-	if [ -f $DIR/*deb ]; then
-		mv $DIR/*deb $GUADA_PACKAGES
-	else
-		echo " ***** Warning: No .deb file founded under $DIR, it may be something wrong with the compilation ***** "
+	
+	if [ -n "$(ls $DIR | grep \.deb\$)" ]; then
+		mv $DIR/*\.deb $GUADA_PACKAGES
 	fi
 
-	if [ -f $DIR/*dsc ]; then
+	if [ -n "$(ls $DIR | grep \.udeb\$)" ]; then
+		mv $DIR/*\.udeb $GUADA_PACKAGES
+	fi
+
+	if [ -n "$(ls $DIR | grep \.dsc\$)" ]; then
 		mv $DIR/*dsc $GUADA_PACKAGES
 	else
 		echo " ***** Warning: No .dsc file founded under $DIR, it may be something wrong with the compilation ***** "
 	fi
 
-	if [ -f $DIR/*tar.gz ]; then
+	if [ -n "$(ls $DIR | grep \.tar\.gz\$)" ]; then
 		mv $DIR/*tar.gz $GUADA_PACKAGES
 	else
 		echo " ***** Warning: No .tar.gz file founded under $DIR, it may be something wrong with the compilation ***** "
@@ -74,19 +77,21 @@ do
 done
 
 # Look for all the application released (under a tag dir), compile it and include and copy to guada-packages.
-for TAG_DIR in $(find $SVN_ROOT -name tags)
+for TAG_DIR in $(find $SVN_ROOT -name tags | grep -v gcs\/tags)
 do
 	for TAG_VERSION in $(ls $TAG_DIR)
 	do
-		echo
-		echo " === Going to $TAG_DIR/$TAG_VERSION ... ==="
-		echo
-		cd $TAG_DIR/$TAG_VERSION
-		debuild -uc -us
-		debclean
-		retrieve_debian_files $TAG_DIR/$TAG_VERSION/..
-		clean_debian_files $TAG_DIR/$TAG_VERSION
-		cd - > /dev/null
+		if [ -d $TAG_DIR/$TAG_VERSION ]; then
+			echo
+			echo " === Going to $TAG_DIR/$TAG_VERSION ... ==="
+			echo
+			cd $TAG_DIR/$TAG_VERSION
+			debuild -uc -us
+			debclean
+			retrieve_debian_files $TAG_DIR/$TAG_VERSION/..
+			clean_debian_files $TAG_DIR/$TAG_VERSION
+			cd - > /dev/null
+		fi
 	done
 done
 
