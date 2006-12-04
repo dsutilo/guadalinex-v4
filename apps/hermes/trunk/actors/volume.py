@@ -52,6 +52,17 @@ VOLUMEICON = os.path.abspath('actors/img/volume.png')
 class Actor (DeviceActor):
 
     __required__ = {'info.category': 'volume'}
+    __listener_factories__ = []
+
+    def __init__(self, *args, **kwargs):
+        super(Actor, self).__init__(*args, **kwargs)
+
+        self.listeners = [factory() for factory in self.__listener_factories__]
+
+    def register_listener(cls, listener):
+        cls.__listener_factories__.append(listener)
+
+    register_listener = classmethod(register_listener)
 
     #def on_added(self):
     #    self.msg_render.show_info("Dispositivo de volumen conectado")
@@ -68,10 +79,72 @@ class Actor (DeviceActor):
                     self.message_render.show("Almacenamiento", 
                         "Dispositivo montado en", VOLUMEICON,
                         actions = {mount_point: open_volume})
+
+                    for listener in self.listeners:
+                        if listener.is_valid(self.properties):
+                            listener.volume_mounted(mount_point)
+
                 else:
                     self.message_render.show("Almacenamiento", 
-                            "Dispositivo desmontado", VOLUMEICON) 
+                            "Dispositivo desmontado", VOLUMEICON)
+
+                    for listener in self.listeners:
+                        if listener.is_valid(self.properties):
+                            listener.volume_unmounted()
 
             except Exception, e:
                 self.logger.error("Error: " + str(e))
 
+class AutoRegister(type):
+    """This meta class auto register each class as an Actor listener"""
+    def __new__(mcs, name, bases, dic):
+        t = type.__new__(mcs, name, bases, dic)
+        if name != 'VolumeListener': # don't register the abstract base class
+            Actor.register_listener(t)
+        return t
+
+class VolumeListener(object):
+    """A Volume Listener is something that wants notifications when the
+    state of a volume changes"""
+
+    __metaclass__ = AutoRegister
+
+    def is_valid(self, properties):
+        """This method acts like a filter.
+
+        Based on the HAL properties this method should returns
+
+          - True if this listener should be used
+
+          - False otherwise
+        """
+        return False
+
+    def volume_mounted(self, mount_point):
+        """This is called when the volume is mounted"""
+
+    def volume_unmounted(self):
+        """This is called when the volume is unmounted"""
+
+class CertificateListener(VolumeListener):
+    """Call cert_manager to detect certificates in the volume and to
+    setup the main applications to use them
+
+    Only valid for USB storage disks.
+    """
+    def __init__(self):
+        super(CertificateListener, self).__init__()
+        self.mount_point = None
+
+    def is_valid(self, properties):
+        if properties.get('volume.mount_point', None) == u'/media/usbdisk':
+            return True
+        return False
+
+    def volume_mounted(self, mount_point):
+        self.mount_point = mount_point
+        # TODO: Call cert_manager script
+
+    def volume_unmounted(self):
+        # TODO: Call cert_manager script
+        self.mount_point = None
