@@ -92,6 +92,21 @@ BREADCRUMB_STEPS = {
     "stepPartMountpoints": 5,
     "stepReady": 6
 }
+
+db = DebconfCommunicator("ubiquity")
+BREADCRUMB_STEPS_PRESEED = {
+    "stepLanguage": db.exist("ubiquity/stepLanguage")=="true" and db.fget("ubiquity/stepLanguage","seen")=="true",        
+    "stepLocation": db.exist("ubiquity/stepLocation")=="true" and db.fget("ubiquity/stepLocation","seen")=="true",        
+    "stepKeyboardConf": db.exist("ubiquity/stepKeyboardConf")=="true" and db.fget("ubiquity/stepKeyboardConf","seen")=="true",
+    "stepUserInfo": db.exist("ubiquity/stepUserInfo")=="true" and db.fget("ubiquity/stepUserInfo","seen")=="true",        
+    "stepPartDisk": db.exist("ubiquity/stepPartDisk")=="true" and db.fget("ubiquity/stepPartDisk","seen")=="true",        
+    "stepPartAuto": db.exist("ubiquity/stepPartAuto")=="true" and db.fget("ubiquity/stepPartAuto","seen")=="true",        
+    "stepPartAdvanced": db.exist("ubiquity/stepPartAdvanced")=="true" and db.fget("ubiquity/stepPartAdvanced","seen")=="true",
+    "stepPartMountpoints": db.exist("ubiquity/stepMountpoints")=="true" and db.fget("ubiquity/stepMountpoints","seen")=="true",  
+    "stepReady": db.exist("ubiquity/stepReady")=="true" and db.fget("ubiquity/stepReady","seen")=="true"               
+}
+db.shutdown()
+
 BREADCRUMB_MAX_STEP = 6
 
 # For the font wibbling later
@@ -893,27 +908,8 @@ class Wizard:
                 self.dbfilter.apply_keyboard(layout, variant)
 
     def step_preseeded(self,step):
-	if step == "stepLanguage":
-	    preseeded = False
-	elif step == "stepLocation":
-	    preseeded = False
-	elif step == "stepKeyboardConf":
-	    preseeded = False
-	elif step == "stepUserInfo":
-	    preseeded = False
-	elif step == "stepPartDisk":
-	    preseeded = False
-	elif step == "stepPartAuto":
-	    preseeded = False
-	elif step == "stepPartAdvanced":
-	    preseeded = False
-	elif step == "stepPartMountpoints":
-	    preseeded = False
-	elif step == "stepReady":
-	    preseeded = False
-	else:
-	    preseeded = False
-	return preseeded
+	global BREADCRUMB_STEPS_PRESEED
+	return BREADCRUMB_STEPS_PRESEED[step]
 
     def process_step(self):
         """Process and validate the results of this step."""
