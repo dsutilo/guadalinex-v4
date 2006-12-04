@@ -63,15 +63,17 @@ import traceback
 # Internacionalización
 import gettext, locale
 
-gettext.bindtextdomain('hermes-hardware', abspath(join(hermes.defs.DATA_DIR, "locale")))
-if hasattr(gettext, 'bind_textdomain_codeset'):
-        gettext.bind_textdomain_codeset('hermes-hardware','UTF-8')
-gettext.textdomain('hermes-hardware')
+def setup_gettext(domain, data_dir):
+    directory = os.path.abspath(os.path.join(data_dir, "locale"))
+    gettext.bindtextdomain(domain, directory)
+    if hasattr(gettext, 'bind_textdomain_codeset'):
+        gettext.bind_textdomain_codeset(domain, 'UTF-8')
+    gettext.textdomain(domain)
 
-locale.bindtextdomain('hermes-harware', abspath(join(hermes.defs.DATA_DIR, "locale")))
-if hasattr(locale, 'bind_textdomain_codeset'):
-        locale.bind_textdomain_codeset('hermes-hardware','UTF-8')
-locale.textdomain('hermes-hardware')
+    locale.bindtextdomain(domain, directory)
+    if hasattr(locale, 'bind_textdomain_codeset'):
+        locale.bind_textdomain_codeset(domain, 'UTF-8')
+    locale.textdomain(domain)
 
 
 from utils import DeviceList, ColdPlugListener, CaptureLogGui
@@ -303,6 +305,12 @@ class DeviceListener:
 
 
 def main():
+    try:
+        import hermes.defs
+        setup_gettext('hermes-hardware', hermes.defs.DATA_DIR)
+    except ImportError:
+        print 'WARNING: Running uninstalled, no gettext support'
+
     # Configure options
     parser = OptionParser(usage = 'usage: %prog [options]')
     parser.set_defaults(debug = False)
