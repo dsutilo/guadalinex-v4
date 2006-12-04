@@ -14,10 +14,10 @@ function clean_debian_files ()
 	echo " === Cleaning deb files under $DIR ==="
 	echo
 	#[ -f $DIR/*deb ] && rm $DIR/*deb
+	#[ -f $DIR/*tar.gz ] && rm $DIR/*tar.gz
+	#[ -f $DIR/*dsc ] && rm $DIR/*dsc
 	[ -f $DIR/*build ] && rm $DIR/*build
 	[ -f $DIR/*changes ] && rm $DIR/*changes
-	[ -f $DIR/*tar.gz ] && rm $DIR/*tar.gz
-	[ -f $DIR/*dsc ] && rm $DIR/*dsc
 }
 
 # Get the 
@@ -27,7 +27,9 @@ svn up > /tmp/repository-stuff.$USER.$DATE
 REPO_VERSION=$(cat /tmp/repository-stuff.$USER.$DATE | tail -1 | sed -e 's/.*\ //g' | sed -e 's/\.//g')
 cd - > /dev/null
 
+echo
 echo "Repository version: $REPO_VERSION"
+echo
 
 # Look for all the packages under customize_system, compile it and include and copy to guada-packages.
 for x in $(find $SVN_ROOT/customize_system -name trunk)
@@ -41,7 +43,7 @@ do
 		sed -i "s/^version\:.*/version: r$REPO_VERSION/g" gcs/info
 	        gcs_build
 		mv gcs/info.back gcs/info
-	        cp $x/../*deb $GUADA_PACKAGES
+	        mv $x/../*deb $GUADA_PACKAGES
 		clean_debian_files $x/..
 		rm -rf $x/debian
 	        cd - > /dev/null
@@ -59,7 +61,7 @@ do
 		cd $TAG_DIR/$TAG_VERSION
 		debuild -uc -us
 		debclean
-		cp $TAG_DIR/$TAG_VERSION/../*deb $GUADA_PACKAGES
+		mv $TAG_DIR/$TAG_VERSION/../*deb $GUADA_PACKAGES
 		clean_debian_files $TAG_DIR/$TAG_VERSION
 		cd - > /dev/null
 	done
@@ -74,7 +76,7 @@ do
 	cd $x/..
 	debuild -uc -us
 	debclean
-	cp $x/../../*deb $GUADA_PACKAGES
+	mv $x/../../*deb $GUADA_PACKAGES
 	clean_debian_files $x/../..
 	cd - > /dev/null
 done

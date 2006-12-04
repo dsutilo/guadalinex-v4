@@ -10,7 +10,7 @@
 
 
 # Ready...
-for pkg in $(ls $GUADA_PACKAGES)
+for pkg in $(ls $GUADA_PACKAGES | grep .*deb\$)
 do
 	SRC_NAME=$(dpkg --field $GUADA_PACKAGES/$pkg Source)
 	[ -z "$SRC_NAME" ] && SRC_NAME=$(dpkg --field $GUADA_PACKAGES/$pkg Package)
@@ -20,6 +20,18 @@ do
 	
 	# Create the link if already doesn't exist.
 	[ ! -f $DEST_PKG_DIR/$pkg ] && ln $GUADA_PACKAGES/$pkg $DEST_PKG_DIR/$pkg
+
+	# Look for a tar.gz
+	TARGZ=$(echo $pkg | sed -e 's/_\(all\|i386\)\.u\?deb/\.tar\.gz/g')
+	if [ -f $GUADA_PACKAGES/$TARGZ ]; then
+		[ ! -f $DEST_PKG_DIR/$TARGZ ] && ln $GUADA_PACKAGES/$TARGZ $DEST_PKG_DIR/$TARGZ
+	fi
+
+	# Look for a .dsc
+	DSC=$(echo $pkg | sed -e 's/_\(all\|i386\)\.u\?deb/\.dsc/g')
+	if [ -f $GUADA_PACKAGES/$DSC ]; then
+		[ ! -f $DEST_PKG_DIR/$DSC ] && ln $GUADA_PACKAGES/$DSC $DEST_PKG_DIR/$DSC
+	fi
 done
 
 # Go!!!
