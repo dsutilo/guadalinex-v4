@@ -65,6 +65,7 @@ except ImportError:
 
 from ubiquity import filteredcommand, validation
 from ubiquity.misc import *
+from ubiquity.steps import *
 from ubiquity.settings import *
 from ubiquity.components import console_setup, language, timezone, usersetup, \
                                 partman_auto, partman_commit, summary, install
@@ -81,34 +82,6 @@ GLADEDIR = os.path.join(PATH, 'glade')
 # Define locale path
 LOCALEDIR = "/usr/share/locale"
 
-BREADCRUMB_STEPS = {
-    "stepLanguage": 1,
-    "stepLocation": 2,
-    "stepKeyboardConf": 3,
-    "stepUserInfo": 4,
-    "stepPartDisk": 5,
-    "stepPartAuto": 5,
-    "stepPartAdvanced": 5,
-    "stepPartMountpoints": 5,
-    "stepReady": 6
-}
-
-db = DebconfCommunicator("ubiquity")
-BREADCRUMB_STEPS_PRESEED = {
-    "stepLanguage": db.exist("ubiquity/stepLanguage")=="true" and db.fget("ubiquity/stepLanguage","seen")=="true",        
-    "stepLocation": db.exist("ubiquity/stepLocation")=="true" and db.fget("ubiquity/stepLocation","seen")=="true",        
-    "stepKeyboardConf": db.exist("ubiquity/stepKeyboardConf")=="true" and db.fget("ubiquity/stepKeyboardConf","seen")=="true",
-    "stepUserInfo": db.exist("ubiquity/stepUserInfo")=="true" and db.fget("ubiquity/stepUserInfo","seen")=="true",        
-    "stepPartDisk": db.exist("ubiquity/stepPartDisk")=="true" and db.fget("ubiquity/stepPartDisk","seen")=="true",        
-    "stepPartAuto": db.exist("ubiquity/stepPartAuto")=="true" and db.fget("ubiquity/stepPartAuto","seen")=="true",        
-    "stepPartAdvanced": db.exist("ubiquity/stepPartAdvanced")=="true" and db.fget("ubiquity/stepPartAdvanced","seen")=="true",
-    "stepPartMountpoints": db.exist("ubiquity/stepMountpoints")=="true" and db.fget("ubiquity/stepMountpoints","seen")=="true",  
-    "stepReady": db.exist("ubiquity/stepReady")=="true" and db.fget("ubiquity/stepReady","seen")=="true"               
-}
-db.shutdown()
-
-BREADCRUMB_MAX_STEP = 6
-
 # For the font wibbling later
 import pango
 
@@ -119,6 +92,7 @@ class Wizard:
 
         # declare attributes
         self.distro = distro
+	self.steps_obj = Steps()
         self.current_layout = None
         self.got_disk_choices = False
         self.auto_mountpoints = None
@@ -271,19 +245,9 @@ class Wizard:
 
         # Start the interface
         if got_intro:
-            global BREADCRUMB_STEPS, BREADCRUMB_MAX_STEP
-            for step in BREADCRUMB_STEPS:
-                BREADCRUMB_STEPS[step] += 1
-            BREADCRUMB_STEPS["stepWelcome"] = 1
+	    self.steps_obj.add_step(1,"stepWelcome")
 
-        BREADCRUMB_MAX_STEP = 0
-	counted = []
-	for step in BREADCRUMB_STEPS.keys():
-	    if not self.step_preseeded(step) and BREADCRUMB_STEPS[step] not in counted:
-            	BREADCRUMB_MAX_STEP += 1
-		counted.append(BREADCRUMB_STEPS[step])
-
-        self.steps.set_current_page(self.steps.page_num(self.glade.get_widget(self.get_first_step(BREADCRUMB_STEPS))))
+        self.steps.set_current_page(self.steps.page_num(self.glade.get_widget(self.steps_obj.get_first_step())))
 
         while self.current_page is not None:
             if not self.installing:
@@ -333,50 +297,6 @@ class Wizard:
                 gtk.main_iteration()
 
         return self.returncode
-
-
-    def get_curstep(self):
-        current_name = self.step_name(self.current_page)
-        if current_name in BREADCRUMB_STEPS:
-            curstep = BREADCRUMB_STEPS[current_name]
-	previous_preseeded_steps = [step for step in BREADCRUMB_STEPS.keys() if BREADCRUMB_STEPS[step]<curstep and self.step_preseeded(step)]
-	curstep -=len(previous_preseeded_steps)
-	return str(curstep)
-
-    def get_steps_list(self,step_dict):
-	posible_steps = {}
-	for step in step_dict.keys():
-	    if not self.step_preseeded(step):
-	        posible_steps[step] = step_dict[step]
-
-	steps = []
-	while len(posible_steps)>0:
-	    first = self.get_first_step(posible_steps)
-	    steps.append(first)
-	    posible_steps.pop(first)
-        return steps
-
-    def get_first_step(self,step_dict):
-	posible_steps = [step for step in step_dict.keys() if not self.step_preseeded(step)]
-	min_steps = []
-	for step in posible_steps:
-	    if len(min_steps)==0 or step_dict[step]<step_dict[min_steps[0]]:
-		min_steps = [step]
-	    elif step_dict[step]==min_steps:
-		min_steps.append(step)
-
-	while len(min_steps)>1:
-	    if min_steps[-1]=="setpPartMountpoints":
-		min_steps.remove("stepPartMounpoints")
-	    elif min_steps[-1]=="stepPartAdvanced":
-		min_steps.remove("stepPartAdvanced")
-	    elif min_steps[-1]=="stepPartAuto":
-		min_steps.remove("stepPartAuto")
-	    elif min_steps[-1]=="stepPartDisk":
-		min_steps.remove("stepPartDisk")
-	return min_steps[0]
-	
-		
 
 
     def customize_installer(self):
@@ -471,12 +391,12 @@ class Wizard:
             name = widget.get_name()
 
             if name == 'step_label':
-                global BREADCRUMB_STEPS, BREADCRUMB_MAX_STEP
                 curstep = '?'
                 if self.current_page is not None:
-		    curstep = self.get_curstep()
+                    current_name = self.step_name(self.current_page)
+		    curstep = self.steps_obj.get_curstep(current_name)
                 text = text.replace('${INDEX}', curstep)
-                text = text.replace('${TOTAL}', str(BREADCRUMB_MAX_STEP))
+                text = text.replace('${TOTAL}', str(self.steps_obj.get_total_steps()))
             widget.set_text(text)
 
             # Ideally, these attributes would be in the glade file somehow ...
@@ -542,7 +462,6 @@ class Wizard:
 
 
     def set_current_page(self, current):
-        global BREADCRUMB_STEPS, BREADCRUMB_MAX_STEP
         self.current_page = current
         self.translate_widget(self.step_label, self.locale)
 
@@ -907,21 +826,15 @@ class Wizard:
             if layout is not None and variant is not None:
                 self.dbfilter.apply_keyboard(layout, variant)
 
-    def step_preseeded(self,step):
-	global BREADCRUMB_STEPS_PRESEED
-	return BREADCRUMB_STEPS_PRESEED[step]
-
     def process_step(self):
         """Process and validate the results of this step."""
 
         step_num = self.steps.get_current_page()
         step = self.step_name(step_num)
 	first_loop=True
-        global BREADCRUMB_STEPS
-	while self.step_preseeded(step) or first_loop:
+	while self.steps_obj.step_preseeded(step) or first_loop:
 	    first_loop=False
             # setting actual step
-	    print step
             step_num = self.steps.get_current_page()
             step = self.step_name(step_num)
             syslog.syslog('Step_before = %s' % step)
@@ -929,7 +842,7 @@ class Wizard:
             if step.startswith("stepPart"):
                 self.previous_partitioning_page = step_num
 
-	    if step == self.get_first_step(BREADCRUMB_STEPS):
+	    if step == self.steps_obj.get_first_step():
 		self.back.show()
 
             # Welcome
@@ -1355,9 +1268,7 @@ class Wizard:
 
         changed_page = False
 
-        global BREADCRUMB_STEPS
-	print self.get_steps_list(BREADCRUMB_STEPS)
-	if step == self.get_steps_list(BREADCRUMB_STEPS)[1]:
+	if step == self.steps_obj.get_steps_list()[1]:
 	    self.back.hide()
 
         if step == "stepPartAuto":

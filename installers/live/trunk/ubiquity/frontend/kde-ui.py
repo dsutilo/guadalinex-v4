@@ -51,6 +51,7 @@ except ImportError:
 
 from ubiquity import filteredcommand, validation
 from ubiquity.misc import *
+from ubiquity.steps import *
 from ubiquity.settings import *
 from ubiquity.components import console_setup, language, timezone, usersetup, \
                                 partman_auto, partman_commit, summary, install
@@ -62,19 +63,6 @@ PATH = '/usr/share/ubiquity'
 
 # Define locale path
 LOCALEDIR = "/usr/share/locale"
-
-BREADCRUMB_STEPS = {
-    "stepLanguage": 1,
-    "stepLocation": 2,
-    "stepKeyboardConf": 3,
-    "stepUserInfo": 4,
-    "stepPartDisk": 5,
-    "stepPartAuto": 5,
-    "stepPartAdvanced": 5,
-    "stepPartMountpoints": 5,
-    "stepReady": 6
-}
-BREADCRUMB_MAX_STEP = 6
 
 WIDGET_STACK_STEPS = {
     "stepWelcome": 0,
@@ -115,6 +103,7 @@ class Wizard:
         
         # declare attributes
         self.distro = distro
+	self.steps_obj = Steps()
         self.current_layout = None
         self.got_disk_choices = False
         self.auto_mountpoints = None
@@ -286,15 +275,9 @@ class Wizard:
 
         # Start the interface
         if got_intro:
-            global BREADCRUMB_STEPS, BREADCRUMB_MAX_STEP
-            for step in BREADCRUMB_STEPS:
-                BREADCRUMB_STEPS[step] += 1
-            BREADCRUMB_STEPS["stepWelcome"] = 1
-            BREADCRUMB_MAX_STEP += 1
-            first_step = "stepWelcome"
-        else:
-            first_step = "stepLanguage"
-        self.userinterface.widgetStack.raiseWidget(WIDGET_STACK_STEPS[first_step])
+	    self.steps_obj.add_step(1,"stepWelcome")
+
+        self.userinterface.widgetStack.raiseWidget(WIDGET_STACK_STEPS[self.steps_obj.get_first_step()])
         self.set_current_page(self.get_current_page())
 
         while self.current_page is not None:
@@ -411,14 +394,12 @@ class Wizard:
             name = widget.name()
 
             if name == 'step_label':
-                global BREADCRUMB_STEPS, BREADCRUMB_MAX_STEP
                 curstep = '?'
                 if self.current_page is not None:
                     current_name = self.step_name(self.current_page)
-                    if current_name in BREADCRUMB_STEPS:
-                        curstep = str(BREADCRUMB_STEPS[current_name])
+		    curstep = self.steps_obj.get_curstep(current_name)
                 text = text.replace('${INDEX}', curstep)
-                text = text.replace('${TOTAL}', str(BREADCRUMB_MAX_STEP))
+                text = text.replace('${TOTAL}', str(self.steps_obj.get_total_steps()))
 
             if 'heading_label' in name:
                 widget.setText("<h2>" + text + "</h2>")
@@ -475,7 +456,6 @@ class Wizard:
         return self.userinterface.widgetStack.widget(step_index).name()
 
     def set_current_page(self, current):
-        global BREADCRUMB_STEPS, BREADCRUMB_MAX_STEP
         self.current_page = current
         self.translate_widget(self.userinterface.step_label, self.locale)
 
@@ -784,56 +764,65 @@ class Wizard:
         step = self.step_name(step_num)
         syslog.syslog('Step_before = %s' % step)
 
-        if step.startswith("stepPart"):
-            self.previous_partitioning_page = step_num
+	first_loop=True
+	while self.steps_obj.step_preseeded(step) or first_loop:
+	    first_loop=False
 
-        # Welcome
-        if step == "stepWelcome":
-            self.userinterface.widgetStack.raiseWidget(WIDGET_STACK_STEPS["stepLanguage"])
-        # Language
-        elif step == "stepLanguage":
-            self.translate_widgets()
-            self.userinterface.widgetStack.raiseWidget(WIDGET_STACK_STEPS["stepLocation"])
-            self.userinterface.back.show()
-            self.allow_go_forward(self.get_timezone() is not None)
-        # Location
-        elif step == "stepLocation":
-            self.userinterface.widgetStack.raiseWidget(WIDGET_STACK_STEPS["stepKeyboardConf"])
-        # Keyboard
-        elif step == "stepKeyboardConf":
-            self.userinterface.widgetStack.raiseWidget(WIDGET_STACK_STEPS["stepUserInfo"])
-            #self.steps.next_page()
-            self.info_loop(None)
-        # Identification
-        elif step == "stepUserInfo":
-            self.process_identification()
-            self.got_disk_choices = False
-        # Disk selection
-        elif step == "stepPartDisk":
-            self.process_disk_selection()
-        # Automatic partitioning
-        elif step == "stepPartAuto":
-            self.process_autopartitioning()
-        # Advanced partitioning
-        elif step == "stepPartAdvanced":
-            self.qtparted_to_mountpoints()
-        # Mountpoints
-        elif step == "stepPartMountpoints":
-            self.mountpoints_to_summary()
-        # Ready to install
-        elif step == "stepReady":
-            # FIXME self.live_installer.hide()
-            self.current_page = None
-            self.installing = True
-            self.progress_loop()
-            return
+            step_num = self.get_current_page()
+            step = self.step_name(step_num)
 
-        step = self.step_name(self.get_current_page())
-        syslog.syslog('Step_after = %s' % step)
+            if step.startswith("stepPart"):
+                self.previous_partitioning_page = step_num
 
-        if step == "stepReady":
-            installText = get_string("live_installer", self.locale)
-            self.userinterface.next.setText(installText)
+	    if step == self.steps_obj.get_first_step():
+                self.userinterface.back.show()
+
+            # Welcome
+            if step == "stepWelcome":
+                self.userinterface.widgetStack.raiseWidget(WIDGET_STACK_STEPS["stepLanguage"])
+            # Language
+            elif step == "stepLanguage":
+                self.translate_widgets()
+                self.userinterface.widgetStack.raiseWidget(WIDGET_STACK_STEPS["stepLocation"])
+                self.allow_go_forward(self.get_timezone() is not None)
+            # Location
+            elif step == "stepLocation":
+                self.userinterface.widgetStack.raiseWidget(WIDGET_STACK_STEPS["stepKeyboardConf"])
+            # Keyboard
+            elif step == "stepKeyboardConf":
+                self.userinterface.widgetStack.raiseWidget(WIDGET_STACK_STEPS["stepUserInfo"])
+                #self.steps.next_page()
+                self.info_loop(None)
+            # Identification
+            elif step == "stepUserInfo":
+                self.process_identification()
+                self.got_disk_choices = False
+            # Disk selection
+            elif step == "stepPartDisk":
+                self.process_disk_selection()
+            # Automatic partitioning
+            elif step == "stepPartAuto":
+                self.process_autopartitioning()
+            # Advanced partitioning
+            elif step == "stepPartAdvanced":
+                self.qtparted_to_mountpoints()
+            # Mountpoints
+            elif step == "stepPartMountpoints":
+                self.mountpoints_to_summary()
+            # Ready to install
+            elif step == "stepReady":
+                # FIXME self.live_installer.hide()
+                self.current_page = None
+                self.installing = True
+                self.progress_loop()
+                return
+
+            step = self.step_name(self.get_current_page())
+            syslog.syslog('Step_after = %s' % step)
+
+            if step == "stepReady":
+                installText = get_string("live_installer", self.locale)
+                self.userinterface.next.setText(installText)
 
     def process_identification (self):
         """Processing identification step tasks."""
@@ -1247,9 +1236,10 @@ class Wizard:
         
         changed_page = False
 
-        if step == "stepLocation":
+	if step == self.steps_obj.get_steps_list()[1]:
             self.userinterface.back.hide()
-        elif step == "stepPartAuto":
+
+        if step == "stepPartAuto":
             if self.got_disk_choices:
                 new_step = "stepPartDisk"
             else:
