@@ -32,9 +32,18 @@ try:
 except ImportError:
     from ubiquity.debconfcommunicator import DebconfCommunicator
 
+DEFAULT_PRESEED_FILE="/ubiquity.preseed"
+
 class Steps:
     def __init__(self):
 	db = DebconfCommunicator("ubiquity")
+
+	# Run all debconf commands in preseed file
+        if os.path.exists(DEFAULT_PRESEED_FILE):
+	    preseed_file = os.file(DEFAULT_PRESEED_FILE)
+	    for line in preseed_file:
+		db.command(line)
+	
 	self.BREADCRUMB_STEPS_PRESEED = {
 	    "stepLanguage": db.exist("ubiquity/stepLanguage")=="true" and db.fget("ubiquity/stepLanguage","seen")=="true",        
 	    "stepLocation": db.exist("ubiquity/stepLocation")=="true" and db.fget("ubiquity/stepLocation","seen")=="true",        
