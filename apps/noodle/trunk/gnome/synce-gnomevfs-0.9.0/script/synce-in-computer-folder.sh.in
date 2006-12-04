@@ -1,0 +1,3 @@
+#!/bin/sh
+"@SYNCE_BINDIR@/synce-in-computer-folder" $1 &
+disown
