@@ -2,15 +2,15 @@
 
 USERNAME=`whoami`
 
-[[ -e $HOME ]] && cd $HOME || exit 1
+[ -e $HOME ] && cd $HOME || exit 1
 
-[[ ! -e .multisync ]] &&  mkdir .multisync
+[ ! -e .multisync ] &&  mkdir .multisync
 
 cd .multisync
 
-[[ ! -e "old" ]] && mkdir old
+[ ! -e "old" ] && mkdir old
 
-[[ -e "1" ]] && mv 1 old/1.`date +%Y%m%e_%H%M`
+[ -e "1" ] && mv 1 old/1.`date +%Y%m%e_%H%M`
 
 mkdir 1 && cd 1
 
@@ -39,6 +39,12 @@ echo "<?xml version=\"1.0\"?>
 
 chown -R $USERNAME.$USERNAME $HOME/.multisync
 
+if [ ! `pgrep -u $USER vdccm` ]
+then
+	vdccm
+fi
+
+cp /usr/share/guadalinex-noodle/vdccm.desktop $HOME/.config/autostart
 
 touch $HOME/.psuite
 
