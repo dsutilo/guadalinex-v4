@@ -3,12 +3,17 @@ acpi-support
 acpid
 acroread
 alacarte
+amsn
+amule
 anacron
 apmd
 apport-gtk
 avahi-daemon
+avidemux
 bc
+beagle
 bug-buddy
+byzanz
 cdparanoia
 cdrecord
 contact-lookup-applet
@@ -48,6 +53,7 @@ gedit
 gimp
 gimp-print
 gimp-python
+gnochm
 gnome-about
 gnome-app-install
 gnome-applets
@@ -65,6 +71,7 @@ gnome-pilot-conduits
 gnome-power-manager
 gnome-session
 gnome-spell
+gnome-sudoku
 gnome-system-monitor
 gnome-system-tools
 gnome-terminal
@@ -72,6 +79,7 @@ gnome-themes
 gnome-utils
 gnome-volume-manager
 gnome2-user-guide
+gpaint
 gs-esp
 gstreamer0.10-alsa
 gstreamer0.10-esd
@@ -80,15 +88,20 @@ gthumb
 gtk2-engines
 guadalinex-example-content
 gucharmap
+gxine
 hal
 hal-device-manager
 hotkey-setup
 hwdb-client-gnome
+i2e
+inkscape
 sun-java5-jre
 landscape-client
 language-selector
 language-pack-es
 language-pack-gnome-es
+lemurae
+liferea
 lftp
 libgl1-mesa-glx
 libglut3
@@ -124,6 +137,7 @@ serpentine
 slocate
 smbclient
 sound-juicer
+ssh
 ssh-askpass-gnome
 synaptic
 tangerine-icon-theme
@@ -136,6 +150,7 @@ tsclient
 ttf-bitstream-vera
 ttf-dejavu
 ttf-freefont
+tvtime
 ubuntu-artwork
 ubuntu-docs
 ubuntu-sounds
@@ -144,6 +159,7 @@ update-notifier
 usplash
 usplash-theme-ubuntu
 vino
+watermain
 wvdial
 x-ttcidfont-conf
 xkeyboard-config

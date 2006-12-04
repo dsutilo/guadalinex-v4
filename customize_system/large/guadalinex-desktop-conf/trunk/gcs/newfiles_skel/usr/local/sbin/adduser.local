@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Creating symlinks
+ln -s /home/$1/.fonts "/home/$1/Tipos de Letra"
+ln -s /home/compartido "/home/$1/Compartido"
+ln -s /home/$1/.aMule/Incoming "/home/$1/P2P/Incoming"
+ln -s /home/$1/.aMule/Temp "/home/$1/P2P/Temp"
