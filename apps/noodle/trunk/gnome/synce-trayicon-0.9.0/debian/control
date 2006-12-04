@@ -1,0 +1,12 @@
+Source: synce-trayicon
+Section: unknown
+Priority: optional
+Maintainer: Ghe Rivero <ghernando@yaco.es>
+Build-Depends: debhelper (>= 5), autotools-dev
+Standards-Version: 3.7.2
+
+Package: synce-trayicon
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: tray icon for use with gnome and synce 
+ tray icon for use with gnome and synce
