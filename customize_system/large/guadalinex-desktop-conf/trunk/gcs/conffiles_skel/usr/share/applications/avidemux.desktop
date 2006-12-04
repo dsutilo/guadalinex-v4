@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Avidemux
+Name[es]=Editor de vídeo Avidemux
+GenericName=Video Editor
+Comment=A Simple Visual Video Editor
+Comment[es]=Un sencillo editor visual de vídeo
+Encoding=UTF-8
+TryExec=avidemux
+Exec=avidemux
+Icon=avidemux.png
+Terminal=false
+Type=Application
+Categories=Application;AudioVideo;

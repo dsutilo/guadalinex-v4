@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=TVtime Television Viewer
+Name[es]=Visor de TV TVtime
+Comment=High quality video deinterlacer
+Comment[es]=Vea la televisión analógica
+Icon=tvtime.png
+Exec=tvtime
+GenericName=Television Viewer
+Terminal=false
+Type=Application
+Categories=Application;AudioVideo;

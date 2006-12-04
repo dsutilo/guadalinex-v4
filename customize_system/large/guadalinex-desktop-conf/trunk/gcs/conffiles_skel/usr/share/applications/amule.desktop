@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Cliente P2P aMule
+Comment=aMule
+Exec=amule
+Icon=amule.xpm
+Terminal=false
+Type=Application
+Categories=Application;Network;
