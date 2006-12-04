@@ -13,11 +13,34 @@ function clean_debian_files ()
 	echo
 	echo " === Cleaning deb files under $DIR ==="
 	echo
-	#[ -f $DIR/*deb ] && rm $DIR/*deb
-	#[ -f $DIR/*tar.gz ] && rm $DIR/*tar.gz
-	#[ -f $DIR/*dsc ] && rm $DIR/*dsc
 	[ -f $DIR/*build ] && rm $DIR/*build
 	[ -f $DIR/*changes ] && rm $DIR/*changes
+}
+
+function retrieve_debian_files ()
+{
+	DIR=$1
+	echo
+	echo " === Retrieve deb files under $DIR ==="
+	echo
+
+	if [ -f $DIR/*deb ]; then
+		mv $DIR/*deb $GUADA_PACKAGES
+	else
+		echo " ***** Warning: No .deb file founded under $DIR, it may be something wrong with the compilation ***** "
+	fi
+
+	if [ -f $DIR/*dsc ]; then
+		mv $DIR/*dsc $GUADA_PACKAGES
+	else
+		echo " ***** Warning: No .dsc file founded under $DIR, it may be something wrong with the compilation ***** "
+	fi
+
+	if [ -f $DIR/*tar.gz ]; then
+		mv $DIR/*tar.gz $GUADA_PACKAGES
+	else
+		echo " ***** Warning: No .tar.gz file founded under $DIR, it may be something wrong with the compilation ***** "
+	fi
 }
 
 # Get the 
@@ -43,7 +66,7 @@ do
 		sed -i "s/^version\:.*/version: r$REPO_VERSION/g" gcs/info
 	        gcs_build
 		mv gcs/info.back gcs/info
-	        mv $x/../*deb $GUADA_PACKAGES
+		retrieve_debian_files $x/..
 		clean_debian_files $x/..
 		rm -rf $x/debian
 	        cd - > /dev/null
@@ -61,7 +84,7 @@ do
 		cd $TAG_DIR/$TAG_VERSION
 		debuild -uc -us
 		debclean
-		mv $TAG_DIR/$TAG_VERSION/../*deb $GUADA_PACKAGES
+		retrieve_debian_files $TAG_DIR/$TAG_VERSION/..
 		clean_debian_files $TAG_DIR/$TAG_VERSION
 		cd - > /dev/null
 	done
@@ -76,7 +99,7 @@ do
 	cd $x/..
 	debuild -uc -us
 	debclean
-	mv $x/../../*deb $GUADA_PACKAGES
+	retrieve_debian_files $x/../..
 	clean_debian_files $x/../..
 	cd - > /dev/null
 done
