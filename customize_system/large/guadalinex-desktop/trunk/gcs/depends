@@ -100,7 +100,7 @@ landscape-client
 language-selector
 language-pack-es
 language-pack-gnome-es
-lemurae
+#lemurae
 liferea
 lftp
 libgl1-mesa-glx
@@ -159,7 +159,7 @@ update-notifier
 usplash
 usplash-theme-ubuntu
 vino
-watermain
+#watermain
 wvdial
 x-ttcidfont-conf
 xkeyboard-config
