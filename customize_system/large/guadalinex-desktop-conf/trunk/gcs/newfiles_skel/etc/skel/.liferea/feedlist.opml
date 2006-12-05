@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<opml version="1.0">
+  <head>
+    <title>Liferea Feed List Export</title>
+  </head>
+  <body>
+    <outline text="Unread" title="Unread" description="Unread" type="vfolder" htmlUrl="" xmlUrl="vfolder" updateInterval="-2" id="kucwvoc" sortColumn="time">
+      <outline type="rule" text="Estado de lectura" rule="unread" value="" additive="true"/>
+    </outline>
+    <outline text="Flagged" title="Flagged" description="Flagged" type="vfolder" htmlUrl="" xmlUrl="vfolder" updateInterval="-2" id="rdstnqw" sortColumn="time">
+      <outline type="rule" text="Estado de la bandera" rule="flagged" value="" additive="true"/>
+    </outline>
+    <outline title="Peri&#xF3;dicos" text="Peri&#xF3;dicos" expanded="">
+      <outline text="elmundo.es" title="elmundo.es" description="elmundo.es" type="rss" htmlUrl="http://www.elmundo.es/" xmlUrl="http://rss.elmundo.es/rss/descarga.htm?data2=4" updateInterval="60" id="ugkxemm" lastPollTime="1165321115" lastFaviconPollTime="1165319847" sortColumn="time"/>
+      <outline text="ELPAIS.com" title="ELPAIS.com" description="ELPAIS.com" type="rss" htmlUrl="http://www.elpais.com" xmlUrl="http://www.elpais.com/rss.html" updateInterval="15" id="josliim" lastPollTime="1165321115" lastFaviconPollTime="1165319734" sortColumn="time"/>
+    </outline>
+    <outline title="Software libre" text="Software libre" expanded="">
+      <outline text="Guadalinex" title="Guadalinex" description="Guadalinex" type="rss" htmlUrl="http://www.guadalinex.org/" xmlUrl="http://www.guadalinex.org/backend" updateInterval="-1" id="pvnstua" lastPollTime="1165321115" lastFaviconPollTime="1165320152" sortColumn="time"/>
+      <outline text="Barrapunto" title="Barrapunto" description="Barrapunto" type="rss" htmlUrl="http://barrapunto.com/" xmlUrl="http://barrapunto.com/index.rss" updateInterval="60" id="hjxnuqa" lastPollTime="1165321115" lastFaviconPollTime="1165320519" sortColumn="time"/>
+    </outline>
+  </body>
+</opml>
