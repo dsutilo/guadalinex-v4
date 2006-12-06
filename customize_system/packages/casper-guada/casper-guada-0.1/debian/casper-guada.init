@@ -1,0 +1,41 @@
+#!/bin/bash
+#
+# Script for translate the casper last messages to spanish
+#
+set -e
+
+. /lib/lsb/init-functions
+
+CASPER=/etc/init.d/casper
+
+TEXT="Please remove the disc, close the tray (if any) and press ENTER: "
+TEXT_URGENT1="Please remove the disc, close the tray (if any)"
+TEXT_URGENT2="and press ENTER to continue"
+
+function change_strings ()
+{
+
+	TEXTDOMAINDIR=/usr/share/locale
+	TEXTDOMAIN=casper-guada
+	export TEXTDOMAINDIR TEXTDOMAIN
+
+	NEW_TEXT=`gettext "$TEXT"`
+	NEW_TEXT_URGENT1=`gettext "$TEXT_URGENT1"`
+	NEW_TEXT_URGENT2=`gettext "$TEXT_URGENT2"`
+
+
+	sed -i "s|$TEXT|$NEW_TEXT|g" $CASPER
+	sed -i "s|$TEXT_URGENT1|$NEW_TEXT_URGENT1|g" $CASPER
+	sed -i "s|$TEXT_URGENT2|$NEW_TEXT_URGENT2|g" $CASPER
+
+}
+
+case "$1" in
+start)
+     change_strings
+    ;;
+stop|restart|reload|force-reload)
+    ;;
+esac
+
+exit 0

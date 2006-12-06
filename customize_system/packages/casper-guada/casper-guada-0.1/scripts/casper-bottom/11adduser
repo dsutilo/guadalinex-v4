@@ -1,0 +1,33 @@
+#!/bin/sh
+
+PREREQ=""
+DESCRIPTION="Fixing live session user..."
+
+. /scripts/casper-functions
+
+prereqs()
+{
+       echo "$PREREQ"
+}
+
+case $1 in
+# get pre-requisites
+prereqs)
+       prereqs
+       exit 0
+       ;;
+esac
+
+log_begin_msg "$DESCRIPTION"
+
+# Cleaning up the english stuff at the user's home
+
+if [ -L /root/home/$USERNAME/Desktop ]; then
+    rm -fr /root/home/$USERNAME/Desktop/
+fi
+
+if [ -L /root/home/$USERNAME/Examples ]; then
+    rm -fr /root/home/$USERNAME/Examples
+fi
+
+log_end_msg
