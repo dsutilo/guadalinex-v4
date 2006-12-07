@@ -22,10 +22,6 @@ log_begin_msg "$DESCRIPTION"
 
 # Cleaning up the english stuff at the user's home
 
-if [ -L /root/home/$USERNAME/Desktop ]; then
-    rm -fr /root/home/$USERNAME/Desktop/
-fi
-
 if [ -L /root/home/$USERNAME/Examples ]; then
     rm -fr /root/home/$USERNAME/Examples
 fi
