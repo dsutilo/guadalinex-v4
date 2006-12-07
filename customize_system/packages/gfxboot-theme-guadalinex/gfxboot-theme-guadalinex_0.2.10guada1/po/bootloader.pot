@@ -258,12 +258,12 @@ msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-msgid "^Start or install Ubuntu"
+msgid "^Start or install Guadalinex"
 msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu_xforcevesa
-msgid "Start Ubuntu in safe ^graphics mode"
+msgid "Start Guadalinex in safe ^graphics mode"
 msgstr ""
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
