@@ -9,7 +9,7 @@ Package: casper-guada
 Architecture: any
 Section: misc
 Priority: extra
-Depends: casper (= 0.78)
+Depends: casper (= 1.78)
 Description: Run a "live" preinstalled system from read-only media
 
 Package: ubiquity-casper-guada
