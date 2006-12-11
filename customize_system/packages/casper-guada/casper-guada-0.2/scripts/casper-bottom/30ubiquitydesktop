@@ -1,0 +1,28 @@
+#! /bin/sh
+
+PREREQ=""
+DESCRIPTION="Setting up install script translation"
+
+. /scripts/casper-functions
+
+prereqs()
+{
+       echo "$PREREQ"
+}
+
+case $1 in
+# get pre-requisites
+prereqs)
+       prereqs
+       exit 0
+       ;;
+esac
+
+log_begin_msg "$DESCRIPTION"
+
+. /root/etc/lsb-release
+
+chroot /root sed -i "s/__DISTNAME__/$DISTRIB_ID/" /usr/share/applications/ubiquity-gtkui.desktop
+chroot /root sed -i "s/__DISTNAME__/$DISTRIB_ID/" /usr/share/applications/kde/ubiquity-kdeui.desktop
+
+log_end_msg
