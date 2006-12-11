@@ -1078,6 +1078,14 @@ class Install:
             hostname = self.db.get('netcfg/get_hostname')
         except debconf.DebconfError:
             hostname = ''
+
+        # If exist a snakeoil certificate, regenerate it and copy to the target
+        # system.
+        if os.path.exists('/etc/ssl/private/ssl-cert-snakeoil.key'):
+            os.unlink('/etc/ssl/private/ssl-cert-snakeoil.key')
+            os.system('make-ssl-cert generate-default-snakeoil')
+            shutil.copy2('/etc/ssl/private/ssl-cert-snakeoil.key',os.path.join(self.target,'etc/ssl/private/ssl-cert-snakeoil.key'))
+
         if hostname == '':
             hostname = 'ubuntu'
         fp = open(os.path.join(self.target, 'etc/hostname'), 'w')
