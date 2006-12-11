@@ -1,0 +1,26 @@
+#!/bin/sh -e
+# initramfs hook for casper
+
+PREREQS="casper"
+
+# Output pre-requisites
+prereqs()
+{
+       echo "$PREREQ"
+}
+
+case "$1" in
+    prereqs)
+       prereqs
+       exit 0
+       ;;
+esac
+
+. /usr/share/initramfs-tools/hook-functions
+
+cp /usr/share/casper-guada/scripts/casper-bottom/* $DESTDIR/scripts/casper-bottom/
+
+if [ -e /usr/share/casper-guada/casper.conf ]; then
+    mkdir -p ${DESTDIR}/etc
+    cp /usr/share/casper-guada/casper.conf ${DESTDIR}/etc
+fi
