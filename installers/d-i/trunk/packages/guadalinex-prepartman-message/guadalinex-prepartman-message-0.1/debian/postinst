@@ -1,6 +1,0 @@
-#!/bin/sh -e
-#DEBHELPER#
-
-guadalinex-prepartman-message
-
-exit 0
