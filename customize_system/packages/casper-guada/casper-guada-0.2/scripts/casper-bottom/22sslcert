@@ -1,0 +1,31 @@
+#! /bin/sh
+
+PREREQ=""
+DESCRIPTION="Regenerating SSL Certificate..."
+IFFILE="/root/etc/rc2.d/S22sslcert"
+
+. /scripts/casper-functions
+
+prereqs()
+{
+       echo "$PREREQ"
+}
+
+case $1 in
+# get pre-requisites
+prereqs)
+       prereqs
+       exit 0
+       ;;
+esac
+
+log_begin_msg "$DESCRIPTION"
+
+cat > "$IFFILE" <<EOF
+#!/bin/bash
+
+rm -f /etc/ssl/private/ssl-cert-snakeoil.key
+make-ssl-cert generate-default-snakeoil
+EOF
+
+log_end_msg
