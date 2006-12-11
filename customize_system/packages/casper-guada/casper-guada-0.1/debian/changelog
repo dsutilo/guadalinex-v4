@@ -1,4 +1,10 @@
-casper-guada (0.1) hoary; urgency=low
+casper-guada (0.2) unstable; urgency=low
+
+  * Minor changes: debian package related stuff.
+
+ -- Carlos Parra Camargo <cparra@emergya.es>  Mon, 11 Dec 2006 12:22:04 +0100
+
+casper-guada (0.1) unstable; urgency=low
 
   * Initial Release. 
   
