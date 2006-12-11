@@ -2,7 +2,6 @@
 
 PREREQ=""
 DESCRIPTION="Regenerating SSL Certificate..."
-IFFILE="/root/etc/rc2.d/S22sslcert"
 
 . /scripts/casper-functions
 
@@ -21,11 +20,7 @@ esac
 
 log_begin_msg "$DESCRIPTION"
 
-cat > "$IFFILE" <<EOF
-#!/bin/bash
-
-rm -f /etc/ssl/private/ssl-cert-snakeoil.key
-make-ssl-cert generate-default-snakeoil
-EOF
+rm -f /root/etc/ssl/private/ssl-cert-snakeoil.key
+chroot /root /usr/sbin/make-ssl-cert generate-default-snakeoil
 
 log_end_msg
