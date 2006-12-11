@@ -18,10 +18,10 @@ msgstr ""
 
 #: ../desktop/ubiquity-gtkui.desktop.in.h:1
 #: ../desktop/ubiquity-kdeui.desktop.in.h:1
-msgid "Install"
-msgstr "安裝"
+msgid "Install __DISTNAME__"
+msgstr "安裝 __DISTNAME__"
 
 #: ../desktop/ubiquity-gtkui.desktop.in.h:2
 #: ../desktop/ubiquity-kdeui.desktop.in.h:2
-msgid "Install this system permanently to your hard disk"
+msgid "Install __DISTNAME__ permanently to your hard disk"
 msgstr "安裝系統到硬碟"

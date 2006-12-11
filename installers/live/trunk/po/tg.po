@@ -18,10 +18,10 @@ msgstr ""
 
 #: ../desktop/ubiquity-gtkui.desktop.in.h:1
 #: ../desktop/ubiquity-kdeui.desktop.in.h:1
-msgid "Install"
-msgstr "Барпо кунед"
+msgid "Install __DISTNAME__"
+msgstr "Барпо кунед __DISTNAME__"
 
 #: ../desktop/ubiquity-gtkui.desktop.in.h:2
 #: ../desktop/ubiquity-kdeui.desktop.in.h:2
-msgid "Install this system permanently to your hard disk"
+msgid "Install __DISTNAME__ permanently to your hard disk"
 msgstr "Ин системро ба диски сахт ба таври доимӣ барпо кунед"
