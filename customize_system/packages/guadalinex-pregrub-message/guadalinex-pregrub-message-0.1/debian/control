@@ -1,0 +1,14 @@
+Source: guadalinex-pregrub-message
+Section: debian-installer
+Priority: optional
+Maintainer: Carlos Parra Camargo <cparra@emergya.es> 
+Build-Depends: po-debconf, debhelper (>= 4.2)
+Standards-Version: 3.7.2
+
+Package: guadalinex-pregrub-message
+XC-Package-Type: udeb
+XB-Installer-Menu-Item: 72
+Architecture: any
+Depends: debconf
+Description: shows a message before grub
+ It show a explaining message before grub

@@ -1,0 +1,21 @@
+#!/bin/sh
+set -e
+
+. /usr/share/debconf/confmodule
+
+ARCH=`udpkg --print-architecture`
+
+log() {
+    logger -t guadalinex-first-message "info: $@"
+}
+
+db_settitle guadalinex-first-message/title
+db_input critical guadalinex-first-message/first-message || [ $? -eq 30 ]
+db_go
+
+db_input critical guadalinex-first-message/requirements || [ $? -eq 30 ]
+db_go
+
+log "Showing Guadalinex first-message"
+
+exit 0
