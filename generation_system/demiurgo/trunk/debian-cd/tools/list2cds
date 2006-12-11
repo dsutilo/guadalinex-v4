@@ -102,13 +102,13 @@ if (-e $exclude) {
 }
 
 # Now exclude more packages because of the non-free and non-us rules
-if (not $nonfree) {
-	foreach (grep { $packages{$_}{"Section"} =~ /non-free/ }
-	              (keys %packages)) {
-		$excluded{$_} = 'nonfree';
-		$count_excl++;
-	}
-}
+#if (not $nonfree) {
+#	foreach (grep { $packages{$_}{"Section"} =~ /non-free/ }
+#	              (keys %packages)) {
+#		$excluded{$_} = 'nonfree';
+#		$count_excl++;
+#	}
+#}
 if (not $nonus) {
 	foreach (grep { $packages{$_}{"Section"} =~ /non-US/ }
 	              (keys %packages)) {

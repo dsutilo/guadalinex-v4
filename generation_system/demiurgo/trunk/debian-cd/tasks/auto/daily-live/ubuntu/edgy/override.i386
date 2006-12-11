@@ -1,10 +1,14 @@
 acpi  Task  guadalinex-desktop, guada
 acpi-support  Task  guadalinex-desktop, guada
 acpid  Task  guadalinex-desktop, guada
+acroread  Task  guada
 adduser  Task  guadalinex-minimal, guada
 alacarte  Task  guadalinex-desktop, guada
 alsa-base  Task  guadalinex-minimal, guada
 alsa-utils  Task  guadalinex-minimal, guada
+amsn  Task  guada
+amule  Task  guada
+amule-common  Task  guada
 anacron  Task  guadalinex-desktop, guada
 apmd  Task  guadalinex-desktop, guada
 app-install-data  Task  guadalinex-desktop, guada
@@ -19,10 +23,12 @@ aspell  Task  guadalinex-desktop, guada
 at  Task  guadalinex-standard, guada
 at-spi  Task  guadalinex-desktop, guada
 avahi-daemon  Task  guadalinex-desktop, guada
+avidemux  Task  guada
 base-files  Task  guadalinex-minimal, guada
 base-passwd  Task  guadalinex-minimal, guada
 bash  Task  guadalinex-minimal, guada
 bc  Task  guadalinex-desktop, guada
+beagle  Task  guada
 beforelight  Task  guadalinex-desktop, guada
 belocs-locales-bin  Task  guadalinex-minimal, guada
 bind9-host  Task  guadalinex-standard, guada
@@ -40,6 +46,7 @@ bsdutils  Task  guadalinex-minimal, guada
 bsh  Task  guadalinex-desktop, guada
 bug-buddy  Task  guadalinex-desktop, guada
 busybox-initramfs  Task  guadalinex-minimal, guada
+byzanz  Task  guada
 bzip2  Task  guadalinex-minimal, guada
 ca-certificates  Task  guadalinex-desktop, guada
 capplets-data  Task  guadalinex-desktop, guada
@@ -47,6 +54,8 @@ cdparanoia  Task  guadalinex-desktop, guada
 cdrdao  Task  guadalinex-desktop, guada
 cdrecord  Task  guadalinex-desktop, guada
 cli-common  Task  guadalinex-desktop, guada
+console-common  Task  guada
+console-data  Task  guada
 console-setup  Task  guadalinex-minimal, guada
 console-terminus  Task  guadalinex-minimal, guada
 console-tools  Task  guadalinex-minimal, guada
@@ -71,15 +80,16 @@ debianutils  Task  guadalinex-minimal, guada
 defoma  Task  guadalinex-desktop, guada
 deskbar-applet  Task  guadalinex-desktop, guada
 desktop-file-utils  Task  guadalinex-desktop, guada
+dhcdbd  Task  guada
 dhcp3-client  Task  guadalinex-minimal, guada
 dhcp3-common  Task  guadalinex-minimal, guada
 dictionaries-common  Task  guadalinex-desktop, guada
 diff  Task  guadalinex-minimal, guada
-diveintopython  Task  guadalinex-desktop, guada
 dmidecode  Task  guadalinex-minimal, guada
 dnsutils  Task  guadalinex-standard, guada
 doc-base  Task  guadalinex-desktop, guada
 docbook-xml  Task  guadalinex-desktop, guada
+docker  Task  guada
 dosfstools  Task  guadalinex-standard, guada
 dpkg  Task  guadalinex-minimal, guada
 dselect  Task  guadalinex-standard, guada
@@ -102,7 +112,6 @@ evince  Task  guadalinex-desktop, guada
 evolution  Task  guadalinex-desktop, guada
 evolution-data-server  Task  guadalinex-desktop, guada
 evolution-data-server-common  Task  guadalinex-desktop, guada
-evolution-exchange  Task  guadalinex-desktop, guada
 evolution-plugins  Task  guadalinex-desktop, guada
 evolution-webcal  Task  guadalinex-desktop, guada
 example-content  Task  guadalinex-desktop
@@ -140,7 +149,7 @@ gcc  Task  guadalinex-desktop
 gcc-3.3-base  Task  guadalinex-desktop, guada
 gcc-4.1  Task  guadalinex-desktop
 gcc-4.1-base  Task  guadalinex-minimal, guada
-gcj-4.1-base  Task  guadalinex-desktop, guada
+gcj-4.1-base  Task  guadalinex-desktop
 gconf-editor  Task  guadalinex-desktop, guada
 gconf2  Task  guadalinex-desktop, guada
 gconf2-common  Task  guadalinex-desktop, guada
@@ -149,17 +158,18 @@ gdebi  Task  guadalinex-desktop, guada
 gdm  Task  guadalinex-desktop, guada
 gedit  Task  guadalinex-desktop, guada
 gedit-common  Task  guadalinex-desktop, guada
-gettext  Task  guadalinex-desktop
+gettext  Task  guada
 gettext-base  Task  guadalinex-minimal, guada
 gfxboot  Task  guada
 gfxboot-theme-guadalinex  Task  guada
-gij  Task  guadalinex-desktop, guada
-gij-4.1  Task  guadalinex-desktop, guada
+gij  Task  guadalinex-desktop
+gij-4.1  Task  guadalinex-desktop
 gimp  Task  guadalinex-desktop, guada
 gimp-data  Task  guadalinex-desktop, guada
 gimp-print  Task  guadalinex-desktop, guada
 gimp-python  Task  guadalinex-desktop, guada
 gksu  Task  guadalinex-desktop, guada
+gnochm  Task  guada
 gnome-about  Task  guadalinex-desktop, guada
 gnome-accessibility-themes  Task  guadalinex-desktop
 gnome-app-install  Task  guadalinex-desktop, guada
@@ -191,6 +201,7 @@ gnome-power-manager  Task  guadalinex-desktop, guada
 gnome-screensaver  Task  guadalinex-desktop
 gnome-session  Task  guadalinex-desktop, guada
 gnome-spell  Task  guadalinex-desktop, guada
+gnome-sudoku  Task  guada
 gnome-system-monitor  Task  guadalinex-desktop, guada
 gnome-system-tools  Task  guadalinex-desktop, guada
 gnome-terminal  Task  guadalinex-desktop, guada
@@ -200,6 +211,7 @@ gnome-utils  Task  guadalinex-desktop, guada
 gnome-volume-manager  Task  guadalinex-desktop, guada
 gnome2-user-guide  Task  guadalinex-desktop, guada
 gnupg  Task  guadalinex-minimal, guada
+gpaint  Task  guada
 gray-theme  Task  guadalinex-desktop, guada
 grep  Task  guadalinex-minimal, guada
 grepmap  Task  guadalinex-minimal, guada
@@ -223,6 +235,7 @@ guadalinex-artwork  Task  guada
 guadalinex-desktop  Task  guada
 guadalinex-desktop-conf  Task  guada
 guadalinex-doc  Task  guada
+guadalinex-example-content  Task  guada
 guadalinex-keyring  Task  guadalinex-minimal, guada
 guadalinex-keyring-udeb  Task  guada
 guadalinex-minimal  Task  guadalinex-minimal, guada
@@ -230,6 +243,7 @@ guadalinex-minimal-conf  Task  guada
 guadalinex-standard  Task  guada
 gucharmap  Task  guadalinex-desktop, guada
 guile-1.6-libs  Task  guadalinex-desktop
+gxine  Task  guada
 gzip  Task  guadalinex-minimal, guada
 hal  Task  guadalinex-desktop, guada
 hal-device-manager  Task  guadalinex-desktop, guada
@@ -246,24 +260,33 @@ human-icon-theme  Task  guadalinex-desktop, guada
 human-theme  Task  guadalinex-desktop, guada
 hwdb-client-common  Task  guadalinex-desktop, guada
 hwdb-client-gnome  Task  guadalinex-desktop, guada
+i2e  Task  guada
 iceauth  Task  guadalinex-desktop, guada
 ico  Task  guadalinex-desktop, guada
 ifupdown  Task  guadalinex-minimal, guada
+imlib-base  Task  guada
+imlib11  Task  guada
 industrialtango-theme  Task  guadalinex-desktop, guada
 info  Task  guadalinex-standard, guada
 initramfs-tools  Task  guadalinex-minimal, guada
 initscripts  Task  guadalinex-minimal, guada
+inkscape  Task  guada
 inputattach  Task  guadalinex-standard, guada
-intltool-debian  Task  guadalinex-desktop
 iproute  Task  guadalinex-minimal, guada
 iptables  Task  guadalinex-standard, guada
 iputils-arping  Task  guadalinex-standard, guada
 iputils-ping  Task  guadalinex-minimal, guada
 iputils-tracepath  Task  guadalinex-standard, guada
 iso-codes  Task  guadalinex-desktop, guada
+java-common  Task  guada
+kbd  Task  guada
 klibc-utils  Task  guadalinex-minimal, guada
 klogd  Task  guadalinex-minimal, guada
 landscape-client  Task  guadalinex-desktop, guada
+language-pack-es  Task  guada
+language-pack-es-base  Task  guada
+language-pack-gnome-es  Task  guada
+language-pack-gnome-es-base  Task  guada
 language-selector  Task  guadalinex-desktop, guada
 language-selector-common  Task  guadalinex-desktop, guada
 laptop-detect  Task  guadalinex-minimal, guada
@@ -272,11 +295,13 @@ launchpad-integration  Task  guadalinex-desktop, guada
 legacyhuman-theme  Task  guadalinex-desktop, guada
 less  Task  guadalinex-minimal, guada
 lftp  Task  guadalinex-desktop, guada
+liba52-0.7.4  Task  guada
 libaa1  Task  guadalinex-desktop, guada
 libacl1  Task  guadalinex-minimal, guada
 libao2  Task  guadalinex-desktop, guada
 libapm1  Task  guadalinex-desktop, guada
 libart-2.0-2  Task  guadalinex-desktop, guada
+libartsc0  Task  guada
 libasound2  Task  guadalinex-minimal, guada
 libaspell15  Task  guadalinex-desktop, guada
 libatk1.0-0  Task  guadalinex-desktop, guada
@@ -306,13 +331,16 @@ libc6  Task  guadalinex-minimal, guada
 libc6-i686  Task  guadalinex-minimal, guada
 libcairo-perl  Task  guadalinex-desktop, guada
 libcairo2  Task  guadalinex-desktop, guada
+libcairomm-1.0-1  Task  guada
 libcamel1.2-8  Task  guadalinex-desktop, guada
 libcap1  Task  guadalinex-minimal, guada
 libcdio6  Task  guadalinex-desktop, guada
 libcdparanoia0  Task  guadalinex-desktop, guada
+libchm1  Task  guada
 libcomerr2  Task  guadalinex-minimal, guada
 libconsole  Task  guadalinex-minimal, guada
 libcroco3  Task  guadalinex-desktop, guada
+libcrypto++5.2c2a  Task  guada
 libcupsimage2  Task  guadalinex-desktop, guada
 libcupsys2  Task  guadalinex-desktop, guada
 libcurl3  Task  guadalinex-desktop, guada
@@ -346,6 +374,8 @@ libestools1.2  Task  guadalinex-desktop
 libexchange-storage1.2-2  Task  guadalinex-desktop, guada
 libexif12  Task  guadalinex-desktop, guada
 libexpat1  Task  guadalinex-desktop, guada
+libfaac0  Task  guada
+libfaad2-0  Task  guada
 libflac7  Task  guadalinex-desktop, guada
 libfontconfig1  Task  guadalinex-desktop, guada
 libfontenc1  Task  guadalinex-desktop, guada
@@ -358,9 +388,9 @@ libgail18  Task  guadalinex-desktop, guada
 libgamin0  Task  guadalinex-desktop, guada
 libgc1c2  Task  guadalinex-standard, guada
 libgcc1  Task  guadalinex-minimal, guada
-libgcj-bc  Task  guadalinex-desktop, guada
-libgcj-common  Task  guadalinex-desktop, guada
-libgcj7-0  Task  guadalinex-desktop, guada
+libgcj-bc  Task  guadalinex-desktop
+libgcj-common  Task  guadalinex-desktop
+libgcj7-0  Task  guadalinex-desktop
 libgconf2-4  Task  guadalinex-desktop, guada
 libgconf2.0-cil  Task  guadalinex-desktop, guada
 libgcrypt11  Task  guadalinex-minimal, guada
@@ -375,7 +405,6 @@ libgksu2-0  Task  guadalinex-desktop, guada
 libgksuui1.0-1  Task  guadalinex-desktop, guada
 libgl1-mesa-dri  Task  guadalinex-desktop, guada
 libgl1-mesa-glx  Task  guadalinex-desktop, guada
-libgl1-mesa-swx11  Task  guada
 libglade2-0  Task  guadalinex-desktop, guada
 libglade2.0-cil  Task  guadalinex-desktop, guada
 libglew1  Task  guadalinex-desktop, guada
@@ -383,6 +412,7 @@ libglib-perl  Task  guadalinex-desktop, guada
 libglib1.2  Task  guadalinex-desktop, guada
 libglib2.0-0  Task  guadalinex-desktop, guada
 libglib2.0-cil  Task  guadalinex-desktop, guada
+libglibmm-2.4-1c2a  Task  guada
 libglu1-mesa  Task  guadalinex-desktop, guada
 libglut3  Task  guadalinex-desktop
 libgmime-2.0-2  Task  guadalinex-desktop, guada
@@ -424,8 +454,11 @@ libgpmg1  Task  guadalinex-standard, guada
 libgpod0  Task  guadalinex-desktop, guada
 libgsf-1-114  Task  guadalinex-desktop, guada
 libgsf-1-common  Task  guadalinex-desktop, guada
+libgsf0.0-cil  Task  guada
 libgstreamer-plugins-base0.10-0  Task  guadalinex-desktop, guada
 libgstreamer0.10-0  Task  guadalinex-desktop, guada
+libgtk1.2  Task  guada
+libgtk1.2-common  Task  guada
 libgtk2-perl  Task  guadalinex-desktop, guada
 libgtk2.0-0  Task  guadalinex-desktop, guada
 libgtk2.0-bin  Task  guadalinex-desktop, guada
@@ -433,6 +466,7 @@ libgtk2.0-cil  Task  guadalinex-desktop, guada
 libgtk2.0-common  Task  guadalinex-desktop, guada
 libgtkhtml2-0  Task  guadalinex-desktop, guada
 libgtkhtml3.8-15  Task  guadalinex-desktop, guada
+libgtkmm-2.4-1c2a  Task  guada
 libgtksourceview-common  Task  guadalinex-desktop, guada
 libgtksourceview1.0-0  Task  guadalinex-desktop, guada
 libgtkspell0  Task  guadalinex-desktop, guada
@@ -465,31 +499,39 @@ libjpeg62  Task  guadalinex-desktop, guada
 libklibc  Task  guadalinex-minimal, guada
 libkpathsea4  Task  guadalinex-desktop, guada
 libkrb53  Task  guadalinex-standard, guada
+liblame0  Task  guada
 liblaunchpad-integration0  Task  guadalinex-desktop, guada
 liblcms1  Task  guadalinex-desktop, guada
 libldap2  Task  guadalinex-minimal, guada
 liblircclient0  Task  guadalinex-desktop, guada
 liblocale-gettext-perl  Task  guadalinex-minimal, guada
 liblpint-bonobo0  Task  guadalinex-desktop, guada
+libltdl3  Task  guada
 liblwres9  Task  guadalinex-standard, guada
 liblzo1  Task  guadalinex-minimal, guada
+libmad0  Task  guada
 libmagic1  Task  guadalinex-standard, guada
 libmagick9  Task  guadalinex-desktop, guada
 libmdbtools  Task  guadalinex-desktop, guada
 libmeanwhile1  Task  guadalinex-desktop, guada
 libmetacity0  Task  guadalinex-desktop, guada
 libmng1  Task  guadalinex-desktop, guada
+libmodplug0c2  Task  guada
 libmono-cairo1.0-cil  Task  guadalinex-desktop, guada
 libmono-corlib1.0-cil  Task  guadalinex-desktop, guada
 libmono-data-tds1.0-cil  Task  guadalinex-desktop, guada
 libmono-security1.0-cil  Task  guadalinex-desktop, guada
+libmono-sharpzip0.6-cil  Task  guada
 libmono-sharpzip0.84-cil  Task  guadalinex-desktop, guada
 libmono-sqlite1.0-cil  Task  guadalinex-desktop, guada
 libmono-system-data1.0-cil  Task  guadalinex-desktop, guada
+libmono-system-runtime1.0-cil  Task  guada
 libmono-system-web1.0-cil  Task  guadalinex-desktop, guada
 libmono-system1.0-cil  Task  guadalinex-desktop, guada
 libmono0  Task  guadalinex-desktop, guada
 libmono1.0-cil  Task  guadalinex-desktop, guada
+libmozjs0d  Task  guada
+libmp4v2-0  Task  guada
 libmusicbrainz4c2a  Task  guadalinex-desktop, guada
 libmyspell3c2  Task  guadalinex-desktop, guada
 libnautilus-burn4  Task  guadalinex-desktop, guada
@@ -499,8 +541,11 @@ libncursesw5  Task  guadalinex-minimal, guada
 libneon25  Task  guadalinex-desktop, guada
 libnet-dbus-perl  Task  guadalinex-desktop, guada
 libnewt0.52  Task  guadalinex-minimal, guada
+libnl1-pre6  Task  guada
+libnm-util0  Task  guada
 libnotify1  Task  guadalinex-desktop, guada
 libnspr4  Task  guadalinex-desktop, guada
+libnspr4-0d  Task  guada
 libnss3  Task  guadalinex-desktop, guada
 libogg0  Task  guadalinex-desktop, guada
 liboil0.3  Task  guadalinex-desktop, guada
@@ -541,7 +586,6 @@ librsvg2-common  Task  guadalinex-desktop, guada
 libsane  Task  guadalinex-desktop, guada
 libsasl2  Task  guadalinex-minimal, guada
 libsasl2-modules  Task  guadalinex-minimal, guada
-libscim8c2a  Task  guadalinex-desktop
 libscrollkeeper0  Task  guadalinex-desktop, guada
 libsdl1.2debian  Task  guadalinex-desktop, guada
 libsdl1.2debian-alsa  Task  guadalinex-desktop, guada
@@ -577,6 +621,7 @@ libtext-wrapi18n-perl  Task  guadalinex-minimal, guada
 libtheora0  Task  guadalinex-desktop, guada
 libtiff4  Task  guadalinex-desktop, guada
 libtotem-plparser1  Task  guadalinex-desktop, guada
+libungif4g  Task  guada
 libuniconf4.2  Task  guadalinex-desktop, guada
 liburi-perl  Task  guadalinex-desktop, guada
 libusb-0.1-4  Task  guadalinex-minimal, guada
@@ -585,6 +630,7 @@ libvisual-0.4-0  Task  guadalinex-desktop, guada
 libvolumeid0  Task  guadalinex-minimal, guada
 libvorbis0a  Task  guadalinex-desktop, guada
 libvorbisenc2  Task  guadalinex-desktop, guada
+libvorbisfile3  Task  guada
 libvte-common  Task  guadalinex-desktop, guada
 libvte9  Task  guadalinex-desktop, guada
 libwmf0.2-7  Task  guadalinex-desktop, guada
@@ -592,9 +638,12 @@ libwnck-common  Task  guadalinex-desktop, guada
 libwnck18  Task  guadalinex-desktop, guada
 libwpd8c2a  Task  guadalinex-desktop, guada
 libwrap0  Task  guadalinex-minimal, guada
+libwv-1.2-1  Task  guada
 libwvstreams4.2-base  Task  guadalinex-desktop, guada
 libwvstreams4.2-extras  Task  guadalinex-desktop, guada
 libwww-perl  Task  guadalinex-desktop, guada
+libwxbase2.6-0  Task  guada
+libwxgtk2.6-0  Task  guada
 libx11-6  Task  guadalinex-desktop, guada
 libx11-data  Task  guadalinex-desktop, guada
 libxalan2-java  Task  guadalinex-desktop, guada
@@ -610,6 +659,7 @@ libxfixes3  Task  guadalinex-desktop, guada
 libxfont1  Task  guadalinex-desktop, guada
 libxft2  Task  guadalinex-desktop, guada
 libxi6  Task  guadalinex-desktop, guada
+libxine1  Task  guada
 libxinerama1  Task  guadalinex-desktop, guada
 libxkbfile1  Task  guadalinex-desktop, guada
 libxklavier11  Task  guadalinex-desktop, guada
@@ -636,9 +686,13 @@ libxt6  Task  guadalinex-desktop, guada
 libxtrap6  Task  guadalinex-desktop, guada
 libxtst6  Task  guadalinex-desktop, guada
 libxv1  Task  guadalinex-desktop, guada
+libxvidcore4  Task  guada
+libxvmc1  Task  guada
 libxxf86dga1  Task  guadalinex-desktop, guada
 libxxf86misc1  Task  guadalinex-desktop, guada
 libxxf86vm1  Task  guadalinex-desktop, guada
+liferea  Task  guada
+liferea-mozilla  Task  guada
 linux-headers-2.6.17-10  Task  guadalinex-desktop
 linux-headers-2.6.17-10-generic  Task  guadalinex-desktop
 linux-headers-generic  Task  guadalinex-desktop
@@ -673,6 +727,7 @@ mono-gac  Task  guadalinex-desktop, guada
 mono-jit  Task  guadalinex-desktop, guada
 mono-runtime  Task  guadalinex-desktop, guada
 mount  Task  guadalinex-minimal, guada
+mozilla-firefox-locale-es-es  Task  guada
 mtr-tiny  Task  guadalinex-standard
 nano  Task  guadalinex-standard, guada
 nautilus  Task  guadalinex-desktop, guada
@@ -684,9 +739,12 @@ ncurses-bin  Task  guadalinex-minimal, guada
 net-tools  Task  guadalinex-minimal, guada
 netbase  Task  guadalinex-minimal, guada
 netcat  Task  guadalinex-minimal, guada
+network-manager  Task  guada
+network-manager-gnome  Task  guada
 notification-daemon  Task  guadalinex-desktop, guada
 ntpdate  Task  guadalinex-minimal, guada
 oclock  Task  guadalinex-desktop, guada
+odbcinst1debian1  Task  guada
 onboard  Task  guadalinex-desktop
 openoffice.org  Task  guadalinex-desktop, guada
 openoffice.org-base  Task  guadalinex-desktop, guada
@@ -699,11 +757,14 @@ openoffice.org-gnome  Task  guadalinex-desktop, guada
 openoffice.org-gtk  Task  guadalinex-desktop, guada
 openoffice.org-impress  Task  guadalinex-desktop, guada
 openoffice.org-java-common  Task  guadalinex-desktop, guada
+openoffice.org-l10n-common  Task  guada
+openoffice.org-l10n-es  Task  guada
 openoffice.org-math  Task  guadalinex-desktop, guada
 openoffice.org-style-default  Task  guadalinex-desktop, guada
 openoffice.org-style-industrial  Task  guadalinex-desktop, guada
 openoffice.org-writer  Task  guadalinex-desktop, guada
 openssh-client  Task  guadalinex-standard, guada
+openssh-server  Task  guada
 openssl  Task  guadalinex-desktop, guada
 outdoors-theme  Task  guadalinex-desktop, guada
 parted  Task  guadalinex-standard, guada
@@ -717,7 +778,6 @@ perl-modules  Task  guadalinex-minimal, guada
 pkg-config  Task  guadalinex-desktop, guada
 pmount  Task  guadalinex-desktop, guada
 pnm2ppa  Task  guadalinex-desktop, guada
-po-debconf  Task  guadalinex-desktop
 poppler-utils  Task  guadalinex-desktop, guada
 popularity-contest  Task  guadalinex-standard, guada
 powermanagement-interface  Task  guadalinex-desktop, guada
@@ -734,6 +794,7 @@ python-apt  Task  guadalinex-desktop, guada
 python-at-spi  Task  guadalinex-desktop
 python-cairo  Task  guadalinex-desktop, guada
 python-central  Task  guadalinex-desktop, guada
+python-chm  Task  guada
 python-dbus  Task  guadalinex-desktop, guada
 python-gconf  Task  guadalinex-desktop, guada
 python-gdbm  Task  guadalinex-desktop, guada
@@ -748,6 +809,7 @@ python-gobject  Task  guadalinex-desktop, guada
 python-gst0.10  Task  guadalinex-desktop, guada
 python-gtk2  Task  guadalinex-desktop, guada
 python-gtkhtml2  Task  guadalinex-desktop, guada
+python-imaging  Task  guada
 python-launchpad-integration  Task  guadalinex-desktop, guada
 python-libxml2  Task  guadalinex-desktop, guada
 python-minimal  Task  guadalinex-minimal, guada
@@ -772,9 +834,6 @@ rhythmbox  Task  guadalinex-desktop, guada
 rss-glx  Task  guadalinex-desktop, guada
 rsync  Task  guadalinex-standard, guada
 samba-common  Task  guadalinex-desktop, guada
-scim  Task  guadalinex-desktop
-scim-gtk2-immodule  Task  guadalinex-desktop
-scim-modules-socket  Task  guadalinex-desktop
 screen  Task  guadalinex-desktop, guada
 screensaver-default-images  Task  guadalinex-desktop, guada
 scrollkeeper  Task  guadalinex-desktop, guada
@@ -790,11 +849,15 @@ smartdimmer  Task  guadalinex-desktop, guada
 smbclient  Task  guadalinex-desktop, guada
 smproxy  Task  guadalinex-desktop, guada
 sound-juicer  Task  guadalinex-desktop, guada
+sox  Task  guada
+ssh  Task  guada
 ssh-askpass-gnome  Task  guadalinex-desktop, guada
 ssl-cert  Task  guadalinex-desktop, guada
 startup-tasks  Task  guadalinex-minimal, guada
 strace  Task  guadalinex-standard, guada
 sudo  Task  guadalinex-minimal, guada
+sun-java5-bin  Task  guada
+sun-java5-jre  Task  guada
 synaptic  Task  guadalinex-desktop, guada
 sysklogd  Task  guadalinex-minimal, guada
 system-services  Task  guadalinex-minimal, guada
@@ -807,40 +870,24 @@ tango-icon-theme-common  Task  guadalinex-desktop, guada
 tar  Task  guadalinex-minimal, guada
 tasksel  Task  guadalinex-minimal, guada
 tasksel-data  Task  guadalinex-minimal, guada
+tcl8.4  Task  guada
+tcltls  Task  guada
 tcpd  Task  guadalinex-minimal, guada
 tcpdump  Task  guadalinex-standard, guada
 telnet  Task  guadalinex-standard, guada
 time  Task  guadalinex-standard, guada
+tk8.4  Task  guada
 tomboy  Task  guadalinex-desktop, guada
 toshset  Task  guadalinex-desktop, guada
 totem  Task  guadalinex-desktop, guada
 totem-gstreamer  Task  guadalinex-desktop, guada
 totem-mozilla  Task  guadalinex-desktop, guada
 tsclient  Task  guadalinex-desktop, guada
-ttf-arabeyes  Task  guadalinex-desktop
-ttf-arphic-ukai  Task  guadalinex-desktop
-ttf-arphic-uming  Task  guadalinex-desktop
-ttf-baekmuk  Task  guadalinex-desktop
-ttf-bengali-fonts  Task  guadalinex-desktop
 ttf-bitstream-vera  Task  guadalinex-desktop, guada
 ttf-dejavu  Task  guadalinex-desktop, guada
-ttf-devanagari-fonts  Task  guadalinex-desktop
 ttf-freefont  Task  guadalinex-desktop, guada
-ttf-gentium  Task  guadalinex-desktop
-ttf-gujarati-fonts  Task  guadalinex-desktop
-ttf-indic-fonts  Task  guadalinex-desktop
-ttf-kannada-fonts  Task  guadalinex-desktop
-ttf-kochi-gothic  Task  guadalinex-desktop
-ttf-kochi-mincho  Task  guadalinex-desktop
-ttf-lao  Task  guadalinex-desktop
-ttf-malayalam-fonts  Task  guadalinex-desktop
-ttf-mgopen  Task  guadalinex-desktop
 ttf-opensymbol  Task  guadalinex-desktop, guada
-ttf-oriya-fonts  Task  guadalinex-desktop
-ttf-punjabi-fonts  Task  guadalinex-desktop
-ttf-tamil-fonts  Task  guadalinex-desktop
-ttf-telugu-fonts  Task  guadalinex-desktop
-ttf-thai-tlwg  Task  guadalinex-desktop
+tvtime  Task  guada
 tzdata  Task  guadalinex-minimal, guada
 ubuntu-artwork  Task  guadalinex-desktop, guada
 ubuntu-docs  Task  guadalinex-desktop, guada
@@ -848,6 +895,7 @@ ubuntu-sounds  Task  guadalinex-desktop, guada
 ucf  Task  guadalinex-desktop, guada
 udev  Task  guadalinex-minimal, guada
 unattended-upgrades  Task  guadalinex-desktop, guada
+unixodbc  Task  guada
 unzip  Task  guadalinex-desktop, guada
 update-manager  Task  guadalinex-desktop, guada
 update-notifier  Task  guadalinex-desktop, guada
@@ -856,6 +904,7 @@ upstart-compat-sysv  Task  guadalinex-minimal, guada
 upstart-logd  Task  guadalinex-minimal, guada
 usbutils  Task  guadalinex-minimal, guada
 usplash  Task  guadalinex-desktop, guada
+usplash-theme-guadalinex  Task  guada
 usplash-theme-ubuntu  Task  guadalinex-desktop, guada
 util-linux  Task  guadalinex-minimal, guada
 util-linux-locales  Task  guadalinex-minimal, guada

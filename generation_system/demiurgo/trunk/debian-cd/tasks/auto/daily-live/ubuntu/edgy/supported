@@ -62,6 +62,8 @@ bbdb
 bdf2psf
 beagle
 beagle-dev
+beep-media-player
+beep-media-player-dev
 bf-utf-source
 bicyclerepair
 bin86
@@ -122,6 +124,7 @@ desktop-base
 devhelp
 devhelp-common
 dh-buildinfo
+dh-consoledata
 dh-kpatches
 dh-make
 dhcp3-dev
@@ -346,6 +349,7 @@ ifaroese
 im-switch
 imagemagick
 imhangul
+imlib11-dev
 indent
 indent-doc
 ingerman
@@ -854,6 +858,7 @@ lib64readline5
 lib64readline5-dev
 lib64z1
 lib64z1-dev
+liba52-0.7.4-dev
 libaa1-dev
 libaal-dev
 libacl1-dev
@@ -946,6 +951,7 @@ libchewing3-data
 libchewing3-dev
 libchicken-dev
 libchicken0
+libchm-dev
 libclass-accessor-perl
 libcman-dev
 libcommons-logging-java
@@ -956,6 +962,7 @@ libcppunit-dev
 libcppunit-doc
 libcroco3-dev
 libcrypt-blowfish-perl
+libcrypto++-dev
 libcupsimage2-dev
 libcupsys2-dev
 libcurl3-dbg
@@ -1020,6 +1027,8 @@ libextutils-cbuilder-perl
 libextutils-depends-perl
 libextutils-parsexs-perl
 libextutils-pkgconfig-perl
+libfaac-dev
+libfaad2-dev
 libffi4
 libffi4-dev
 libflac++-dev
@@ -1278,6 +1287,7 @@ libksieve0
 libksieve0-dev
 libktnef1
 libktnef1-dev
+liblame-dev
 liblaunchpad-integration-dev
 liblcms1-dev
 liblircclient-dev
@@ -1311,6 +1321,8 @@ libmikmod2
 libmikmod2-dev
 libmimelib1-dev
 libmimelib1c2a
+libmjpegtools-dev
+libmjpegtools0c2a
 libmng-dev
 libmodplug-dev
 libmodplug0c2
@@ -1334,6 +1346,8 @@ libmono-system2.0-cil
 libmono-winforms1.0-cil
 libmono-winforms2.0-cil
 libmono2.0-cil
+libmozjs-dev
+libmp4v2-dev
 libmpfr-dev
 libmpfr1
 libmusicbrainz4-dev
@@ -1362,12 +1376,10 @@ libnewt-dev
 libnewt-pic
 libnfsidmap-dev
 libnl-dev
-libnm-glib-dev
-libnm-glib0
-libnm-util-dev
 libnotify-dev
 libnotify-doc
 libnspr-dev
+libnspr4-dev
 libnss-db
 libnss-dev
 libnss-mdns
@@ -1486,6 +1498,7 @@ libsane-dev
 libsasl2-dev
 libsasl2-modules-sql
 libscim-dev
+libscim8c2a
 libscrollkeeper-dev
 libsdl1.2-dev
 libsdl1.2debian-all
@@ -1508,6 +1521,7 @@ libslang2-pic
 libslp-dev
 libsm-dev
 libsm6-dbg
+libsmjs-dev
 libsmokeqt-dev
 libsmokeqt1
 libsndfile1-dev
@@ -1591,8 +1605,11 @@ libwv-dev
 libwvstreams-dev
 libwvstreams4.2-doc
 libwvstreams4.2-qt
+libwxbase2.6-dev
+libwxgtk2.6-dev
 libx11-6-dbg
 libx11-dev
+libx264-dev
 libxalan2-java-doc
 libxalan2-java-gcj
 libxau-dev
@@ -1679,6 +1696,7 @@ libxtst-dev
 libxtst6-dbg
 libxv-dev
 libxv1-dbg
+libxvidcore4-dev
 libxvmc-dev
 libxvmc1
 libxvmc1-dbg
@@ -1839,7 +1857,6 @@ ndoc-doc
 nessus
 nessus-dev
 netpbm
-network-manager-dev
 nfs-modules-2.6.17-10-generic-di
 nic-firmware-2.6.17-10-generic-di
 nic-modules-2.6.17-10-generic-di
@@ -2072,11 +2089,14 @@ ruby
 ruby1.8-dev
 sabayon
 sata-modules-2.6.17-10-generic-di
+scim
 scim-anthy
 scim-chewing
 scim-dev
 scim-dev-doc
+scim-gtk2-immodule
 scim-hangul
+scim-modules-socket
 scim-modules-table
 scim-pinyin
 scim-tables-additional
@@ -2172,7 +2192,9 @@ ttf-arphic-bsmi00lp
 ttf-arphic-gbsn00lp
 ttf-arphic-gkai00mp
 ttf-bpg-georgian-fonts
+ttf-lao
 ttf-nafees
+ttf-thai-tlwg
 ttf-unfonts
 twisted-doc
 ubuntu-calendar
@@ -2222,6 +2244,8 @@ wspanish
 wswedish
 wswiss
 wukrainian
+wx2.6-headers
+wx2.6-i18n
 x-dev
 x11proto-bigreqs-dev
 x11proto-composite-dev
@@ -2277,6 +2301,7 @@ yada
 yada-doc
 yapps2
 yapps2-runtime
+yasm
 zope-debhelper
 zope3-doc
 zsh-dbg
