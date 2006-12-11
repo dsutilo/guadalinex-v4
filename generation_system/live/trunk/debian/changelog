@@ -1,3 +1,9 @@
+glig (0.3) unstable; urgency=low
+
+  * added casper-guada and ubiquity-casper-guada
+
+ -- Carlos Parra Camargo <cparra@emergya.es>  Mon, 11 Dec 2006 12:31:34 +0100
+
 glig (0.2) unstable; urgency=low
 
   * exclude some packages of the debootstrap process
@@ -5,7 +11,7 @@ glig (0.2) unstable; urgency=low
   * debootstrap process splited in various "apt-get install ..."
   * sub start-stop-daemon by an empty script during the install
 
- -- Carlos Parra Camargo <cparra@emergya.info>  Tue, 28 Nov 2006 19:40:37 +0100
+ -- Carlos Parra Camargo <cparra@emergya.es>  Tue, 28 Nov 2006 19:40:37 +0100
 
 glig (0.1) unstable; urgency=low
 
