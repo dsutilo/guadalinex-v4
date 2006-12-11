@@ -3,7 +3,7 @@ Section: misc
 Priority: optional
 Maintainer: Juan Jesús Ojeda Croissier <jojeda@emergya.es>
 Build-Depends: debhelper (>> 4.2.0)
-Standards-Version: 3.6.2
+Standards-Version: 3.7.2
 
 Package: casper-guada
 Architecture: any
