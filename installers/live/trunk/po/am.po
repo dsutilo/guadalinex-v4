@@ -18,10 +18,10 @@ msgstr ""
 
 #: ../desktop/ubiquity-gtkui.desktop.in.h:1
 #: ../desktop/ubiquity-kdeui.desktop.in.h:1
-msgid "Install __DISTNAME__"
-msgstr "ትከል __DISTNAME__"
+msgid "Install"
+msgstr "ትከል"
 
 #: ../desktop/ubiquity-gtkui.desktop.in.h:2
 #: ../desktop/ubiquity-kdeui.desktop.in.h:2
-msgid "Install __DISTNAME__ permanently to your hard disk"
+msgid "Install this system permanently to your hard disk"
 msgstr "ይህንን የአስሊ ስርዓት በቋሚነት ትከል"
