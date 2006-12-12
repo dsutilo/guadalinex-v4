@@ -1,6 +1,6 @@
 Source: guadalinex-pregrub-message
 Section: debian-installer
-Priority: standard
+Priority: extra
 Maintainer: Carlos Parra Camargo <cparra@emergya.es> 
 Build-Depends: po-debconf, debhelper (>= 4.2)
 Standards-Version: 3.7.2
@@ -9,6 +9,8 @@ Package: guadalinex-pregrub-message
 XC-Package-Type: udeb
 XB-Installer-Menu-Item: 72
 Architecture: any
+Priority: standard
 Depends: debconf
 Description: shows a message before grub
  It show a explaining message before grub
+

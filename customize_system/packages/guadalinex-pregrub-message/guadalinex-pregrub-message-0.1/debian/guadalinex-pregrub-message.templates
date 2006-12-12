@@ -1,5 +1,9 @@
+Template: guadalinex-pregrub-message/title
+Type: title
+_Description: Gestor de arranque
+
 Template: guadalinex-pregrub-message/pregrub-message
 Type: note
-_Description: Gestor de arranque
+_Description: Aviso 
  A continuación se instalará el gestor de arranque. Dicho programa
  detectará y le permitirá iniciar otros sistemas operativos.
