@@ -39,8 +39,7 @@ class Steps:
     def __init__(self):
 	# Load preseed file
         if os.path.exists(DEFAULT_PRESEED_FILE):
-	    preseed_file = os.file(DEFAULT_PRESEED_FILE)
-	    os.system("debconf-set-default "+DEFAULT_PRESEED_FILE)
+	    os.system("debconf-set-selections "+DEFAULT_PRESEED_FILE)
 	
 	db = DebconfCommunicator("ubiquity")
 
