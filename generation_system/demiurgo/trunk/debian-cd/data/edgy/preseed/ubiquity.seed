@@ -1,0 +1,23 @@
+ubiquity	languagechooser/language-name	select	Spanish
+ubiquity	languagechooser/language-name-fb	select	Spanish
+ubiquity	countrychooser/shortlist	select	ES
+ubiquity	countrychooser/countryname	select	Spain
+ubiquity	console-keymaps-at/keymap	select	es
+ubiquity	partman-auto/choose_recipe	select	60guadalinex
+ubiquity	partman-auto/expert_recipe_file	string	/lib/partman/recipes/60guadalinex
+ubiquity	localechooser/supported-locales	multiselect	es_ES.UTF-8, en_US.UTF-8
+
+ubiquity	tzconfig/gmt	boolean	false
+ubiquity	time/zone	select	Europe/Madrid
+
+ubiquity	ubiquity/stepLanguage	boolean	true
+ubiquity	ubiquity/stepLocation	boolean	true
+ubiquity	ubiquity/stepKeyboardConf	boolean	true
+
+ubiquity	debian-installer/consoledisplay	string kbd=lat0-sun16(utf8)
+ubiquity	debian-installer/country	string ES
+ubiquity	debian-installer/language	string es
+ubiquity	debian-installer/locale	select	es_ES.UTF-8
+
+console-setup	console-setup/layout	select	Spain
+console-setup	console-setup/variant	select	Spain
