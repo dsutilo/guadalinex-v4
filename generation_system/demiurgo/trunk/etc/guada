@@ -5,3 +5,5 @@
 export DERIVATIVE="guadalinex"
 export DERIVATIVE_CN="toro"
 export MIRROR_ROOT="/var/mirror"
+export SVN_ROOT="/var/guadalinexv4"
+export IMAGEOFFICIAL="beta1"
