@@ -2,11 +2,15 @@ Source: synce-trayicon
 Section: unknown
 Priority: optional
 Maintainer: Ghe Rivero <ghernando@yaco.es>
-Build-Depends: debhelper (>= 5), autotools-dev
+Build-Depends: debhelper (>= 5), autotools-dev, libgnome2-dev, libgnomeui-dev
 Standards-Version: 3.7.2
 
 Package: synce-trayicon
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: tray icon for use with gnome and synce 
- tray icon for use with gnome and synce
+Description: SynCE: Tray icon for GNOME 2
+ synce-trayicon is part of the SynCE project:
+
+  http://synce.sourceforge.net/
+
+ This application shows when a device is connected.
