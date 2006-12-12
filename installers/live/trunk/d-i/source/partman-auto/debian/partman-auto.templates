@@ -99,6 +99,11 @@ Type: text
 # TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 _Description: Separate /home partition
 
+Template: partman-auto/text/guadalinex_scheme
+Type: text
+# TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
+_Description: Guadalinex partitions scheme
+
 Template: partman-auto/text/multi_scheme
 Type: text
 # TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters

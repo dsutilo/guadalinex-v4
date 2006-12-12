@@ -184,6 +184,13 @@ msgstr "Separar la partición /home"
 #. Description
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:105
+msgid "Guadalinex partitions scheme"
+msgstr "Esquema de particiones de Guadalinex"
+
+#. Type: text
+#. Description
+#. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
+#: ../partman-auto.templates:105
 msgid "Separate /home, /usr, /var, and /tmp partitions"
 msgstr "Separar particiones /home, /usr/, /var y /tmp"
 
