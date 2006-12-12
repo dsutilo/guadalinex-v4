@@ -1,50 +1,30 @@
 #!/bin/sh
 
+EXAMPLE_PATH="/usr/share/guadalinex-noodle/"
 USERNAME=`whoami`
+MULTISYNC="${HOME}/.multisync/"
 
-[ -e $HOME ] && cd $HOME || exit 1
+[ -e $HOME ] || exit 1
 
-[ ! -e .multisync ] &&  mkdir .multisync
+[ ! -e ${MULTISYNC} ] &&  mkdir ${MULTISYNC}
 
-cd .multisync
+[ ! -e "${MULTISYNC}/old" ] && mkdir ${MULTISYNC}/old
 
-[ ! -e "old" ] && mkdir old
+[ -e "${MULTISYNC}/1" ] && mv ${MULTISYNC}/1 ${MULTISYNC}/old/1.`date +%Y%m%e_%H%M`
 
-[ -e "1" ] && mv 1 old/1.`date +%Y%m%e_%H%M`
+mkdir ${MULTISYNC}/1
 
-mkdir 1 && cd 1
-
-echo "remoteclient = synce-plugin
-localclient = evolution2-sync
-syncinterval = 1800
-dwelltime = 5
-manualonly = yes
-reconninterval = 10
-object_types = 0x7
-syncsound =
-welcomesound =
-displayname =
-playsyncsound = no
-playwelcomesound = no
-filter = 1,1,1,\"CATEGORIES\",\"*\"
-filter = 1,2,1,\"CATEGORIES\",\"*\"
-filter = 2,1,1,\"CATEGORIES\",\"*\"
-filter = 2,2,1,\"CATEGORIES\",\"*\"
-filter = 4,1,1,\"CATEGORIES\",\"*\"
-filter = 4,2,1,\"CATEGORIES\",\"*\"
-duplicatemode = 0" > syncpair
-
-echo "<?xml version=\"1.0\"?>
-<config><adress_path>file://$HOME/.evolution/addressbook/local/system</adress_path><calendar_path>file://$HOME/.evolution/calendar/local/system</calendar_path><tasks_path>file://$HOME/.evolution/tasks/local/system</tasks_path></config>" > localsettings
-
-chown -R $USERNAME.$USERNAME $HOME/.multisync
 
 if [ ! `pgrep -u $USER vdccm` ]
 then
 	vdccm
 fi
+cp ${EXAMPLE_PATH}/vdccm.desktop $HOME/.config/autostart
 
-cp /usr/share/guadalinex-noodle/vdccm.desktop $HOME/.config/autostart
+sed "s#__HOME__#${HOME}#g" ${EXAMPLE_PATH}/localsettings > ${HOME}/.multisync/1/localsettings
+cp ${EXAMPLE_PATH}/syncpair ${HOME}/.multisync/1/syncpair
+
+chown -R $USERNAME.$USERNAME $HOME/.multisync
 
 touch $HOME/.psuite
 
