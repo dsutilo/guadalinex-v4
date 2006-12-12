@@ -174,8 +174,8 @@ static void menu_kcemirror (GtkWidget *button, EggTrayIcon *icon)
 
 static void menu_sync (GtkWidget *button, EggTrayIcon *icon)
 {
-  char *argv[1] = {
-    "multisync"
+  char *argv[2] = {
+    "multisync", "-q"
   };
   if (gnome_execute_async(NULL,2, argv) == -1) {
     synce_error_dialog(_("Can't sync with the  PDA,\nmake sure you have multisync installed"));
