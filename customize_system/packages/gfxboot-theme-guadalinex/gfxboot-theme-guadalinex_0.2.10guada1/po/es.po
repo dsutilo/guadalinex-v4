@@ -290,13 +290,11 @@ msgstr "Todo"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu
-#, fuzzy
 msgid "^Start or install Guadalinex"
 msgstr "^Iniciar o instalar Guadalinex"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu_xforcevesa
-#, fuzzy
 msgid "Start Guadalinex in safe ^graphics mode"
 msgstr "Iniciar Guadalinex en modo ^gráfico seguro"
 
