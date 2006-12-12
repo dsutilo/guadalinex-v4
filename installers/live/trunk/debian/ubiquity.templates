@@ -1,3 +1,48 @@
+Template: ubiquity/stepLanguage
+Type: boolean
+Default: false
+Description: jump stepLanguage in ubiquity instalation process
+
+Template: ubiquity/stepLocation
+Type: boolean
+Default: false
+Description: jump stepLocation in ubiquity instalation process
+
+Template: ubiquity/stepKeyboardConf
+Type: boolean
+Default: false
+Description: jump stepKeyboardConf in ubiquity instalation process
+
+Template: ubiquity/stepUserInfo
+Type: boolean
+Default: false
+Description: jump stepUserInfo in ubiquity instalation process
+
+Template: ubiquity/stepPartDisk
+Type: boolean
+Default: false
+Description: jump stepPartDisk in ubiquity instalation process
+
+Template: ubiquity/stepPartAuto
+Type: boolean
+Default: false
+Description: jump stepPartAuto in ubiquity instalation process
+
+Template: ubiquity/stepPartAdvanced
+Type: boolean
+Default: false
+Description: jump stepPartAdvanced in ubiquity instalation process
+
+Template: ubiquity/stepPartMountpoints
+Type: boolean
+Default: false
+Description: jump stepPartMountpoints in ubiquity instalation process
+
+Template: ubiquity/stepReady
+Type: boolean
+Default: false
+Description: jump stepReady in ubiquity instalation process
+
 Template: debian-installer/framebuffer
 Type: boolean
 Default: true

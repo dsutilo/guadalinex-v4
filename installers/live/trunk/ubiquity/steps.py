@@ -46,15 +46,15 @@ class Steps:
 		db.command(line)
 	
 	self.BREADCRUMB_STEPS_PRESEED = {
-	    "stepLanguage": db.exist("ubiquity/stepLanguage")=="true" and db.fget("ubiquity/stepLanguage","seen")=="true",        
-	    "stepLocation": db.exist("ubiquity/stepLocation")=="true" and db.fget("ubiquity/stepLocation","seen")=="true",        
-	    "stepKeyboardConf": db.exist("ubiquity/stepKeyboardConf")=="true" and db.fget("ubiquity/stepKeyboardConf","seen")=="true",
-	    "stepUserInfo": db.exist("ubiquity/stepUserInfo")=="true" and db.fget("ubiquity/stepUserInfo","seen")=="true",        
-	    "stepPartDisk": db.exist("ubiquity/stepPartDisk")=="true" and db.fget("ubiquity/stepPartDisk","seen")=="true",        
-	    "stepPartAuto": db.exist("ubiquity/stepPartAuto")=="true" and db.fget("ubiquity/stepPartAuto","seen")=="true",        
-	    "stepPartAdvanced": db.exist("ubiquity/stepPartAdvanced")=="true" and db.fget("ubiquity/stepPartAdvanced","seen")=="true",
-	    "stepPartMountpoints": db.exist("ubiquity/stepMountpoints")=="true" and db.fget("ubiquity/stepMountpoints","seen")=="true",  
-	    "stepReady": db.exist("ubiquity/stepReady")=="true" and db.fget("ubiquity/stepReady","seen")=="true"               
+	    "stepLanguage": db.exist("ubiquity/stepLanguage")=="true" and db.get("ubiquity/stepLanguage")=="true",        
+	    "stepLocation": db.exist("ubiquity/stepLocation")=="true" and db.get("ubiquity/stepLocation")=="true",        
+	    "stepKeyboardConf": db.exist("ubiquity/stepKeyboardConf")=="true" and db.get("ubiquity/stepKeyboardConf")=="true",
+	    "stepUserInfo": db.exist("ubiquity/stepUserInfo")=="true" and db.get("ubiquity/stepUserInfo")=="true",        
+	    "stepPartDisk": db.exist("ubiquity/stepPartDisk")=="true" and db.get("ubiquity/stepPartDisk")=="true",        
+	    "stepPartAuto": db.exist("ubiquity/stepPartAuto")=="true" and db.get("ubiquity/stepPartAuto")=="true",        
+	    "stepPartAdvanced": db.exist("ubiquity/stepPartAdvanced")=="true" and db.get("ubiquity/stepPartAdvanced")=="true",
+	    "stepPartMountpoints": db.exist("ubiquity/stepMountpoints")=="true" and db.get("ubiquity/stepMountpoints")=="true",  
+	    "stepReady": db.exist("ubiquity/stepReady")=="true" and db.get("ubiquity/stepReady")=="true"               
 	}
 	db.shutdown()
 	self.BREADCRUMB_STEPS = {

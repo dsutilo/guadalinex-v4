@@ -31,5 +31,5 @@
 # Created by Antonio Olmo <aolmo#emergya._info> on 7 oct 2005.
 
 MINIMAL_PARTITION_SCHEME = {'swap':  205,
-                            'root': 2048,
+                            'root': 3072,
                             'home':  512}
