@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# «gtkui» - GTK user interface
+# «steps» - Steps management library
 #
 # Copyright (C) 2005 Junta de Andalucía
 # Copyright (C) 2005, 2006 Canonical Ltd.
@@ -27,6 +27,7 @@
 ##################################################################################
 
 import debconf
+import os
 try:
     from debconf import DebconfCommunicator
 except ImportError:
