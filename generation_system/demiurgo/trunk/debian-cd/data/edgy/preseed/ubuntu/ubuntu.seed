@@ -10,3 +10,5 @@ languagechooser		languagechooser/language-name	string Spanish
 netcfg			netcfg/get_hostname		string guadalinex
 tvtime 			tvtime/normtvtime/norm		string PAL
 tvtime 			tvtime/frequencies-pal		string Europe
+clock-setup		clock-setup/utc			boolean false
+choose-mirror		mirror/http/proxy		string ""
