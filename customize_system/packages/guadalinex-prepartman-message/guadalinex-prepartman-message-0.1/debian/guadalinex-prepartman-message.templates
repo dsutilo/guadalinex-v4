@@ -1,6 +1,10 @@
+Template: guadalinex-first-message/title
+Type: title
+_Description: Ayuda al particionado
+
 Template: guadalinex-prepartman-message/prepartman-message
 Type: note
-_Description: Ayuda al particionado
+_Description: Aviso 
  Guadalinex necesita un mínimo de 3 GB de espacio en su disco duro.
  Puede utilizar todo el disco (en un ordenador nuevo, por ejemplo) o dividir
  el disco en partes (para separar varios sistemas operativos).

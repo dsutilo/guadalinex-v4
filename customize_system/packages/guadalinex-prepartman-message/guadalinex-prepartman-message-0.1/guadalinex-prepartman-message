@@ -8,6 +8,7 @@ log() {
     logger -t guadalinex-prepartman-message "info: $@"
 }
 
+db_settitle guadalinex-prepartman-message/title
 db_input critical guadalinex-prepartman-message/prepartman-message || [ $? -eq 30 ]
 db_go
 
