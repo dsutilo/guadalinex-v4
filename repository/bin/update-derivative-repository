@@ -37,7 +37,7 @@ done
 # Go!!!
 apt-ftparchive -c apt.conf generate toro.conf 
 apt-ftparchive -c apt.conf generate toro-di.conf 
-apt-ftparchive -c apt.conf sources $TORO_POOL > $DIST_TORO/source/Sources
+#apt-ftparchive -c apt.conf sources $TORO_POOL > $DIST_TORO/source/Sources
 apt-ftparchive -c apt.conf release $DIST_EDGY > $DIST_EDGY/Release
 
 
