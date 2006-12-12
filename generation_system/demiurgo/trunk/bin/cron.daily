@@ -1,15 +1,33 @@
 #!/bin/bash
 set -e
 
-# If we receive this arg, we won't regenerate all the packages under svn 
-[ "$1" == "--no-gen-pkgs" ] && export REGENERATE_REPO=0
-
 export CDIMAGE_ROOT="${CDIMAGE_ROOT:-/var/cdimage}"
 . "$CDIMAGE_ROOT/etc/config"
 . "$CDIMAGE_ROOT/etc/guada"
+. "$CDIMAGE_ROOT/bin/functions.sh"
 
 PATH="$CDIMAGE_ROOT/bin:${PATH:+:$PATH}"
 
 export CDIMAGE_INSTALL=1
+export FLAVOUR="di" 
+
+for arg in $@
+do
+    # If we receive this arg, we won't regenerate all the packages under svn 
+    if [ "$arg" == "--no-gen-pkgs" ]; then
+        export REGENERATE_REPO=0
+    fi
+    if [ "$arg" == "--official" ]; then
+        export OFFICIAL_IMAGES=0
+    fi
+done
+
+if [ -z "$OFFICIAL_IMAGES" ]; then
+    MEDIA_VERSION=$(get_repo_version $SVN_ROOT)
+else
+    MEDIA_VERSION=$IMAGEOFFICIAL
+fi
+
+export MEDIA_VERSION
 
 build-image-set daily
