@@ -103,7 +103,7 @@ esac
 CAPPROJECT="Guadalinex"
 CAPCODENAME="Toro"
 DEBVERSION="v4"
-OFFICIAL="Alpha"
+OFFICIAL=$IMAGEOFFICIAL
 
 # By default use Debian installer packages from $CODENAME
 if [ ! "$DI_CODENAME" ]
