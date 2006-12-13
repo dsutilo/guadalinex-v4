@@ -84,6 +84,11 @@ Type: text
 # TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 _Description: Manually edit partition table
 
+Template: partman-auto/text/do_nothing_partitioning
+Type: text
+# TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
+_Description: Use actual partition table
+
 Template: partman-auto/text/auto_free_space
 Type: text
 # TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters

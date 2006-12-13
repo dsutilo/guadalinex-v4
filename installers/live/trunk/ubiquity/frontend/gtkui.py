@@ -943,6 +943,10 @@ class Wizard:
         if self.manual_choice is None or choice == self.manual_choice:
             self.gparted_loop()
             self.steps.next_page()
+	elif choice == self.do_nothing_choice:
+            self.manual_partitioning = False
+            self.steps.set_current_page(self.steps.page_num(self.stepPartMountpoints))
+            self.do_nothing_to_mountpoints()
         else:
             # TODO cjwatson 2006-01-10: extract mountpoints from partman
             self.manual_partitioning = False
@@ -978,6 +982,95 @@ class Wizard:
         else:
             self.gparted_loop()
 
+
+    def do_nothing_to_mountpoints(self):
+        """Processing do nothing to mountpoints step tasks."""
+
+        # Set up list of partition names for use in the mountpoints table.
+        self.partition_choices = []
+        # The first element is empty to allow deselecting a partition.
+        self.partition_choices.append(' ')
+        for partition in get_partitions():
+            partition = '/dev/' + partition
+            label = part_label(partition)
+            self.part_labels[partition] = label
+            self.part_devices[label] = partition
+            self.partition_choices.append(partition)
+
+        # Reinitialise the mountpoints table.
+        for child in self.mountpoint_table.get_children():
+            if child.get_name() not in ('mountpoint_label', 'size_label',
+                                        'device_label', 'format_label'):
+                self.mountpoint_table.remove(child)
+        self.mountpoint_widgets = []
+        self.size_widgets = []
+        self.partition_widgets = []
+        self.format_widgets = []
+
+        self.add_mountpoint_table_row()
+
+        # Try to get some default mountpoint selections.
+        self.size = get_sizes()
+        selection = get_default_partition_selection(
+            self.size, self.gparted_fstype, self.auto_mountpoints)
+
+        # Setting a default partition preselection
+        if len(selection.items()) == 0:
+            self.allow_go_forward(False)
+        else:
+            # Setting default preselection values into ComboBox widgets and
+            # setting size values. In addition, the next row is shown if
+            # they're validated.
+            for mountpoint, partition in selection.items():
+                if partition.split('/')[2] not in self.size:
+                    syslog.syslog(syslog.LOG_WARNING,
+                                  "No size available for partition %s; "
+                                  "skipping" % partition)
+                    continue
+                if partition not in self.partition_choices:
+                    # TODO cjwatson 2006-05-27: I don't know why this might
+                    # happen, but it does
+                    # (https://launchpad.net/bugs/46910). Figure out why. In
+                    # the meantime, ignoring this partition is better than
+                    # crashing.
+                    syslog.syslog(syslog.LOG_WARNING,
+                                  "Partition %s not in /proc/partitions?" %
+                                  partition)
+                    continue
+                if mountpoint in self.mountpoint_choices:
+                    self.mountpoint_widgets[-1].set_active(
+                        self.mountpoint_choices.index(mountpoint))
+                else:
+                    self.mountpoint_widgets[-1].child.set_text(mountpoint)
+                self.size_widgets[-1].set_text(
+                    self.set_size_msg(partition))
+                self.partition_widgets[-1].set_active(
+                    self.partition_choices.index(partition))
+                if (mountpoint in ('swap', '/', '/usr', '/var', '/boot') or
+                    partition in self.gparted_fstype):
+                    self.format_widgets[-1].set_active(True)
+                else:
+                    self.format_widgets[-1].set_active(False)
+                if partition not in self.gparted_fstype:
+                    self.format_widgets[-1].set_sensitive(True)
+                if len(get_partitions()) > len(self.partition_widgets):
+                    self.add_mountpoint_table_row()
+                else:
+                    break
+
+        # For some reason, GtkTable doesn't seem to queue a resize itself
+        # when you attach children to it.
+        self.mountpoint_table.queue_resize()
+
+        # We defer connecting up signals until now to avoid the changed
+        # signal firing while we're busy populating the table.
+        for mountpoint in self.mountpoint_widgets:
+            mountpoint.connect("changed", self.on_list_changed)
+        for partition in self.partition_widgets:
+            partition.connect("changed", self.on_list_changed)
+
+        self.mountpoint_error_reason.hide()
+        self.mountpoint_error_image.hide()
 
     def gparted_to_mountpoints(self):
         """Processing gparted to mountpoints step tasks."""
@@ -1290,7 +1383,12 @@ class Wizard:
             self.steps.set_current_page(self.steps.page_num(self.stepPartDisk))
             changed_page = True
         elif step == "stepPartMountpoints":
-            self.gparted_loop()
+            choice = self.get_autopartition_choice()
+            if self.manual_choice is None or choice == self.manual_choice:
+                self.gparted_loop()
+	    elif choice == self.do_nothing_choice:
+                self.steps.set_current_page(self.steps.page_num(self.stepPartAuto))
+                changed_page = True
         elif step == "stepReady":
             self.next.set_label("gtk-go-forward")
             self.steps.set_current_page(self.previous_partitioning_page)
@@ -1592,11 +1690,12 @@ class Wizard:
                 return widget.get_label()
 
 
-    def set_autopartition_choices (self, choices, resize_choice, manual_choice):
+    def set_autopartition_choices (self, choices, resize_choice, manual_choice, do_nothing_choice):
         for child in self.autopartition_vbox.get_children():
             self.autopartition_vbox.remove(child)
 
         self.manual_choice = manual_choice
+        self.do_nothing_choice = do_nothing_choice
         firstbutton = None
         for choice in choices:
             button = gtk.RadioButton(firstbutton, choice, False)

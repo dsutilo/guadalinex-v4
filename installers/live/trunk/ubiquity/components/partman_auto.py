@@ -29,6 +29,7 @@ class PartmanAuto(FilteredCommand):
         super(PartmanAuto, self).__init__(frontend)
         self.resize_desc = ''
         self.manual_desc = ''
+        self.do_nothing_desc = ''
 
     def prepare(self):
         # If an old parted_server is still running, clean it up.
@@ -146,8 +147,10 @@ class PartmanAuto(FilteredCommand):
             self.resize_allowed = True
             self.manual_desc = \
                 self.description('partman-auto/text/custom_partitioning')
+            self.do_nothing_desc = \
+                self.description('partman-auto/text/do_nothing_partitioning')
             if not self.frontend.set_disk_choices(self.choices(question),
-                                                  self.manual_desc):
+                                                  self.manual_desc,self.do_nothing_desc):
                 # disk selector not implemented; just use first disk
                 return self.succeeded
 
@@ -165,6 +168,8 @@ class PartmanAuto(FilteredCommand):
                 self.description('partman-auto/text/resize_use_free')
             self.manual_desc = \
                 self.description('partman-auto/text/custom_partitioning')
+            self.do_nothing_desc = \
+                self.description('partman-auto/text/do_nothing_partitioning')
             choices = self.choices(question)
             if not self.resize_allowed:
                 try:
@@ -172,7 +177,7 @@ class PartmanAuto(FilteredCommand):
                 except ValueError:
                     pass
             self.frontend.set_autopartition_choices(
-                choices, self.resize_desc, self.manual_desc)
+                choices, self.resize_desc, self.manual_desc, self.do_nothing_desc)
             if self.resize_desc in choices:
                 # The resize option is available, so we need to present the
                 # user with an accurate resize slider before passing control
@@ -254,7 +259,7 @@ class PartmanAuto(FilteredCommand):
                 self.preseed('partman-auto/automatically_partition',
                              autopartition_choice)
 
-            if autopartition_choice == self.manual_desc:
+            if autopartition_choice == self.manual_desc or autopartition_choice == self.do_nothing_desc:
                 # Back up all the way out.
                 self.succeeded = False
                 self.done = True
