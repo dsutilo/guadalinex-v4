@@ -1,0 +1,9 @@
+a4d36175103326a279d229453a46b5f1  usr/bin/lemurae
+bc75f83e42789fd501164c1c5ce899eb  usr/share/lemurae/lemurae.py
+711fc0fbe5b556a667d3a397ec4371cd  usr/share/lemurae/lemurae.glade
+2df6c40d926fc83d50b061d32594265b  usr/share/pixmaps/lemurae.svg
+595b6ba945a39d02d7a1dc56e2ff64aa  usr/share/applications/lemurae.desktop
+081233a17e94734afc30e1a4079689c2  usr/share/doc/lemurae/README
+eddfaf3a77802850d42e8e6e30e993d6  usr/share/doc/lemurae/README.Debian
+488728927608ace4670091cb245a19ca  usr/share/doc/lemurae/copyright
+891ffe2902682715f611c8f77302e2d3  usr/share/doc/lemurae/changelog.Debian.gz
