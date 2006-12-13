@@ -1,0 +1,5 @@
+#!/bin/sh
+
+su gensys -c ./cron.daily
+glig
+su gensys -c ./cron.daily-live
