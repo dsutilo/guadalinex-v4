@@ -89,6 +89,12 @@ class Wizard:
 
     def __init__(self, distro):
         sys.excepthook = self.excepthook
+	db = DebconfCommunicator("ubiquity")
+	self.locale = db.get("debian-installer/locale")
+	db.shutdown()
+
+	if self.locale == "":
+		self.locale = None
 
         # declare attributes
         self.distro = distro
@@ -132,6 +138,12 @@ class Wizard:
         self.allowed_go_forward = True
 
         self.laptop = ex("laptop-detect")
+
+        # set default keyboard
+        dbfilter = console_setup.ConsoleSetup(self, DebconfCommunicator('ubiquity',
+                                                               cloexec=True))
+        dbfilter.cleanup()
+        dbfilter.db.shutdown()
 
         # set default language
         dbfilter = language.Language(self, DebconfCommunicator('ubiquity',
