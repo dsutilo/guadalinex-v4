@@ -3,20 +3,20 @@ hermeshardware (0.3) unstable; urgency=low
   * Adding translation support.
   * Merge branches/i18n.
 
- -- Gumersindo Coronel Pérez <goomerko@Zeus2>  Wed, 13 Dec 2006 16:41:28 +0100
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Wed, 13 Dec 2006 16:41:28 +0100
 
 hermeshardware (0.2) unstable; urgency=low
 
   * Improve volume listeners. 
 
- -- Gumersindo Coronel Pérez <goomerko@Zeus2>  Wed, 13 Dec 2006 16:40:36 +0100
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Wed, 13 Dec 2006 16:40:36 +0100
 
 hermeshardware (0.1-8) unstable; urgency=low
 
   * Dapper compatible
   * -
 
- -- Gumersindo Coronel Pérez <goomerko@Zeus2>  Wed, 13 Dec 2006 16:40:32 +0100
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Wed, 13 Dec 2006 16:40:32 +0100
 
 hermeshardware (0.1-7) unstable; urgency=low
 
