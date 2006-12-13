@@ -16,4 +16,4 @@ tests/test_notify.py
 utils/captureloggui.glade
 utils/hermes_notifier.py
 utils/synaptic.py
-
+hermes_hardware.py

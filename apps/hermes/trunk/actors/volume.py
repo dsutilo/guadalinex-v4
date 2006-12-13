@@ -1,4 +1,4 @@
-#-*- coding: utf8 -*-
+#-*- coding: utf-8 -*-
 
 #Módulo volumeactor- Módulo que implementa el "actor hardware" para los
 #dispositivos de volumen (dispositivos que se montan como unidades de disco) 
@@ -77,7 +77,7 @@ class Actor (DeviceActor):
                     def open_volume():
                         os.system('nautilus ' + mount_point) 
 
-                    self.message_render.show("Almacenamiento", 
+                    self.message_render.show(_("Storage"), 
                         _("Device mounted on"), VOLUMEICON,
                         actions = {mount_point: open_volume})
 
@@ -86,7 +86,7 @@ class Actor (DeviceActor):
                             listener.volume_mounted(mount_point)
 
                 else:
-                    self.message_render.show("Almacenamiento", 
+                    self.message_render.show(_("Storage"),
                             _("Device unmounted"), VOLUMEICON) 
 
                     for listener in self.listeners:

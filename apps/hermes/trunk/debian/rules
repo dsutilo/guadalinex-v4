@@ -28,8 +28,8 @@ install: build
 	dh_installdirs
 
 	# Add here commands to install the package into debian/hermes.
-#	$(MAKE) install DESTDIR=$(CURDIR)/debian/hermes
-	dh_install actors doc img utils hermes_hardware.py README /usr/share/hermes
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/hermeshardware
+	dh_install defs.py actors doc img utils hermes_hardware.py README /usr/share/hermes
 	dh_install hermeshardware hermesdruid /usr/bin
 	dh_install hermesdruid.desktop /usr/share/applications/
 	
@@ -50,7 +50,7 @@ binary-arch: build install
 	dh_installchangelogs 
 	dh_installdocs
 	dh_installexamples
-#	dh_install
+	dh_install
 	dh_installman
 	dh_link
 	dh_strip

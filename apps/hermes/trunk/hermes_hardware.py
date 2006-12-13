@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*- coding: utf8 -*- 
+# -*- coding: utf-8 -*- 
 
 # Authors: 
 #     Gumersindo Coronel Pérez (gcoronel) <gcoronel@emergya.es> 
@@ -61,6 +61,7 @@ import sys
 import traceback
 import defs
 
+from gettext import gettext as _
 
 # Internacionalización
 import gettext, locale
@@ -157,15 +158,16 @@ class DeviceListener:
             except:
                 self.logger.warning(str(traceback.format_exc()))
 
-            from actors.deviceactor import DeviceActor
-            if actor.__class__ == DeviceActor:
-                if properties.has_key('info.product') and \
-                        properties['info.product'] != '':
-                    product = properties['info.product']
-                    self.message_render.show_info("Información",
-                            "Dispositivo CONECTADO:\n %s" % (product,))
-                else:
-                    self.message_render.show_warning("Aviso", "Dispositivo detectado, pero no identificado") 
+            #from actors.deviceactor import DeviceActor
+            #if actor.__class__ == DeviceActor:
+            #    if properties.has_key('info.product') and \
+            #            properties['info.product'] != '':
+            #        product = properties['info.product']
+            #        self.message_render.show_info(_("Information"),
+            #            _("Device CONNECTED:") + "\:n %s" % (product,))
+            #    else:
+            #        self.message_render.show_warning(_("Warning"), 
+            #                _("Device detected, but unidentificated"))
 
 
     def on_device_removed(self, udi, *args): 
@@ -182,23 +184,23 @@ class DeviceListener:
             print
             print
             print "#############################################"
-            print "DESCONEXIÓN  ################################"
+            print "DISCONNECTED ################################"
             print "#############################################"
             self.__print_properties(disp.properties)
 
-            from actors.deviceactor import DeviceActor
-            if disp.__class__ == DeviceActor:
-                properties = disp.properties
-                if properties.has_key('info.product') and \
-                        properties['info.product'] != '':
-                    product = properties['info.product']
-                    self.message_render.show_info("Información", 
-                            "Dispositivo DESCONECTADO:\n %s" % product)
+            #from actors.deviceactor import DeviceActor
+            #if disp.__class__ == DeviceActor:
+            #    properties = disp.properties
+            #    if properties.has_key('info.product') and \
+            #            properties['info.product'] != '':
+            #        product = properties['info.product']
+            #        self.message_render.show_info(_("Information"), 
+            #                _("Device DISCONNECTED:") + "\n %s" % product)
 
             del self.udi_dict[udi]
         else:
-            self.message_render.show_warning("Aviso", "Dispositivo desconectado")
-
+            self.message_render.show_warning(_("Warning"),
+                    _("Device REMOVED."))
 
     def on_property_modified(self, udi, num, values):
         for ele in values:
@@ -215,7 +217,7 @@ class DeviceListener:
                 print
                 print
                 print "#############################################"
-                print "PROPIEDAD MODIFICADA:"
+                print "MODIFIED PROPERTY:"
                 print "udi:", udi
                 print key, ':', actor.properties[key]
                 print "#############################################"
