@@ -56,19 +56,23 @@ if getattr(dbus, "version", (0, 0, 0)) >= (0, 41, 0):
 import logging
 import gtk
 import os
+import os.path
 import sys
 import traceback
+import defs
 
 
 # Internacionalización
 import gettext, locale
 
-gettext.bindtextdomain('hermes-hardware', abspath(join(hermes.defs.DATA_DIR, "locale")))
+gettext.bindtextdomain('hermes-hardware', os.path.abspath(\
+        os.path.join(defs.DATA_DIR, "locale")))
 if hasattr(gettext, 'bind_textdomain_codeset'):
         gettext.bind_textdomain_codeset('hermes-hardware','UTF-8')
 gettext.textdomain('hermes-hardware')
 
-locale.bindtextdomain('hermes-harware', abspath(join(hermes.defs.DATA_DIR, "locale")))
+locale.bindtextdomain('hermes-harware', os.path.abspath(\
+        os.path.join(defs.DATA_DIR, "locale")))
 if hasattr(locale, 'bind_textdomain_codeset'):
         locale.bind_textdomain_codeset('hermes-hardware','UTF-8')
 locale.textdomain('hermes-hardware')
