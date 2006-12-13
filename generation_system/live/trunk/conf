@@ -1,6 +1,6 @@
 # Define variables
 mirror="file:///var/mirror/ubuntu"
-components="main,toro"
+components="main,toro,universe,multiverse"
 live_dir="/var/cdimage/live/edgy/ubuntu/current/"
 
 sources="/tmp/sources/"
