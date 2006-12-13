@@ -3,7 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Gumersindo Coronel Pérez <gcoronel@emergya.info>
 Build-Depends: debhelper (>= 4.0.0), python-gnome2-dev, python-gtk2-dev, python-all-dev, gnome-common
-Standards-Version: 3.6.1
+Standards-Version: 3.7.2
 
 Package: hermeshardware
 Architecture: any
