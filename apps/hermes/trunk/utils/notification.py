@@ -10,8 +10,34 @@ import time
 if getattr(dbus, "version", (0, 0, 0)) >= (0, 41, 0):
     import dbus.glib
 
-
-class NotificationDaemon(object):
+class INotification (object):
+    """ Interface for notifications
+    
+    This interface defines methods for notification events.
+    """
+    
+    def show(self, summary, message, icon, actions = {}):
+        raise NotImplementedError
+    
+    
+    def show_info(self, summary, message, actions = {}):
+        raise NotImplementedError
+    
+    
+    def show_warning(self, summary, message, actions = {}):
+        raise NotImplementedError
+    
+    
+    def show_error(self, summary, message, actions = {}):
+        raise NotImplementedError
+    
+    
+    def close(self, nid):
+        raise NotImplementedError
+    
+    
+    
+class NotificationDaemon(INotification):
     """
     This class is a wrapper for notification-daemon program.
     """

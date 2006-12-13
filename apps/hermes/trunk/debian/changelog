@@ -1,3 +1,10 @@
+hermeshardware (0.2) unstable; urgency=low
+
+  * Gettext support.
+  * Volume listeners improvement.
+
+ -- Gumersindo Coronel Pérez <goomerko@Zeus2>  Wed, 13 Dec 2006 12:37:13 +0100
+
 hermeshardware (0.1-8) unstable; urgency=low
 
   * Dapper compatible 
