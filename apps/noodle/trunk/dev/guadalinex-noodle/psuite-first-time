@@ -15,10 +15,6 @@ MULTISYNC="${HOME}/.multisync/"
 mkdir ${MULTISYNC}/1
 
 
-if [ ! `pgrep -u $USER vdccm` ]
-then
-	vdccm
-fi
 cp ${EXAMPLE_PATH}/vdccm.desktop $HOME/.config/autostart
 
 sed "s#__HOME__#${HOME}#g" ${EXAMPLE_PATH}/localsettings > ${HOME}/.multisync/1/localsettings
