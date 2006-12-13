@@ -1,0 +1,27 @@
+# YAML 1.1
+# Fichero de configuración de paquetes de personalización de Guadalinex v4
+
+# Nombre del paquete (minúsculas-separado-con-guiones)
+name: guadalinex-eadmin
+
+# Autor 
+author: Lorenzo Gil Sanchez <lgs@yaco.es>
+
+# Priority
+priority: optional
+
+# Section
+section: misc
+
+# Descripción corta
+shortdesc: "E-Admin support for Guadalinex"
+
+# Descipción larga, las lineas han de estar separadas por "\n "
+longdesc: "This package add support for different hardware and software systems\n needed to communicate with the electronic administration systems \n of Andalucía.\n Initially it just patch libccid conf file tu support C3PO card readers"
+
+# Versión del paquete
+version: 0.1
+
+# Cambios en esta versión
+changes:
+    - Initial release
