@@ -49,6 +49,23 @@ donde "#d0d0d0" es el color que usa isolinux para el texto.
 
 DEFAULT_LANG = es -> Para que aparezca el idioma por defecto en castellano
 
+¿Cómo modificar las opciones disponibles en GFXBOOT?
+====================================================
+
+En GFXBOOT hay que distinguir entre:
+
+- Opciones de arranque (menú):
+
+Estas opciones se extraen de "isolinux.txt", buscando las entradas que comiencen por "menu label". 
+
+Deberán tener su correspondiente cadena en los ficheros de traducciones para que aparezcan en otros idiomas.
+
+Más info: menuconfig.inc en paquete "gfxboot"
+
+- Opciones en la parte inferior (panel):
+
+En los ficheros "boot.config" e "install.config" (FIXME: cuál es la diferencia entre ellos) se incluyen todos los demás componentes que conforman el tema de GFXBOOT. Si hay que modificar algún elemento del panel, habrá que bucear en el código para hacer las modificaciones pertinentes. Por ejemplo, si se desea añadir una nueva opción de accesibilidad habrá que modificar el código de "dia_access.inc" en "gfxboot".
+
 ¿Cómo modificar los textos de ayuda que muestra GFXBOOT e ISOLINUX?
 ===================================================================
 
