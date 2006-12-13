@@ -24,13 +24,12 @@ function retrieve_debian_files ()
 	echo " === Retrieve deb files under $DIR ==="
 	echo
 
+	if [ -n "$(ls $DIR | grep \.udeb\$)" ]; then
+		mv $DIR/*\.udeb $GUADA_PACKAGES
+	fi
 	
 	if [ -n "$(ls $DIR | grep \.deb\$)" ]; then
 		mv $DIR/*\.deb $GUADA_PACKAGES
-	fi
-
-	if [ -n "$(ls $DIR | grep \.udeb\$)" ]; then
-		mv $DIR/*\.udeb $GUADA_PACKAGES
 	fi
 
 	if [ -n "$(ls $DIR | grep \.dsc\$)" ]; then
@@ -86,7 +85,7 @@ do
 			echo " === Going to $TAG_DIR/$TAG_VERSION ... ==="
 			echo
 			cd $TAG_DIR/$TAG_VERSION
-			debuild -uc -us
+			debuild --no-tgz-check -uc -us
 			debclean
 			retrieve_debian_files $TAG_DIR/$TAG_VERSION/..
 			clean_debian_files $TAG_DIR/$TAG_VERSION
@@ -102,7 +101,7 @@ do
 	echo " === Going to $x/.. ... ==="
 	echo
 	cd $x/..
-	debuild -uc -us
+	debuild --no-tgz-check -uc -us
 	debclean
 	retrieve_debian_files $x/../..
 	clean_debian_files $x/../..
