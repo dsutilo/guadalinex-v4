@@ -1,0 +1,12 @@
+[encoding: UTF-8] 
+actors/bluetooth.py
+actors/c3pocardreader.py
+actors/camera.py
+actors/ipod.py
+actors/network.py
+actors/pcmcia.py
+actors/usbdevice.py
+actors/usbmouse.py
+actors/usbprinter.py
+actors/usbscanner.py
+actors/usbwebcam.py
