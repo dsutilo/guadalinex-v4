@@ -1,3 +1,9 @@
+glig (0.4) unstable; urgency=low
+
+  * problems with anacron, stop it inmediatly after his installation. 
+
+ -- Carlos Parra Camargo <cparra@emergya.es>  Wed, 13 Dec 2006 11:41:11 +0100
+
 glig (0.3) unstable; urgency=low
 
   * added casper-guada and ubiquity-casper-guada
