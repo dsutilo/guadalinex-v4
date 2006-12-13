@@ -1,4 +1,6 @@
+
 ¿Cómo modificar el aspecto de GFXBOOT: fondo, color de letras,...?
+==================================================================
 
 * demiurgo/trunk/debian-cd/tools/boot/edgy/boot-i386
 
@@ -46,3 +48,40 @@ donde "#d0d0d0" es el color que usa isolinux para el texto.
 * generation_system/packages/gfxboot-theme-guadalinex/gfxboot-theme-guadalinex_0.2.10guada1/Makefile
 
 DEFAULT_LANG = es -> Para que aparezca el idioma por defecto en castellano
+
+¿Cómo modificar los textos de ayuda que muestra GFXBOOT e ISOLINUX?
+===================================================================
+
+Los textos de ayuda de GFXBOOT e ISOLINUX se ubican en el directorio /isolinux del CD generado y son de la forma:
+
+GFXBOOT:
+
+- en.hlp
+- es.hlp
+- ...
+
+ISOLINUX:
+
+- isolinux.txt
+- f1.txt
+- f2.txt
+- ...
+
+Estos ficheros se obtienen de "debian-installer" durante el proceso de generación. En particular, se encuentran en:
+
+repository/installer-i386/current/images/cdrom/debian-cd_info.tar.gz
+
+Hay que modificarlos dentro de este fichero y el sistema de generación se encargará de su ubicación correcta en la ISO generada.
+
+* Formato de estos ficheros
+
+TODO
+
+¿Cómo añadir aplicaciones e información para Windows?
+=====================================================
+
+Se pueden añadir aplicaciones e información diversas orientadas a Windows, que utilizan "autorun" para lanzarse en dicho sistema operativo.
+
+El procedimiento de cómo hacer lo anterior se explica a continuación:
+
+TODO
