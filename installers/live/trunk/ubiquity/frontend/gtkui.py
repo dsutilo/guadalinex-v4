@@ -174,6 +174,11 @@ class Wizard:
             if isinstance(widget, gtk.Label):
                 widget.set_property('can-focus', False)
 
+        got_intro = self.show_intro()
+        if got_intro:
+	    self.steps_obj.add_step(1,"stepWelcome")
+	self.current_page = self.steps.page_num(self.glade.get_widget(self.steps_obj.get_first_step()))
+
         self.translate_widgets()
 
         self.customize_installer()
@@ -237,7 +242,6 @@ class Wizard:
             sys.exit(1)
 
         # show interface
-        got_intro = self.show_intro()
         self.allow_change_step(True)
 
         # Declare SignalHandler
@@ -254,12 +258,8 @@ class Wizard:
         self.username_insert_text_id = self.username.connect(
             'insert_text', self.on_username_insert_text)
 
-
         # Start the interface
-        if got_intro:
-	    self.steps_obj.add_step(1,"stepWelcome")
-
-        self.steps.set_current_page(self.steps.page_num(self.glade.get_widget(self.steps_obj.get_first_step())))
+        self.steps.set_current_page(self.current_page)
 
         while self.current_page is not None:
             if not self.installing:

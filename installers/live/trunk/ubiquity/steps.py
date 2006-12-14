@@ -72,8 +72,9 @@ class Steps:
 
     def add_step(self,position,stepname):
         for step in [key for key in self.BREADCRUMB_STEPS.keys() if self.BREADCRUMB_STEPS[key]>=position]:
-            BREADCRUMB_STEPS[step] += 1
-        BREADCRUMB_STEPS[stepname] = position
+            self.BREADCRUMB_STEPS[step] += 1
+        self.BREADCRUMB_STEPS[stepname] = position
+	self.BREADCRUMB_STEPS_PRESEED[stepname] = False
 
     def get_total_steps(self):
 	posible_values = []
