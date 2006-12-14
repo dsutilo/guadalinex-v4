@@ -45,6 +45,15 @@ function retrieve_debian_files ()
 	fi
 }
 
+function check_build_depends ()
+{
+	CONTROL=$1
+	echo
+	echo " === Checking and installing if needed build dependencies... ==="
+	echo
+	sudo apt-get -f -y --force-yes install $($MIRROR/bin/list-build-depends $CONTROL)
+}
+
 # Get the 
 cd $SVN_ROOT > /dev/null
 svn up > /tmp/repository-stuff.$USER.$DATE
@@ -85,6 +94,7 @@ do
 			echo " === Going to $TAG_DIR/$TAG_VERSION ... ==="
 			echo
 			cd $TAG_DIR/$TAG_VERSION
+			check_build_depends debian/control
 			debuild --no-tgz-check -uc -us
 			debclean
 			retrieve_debian_files $TAG_DIR/$TAG_VERSION/..
@@ -101,6 +111,7 @@ do
 	echo " === Going to $x/.. ... ==="
 	echo
 	cd $x/..
+	check_build_depends debian/control
 	debuild --no-tgz-check -uc -us
 	debclean
 	retrieve_debian_files $x/../..
