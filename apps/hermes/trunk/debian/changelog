@@ -1,3 +1,9 @@
+hermeshardware (0.3-1) unstable; urgency=low
+
+  * Fixed prefix problem.
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Thu, 14 Dec 2006 13:01:54 +0100
+
 hermeshardware (0.3) unstable; urgency=low
 
   * Adding translation support.
