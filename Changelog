@@ -4,12 +4,12 @@ BETA1 (14/12/06)
 PERSONALICACIÓN Y CONFIGURACIÓN DEL SISTEMA (BRANDING)
 ------------------------------------------------------
 
-- Añadidas multitud de aplicaciones para disponer de un escritorio más parecido al
-final: amsn, amule, avidemux, beagle, byzanz, sudoku, chm, gpaint,
-complementos de gstreamer, gxine, lemurae, liferea, java, network-manager,
+- Añadidas multitud de aplicaciones para disponer de un escritorio más parecido
+al final: amsn, amule, avidemux, beagle, byzanz, sudoku, chm, gpaint, 
+complementos de gstreamer, gxine, lemurae, liferea, java, network-manager, 
 tvtime,...
 - Configuración de Acrobat Reader para que aparezca en castellano
-- Configuración del contenido del home del usuario: directorios
+- Configuración del contenido del home del usuario: directorios 
 predeterminados, etc
 - Añadidos ficheros de ejemplos (de Gv3)
 - Personalizados y traducidos los mensajes principales de GFXBOOT (pantalla de
@@ -46,11 +46,11 @@ INSTALADOR LIVE (LIVE-INSTALLER)
 - Integrada primera versión de Ubiquity-guada en la distro
 - Corregido bug del icono de escritorio: ya aparece en castellano
 - Integradas mejoras en las opciones de particionado:
-  - Añadida opción de reutilizar particiones existentes
-  - Añadido sistema de preconfiguración (preseed) para establecer opciones por
-  defecto: idioma, teclado,...
-  - Creados esquemas de particionado compatibles con Guadalinex (/, /home/,
-  swap)
+- Añadida opción de reutilizar particiones existentes
+- Añadido sistema de preconfiguración (preseed) para establecer opciones por
+defecto: idioma, teclado,...
+- Creados esquemas de particionado compatibles con Guadalinex (/, /home/,
+swap)
 
 INSTALADOR NO LIVE (DI-INSTALLER)
 ---------------------------------
@@ -59,18 +59,21 @@ INSTALADOR NO LIVE (DI-INSTALLER)
 facilitar la instalación al usuario disminuyendo el número de preguntas
 - Incluido mensaje de bienvenida
 - Modificados mensajes de aviso en partman y grub
-- Peronsalización general del instalador para Guadalinex
+- Personalización general del instalador para Guadalinex
 
 SISTEMA NO LIVE (DI-GENERATION-SYSTEM)
 --------------------------------------
 
 - Modificación para marca de versiones oficiales (alpha, betas, rcs,...)
 - Modificación para generación correcta de nombres de ISOs
+- Comprobación e instalación de dependencias de compilación.
+- Mejoras generales en la automatización del sistema.
 
 SISTEMA DE PERSONALIZACIÓN (BANDING-SYSTEM)
 -------------------------------------------
 
-- Mejoras generales en "gcs"
+- Consideración de postinst, preinst, postrm y prerm.
+- Mejoras generales en "gcs".
 
 E-ADMIN
 -------
