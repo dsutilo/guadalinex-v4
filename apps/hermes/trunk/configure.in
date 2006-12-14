@@ -1,4 +1,4 @@
-AC_INIT(hermes-hardware.py, 1.0.1, gumer@emergya.es)
+AC_INIT(hermes-hardware.py, 1.0.1, gcoronel@emergya.es)
 AC_CONFIG_HEADERS(config.h)
 AC_CONFIG_MACRO_DIR([m4])
 

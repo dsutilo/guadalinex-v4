@@ -15,7 +15,7 @@ configure-stamp:
 	# Add here commands to configure the package.
 	#
 	touch configure-stamp
-	./autogen.sh
+	./autogen.sh --prefix=/usr
 
 build: configure build-stamp
 
