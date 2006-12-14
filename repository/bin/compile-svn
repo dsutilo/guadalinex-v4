@@ -97,8 +97,8 @@ do
 			check_build_depends debian/control
 			debuild --no-tgz-check -uc -us
 			debclean
-			retrieve_debian_files $TAG_DIR/$TAG_VERSION/..
-			clean_debian_files $TAG_DIR/$TAG_VERSION
+			retrieve_debian_files $TAG_DIR
+			clean_debian_files $TAG_DIR
 			cd - > /dev/null
 		fi
 	done
