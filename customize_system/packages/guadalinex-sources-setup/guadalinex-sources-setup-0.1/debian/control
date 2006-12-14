@@ -1,0 +1,16 @@
+Source: guadalinex-sources-setup
+Section: debian-installer
+Priority: extra
+Maintainer: Carlos Parra Camargo <cparra@emergya.es> 
+Build-Depends: debhelper (>= 4.2)
+Standards-Version: 3.7.2
+
+Package: guadalinex-sources-setup
+XC-Package-Type: udeb
+XB-Installer-Menu-Item: 74
+Architecture: any
+Priority: standard
+Depends: debconf
+Description: set sources.list correctly 
+ place at /etc/apt the correct sources.list 
+
