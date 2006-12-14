@@ -1,5 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 
-su gensys -c ./cron.daily
+OFFICIAL=
+
+if [ "$1" == "--official" ]; then
+	OFFICIAL="--official"
+fi
+
+su gensys -c "./cron.daily $OFFICIAL"
 glig
-su gensys -c ./cron.daily-live
+su gensys -c "./cron.daily-live $OFFICIAL --no-gen-pkgs"
