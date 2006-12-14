@@ -782,7 +782,7 @@ class Wizard:
         for unicode_char in username:
             try:
                 unicode_char.decode()
-                if len(newusername) <= 8:
+                if len(newusername) < 8:
                     newusername += unicode_char
             except:
                 pass
