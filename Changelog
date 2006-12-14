@@ -46,11 +46,12 @@ INSTALADOR LIVE (LIVE-INSTALLER)
 - Integrada primera versión de Ubiquity-guada en la distro
 - Corregido bug del icono de escritorio: ya aparece en castellano
 - Integradas mejoras en las opciones de particionado:
-- Añadida opción de reutilizar particiones existentes
-- Añadido sistema de preconfiguración (preseed) para establecer opciones por
+  - Añadida opción de reutilizar particiones existentes (EXPERIMENTAL)
+  - Añadido sistema de preconfiguración (preseed) para establecer opciones por
 defecto: idioma, teclado,...
-- Creados esquemas de particionado compatibles con Guadalinex (/, /home/,
+  - Creados esquemas de particionado compatibles con Guadalinex (/, /home/,
 swap)
+- Otros cambios menores
 
 INSTALADOR NO LIVE (DI-INSTALLER)
 ---------------------------------
