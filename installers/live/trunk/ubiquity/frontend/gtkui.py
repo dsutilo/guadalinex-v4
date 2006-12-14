@@ -123,7 +123,6 @@ class Wizard:
         self.part_devices = {' ' : ' '}
         self.current_page = None
         self.dbfilter = None
-        self.locale = None
         self.progress_position = ubiquity.progressposition.ProgressPosition()
         self.progress_cancelled = False
         self.previous_partitioning_page = None
@@ -454,7 +453,10 @@ class Wizard:
     def show_intro(self):
         """Show some introductory text, if available."""
 
-        intro = os.path.join(PATH, 'intro.txt')
+	if(self.locale != None and os.path.isfile(os.path.join(PATH, 'intro.txt.'+self.locale.split(".")[0]))):
+	    intro = os.path.join(PATH, 'intro.txt.'+self.locale.split(".")[0])
+	else:
+            intro = os.path.join(PATH, 'intro.txt')
 
         if os.path.isfile(intro):
             widget = gtk.Label()
