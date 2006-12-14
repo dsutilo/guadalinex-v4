@@ -1,3 +1,11 @@
+ubiquity (1.2.5guada1) edgy; urgency=low
+
+  * Version updated for development.
+  * Debconf integration (for assistant pages).
+  * Added Guadalinex's partitions schema.
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Thu, 14 Dec 2006 13:36:38 +0100
+
 ubiquity (1.2.5) edgy; urgency=low
 
   * Automatic update of included source packages: apt-setup 1:0.11ubuntu5,
