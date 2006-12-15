@@ -48,38 +48,23 @@
 import os.path
 
 from utils.synaptic import Synaptic
-from deviceactor import DeviceActor
+from deviceactor import PkgDeviceActor
 from gettext import gettext as _
 
-ICON = os.path.abspath('actors/img/ipod.png')
-ICONOFF = os.path.abspath('actors/img/ipodoff.png')
 
-class Actor(DeviceActor):
-
+class Actor(PkgDeviceActor):
     __required__ = {'portable_audio_player.type': 'ipod',
                     'info.product': 'iPod'}
 
-    def on_added(self):
-        s = Synaptic()
-        packages = ['gtkpod']
-
-        def install_packages():
-            if s.install(packages):
-                open_gtkpod()
-
-        def open_gtkpod():
-            os.system('gtkpod &')
-
-        if s.check(packages):
-            actions = {_("Open iPod Manager"): open_gtkpod}
-        else:
-            actions = {_("Install required packages"): install_packages}
-
-        self.msg_render.show(_("iPod"), 
-             _("iPod device detected"),
-             ICON, actions = actions)
+    __icon_path__  =  os.path.abspath('actors/img/ipod.png')
+    __iconoff_path__ = os.path.abspath('actors/img/ipodoff.png')
+    __device_title__ = _('iPod')
+    __device_conn_description__ = _('iPod device detected')
+    __device_disconn_description__ = _('iPod device disconnected.')
 
 
-    def on_removed(self):
-        self.msg_render.show(_("iPod"), _("iPod device disconnected."),
-                ICONOFF)
+    __packages__ = ['gtkpod']
+
+    __conn_commands__ = ['gtkpod &']
+    __disconn_commands__ = []
+

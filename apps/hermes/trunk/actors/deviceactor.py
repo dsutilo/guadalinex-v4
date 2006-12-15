@@ -177,8 +177,18 @@ class PkgDeviceActor(DeviceActor):
         s = Synaptic()
 
         def execute_conn_commands():
+            execute = True
+
+            # Obtain sudo permission if needed.
             for command in self.__conn_commands__:
-                os.system(command)
+                if command.strip().startswith('sudo'):
+                    if not get_sudo():
+                        execute = False
+                    break
+
+            if execute:
+                for command in self.__conn_commands__:
+                    os.system(command)
 
         def install_packages():
             s.install(self.__packages__)
