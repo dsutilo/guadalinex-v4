@@ -28,8 +28,9 @@ class NotificationDaemon(object):
 
     def show(self, summary, message, icon, actions = {}): 
         if actions != {}:
-	    (notify_actions,action_handlers) = self.__process_actions(actions)
-			
+            timeout = 10000
+            (notify_actions,action_handlers) = self.__process_actions(actions)
+            
             def action_invoked(nid, action_id):
                 if action_handlers.has_key(action_id) and res == nid:
                     #Execute the action handler
@@ -41,7 +42,7 @@ class NotificationDaemon(object):
             while not condition:
                 try:
                     self.logger.debug("Trying to connect to ActionInvoked")
-		    self.iface.connect_to_signal("ActionInvoked", action_invoked)
+                    self.iface.connect_to_signal("ActionInvoked", action_invoked)
                     condition = True
                 except:
                     logmsg = "ActionInvoked handler not configured. "
@@ -50,18 +51,19 @@ class NotificationDaemon(object):
                     os.system('/usr/lib/notification-daemon/notification-daemon &')                
                     time.sleep(0.2)
 
-	else:
+        else:
+            timeout = 7000
             #Fixing no actions messages
             notify_actions = []
 
         res = self.iface.Notify("Hermes", 
-		dbus.UInt32(0),
+        dbus.UInt32(0),
                 dbus.String(icon),
                 summary, 
                 message, 
                 notify_actions,
-		{},
-                dbus.UInt32(7000))
+        {},
+                dbus.UInt32(timeout))
         return res
 
 
@@ -91,8 +93,8 @@ class NotificationDaemon(object):
         Devuelve una 2-tupla
 
         La primera es una lista cuyos valores pares (comenzando por 0)
-	se refieren a la identificación de la acción y cuyos valores
-	impares serán la cadena a mostrar en el botón de la acción
+    se refieren a la identificación de la acción y cuyos valores
+    impares serán la cadena a mostrar en el botón de la acción
 
         El segundo contiene como claves los identificadores (enteros) de las
         acciones a tomar y como valores las funciones a ejecutar
@@ -101,12 +103,12 @@ class NotificationDaemon(object):
             #FIXME
             return {}, {}
 
-	notify_actions = []
+        notify_actions = []
         action_handlers = {}
         i = 0
         for key, value in actions.items():
             notify_actions.append(dbus.String(i))
-	    notify_actions.append(key)
+            notify_actions.append(key)
             action_handlers[dbus.String(i)] = value
             i += 1
 
