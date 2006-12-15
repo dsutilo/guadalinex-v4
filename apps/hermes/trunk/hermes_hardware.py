@@ -59,7 +59,6 @@ import os
 import os.path
 import sys
 import traceback
-import defs
 
 from gettext import gettext as _
 
@@ -310,8 +309,8 @@ class DeviceListener:
 
 def main():
     try:
-        import hermes.defs
-        setup_gettext('hermes-hardware', hermes.defs.DATA_DIR)
+        import defs
+        setup_gettext('hermes-hardware', defs.DATA_DIR)
     except ImportError:
         print 'WARNING: Running uninstalled, no gettext support'
 
