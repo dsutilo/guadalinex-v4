@@ -1,4 +1,5 @@
-# -*- coding: utf8 -*-
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 #Módulo deviceactor - Módulo que contiene la clase DeviceActor, clase base para
 #la creación de "actores de hardware"
@@ -99,8 +100,13 @@ class Actor(DeviceActor):
 
 """
 
-import dbus
+import os
 import logging
+
+import dbus
+
+from utils.synaptic import Synaptic
+from gettext import gettext as _
 
 class DeviceActor(object):
     """
@@ -131,9 +137,9 @@ class DeviceActor(object):
             self.on_modified(key)
 
 
-
     def on_added(self):
         pass
+
 
     def on_removed(self):
         pass
@@ -141,4 +147,72 @@ class DeviceActor(object):
     def on_modified(self, prop_name):
         pass
 
+
+
+class PkgDeviceActor(DeviceActor):
+    """ 
+    Esta clase encapsula la lógica los actores que se encargan de 
+    comprobar e instalar paquetes determinados.
+
+    Es útil para simplicar todo esos actores que lo único que hacen es instalar
+    software para que el dispositivo funcione.
+    """
+    __icon_path__  = ''
+    __iconoff_path__ = ''
+    __device_title__ = ''
+    __device_conn_description__ = ''
+    __device_disconn_description__ = ''
+
+    __packages__ = []
+
+    __conn_commands__ = []
+    __disconn_commands__ = []
+
+
+    def __init__(self, message_render, device_properties):
+        DeviceActor.__init__(self, message_render, device_properties)
+         
+
+    def on_added(self):
+        s = Synaptic()
+
+        def execute_conn_commands():
+            for command in self.__conn_commands__:
+                os.system(command)
+
+        def install_packages():
+            s.install(self.__packages__)
+            execute_conn_commands()
+
+        if s.check(self.__packages__):
+            actions = {_("Use device"): execute_conn_commands}
+
+        else:
+            actions = {_("Install required packages"): install_packages}
+
+        self.msg_render.show(self.__device_title__, 
+                self.__device_conn_description__,
+             self.__icon_path__, actions = actions)
+
+
+    def on_removed(self):
+        self.msg_render.show(self.__device_title__,
+                self.__device_disconn_description__,
+                self.__iconoff_path__)
+        self._execute_disconn_commands()
+
+
+    def _install_packages(self):
+        s = Synaptic()
+        s.install(self.__packages__)
+
+
+    def _execute_conn_commands(self):
+        for command in self.__conn_commands__:
+            os.system(command)
+
+
+    def _execute_disconn_commands(self):
+        for command in self.__disconn_commands__:
+            os.system(command)
 

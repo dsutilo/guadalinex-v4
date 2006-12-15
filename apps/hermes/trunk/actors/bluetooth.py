@@ -48,46 +48,22 @@
 import os.path
 
 from utils.synaptic import Synaptic
-from deviceactor import DeviceActor
+from deviceactor import PkgDeviceActor
 from gettext import gettext as _
 
-BLUEICON = os.path.abspath('actors/img/bluetooth.png')
-BLUEICONOFF = os.path.abspath('actors/img/bluetoothoff.png')
 
-class Actor(DeviceActor):
+class Actor(PkgDeviceActor):
 
     __required__ = {'info.category':'bluetooth_hci'}
 
-    def on_added(self):
-        s = Synaptic()
-        packages = ['gnome-bluetooth', 'obexserver', 'bluez-utils']
+    __icon_path__  = os.path.abspath('actors/img/bluetooth.png')
+    __iconoff_path__ = os.path.abspath('actors/img/bluetoothoff.png')
 
-        def install_packages():
-            if s.install(packages):
-                os.system('gnome-obex-server &')
-                open_scan()
+    __device_title__ = 'BLUETOOTH'
+    __device_conn_description__ = _('Bluetooth device connected')
+    __device_disconn_description__ = _('Bluetooth device disconnected')
 
-        def open_scan():
-            os.system('gnome-bluetooth-manager &')
+    __packages__ = ['gnome-bluetooth', 'obexserver', 'bluez-utils']
 
-        if s.check(packages):
-            os.system('gnome-obex-server &')
-            actions = {_("Open Bluetooth manager"): open_scan}
-        else:
-            actions = {_("Install required packages"): install_packages}
-
-        if self.properties.has_key('bluetooth_hci.interface_name'):
-            interface = ': ' + self.properties['bluetooth_hci.interface_name']
-        else:
-            interface = ''
-        print self.msg_render
-        self.msg_render.show(_("BLUETOOTH"), 
-             _("New Bluetooth interface configured ") + str(interface) +
-             '.',
-             BLUEICON, actions = actions)
-
-
-    def on_removed(self):
-        self.msg_render.show(_("BLUETOOTH"), _("Bluetooth interface disconnected"),
-                BLUEICONOFF)
-        os.system('killall gnome-obex-server')
+    __conn_commands__ = ['gnome-obex-server &', 'gnome-bluetooth-manager &']
+    __disconn_commands__ = ['killall gnome-obex-server']

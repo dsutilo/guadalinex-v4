@@ -1,4 +1,5 @@
 [encoding: UTF-8] 
+actors/deviceactor.py
 actors/bluetooth.py
 actors/c3pocardreader.py
 actors/camera.py

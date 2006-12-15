@@ -7,34 +7,30 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-13 17:29+0100\n"
+"POT-Creation-Date: 2006-12-15 13:20+0100\n"
 "PO-Revision-Date: 2006-12-13 17:32+0100\n"
 "Last-Translator:  <(null)>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
-#: ../actors/bluetooth.py:75
-msgid "Open Bluetooth manager"
-msgstr "Abrir gestor Bluetooth"
+#: ../actors/deviceactor.py:187
+msgid "Use device"
+msgstr "Utilizar dispositivo"
 
-#: ../actors/bluetooth.py:77 ../actors/c3pocardreader.py:76
+#: ../actors/deviceactor.py:190 ../actors/c3pocardreader.py:76
 #: ../actors/camera.py:75 ../actors/ipod.py:76 ../actors/usbprinter.py:85
 #: ../actors/usbscanner.py:114 ../actors/usbwebcam.py:117
 msgid "Install required packages"
 msgstr "Instalar paquetes requeridos"
 
-#: ../actors/bluetooth.py:84 ../actors/bluetooth.py:91
-msgid "BLUETOOTH"
-msgstr "BLUETOOTH"
+#: ../actors/bluetooth.py:63
+msgid "Bluetooth device connected"
+msgstr "Interfaz Bluetooth desconectado"
 
-#: ../actors/bluetooth.py:85
-msgid "New Bluetooth interface configured "
-msgstr "Se ha configurado un interfaz Bluetooth nuevo"
-
-#: ../actors/bluetooth.py:91
-msgid "Bluetooth interface disconnected"
+#: ../actors/bluetooth.py:64
+msgid "Bluetooth device disconnected"
 msgstr "Interfaz Bluetooth desconectado"
 
 #: ../actors/c3pocardreader.py:72 ../actors/c3pocardreader.py:77
@@ -216,13 +212,11 @@ msgstr "Probar"
 msgid "Test message"
 msgstr "Mensaje de prueba"
 
-#: ../tests/test_notify.py:52 ../hermes_hardware.py:166
-#: ../hermes_hardware.py:197
+#: ../tests/test_notify.py:52
 msgid "Information"
 msgstr "Información"
 
-#: ../tests/test_notify.py:62 ../hermes_hardware.py:169
-#: ../hermes_hardware.py:202
+#: ../tests/test_notify.py:62 ../hermes_hardware.py:201
 msgid "Warning"
 msgstr "Advertencia"
 
@@ -327,22 +321,36 @@ msgstr "Instalando paquetes"
 msgid "Installed packages"
 msgstr "Paquetes instalados"
 
-#: ../hermes_hardware.py:167
-#, fuzzy
-msgid "Device CONNECTED:"
-msgstr "Nombre del dispositivo:"
-
-#: ../hermes_hardware.py:170
-msgid "Device detected, but unidentificated"
-msgstr "Dispositivo detectado, pero no identificado"
-
-#: ../hermes_hardware.py:198
-msgid "Device DISCONNECTED:"
-msgstr "Dispositivo DESCONECTADO:"
-
-#: ../hermes_hardware.py:203
+#: ../hermes_hardware.py:202
 msgid "Device REMOVED."
 msgstr "Dispositivo DESCONECTADO."
+
+#, fuzzy
+#~ msgid " connected"
+#~ msgstr " conectado"
+
+#, fuzzy
+#~ msgid " disconnected"
+#~ msgstr " desconectado"
+
+#~ msgid "Open Bluetooth manager"
+#~ msgstr "Abrir gestor Bluetooth"
+
+#~ msgid "BLUETOOTH"
+#~ msgstr "BLUETOOTH"
+
+#~ msgid "New Bluetooth interface configured "
+#~ msgstr "Se ha configurado un interfaz Bluetooth nuevo"
+
+#, fuzzy
+#~ msgid "Device CONNECTED:"
+#~ msgstr "Nombre del dispositivo:"
+
+#~ msgid "Device detected, but unidentificated"
+#~ msgstr "Dispositivo detectado, pero no identificado"
+
+#~ msgid "Device DISCONNECTED:"
+#~ msgstr "Dispositivo DESCONECTADO:"
 
 #~ msgid "Install required software"
 #~ msgstr "Instalar paquetes requeridos"
