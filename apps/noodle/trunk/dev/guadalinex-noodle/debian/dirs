@@ -2,3 +2,4 @@ usr/share/guadalinex-noodle
 etc/udev/rules.d
 usr/share/gconf/defaults
 usr/bin
+etc/xdg/autostart

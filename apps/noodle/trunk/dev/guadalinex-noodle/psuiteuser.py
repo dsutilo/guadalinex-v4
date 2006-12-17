@@ -42,9 +42,6 @@ def first_use():
 
     os.mkdir (multisync_path + "/1")
 
-    if not os.path.exists (home + "/.config/autostart/vdccm.desktop"):
-        shutil.copy (example_path + "vdccm.desktop" , example_path + "/.config/autostart")
-
     if not os.path.exists(multisync_path + "/localsettings"):
          cregex=re.compile("__HOME__")
          readlines=open(example_path + "/localsettings" ,'r').readlines()

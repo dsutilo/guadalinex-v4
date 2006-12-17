@@ -3,7 +3,7 @@ DEVICE="/dev/ttyUSB"
 LOGFILE=/var/log/synce
 export PATH="/sbin:/bin:/usr/bin:/usr/sbin"
 
-if [ "$ACTION" = "add" ]
+if [ "$ACTION" == "add" ]
 then
 	if [ `echo $DEVNAME | grep $DEVICE` != 0 ]
 	then
@@ -12,7 +12,13 @@ then
 		synce-serial-config $DEVNAME >> $LOGFILE
 		synce-serial-start >> $LOGFILE
 	fi
-elif [ "$ACTION" = "remove" ]
+	if [ $SUBSYSTEM == "bluetooth" ]
+        then
+        	/usr/bin/dund --listen --msdun call du
+			/usr/bin/sdptool add SP
+        fi
+	
+elif [ "$ACTION" == "remove" ]
 then
 	if [ `echo $DEVNAME | grep $DEVICE` != 0 ] 
 	then

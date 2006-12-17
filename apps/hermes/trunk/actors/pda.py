@@ -63,5 +63,5 @@ class Actor(PkgDeviceActor):
 
     __packages__ = ['guadalinex-noodle']
 
-    __conn_commands__ = ['psuite-user &', 'multisync &']
+    __conn_commands__ = ['psuiteuser &']
     __disconn_commands__ = []
