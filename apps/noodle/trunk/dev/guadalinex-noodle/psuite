@@ -7,7 +7,7 @@ if [ "$ACTION" = "add" ]
 then
 	if [ `echo $DEVNAME | grep $DEVICE` != 0 ]
 	then
-        	echo "`date +"%b %d %X"` `uname -n`: iPAQ plugged, starting connection..." >> $LOGFILE
+        echo "`date +"%b %d %X"` `uname -n`: iPAQ plugged, starting connection..." >> $LOGFILE
 		synce-serial-abort >> $LOGFILE
 		synce-serial-config $DEVNAME >> $LOGFILE
 		synce-serial-start >> $LOGFILE
@@ -16,7 +16,7 @@ elif [ "$ACTION" = "remove" ]
 then
 	if [ `echo $DEVNAME | grep $DEVICE` != 0 ] 
 	then
-	       	echo "`date +"%b %d %X"` `uname -n`: iPAQ removed" >> $LOGFILE
+	    echo "`date +"%b %d %X"` `uname -n`: iPAQ removed" >> $LOGFILE
 		synce-serial-abort
 	fi
 fi
