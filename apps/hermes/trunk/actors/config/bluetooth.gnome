@@ -15,4 +15,5 @@ conn_commands:
 # Listado de comandos a lanzar cuando se desconecte
 disconn_commands:
     - pkill -15 gnome-bluetooth
+    - pkill -15 bt-applet
 
