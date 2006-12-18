@@ -47,7 +47,7 @@
 import os.path
 
 from deviceactor import DeviceActor
-from utils.synaptic import Synaptic
+from utils.pkginstaller import PkgInstaller
 from gettext import gettext as _
 
 C3POICON = os.path.abspath('actors/img/ltc31.png')

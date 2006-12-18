@@ -47,7 +47,7 @@
 
 import os.path
 
-from utils.synaptic import Synaptic
+from utils.pkginstaller import PkgInstaller
 from deviceactor import PkgDeviceActor
 from gettext import gettext as _
 
@@ -62,8 +62,6 @@ class Actor(PkgDeviceActor):
     __device_title__ = 'BLUETOOTH'
     __device_conn_description__ = _('Bluetooth device connected')
     __device_disconn_description__ = _('Bluetooth device disconnected')
-
-    __packages__ = ['gnome-bluetooth', 'obexserver', 'bluez-utils', 'bluez-passkey-gnome']
 
     __conn_commands__ = ['gnome-obex-server &', 'bt-applet &']
     __disconn_commands__ = ['killall gnome-obex-server']

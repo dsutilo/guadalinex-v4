@@ -47,7 +47,7 @@
 
 import os.path
 
-from utils.synaptic import Synaptic
+from utils.pkginstaller import PkgInstaller 
 from deviceactor import PkgDeviceActor
 from gettext import gettext as _
 
@@ -62,8 +62,6 @@ class Actor(PkgDeviceActor):
     __device_conn_description__ = _('iPod device detected')
     __device_disconn_description__ = _('iPod device disconnected.')
 
-
-    __packages__ = ['gtkpod']
 
     __conn_commands__ = ['gtkpod &']
     __disconn_commands__ = []

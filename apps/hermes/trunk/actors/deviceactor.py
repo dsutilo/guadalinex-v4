@@ -105,8 +105,9 @@ import logging
 
 import dbus
 
-from utils.synaptic import Synaptic
+from utils.pkginstaller import PkgInstaller
 from gettext import gettext as _
+
 
 class DeviceActor(object):
     """
@@ -171,10 +172,18 @@ class PkgDeviceActor(DeviceActor):
 
     def __init__(self, message_render, device_properties):
         DeviceActor.__init__(self, message_render, device_properties)
+
+        # Get packages from actor module name.
+        old_packages  = self.__packages__
+        try:
+            module_name = self.__module__.split('.')[-1]
+            self.__packages__ = PkgInstaller().get_packages(module_name)
+        except Exception, e:
+            self.__packages__ = old_packages
          
 
     def on_added(self):
-        s = Synaptic()
+        s = PkgInstaller()
 
         def execute_conn_commands():
             execute = True
@@ -213,7 +222,7 @@ class PkgDeviceActor(DeviceActor):
 
 
     def _install_packages(self):
-        s = Synaptic()
+        s = PkgInstaller()
         s.install(self.__packages__)
 
 
