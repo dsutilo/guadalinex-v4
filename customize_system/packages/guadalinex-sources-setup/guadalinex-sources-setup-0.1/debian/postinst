@@ -2,7 +2,7 @@
 #DEBHELPER#
 
     cat > /target/etc/apt/sources.list <<EOF
-deb http://pool.guadalinex.org/ubuntu edgy main universe multiverse
+deb http://pool.guadalinex.org/ubuntu edgy main restricted universe multiverse
 EOF
 
 exit 0
