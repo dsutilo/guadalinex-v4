@@ -1,3 +1,9 @@
+glig (0.5) unstable; urgency=low
+
+  * Added restricted component 
+
+ -- Carlos Parra Camargo <cparra@emergya.es>  Mon, 18 Dec 2006 17:29:40 +0100
+
 glig (0.4) unstable; urgency=low
 
   * problems with anacron, stop it inmediatly after his installation.

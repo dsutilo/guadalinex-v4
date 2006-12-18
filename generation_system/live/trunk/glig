@@ -122,10 +122,6 @@ function umount_sources() {
 
 function do_debootstrap() {
 
-#    debootstrap --components=${components} --include=${base},${live} \
-#    --exclude=ubuntu-desktop,ubuntu-artwork,ubuntu-keyring,ubuntu-minimal,ubuntu-standard edgy ${sources} ${mirror}
-
-
     debootstrap --components=${components} \
     --exclude=guadalinex-minimal-conf,ubuntu-desktop,ubuntu-artwork,ubuntu-keyring,ubuntu-minimal,ubuntu-standard edgy ${sources} ${mirror}
 
@@ -188,8 +184,11 @@ echo \"Warning: Fake start-stop-daemon called, doing nothing\"" > ${sources}/sbi
 
     apt_get clean
 
-    APT_LINE=$(echo $APT_LINE | sed -e 's/\ /\\\ /g' | sed -e 's/\:/\\\:/g' | sed -e 's/\//\\\//g')
-    sed -i "s/$APT_LINE//g" ${sources}/etc/apt/sources.list
+    cat > ${sources}/etc/apt/sources.list <<EOF
+deb http://pool.guadalinex.org/ubuntu edgy main restricted universe multiverse
+EOF
+
+    apt_get update
 
     # Umount pocfs inside sources, if any
     umount_sources
