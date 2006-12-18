@@ -104,6 +104,7 @@ import os
 import logging
 
 import dbus
+import syck
 
 from utils.pkginstaller import PkgInstaller
 from gettext import gettext as _
@@ -172,15 +173,48 @@ class PkgDeviceActor(DeviceActor):
 
     def __init__(self, message_render, device_properties):
         DeviceActor.__init__(self, message_render, device_properties)
+        self.set_default_properties()
 
-        # Get packages from actor module name.
-        old_packages  = self.__packages__
+
+    def set_default_properties(self):
+        """ Set default properties from config files.
+        """
+        modname = self.__module__.split('.')[-1]
+        config = None
+        pkg_path = os.path.abspath('actors/config') + \
+                '/' + modname + '.' + self._get_desktop()
         try:
-            module_name = self.__module__.split('.')[-1]
-            self.__packages__ = PkgInstaller().get_packages(module_name)
+            config = syck.load(open(pkg_path).read())
         except Exception, e:
-            self.__packages__ = old_packages
-         
+            print e
+
+        if config:
+            if not self.__packages__:
+                self.__packages__ = config.get('packages', [])
+            if not self.__conn_commands__:
+                self.__conn_commands__ = config.get('conn_commands', [])
+            if not self.__disconn_commands__:
+                self.__disconn_commands__ = config.get('disconn_commands', [])
+
+
+    def _get_desktop(self):
+        """ Return desktop name (gnome, or kde)
+        """
+        # Look for gnome
+        gnome_command = 'ps ux|grep gnome-settings|grep -v grep'
+        is_gnome = bool(os.popen(gnome_command).read())
+        if is_gnome:
+            return "gnome"
+
+        # Look for kde
+        kde_command = 'ps ux|grep startkde|grep -v grep'
+        is_kde = bool(os.popen(kde_command).read())
+        if is_kde:
+            return "kde"
+
+        # Default packages
+        return ""
+
 
     def on_added(self):
         s = PkgInstaller()

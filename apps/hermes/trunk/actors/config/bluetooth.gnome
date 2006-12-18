@@ -1,2 +1,18 @@
-gnome-bluetooth
-bluez-passkey-gnome
+# Listado de paquetes. Enumerados con guiones
+packages:
+    - obexserver
+    - bluez-utils
+    - gnome-bluetooth
+    - bluez-passkey-gnome
+
+
+# Listado de aplicaciones a lanzar cuando se conecte
+conn_commands:
+    - gnome-obex-server &
+    - bt-applet &
+
+
+# Listado de comandos a lanzar cuando se desconecte
+disconn_commands:
+    - pkill -15 gnome-bluetooth
+

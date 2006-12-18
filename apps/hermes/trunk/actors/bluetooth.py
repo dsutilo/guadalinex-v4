@@ -62,6 +62,3 @@ class Actor(PkgDeviceActor):
     __device_title__ = 'BLUETOOTH'
     __device_conn_description__ = _('Bluetooth device connected')
     __device_disconn_description__ = _('Bluetooth device disconnected')
-
-    __conn_commands__ = ['gnome-obex-server &', 'bt-applet &']
-    __disconn_commands__ = ['killall gnome-obex-server']
