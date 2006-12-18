@@ -117,12 +117,15 @@ libpt-plugins-v4l2
 libsasl2-modules
 libstdc++5
 libxp6
+linux-restricted-modules-2.6.17-10-generic
 metacity
 min12xxw
 mkisofs
 nautilus
 nautilus-cd-burner
 nautilus-sendto
+ndisgtk
+ndiswrapper-utils-1.8
 network-manager-gnome
 notification-daemon
 openoffice.org
