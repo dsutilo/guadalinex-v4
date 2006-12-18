@@ -12,3 +12,12 @@ Description: detección y soporte de dispositivos
  el sistema de detección de hardware engloba tanto las tareas de detección
  y soporte de dispositivos, como aquellas que tienen que ver con la 
  configuración de los mismos y la interacción con el usuario.
+
+Package: hermeshardware-gnome
+Architecture: any
+Depends: hermeshardware
+Conflicts: hermeshardware-kde
+Description: Hermes packages selection for GNOME
+ el sistema de detección de hardware engloba tanto las tareas de detección
+ y soporte de dispositivos, como aquellas que tienen que ver con la 
+ configuración de los mismos y la interacción con el usuario.

@@ -8,6 +8,7 @@
 
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
+DH_ALWAYS_EXCLUDE=.svn
 
 configure: configure-stamp
 configure-stamp:
@@ -38,9 +39,7 @@ install: build
 
 	# Add here commands to install the package into debian/hermes.
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/hermeshardware
-	dh_install defs.py actors doc img utils hermes_hardware.py README /usr/share/hermes
-	dh_install hermeshardware hermesdruid /usr/bin
-	dh_install hermesdruid.desktop /usr/share/applications/
+	dh_install 
 	
 	# Goodbye to .svn
 	rm -rf `find $(CURDIR)/debian/ -mindepth 2 -type d -name .svn`
