@@ -28,7 +28,7 @@ class NotificationDaemon(object):
 
     def show(self, summary, message, icon, actions = {}): 
         if actions != {}:
-            timeout = 10000
+            timeout = 12000
             (notify_actions,action_handlers) = self.__process_actions(actions)
             
             def action_invoked(nid, action_id):
