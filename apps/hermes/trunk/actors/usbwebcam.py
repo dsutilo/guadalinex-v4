@@ -48,7 +48,7 @@
 import os.path
 
 from utils.synaptic import Synaptic
-from deviceactor import DeviceActor
+from deviceactor import PkgDeviceActor
 from utils.grepmap import UsbGrepMap
 from gettext import gettext as _
 
@@ -62,7 +62,7 @@ class UsbWebcamActorHack(object):
     """
     This class is a hack for usb_device.Actor
     """
-    PACKAGES = ['camorama']
+    PACKAGES = PkgDeviceActor.get_packages('usbwebcam')
     DRIVERS = ['quickcam', 'spca5xx', 'ibmcam', 'konicawc', 'ov511', 'pwc', 'se401', 'sn9c102', 'stv680', 'ultracam', 'vicam', 'w9968cf']
 
     def __init__(self):

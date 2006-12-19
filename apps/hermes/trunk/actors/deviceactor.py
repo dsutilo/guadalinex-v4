@@ -182,7 +182,7 @@ class PkgDeviceActor(DeviceActor):
         modname = self.__module__.split('.')[-1]
         config = None
         pkg_path = os.path.abspath('actors/config') + \
-                '/' + modname + '.' + self._get_desktop()
+                '/' + modname + '.' + PkgDeviceActor._get_desktop()
         try:
             config = syck.load(open(pkg_path).read())
         except Exception, e:
@@ -197,7 +197,26 @@ class PkgDeviceActor(DeviceActor):
                 self.__disconn_commands__ = config.get('disconn_commands', [])
 
 
-    def _get_desktop(self):
+    def get_packages(module_name):
+        """ Return packages for an actor.
+
+        Return packages for an actor based on actors/config/* files and on
+        user's desktop.
+        """
+        pkg_path = os.path.abspath('actors/config') + \
+                '/' + module_name + '.' + PkgDeviceActor._get_desktop()
+        config = {}
+        try:
+            config = syck.load(open(pkg_path).read())
+        except Exception, e:
+            pass
+
+        return config.get('packages', [])
+
+    get_packages = staticmethod(get_packages)
+
+
+    def _get_desktop():
         """ Return desktop name (gnome, or kde)
         """
         # Look for gnome
@@ -213,7 +232,9 @@ class PkgDeviceActor(DeviceActor):
             return "kde"
 
         # Default packages
-        return ""
+        return "gnome"
+
+    _get_desktop = staticmethod(_get_desktop)
 
 
     def on_added(self):
@@ -238,8 +259,10 @@ class PkgDeviceActor(DeviceActor):
             execute_conn_commands()
 
         if s.check(self.__packages__):
-            actions = {_("Use device"): execute_conn_commands}
-
+            if self.__conn_commands__:
+                actions = {_("Use device"): execute_conn_commands}
+            else:
+                actions = {}
         else:
             actions = {_("Install required packages"): install_packages}
 

@@ -46,14 +46,12 @@
 
 import os.path
 
-from deviceactor import DeviceActor
+from deviceactor import PkgDeviceActor
 from utils.pkginstaller import PkgInstaller
 from gettext import gettext as _
 
-C3POICON = os.path.abspath('actors/img/ltc31.png')
-C3POICONOFF = os.path.abspath('actors/img/ltc31off.png')
 
-class Actor(DeviceActor):
+class Actor(PkgDeviceActor):
 
     __required__ = {
       "info.bus":"usb_device",
@@ -61,24 +59,8 @@ class Actor(DeviceActor):
       "usb_device.product_id":0x6
     }
 
-    def on_added(self):
-        s = Synaptic()
-        packages = ['pcscd', 'pcsc-tools', 'libccid']
-
-        def install_packages():
-            s.install(packages)
-
-        if s.check(packages):
-            self.msg_render.show(_("C3PO"), 
-                    _("Card reader detected"),
-                    C3POICON)
-        else:
-            actions = {_("Install required packages"): install_packages}
-            self.msg_render.show(_("C3PO"), _("Card reader detected"), 
-                    C3POICON,
-                    actions = actions)
-
-    def on_removed(self):
-        self.msg_render.show(_("C3PO"), 
-                _("Card reader disconnected"),
-                C3POICONOFF)
+    __icon_path__  = os.path.abspath('actors/img/ltc31.png')
+    __iconoff_path__ = os.path.abspath('actors/img/ltc31off.png')
+    __device_title__ = _("C3PO")
+    __device_conn_description__ = _("Card reader detected")
+    __device_disconn_description__ = _("Card reader disconnected")

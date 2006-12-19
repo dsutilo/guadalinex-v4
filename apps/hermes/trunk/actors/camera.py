@@ -51,34 +51,14 @@ from utils.synaptic import Synaptic
 from deviceactor import DeviceActor
 from gettext import gettext as _
 
-CAMERAICON = os.path.abspath('actors/img/camera.png')
-CAMERAICONOFF = os.path.abspath('actors/img/cameraoff.png')
-
+CAMERAICON = 
+CAMERAICONOFF = 
 class Actor(DeviceActor):
 
     __required__ = {'info.category':'camera', 'info.bus':'usb'}
 
-    def on_added(self):
-        s = Synaptic()
-        packages = ['gthumb']
-
-        def install_packages():
-            s.install(packages)
-            open_gthumb()
-
-        def open_gthumb():
-            os.system('gthumb --import-photos &')
-
-        if s.check(packages):
-            actions = {}
-        else:
-            actions = {_("Install required packages"): install_packages}
-
-        self.msg_render.show(_("CAMERA"), 
-             _("Digital camera connected."),
-             CAMERAICON, actions = actions)
-
-
-    def on_removed(self):
-        self.msg_render.show(_("CAMERA"), _("Digital camera disconnected"),
-                CAMERAICONOFF)
+    __icon_path__  = os.path.abspath('actors/img/camera.png')
+    __iconoff_path__ = os.path.abspath('actors/img/cameraoff.png')
+    __device_title__ = _("CAMERA")
+    __device_conn_description__ = _("Digital camera connected.") 
+    __device_disconn_description__ = _("Digital camera disconnected")

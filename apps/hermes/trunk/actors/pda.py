@@ -54,14 +54,9 @@ from gettext import gettext as _
 
 class Actor(PkgDeviceActor):
     __require__ = {'info.product':'Pocket PC PDA'}
-    __icon_path__  = os.path.abspath('actors/img/wme.png')
 
+    __icon_path__  = os.path.abspath('actors/img/wme.png')
     __iconoff_path__ = os.path.abspath('actors/img/wmeoff.png')
     __device_title__ = _('PDA')
     __device_conn_description__ = _('PDA device connected.')
     __device_disconn_description__ = _('PDA device disconnected.')
-
-    __packages__ = ['guadalinex-noodle']
-
-    __conn_commands__ = ['psuiteuser &']
-    __disconn_commands__ = []

@@ -69,8 +69,3 @@ class Actor(PkgDeviceActor):
     __device_conn_description__ = _("Printer detected") 
     __device_disconn_description__ = _("Printer disconnected")
 
-    __packages__ = ['gnome-cups-manager']
-
-    __conn_commands__ = ['sudo /etc/init.d/cupsys', 'sudo gnome-cups-add']
-    __disconn_commands__ = []
-

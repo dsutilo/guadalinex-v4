@@ -47,8 +47,8 @@
 
 import os.path
 
-from utils.synaptic import Synaptic
-from deviceactor import DeviceActor
+from utils.pkginstaller import PkgInstaller
+from deviceactor import PkgDeviceActor
 from utils.grepmap import UsbGrepMap
 
 from usbdevice import Actor
@@ -68,7 +68,7 @@ class UsbScannerActorHack(object):
     """
     This class is a hack for usb_device.Actor
     """
-    PACKAGES = ['xsane']
+    PACKAGES = PkgDeviceActor.get_packages('usbscanner')
 
     def __init__(self):
         # Hacking usb.Actor class
@@ -105,7 +105,7 @@ class UsbScannerActorHack(object):
             synaptic.install(UsbScannerActorHack.PACKAGES)
             run_xsane()
 
-        synaptic = Synaptic()
+        synaptic = PkgInstaller()
 
         actions = {}
         if synaptic.check(UsbScannerActorHack.PACKAGES):
