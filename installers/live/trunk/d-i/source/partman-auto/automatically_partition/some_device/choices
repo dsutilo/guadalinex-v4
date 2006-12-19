@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 . /lib/partman/definitions.sh
 
@@ -6,9 +6,11 @@ mypart=''
 mysize=0
 
 get_some_device_on_dev() {
-    db_subst partman-auto/text/use_device DEVICE $(device_name $dev)
-    db_metaget partman-auto/text/use_device description
-    printf "$dev\t$RET\n"
+    if [ "$(grep ${dev//*=/} /proc/partitions | wc -l)" != "1" ]; then
+        db_subst partman-auto/text/use_device DEVICE $(device_name $dev)
+        db_metaget partman-auto/text/use_device description
+        printf "$dev\t$RET\n"
+    fi
 }
 
 dev="$1"
@@ -22,7 +24,7 @@ if [ -z "$dev" ]; then
 		continue
 		;;
 	esac
-	get_some_device_on_dev
+        get_some_device_on_dev
     done
 else
     get_some_device_on_dev
