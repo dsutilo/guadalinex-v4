@@ -18,9 +18,13 @@ esac
 
 . /usr/share/initramfs-tools/hook-functions
 
-cp /usr/share/casper-guada/scripts/casper-bottom/* $DESTDIR/scripts/casper-bottom/
+cp -a /usr/share/casper-guada/scripts/casper-bottom/* $DESTDIR/scripts/casper-bottom/
+
+#FIXME: This is a hack for fixing the PATH problem, but this is a
+# upstream bug and it should be fixed there.
+cp -a /usr/share/casper-guada/scripts/casper $DESTDIR/scripts/
 
 if [ -e /usr/share/casper-guada/casper.conf ]; then
     mkdir -p ${DESTDIR}/etc
-    cp /usr/share/casper-guada/casper.conf ${DESTDIR}/etc
+    cp -a /usr/share/casper-guada/casper.conf ${DESTDIR}/etc
 fi
