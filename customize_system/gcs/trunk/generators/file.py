@@ -305,29 +305,39 @@ class PrePostGenerator(FileGenerator):
         self.divert_content = ''
         self.scripts_path = ''
 
+
     def activate(self):
         self.set_template_content(self.template_name)
         initial_content = self.template_content
         
         self._set_divert()
         self._set_install_scripts()
+
         if initial_content != self.template_content:
             self._write_file(self.file_path)
+        else:
+            try:
+                os.remove(config['source_path'] + '/' + self.file_path)
+            except:
+                pass
 
 
     def _set_divert(self):
-        newcontent = self.template_content.replace('<DIVERT_SLOT>', 
-                self.divert_content)
-        self.template_content = newcontent
+        if self.divert_content:
+            newcontent = self.template_content.replace('<DIVERT_SLOT>', 
+                    self.divert_content)
+            self.template_content = newcontent
 
 
     def _set_install_scripts(self):
         scripts_part = ScriptsPart(config['source_path'] + \
                 '/' + self.scripts_path)
 
-        newcontent = self.template_content.replace('<SCRIPTS_SLOT>',
-                scripts_part.get_scripts_content())
-        self.template_content = newcontent
+        scripts_content = scripts_part.get_scripts_content()
+        if scripts_content:
+            newcontent = self.template_content.replace('<SCRIPTS_SLOT>',
+                    scripts_content)
+            self.template_content = newcontent
 
 
 
