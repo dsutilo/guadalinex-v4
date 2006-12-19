@@ -149,7 +149,7 @@ class DeviceListener:
         properties = obj.GetAllProperties()
         self.__print_properties(properties)
 
-        actor = self.add_actor_from_properties(properties)
+        actor = self.get_actor_from_properties(properties)
 
         if actor: 
             try:
@@ -227,7 +227,7 @@ class DeviceListener:
 
 
 
-    def add_actor_from_properties(self, prop):
+    def get_actor_from_properties(self, prop):
         """
         Devuelve un actor que pueda actuar para dispositivos con las propiedades
         espeficicadas en prop
@@ -287,9 +287,18 @@ class DeviceListener:
         for key in required.keys():
             if not prop.has_key(key): 
                 return 0
-
-            if prop[key] != required[key]:
-                return 0
+            
+            # Eval required expressions
+            reqvalue = required[key]
+            if isinstance(reqvalue,  str) and \
+                    reqvalue.strip().startswith('python:'):
+                expression = reqvalue.strip()[7:]
+                value =  prop[key]
+                if not eval(expression):
+                    return 0
+            else:
+                if prop[key] != required[key]:
+                    return 0
             count += 1
 
         return  count
@@ -304,7 +313,7 @@ class DeviceListener:
             obj = dbus.Interface(obj, 'org.freedesktop.Hal.Device')
 
             properties = obj.GetAllProperties()
-            self.add_actor_from_properties(properties)
+            self.get_actor_from_properties(properties)
 
 
 def main():

@@ -143,7 +143,3 @@ class FileNotification(object):
             objfile.close()
         except Exception, e:
             logging.getLogger().error('FileNotification: ' + e)
-                
-            
-
-

@@ -54,9 +54,9 @@ from gettext import gettext as _
 class Actor(PkgDeviceActor):
 
     __required__ = {
-      "info.bus":"usb_device",
-      "usb_device.vendor_id":0x783,
-      "usb_device.product_id":0x6
+            "info.bus": 'python: "usb_device" in value',
+            "usb_device.vendor_id":0x783,
+            "usb_device.product_id":0x6
     }
 
     __icon_path__  = os.path.abspath('actors/img/ltc31.png')
