@@ -2,7 +2,7 @@
 
 # set -e
 
-export PATH=/usr/bin:/usr/sbin:/bin:/sbin:/root/usr/bin:/root/usr/sbin:/root/bin:/root/sbin
+export PATH=/usr/bin:/usr/sbin:/bin:/sbin
 
 mountpoint=/cdrom
 
