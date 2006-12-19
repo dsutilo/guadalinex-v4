@@ -13,7 +13,7 @@ Description: detección y soporte de dispositivos
  y soporte de dispositivos, como aquellas que tienen que ver con la 
  configuración de los mismos y la interacción con el usuario.
 
-Package: hermeshardware-gnome
+Package: hermeshardware-guada
 Architecture: any
 Depends: hermeshardware
 Conflicts: hermeshardware-kde

@@ -1,8 +1,16 @@
-hermeshardware (0.3-1) unstable; urgency=low
+hermeshardware (0.3.2) unstable; urgency=low
+
+  * Added support for "Packages Actors". 
+  * Added gnome flavour for packages install, using synaptic.
+  * Added stuff for rpm installation (basic features).
+
+ -- Gumersindo Coronel Pérez <goomerko@Zeus2>  Tue, 19 Dec 2006 16:34:31 +0100
+
+hermeshardware (0.3.1-1) unstable; urgency=low
 
   * Fixed prefix problem.
 
- -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Thu, 14 Dec 2006 13:01:54 +0100
+ -- Gumersindo Coronel Pérez <goomerko@Zeus2>  Tue, 19 Dec 2006 16:33:51 +0100
 
 hermeshardware (0.3) unstable; urgency=low
 

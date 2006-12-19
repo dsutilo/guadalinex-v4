@@ -245,7 +245,7 @@ class DeviceListener:
             if klass.__priority__ not in (1, 2, 3, 4, 5):
                 klass.__priority__ = 3
 
-            kpriority = klass.__priority__
+            kpriority = klass.__priority__ - 1
             count = self.__count_equals(prop, klass.__required__)
             if count > priority_counts[kpriority]:
                 priority_counts[kpriority] = count
@@ -255,7 +255,6 @@ class DeviceListener:
             if  priority_actors[i]:
                 actor_klass = priority_actors[i]
                 break
-
 
         actor = None 
         udi = prop['info.udi']
