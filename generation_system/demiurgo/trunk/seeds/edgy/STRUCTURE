@@ -3,12 +3,15 @@ boot:
 guada:
 standard: minimal
 desktop: minimal standard
+desktop-mini: minimal standard
 dns-server: minimal standard
 lamp-server: minimal standard
 server-ship: boot minimal standard dns-server lamp-server
 ship: boot minimal standard desktop guada
 live: minimal standard desktop
+mini: minimal standard desktop-mini
 ship-live: boot minimal standard desktop live
+ship-mini: boot minimal standard desktop-mini mini
 installer:
 development: minimal standard desktop
 supported: boot minimal standard desktop dns-server lamp-server server-ship ship live ship-live development
