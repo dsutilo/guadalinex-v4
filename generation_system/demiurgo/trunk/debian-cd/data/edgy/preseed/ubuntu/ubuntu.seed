@@ -7,7 +7,6 @@ debconf			debconf/language		string es
 debian-installer	debian-installer/country	string ES
 debian-installer	debian-installer/language	string es
 languagechooser		languagechooser/language-name	string Spanish
-netcfg			netcfg/get_hostname		string guadalinex
 tvtime 			tvtime/normtvtime/norm		string PAL
 tvtime 			tvtime/frequencies-pal		string Europe
 clock-setup		clock-setup/utc			boolean false
