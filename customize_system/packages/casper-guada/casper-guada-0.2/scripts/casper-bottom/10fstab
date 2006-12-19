@@ -1,7 +1,11 @@
 #!/bin/sh
 # 
 
-PREREQ="user"
+PREREQ=""
+DESCRIPTION="Completing Ubuntu live fstab..."
+FSTAB=/root/etc/fstab
+
+. /scripts/casper-functions
 
 prereqs()
 {
@@ -18,22 +22,26 @@ esac
 
 
 # To avoid fsck
-touch ${rootmnt}/fastboot
+# Gv4: not needed?
+#touch ${rootmnt}/fastboot
 
 # Standard initial part of fstab
-cat <<EOF > ${rootmnt}/etc/fstab
-# /etc/fstab: static file system information.
-#
-# <file system> <mount point>   <type>  <options>       <dump>  <pass>
-proc            /proc           proc    defaults        0       0
-sys             /sys            sysfs   defaults        0       0
-EOF
+# Gv4: not needed?
+#cat <<EOF > ${rootmnt}/etc/fstab
+## /etc/fstab: static file system information.
+##
+## <file system> <mount point>   <type>  <options>       <dump>  <pass>
+#proc            /proc           proc    defaults        0       0
+#sys             /sys            sysfs   defaults        0       0
+#EOF
 
-cat <<EOF > ${rootmnt}/etc/rc2.d/S05disks.sh
+#cat <<EOF > /root/etc/rc2.d/S05disks.sh
+cat <<EOF > /root/etc/init.d/disks.sh
 #
 # disks.sh	Search all the local disks and write them into the /etc/fstab.
 #
 # Version:	@(#)disks.sh  1.0  15-Oct-2005  juanje@interactors.coop
+# 		@(#)disks.sh  2.0  19-Dec-2006  rmartin@emergya.es
 #
 
 VERBOSE=yes
@@ -175,4 +183,7 @@ log_end_msg
 exit 0
 EOF
 
-${rootmnt}/bin/chmod +x ${rootmnt}/etc/rc2.d/S05disks.sh 
+#/root/bin/chmod +x /root/etc/rc2.d/S05disks.sh 
+/root/bin/chmod +x /root/etc/init.d/disks.sh 
+
+# FIXME: create symbolic links in /etc/rc?.d/ to /etc/init.d/disks.sh
