@@ -118,6 +118,7 @@ class DeviceActor(object):
     que sirven para mostrar mensajes al insertar/quitar dispositivos
     """
     __required__ = {} 
+    __priority__ = 3 # Values: 1, 2, 3, 4, 5. The higher value, the more priority.
 
     def __init__(self, message_render, device_properties):
         self.message_render = self.msg_render = message_render

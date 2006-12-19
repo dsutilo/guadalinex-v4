@@ -54,7 +54,7 @@ from gettext import gettext as _
 class Actor(PkgDeviceActor):
 
     __required__ = {
-            "info.bus": 'python: "usb_device" in value',
+            "info.bus": "usb_device",
             "usb_device.vendor_id":0x783,
             "usb_device.product_id":0x6
     }

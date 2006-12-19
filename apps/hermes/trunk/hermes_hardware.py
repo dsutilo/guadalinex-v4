@@ -232,15 +232,30 @@ class DeviceListener:
         Devuelve un actor que pueda actuar para dispositivos con las propiedades
         espeficicadas en prop
         """
-        max = 0
         klass = None
         actor_klass = None
+
+        #    priority ->    1     2     3     4     5
+        priority_actors = [None, None, None, None, None]
+        priority_counts = [0, 0, 0, 0, 0]
+
         import actors
         for klass in actors.ACTORSLIST:
+            # Set priority to 3 if not in range
+            if klass.__priority__ not in (1, 2, 3, 4, 5):
+                klass.__priority__ = 3
+
+            kpriority = klass.__priority__
             count = self.__count_equals(prop, klass.__required__)
-            if count > max:
-                actor_klass = klass
-                max = count
+            if count > priority_counts[kpriority]:
+                priority_counts[kpriority] = count
+                priority_actors[kpriority] = klass
+
+        for i in  (4, 3, 2, 1, 0):
+            if  priority_actors[i]:
+                actor_klass = priority_actors[i]
+                break
+
 
         actor = None 
         udi = prop['info.udi']
