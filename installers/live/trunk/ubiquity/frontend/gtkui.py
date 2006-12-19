@@ -1671,13 +1671,14 @@ class Wizard:
         self.auto_mountpoints = auto_mountpoints
 
 
-    def set_disk_choices (self, choices, manual_choice):
+    def set_disk_choices (self, choices, manual_choice, do_nothing_choice):
         self.got_disk_choices = True
 
         for child in self.part_disk_vbox.get_children():
             self.part_disk_vbox.remove(child)
 
         self.manual_choice = manual_choice
+        self.do_nothing_choice = do_nothing_choice
         firstbutton = None
         for choice in choices:
             if choice == '':
