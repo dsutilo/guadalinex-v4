@@ -30,4 +30,4 @@ fi
 
 export MEDIA_VERSION
 
-build-image-set daily
+build-image-set daily-mini

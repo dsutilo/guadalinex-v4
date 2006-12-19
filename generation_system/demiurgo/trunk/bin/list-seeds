@@ -79,6 +79,15 @@ case $MODE in
 				;;
 		esac
 		;;
+	ship-mini)
+		case $DIST in
+			warty|hoary|breezy)
+				;;
+			*)
+				echo 'boot minimal standard mini desktop-mini ship-mini'
+				;;
+		esac
+		;;
 esac
 
 exit 0

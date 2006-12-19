@@ -13,18 +13,12 @@ STRUCTURE="$1"
 
 SEEDS="$(list-seeds "$STRUCTURE" installer)"
 
-echo "SEEDS: $SEEDS" >> /tmp/inf
-echo "CDIMAGE_DVD: $CDIMAGE_DVD" >> /tmp/inf
-echo "CDIMAGE_INSTALL: $CDIMAGE_INSTALL" >> /tmp/inf
-echo "CDIMAGE_INSTALL_BASE: $CDIMAGE_INSTALL_BASE" >> /tmp/inf
-echo "CDIMAGE_LIVE: $CDIMAGE_LIVE" >> /tmp/inf
-
 if [ "$CDIMAGE_DVD" ]; then
 	SEEDS="$SEEDS $(list-seeds "$STRUCTURE" all | egrep -v '^(installer|casper)$' || true)"
 elif [ "$CDIMAGE_INSTALL" ]; then
 	SEEDS="$SEEDS $(list-seeds "$STRUCTURE" tasks)"
 elif [ "$CDIMAGE_MINI" ]; then
-	SEEDS="$SEEDS $(list-seeds "$STRUCTURE" mini)"
+	SEEDS="$SEEDS $(list-seeds "$STRUCTURE" ship-mini)"
 else
 	if [ "$CDIMAGE_INSTALL_BASE" = 1 ]; then
 		SEEDS="$SEEDS $(list-seeds "$STRUCTURE" base)"
@@ -34,14 +28,8 @@ else
 	fi
 fi
 
-echo "SEEDS: $SEEDS" >> /tmp/inf
-
 for seed in $SEEDS; do
 	echo "#include <$PROJECT/$DIST/$seed>"
 done
-
-
-
-
 
 exit 0
