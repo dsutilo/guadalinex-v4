@@ -1,0 +1,27 @@
+menu.lst_gnu-hurd.diff
+graphics.diff
+raid.diff
+raid_cciss.diff
+xfs_freeze.diff
+2gb_limit.diff
+kfreebsd.diff
+grub-special_device_names.diff
+#fix_amd64_compile.diff
+initrd_max_address.diff
+splashimage_help.diff
+grub-install_addsyncs.diff
+grub-install_regexp.diff
+grub-install_storeversion.diff
+geometry-26kernel.diff
+mprotect.diff
+savedefault.diff
+#postponed until dapper+1
+#ubuntu_update_grub.diff
+raid_i2o.diff
+print_func.diff
+intelmac.diff
+quiet.diff
+
+# Used to grab fixes from CVS. Run debian/rules cvs-sync to update it.
+cvs-sync.patch
+
