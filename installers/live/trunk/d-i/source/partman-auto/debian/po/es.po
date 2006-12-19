@@ -163,8 +163,8 @@ msgstr "Editar manualmente la tabla de particiones"
 #. Description
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:85
-msgid "Use actual partition table"
-msgstr "Usar la tabla de particiones actual"
+msgid "Re-use existing partitions"
+msgstr "Reutilizar particiones existentes"
 
 #. Type: text
 #. Description
