@@ -7,4 +7,6 @@
 python
 python-syck
 debhelper
+devscripts
 make
+fakeroot
