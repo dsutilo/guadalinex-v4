@@ -8,7 +8,7 @@
 
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
-DH_ALWAYS_EXCLUDE=.svn
+export DH_ALWAYS_EXCLUDE=.svn
 
 configure: configure-stamp
 configure-stamp:
@@ -40,12 +40,6 @@ install: build
 	# Add here commands to install the package into debian/hermes.
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/hermeshardware
 	dh_install 
-	mv debian/hermeshardware-guada/usr/share/hermes/actors/config-guada debian/hermeshardware-guada/usr/share/hermes/actors/config
-	
-	# Goodbye to .svn
-	rm -rf `find $(CURDIR)/debian/ -mindepth 2 -type d -name .svn`
-	
-
 
 # Build architecture-independent files here.
 binary-indep: build install
