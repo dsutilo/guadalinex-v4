@@ -725,7 +725,11 @@ class Install:
         ret = dbfilter.run_command(auto_process=True)
         if ret != 0:
             raise InstallStepError("AptSetup failed with code %d" % ret)
-
+        
+        # Using the /apt/sources.list from META in the instaled system (Fix for
+        # Guadalinex).
+        os.remove(os.path.join(self.target,'etc/apt/sources.list'))
+        shutil.copy2('/etc/apt/sources.list',os.path.join(self.target,'etc/apt/sources.list'))
 
     def get_cache_pkg(self, cache, pkg):
         # work around broken has_key in python-apt 0.6.16
