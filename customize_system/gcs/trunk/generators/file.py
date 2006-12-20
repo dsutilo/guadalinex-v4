@@ -11,6 +11,7 @@ from config import config
 from generators.part import DivertPart
 from generators.part import ScriptsPart 
 
+
 class FileGenerator(object):
 
     def __init__(self):
@@ -209,8 +210,8 @@ class RulesGenerator(FileGenerator):
             return
         #dest_path = os.path.dirname(dest_path)
         command = ''
-	# If we aren't working with config files or we are working with them but has the appropiate
-	# extension fill the command
+	    # If we aren't working with config files or we are working with them but has the appropiate
+	    # extension fill the command
         if not ('gcs/conffiles_skel/' in orig_path) or orig_path.endswith(config['config_extension']):
             exclude_arg = ''
             if os.path.isdir(orig_path + '/.svn'):
@@ -310,6 +311,8 @@ class PrePostGenerator(FileGenerator):
     def activate(self):
         self.set_template_content(self.template_name)
         initial_content = self.template_content
+        initial_content = initial_content.replace('<DIVERT_SLOT>', '')
+        initial_content = initial_content.replace('<SCRIPTS_SLOT>', '')
         
         self._set_divert()
         self._set_install_scripts()
@@ -324,10 +327,9 @@ class PrePostGenerator(FileGenerator):
 
 
     def _set_divert(self):
-        if self.divert_content:
-            newcontent = self.template_content.replace('<DIVERT_SLOT>', 
-                    self.divert_content)
-            self.template_content = newcontent
+        newcontent = self.template_content.replace('<DIVERT_SLOT>', 
+               self.divert_content)
+        self.template_content = newcontent
 
 
     def _set_install_scripts(self):
@@ -335,10 +337,9 @@ class PrePostGenerator(FileGenerator):
                 '/' + self.scripts_path)
 
         scripts_content = scripts_part.get_scripts_content()
-        if scripts_content:
-            newcontent = self.template_content.replace('<SCRIPTS_SLOT>',
-                    scripts_content)
-            self.template_content = newcontent
+        newcontent = self.template_content.replace('<SCRIPTS_SLOT>',
+                scripts_content)
+        self.template_content = newcontent
 
 
 
