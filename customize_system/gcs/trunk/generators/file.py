@@ -147,15 +147,16 @@ class RulesGenerator(FileGenerator):
     def __process_newfiles(self):
         """ Process "newfiles" file looking for files to install.
         """
-        newfiles_lines = open(config['source_path'] + '/gcs/newfiles').readlines()
-
-        for line in newfiles_lines:
-            line = line.strip()
-            line_tuple = line.split()
-            if (len(line_tuple) != 2) or line.startswith('#'):
-                continue
-
-            self.__add_dhinstall(*line_tuple)
+        if os.path.isfile(config['source_path'] + '/gcs/newfiles'):
+            newfiles_lines = open(config['source_path'] + '/gcs/newfiles').readlines()
+    
+            for line in newfiles_lines:
+                line = line.strip()
+                line_tuple = line.split()
+                if (len(line_tuple) != 2) or line.startswith('#'):
+                    continue
+    
+                self.__add_dhinstall(*line_tuple)
 
 
     def __process_skel(self, skel_name):
