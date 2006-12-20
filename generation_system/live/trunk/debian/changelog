@@ -1,3 +1,10 @@
+glig (0.6) unstable; urgency=low
+
+  * Added restricted component to glig conf file to be able to install
+    restricted pkgs during live generation
+
+ --  <rmartin@emergya.es>  Wed, 20 Dec 2006 08:42:23 +0100
+
 glig (0.5) unstable; urgency=low
 
   * Added restricted component 
