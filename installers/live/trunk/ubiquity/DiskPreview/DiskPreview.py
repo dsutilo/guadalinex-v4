@@ -11,7 +11,10 @@ class DiskPreview(gtk.VBox):
     def __init__(self):
         gtk.VBox.__init__(self,1)
         self.mounted_list = []
-
+        self.path_first_button = ""
+        self.path_second_button = ""
+        self.path_third_button = ""
+        
         #Dbus stuff
         self.bus = dbus.SystemBus()
         self.hal_manager_obj = self.bus.get_object("org.freedesktop.Hal", "/org/freedesktop/Hal/Manager")
@@ -38,8 +41,11 @@ class DiskPreview(gtk.VBox):
         self.disk_preview_back_button = self.xml.get_widget("disk_preview_back_button")
         self.disk_preview_harddisk_button = self.xml.get_widget("disk_preview_harddisk_button")
         self.disk_preview_first_dir_button = self.xml.get_widget("disk_preview_first_dir_button")
+        self.disk_preview_first_dir_label = self.xml.get_widget("disk_preview_first_dir_label")
         self.disk_preview_second_dir_button = self.xml.get_widget("disk_preview_second_dir_button")
+        self.disk_preview_second_dir_label = self.xml.get_widget("disk_preview_second_dir_label")
         self.disk_preview_third_dir_button = self.xml.get_widget("disk_preview_third_dir_button")
+        self.disk_preview_third_dir_label = self.xml.get_widget("disk_preview_third_dir_label")
         self.disk_preview_forward_button = self.xml.get_widget("disk_preview_forward_button")
         
         self.disk_preview_browser_iconview = self.xml.get_widget("disk_preview_browser_iconview")
@@ -81,9 +87,9 @@ class DiskPreview(gtk.VBox):
         selection.connect("changed", self.__disk_preview_treview_row_changed_cb, None)
         self.disk_preview_browser_iconview.connect("item-activated", self.__disk_preview_browser_iconview_item_activated_cb, None)
         self.disk_preview_harddisk_button.connect("clicked", self.__disk_preview_harddisk_button_cb, None)
-        self.disk_preview_first_dir_button.connect("clicked", self.__disk_preview_first_dir_button_cb, None)
-        self.disk_preview_second_dir_button.connect("clicked", self.__disk_preview_second_dir_button_cb, None)
-        self.disk_preview_third_dir_button.connect("clicked", self.__disk_preview_third_dir_button_cb, None)
+        self.fdb_handler_id = self.disk_preview_first_dir_button.connect("toggled", self.__disk_preview_first_dir_button_cb, None)
+        self.sdb_handler_id = self.disk_preview_second_dir_button.connect("toggled", self.__disk_preview_second_dir_button_cb, None)
+        self.tdb_handler_id = self.disk_preview_third_dir_button.connect("toggled", self.__disk_preview_third_dir_button_cb, None)
         self.disk_preview_back_button.connect("clicked", self.__disk_preview_back_button_cb, None)
         self.disk_preview_forward_button.connect("clicked", self.__disk_preview_forward_button_cb, None)
         
@@ -145,7 +151,6 @@ class DiskPreview(gtk.VBox):
 
     def __disk_preview_back_button_cb(self, widget, data):
         path_list = self.path_first_button.lstrip("/").split("/")
-        print len(path_list)
 
         if len(path_list) == 7:
             self.disk_preview_harddisk_button.show()
@@ -162,18 +167,11 @@ class DiskPreview(gtk.VBox):
             self.path_second_button = self.path_first_button
             self.path_first_button = self.__get_path_from_path_list(path_list, 0, len(path_list)-2)
 
-        self.disk_preview_first_dir_button.set_label(os.path.basename(self.path_first_button))
-        self.disk_preview_second_dir_button.set_label(os.path.basename(self.path_second_button))
-        self.disk_preview_third_dir_button.set_label(os.path.basename(self.path_third_button))
-        
+        self.__update_dir_buttons()  
 
     def __disk_preview_forward_button_cb(self, widget, data):
         path_list = self.path_third_button.lstrip("/").split("/")
         full_path_list = self.current_full_path.lstrip("/").split("/") 
-        print len(path_list)
-        print len(full_path_list)
-        print full_path_list
-        print path_list
 
         if len(path_list) == len(full_path_list)-1 :
             self.disk_preview_harddisk_button.hide()
@@ -191,11 +189,8 @@ class DiskPreview(gtk.VBox):
             self.path_second_button = self.path_third_button
             tmp_path_list = path_list + [full_path_list[len(path_list)]]
             self.path_third_button = self.__get_path_from_path_list(tmp_path_list, 0, len(path_list))
-
-        self.disk_preview_first_dir_button.set_label(os.path.basename(self.path_first_button))
-        self.disk_preview_second_dir_button.set_label(os.path.basename(self.path_second_button))
-        self.disk_preview_third_dir_button.set_label(os.path.basename(self.path_third_button))     
-              
+   
+        self.__update_dir_buttons()      
         
     #Private Methods
     
@@ -204,6 +199,36 @@ class DiskPreview(gtk.VBox):
             self.disk_preview_free_label.set_text(free)
             self.disk_preview_used_label.set_text(used)
             self.disk_preview_total_label.set_text(total)
+
+    def __update_dir_buttons(self):
+        self.disk_preview_first_dir_button.handler_block(self.fdb_handler_id)
+        self.disk_preview_second_dir_button.handler_block(self.sdb_handler_id)
+        self.disk_preview_third_dir_button.handler_block(self.tdb_handler_id)
+        
+        if self.path_first_button == self.current_full_path :
+            self.disk_preview_first_dir_label.set_markup("<b>%s</b>" % os.path.basename(self.path_first_button))
+            self.disk_preview_first_dir_button.set_active(True)
+        else:
+            self.disk_preview_first_dir_label.set_markup(os.path.basename(self.path_first_button))
+            self.disk_preview_first_dir_button.set_active(False)
+
+        if self.path_second_button == self.current_full_path :
+            self.disk_preview_second_dir_label.set_markup("<b>%s</b>" % os.path.basename(self.path_second_button))
+            self.disk_preview_second_dir_button.set_active(True)
+        else:
+            self.disk_preview_second_dir_label.set_markup(os.path.basename(self.path_second_button))
+            self.disk_preview_second_dir_button.set_active(False)
+
+        if self.path_third_button == self.current_full_path :
+            self.disk_preview_third_dir_label.set_markup("<b>%s</b>" % os.path.basename(self.path_third_button))
+            self.disk_preview_third_dir_button.set_active(True)
+        else:
+            self.disk_preview_third_dir_label.set_markup(os.path.basename(self.path_third_button))
+            self.disk_preview_third_dir_button.set_active(False)
+
+        self.disk_preview_first_dir_button.handler_unblock(self.fdb_handler_id)
+        self.disk_preview_second_dir_button.handler_unblock(self.sdb_handler_id)
+        self.disk_preview_third_dir_button.handler_unblock(self.tdb_handler_id)
 
     def __get_path_from_path_list(self, path_list, f, t):
         ret = "/"
@@ -230,44 +255,39 @@ class DiskPreview(gtk.VBox):
 
         if len(path_list) == 5 :
              self.disk_preview_harddisk_button.show()
-             return
 
         if len(path_list) > 5 and len(path_list) <= 8:
             self.disk_preview_harddisk_button.show()
             if len(path_list) == 6:
-                self.disk_preview_first_dir_button.set_label(path_list[5])
                 self.disk_preview_first_dir_button.show()
                 self.path_first_button = self.__get_path_from_path_list(path_list, 0, 5)
+                self.path_second_button = ""
+                self.path_third_button = ""
             if len(path_list) == 7:
-                self.disk_preview_first_dir_button.set_label(path_list[5])
                 self.disk_preview_first_dir_button.show()
-                self.disk_preview_second_dir_button.set_label(path_list[6])
                 self.disk_preview_second_dir_button.show()
                 self.path_first_button = self.__get_path_from_path_list(path_list, 0, 5)
                 self.path_second_button = self.__get_path_from_path_list(path_list, 0, 6)
+                self.path_third_button = ""
             if len(path_list) == 8:
-                self.disk_preview_first_dir_button.set_label(path_list[5])
                 self.disk_preview_first_dir_button.show()
-                self.disk_preview_second_dir_button.set_label(path_list[6])
                 self.disk_preview_second_dir_button.show()
-                self.disk_preview_third_dir_button.set_label(path_list[7])
                 self.disk_preview_third_dir_button.show()
                 self.path_first_button = self.__get_path_from_path_list(path_list, 0, 5)
                 self.path_second_button = self.__get_path_from_path_list(path_list, 0, 6)
                 self.path_third_button = self.__get_path_from_path_list(path_list, 0, 7)
-            return
+
 
         if len(path_list) > 8:
             self.disk_preview_back_button.show()
-            self.disk_preview_first_dir_button.set_label(path_list[-3])
             self.disk_preview_first_dir_button.show()
-            self.disk_preview_second_dir_button.set_label(path_list[-2])
             self.disk_preview_second_dir_button.show()
-            self.disk_preview_third_dir_button.set_label(path_list[-1])
             self.disk_preview_third_dir_button.show()
             self.path_first_button = self.__get_path_from_path_list(path_list, 0, len(path_list) - 3)
             self.path_second_button = self.__get_path_from_path_list(path_list, 0, len(path_list) - 2)
             self.path_third_button = self.__get_path_from_path_list(path_list, 0, len(path_list) - 1)
+
+        self.__update_dir_buttons()
         
         
     def __try_to_mount_filesystem(self, fstype, dev_path, mount_path):
@@ -316,7 +336,6 @@ class DiskPreview(gtk.VBox):
         
             
     def __populate_browser_iconview(self, path="/"):
-        print "listing %s ..." % path
         dir_list = os.listdir(path)
         dir_items = []
         file_items = []
