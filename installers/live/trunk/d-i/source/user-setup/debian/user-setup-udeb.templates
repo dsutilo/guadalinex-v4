@@ -100,6 +100,11 @@ _Description: Re-enter password to verify:
  Please enter the same user password again to verify you have typed it
  correctly.
 
+Template: user-setup/password-too-short
+Type: error
+_Description: Password too short
+ The password you entered is to short. Please use more than 3 characteres.
+
 Template: user-setup/password-mismatch
 Type: error
 _Description: Password input error

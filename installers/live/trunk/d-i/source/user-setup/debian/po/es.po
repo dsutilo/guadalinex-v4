@@ -266,6 +266,18 @@ msgstr ""
 #. Type: error
 #. Description
 #: ../user-setup-udeb.templates:14001
+msgid "Password too short"
+msgstr "La contraseña es demasiado corta"
+
+#. Type: error
+#. Description
+#: ../user-setup-udeb.templates:14001
+msgid "The password you entered is to short. Please use more than 3 characteres."
+msgstr "La contraseña introducida es demasiado corta. Por favor use mas de 3 caracteres."
+
+#. Type: error
+#. Description
+#: ../user-setup-udeb.templates:14001
 msgid "Password input error"
 msgstr "Se ha producido un error al introducir la contraseña"
 

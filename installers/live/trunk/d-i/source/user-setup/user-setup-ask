@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/bash -e
 
 . /usr/share/debconf/confmodule
 
@@ -171,6 +171,16 @@ while :; do
 					db_set passwd/user-password-again ""
 					db_fset user-setup/password-mismatch seen false
 					db_input critical user-setup/password-mismatch
+					db_fset passwd/user-password seen false
+					db_fset passwd/user-password-again seen false
+					STATE=6
+					continue
+				fi
+				if [ ${#USER_PW} -lt 4 ]; then
+					db_set passwd/user-password ""
+					db_set passwd/user-password-again ""
+					db_fset user-setup/password-mismatch seen false
+					db_input critical user-setup/password-too-short
 					db_fset passwd/user-password seen false
 					db_fset passwd/user-password-again seen false
 					STATE=6
