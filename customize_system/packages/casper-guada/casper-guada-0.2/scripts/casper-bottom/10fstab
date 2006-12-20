@@ -37,6 +37,7 @@ esac
 
 #cat <<EOF > /root/etc/rc2.d/S05disks.sh
 cat <<EOF > /root/etc/init.d/disks.sh
+#!/bin/bash
 #
 # disks.sh	Search all the local disks and write them into the /etc/fstab.
 #
@@ -172,12 +173,12 @@ get_device ()
 
 log_begin_msg "Searching local disks..."
 add_partitions_to_fstab
-rm -f /etc/mtab
-cat /proc/mounts > /etc/mtab
-mount -a  >> /var/log/initramfs.debug 2>&1
-swapon -a >> /var/log/initramfs.debug 2>&1
-device=\$(get_device)
-mount \$device >> /var/log/initramfs.debug 2>&1
+#rm -f /etc/mtab
+#cat /proc/mounts > /etc/mtab
+#mount -a  >> /var/log/initramfs.debug 2>&1
+#swapon -a >> /var/log/initramfs.debug 2>&1
+#device=\$(get_device)
+#mount \$device >> /var/log/initramfs.debug 2>&1
 log_end_msg 
 
 exit 0
