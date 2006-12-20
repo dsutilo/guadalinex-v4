@@ -1,3 +1,9 @@
+glig (0.7) unstable; urgency=low
+
+  * Now guadalinex-standard is installed in live systems
+
+ --  <rmartin@emergya.es>  Wed, 20 Dec 2006 09:07:21 +0100
+
 glig (0.6) unstable; urgency=low
 
   * Added restricted component to glig conf file to be able to install
