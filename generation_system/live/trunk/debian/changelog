@@ -1,8 +1,14 @@
+glig (0.8) unstable; urgency=low
+
+  * Added guadalinex-standard-conf 
+
+ -- Carlos Parra Camargo <cparra@emergya.es>  Wed, 20 Dec 2006 11:27:17 +0100
+
 glig (0.7) unstable; urgency=low
 
   * Now guadalinex-standard is installed in live systems
 
- --  <rmartin@emergya.es>  Wed, 20 Dec 2006 09:07:21 +0100
+ -- Rafale Martin de Agar Tirado <rmartin@emergya.es>  Wed, 20 Dec 2006 09:07:21 +0100
 
 glig (0.6) unstable; urgency=low
 
