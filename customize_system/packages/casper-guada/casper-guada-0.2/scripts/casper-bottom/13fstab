@@ -36,13 +36,13 @@ esac
 #EOF
 
 #cat <<EOF > /root/etc/rc2.d/S05disks.sh
-cat <<EOF > /root/etc/init.d/disks.sh
+cat <<EOF > /root/etc/init.d/disks
 #!/bin/bash
 #
-# disks.sh	Search all the local disks and write them into the /etc/fstab.
+# disks		Search all the local disks and write them into the /etc/fstab.
 #
 # Version:	@(#)disks.sh  1.0  15-Oct-2005  juanje@interactors.coop
-# 		@(#)disks.sh  2.0  19-Dec-2006  rmartin@emergya.es
+# 		@(#)disks  2.0  19-Dec-2006  rmartin@emergya.es
 #
 
 VERBOSE=yes
@@ -186,7 +186,7 @@ exit 0
 EOF
 
 #/root/bin/chmod +x /root/etc/rc2.d/S05disks.sh 
-/root/bin/chmod +x /root/etc/init.d/disks.sh 
+/root/bin/chmod +x /root/etc/init.d/disks 
 
 # creating symbolic links in /etc/rc?.d/ to /etc/init.d/disks.sh
-chroot /root update-rc.d disks.sh start 5 2 3 4 5 .
+chroot /root update-rc.d disks start 5 2 3 4 5 .
