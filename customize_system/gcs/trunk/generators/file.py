@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import shutil
 import os.path
 import re
 import datetime
@@ -228,7 +229,7 @@ class ChangelogGenerator(FileGenerator):
     def __init__(self):
         try:
             self.actual_content = open(config['source_path'] + \
-                '/debian/changelog').read()
+                '/gcs/changelog').read()
             self.changelog_exists = True
         except:
             self.actual_content = ''
@@ -238,6 +239,7 @@ class ChangelogGenerator(FileGenerator):
 
 
     def activate(self):
+        debchangelog_path = config['source_path'] + '/debian/changelog'
         if self.__is_new_version():
             self.set_template_content('changelog_template')
 
@@ -245,7 +247,11 @@ class ChangelogGenerator(FileGenerator):
             self.__set_changes()
 
             self.template_content += '\n\n' + self.actual_content
+            self._write_file('gcs/changelog')
             self._write_file('debian/changelog')
+        elif self.changelog_exists and (not os.path.exists(debchangelog_path)):
+            orig_changelog_path = config['source_path'] + '/gcs/changelog'
+            shutil.copy(orig_changelog_path, debchangelog_path)
 
 
     def __set_basic_info(self):
@@ -279,7 +285,7 @@ class ChangelogGenerator(FileGenerator):
         """
         content = None
         try:
-            content = open('debian/changelog').readlines()
+            content = open('gcs/changelog').readlines()
         except:
             pass
         

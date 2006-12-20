@@ -18,9 +18,9 @@ shortdesc: "Sistema de configuración de Guadalinex v4"
 longdesc: "Consiste en un conjunto de herramientas que facilitan\n la creacion de metapaquetes y paquetes de configuración."
 
 # Versión del paquete
-version: 0.3.8
+version: 0.3.9
 
 # Cambios en esta versión
 changes:
-    - Development release.
-    - Fixing a minor bug with skel.
+    - 0.4 rc1.
+
