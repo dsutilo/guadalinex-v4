@@ -1,0 +1,16 @@
+Source: festvox-ellpc11k
+Section: non-free/sound
+Priority: extra
+Maintainer: Matthias Urlichs <smurf@smurf.noris.de>
+Standards-Version: 3.5.10
+Build-Depends-Indep: debhelper (>= 4)
+
+Package: festvox-ellpc11k
+Architecture: all
+Depends: festival (>= 1.4.3-9)
+Conflicts: festvox-ellpc16k
+Replaces: festvox-ellpc16k
+Provides: festival-voice
+Description: Castilian Spanish male speaker for Festival
+ This is a Castilian Spanish male speaker for the Festival speech synthesis
+ system.

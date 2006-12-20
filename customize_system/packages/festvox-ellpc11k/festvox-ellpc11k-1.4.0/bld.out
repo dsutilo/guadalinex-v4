@@ -1,0 +1,11 @@
+dpkg-buildpackage: source package is festvox-ellpc11k
+dpkg-buildpackage: source version is 1.4.0-3
+dpkg-buildpackage: source maintainer is Matthias Urlichs <smurf@smurf.noris.de>
+dpkg-buildpackage: host architecture is i386
+ fakeroot debian/rules clean
+dh_testdir
+dh_testroot
+dh_clean
+ dpkg-source -b festvox-ellpc11k-1.4.0
+dpkg-source: building festvox-ellpc11k using existing festvox-ellpc11k_1.4.0.orig.tar.gz
+dpkg-source: building festvox-ellpc11k in festvox-ellpc11k_1.4.0-3.diff.gz

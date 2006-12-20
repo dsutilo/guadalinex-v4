@@ -1,0 +1,38 @@
+#!/usr/bin/make -f
+# Sample debian/rules that uses debhelper. GNU copyright 1997 by Joey Hess.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+build:
+# Nothing to do.
+
+clean:
+	dh_testdir
+	dh_testroot
+	dh_clean
+
+# Build architecture-dependent files here.
+binary-arch: build
+# We have nothing to do by default.
+
+# Build architecture-independent files here.
+binary-indep: build
+	dh_testdir
+	dh_testroot
+	dh_installdirs usr/share/festival/voices/spanish/el_diphone/festvox \
+		usr/share/festival/voices/spanish/el_diphone/group
+	cp -a lib/voices/spanish/el_diphone/festvox/*.scm \
+		debian/tmp/usr/share/festival/voices/spanish/el_diphone/festvox/
+	cp -a lib/voices/spanish/el_diphone/group/*.group \
+		debian/tmp/usr/share/festival/voices/spanish/el_diphone/group/
+	dh_installdocs
+	dh_installchangelogs
+	dh_compress
+	dh_fixperms
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary
