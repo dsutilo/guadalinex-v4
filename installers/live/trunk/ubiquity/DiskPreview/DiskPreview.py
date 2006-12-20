@@ -10,6 +10,7 @@ import DiskPreviewUtils
 class DiskPreview(gtk.VBox):
     def __init__(self):
         gtk.VBox.__init__(self,1)
+        self.cursor = None
         self.mounted_list = []
         self.path_first_button = ""
         self.path_second_button = ""
@@ -83,7 +84,7 @@ class DiskPreview(gtk.VBox):
         selection = self.disk_preview_treeview.get_selection()
         selection.set_mode(gtk.SELECTION_SINGLE)
  
-        #Signals       
+        #Signals
         selection.connect("changed", self.__disk_preview_treview_row_changed_cb, None)
         self.disk_preview_browser_iconview.connect("item-activated", self.__disk_preview_browser_iconview_item_activated_cb, None)
         self.disk_preview_harddisk_button.connect("clicked", self.__disk_preview_harddisk_button_cb, None)
@@ -336,6 +337,10 @@ class DiskPreview(gtk.VBox):
         
             
     def __populate_browser_iconview(self, path="/"):
+        self.cursor = gtk.gdk.Cursor(gtk.gdk.WATCH)
+        self.window.set_cursor(self.cursor)
+        gtk.gdk.flush()
+        
         dir_list = os.listdir(path)
         dir_items = []
         file_items = []
@@ -361,6 +366,11 @@ class DiskPreview(gtk.VBox):
                 self.disk_preview_browser_model.append([file_item, self.utils.get_file_pixbuf(os.path.join(path, file_item)),
                                                         os.path.join(path, file_item)])
         self.__update_disk_path_area(path)
+
+        
+        self.cursor = None
+        self.window.set_cursor(self.cursor)
+        gtk.gdk.flush()
 
         
         
