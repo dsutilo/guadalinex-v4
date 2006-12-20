@@ -155,13 +155,14 @@ add_partitions_to_fstab()
 		echo \$entry >> /etc/fstab
 	done
 	num=0
-	cdroms=\$(get_cdroms)
-	for cd in \$cdroms; do
-		entry="/dev/\${cd}            /media/cdrom\${num}            udf,iso9660 ro,user,noauto  0       0"
-		mkdir -p /media/cdrom\${num} >> /var/log/initramfs.debug 2>&1
-		let num=num+1
-		echo \$entry >> /etc/fstab
-	done
+# CD-ROMs are now managed by pmount; they should not be in fstab
+#	cdroms=\$(get_cdroms)
+#	for cd in \$cdroms; do
+#		entry="/dev/\${cd}            /media/cdrom\${num}            udf,iso9660 ro,user,noauto  0       0"
+#		mkdir -p /media/cdrom\${num} >> /var/log/initramfs.debug 2>&1
+#		let num=num+1
+#		echo \$entry >> /etc/fstab
+#	done
 	
 }
 
@@ -187,4 +188,5 @@ EOF
 #/root/bin/chmod +x /root/etc/rc2.d/S05disks.sh 
 /root/bin/chmod +x /root/etc/init.d/disks.sh 
 
-# FIXME: create symbolic links in /etc/rc?.d/ to /etc/init.d/disks.sh
+# creating symbolic links in /etc/rc?.d/ to /etc/init.d/disks.sh
+chroot /root update-rc.d disks.sh start 5 2 3 4 5 .
