@@ -9,6 +9,11 @@
 [ ! -d $DERIVATIVE_POOL ] && mkdir -p $DERIVATIVE_POOL
 [ ! -f $DERIVATIVE_INDICES/override.edgy.$CODENAME ] && touch $DERIVATIVE_INDICES/override.edgy.$CODENAME
 
+echo "==== Updating $DERIVATIVE_PACKAGES... ===="
+cd $DERIVATIVE_PACKAGES
+svn up
+cd -
+
 # Ready...
 for pkg in $(ls $DERIVATIVE_PACKAGES | grep .*deb\$)
 do
