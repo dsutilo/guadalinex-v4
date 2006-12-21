@@ -2,7 +2,7 @@
 
 export CDIMAGE_ROOT="${CDIMAGE_ROOT:-/var/cdimage}"
 . "$CDIMAGE_ROOT/etc/config"
-. "$CDIMAGE_ROOT/etc/guada"
+. "$CDIMAGE_ROOT/etc/derivative"
 
 cd $MIRROR_ROOT/bin
 
