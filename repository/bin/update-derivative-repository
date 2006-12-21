@@ -3,10 +3,10 @@
 . ./repo.conf
 
 # Steady...
-[ ! -d $BINARY_TORO ] && mkdir -p $BINARY_TORO
-[ ! -d $BINARY_DI_TORO ] && mkdir -p $BINARY_DI_TORO
-[ ! -d $SOURCE_TORO ] && mkdir -p $SOURCE_TORO
-[ ! -d $TORO_POOL ] && mkdir -p $TORO_POOL
+[ ! -d $BINARY_DERIVATIVE ] && mkdir -p $BINARY_DERIVATIVE
+[ ! -d $BINARY_DI_DERIVATIVE ] && mkdir -p $BINARY_DI_DERIVATIVE
+[ ! -d $SOURCE_DERIVATIVE ] && mkdir -p $SOURCE_DERIVATIVE
+[ ! -d $DERIVATIVE_POOL ] && mkdir -p $DERIVATIVE_POOL
 
 
 # Ready...
@@ -15,7 +15,7 @@ do
 	SRC_NAME=$(dpkg --field $GUADA_PACKAGES/$pkg Source)
 	[ -z "$SRC_NAME" ] && SRC_NAME=$(dpkg --field $GUADA_PACKAGES/$pkg Package)
 
-	DEST_PKG_DIR=$TORO_POOL/$(echo $SRC_NAME | cut -c 1)/$SRC_NAME
+	DEST_PKG_DIR=$DERIVATIVE_POOL/$(echo $SRC_NAME | cut -c 1)/$SRC_NAME
 	[ ! -d $DEST_PKG_DIR ] && mkdir -p $DEST_PKG_DIR
 	
 	# Create the link if already doesn't exist.
@@ -35,8 +35,6 @@ do
 done
 
 # Go!!!
-apt-ftparchive -c apt.conf generate toro.conf 
-apt-ftparchive -c apt.conf generate toro-di.conf 
-apt-ftparchive -c apt.conf release $DIST_EDGY > $DIST_EDGY/Release
-
-# TODO: sign Relase
+apt-ftparchive -c apt.$CODENAME.conf generate $CODENAME.conf 
+apt-ftparchive -c apt.$CODENAME.conf generate $CODENAME-di.conf 
+apt-ftparchive -c apt.$CODENAME.conf release $DIST_EDGY > $DIST_EDGY/Release
