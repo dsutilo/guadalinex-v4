@@ -7,7 +7,7 @@
 [ ! -d $BINARY_DI_DERIVATIVE ] && mkdir -p $BINARY_DI_DERIVATIVE
 [ ! -d $SOURCE_DERIVATIVE ] && mkdir -p $SOURCE_DERIVATIVE
 [ ! -d $DERIVATIVE_POOL ] && mkdir -p $DERIVATIVE_POOL
-
+[ ! -f $DERIVATIVE_INDICES/override.edgy.$CODENAME ] && touch $DERIVATIVE_INDICES/override.edgy.$CODENAME
 
 # Ready...
 for pkg in $(ls $DERIVATIVE_PACKAGES | grep .*deb\$)
