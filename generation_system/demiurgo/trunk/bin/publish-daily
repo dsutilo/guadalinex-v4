@@ -3,6 +3,7 @@ set -e
 
 export CDIMAGE_ROOT="${CDIMAGE_ROOT:-/var/cdimage}"
 . "$CDIMAGE_ROOT/etc/config"
+. "$CDIMAGE_ROOT/etc/derivative"
 . "$CDIMAGE_ROOT/bin/functions.sh"
 
 if [ -z "$1" ]; then
@@ -132,23 +133,11 @@ for arch in $ARCHES; do
 		echo "Publishing $arch ..."
 		mkdir -p "$PUBLISH"
 
-#		mv "$CDOUT/$arch/$DIST-$TYPE-$arch.raw" \
-#		   "$PUBLISH/$DIST-$TYPE-$arch.iso"
-
-#		mv "$CDOUT/$arch/$DIST-$TYPE-$arch.raw" \
-#		   "$PUBLISH/guadalinex-v4-$TYPE-$DATE_AND_TIME.iso"
-
 		mv "$CDOUT/$arch/$DIST-$TYPE-$arch.raw" \
-		   "$PUBLISH/guadalinex-v4-$FLAVOUR-$MEDIA_VERSION-$DATE_AND_TIME.iso" 
-
-#		mv "$CDOUT/$arch/$DIST-$TYPE-$arch.list" \
-#		   "$PUBLISH/$DIST-$TYPE-$arch.list"
-
-#		mv "$CDOUT/$arch/$DIST-$TYPE-$arch.list" \
-#		   "$PUBLISH/guadalinex-v4-$TYPE-$DATE_AND_TIME.list"
+		   "$PUBLISH/$DERIVATIVE-$DERIVATIVE_VERSION-$FLAVOUR-$MEDIA_VERSION-$DATE_AND_TIME.iso" 
 
 		mv "$CDOUT/$arch/$DIST-$TYPE-$arch.list" \
-		   "$PUBLISH/guadalinex-v4-$FLAVOUR-$MEDIA_VERSION-$DATE_AND_TIME.list"
+		   "$PUBLISH/$DERIVATIVE-$DERIVATIVE_VERSION-$FLAVOUR-$MEDIA_VERSION-$DATE_AND_TIME.list"
 
 #		md5sum="$(grep -qs " $DIST-$TYPE-$arch\.raw\$" \
 #				   "$CDOUT/$arch/MD5SUMS" | cut -d' ' -f1)" \
@@ -159,10 +148,10 @@ for arch in $ARCHES; do
 			|| true
 
 		if [ "$md5sum" ]; then
-			echo "$md5sum  guadalinex-v4-$FLAVOUR-$MEDIA_VERSION-$DATE_AND_TIME.iso" \
+			echo "$md5sum  $DERIVATIVE-$DERIVATIVE_VERSION-$FLAVOUR-$MEDIA_VERSION-$DATE_AND_TIME.iso" \
 				>> "$PUBLISH/MD5SUMS"
 		else
-			(cd "$PUBLISH" && md5sum "guadalinex-v4-$FLAVOUR-$MEDIA_VERSION-$DATE_AND_TIME.iso" \
+			(cd "$PUBLISH" && md5sum "$DERIVATIVE-$DERIVATIVE_VERSION-$FLAVOUR-$MEDIA_VERSION-$DATE_AND_TIME.iso" \
 				>> MD5SUMS)
 		fi
 
@@ -187,11 +176,11 @@ for arch in $ARCHES; do
 			rm -f "$PUBLISH/$DIST-$TYPE-$arch.manifest"
 		fi
 
-		SIZE="$(stat -c %s "$PUBLISH/guadalinex-v4-$FLAVOUR-$MEDIA_VERSION-$DATE_AND_TIME.iso")"
+		SIZE="$(stat -c %s "$PUBLISH/$DERIVATIVE-$DERIVATIVE_VERSION-$FLAVOUR-$MEDIA_VERSION-$DATE_AND_TIME.iso")"
 		if [ "$SIZE" -gt "$SIZELIMIT" ]; then
-			touch "$PUBLISH/guadalinex-v4-$FLAVOUR-$MEDIA_VERSION-$DATE_AND_TIME.OVERSIZED"
+			touch "$PUBLISH/$DERIVATIVE-$DERIVATIVE_VERSION-$FLAVOUR-$MEDIA_VERSION-$DATE_AND_TIME.OVERSIZED"
 		else
-			rm -f "$PUBLISH/guadalinex-v4-$FLAVOUR-$MEDIA_VERSION-$DATE_AND_TIME.OVERSIZED"
+			rm -f "$PUBLISH/$DERIVATIVE-$DERIVATIVE_VERSION-$FLAVOUR-$MEDIA_VERSION-$DATE_AND_TIME.OVERSIZED"
 		fi
 	else
 		echo "No CD for $arch!" >&2

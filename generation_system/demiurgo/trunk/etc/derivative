@@ -4,6 +4,7 @@
 # Name of the derivative distribution 
 export DERIVATIVE="guadalinex"
 export DERIVATIVE_CN="toro"
+export DERIVATIVE_VERSION="v4"
 export MIRROR_ROOT="/var/mirror"
 export SVN_ROOT="/var/guadalinexv4"
 export IMAGEOFFICIAL="beta1"
