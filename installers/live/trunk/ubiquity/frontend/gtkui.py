@@ -1465,6 +1465,19 @@ class Wizard:
         syslog.syslog('switched to page %s' % current_name)
 
 
+    def on_autopartition_choice_toggled (self, widget):
+        """Update autopartitioning screen when the resize button is
+        selected."""
+
+        if widget.get_label() == self.resize_choice:
+            self.partition_message.set_text("Resize Choice")
+        elif widget.get_label() == self.do_nothing_choice:
+            self.partition_message.set_text("Do Nothing Choice")
+        elif widget.get_label() == self.manual_choice:
+            self.partition_message.set_text("Manual Choice")
+        else:
+            self.partition_message.set_text("Borrar toda la particion")
+
     def on_autopartition_resize_toggled (self, widget):
         """Update autopartitioning screen when the resize button is
         selected."""
@@ -1711,6 +1724,7 @@ class Wizard:
 
         self.manual_choice = manual_choice
         self.do_nothing_choice = do_nothing_choice
+        self.resize_choice = resize_choice
         firstbutton = None
         for choice in choices:
             button = gtk.RadioButton(firstbutton, choice, False)
@@ -1720,8 +1734,10 @@ class Wizard:
             if choice == resize_choice:
                 self.on_autopartition_resize_toggled(button)
                 button.connect('toggled', self.on_autopartition_resize_toggled)
+            button.connect('toggled', self.on_autopartition_choice_toggled)
         if firstbutton is not None:
             firstbutton.set_active(True)
+	    self.on_autopartition_choice_toggled(firstbutton)
         if resize_choice not in choices:
             self.new_size_vbox.hide()
 
