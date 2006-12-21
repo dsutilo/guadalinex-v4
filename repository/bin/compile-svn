@@ -3,7 +3,7 @@
 . ./repo.conf
 
 # Steady...
-[ ! -d $GUADA_PACKAGES ] && mkdir -p $GUADA_PACKAGES
+[ ! -d $DERIVATIVE_PACKAGES ] && mkdir -p $DERIVATIVE_PACKAGES
 
 DATE=$(date +%Y%m%d)
 
@@ -25,21 +25,21 @@ function retrieve_debian_files ()
 	echo
 
 	if [ -n "$(ls $DIR | grep \.udeb\$)" ]; then
-		mv $DIR/*\.udeb $GUADA_PACKAGES
+		mv $DIR/*\.udeb $DERIVATIVE_PACKAGES
 	fi
 	
 	if [ -n "$(ls $DIR | grep \.deb\$)" ]; then
-		mv $DIR/*\.deb $GUADA_PACKAGES
+		mv $DIR/*\.deb $DERIVATIVE_PACKAGES
 	fi
 
 	if [ -n "$(ls $DIR | grep \.dsc\$)" ]; then
-		mv $DIR/*dsc $GUADA_PACKAGES
+		mv $DIR/*dsc $DERIVATIVE_PACKAGES
 	else
 		echo " ***** Warning: No .dsc file founded under $DIR, it may be something wrong with the compilation ***** "
 	fi
 
 	if [ -n "$(ls $DIR | grep \.tar\.gz\$)" ]; then
-		mv $DIR/*tar.gz $GUADA_PACKAGES
+		mv $DIR/*tar.gz $DERIVATIVE_PACKAGES
 	else
 		echo " ***** Warning: No .tar.gz file founded under $DIR, it may be something wrong with the compilation ***** "
 	fi
