@@ -1,3 +1,9 @@
+guadalinex-sources-setup (0.3) unstable; urgency=low
+
+  * Final guadalinex repositories added 
+
+ -- Carlos Parra Camargo <cparra@emergya.info>  Thu, 21 Dec 2006 18:43:18 +0100
+
 guadalinex-sources-setup (0.2) unstable; urgency=low
 
   * added restricted component 
