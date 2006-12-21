@@ -191,7 +191,11 @@ echo \"Warning: Fake start-stop-daemon called, doing nothing\"" > ${sources}/sbi
     apt_get clean
 
     cat > ${sources}/etc/apt/sources.list <<EOF
-deb http://pool.guadalinex.org/ubuntu edgy main restricted universe multiverse
+deb http://v4.guadalinex.org/ubuntu edgy main restricted universe multiverse
+deb http://v4.guadalinex.org/guadalinex-toro toro main restricted universe multiverse
+deb http://v4.guadalinex.org/guadalinex-toro toro-updates main restricted universe multiverse
+deb http://v4.guadalinex.org/guadalinex-toro toro-security main restricted universe multiverse
+deb http://v4.guadalinex.org/guadalinex-toro toro-backports main restricted universe multiverse
 EOF
 
     apt_get update
