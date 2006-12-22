@@ -14,6 +14,33 @@ except:
 	sys.exit(1)
     
 import bluetooth
+import re
+import shutil
+
+class Config:
+        def __init__(self):
+                self.opensync_path = os.getenv("HOME") + ".opensync"
+                self.username = os.getlogin()
+
+                if not os.path.exits(self.opensync_path):
+                        os.mkdir (opensync_path)
+                if os.path.exits(self.opensynce_path + "group*"):
+                        backup = os.mkdir (opensync_path + "backup" + date.today().strftine("%Y%m%d"))
+                        shutil.move (opensync_path + "group*" , backup)
+                
+        def main(device):
+                if not os.path.exists(opensync_path + "/group1"):
+                        bluetooth_regex=re.compile("__BLUETOOTH__")
+                        readlines=open(example_path + "/" ,'r').readlines()
+                        for currentline in readlines:
+                                if cregex.search(currentline):
+                                        currentline = re.sub("__HOME__",home,currentline)
+                        write_file = open(multisync_path + "/1/localsettings",'w')
+                        for line in readlines:
+                                write_file.write(line)
+                        write_file.close()
+                                                                                                                  
+                return
 
 class DeviceBrowser:
     
@@ -32,22 +59,67 @@ class DeviceBrowser:
         self.pbar.pulse()
         return True
     
+    def active_rb(self, widget, data=None):
+        self.active = self.nearby_devices[data]
+        print self.active
+    
+    def apply_config(self,widget, data=None):
+        config = Config()
+        config.main()
+        gtk.main_hide()
+        return True
+    
+    def refresh(self, widget, data=None):
+        self.discover()
+        return True
+
     def discover(self):
-        nearby_devices = bluetooth.discover_devices(lookup_names = True)
-        self.parent=self.xml.get_widget("pbar_parent")
-        self.parent.remove(self.pbar)
-        table = gtk.Table(len(nearby_devices)+1, 2, True)
-        self.parent.add(table)
-        i=0
-        for address, name in nearby_devices:
-            label = gtk.Label(address)
-            table.attach(label, 0,1,i,i+1)
+        try:    
+                nearby_devices = bluetooth.discover_devices(lookup_names = True)
+                print nearby_devices
+        except:
+                label = gtk.Label("No ha dispositivo blueetooth")
+                self.parent=self.xml.get_widget("pbar_parent")
+                self.parent.remove(self.pbar)
+                self.parent.add(label)
+                label.show()
+                return 0
+        if len(nearby_devices) != 0:
+            self.parent=self.xml.get_widget("pbar_parent")
+            self.parent.remove(self.pbar)
+            
+            self.table_main = gtk.Table(2,1,True)
+            self.parent.add(self.table_main)
+            button = gtk.Button(stock=gtk.STOCK_APPLY)
+            button.connect_object("clicked", self.apply_config, None)
+            self.table_main.attach(button, 0,1,1,2)
+            button.show()
+            
+            table = gtk.Table(len(nearby_devices), 1, True)
+            self.table_main.attach(table,0,1,0,1)
+            i=0
+            self.active=nearby_devices[i]
+            for address, name in nearby_devices:
+                button = gtk.RadioButton(None, name)
+                button.connect("toggled", self.active_rb, name)
+                table.attach(button, 0,1,i,i+1)
+                i+=1
+                button.show()
+            table.show()
+            self.table_main.show()
+        else:
+            self.parent=self.xml.get_widget("pbar_parent")
+            self.parent.remove(self.pbar)
+            self.table_main = gtk.Table(2,1,True)
+            self.parent.add(self.table_main)
+            button = gtk.Button(stock=gtk.STOCK_REFRESH)
+            button.connect_object("clicked", self.refresh, None)
+            self.table_main.attach(button, 0,1,1,2)
+            button.show()
+            label = gtk.Label("No se han encontrado dispositivos blueetooth")
+            self.table_main.attach(label,0,1,0,1)
             label.show()
-            label = gtk.Label(name)
-            table.attach(label, 1,2,i,i+1)
-            label.show()
-            i+=1
-        table.show()
+            self.table_main.show()
         self.window.show()
       
         
