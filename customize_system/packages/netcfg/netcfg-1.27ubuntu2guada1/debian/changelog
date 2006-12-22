@@ -1,3 +1,9 @@
+netcfg (1.27ubuntu2guada2) edgy; urgency=low
+
+  * incremented priority to critical 
+
+ -- Carlos Parra Camargo <cparra@emergya.info>  Fri, 22 Dec 2006 12:34:49 +0100
+
 netcfg (1.27ubuntu2guada1) edgy; urgency=low
 
   * guadalinex flavour 
