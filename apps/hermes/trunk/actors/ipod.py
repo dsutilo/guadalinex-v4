@@ -61,8 +61,3 @@ class Actor(PkgDeviceActor):
     __device_title__ = _('iPod')
     __device_conn_description__ = _('iPod device detected')
     __device_disconn_description__ = _('iPod device disconnected.')
-
-
-    __conn_commands__ = ['gtkpod &']
-    __disconn_commands__ = []
-
