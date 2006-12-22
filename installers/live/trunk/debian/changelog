@@ -1,10 +1,11 @@
-ubiquity (1.2.5guada1) edgy; urgency=low
+ubiquity (1.2.5guada2) edgy; urgency=low
 
   * Version updated for development.
   * Debconf integration (for assistant pages).
   * Added Guadalinex's partitions schema.
+  * Added Guadalinex artwork
 
- -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Thu, 14 Dec 2006 13:36:38 +0100
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Fri, 22 Dec 2006 12:08:32 +0100
 
 ubiquity (1.2.5) edgy; urgency=low
 

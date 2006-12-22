@@ -324,7 +324,8 @@ class Wizard:
             photo = os.path.join(PIXMAPSDIR, "photo_1280.jpg")
         else:
             logo = os.path.join(PIXMAPSDIR, "logo_1024.jpg")
-            photo = os.path.join(PIXMAPSDIR, "photo_1024.jpg")
+            #photo = os.path.join(PIXMAPSDIR, "photo_1024.jpg")
+            photo = ''
         if not os.path.exists(logo):
             logo = None
         if not os.path.exists(photo):
