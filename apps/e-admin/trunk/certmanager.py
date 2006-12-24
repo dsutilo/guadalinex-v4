@@ -49,7 +49,15 @@ import glob
 import optparse
 import os
 
+import gobject
 import gtk
+
+from ffsecutils import FireFoxSecurityUtils
+
+DNIE_ROOT_CERT_NAME = "AC RAIZ DNIE - DIRECCION GENERAL DE LA POLICIA"
+DNIE_ROOT_CERT_FILE = "/usr/share/opensc-dnie/ac_raiz_dnie.crt"
+FNMT_ROOT_CERT_NAME = "FNMT"
+FNMT_ROOT_CERT_FILE = "/usr/share/ca-certificates/fnmt/FNMTClase2CA.crt"
 
 class Application(object):
     """Base abstract class Application that can use a certificate"""
@@ -60,8 +68,77 @@ class Application(object):
     def setup(self, certificates):
         """This method should be overriden in subclasses"""
 
-class MozillaApp(Application):
-    """ TODO """
+class FireFoxApp(Application):
+
+    def __init__(self, name='FireFox'):
+        super(FireFoxApp, self).__init__(name)
+        self._ff = FireFoxSecurityUtils()
+
+    def setup(self, certificates):
+        # check that we have the root certificates of relevant spanish agencies
+        has_fnmt_cert = self._ff.has_root_ca_certificate(FNMT_ROOT_CERT_NAME)
+        has_dnie_cert = self._ff.has_root_ca_certificate(DNIE_ROOT_CERT_NAME)
+
+        if not has_fnmt_cert or not has_dnie_cert:
+            # install the root certificates creating a default profile and
+            # stopping Firefox if needed
+            if self._ff.get_default_profile_dir() is None:
+                self._ff.create_default_profile()
+
+            if self._ff.is_firefox_running():
+                abort = not self._wait_for_running_instances()
+                if abort:
+                    return
+
+            if not has_fnmt_cert:
+                self._ff.add_root_ca_certificate(FNMT_ROOT_CERT_NAME,
+                                                 FNMT_ROOT_CERT_FILE)
+
+            if not has_dnie_cert:
+                self._ff.add_root_ca_certificate(DNIE_ROOT_CERT_NAME,
+                                                 DNIE_ROOT_CERT_FILE)
+
+        if self._ff.is_firefox_running():
+            abort = not self._wait_for_running_instances()
+            if abort:
+                return
+
+        # install the user certificates
+        for cert in certificates:
+            self._install_certificate(cert)
+
+    def _wait_for_running_instances(self):
+        dialog = gtk.MessageDialog(None, 0, gtk.MESSAGE_INFO,
+                                   gtk.BUTTONS_NONE)
+        next_btn = dialog.add_button(gtk.STOCK_GO_FORWARD, gtk.RESPONSE_ACCEPT)
+        next_btn.set_sensitive(False)
+        dialog.add_button(gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL)
+        dialog.set_title('Configurando %s' % self._name)
+        dialog.set_markup('Debe cerrar todas las ventanas de %s para configurar los certificados digitales' % self._name)
+        progress = gtk.ProgressBar()
+        progress.set_text('Esperando a que finalice %s' % self._name)
+        progress.set_pulse_step(0.1)
+        progress.pulse()
+        dialog.vbox.pack_start(progress, False, False)
+        dialog.show_all()
+        gobject.timeout_add(300, self._check_app_running, progress, next_btn)
+        result = dialog.run()
+        dialog.destroy()
+        return result == gtk.RESPONSE_ACCEPT
+
+    def _check_app_running(self, progress, next_btn):
+        retval = self._ff.is_firefox_running()
+        if retval:
+            progress.pulse()
+        else:
+            progress.set_text('%s ha finalizado' % self._name)
+            progress.set_fraction(1.0)
+            next_btn.set_sensitive(True)
+
+        return retval
+
+    def _install_certificate(self, certificate):
+        pass
 
 class OpenOfficeApp(Application):
     """ TODO """
@@ -204,5 +281,5 @@ if __name__ == '__main__':
 
     (options, args) = parser.parse_args()
 
-    cert_manager = CertManager(options.search_path)
+    cert_manager = CertManager(options.search_path, [FireFoxApp()])
     cert_manager.run()
