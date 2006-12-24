@@ -45,12 +45,14 @@
 #Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import commands
-import subprocess
 import os
+import subprocess
+import tempfile
 
 FIREFOX_CMD  = '/usr/bin/firefox'
 CERTUTIL_CMD = '/usr/bin/certutil'
 MODUTIL_CMD  = '/usr/bin/modutil'
+PK12UTIL_CMD = '/usr/bin/pk12util'
 
 class FireFoxSecurityUtils(object):
     def is_firefox_running(self):
@@ -117,4 +119,18 @@ class FireFoxSecurityUtils(object):
         cmd = '%s -A -a -d "%s" -i %s -n "%s" -t "TCu,Cu,Cu"'
         cmd = cmd % (CERTUTIL_CMD, profile, certificate_file, ca_name)
         status, output = commands.getstatusoutput(cmd)
+        return status == 0
+
+    def add_user_certificate(self, certificate_file, password):
+        profile = self.get_default_profile_dir()
+        if not profile:
+            return False
+
+        fd, password_file = tempfile.mkstemp(text=True)
+        os.write(fd, password)
+        os.close(fd)
+        cmd = '%s -i "%s" -d "%s" -w "%s"'
+        cmd = cmd % (PK12UTIL_CMD, certificate_file, profile, password_file)
+        status, output = commands.getstatusoutput(cmd)
+        os.unlink(password_file)
         return status == 0
