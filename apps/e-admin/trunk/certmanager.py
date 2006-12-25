@@ -58,6 +58,7 @@ DNIE_ROOT_CERT_NAME = "AC RAIZ DNIE - DIRECCION GENERAL DE LA POLICIA"
 DNIE_ROOT_CERT_FILE = "/usr/share/opensc-dnie/ac_raiz_dnie.crt"
 FNMT_ROOT_CERT_NAME = "FNMT"
 FNMT_ROOT_CERT_FILE = "/usr/share/ca-certificates/fnmt/FNMTClase2CA.crt"
+DNIE_PKCS11_LIB     = "/usr/lib/opensc-pkcs11.so"
 
 class Application(object):
     """Base abstract class Application that can use a certificate"""
@@ -103,6 +104,9 @@ class FireFoxApp(Application):
             if abort:
                 return
 
+        if not self._ff.has_security_method('DNIe'):
+            self._ff.add_security_method('DNIe', DNIE_PKCS11_LIB)
+
         # install the user certificates
         for cert in certificates:
             self._install_certificate(cert)
@@ -138,7 +142,27 @@ class FireFoxApp(Application):
         return retval
 
     def _install_certificate(self, certificate):
-        pass
+        password = self._ask_for_password(certificate)
+        if password:
+            self._ff.add_user_certificate(certificate, password)
+
+    def _ask_for_password(self, certificate):
+        dialog = gtk.MessageDialog(None, 0, gtk.MESSAGE_INFO,
+                                   gtk.BUTTONS_OK_CANCEL)
+        dialog.set_title('Configurando %s' % self._name)
+        dialog.set_markup('Introduzca la contraseña para desbloquear el certificado situado en el fichero <b>%s</b>' % certificate)
+        entry = gtk.Entry()
+        entry.set_activates_default(True)
+        entry.set_visibility(False) # this entry is for passwords
+        entry.show()
+        parent = dialog.vbox.get_children()[0].get_children()[1]
+        parent.pack_start(entry, False, False)
+        result = dialog.run()
+        retval = None
+        if result == gtk.RESPONSE_OK:
+            retval = entry.get_text()
+        dialog.destroy()
+        return retval
 
 class OpenOfficeApp(Application):
     """ TODO """
