@@ -238,9 +238,6 @@ class EvolutionApp(Application):
             dst = os.path.join(self._evo_dir, filename)
             os.symlink(src, dst)
 
-class OpenOfficeApp(Application):
-    """ TODO """
-
 class CertManager(object):
     """Search for certificates in a specific path and configure applications
     to use the certificates that the user selects
