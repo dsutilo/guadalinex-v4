@@ -45,6 +45,7 @@
 #along with Foobar; if not, write to the Free Software
 #Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+import commands
 import glob
 import optparse
 import os
@@ -69,24 +70,60 @@ class Application(object):
     def setup(self, certificates):
         """This method should be overriden in subclasses"""
 
+    def _wait_for_running_instances(self):
+        dialog = gtk.MessageDialog(None, 0, gtk.MESSAGE_INFO,
+                                   gtk.BUTTONS_NONE)
+        next_btn = dialog.add_button(gtk.STOCK_GO_FORWARD, gtk.RESPONSE_ACCEPT)
+        next_btn.set_sensitive(False)
+        dialog.add_button(gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL)
+        dialog.set_title('Configurando %s' % self._name)
+        dialog.set_markup('Debe cerrar todas las ventanas de %s para configurar los certificados digitales' % self._name)
+        progress = gtk.ProgressBar()
+        progress.set_text('Esperando a que finalice %s' % self._name)
+        progress.set_pulse_step(0.1)
+        progress.pulse()
+        dialog.vbox.pack_start(progress, False, False)
+        dialog.show_all()
+        gobject.timeout_add(300, self._check_app_running, progress, next_btn)
+        result = dialog.run()
+        dialog.destroy()
+        return result == gtk.RESPONSE_ACCEPT
+
+    def _check_app_running(self, progress, next_btn):
+        retval = self._is_app_running()
+        if retval:
+            progress.pulse()
+        else:
+            progress.set_text('%s ha finalizado' % self._name)
+            progress.set_fraction(1.0)
+            next_btn.set_sensitive(True)
+
+        return retval
+
+    def _is_app_running(self):
+        """Subclasses should override this True/False method"""
+
 class FireFoxApp(Application):
 
     def __init__(self, name='FireFox'):
         super(FireFoxApp, self).__init__(name)
         self._ff = FireFoxSecurityUtils()
 
+    def _is_app_running(self):
+        return self._ff.is_firefox_running()
+
     def setup(self, certificates):
         # check that we have the root certificates of relevant spanish agencies
         has_fnmt_cert = self._ff.has_root_ca_certificate(FNMT_ROOT_CERT_NAME)
         has_dnie_cert = self._ff.has_root_ca_certificate(DNIE_ROOT_CERT_NAME)
 
-        if not has_fnmt_cert or not has_dnie_cert:
-            # install the root certificates creating a default profile and
-            # stopping Firefox if needed
-            if self._ff.get_default_profile_dir() is None:
-                self._ff.create_default_profile()
+        if self._ff.get_default_profile_dir() is None:
+            self._ff.create_default_profile()
 
-            if self._ff.is_firefox_running():
+        if not has_fnmt_cert or not has_dnie_cert:
+            # install the root certificates stopping Firefox if needed
+
+            if self._is_app_running():
                 abort = not self._wait_for_running_instances()
                 if abort:
                     return
@@ -111,46 +148,35 @@ class FireFoxApp(Application):
         for cert in certificates:
             self._install_certificate(cert)
 
-    def _wait_for_running_instances(self):
-        dialog = gtk.MessageDialog(None, 0, gtk.MESSAGE_INFO,
-                                   gtk.BUTTONS_NONE)
-        next_btn = dialog.add_button(gtk.STOCK_GO_FORWARD, gtk.RESPONSE_ACCEPT)
-        next_btn.set_sensitive(False)
-        dialog.add_button(gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL)
-        dialog.set_title('Configurando %s' % self._name)
-        dialog.set_markup('Debe cerrar todas las ventanas de %s para configurar los certificados digitales' % self._name)
-        progress = gtk.ProgressBar()
-        progress.set_text('Esperando a que finalice %s' % self._name)
-        progress.set_pulse_step(0.1)
-        progress.pulse()
-        dialog.vbox.pack_start(progress, False, False)
-        dialog.show_all()
-        gobject.timeout_add(300, self._check_app_running, progress, next_btn)
-        result = dialog.run()
-        dialog.destroy()
-        return result == gtk.RESPONSE_ACCEPT
-
-    def _check_app_running(self, progress, next_btn):
-        retval = self._ff.is_firefox_running()
-        if retval:
-            progress.pulse()
-        else:
-            progress.set_text('%s ha finalizado' % self._name)
-            progress.set_fraction(1.0)
-            next_btn.set_sensitive(True)
-
-        return retval
-
     def _install_certificate(self, certificate):
-        password = self._ask_for_password(certificate)
-        if password:
-            self._ff.add_user_certificate(certificate, password)
+        attempts = 0
+        valid = False
+        print_warning = False
+        while attempts < 3 and not valid:
+            password = self._ask_for_password(certificate, print_warning)
+            if password:
+                valid = self._ff.add_user_certificate(certificate, password)
+                attempts += 1
+                print_warning = True
+            else:
+                return # User cancel
 
-    def _ask_for_password(self, certificate):
+        if not valid:
+            msg = 'No fue posible agregar el certificado %s porque la contraseña no es válida' % certificate
+            dialog = gtk.MessageDialog(None, 0, gtk.MESSAGE_ERROR,
+                                       gtk.BUTTONS_CLOSE, msg)
+            dialog.set_title('Error configurando %s' % self._name)
+            dialog.run()
+            dialog.destroy()
+
+    def _ask_for_password(self, certificate, warn_user=False):
         dialog = gtk.MessageDialog(None, 0, gtk.MESSAGE_INFO,
                                    gtk.BUTTONS_OK_CANCEL)
         dialog.set_title('Configurando %s' % self._name)
+        dialog.set_default_response(gtk.RESPONSE_OK)
         dialog.set_markup('Introduzca la contraseña para desbloquear el certificado situado en el fichero <b>%s</b>' % certificate)
+        if warn_user:
+            dialog.format_secondary_text('La contraseña anterior no es válida')
         entry = gtk.Entry()
         entry.set_activates_default(True)
         entry.set_visibility(False) # this entry is for passwords
@@ -164,10 +190,53 @@ class FireFoxApp(Application):
         dialog.destroy()
         return retval
 
-class OpenOfficeApp(Application):
-    """ TODO """
+class EvolutionApp(Application):
+    """Firefox should be configured since Evolution depends on its security
+    database for apropiate working"""
 
-class Evolution(Application):
+    def __init__(self, name='Evolution'):
+        super(EvolutionApp, self).__init__(name)
+        self._ff = FireFoxSecurityUtils()
+        self._evo_dir = os.path.join(os.path.expanduser('~'), '.evolution')
+
+    def _is_app_running(self):
+        cmd = '/bin/ps -C evolution -o pid='
+        status, output = commands.getstatusoutput(cmd)
+        return status == 0
+
+    def setup(self, certificates):
+        """Link Evolution database to Firefox database"""
+
+        if self._is_app_running():
+            abort = not self._wait_for_running_instances()
+            if abort:
+                return
+
+        if self._ff.get_default_profile_dir() is None:
+            self._ff.create_default_profile()
+
+        ff_profile_dir = self._ff.get_default_profile_dir()
+
+        if not os.path.exists(self._evo_dir):
+            os.mkdir(self._evo_dir)
+        else:
+            self._backup_evo_database()
+
+        self._create_links(ff_profile_dir)
+
+    def _backup_evo_database(self):
+        for filename in ('cert8.db', 'key3.db', 'secmod.db'):
+            src = os.path.join(self._evo_dir, filename)
+            dst = src + '.org'
+            os.rename(src, dst)
+
+    def _create_links(self, ff_profile_dir):
+        for filename in ('cert8.db', 'key3.db', 'secmod.db'):
+            src = os.path.join(ff_profile_dir, filename)
+            dst = os.path.join(self._evo_dir, filename)
+            os.symlink(src, dst)
+
+class OpenOfficeApp(Application):
     """ TODO """
 
 class CertManager(object):
@@ -305,5 +374,6 @@ if __name__ == '__main__':
 
     (options, args) = parser.parse_args()
 
-    cert_manager = CertManager(options.search_path, [FireFoxApp()])
+    cert_manager = CertManager(options.search_path, [FireFoxApp(),
+                                                     EvolutionApp()])
     cert_manager.run()
