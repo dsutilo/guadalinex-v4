@@ -218,6 +218,8 @@ class EvolutionApp(Application):
         ff_profile_dir = self._ff.get_default_profile_dir()
 
         if not os.path.exists(self._evo_dir):
+            # We can create the evo dir and next time Evolution is executed
+            # it will use such directory and add its own files
             os.mkdir(self._evo_dir)
         else:
             self._backup_evo_database()
