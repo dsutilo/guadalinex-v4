@@ -1489,13 +1489,13 @@ class Wizard:
         selected."""
 
         if widget.get_label() == self.resize_choice:
-            self.partition_message.set_text("Resize Choice")
+            self.partition_message.set_text("Redimensionar una particion existente para crear espacio donde instalar la distribucion.")
         elif widget.get_label() == self.do_nothing_choice:
-            self.partition_message.set_text("Do Nothing Choice")
+            self.partition_message.set_text("Usar la tabla de particionado en su estado actual para instalar la distribucion.")
         elif widget.get_label() == self.manual_choice:
-            self.partition_message.set_text("Manual Choice")
+            self.partition_message.set_text("Editar manualmente la tabla de particiones para hacer espacio donde instalar la distribucion.")
         else:
-            self.partition_message.set_text("Borrar toda la particion")
+            self.partition_message.set_text("Borrar todo el disco duro y utiliza todo el espacio para instalar la distribucion.")
 
     def on_autopartition_resize_toggled (self, widget):
         """Update autopartitioning screen when the resize button is
