@@ -1,3 +1,9 @@
+netcfg (1.27ubuntu2guada3) edgy; urgency=low
+
+  * due to priority problems, moving back
+
+ -- Carlos Parra Camargo <cparra@emergya.info>  Tue, 26 Dec 2006 14:29:04 +0100
+
 netcfg (1.27ubuntu2guada2) edgy; urgency=low
 
   * incremented priority to critical 
