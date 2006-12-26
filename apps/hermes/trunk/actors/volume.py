@@ -43,6 +43,7 @@
 #along with Foobar; if not, write to the Free Software
 #Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+import glob
 import os.path
 
 from deviceactor import DeviceActor
@@ -127,6 +128,8 @@ class VolumeListener(object):
     def volume_unmounted(self):
         """This is called when the volume is unmounted"""
 
+CERTMANAGER_CMD = '/usr/bin/certmanager.py'
+
 class CertificateListener(VolumeListener):
     """Call cert_manager to detect certificates in the volume and to
     setup the main applications to use them
@@ -139,13 +142,15 @@ class CertificateListener(VolumeListener):
 
     def is_valid(self, properties):
         if properties.get('volume.mount_point', None) == u'/media/usbdisk':
-            return True
+            if glob.glob('/media/usbdisk/*.p12'):
+                return True
         return False
 
     def volume_mounted(self, mount_point):
         self.mount_point = mount_point
-        # TODO: Call cert_manager script
+
+        if os.path.exists(CERTMANAGER_CMD):
+            os.system('%s -p %s' % (CERTMANAGER_CMD, self.mount_point))
 
     def volume_unmounted(self):
-        # TODO: Call cert_manager script
         self.mount_point = None
