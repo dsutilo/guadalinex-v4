@@ -50,6 +50,7 @@ from deviceactor import PkgDeviceActor
 from utils.pkginstaller import PkgInstaller
 from gettext import gettext as _
 
+CERTMANAGER_CMD = '/usr/bin/certmanager.py'
 
 class Actor(PkgDeviceActor):
 
@@ -64,3 +65,9 @@ class Actor(PkgDeviceActor):
     __device_title__ = _("C3PO")
     __device_conn_description__ = _("Card reader detected")
     __device_disconn_description__ = _("Card reader disconnected")
+
+    def on_added(self, actor):
+        super(Actor, self).on_added(actor)
+
+        if os.path.exists(CERTMANAGER_CMD):
+            os.system('%s --install-dnie' % CERTMANAGER_CMD)
