@@ -600,7 +600,7 @@ int netcfg_get_hostname(struct debconfclient *client, char *template, char **hos
     {
         if (hdset)
           have_domain = 0;
-        debconf_input(client, "critical", template);
+        debconf_input(client, "high", template);
         ret = debconf_go(client);
 
         if (ret == 30) /* backup */
