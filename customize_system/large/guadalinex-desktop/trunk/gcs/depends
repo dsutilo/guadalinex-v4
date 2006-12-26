@@ -167,7 +167,7 @@ ubuntu-sounds
 unzip
 update-notifier
 usplash
-usplash-theme-ubuntu
+#usplash-theme-ubuntu
 vino
 #watermain
 wvdial
