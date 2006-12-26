@@ -80,7 +80,7 @@ _Description: Invalid ESSID
 
 Template: netcfg/get_hostname
 Type: string
-Default: guadalinex 
+Default: guadalinex
 _Description: Hostname:
  Please enter the hostname for this system.
  .

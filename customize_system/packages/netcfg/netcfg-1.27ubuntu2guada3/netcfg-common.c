@@ -600,7 +600,11 @@ int netcfg_get_hostname(struct debconfclient *client, char *template, char **hos
     {
         if (hdset)
           have_domain = 0;
-        debconf_input(client, "high", template);
+	if (strcmp(template, "netcfg/get_hostname") == 0)
+	        debconf_input(client, "critical", template);
+	else
+		debconf_input(client, "high", template);
+
         ret = debconf_go(client);
 
         if (ret == 30) /* backup */
@@ -614,7 +618,7 @@ int netcfg_get_hostname(struct debconfclient *client, char *template, char **hos
               "hostname", client->value);
           debconf_input(client, "high", "netcfg/invalid_hostname");
           debconf_go(client);
-          debconf_set(client, template, "ubuntu");
+          debconf_set(client, template, "guadalinex");
         }
         else
         {
