@@ -67,7 +67,7 @@ class Application(object):
     def __init__(self, name):
         self._name = name
 
-    def setup(self, certificates):
+    def setup(self, user_certificates=[], install_dnie=False):
         """This method should be overriden in subclasses"""
 
     def _wait_for_running_instances(self):
@@ -77,6 +77,7 @@ class Application(object):
         next_btn.set_sensitive(False)
         dialog.add_button(gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL)
         dialog.set_title('Configurando %s' % self._name)
+        dialog.set_position(gtk.WIN_POS_CENTER)
         dialog.set_markup('Debe cerrar todas las ventanas de %s para configurar los certificados digitales' % self._name)
         progress = gtk.ProgressBar()
         progress.set_text('Esperando a que finalice %s' % self._name)
@@ -112,7 +113,7 @@ class FireFoxApp(Application):
     def _is_app_running(self):
         return self._ff.is_firefox_running()
 
-    def setup(self, certificates):
+    def setup(self, user_certificates=[], install_dnie=False):
         # check that we have the root certificates of relevant spanish agencies
         has_fnmt_cert = self._ff.has_root_ca_certificate(FNMT_ROOT_CERT_NAME)
         has_dnie_cert = self._ff.has_root_ca_certificate(DNIE_ROOT_CERT_NAME)
@@ -120,7 +121,8 @@ class FireFoxApp(Application):
         if self._ff.get_default_profile_dir() is None:
             self._ff.create_default_profile()
 
-        if not has_fnmt_cert or not has_dnie_cert:
+        if ((not has_fnmt_cert and user_certificates) or
+            (not has_dnie_cert and install_dnie)):
             # install the root certificates stopping Firefox if needed
 
             if self._is_app_running():
@@ -128,11 +130,11 @@ class FireFoxApp(Application):
                 if abort:
                     return
 
-            if not has_fnmt_cert:
+            if not has_fnmt_cert and user_certificates:
                 self._ff.add_root_ca_certificate(FNMT_ROOT_CERT_NAME,
                                                  FNMT_ROOT_CERT_FILE)
 
-            if not has_dnie_cert:
+            if not has_dnie_cert and install_dnie:
                 self._ff.add_root_ca_certificate(DNIE_ROOT_CERT_NAME,
                                                  DNIE_ROOT_CERT_FILE)
 
@@ -141,11 +143,11 @@ class FireFoxApp(Application):
             if abort:
                 return
 
-        if not self._ff.has_security_method('DNIe'):
+        if install_dnie and not self._ff.has_security_method('DNIe'):
             self._ff.add_security_method('DNIe', DNIE_PKCS11_LIB)
 
         # install the user certificates
-        for cert in certificates:
+        for cert in user_certificates:
             self._install_certificate(cert)
 
     def _install_certificate(self, certificate):
@@ -166,6 +168,7 @@ class FireFoxApp(Application):
             dialog = gtk.MessageDialog(None, 0, gtk.MESSAGE_ERROR,
                                        gtk.BUTTONS_CLOSE, msg)
             dialog.set_title('Error configurando %s' % self._name)
+            dialog.set_position(gtk.WIN_POS_CENTER)
             dialog.run()
             dialog.destroy()
 
@@ -173,6 +176,7 @@ class FireFoxApp(Application):
         dialog = gtk.MessageDialog(None, 0, gtk.MESSAGE_INFO,
                                    gtk.BUTTONS_OK_CANCEL)
         dialog.set_title('Configurando %s' % self._name)
+        dialog.set_position(gtk.WIN_POS_CENTER)
         dialog.set_default_response(gtk.RESPONSE_OK)
         dialog.set_markup('Introduzca la contraseña para desbloquear el certificado situado en el fichero <b>%s</b>' % certificate)
         if warn_user:
@@ -204,7 +208,7 @@ class EvolutionApp(Application):
         status, output = commands.getstatusoutput(cmd)
         return status == 0
 
-    def setup(self, certificates):
+    def setup(self, user_certificates=[], install_dnie=False):
         """Link Evolution database to Firefox database"""
 
         if self._is_app_running():
@@ -246,32 +250,46 @@ class CertManager(object):
     # We serch for certificate files with this extensions
     known_extensions = ('cert', 'p12')
 
-    def __init__(self, search_path, applications=[]):
-
-        self._search_path = search_path
+    def __init__(self, applications=[]):
         self._applications = applications
 
-    def run(self):
-        cert_list = self.search_certificates()
+    def run(self, options):
+        certs = []
+        if options.search_path is not None:
+            cert_list = self.search_certificates(options.search_path)
 
-        if cert_list:
-            selected_certs = self.select_certificates(cert_list)
+            if cert_list:
+                certs = self.select_certificates(cert_list,
+                                                 options.search_path)
 
-            if selected_certs:
+        if options.install_dnie or certs:
+            for app in self._applications:
+                app.setup(certs, options.install_dnie)
 
-                for app in self._applications:
-                    app.setup(selected_certs)
+            # Finish message
+            if options.install_dnie and certs:
+                what = 'el DNIe y los certificados de usuario'
+            elif options.install_dnie:
+                what = 'el DNIe'
+            else:
+                what = 'los certificados de usuario'
+            msg = 'La instalacion de %s ha finalizado correctamente' % what
+            dialog = gtk.MessageDialog(None, 0, gtk.MESSAGE_INFO,
+                                       gtk.BUTTONS_OK, msg)
+            dialog.set_position(gtk.WIN_POS_CENTER)
+            dialog.run()
+            dialog.destroy()
 
-    def search_certificates(self):
+    def search_certificates(self, search_path):
         ret = []
         for extension in self.known_extensions:
-            path = os.path.join(self._search_path, '*.%s' % extension)
+            path = os.path.join(search_path, '*.%s' % extension)
             ret += glob.glob(path)
 
         return ret
 
-    def select_certificates(self, cert_list):
-        dialog = CertificatesDialog(self._search_path, cert_list)
+    def select_certificates(self, cert_list, search_path):
+        dialog = CertificatesDialog(search_path, cert_list)
         ret = []
 
         if gtk.RESPONSE_ACCEPT == dialog.run():
@@ -289,6 +307,7 @@ class CertificatesDialog(gtk.Dialog):
                             flags=gtk.DIALOG_NO_SEPARATOR | gtk.DIALOG_MODAL,
                             buttons=(gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT,
                                      gtk.STOCK_OK, gtk.RESPONSE_ACCEPT))
+        self.set_position(gtk.WIN_POS_CENTER)
         self.set_border_width(12)
 
         hbox = gtk.HBox()
@@ -367,12 +386,17 @@ class CertificatesDialog(gtk.Dialog):
 
 if __name__ == '__main__':
     parser = optparse.OptionParser()
-    parser.add_option('-p', '--search-path', dest='search_path',
-                      default=os.path.expanduser('~'),
+    parser.add_option('-p', '--search-path',
+                      dest='search_path',
+                      default=None,
                       help='Where to search certificates')
+    parser.add_option('-d', '--install-dnie',
+                      action='store_true',
+                      dest='install_dnie',
+                      default=False,
+                      help='Install necesary modules for the DNIe')
 
     (options, args) = parser.parse_args()
 
-    cert_manager = CertManager(options.search_path, [FireFoxApp(),
-                                                     EvolutionApp()])
-    cert_manager.run()
+    cert_manager = CertManager([FireFoxApp(), EvolutionApp()])
+    cert_manager.run(options)
