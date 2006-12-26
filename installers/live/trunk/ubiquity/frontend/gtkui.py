@@ -63,6 +63,12 @@ try:
 except ImportError:
     pass
 
+try:
+    from DiskPreview.DiskPreview import DiskPreview
+except:
+    print "DiskPreview don't imported"
+    pass
+
 from ubiquity import filteredcommand, validation
 from ubiquity.misc import *
 from ubiquity.steps import *
@@ -160,6 +166,9 @@ class Wizard:
 
         # load the interface
         self.glade = gtk.glade.XML('%s/ubiquity.glade' % GLADEDIR)
+
+        # DiskPreviewWidget
+        self.diskpreview = None
 
         # get widgets
         for widget in self.glade.get_widget_prefix(""):
@@ -673,6 +682,9 @@ class Wizard:
         self.current_page = None
         if self.dbfilter is not None:
             self.dbfilter.cancel_handler()
+        if self.diskpreview != None:
+            self.diskpreview.umount_filesystems()
+        
         if gtk.main_level() > 0:
             gtk.main_quit()
 
@@ -814,11 +826,14 @@ class Wizard:
         self.allow_change_step(False)
 
         step = self.step_name(self.steps.get_current_page())
-
+        print step
         if step == "stepUserInfo":
             self.username_error_box.hide()
             self.password_error_box.hide()
             self.hostname_error_box.hide()
+
+        if step == "stepPartAuto":
+            self.diskpreview.umount_filesystems()
 
         if self.dbfilter is not None:
             self.dbfilter.ok_handler()
@@ -1380,6 +1395,9 @@ class Wizard:
 	    self.back.hide()
 
         if step == "stepPartAuto":
+            if self.diskpreview != None:
+                self.diskpreview.umount_filesystems()
+            
             if self.got_disk_choices:
                 new_step = self.stepPartDisk
             else:
@@ -1687,7 +1705,7 @@ class Wizard:
 
     def set_disk_choices (self, choices, manual_choice, do_nothing_choice):
         self.got_disk_choices = True
-
+        
         for child in self.part_disk_vbox.get_children():
             self.part_disk_vbox.remove(child)
 
@@ -1702,6 +1720,7 @@ class Wizard:
                 if firstbutton is None:
                     firstbutton = button
                 self.part_disk_vbox.add(button)
+                
         if firstbutton is not None:
             firstbutton.set_active(True)
 
@@ -1722,7 +1741,7 @@ class Wizard:
     def set_autopartition_choices (self, choices, resize_choice, manual_choice, do_nothing_choice):
         for child in self.autopartition_vbox.get_children():
             self.autopartition_vbox.remove(child)
-
+        
         self.manual_choice = manual_choice
         self.do_nothing_choice = do_nothing_choice
         self.resize_choice = resize_choice
@@ -1736,6 +1755,11 @@ class Wizard:
                 self.on_autopartition_resize_toggled(button)
                 button.connect('toggled', self.on_autopartition_resize_toggled)
             button.connect('toggled', self.on_autopartition_choice_toggled)
+
+        self.diskpreview = DiskPreview()
+        self.diskpreview.mount_filesystems()
+        self.autopartition_vbox.pack_end(self.diskpreview, expand=True)
+        
         if firstbutton is not None:
             firstbutton.set_active(True)
 	    self.on_autopartition_choice_toggled(firstbutton)
