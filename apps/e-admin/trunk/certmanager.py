@@ -49,11 +49,97 @@ import commands
 import glob
 import optparse
 import os
+import subprocess
+import tempfile
 
 import gobject
 import gtk
 
-from ffsecutils import FireFoxSecurityUtils
+FIREFOX_CMD  = '/usr/bin/firefox'
+CERTUTIL_CMD = '/usr/bin/certutil'
+MODUTIL_CMD  = '/usr/bin/modutil'
+PK12UTIL_CMD = '/usr/bin/pk12util'
+
+class FireFoxSecurityUtils(object):
+    def is_firefox_running(self):
+        cmd = '%s -remote "ping()"' % FIREFOX_CMD
+        status, output = commands.getstatusoutput(cmd)
+        return status == 0
+
+    def create_default_profile(self):
+        cmd = '%s -CreateProfile "default"'
+        status, output = commands.getstatusoutput(cmd)
+        return status == 0
+
+    def get_default_profile_dir(self):
+        user_dir = os.path.expanduser('~')
+        ff_dir = os.path.join(user_dir, '.mozilla', 'firefox')
+        for name in os.listdir(ff_dir):
+            full_name = os.path.join(ff_dir, name)
+            if os.path.isdir(full_name) and name.endswith('.default'):
+                return full_name
+
+    def has_security_method(self, security_method):
+        profile = self.get_default_profile_dir()
+        if not profile:
+            return False
+
+        cmd = '%s -list -dbdir "%s"' % (MODUTIL_CMD, profile)
+        status, output = commands.getstatusoutput(cmd)
+        return security_method in output
+
+    def add_security_method(self, name, library, mechanisms="FRIENDLY"):
+        profile = self.get_default_profile_dir()
+        if not profile:
+            return False
+
+        # we need to use the subprocess module since this command request
+        # interactive input
+        cmd = [MODUTIL_CMD, '-add', "%s" % name, '-libfile', library,
+               '-mechanisms', "%s" % mechanisms, '-dbdir', "%s" % profile]
+        process = subprocess.Popen(cmd,
+                                   stdin=subprocess.PIPE,
+                                   stdout=subprocess.PIPE,
+                                   stderr=subprocess.PIPE)
+        process.stdin.write('\n')
+        process.wait()
+        return process.returncode == 0
+
+    def has_root_ca_certificate(self, ca_name):
+        profile = self.get_default_profile_dir()
+        if not profile:
+            return False
+
+        cmd = '%s -L -n "%s" -d "%s"' % (CERTUTIL_CMD, ca_name, profile)
+        status, output = commands.getstatusoutput(cmd)
+        return status == 0
+
+    def add_root_ca_certificate(self, ca_name, certificate_file):
+        profile = self.get_default_profile_dir()
+        if not profile:
+            return False
+
+        if self.has_root_ca_certificate(ca_name):
+            return False
+
+        cmd = '%s -A -a -d "%s" -i %s -n "%s" -t "TCu,Cu,Cu"'
+        cmd = cmd % (CERTUTIL_CMD, profile, certificate_file, ca_name)
+        status, output = commands.getstatusoutput(cmd)
+        return status == 0
+
+    def add_user_certificate(self, certificate_file, password):
+        profile = self.get_default_profile_dir()
+        if not profile:
+            return False
+
+        fd, password_file = tempfile.mkstemp(text=True)
+        os.write(fd, password)
+        os.close(fd)
+        cmd = '%s -i "%s" -d "%s" -w "%s"'
+        cmd = cmd % (PK12UTIL_CMD, certificate_file, profile, password_file)
+        status, output = commands.getstatusoutput(cmd)
+        os.unlink(password_file)
+        return status == 0
 
 DNIE_ROOT_CERT_NAME = "AC RAIZ DNIE - DIRECCION GENERAL DE LA POLICIA"
 DNIE_ROOT_CERT_FILE = "/usr/share/opensc-dnie/ac_raiz_dnie.crt"
