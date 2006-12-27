@@ -15,29 +15,80 @@
 # You should have received a copy of the GNU General Public License along with
 # this program; if not, write to the Free Software Foundation, Inc., 59 Temple
 # Place, Suite 330, Boston, MA 02111-1307 USA
+import sys, gettext, os
+
+import pygtk; pygtk.require("2.0")
+import gtk, gtk.glade
+import dbus
+
+sys.insert(0, '/usr/share/gsd')
+import config
+
+gettext.bindtextdomain("gnome-app-install", "/usr/share/locale")
+gettext.textdomain("gnome-app-install")
+gtk.glade.bindtextdomain("gnome-app-install", "/usr/share/locale")
+gtk.glade.textdomain("gnome-app-install")
+
+
+class Finder (object):
+
+    def __init__(self):
+        self.bus = dbus.SystemBus()
+        obj = self.bus.get_object('org.freedesktop.Hal',
+                                  '/org/freedesktop/Hal/Manager')
+
+        self.hal_manager = dbus.Interface(obj, 'org.freedesktop.Hal.Manager')
+
+
+    def get_mount_point(self):
+        devices = self._get_devices()
+
+        if len(devices) == 1:
+            device = devices[0]
+        elif len(devices) > 1:
+            device = self._select_device(devices)
+        else:
+            # Not device found
+            return
+
+    def _select_device(self, devicesj):
+        # Show dialog for device selection
+        # <#>
+        pass
+
+
+    def _get_devices(self):
+        devices = []
+        for uri in  self.hal_manager.GetAllDevices():
+            devobj = self.bus.get_object('org.freedesktop.Hal', udi)
+            devobj = dbus.Interface(devobj, 'org.freedesktop.Hal.Device')
+            properties = debobj.GetAllProperties()
+
+            if properties.get('info.category', None) == 'volume'\ 
+               and config.is_valid_label(properties.get('volume.label', None)):
+                devices.append(properties)
+
+        return devices
+
+
 
 if __name__ == "__main__":
-        import sys, gettext, os
-        import pygtk; pygtk.require("2.0")
-        import gtk, gtk.glade
-
-        gettext.bindtextdomain("gnome-app-install", "/usr/share/locale")
-        gettext.textdomain("gnome-app-install")
-        gtk.glade.bindtextdomain("gnome-app-install", "/usr/share/locale")
-        gtk.glade.textdomain("gnome-app-install")
 
 	if os.geteuid() != 0:
 		_ = gettext.gettext
 		dialog = gtk.MessageDialog(None, 0, gtk.MESSAGE_ERROR,
 					   gtk.BUTTONS_OK,
-					   _("You need to be root to run this "
-					     "program."))
+					   "Necesitas ejecutar este programa como root " +\
+                       "(o con sudo) program.")
 		dialog.run()
 		dialog.destroy()
 		sys.exit(1)
 
+    
+    finder = Finder()
+    mount_point = finder.get_mount_point()
 
-        sys.path.insert(0, "/usr/lib/gnome-app-install")
+    sys.path.insert(0, "/usr/lib/gnome-app-install")
 	from AppInstall.AppInstall import AppInstall
 	desktop_folder = os.path.join(sys.argv[1],"guadalinex-suplementos-apps")
         app = AppInstall("/usr/share/gsd", desktop_folder, [sys.argv[0]] + sys.argv[2:])
