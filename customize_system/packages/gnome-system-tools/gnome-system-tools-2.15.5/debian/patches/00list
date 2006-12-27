@@ -1,0 +1,8 @@
+04_activate_avahi_option
+05_no_ntp
+20_fuse_as_default_group
+80_gst-packages-common
+81_gst-packages-shares-admin
+82_gst-packages-time-admin
+83_network-locations-apply-button
+98_automake.dpatch

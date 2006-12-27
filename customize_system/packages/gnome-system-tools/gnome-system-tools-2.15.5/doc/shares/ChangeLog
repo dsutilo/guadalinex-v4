@@ -1,0 +1,20 @@
+2006-09-30  Carlos Garnacho  <carlosg@gnome.org>
+
+	* Release 2.15.5
+
+2006-09-07  Carlos Garnacho  <carlosg@gnome.org>
+
+	* Release 2.15.4
+
+2006-09-04  Carlos Garnacho  <carlosg@gnome.org>
+
+	* Release 2.15.3
+
+2006-08-11  Carlos Garnacho  <carlosg@gnome.org>
+
+	* Release 2.15.2
+
+2006-08-06  Carlos Garnacho  <carlosg@gnome.org>
+
+	* Makefile.am, shares-admin.omf, C/legal.xml, C/shares-admin.xml,
+	C/figures/shares-tool.png: Initial manual revision

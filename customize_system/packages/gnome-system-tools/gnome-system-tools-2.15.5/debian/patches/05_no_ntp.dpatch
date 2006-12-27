@@ -1,0 +1,22 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 05_no_ntp.dpatch by  <egon@localhost.localdomain>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: No description.
+
+@DPATCH@
+diff -urNad gnome-system-tools-2.15.4~/src/time/time-tool.c gnome-system-tools-2.15.4/src/time/time-tool.c
+--- gnome-system-tools-2.15.4~/src/time/time-tool.c	2006-09-04 03:50:03.000000000 +0200
++++ gnome-system-tools-2.15.4/src/time/time-tool.c	2006-09-18 17:43:06.000000000 +0200
+@@ -486,6 +486,11 @@
+ 	timezone = gst_dialog_get_widget (tool->main_dialog, "tzlabel");
+ 	ntp_use = gst_dialog_get_widget (tool->main_dialog, "ntp_use");
+ 	timeserver_button = gst_dialog_get_widget (tool->main_dialog, "timeserver_button");
++	if(getenv("GST_NO_NTP") != NULL) {
++		gtk_widget_hide(ntp_use);
++		gtk_widget_hide(timeserver_button);
++	}
++		
+ 
+ 	gtk_label_set_text (GTK_LABEL (timezone),
+ 			    oobs_time_config_get_timezone (OOBS_TIME_CONFIG (time_tool->time_config)));

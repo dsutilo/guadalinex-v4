@@ -1,0 +1,32 @@
+Source: gnome-system-tools
+Section: gnome
+Priority: optional
+Maintainer: Jose Carlos Garcia Sogo <jsogo@debian.org>
+Uploaders: @GNOME_TEAM@
+Build-Depends: cdbs (>= 0.4.23-1.1), autotools-dev, dpatch, patchutils, debhelper (>= 4.2.21), libglade2-dev (>= 1:2.5.1-1), libgnome2-dev (>= 2.10.0-1), zlib1g-dev, libpopt-dev, gettext, libgnomeui-dev (>= 2.10.0-1), python, libxml2-dev, libgconf2-dev (>= 2.10.0-1), libxml-parser-perl, gnome-pkg-tools, scrollkeeper (>= 0.3.14-9.1), libnautilus-extension-dev (>= 2.10.0-1), gnome-doc-utils, libgtk2.0-dev (>= 2.9), liboobs-1-dev (>= 0.5.0), libart-2.0-dev
+Standards-Version: 3.6.2
+
+Package: gnome-system-tools
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, perl
+Recommends: gnome-control-center (>= 1:2.10.1-1), gksu
+Suggests: ntp, samba-common, wvdial
+Provides: ximian-setup-tools
+Replaces: ximian-setup-tools
+Description: Cross-platform configuration utilities for GNOME
+ The GNOME System Tools are a fully integrated set of tools aimed to make easy
+ the job that means the computer administration on an UNIX or Linux system.
+ They're thought to help from the new Linux or UNIX user to the system
+ administrators.
+ .
+ Its main advantages are:
+  * Full integration with the new GNOME Control Center.
+  * An user-friendly interface to carry out the main administration tasks.
+  * The use of a common user interface in every system.
+  * A common structure that makes easy the development of new system tools. 
+ Nowadays there are tools for managing: 
+  - Users and groups
+  - Date and time
+  - Network configuration
+  - Bootloaders
+

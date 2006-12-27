@@ -1,0 +1,47 @@
+#!/usr/bin/make -f
+
+# Gnome Team
+include /usr/share/gnome-pkg-tools/1/rules/uploaders.mk
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+# Including this gives us a number of rules typical to a GNOME
+# program, including setting GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1.
+# Note that this class inherits from autotools.mk and docbookxml.mk,
+# so you don't need to include those too.
+include /usr/share/cdbs/1/class/gnome.mk
+
+# must be included after "autotools" (which is included in "gnome")
+include /usr/share/cdbs/1/rules/dpatch.mk
+# it seems one needs to setup dpatch manually despite the CDBS support
+include /usr/share/dpatch/dpatch.make
+
+DEB_CONFIGURE_SCRIPT_ENV += LDFLAGS="-Wl,-z,defs -Wl,-O1"
+DEB_CONFIGURE_EXTRA_FLAGS += --disable-schemas-install --enable-disks --disable-scrollkeeper
+
+DEB_DH_MAKESHLIBS_ARGS_gnome-system-tools = -n
+
+unpatch/gnome-system-tools::
+	dpatch deapply-all
+
+clean::
+	#-rm -f intltool-extract
+	#-rm -f intltool-merge
+	#-rm -f intltool-update
+	#-rm -f src/common/System.directory.in
+	#-rm -f src/location-manager/Makefile
+	#-rm -f gnome-system-tools.schemas
+	# -- deactivated --
+	# GNOME Team 'uploaders.mk' should not override this behavior, here is a workarround :
+	#sed -i "s/@cdbs@/$(CDBS_BUILD_DEPENDS)/g" debian/control
+
+	
+
+build/gnome-system-tools::
+	cd doc/boot; make pot
+	cd doc/network; make pot
+	cd doc/services; make pot
+	cd doc/time; make pot
+	cd doc/users; make pot
+
+binary-install/gnome-system-tools::
+	rm -rf debian/gnome-system-tools/var/scrollkeeper

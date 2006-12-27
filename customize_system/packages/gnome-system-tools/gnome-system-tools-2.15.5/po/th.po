@@ -1,0 +1,2089 @@
+# Thai translation of gnome-system-tools.
+# Copyright (C) 2005-2006 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-system-tools package.
+# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2005-2006.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-system-tools 1.1.90\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-08-27 17:05+0700\n"
+"PO-Revision-Date: 2006-08-27 17:20+0700\n"
+"Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
+"Language-Team: Thai <l10n@opentle.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;"
+
+#: gnome-system-tools.schemas.in.h:1
+msgid ""
+"Comma separated list of hosts that the GST will be able to access when the "
+"remote configuration option is enabled"
+msgstr "รายการโฮสต์ (คั่นด้วยจุลภาค) ที่ GST สามารถเข้าถึงได้เมื่อใช้ตัวเลือกการตั้งค่าระยะไกล"
+
+#: gnome-system-tools.schemas.in.h:2
+msgid "Last GST version executed"
+msgstr "GST รุ่นล่าสุดที่เรียก"
+
+#: gnome-system-tools.schemas.in.h:3
+msgid "Preferred bootloader that boot-admin will configure"
+msgstr "บูตโหลดเดอร์ที่เลือกจะตั้งค่า"
+
+#: gnome-system-tools.schemas.in.h:4
+msgid "Remote hosts"
+msgstr "โฮสต์ระยะไกล"
+
+#: gnome-system-tools.schemas.in.h:5
+msgid ""
+"The GST are able to do remote configuration through SSH, enable this option "
+"to use this feature"
+msgstr "GST สามารถตั้งค่าระบบระยะไกลผ่าน SSH ได้ เลือกตัวเลือกนี้ถ้าจะใช้ความสามารถนี้"
+
+#: gnome-system-tools.schemas.in.h:6
+msgid "The last GST version that this computer has run"
+msgstr "รุ่นของ GST ล่าสุดที่เคยเรียกในคอมพิวเตอร์เครื่องนี้"
+
+#: gnome-system-tools.schemas.in.h:7
+msgid ""
+"This key stores the bootloader that boot-admin will configure if there are "
+"more than one installed, if it's not set or isn't valid, then boot-admin "
+"will ask the user"
+msgstr ""
+"คีย์นี้เก็บชื่อบูตโหลดเดอร์ที่เครื่องมือตั้งค่าระบบบูตจะแก้ไขในกรณีที่มีบูตโหลดเดอร์มากกว่าหนึ่งตัวติดตั้งอยู่ "
+"ถ้าไม่ได้กำหนดไว้ หรือเป็นค่าที่ไม่ถูกต้อง โปรแกรมจะถามผู้ใช้ก่อน"
+
+#: gnome-system-tools.schemas.in.h:8
+msgid "Whether the tools will use remote administration or not"
+msgstr "กำหนดว่าจะใช้การตั้งค่าระยะไกลหรือไม่"
+
+#: gnome-system-tools.schemas.in.h:9
+msgid "Whether the users-admin tool should show all users and groups or not"
+msgstr "กำหนดว่าเครื่องมือตั้งค่าผู้ใช้จะแสดงผู้ใช้และกลุ่มผู้ใช้ทั้งหมดหรือไม่"
+
+#: gnome-system-tools.schemas.in.h:10
+msgid "Whether the warning dialog should be shown or not"
+msgstr "กำหนดว่าจะแสดงกล่องโต้ตอบเตือนขณะเข้าโปรแกรมหรือไม่"
+
+#: interfaces/common.glade.in.h:1
+msgid ""
+"<span weight=\"bold\" size=\"larger\">Please enter your root password</span>"
+msgstr "<span weight=\"bold\" size=\"larger\">กรุณาป้อนรหัสผ่านของ root</span>"
+
+#: interfaces/common.glade.in.h:2
+msgid "Enter Password"
+msgstr "ป้อนรหัสผ่าน"
+
+#: interfaces/common.glade.in.h:3
+msgid ""
+"You need administrator privileges to use this tool. Enter a password to "
+"modify\n"
+"your system configuration."
+msgstr "เครื่องมือนี้ต้องการอภิสิทธิ์ผู้ดูแลระบบ กรุณาป้อนรหัสผ่านเพื่อแก้ไขค่าของระบบ"
+
+#: interfaces/common.glade.in.h:5
+msgid "_Password:"
+msgstr "_รหัสผ่าน:"
+
+#: interfaces/network.glade.in.h:1
+msgid "<b>Account data</b>"
+msgstr "<b>ข้อมูลบัญชีอินเทอร์เน็ต</b>"
+
+#: interfaces/network.glade.in.h:2
+msgid "<b>Connection settings</b>"
+msgstr "<b>ค่าตั้งการเชื่อมต่อ</b>"
+
+#: interfaces/network.glade.in.h:3
+msgid "<b>DNS Servers</b>"
+msgstr "<b>เซิร์ฟเวอร์ DNS</b>"
+
+#: interfaces/network.glade.in.h:4
+msgid "<b>Host Settings</b>"
+msgstr "<b>ค่าของเครื่องโฮสต์</b>"
+
+#: interfaces/network.glade.in.h:5
+msgid "<b>Internet service provider data</b>"
+msgstr "<b>ข้อมูลผู้ให้บริการอินเทอร์เน็ต</b>"
+
+#: interfaces/network.glade.in.h:6
+msgid "<b>Modem settings</b>"
+msgstr "<b>ค่าตั้งโมเด็ม</b>"
+
+#: interfaces/network.glade.in.h:7
+msgid "<b>Search Domains</b>"
+msgstr "<b>โดเมนที่ค้นหา</b>"
+
+#: interfaces/network.glade.in.h:8
+msgid "<b>Wireless settings</b>"
+msgstr "<b>ค่าตั้งการเชื่อมต่อไร้สาย</b>"
+
+#: interfaces/network.glade.in.h:9
+msgid "Aliases:"
+msgstr "ชื่อฉายา:"
+
+#: interfaces/network.glade.in.h:10
+msgid ""
+"Automatic Configuration (DHCP)\n"
+"Static IP address"
+msgstr ""
+"ตั้งค่าอัตโนมัติ (DHCP)\n"
+"ที่อยู่ไอพีตายตัว"
+
+#: interfaces/network.glade.in.h:12
+msgid "C_onfiguration:"
+msgstr "วิธีตั้ง_ค่า:"
+
+#: interfaces/network.glade.in.h:13
+msgid "Connections"
+msgstr "การเชื่อมต่อ"
+
+#: interfaces/network.glade.in.h:14
+msgid "DNS"
+msgstr "DNS"
+
+#: interfaces/network.glade.in.h:15
+msgid "D_omain name:"
+msgstr "ชื่อโ_ดเมน:"
+
+#: interfaces/network.glade.in.h:16
+msgid "Default _gateway device:"
+msgstr "อุปกรณ์เ_กตเวย์ปริยาย:"
+
+#: interfaces/network.glade.in.h:17
+msgid "E_nable this connection"
+msgstr "เ_ปิดใช้ช่องเชื่อมต่อนี้"
+
+#: interfaces/network.glade.in.h:18 interfaces/users.glade.in.h:20
+msgid "General"
+msgstr "ทั่วไป"
+
+#: interfaces/network.glade.in.h:19
+msgid "Host alias settings"
+msgstr "ตั้งชื่อฉายาของโฮสต์"
+
+#: interfaces/network.glade.in.h:20
+msgid "Hosts"
+msgstr "โฮสต์"
+
+#: interfaces/network.glade.in.h:21 interfaces/shares.glade.in.h:12
+msgid "IP address:"
+msgstr "หมายเลขไอพี:"
+
+#: interfaces/network.glade.in.h:22
+msgid "Interface properties"
+msgstr "คุณสมบัติของอินเทอร์เฟซ"
+
+#: interfaces/network.glade.in.h:23 src/network/locations-combo.c:304
+msgid "Location name:"
+msgstr "ชื่อสถานที่:"
+
+#: interfaces/network.glade.in.h:24
+msgid "Location:"
+msgstr "สถานที่:"
+
+#: interfaces/network.glade.in.h:25
+msgid "Modem"
+msgstr "โมเด็ม"
+
+#: interfaces/network.glade.in.h:26
+msgid "Network _password:"
+msgstr "รหัส_ผ่านเครือข่าย:"
+
+#: interfaces/network.glade.in.h:27
+msgid "Network name (_ESSID):"
+msgstr "_ชื่อเครือข่าย (_ESSID):"
+
+#: interfaces/network.glade.in.h:28
+msgid ""
+"Off\n"
+"Low\n"
+"Medium\n"
+"Loud"
+msgstr ""
+"ปิด\n"
+"เบา\n"
+"กลาง\n"
+"ตัง"
+
+#: interfaces/network.glade.in.h:32
+msgid "Options"
+msgstr "ตัวเลือก"
+
+#: interfaces/network.glade.in.h:33
+msgid "P_assword"
+msgstr "รหัส_ผ่าน:"
+
+#: interfaces/network.glade.in.h:34
+msgid "Password _type:"
+msgstr "_ชนิดรหัสผ่าน:"
+
+#: interfaces/network.glade.in.h:35
+msgid ""
+"Plain (ASCII)\n"
+"Hexadecimal"
+msgstr ""
+"ข้อความ (แอสกี)\n"
+"เลขฐานสิบหก"
+
+#: interfaces/network.glade.in.h:37
+msgid "Remove location"
+msgstr "ลบสถานที่"
+
+#: interfaces/network.glade.in.h:38
+msgid "Save current network configuration as a location"
+msgstr "บันทึกค่าตั้งเครือข่ายปัจจุบันลงเป็นสถานที่"
+
+#: interfaces/network.glade.in.h:39
+msgid "Select location name"
+msgstr "ตั้งชื่อสถานที่"
+
+#: interfaces/network.glade.in.h:40
+msgid ""
+"Tones\n"
+"Pulses"
+msgstr ""
+"กดปุ่ม\n"
+"แป้นหมุน"
+
+#: interfaces/network.glade.in.h:42
+msgid "Use the Internet service provider nameservers"
+msgstr "ใช้ nameserver ของผู้ให้บริการอินเทอร์เน็ต"
+
+#: interfaces/network.glade.in.h:43
+msgid "_Autodetect"
+msgstr "_ตรวจหาอัตโนมัติ"
+
+#: interfaces/network.glade.in.h:44
+msgid "_Dial prefix:"
+msgstr "เ_ลขนำก่อนหมุน:"
+
+#: interfaces/network.glade.in.h:45
+msgid "_Dial type:"
+msgstr "_วิธีหมุน:"
+
+#: interfaces/network.glade.in.h:46
+msgid "_Gateway address:"
+msgstr "ที่อยู่เ_กตเวย์:"
+
+#: interfaces/network.glade.in.h:47
+msgid "_Host name:"
+msgstr "_ชื่อโฮสต์:"
+
+#: interfaces/network.glade.in.h:48
+msgid "_IP address:"
+msgstr "หมายเลขไ_อพี:"
+
+#: interfaces/network.glade.in.h:49
+msgid "_Local IP:"
+msgstr "ไอพีฝั่ง_นี้:"
+
+#: interfaces/network.glade.in.h:50
+msgid "_Modem port:"
+msgstr "พอร์ตโ_มเด็ม"
+
+#: interfaces/network.glade.in.h:51
+msgid "_Phone number:"
+msgstr "หมายเลขโ_ทรศัพท์:"
+
+#: interfaces/network.glade.in.h:52
+msgid "_Remote IP:"
+msgstr "ไอพีฝั่ง_โน้น:"
+
+#: interfaces/network.glade.in.h:53
+msgid "_Retry if the connection breaks or fails to start"
+msgstr "_ลองโทรใหม่ถ้าสายตัดหรือต่อไม่ติด"
+
+#: interfaces/network.glade.in.h:54
+msgid "_Set modem as default route to internet"
+msgstr "_กำหนดให้โมเด็มเป็นเส้นทางปริยายสู่อินเทอร์เน็ต"
+
+#: interfaces/network.glade.in.h:55
+msgid "_Subnet mask:"
+msgstr "ซับเน็ตแ_มสก์:"
+
+#: interfaces/network.glade.in.h:56 interfaces/users.glade.in.h:57
+msgid "_Username:"
+msgstr "_ชื่อผู้ใช้:"
+
+#: interfaces/network.glade.in.h:57
+msgid "_Volume:"
+msgstr "ระดับเ_สียง:"
+
+#: interfaces/services.glade.in.h:1
+msgid "Advanced settings:"
+msgstr "ตั้งค่าละเอียด:"
+
+#: interfaces/services.glade.in.h:2
+msgid "Select the services that you wish to activate:"
+msgstr "เลือกบริการที่คุณต้องการเปิด:"
+
+#: interfaces/shares.glade.in.h:1
+msgid "<b>Allowed Hosts</b>"
+msgstr "<b>โฮสต์ที่อนุญาต</b>"
+
+#: interfaces/shares.glade.in.h:2
+msgid "<b>Hosts Settings</b>"
+msgstr "<b>ค่าตั้งของเครื่องโฮสต์</b>"
+
+#: interfaces/shares.glade.in.h:3
+msgid "<b>Share Properties</b>"
+msgstr "<b>คุณสมบัติการเปิดใช้ร่วม</b>"
+
+#: interfaces/shares.glade.in.h:4
+msgid "<b>Shared Folder</b>"
+msgstr "<b>โฟลเดอร์ใช้ร่วม</b>"
+
+#: interfaces/shares.glade.in.h:5
+msgid "<b>Windows sharing</b>"
+msgstr "<b>การเปิดใช้ร่วมผ่านวินโดวส์</b>"
+
+#: interfaces/shares.glade.in.h:6
+msgid "Add allowed hosts"
+msgstr "เพิ่มโฮสต์ที่อนุญาต"
+
+#: interfaces/shares.glade.in.h:7
+msgid "Allowed hosts:"
+msgstr "โฮสต์ที่อนุญาต:"
+
+#: interfaces/shares.glade.in.h:8
+msgid "Comment:"
+msgstr "หมายเหตุ:"
+
+#: interfaces/shares.glade.in.h:9
+msgid "Domain / _Workgroup:"
+msgstr "โดเมน/เ_วิร์กกรุ๊ป:"
+
+#: interfaces/shares.glade.in.h:10
+msgid "General Properties"
+msgstr "คุณสมบัติทั่วไป"
+
+#: interfaces/shares.glade.in.h:11
+msgid "Host name:"
+msgstr "ชื่อโฮสต์:"
+
+#: interfaces/shares.glade.in.h:13
+msgid "Name:"
+msgstr "ชื่อ:"
+
+#: interfaces/shares.glade.in.h:14
+msgid "Netmask:"
+msgstr "เน็ตแมสก์:"
+
+#: interfaces/shares.glade.in.h:15
+msgid "Network:"
+msgstr "เครือข่าย:"
+
+#: interfaces/shares.glade.in.h:16 src/shares/nfs-acl-table.c:56
+msgid "Read only"
+msgstr "อ่านอย่างเดียว"
+
+#: interfaces/shares.glade.in.h:17
+msgid "Share through:"
+msgstr "เปิดใช้ร่วมผ่าน:"
+
+#: interfaces/shares.glade.in.h:18 src/shares/shares.desktop.in.in.h:2
+#: src/shares/shares-tool.c:174
+msgid "Shared Folders"
+msgstr "โฟลเดอร์ใช้ร่วม"
+
+#: interfaces/shares.glade.in.h:19
+msgid "This computer is a _WINS server"
+msgstr "เครื่องคอมพิวเตอร์นี้เป็นเซิร์ฟเวอร์ _WINS"
+
+#: interfaces/shares.glade.in.h:20
+msgid "WINS _server:"
+msgstr "เ_ซิร์ฟเวอร์ WINS:"
+
+#: interfaces/shares.glade.in.h:21
+msgid "_Path:"
+msgstr "_พาธ:"
+
+#: interfaces/shares.glade.in.h:22
+msgid "_Read only"
+msgstr "_อ่านอย่างเดียว"
+
+#: interfaces/time.glade.in.h:1
+msgid "(unconfigured)"
+msgstr "(ยังไม่ได้กำหนด)"
+
+#: interfaces/time.glade.in.h:2
+msgid "<b>Selection</b>"
+msgstr "<b>เลือก</b>"
+
+#: interfaces/time.glade.in.h:3
+msgid "<b>Time Zone</b>"
+msgstr "<b>เขตเวลา</b>"
+
+#: interfaces/time.glade.in.h:4
+msgid "Add NTP Server"
+msgstr "เพิ่มเซิร์ฟเวอร์ NTP"
+
+#: interfaces/time.glade.in.h:5
+msgid "NTP server"
+msgstr "เซิร์ฟเวอร์ NTP"
+
+#: interfaces/time.glade.in.h:6
+msgid "S_ynchronize clock with Internet servers:"
+msgstr "_ตั้งนาฬิการะบบตามเซิร์ฟเวอร์ในอินเทอร์เน็ต:"
+
+#: interfaces/time.glade.in.h:7
+msgid "Se_lect Servers"
+msgstr "เลือกเ_ซิร์ฟเวอร์"
+
+#: interfaces/time.glade.in.h:8
+msgid "Time servers"
+msgstr "เซิร์ฟเวอร์เวลา"
+
+#: interfaces/time.glade.in.h:9
+msgid "Time zone"
+msgstr "เขตเวลา"
+
+#: interfaces/time.glade.in.h:10
+msgid "Time zone:"
+msgstr "เขตเวลา:"
+
+#: interfaces/time.glade.in.h:11
+msgid "_Date:"
+msgstr "วัน_ที่:"
+
+#: interfaces/time.glade.in.h:12
+msgid "_Select Time Zone..."
+msgstr "เ_ลือกเขตเวลา..."
+
+#: interfaces/time.glade.in.h:13
+msgid "_Time:"
+msgstr "เ_วลา:"
+
+#: interfaces/users.glade.in.h:1
+msgid "<span weight=\"bold\">Advanced Settings</span>"
+msgstr "<span weight=\"bold\">ค่าตั้งขั้นสูง</span>"
+
+#: interfaces/users.glade.in.h:2
+msgid "<span weight=\"bold\">Automatic UID/GID</span>"
+msgstr "<span weight=\"bold\">UID/GID อัตโนมัติ</span>"
+
+#: interfaces/users.glade.in.h:3
+msgid "<span weight=\"bold\">Basic Settings</span>"
+msgstr "<span weight=\"bold\">ค่าพื้นฐาน</span>"
+
+#: interfaces/users.glade.in.h:4
+msgid "<span weight=\"bold\">Contact Information</span>"
+msgstr "<span weight=\"bold\">ข้อมูลที่อยู่ติดต่อ</span>"
+
+#: interfaces/users.glade.in.h:5
+msgid "<span weight=\"bold\">Group Members</span>"
+msgstr "<span weight=\"bold\">สมาชิกกลุ่ม</span>"
+
+#: interfaces/users.glade.in.h:6
+msgid "<span weight=\"bold\">Optional Settings</span>"
+msgstr "<span weight=\"bold\">ค่าตั้งเพิ่มเติม</span>"
+
+#: interfaces/users.glade.in.h:7
+msgid "<span weight=\"bold\">Password Settings</span>"
+msgstr "<span weight=\"bold\">กำหนดรหัสผ่าน</span>"
+
+#: interfaces/users.glade.in.h:8
+msgid "<span weight=\"bold\">Password</span>"
+msgstr "<span weight=\"bold\">รหัสผ่าน</span>"
+
+#: interfaces/users.glade.in.h:9
+msgid "<span weight=\"bold\">Profile Settings</span>"
+msgstr "<span weight=\"bold\">ตั้งค่าโพรไฟล์</span>"
+
+#: interfaces/users.glade.in.h:10
+msgid "<span weight=\"bold\">System Defaults</span>"
+msgstr "<span weight=\"bold\">ค่าปริยายของระบบ</span>"
+
+#: interfaces/users.glade.in.h:11
+msgid "<span weight=\"bold\">User Profile</span>"
+msgstr "<span weight=\"bold\">โพรไฟล์ผู้ใช้</span>"
+
+#: interfaces/users.glade.in.h:12
+msgid "Account"
+msgstr "บัญชี"
+
+#: interfaces/users.glade.in.h:13
+msgid "Advanced"
+msgstr "ขั้นสูง"
+
+#: interfaces/users.glade.in.h:14
+msgid "Assign a random password by default"
+msgstr "กำหนดรหัสผ่านแบบสุ่มโดยปริยาย"
+
+#: interfaces/users.glade.in.h:15
+msgid "Check password _quality"
+msgstr "ตรวจ_คุณภาพรหัสผ่าน"
+
+#: interfaces/users.glade.in.h:16
+msgid "Con_firmation:"
+msgstr "_ยืนยันรหัสผ่าน:"
+
+#: interfaces/users.glade.in.h:17
+msgid "Days between warning and password expiration:"
+msgstr "จำนวนวันที่เริ่มเตือนก่อนรหัสผ่านจะหมดอายุ:"
+
+#: interfaces/users.glade.in.h:18
+msgid "Default _group:"
+msgstr "_กลุ่มปริยาย:"
+
+#: interfaces/users.glade.in.h:19
+msgid "Default _shell:"
+msgstr "เ_ชลล์ปริยาย:"
+
+#: interfaces/users.glade.in.h:21
+msgid "Generate _random password"
+msgstr "_สุ่มรหัสผ่าน:"
+
+#: interfaces/users.glade.in.h:22
+msgid "Group _ID:"
+msgstr "หมายเ_ลขกลุ่ม:"
+
+#: interfaces/users.glade.in.h:23
+msgid "Group _name:"
+msgstr "ชื่อ_กลุ่ม:"
+
+#: interfaces/users.glade.in.h:24
+msgid "Group properties"
+msgstr "คุณสมบัติของกลุ่มผู้ใช้"
+
+#: interfaces/users.glade.in.h:25
+msgid "Groups settings"
+msgstr "ตั้งค่ากลุ่มผู้ใช้"
+
+#: interfaces/users.glade.in.h:26
+msgid "Ma_ximum days a password may be used:"
+msgstr "จำนวนวัน_สูงสุดที่ให้ใช้รหัสผ่าน:"
+
+#: interfaces/users.glade.in.h:27
+msgid "Maximum UID:"
+msgstr "UID สูงสุด:"
+
+#: interfaces/users.glade.in.h:28
+msgid "Mi_nimum days between password changes:"
+msgstr "จำนวนวัน_ต่ำสุดระหว่างการเปลี่ยนรหัสผ่านแต่ละครั้ง"
+
+#: interfaces/users.glade.in.h:29
+msgid "Minimum GID:"
+msgstr "GID ต่ำสุด:"
+
+#: interfaces/users.glade.in.h:30
+msgid "Minimum UID:"
+msgstr "UID ต่ำสุด:"
+
+#: interfaces/users.glade.in.h:31
+msgid "Minimum days allowed between password changes:"
+msgstr "จำนวนวันต่ำสุดระหว่างการเปลี่ยนรหัสผ่านแต่ละครั้ง"
+
+#: interfaces/users.glade.in.h:32
+msgid "Number of days that a password may be used:"
+msgstr "จำนวนวันที่ให้ใช้รหัสผ่านได้"
+
+#: interfaces/users.glade.in.h:33
+msgid "O_ffice location:"
+msgstr "ที่อ_ยู่ที่ทำงาน:"
+
+#: interfaces/users.glade.in.h:34
+msgid "Password set to: "
+msgstr "ตั้งรหัสผ่านเป็น:"
+
+#: interfaces/users.glade.in.h:35
+msgid "Privileges"
+msgstr "อภิสิทธิ์"
+
+#: interfaces/users.glade.in.h:36
+msgid "Profile _name:"
+msgstr "_ชื่อโพรไฟล์:"
+
+#: interfaces/users.glade.in.h:37
+msgid "Set password b_y hand"
+msgstr "ตั้งรหัสผ่านด้วยการ_ป้อน"
+
+#: interfaces/users.glade.in.h:38
+msgid "User ID:"
+msgstr "หมายเลขผู้ใช้:"
+
+#: interfaces/users.glade.in.h:39
+msgid "User Privileges"
+msgstr "อภิสิทธิ์ผู้ใช้"
+
+#: interfaces/users.glade.in.h:40
+msgid "User _password:"
+msgstr "รหัส_ผ่านผู้ใช้:"
+
+#: interfaces/users.glade.in.h:41
+msgid "User profiles"
+msgstr "โพรไฟล์ผู้ใช้"
+
+#: interfaces/users.glade.in.h:42
+msgid "_Add Group"
+msgstr "เ_พิ่มกลุ่ม"
+
+#: interfaces/users.glade.in.h:43
+msgid "_Add Profile"
+msgstr "เ_พิ่มโพรไฟล์"
+
+#: interfaces/users.glade.in.h:44
+msgid "_Add User"
+msgstr "เ_พิ่มผู้ใช้"
+
+#: interfaces/users.glade.in.h:45
+msgid "_Comments"
+msgstr "ห_มายเหตุ:"
+
+#: interfaces/users.glade.in.h:46
+msgid "_Days between warning and password expiration:"
+msgstr "จำนวน_วันที่เริ่มเตือนก่อนรหัสผ่านจะหมดอายุ:"
+
+#: interfaces/users.glade.in.h:47 src/network/address-list.c:77
+#: src/network/hosts.c:39 src/shares/table.c:40 src/users/table.c:40
+msgid "_Delete"
+msgstr "_ลบ"
+
+#: interfaces/users.glade.in.h:48
+msgid "_Edit User Profiles..."
+msgstr "แ_ก้ไขโพรไฟล์ผู้ใช้..."
+
+#: interfaces/users.glade.in.h:49
+msgid "_Generate"
+msgstr "สุ่_ม"
+
+#: interfaces/users.glade.in.h:50
+msgid "_Home directory:"
+msgstr "ไดเรกทอรี_บ้าน:"
+
+#: interfaces/users.glade.in.h:51
+msgid "_Home phone:"
+msgstr "โทรศัพท์_บ้าน:"
+
+#: interfaces/users.glade.in.h:52
+msgid "_Main group:"
+msgstr "_กลุ่มหลัก:"
+
+#: interfaces/users.glade.in.h:53
+msgid "_Manage Groups"
+msgstr "_จัดการกลุ่มผู้ใช้"
+
+#: interfaces/users.glade.in.h:54
+msgid "_Profile:"
+msgstr "โ_พรไฟล์:"
+
+#: interfaces/users.glade.in.h:55
+msgid "_Real name:"
+msgstr "ชื่อ_จริง:"
+
+#: interfaces/users.glade.in.h:56
+msgid "_Shell:"
+msgstr "เ_ชลล์:"
+
+#: interfaces/users.glade.in.h:58
+msgid "_Work phone:"
+msgstr "โ_ทรศัพท์ที่ทำงาน:"
+
+#: src/common/gst-platform-dialog.c:218
+msgid "The platform you are running is not supported by this tool"
+msgstr "เครื่องมือนี้ไม่สนับสนุนแพลตฟอร์มของคุณ"
+
+#. label
+#: src/common/gst-platform-dialog.c:224
+msgid ""
+"If you know for sure that it works like one of the platforms listed below, "
+"you can select that and continue. Note, however, that this might damage the "
+"system configuration or downright cripple your computer."
+msgstr ""
+"ถ้าคุณมั่นใจว่าเครื่องมือนี้สามารถทำงานกับแพลตฟอร์มของคุณได้เหมือนกับแพลตฟอร์มใดแพลตฟอร์มหนึ่งข้างล่างนี้ "
+"คุณก็อาจเลือกแพลตฟอร์มนั้นแล้วดำเนินการต่อ อย่างไรก็ดี "
+"พึงระวังว่าการทำเช่นนี้อาจก่อความเสียหายให้กับค่าต่างๆ ที่ตั้งไว้ของระบบของคุณ "
+"หรืออาจทำให้เครื่องของคุณไม่ทำงานไปเลยก็ได้"
+
+#: src/common/gst-platform-dialog.c:250
+msgid "Unsupported platform"
+msgstr "ไม่สนับสนุนแพลตฟอร์มนี้"
+
+#: src/common/gst-tool.c:1209
+msgid "GNOME System Tools"
+msgstr "เครื่องมือดูแลระบบของ GNOME"
+
+#: src/common/gst-tool.c:1230
+msgid "Could not display help"
+msgstr "แสดงเอกสารแนะนำวิธีใช้ไม่สำเร็จ"
+
+#: src/network/address-list.c:76 src/network/hosts.c:37
+#: src/shares/table.c:38 src/users/table.c:38
+msgid "_Add"
+msgstr "เ_พิ่ม"
+
+#: src/network/address-list.c:486
+msgid "Type address"
+msgstr "พิมพ์ที่อยู่"
+
+#: src/network/callbacks.c:157
+msgid "Changing interface configuration"
+msgstr "กำลังเปลี่ยนค่าตั้งของอินเทอร์เฟซ"
+
+#: src/network/callbacks.c:200
+msgid "Could not autodetect modem device"
+msgstr "ตรวจหาอุปกรณ์โมเด็มไม่พบ"
+
+#: src/network/callbacks.c:203
+msgid ""
+"Check that the device is not busy and that is correctly attached to the "
+"computer."
+msgstr "กรุณาตรวจสอบให้แน่ใจว่าโมเด็มว่างอยู่ และต่อเชื่อมกับเครื่องคอมพิวเตอร์อย่างถูกต้อง"
+
+#: src/network/callbacks.c:479
+msgid "Activating network interface"
+msgstr "กำลังเปิดใช้อินเทอร์เฟซเครือข่าย"
+
+#: src/network/callbacks.c:514
+msgid "The host name has changed"
+msgstr "ชื่อโฮสต์ถูกเปลี่ยนแปลง"
+
+#: src/network/callbacks.c:517
+msgid ""
+"This will prevent you from launching new applications, and so you will have "
+"to log in again. Continue anyway?"
+msgstr ""
+"การเปลี่ยนนี้อาจทำให้คุณเรียกโปรแกรมใหม่ไม่ได้ และจำเป็นต้องเข้าระบบใหม่อีกครั้ง "
+"จะทำต่อไปหรือไม่?"
+
+#: src/network/callbacks.c:523
+msgid "Change _Host name"
+msgstr "เ_ปลี่ยนชื่อโฮสต์"
+
+#: src/network/hosts.c:38 src/network/ifaces-list.c:32
+#: src/shares/table.c:39 src/users/table.c:39
+msgid "_Properties"
+msgstr "คุณ_สมบัติ"
+
+#: src/network/hosts.c:95
+msgid "IP Address"
+msgstr "หมายเลขไอพี"
+
+#: src/network/hosts.c:103
+msgid "Aliases"
+msgstr "ชื่อฉายา"
+
+#: src/network/ifaces-list.c:33
+msgid "_Activate"
+msgstr "_เปิดใช้"
+
+#: src/network/ifaces-list.c:34
+msgid "_Deactivate"
+msgstr "_ปิดการใช้งาน"
+
+#: src/network/ifaces-list.c:315
+msgid "This network interface is not configured"
+msgstr "อินเทอร์เฟซเครือข่ายนี้ ยังไม่ตั้งค่า"
+
+#: src/network/ifaces-list.c:319
+#, c-format
+msgid "<b>Essid:</b> %s "
+msgstr "<b>Essid:</b> %s "
+
+#: src/network/ifaces-list.c:323
+#, c-format
+msgid "<b>Address:</b> %s <b>Subnet mask:</b> %s"
+msgstr "<b>ที่อยู่:</b> %s <b>เน็ตแมสก์:</b> %s"
+
+#: src/network/ifaces-list.c:327
+msgid "<b>Address:</b> DHCP"
+msgstr "<b>ที่อยู่:</b> DHCP"
+
+#: src/network/ifaces-list.c:331
+#, c-format
+msgid "<b>Address:</b> %s <b>Remote address:</b> %s"
+msgstr "<b>ที่อยู่:</b> %s <b>ที่อยู่อีกฝั่ง:</b> %s"
+
+#: src/network/ifaces-list.c:337
+#, c-format
+msgid "<b>Phone number:</b> %s <b>Login:</b> %s"
+msgstr "<b>หมายเลขโทรศัพท์:</b> %s <b>ล็อกอิน:</b> %s"
+
+#: src/network/ifaces-list.c:356
+msgid "Wireless connection"
+msgstr "ไร้สาย"
+
+#: src/network/ifaces-list.c:358
+msgid "Infrared connection"
+msgstr "อินฟราเรด"
+
+#: src/network/ifaces-list.c:360
+msgid "Wired connection"
+msgstr "การเชื่อมต่อด้วยสาย"
+
+#: src/network/ifaces-list.c:362
+msgid "Parallel port connection"
+msgstr "พอร์ตขนาน"
+
+#: src/network/ifaces-list.c:364
+msgid "Modem connection"
+msgstr "โมเด็ม"
+
+#: src/network/ifaces-list.c:366
+msgid "ISDN connection"
+msgstr "ISDN"
+
+#: src/network/locations-combo.c:224
+msgid "Changing network location"
+msgstr "กำลังเปลี่ยนสถานที่ของเครือข่าย"
+
+#: src/network/locations-combo.c:270
+msgid "There is already a location with that name"
+msgstr "มีสถานที่ในชื่อนั้นอยู่ก่อนแล้ว"
+
+#: src/network/locations-combo.c:272
+msgid "Overwrite it?"
+msgstr "จะเขียนทับหรือไม่?"
+
+#: src/network/locations-combo.c:294
+msgid "Add new location"
+msgstr "เพิ่มสถานที่ของเครือข่าย"
+
+#: src/network/locations-combo.c:350
+#, c-format
+msgid "Do you want to remove location \"%s\"?"
+msgstr "ต้องการลบสถานที่ \"%s\" หรือไม่?"
+
+#: src/network/main.c:109
+msgid "The interface does not exist"
+msgstr "ไม่มีอินเทอร์เฟซนี้"
+
+#: src/network/main.c:111
+msgid ""
+"Check that it is correctly typed and that it is correctly supported by your "
+"system."
+msgstr "กรุณาตรวจสอบให้แน่ใจว่าคุณได้พิมพ์ชื่อถูกต้อง และระบบของคุณสนับสนุนอินเทอร์เฟซนี้ถูกต้อง"
+
+#: src/network/main.c:157
+msgid "Configure a network interface"
+msgstr "ตั้งค่าอินเทอร์เฟซเครือข่าย"
+
+#: src/network/main.c:157
+msgid "INTERFACE"
+msgstr "อินเทอร์เฟซ"
+
+#: src/network/main.c:158
+msgid "Configure the first network interface with a specific type"
+msgstr "ตั้งค่าอินเทอร์เฟซแรกด้วยชนิดที่กำหนด"
+
+#: src/network/main.c:158
+msgid "TYPE"
+msgstr "ชนิด"
+
+#: src/network/network.desktop.in.in.h:1
+msgid "Configure network devices and connections"
+msgstr "ตั้งค่าอุปกรณ์และการเชื่อมต่อระบบเครือข่าย"
+
+#: src/network/network.desktop.in.in.h:2
+msgid "Networking"
+msgstr "ระบบเครือข่าย"
+
+#: src/network/network-tool.c:281
+msgid "Network Settings"
+msgstr "การตั้งค่าระบบเครือข่าย"
+
+#: src/services/callbacks.c:58
+#, c-format
+msgid "Settings for service \"%s\""
+msgstr "ตั้งค่าบริการระบบ \"%s\""
+
+#: src/services/callbacks.c:110
+#, c-format
+msgid "Are you sure you want to deactivate %s?"
+msgstr "ยืนยันที่จะปิดบริการ %s หรือไม่?"
+
+#: src/services/callbacks.c:114
+msgid ""
+"This may affect your system behavior in several ways, possibly leading to "
+"data loss."
+msgstr "การปิดนี้อาจมีผลต่อพฤติกรรมของระบบของคุณได้หลายทาง โดยอาจทำให้ข้อมูลสูญหายได้"
+
+#: src/services/service.c:32
+msgid "Antivirus"
+msgstr "ป้องกันไวรัส"
+
+#: src/services/service.c:32
+msgid "Analyzes your incoming mail for virus"
+msgstr "วิเคราะห์หาไวรัสในเมลที่รับเข้ามา"
+
+#: src/services/service.c:33
+msgid "Volumes mounter"
+msgstr "บริการเมาทน์โวลุม"
+
+#: src/services/service.c:33
+msgid "Mounts your volumes automatically"
+msgstr "เมานท์อุปกรณ์เก็บข้อมูลโดยอัตโนมัติ"
+
+#: src/services/service.c:34
+msgid "Actions scheduler"
+msgstr "กำหนดเวลางาน"
+
+#: src/services/service.c:34
+msgid "Executes scheduled actions"
+msgstr "เรียกโปรแกรมทำงานตามกำหนดเวลา"
+
+#: src/services/service.c:35
+msgid "Database server"
+msgstr "เซิร์ฟเวอร์ฐานข้อมูล"
+
+#: src/services/service.c:35
+msgid "Data storage system"
+msgstr "ระบบเก็บข้อมูล"
+
+#: src/services/service.c:36
+msgid "Graphical login manager"
+msgstr "หน้าจอล็อกอินแบบกราฟิก"
+
+#: src/services/service.c:36
+msgid "Allows users to login graphically"
+msgstr "เปิดให้ผู้ใช้เข้าระบบในโหมดกราฟิก"
+
+#: src/services/service.c:37
+msgid "Folder sharing service"
+msgstr "บริการโฟลเดอร์ใช้ร่วม"
+
+#: src/services/service.c:37
+msgid "Shares folders over your network"
+msgstr "เปิดโฟลเดอร์ให้ใช้ร่วมกันในเครือข่าย"
+
+#: src/services/service.c:38
+msgid "File sharing service"
+msgstr "บริการใช้แฟ้มร่วม"
+
+#: src/services/service.c:38 src/services/service.c:39
+msgid "Shares files over the Internet"
+msgstr "เปิดแฟ้มให้ใช้ร่วมผ่านอินเทอร์เน็ต"
+
+#: src/services/service.c:39
+msgid "FTP service"
+msgstr "บริการ FTP"
+
+#: src/services/service.c:40
+msgid "Mail fetcher"
+msgstr "ตัวดึงเมล"
+
+#: src/services/service.c:40
+msgid "Downloads your mail from remote accounts"
+msgstr "ดาวน์โหลดเมลจากบัญชีในแหล่งอื่น"
+
+#: src/services/service.c:41
+msgid "Mail agent"
+msgstr "ตัวส่งเมล"
+
+#: src/services/service.c:41
+msgid "Delivers your outgoing mail"
+msgstr "ส่งเมลขาออกของคุณ ออกทางอินเทอร์เน็ต"
+
+#: src/services/service.c:42
+msgid "Clock synchronization service"
+msgstr "บริการตั้งนาฬิกา"
+
+#: src/services/service.c:42
+msgid "Synchronizes your computer clock with Internet time servers"
+msgstr "ตั้งนาฬิการะบบตามเซิร์ฟเวอร์เวลาในอินเทอร์เน็ต"
+
+#: src/services/service.c:43
+msgid "Printer service"
+msgstr "บริการเครื่องพิมพ์"
+
+#: src/services/service.c:43
+msgid "Allows applications to use printers"
+msgstr "เปิดให้โปรแกรมต่างๆ ใช้เครื่องพิมพ์ได้"
+
+#: src/services/service.c:44
+msgid "Remote shell server"
+msgstr "เซิร์ฟเวอร์เชลล์ระยะไกล"
+
+#: src/services/service.c:44
+msgid "Secure shell server"
+msgstr "เซิร์ฟเวอร์เชลล์นิรภัย"
+
+#: src/services/service.c:45
+msgid "Computer activity logger"
+msgstr "ผู้บันทึกปฏิบัติการระบบ"
+
+#: src/services/service.c:45
+msgid "Keeps a log of your computer activity"
+msgstr "เก็บบันทึกปฏิบัติการของคอมพิวเตอร์ของคุณ"
+
+#: src/services/service.c:46
+msgid "Web server"
+msgstr "เซิร์ฟเวอร์เว็บ"
+
+#: src/services/service.c:46
+msgid "Shares your web pages over the Internet"
+msgstr "เปิดหน้าเว็บของคุณให้เข้าชมได้จากอินเทอร์เน็ต"
+
+#: src/services/services.desktop.in.in.h:1
+msgid "Configure which services will be run when the system starts"
+msgstr "ตั้งค่าบริการระบบที่จะเปิดเมื่อเปิดเครื่อง"
+
+#: src/services/services.desktop.in.in.h:2
+msgid "Services"
+msgstr "บริการระบบ"
+
+#: src/services/service-settings-table.c:73
+#: src/services/service-settings-table.c:97
+#: src/services/service-settings-table.c:109
+msgid "Start"
+msgstr "เริ่ม"
+
+#: src/services/service-settings-table.c:79
+#: src/services/service-settings-table.c:99
+#: src/services/service-settings-table.c:111
+msgid "Stop"
+msgstr "หยุด"
+
+#: src/services/service-settings-table.c:85
+#: src/services/service-settings-table.c:102
+msgid "Ignore"
+msgstr "ละเลย"
+
+#: src/services/service-settings-table.c:175
+msgid "Runlevel"
+msgstr "ระดับการทำงาน"
+
+#: src/services/service-settings-table.c:192
+msgid "Status"
+msgstr "สถานะ"
+
+#: src/services/service-settings-table.c:211
+msgid "Priority"
+msgstr "ระดับความสำคัญ"
+
+#: src/services/services-tool.c:100
+msgid "Services settings"
+msgstr "ตั้งค่าบริการ"
+
+#: src/shares/callbacks.c:194
+msgid "Are you sure you want to delete this share?"
+msgstr "ยืนยันที่จะลบโฟลเดอร์ใช้ร่วมนี้หรือไม่?"
+
+#: src/shares/callbacks.c:196
+msgid "Other computers in your network will stop viewing this."
+msgstr "คอมพิวเตอร์เครื่องอื่นในเครือข่ายของคุณจะไม่สามารถดูโฟลเดอร์นี้ได้อีก"
+
+#: src/shares/main.c:90
+msgid "Add a shared path, modifies it if it already exists"
+msgstr "เพิ่มพาธที่จะใช้ร่วม หรือแก้ไขค่าตั้งถ้ามีอยู่แล้ว"
+
+#: src/shares/main.c:90
+msgid "PATH"
+msgstr "พาธ"
+
+#: src/shares/nautilus/nautilus-shares.c:124
+msgid "_Share folder"
+msgstr "เปิดโฟลเดอร์ให้ใ_ช้ร่วม"
+
+#: src/shares/nautilus/nautilus-shares.c:125
+msgid "Share this folder with other computers"
+msgstr "เปิดโฟลเดอร์นี้ให้คอมพิวเตอร์เครื่องอื่นใช้ร่วม"
+
+#: src/shares/nfs-acl-table.c:50
+msgid "Allowed host/network"
+msgstr "โฮสต์/เครือข่ายที่อนุญาต"
+
+#: src/shares/share-nfs-add-hosts.c:114
+#, c-format
+msgid "Hosts in the %s network"
+msgstr "โฮสตในเครือข่าย %s"
+
+#: src/shares/share-nfs-add-hosts.c:146
+msgid "Specify hostname"
+msgstr "ระบุชื่อโฮสต์"
+
+#: src/shares/share-nfs-add-hosts.c:153
+msgid "Specify IP address"
+msgstr "ระบุหมายเลขไอพี"
+
+#: src/shares/share-nfs-add-hosts.c:160
+msgid "Specify network"
+msgstr "ระบุเครือข่าย"
+
+#: src/shares/shares.desktop.in.in.h:1
+msgid "Configure which folders are available for your network neighborhood"
+msgstr "กำหนดโฟลเดอร์ที่จะให้เครื่องเพื่อนบ้านในเครือข่ายใช้ร่วม"
+
+#: src/shares/share-settings.c:63
+msgid "File System"
+msgstr "ระบบแฟ้ม"
+
+#: src/shares/share-settings.c:147
+msgid "Do not share"
+msgstr "ไม่เปิดให้ใช้ร่วม"
+
+#: src/shares/share-settings.c:155
+msgid "Windows networks (SMB)"
+msgstr "เครือข่ายวินโดวส์ (SMB)"
+
+#: src/shares/share-settings.c:163
+msgid "Unix networks (NFS)"
+msgstr "เครือข่ายยูนิกซ์ (NFS)"
+
+#: src/time/time.desktop.in.in.h:1
+msgid "Change system time, date, and timezone"
+msgstr "ตั้งเวลา, วันที่, และเขตเวลาของระบบ"
+
+#: src/time/time.desktop.in.in.h:2
+msgid "Time and Date"
+msgstr "เวลาและวันที่"
+
+#: src/time/time-tool.c:362
+msgid "NTP support is not installed"
+msgstr "ไม่มีโปรแกรมสนับสนุน NTP ติดตั้งอยู่"
+
+#: src/time/time-tool.c:364
+msgid ""
+"Please install and activate NTP support in the system to enable "
+"synchronization of your local time server with internet time servers."
+msgstr ""
+"กรุณาติดตั้งและเปิดใช้โปรแกรมสนับสนุน NTP ในระบบ เพื่อจะใช้การปรับนาฬิกาในเครื่องของคุณ "
+"ตามเซิร์ฟเวอร์เวลาในอินเทอร์เน็ต"
+
+#: src/time/time-tool.c:498
+msgid "Time and Date Settings"
+msgstr "ตั้งค่าเวลาและวันที่"
+
+#: src/users/group-settings.c:52
+msgid "Administrator group can not be deleted"
+msgstr "กลุ่มผู้ดูแลระบบ ไม่สามารถลบได้"
+
+#: src/users/group-settings.c:55 src/users/group-settings.c:278
+#: src/users/group-settings.c:302 src/users/user-settings.c:59
+#: src/users/user-settings.c:416 src/users/user-settings.c:486
+msgid "This would leave the system unusable."
+msgstr "การแก้ไขดังกล่าวจะทำให้ระบบใช้การไม่ได้"
+
+#: src/users/group-settings.c:68
+#, c-format
+msgid "Are you sure you want to delete group \"%s\"?"
+msgstr "ยืนยันที่จะลบกลุ่มผู้ใช้ \"%s\" หรือไม่?"
+
+#: src/users/group-settings.c:71
+msgid "This may leave files with invalid group ID in the filesystem."
+msgstr "การลบอาจทำให้แฟ้มบางแฟ้มในระบบมีหมายเลขกลุ่มที่ไม่มีตัวตน"
+
+#: src/users/group-settings.c:167
+msgid "New group"
+msgstr "เพิ่มกลุ่มผู้ใช้ใหม่"
+
+#: src/users/group-settings.c:175
+#, c-format
+msgid "Group '%s' Properties"
+msgstr "คุณสมบัติของกลุ่มผู้ใช้ '%s'"
+
+#: src/users/group-settings.c:274
+msgid "Group name is empty"
+msgstr "ไม่มีชื่อกลุ่ม"
+
+#: src/users/group-settings.c:275
+msgid "A group name must be specified."
+msgstr "ต้องระบุชื่อกลุ่มด้วย"
+
+#: src/users/group-settings.c:277
+msgid "Group name of the administrator group user should not be modified"
+msgstr "ไม่ควรแก้ไขชื่อกลุ่มผู้ใช้ของผู้ดูแลระบบ"
+
+#: src/users/group-settings.c:280
+msgid "Group name has invalid characters"
+msgstr "ชื่อกลุ่มผู้ใช้มีอักขระห้ามใช้"
+
+#: src/users/group-settings.c:281
+msgid ""
+"Please set a valid group name consisting of a lower case letter followed by "
+"lower case letters and numbers."
+msgstr "กรุณาตั้งชื่อผู้ใช้ให้ถูกต้อง โดยขึ้นต้นด้วยตัวพิมพ์เล็ก ตามด้วยตัวพิมพ์เล็กหรือตัวเลขเท่านั้น"
+
+#: src/users/group-settings.c:285
+#, c-format
+msgid "Group \"%s\" already exists"
+msgstr "มีกลุ่มผู้ใช้ \"%s\" อยู่ก่อนแล้ว"
+
+#: src/users/group-settings.c:286 src/users/user-settings.c:424
+msgid "Please select a different user name."
+msgstr "กรุณาตั้งชื่ออื่น"
+
+#: src/users/group-settings.c:301
+msgid "Group ID of the Administrator account should not be modified"
+msgstr "ไม่ควรแก้ไขหมายเลขกลุ่มของบัญชีผู้ดูแลระบบ"
+
+#: src/users/groups-table.c:45
+msgid "Group name"
+msgstr "ชื่อกลุ่ม"
+
+#: src/users/privileges-table.c:48
+msgid "Monitor system logs"
+msgstr "เฝ้ามองบันทึกปฏิบัติการระบบ"
+
+#: src/users/privileges-table.c:49
+msgid "Administer the system"
+msgstr "ดูแลระบบ"
+
+#: src/users/privileges-table.c:50
+msgid "Use audio devices"
+msgstr "ใช้อุปกรณ์เสียง"
+
+#: src/users/privileges-table.c:51
+msgid "Use CD-ROM drives"
+msgstr "ใช้ไดรว์ซีดีรอม"
+
+#: src/users/privileges-table.c:52
+msgid "Use modems"
+msgstr "ใช้โมเด็ม"
+
+#: src/users/privileges-table.c:53
+msgid "Connect to Internet using a modem"
+msgstr "เชื่อมต่ออินเทอร์เน็ตด้วยโมเด็ม"
+
+#: src/users/privileges-table.c:54
+msgid "Send and receive faxes"
+msgstr "รับและส่งแฟ็กซ์"
+
+#: src/users/privileges-table.c:55
+msgid "Use floppy drives"
+msgstr "ใช้ไดรว์ฟลอปปี้"
+
+#: src/users/privileges-table.c:56
+msgid "Access external storage devices automatically"
+msgstr "เข้าใช้อุปกรณ์เก็บข้อมูลภายนอกโดยอัตโนมัติ"
+
+#: src/users/privileges-table.c:57
+msgid "Use scanners"
+msgstr "ใช้สแกนเนอร์"
+
+#: src/users/privileges-table.c:58
+msgid "Use tape drives"
+msgstr "ใช้ไดรว์เทป"
+
+#: src/users/privileges-table.c:59
+msgid "Be able to get administrator privileges"
+msgstr "สามารถบริหารการกำหนดสิทธิ์ต่างๆ ได้"
+
+#: src/users/users.desktop.in.in.h:1
+msgid "Add or remove users and groups"
+msgstr "เพิ่มหรือลบบัญชีผู้ใช้และกลุ่มผู้ใช้"
+
+#: src/users/users.desktop.in.in.h:2
+msgid "Users and Groups"
+msgstr "ผู้ใช้และกลุ่มผู้ใช้"
+
+#: src/users/user-settings.c:56
+msgid "Administrator account can not be deleted"
+msgstr "บัญชีผู้ดูแลระบบ ไม่สามารถลบได้"
+
+#: src/users/user-settings.c:72
+#, c-format
+msgid "Are you sure you want to delete account \"%s\"?"
+msgstr "ยืนยันที่จะลบบัญชีผู้ใช้ \"%s\" หรือไม่?"
+
+#: src/users/user-settings.c:75
+msgid ""
+"This will disable this user's access to the system without deleting the "
+"user's home directory."
+msgstr "การลบบัญชีผู้ใช้นี้ จะทำให้ผู้ใช้เข้าใช้ระบบไม่ได้ แต่ไม่ได้ลบไดเรกทอรีบ้านของผู้ใช้"
+
+#: src/users/user-settings.c:266
+msgid "New user account"
+msgstr "สร้างบัญชีผู้ใช้ใหม่"
+
+#: src/users/user-settings.c:278
+#, c-format
+msgid "Account '%s' Properties"
+msgstr "คุณสมบัติของบัญชีผู้ใช้ '%s'"
+
+#: src/users/user-settings.c:412
+msgid "User name is empty"
+msgstr "ไม่มีชื่อผู้ใช้"
+
+#: src/users/user-settings.c:413
+msgid "A user name must be specified."
+msgstr "คุณต้องระบุชื่อผู้ใช้"
+
+#: src/users/user-settings.c:415
+msgid "User name of the administrator account should not be modified"
+msgstr "ไม่ควรแก้ไขชื่อผู้ใช้ของผู้ดูแลระบบ"
+
+#: src/users/user-settings.c:418
+msgid "User name has invalid characters"
+msgstr "ชื่อผู้ใช้มีอักขระห้ามใช้"
+
+#: src/users/user-settings.c:419
+msgid ""
+"Please set a valid user name consisting of a lower case letter followed by "
+"lower case letters and numbers."
+msgstr "กรุณาตั้งชื่อผู้ใช้ให้ถูกต้อง โดยขึ้นต้นด้วยตัวพิมพ์เล็ก ตามด้วยตัวพิมพ์เล็กหรือตัวเลขเท่านั้น"
+
+#: src/users/user-settings.c:423
+#, c-format
+msgid "User name \"%s\" already exists"
+msgstr "มีผู้ใช้ชื่อ \"%s\" อยู่ก่อนแล้ว"
+
+#: src/users/user-settings.c:450
+#, c-format
+msgid "Invalid character \"%c\" in comment"
+msgstr "มีอักขระห้ามใช้ \"%c\" ในข้อมูลที่อยู่ติดต่อ"
+
+#: src/users/user-settings.c:451
+msgid "Check that this character is not used."
+msgstr "กรุณาตรวจสอบให้แน่ใจว่าไม่ได้ใช้อักขระนี้"
+
+#: src/users/user-settings.c:468
+msgid "Incomplete path in home directory"
+msgstr "พาธของไดเรกทอรีบ้านไม่สมบูรณ์"
+
+#: src/users/user-settings.c:469
+msgid ""
+"Please enter full path for home directory\n"
+"<span size=\"smaller\">i.e.: /home/john</span>."
+msgstr ""
+"กรุณาป้อนชื่อพาธเต็มของไดเรกทอรีบ้าน\n"
+"<span size=\"smaller\">เช่น /home/john</span>"
+
+#: src/users/user-settings.c:485
+msgid "User ID of the administrator account should not be modified"
+msgstr "ไม่ควรแก้ไขหมายเลขผู้ใช้ของผู้ดูแลระบบ"
+
+#: src/users/user-settings.c:501
+msgid "Incomplete path in shell"
+msgstr "พาธของเชลล์ไม่สมบูรณ์"
+
+#: src/users/user-settings.c:502
+msgid ""
+"Please enter full path for shell\n"
+"<span size=\"smaller\">i.e.: /bin/bash</span>."
+msgstr ""
+"กรุณาป้อนชื่อพาธเต็มของเชลล์\n"
+"<span size=\"smaller\">เช่น /bin/bash</span>"
+
+#: src/users/user-settings.c:521
+msgid "Password should not be empty"
+msgstr "รหัสผ่านไม่ควรว่างเปล่า"
+
+#: src/users/user-settings.c:522
+msgid "A password must be provided."
+msgstr "กรุณาตั้งรหัสผ่านด้วย"
+
+#: src/users/user-settings.c:524
+msgid "Password confirmation isn't correct"
+msgstr "การยืนยันรหัสผ่านไม่ถูกต้อง"
+
+#: src/users/user-settings.c:525
+msgid "Check that you have provided the same password in both text fields."
+msgstr "กรุณาตรวจสอบว่าคุณได้ป้อนรหัสผ่านในช่องทั้งสองตรงกันหรือไม่"
+
+#: src/users/users-table.c:44
+msgid "Name"
+msgstr "ชื่อ"
+
+#: src/users/users-table.c:63
+msgid "Login name"
+msgstr "ชื่อเข้าระบบ"
+
+#: src/users/users-table.c:70
+msgid "Home directory"
+msgstr "ไดเรกทอรีบ้าน"
+
+#: src/users/users-tool.c:176
+msgid "Users settings"
+msgstr "ตั้งค่าบัญชีผู้ใช้"
+
+#~ msgid ""
+#~ "<span weight=\"bold\" size=\"larger\">The platform you are running is not "
+#~ "supported by this tool</span>"
+#~ msgstr ""
+#~ "<span weight=\"bold\" size=\"larger\">เครื่องมือนี้ไม่สนับสนุนแพลตฟอร์มของคุณ</span>"
+
+#~ msgid "Remote administration"
+#~ msgstr "การดูแลระบบระยะไกล"
+
+#~ msgid "Run _Without Password"
+#~ msgstr "ทำงานโดย_ปราศจากรหัสผ่าน"
+
+#~ msgid "Unsupported Platform"
+#~ msgstr "ไม่สนับสนุนแพลตฟอร์มนี้"
+
+#~ msgid ""
+#~ "/dev/modem\n"
+#~ "/dev/ttyS0\n"
+#~ "/dev/ttyS1\n"
+#~ "/dev/ttyS2\n"
+#~ "/dev/ttyS3"
+#~ msgstr ""
+#~ "/dev/modem\n"
+#~ "/dev/ttyS0\n"
+#~ "/dev/ttyS1\n"
+#~ "/dev/ttyS2\n"
+#~ "/dev/ttyS3"
+
+#~ msgid ":"
+#~ msgstr ":"
+
+#~ msgid "<b>Security</b>"
+#~ msgstr "<b>ระบบรักษาความปลอดภัย</b>"
+
+#~ msgid ""
+#~ "<span size=\"larger\" weight=\"bold\">Several bootloaders have been "
+#~ "found</span>\n"
+#~ "\n"
+#~ "please select which do you want to configure"
+#~ msgstr ""
+#~ "<span size=\"larger\" weight=\"bold\">พบระบบบูตหลายระบบ</span>\n"
+#~ "กรุณาเลือกระบบบูตที่จะตั้งค่า"
+
+#~ msgid "<span weight=\"bold\">Image Settings</span>"
+#~ msgstr "<span weight=\"bold\">รายละเอียดรายการบูต</span>"
+
+#~ msgid "<span weight=\"bold\">Other Settings</span>"
+#~ msgstr "<span weight=\"bold\">ค่าอื่นๆ</span>"
+
+#~ msgid "<span weight=\"bold\">Starting the Computer</span>"
+#~ msgstr "<span weight=\"bold\">การเริ่มบูตระบบ</span>"
+
+#~ msgid "Ask at boot"
+#~ msgstr "_ถามขณะบูต"
+
+#~ msgid "Boot Manager Settings"
+#~ msgstr "ตั้งค่าระบบจัดการการบูต"
+
+#~ msgid ""
+#~ "Choose a kernel image to boot, and a partition to mount as the root "
+#~ "partition. Optionally, you may also enter parameters passed to the kernel "
+#~ "at boot time."
+#~ msgstr ""
+#~ "กรุณาเลือกแฟ้มข้อมูลเคอร์เนลที่จะบูต และพาร์ทิชันที่จะเมานท์เป็นพาร์ทิชันราก นอกจากนี้ "
+#~ "คุณอาจเพิ่มพารามิเตอร์ที่จะส่งให้กับเคอร์เนลขณะบูตได้"
+
+#~ msgid "Click \"Forward\" to continue"
+#~ msgstr "กดปุ่ม \"ถัดไป\" เพื่อทำต่อ"
+
+#~ msgid "Confirmation"
+#~ msgstr "ยืนยันรหัสผ่าน"
+
+#~ msgid "Creating a new boot image"
+#~ msgstr "สร้างรายการบูตใหม่"
+
+#~ msgid "Don't ask me again"
+#~ msgstr "ไม่ต้องถามอีก"
+
+#~ msgid "Enable IDE SCSI emulation"
+#~ msgstr "เปิดใช้การ_จำลอง SCSI จาก IDE"
+
+#~ msgid ""
+#~ "Enter a name for the boot image, and specify what kind of operating "
+#~ "system it is."
+#~ msgstr "กรุณาป้อนชื่อของรายการบูต และเลือกชนิดของระบบปฏิบัติการที่จะเพิ่ม"
+
+#~ msgid "Finished"
+#~ msgstr "สำเร็จแล้ว"
+
+#~ msgid "Manual"
+#~ msgstr "_ระบุค่า"
+
+#~ msgid "Number of colors:"
+#~ msgstr "จำนวน_สี:"
+
+#~ msgid "Other parameters:"
+#~ msgstr "พารามิเตอร์_อื่น:"
+
+#~ msgid "Password"
+#~ msgstr "รหัสผ่าน"
+
+#~ msgid "Protect with password"
+#~ msgstr "_ปกป้องด้วยรหัสผ่าน"
+
+#~ msgid "Resolution:"
+#~ msgstr "ความ_ละเอียด:"
+
+#~ msgid "Seconds to wait before loading default kernel or OS"
+#~ msgstr "จำนวนวินาทีที่จะรอก่อนโหลดเคอร์เนลหรือ OS ปริยาย"
+
+#~ msgid "Select a kernel image"
+#~ msgstr "เลือกแฟ้มข้อมูลเคอร์เนล"
+
+#~ msgid "Select an initrd image"
+#~ msgstr "เลือกแฟ้มข้อมูลแรมไดรว์เริ่มต้น"
+
+#~ msgid "Specify the partition on which the operating system is installed."
+#~ msgstr "กรุณาระบุพาร์ทิชันที่ติดตั้งระบบปฏิบัติการนั้นไว้"
+
+#~ msgid ""
+#~ "The new boot image has been added. Please click \"Apply\" to save your "
+#~ "changes."
+#~ msgstr "เพิ่มรายการบูตใหม่เรียบร้อยแล้ว กรุณากดปุ่ม \"เริ่มใช้\" เพื่อบันทึกการเปลี่ยนแปลง"
+
+#~ msgid ""
+#~ "This assistant is designed to help you quickly and easily add a new boot "
+#~ "image to your system."
+#~ msgstr "โปรแกรมนี้มุ่งช่วยคุณเพิ่มรายการบูตใหม่ให้กับระบบของคุณอย่างสะดวกรวดเร็ว"
+
+#~ msgid "Video modes (only frame buffer)"
+#~ msgstr "โห_มดของจอภาพ (เฉพาะเฟรมบัฟเฟอร์เท่านั้น)"
+
+#~ msgid "_Add..."
+#~ msgstr "เ_พิ่ม..."
+
+#~ msgid "_Device:"
+#~ msgstr "_อุปกรณ์:"
+
+#~ msgid "_Edit"
+#~ msgstr "แ_ก้ไข"
+
+#~ msgid "_Initrd image path:"
+#~ msgstr "พาธของแรมไดรว์เริ่ม_ต้น:"
+
+#~ msgid "_Kernel image path:"
+#~ msgstr "พาธของแฟ้มเ_คอร์เนล:"
+
+#~ msgid "_Name:"
+#~ msgstr "_ชื่อ:"
+
+#~ msgid "_Operating system:"
+#~ msgstr "_ระบบปฏิบัติการ:"
+
+#~ msgid "_Parameters:"
+#~ msgstr "_พารามิเตอร์:"
+
+#~ msgid "_Root file system device:"
+#~ msgstr "อุปกรณ์ที่ใช้เป็นระบบแฟ้ม_ราก:"
+
+#~ msgid "32,768"
+#~ msgstr "32,768"
+
+#~ msgid "65,536"
+#~ msgstr "65,536"
+
+#~ msgid "16,777,216"
+#~ msgstr "16,777,216"
+
+#~ msgid "Invalid VGA value"
+#~ msgstr "ค่า VGA ไม่ถูกต้อง"
+
+#~ msgid "\"%s\" is not a valid VGA value."
+#~ msgstr "\"%s\" ไม่ใช่ค่า VGA ที่ถูกต้อง"
+
+#~ msgid "Boot"
+#~ msgstr "การบูต"
+
+#~ msgid "Configure the system boot process"
+#~ msgstr "ตั้งค่ากระบวนการบูตระบบ"
+
+#~ msgid "Error creating boot image"
+#~ msgstr "เกิดข้อผิดพลาดขณะสร้างรายการบูตใหม่"
+
+#~ msgid "Creating a new boot image (%d of %d)"
+#~ msgstr "สร้างรายการบูตใหม่ (%d จาก %d)"
+
+#~ msgid "Finished creating a new boot image"
+#~ msgstr "สร้างรายการบูตใหม่สำเร็จแล้ว"
+
+#~ msgid "Unknown"
+#~ msgstr "ไม่ทราบ"
+
+#~ msgid "Windows NT"
+#~ msgstr "Windows NT"
+
+#~ msgid "Windows 9x"
+#~ msgstr "Windows 9x"
+
+#~ msgid "Dos"
+#~ msgstr "Dos"
+
+#~ msgid "Linux"
+#~ msgstr "Linux"
+
+#~ msgid "Linux swap"
+#~ msgstr "Linux swap"
+
+#~ msgid "GNU/Hurd"
+#~ msgstr "GNU/Hurd"
+
+#~ msgid "\"%s\" is an invalid path"
+#~ msgstr "\"%s\" ไม่ใช่พาธที่ถูกต้อง"
+
+#~ msgid "\"%s\" already exists, please set another name."
+#~ msgstr "มีรายการ \"%s\" อยู่ก่อนแล้ว กรุณาตั้งชื่อใหม่"
+
+#~ msgid "Invalid image name: \"%s\"."
+#~ msgstr "ชื่อรายการบูตไม่ถูกต้อง: \"%s\""
+
+#~ msgid "Invalid image: \"%s\"."
+#~ msgstr "ชื่อแฟ้มข้อมูลเคอร์เนลไม่ถูกต้อง: \"%s\""
+
+#~ msgid "Invalid root device: \"%s\"."
+#~ msgstr "ชื่ออุปกรณ์ระบบแฟ้มรากไม่ถูกต้อง: \"%s\""
+
+#~ msgid "_Module path:"
+#~ msgstr "พาธของ_มอดูล:"
+
+#~ msgid "Password confirmation is not correct."
+#~ msgstr "ยืนยันรหัสผ่านไม่ตรงกัน"
+
+#~ msgid "Error modifying boot image"
+#~ msgstr "เกิดข้อผิดพลาดระหว่างแก้ไขรายการบูต"
+
+#~ msgid "Boot Image Editor"
+#~ msgstr "แก้ไขรายการบูต"
+
+#~ msgid "Boot Append Editor"
+#~ msgstr "แก้ไขพารามิเตอร์ของการบูต"
+
+#~ msgid "Error deleting boot image"
+#~ msgstr "เกิดข้อผิดพลาดระหว่างลบรายการบูต"
+
+#~ msgid "Without at least one boot image your computer will not start."
+#~ msgstr "ถ้าไม่มีรายการบูตเหลืออยู่เลย เครื่องคอมพิวเตอร์ของคุณจะเริ่มทำงานไม่ได้"
+
+#~ msgid "Are you sure you want to delete \"%s\"?"
+#~ msgstr "ยืนยันที่จะลบ \"%s\" หรือไม่?"
+
+#~ msgid "This may leave this operating system unbootable."
+#~ msgstr "การลบนี้อาจทำให้บูตเข้าระบบปฏิบัติการนี้ไม่ได้"
+
+#~ msgid "The configuration will show empty"
+#~ msgstr "จะแสดงค่าตั้งว่างเปล่า"
+
+#~ msgid "The file \"%s\" is missing or could not be read."
+#~ msgstr "แฟ้ม \"%s\" หายไปหรืออ่านไม่ได้"
+
+#~ msgid "Default"
+#~ msgstr "ปริยาย"
+
+#~ msgid "Type"
+#~ msgstr "ชนิด"
+
+#~ msgid "Kernel Image"
+#~ msgstr "เคอร์เนล"
+
+#~ msgid "Device"
+#~ msgstr "อุปกรณ์"
+
+#~ msgid "The profile must have a name"
+#~ msgstr "โพรไฟล์ต้องมีชื่อ"
+
+#~ msgid "The profile must have a default home"
+#~ msgstr "โพรไฟล์ต้องมีไดเรกทอรีบ้านปริยาย"
+
+#~ msgid "The profile must have a default shell"
+#~ msgstr "โพรไฟล์ต้องมีเชลล์ปริยาย"
+
+#~ msgid "The default profile should not be deleted"
+#~ msgstr "ไม่ควรลบโพรไฟล์ปริยาย"
+
+#~ msgid "This profile is used for setting default data for new users"
+#~ msgstr "โพรไฟล์นี้ใช้สำหรับตั้งค่าข้อมูลโดยปริยายสำหรับผู้ใช้ใหม่"
+
+#~ msgid "Delete profile \"%s\"?"
+#~ msgstr "ลบโพรไฟล์ \"%s\" หรือไม่?"
+
+#~ msgid ""
+#~ "You will not be able to recover this profile after pressing \"apply\"."
+#~ msgstr "คุณจะไม่สามารถกู้โพรไฟล์นี้กลับมาได้ใหม่หลังจากกด \"ลบ\""
+
+#~ msgid "Profile"
+#~ msgstr "โพรไฟล์"
+
+#~ msgid "Comment"
+#~ msgstr "หมายเหตุ"
+
+#~ msgid "C_lear"
+#~ msgstr "_ล้าง"
+
+#~ msgid "Choice"
+#~ msgstr "ตัวเลือก"
+
+#~ msgid "Text"
+#~ msgstr "ข้อความ"
+
+#~ msgid ""
+#~ "Static IP address\n"
+#~ "DHCP"
+#~ msgstr ""
+#~ "ที่อยู่ไอพีตายตัว\n"
+#~ "DHCP"
+
+#~ msgid "Share folder"
+#~ msgstr "เปิดโฟลเดอร์ให้ใช้ร่วม"
+
+#~ msgid "SMB"
+#~ msgstr "SMB"
+
+#~ msgid "NFS"
+#~ msgstr "NFS"
+
+#~ msgid "Use this window to select the computer you wish to configure"
+#~ msgstr "ใช้หน้าต่างนี้เลือกคอมพิวเตอร์ที่คุณต้องการปรับแต่งค่า"
+
+#~ msgid "_Hostname:"
+#~ msgstr "_ชื่อโฮสต์:"
+
+#~ msgid "<b>Hosts settings</b>"
+#~ msgstr "<b>ตั้งค่าโฮสต์</b>"
+
+#~ msgid "Shared folders"
+#~ msgstr "โฟลเดอร์ใช้ร่วม"
+
+#~ msgid "Settings for group %s"
+#~ msgstr "ตั้งค่ากลุ่มผู้ใช้ %s"
+
+#~ msgid "Settings for account %s"
+#~ msgstr "ตั้งค่าบัญชีผู้ใช้ %s"
+
+#~ msgid "<b>Connection</b>"
+#~ msgstr "<b>การเชื่อมต่อ</b>"
+
+#~ msgid "Device:"
+#~ msgstr "อุปกรณ์:"
+
+#~ msgid "Interface name:"
+#~ msgstr "ชื่ออินเทอร์เฟซ:"
+
+#~ msgid "Key _type:"
+#~ msgstr "_ชนิดของคีย์:"
+
+#~ msgid "WEP _key:"
+#~ msgstr "_คีย์ WEP:"
+
+#~ msgid "<b>WINS server</b>"
+#~ msgstr "<b>เซิร์ฟเวอร์ WINS</b>"
+
+#~ msgid "Allow _browsing folder"
+#~ msgstr "อนุญาตให้เ_รียกดูโฟลเดอร์"
+
+#~ msgid "Do not use WINS server"
+#~ msgstr "ไม่ใช้เซิร์ฟเวอร์ WINS"
+
+#~ msgid "General Windows sharing settings"
+#~ msgstr "ตั้งค่าทั่วไปของการแชร์ผ่านวินโดวส์"
+
+#~ msgid "Windows sharing settings"
+#~ msgstr "ตั้งค่าการแชร์ผ่านวินโดวส์"
+
+#~ msgid "_Add host"
+#~ msgstr "เ_พิ่มโฮสต์"
+
+#~ msgid "_Host description:"
+#~ msgstr "คำบรรยายโ_ฮสต์:"
+
+#~ msgid "Allow user to:"
+#~ msgstr "อนุญาตให้ผู้ใช้:"
+
+#~ msgid "Group _members:"
+#~ msgstr "_สมาชิกกลุ่ม:"
+
+#~ msgid "Groups"
+#~ msgstr "กลุ่มผู้ใช้"
+
+#~ msgid "Show a_ll users and groups"
+#~ msgstr "แสดงผู้ใช้และกลุ่มผู้ใช้ทั้งห_มด"
+
+#~ msgid "Users"
+#~ msgstr "บัญชีผู้ใช้"
+
+#~ msgid "_All users:"
+#~ msgstr "ผู้ใช้ทั้งห_มด:"
+
+#~ msgid "The tool could not connect to the computer"
+#~ msgstr "ติดต่อไปยังเครื่องคอมพิวเตอร์ดังกล่าวไม่ได้"
+
+#~ msgid ""
+#~ "Check that you have access to this network and that the computer is "
+#~ "actually working and running the SSH daemon"
+#~ msgstr ""
+#~ "กรุณาตรวจสอบให้แน่ใจว่าคุณสามารถเข้าถึงเครื่อข่ายนี้ได้ และเครื่องคอมพิวเตอร์นั้นมีดีมอน SSH "
+#~ "ทำงานอยู่"
+
+#~ msgid "The entered password is invalid"
+#~ msgstr "รหัสผ่านไม่ถูกต้อง"
+
+#~ msgid ""
+#~ "Check that you typed it correctly and that you haven't activated the "
+#~ "\"caps lock\" key"
+#~ msgstr "กรุณาตรวจสอบให้แน่ใจว่าคุณป้อนรหัสผ่านถูกต้อง และปุ่ม \"caps lock\" ไม่ได้กดอยู่"
+
+#~ msgid "Could not run \"%s\""
+#~ msgstr "เรียกคำสั่ง \"%s\" ไม่สำเร็จ"
+
+#~ msgid "Check that you have permissions to run this command"
+#~ msgstr "กรุณาตรวจสอบให้แน่ใจว่าคุณมีสิทธิ์เรียกคำสั่งนี้"
+
+#~ msgid "An unexpected error has occurred"
+#~ msgstr "เกิดข้อผิดพลาดที่ไม่คาดหมาย"
+
+#~ msgid "Could not execute the backend"
+#~ msgstr "เรียกใช้แบ็กเอนด์ไม่สำเร็จ"
+
+#~ msgid ""
+#~ "There was an error creating the child process, the tool will close now."
+#~ msgstr "มีปัญหาขณะสร้างโพรเซสลูก จะปิดโปรแกรม ณ บัดนี้"
+
+#~ msgid "Could not find widget: %s"
+#~ msgstr "ไม่พบวิดเจ็ต: %s"
+
+#~ msgid "There are changes which have not been applied"
+#~ msgstr "มีการแก้ไขที่ยังค้างอยู่ไม่ได้เริ่มใช้"
+
+#~ msgid "Apply them now?"
+#~ msgstr "เริ่มใช้เลยหรือไม่?"
+
+#~ msgid "Error connection signal `%s' in widget `%s'"
+#~ msgstr "เกิดข้อผิดพลาดขณะเชื่อมสัญญาณ `%s' ในวิดเจ็ต `%s'"
+
+#~ msgid "The configuration could not be loaded"
+#~ msgstr "อ่านค่าตั้งไม่สำเร็จ"
+
+#~ msgid "There was an error running the backend script"
+#~ msgstr "มีปัญหาบางอย่างระหว่างการทำงานของสคริปต์แบ็กเอนด์"
+
+#~ msgid "Welcome to the %s prerelease of the GNOME System Tools"
+#~ msgstr "ยินดีต้อนรับสู่รุ่นก่อนรีลีส %s ของเครื่องมือดูแลระบบของ GNOME"
+
+#~ msgid ""
+#~ "This is still a work in progress, and so it may have serious bugs. Due to "
+#~ "the nature of these tools, bugs may render your computer <span weight="
+#~ "\"bold\">practically useless</span>, costing time, effort and sanity "
+#~ "points. You have been warned. Thank you for trying out this prerelease of "
+#~ "the GNOME System Tools!"
+#~ msgstr ""
+#~ "โปรแกรมนี้อยู่ในระหว่างพัฒนา จึงอาจมีปัญหาร้ายแรงอยู่ และด้วยแนวประยุกต์ใช้ของโปรแกรมนี้ "
+#~ "ปัญหาที่เกิดขึ้นอาจทำให้คอมพิวเตอร์ของคุณ <span weight=\"bold\">กลายเป็นขยะ</span>, "
+#~ "เปลืองเวลา แรงงาน และความราบรื่นของการใช้งาน เราเตือนคุณแล้ว "
+#~ "และขอขอบคุณที่ทดลองใช้รุ่นก่อนรีลีสของเครื่องมือดูแลระบบของ GNOME นี้!"
+
+#~ msgid "Warning"
+#~ msgstr "คำเตือน"
+
+#~ msgid "Don't show me this again"
+#~ msgstr "ไม่ต้องแสดงข้อความนี้อีก"
+
+#~ msgid "Could not enable the interface %s"
+#~ msgstr "ไม่สามารถเปิดใช้อินเทอร์เฟซ %s"
+
+#~ msgid ""
+#~ "Check that the settings are correct for this network and that the "
+#~ "computer is correctly connected to it."
+#~ msgstr ""
+#~ "กรุณาตรวจสอบการตั้งค่าว่าเหมาะสมกับเครือข่ายหรือไม่ "
+#~ "และตรวจสอบการเชื่อมต่อระหว่างคอมพิวเตอร์กับเครือข่ายด้วย"
+
+#~ msgid "Delete current location"
+#~ msgstr "ลบสถานที่ปัจจุบัน"
+
+#~ msgid "Changing profile"
+#~ msgstr "กำลังเปลี่ยนโพรไฟล์สถานที่"
+
+#~ msgid "Ethernet connection"
+#~ msgstr "อีเทอร์เน็ต"
+
+#~ msgid "The interface %s is not active"
+#~ msgstr "อินเทอร์เฟซ %s ยังไม่เปิดใช้"
+
+#~ msgid "The interface %s is active"
+#~ msgstr "อินเทอร์เฟซ %s เปิดใช้อยู่"
+
+#~ msgid "Settings for \"%s\""
+#~ msgstr "ค่าตั้งสำหรับ \"%s\""
+
+#~ msgid "Are you sure you want to deactivate this service?"
+#~ msgstr "ยืนยันที่จะปิดบริการนี้หรือไม่?"
+
+#~ msgid "Shared folders settings"
+#~ msgstr "ตั้งค่าโฟลเดอร์ใช้ร่วม"
+
+#~ msgid "Sharing services are not installed"
+#~ msgstr "ไม่มีบริการใช้โฟลเดอร์ร่วมอยู่ในระบบ"
+
+#~ msgid ""
+#~ "You need to install at least either Samba or NFS in order to share your "
+#~ "folders. The tool will close now."
+#~ msgstr ""
+#~ "คุณต้องติดตั้ง Samba หรือ NFS เพื่อจะให้เครื่องอื่นในเครือข่ายใช้โฟลเดอร์ร่วม จะปิดโปรแกรม ณ "
+#~ "บัดนี้"
+
+#~ msgid "Error saving profile"
+#~ msgstr "เกิดข้อผิดพลาดขณะบันทึกโพรไฟล์"
+
+#~ msgid "Create New profile"
+#~ msgstr "เพิ่มโพรไฟล์ใหม่"
+
+#~ msgid "Settings for profile %s"
+#~ msgstr "ตั้งค่าโพรไฟล์ %s"
+
+#~ msgid "Invalid group ID"
+#~ msgstr "หมายเลขกลุ่มไม่ถูกต้อง"
+
+#~ msgid "Group ID must be a positive number"
+#~ msgstr "หมายเลขกลุ่มต้องเป็นตัวเลขจำนวนเต็ม"
+
+#~ msgid "This would leave the system unusable"
+#~ msgstr "การแก้ไขดังกล่าวจะทำให้ระบบใช้การไม่ได้"
+
+#~ msgid "Group ID %s already exists"
+#~ msgstr "มีกลุ่มหมายเลข %s อยู่ก่อนแล้ว"
+
+#~ msgid "The group name is too long"
+#~ msgstr "ชื่อกลุ่มผู้ใช้ยาวเกินไป"
+
+#~ msgid "To be valid, the group name should have less than %d character"
+#~ msgid_plural ""
+#~ "To be valid, the group name should have less than %d characters"
+#~ msgstr[0] "ชื่อกลุ่มผู้ใช้ควรยาวไม่เกิน %d ตัวอักษร"
+
+#~ msgid "Please set a valid group name, using only lower case letters"
+#~ msgstr "กรุณาตั้งชื่อกลุ่มผู้ใช้ให้ถูกต้อง โดยใช้เฉพาะตัวพิมพ์เล็กเท่านั้น"
+
+#~ msgid "Please select a different group name"
+#~ msgstr "กรุณาตั้งชื่อกลุ่มใหม่"
+
+#~ msgid "The group \"root\" should not be deleted"
+#~ msgstr "ไม่ควรลบกลุ่มผู้ใช้ \"root\""
+
+#~ msgid "Group"
+#~ msgstr "กลุ่ม"
+
+#~ msgid "GID"
+#~ msgstr "GID"
+
+#~ msgid "User name contains"
+#~ msgstr "ชื่อผู้ใช้มีคำว่า"
+
+#~ msgid "User ID is"
+#~ msgstr "หมายเลขผู้ใช้คือ"
+
+#~ msgid "Group name contains"
+#~ msgstr "ชื่อกลุ่มมีคำว่า"
+
+#~ msgid "User GID is"
+#~ msgstr "หมายเลขกลุ่มคือ"
+
+#~ msgid "Passwords do not match"
+#~ msgstr "รหัสผ่านไม่ตรงกัน"
+
+#~ msgid ""
+#~ "Bad password: %s.\n"
+#~ "Please try with a new password"
+#~ msgstr ""
+#~ "รหัสผ่านไม่ดี: %s\n"
+#~ "กรุณาเลือกรหัสผ่านใหม่"
+
+#~ msgid "The \"root\" user should not be deleted"
+#~ msgstr "ไม่ควรลบผู้ใช้ \"root\""
+
+#~ msgid "Are you sure you want to delete user \"%s\"?"
+#~ msgstr "ยืนยันที่จะลบผู้ใช้ \"%s\" หรือไม่?"
+
+#~ msgid "User Account Editor"
+#~ msgstr "แก้ไขบัญชีผู้ใช้"
+
+#~ msgid "The user name is too long"
+#~ msgstr "ชื่อผู้ใช้ยาวเกินไป"
+
+#~ msgid "To be valid, the user name should have less than %d character"
+#~ msgid_plural ""
+#~ "To be valid, the user name should have less than %d characters"
+#~ msgstr[0] "ชื่อผู้ใช้ควรยาวไม่เกิน %d ตัวอักษร"
+
+#~ msgid "Home directory should not be empty"
+#~ msgstr "ไดเรกทอรีบ้านไม่ควรว่างเปล่า"
+
+#~ msgid "Make sure you provide a home directory."
+#~ msgstr "กรุณาตรวจสอบว่าคุณได้ตั้งไดเรกทอรีบ้านหรือไม่"
+
+#~ msgid "Home directory of the \"root\" user should not be modified"
+#~ msgstr "ไม่ควรเปลี่ยนไดเรกทอรีบ้านของผู้ใช้ \"root\""
+
+#~ msgid "Invalid user ID"
+#~ msgstr "หมายเลขผู้ใช้ไม่ถูกต้อง"
+
+#~ msgid "User ID must be a positive number."
+#~ msgstr "หมายเลขผู้ใช้ต้องเป็นเลขจำนวนเต็มบวก"
+
+#~ msgid "User ID %s already exists"
+#~ msgstr "มีผู้ใช้หมายเลข %s อยู่แล้ว"
+
+#~ msgid ""
+#~ "Several users may share a single user ID, but it's not common and may "
+#~ "lead to security problems."
+#~ msgstr ""
+#~ "ผู้ใช้หลายคนอาจใช้หมายเลขประจำตัวร่วมกันได้ แต่ถือเป็นเรื่องไม่ปกติ "
+#~ "และอาจก่อปัญหาระบบรักษาความปลอดภัยได้"
+
+#~ msgid "Settings for User %s"
+#~ msgstr "ตั้งค่าผู้ใช้ %s"
+
+#~ msgid "User"
+#~ msgstr "ผู้ใช้"
+
+#~ msgid "Home"
+#~ msgstr "บ้าน"
+
+#~ msgid "UID"
+#~ msgstr "UID"
+
+#~ msgid "Shell"
+#~ msgstr "เชลล์"
+
+#~ msgid "/dev/hda"
+#~ msgstr "/dev/hd_a"
+
+#~ msgid "/dev/hdb"
+#~ msgstr "/dev/hd_b"
+
+#~ msgid "/dev/hdc"
+#~ msgstr "/dev/hd_c"
+
+#~ msgid "/dev/hdd"
+#~ msgstr "/dev/hd_d"
+
+#~ msgid "The group name should have less than %i characters for being valid"
+#~ msgstr "ชื่อกลุ่มผู้ใช้ควรยาวไม่เกิน %i ตัวอักษร"
+
+#~ msgid "<b>Available services:</b>"
+#~ msgstr "<b>บริการที่มี:</b>"
+
+#~ msgid "Change your running services"
+#~ msgstr "เปลี่ยนบริการที่กำลังทำงานอยู่"
+
+#~ msgid "Requests user and password in a graphical fashion"
+#~ msgstr "ถามชื่อผู้ใช้และรหัสผ่านในแบบกราฟิก"
+
+#~ msgid "<span weight=\"bold\">General Information</span>"
+#~ msgstr "<span weight=\"bold\">ข้อมูลทั่วไป</span>"
+
+#~ msgid "<span weight=\"bold\">Service Settings</span>"
+#~ msgstr "<span weight=\"bold\">ค่าตั้งของบริการ</span>"
+
+#~ msgid "Description:"
+#~ msgstr "คำบรรยาย:"
+
+#~ msgid "Service _Properties"
+#~ msgstr "คุณ_สมบัติของบริการ"
+
+#~ msgid "Service:"
+#~ msgstr "บริการ:"
+
+#~ msgid "_Order list by startup sequence"
+#~ msgstr "เ_รียงรายการตามลำดับการเริ่มบริการ"
+
+#~ msgid "_Startup sequence:"
+#~ msgstr "_ลำดับการเริ่มบริการ:"
+
+#~ msgid "No description available."
+#~ msgstr "ไม่มีข้อมูลคำบรรยาย"
+
+#~ msgid "Running"
+#~ msgstr "กำลังทำงาน"
+
+#~ msgid "Could not get info"
+#~ msgstr "อ่านข้อมูลไม่ได้"
+
+#~ msgid "Active"
+#~ msgstr "เปิดใช้งาน"
+
+#~ msgid "Service"
+#~ msgstr "บริการ"
+
+#~ msgid "DHCP"
+#~ msgstr "DHCP"
+
+#~ msgid "This device is _configured"
+#~ msgstr "อุปกรณ์นี้_ตั้งค่าแล้ว"

@@ -1,0 +1,27 @@
+patching file Makefile.in
+patching file aclocal.m4
+patching file configure
+patching file doc/Makefile.in
+patching file doc/boot/Makefile.in
+patching file doc/network/Makefile.in
+patching file doc/services/Makefile.in
+patching file doc/services/nl/Makefile.in
+patching file doc/shares/Makefile.in
+patching file doc/time/Makefile.in
+patching file doc/time/nl/Makefile.in
+patching file doc/users/Makefile.in
+patching file interfaces/Makefile.in
+patching file pixmaps/Makefile.in
+patching file src/Makefile.in
+patching file src/common/Makefile.in
+patching file src/network/Makefile.in
+patching file src/services/Makefile.in
+patching file src/shares/Makefile.in
+patching file src/shares/nautilus/Makefile.in
+patching file src/time/Makefile.in
+patching file src/time/e-map/Makefile.in
+patching file src/users/Makefile.in
+Hunk #1 succeeded at 160 (offset 1 line).
+Hunk #2 succeeded at 238 (offset 1 line).
+Hunk #3 succeeded at 257 (offset 1 line).
+Hunk #4 succeeded at 267 (offset 1 line).

@@ -1,0 +1,1582 @@
+gnome-system-tools (2.15.5-0ubuntu2guada1) edgy; urgency=low
+
+  * Added accesibility selection
+
+ -- Alvaro Peña <apg@openshine.com>  Sat, 23 Dec 2006 09:45:57 +0000
+
+gnome-system-tools (2.15.5-0ubuntu2) edgy; urgency=low
+
+  * debian/patches/04_activate_avahi_option.dpatch:
+    - fixed code broken by one of the previous updates of the package
+
+ -- Sebastien Bacher <seb128@canonical.com>  Wed, 11 Oct 2006 13:54:37 +0200
+
+gnome-system-tools (2.15.5-0ubuntu1) edgy; urgency=low
+
+  * New upstream version:
+    Common:
+    - add a --disable-gnome option to disable GNOME dependencies
+    - Show an "Access denied" dialog if g-s-t can't access s-t-b
+    Shares:
+    - remove unneeded GNOME-VFS dependency 
+    - fix a crasher
+    Time:
+    - optimize the map dot blink timeout to be only executed when the map 
+      is shown 
+    - Fix a crasher when there is no timezone (Ubuntu: #58629)
+    Translations:
+    - fi
+  * debian/control.in:
+    - Build-Depends on libart-2.0-dev and new liboobs-1-dev (>= 0.5.0)
+  * debian/patches/90_from_cvs_fix_shares_admin_crasher.dpatch:
+    - fixed with the new version
+  * debian/patches/98_automake.dpatch:
+    - updated
+
+ -- Sebastien Bacher <seb128@canonical.com>  Sat, 30 Sep 2006 23:07:12 +0200
+
+gnome-system-tools (2.15.4-0ubuntu3) edgy; urgency=low
+
+  * debian/patches/05_no_ntp.dpatch:
+    - if GST_NO_NTP is set, hide the ntp releated button/checkbox
+      (lp: #52718)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 18 Sep 2006 17:44:45 +0200
+
+gnome-system-tools (2.15.4-0ubuntu2) edgy; urgency=low
+
+  * debian/patches/90_from_cvs_fix_shares_admin_crasher.dpatch
+    - patch from cvs, fix shares-admin crashing when trying to add a share from
+      the user interface
+
+ -- Sebastien Bacher <seb128@canonical.com>  Fri,  8 Sep 2006 21:19:41 +0200
+
+gnome-system-tools (2.15.4-0ubuntu1) edgy; urgency=low
+
+  * New upstream version:
+    Network:
+    - Set the last selected profile as the default name in the "save location" 
+      dialog. Other wording and GUI improvements 
+    - Show the interface name in the UI if there's more than one interface of 
+      the same type. (Ubuntu: #56888)
+  * debian/patches/83_network-locations-apply-button.dpatch:
+    - updated
+
+ -- Sebastien Bacher <seb128@canonical.com>  Fri,  8 Sep 2006 12:57:14 +0200
+
+gnome-system-tools (2.15.3-0ubuntu1) edgy; urgency=low
+
+  * New upstream version:
+    Common:
+    - Code cleanups and improvements
+    - Fix configuration reloading when the user has to select a platform 
+    Users:
+    - Add back user profiles 
+    Time:
+    - Add "synchronize now" button
+    - Fix crasher when time-admin can't communicate with gnome-screensaver 
+    Network:
+    - Fix several potential crashers
+    - Fix --configure and --configure-type parameters
+    Shares:
+    - Do not crash in --add-share 
+    Services:
+    - Add heaps of services descriptions
+  * debian/control.in:
+    - updated the liboobs-1-dev requirement according to configure
+  * debian/gnome-system-tools.install:
+    - updated profiles file to install
+  * debian/patches/03_install_packages.dpatch:
+    - replaced by a set of new patches
+  * debian/patches/18_disable_uid.dpatch:
+    - fixed
+  * debian/patches/20_fuse_as_default_group.dpatch:
+    - updated
+  * debian/patches/98_automake.dpatch:
+    - updated
+  * debian/profiles, debian/profiles.xml:
+    - user profiles updated to the new format, 
+      by Carlos Garnacho <carlosg@gnome.org>
+  * debian/watch:
+    - updated
+  * Patches by Carlos Garnacho <carlosg@gnome.org>:
+  * debian/patches/80_gst-packages-common.dpatch,
+    debian/patches/81_gst-packages-shares-admin.dpatch,
+    debian/patches/82_gst-packages-time-admin.dpatch:
+    - based on the previous patches by Vincent Untz, allow to install required
+      packages from the corresponding tool (Ubuntu: #55988)
+  * debian/patches/83_network-locations-apply-button.dpatch:
+    - make network-admin use an apply button instead of applying changes when
+      selecting a profile
+
+ -- Sebastien Bacher <seb128@canonical.com>  Tue,  5 Sep 2006 22:55:34 +0200
+
+gnome-system-tools (2.15.2-0ubuntu5) edgy; urgency=low
+
+  * Rebuild against dbus 0.90
+
+ -- Sebastian Dröge <slomo@ubuntu.com>  Thu, 24 Aug 2006 17:44:14 +0200
+
+gnome-system-tools (2.15.2-0ubuntu4) edgy; urgency=low
+
+  * add fuse to the default groups to enable local blockdevice access 
+    for ltspfs users
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Wed, 23 Aug 2006 12:18:52 +0200
+
+gnome-system-tools (2.15.2-0ubuntu3) edgy; urgency=low
+
+  * debian/patches/08_desktops_changes.dpatch:
+    - droped, the new g-s-t run as user now, only the backend runs
+      as root
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 14 Aug 2006 13:08:24 +0200
+
+gnome-system-tools (2.15.2-0ubuntu2) edgy; urgency=low
+
+  * small fix in the packaging
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 14 Aug 2006 10:04:59 +0200
+
+gnome-system-tools (2.15.2-0ubuntu1) edgy; urgency=low
+
+  * New upstream release:
+    - General:
+      - updated user docs (garnacho)
+      - doc fixes (Claude Paroz)
+    - Network:
+      - Avoid a crash (garnacho)
+    - Time:
+      - Avoid a critical warning if no NTP service is available (garnacho)
+      - Inhibit/UnInhibit gnome-screensaver when changing time (garnacho)
+    - Translations:
+      - dz (Dzongkhalinux team)
+      - es (Francisco Javier F. Serrador)
+      - et (Ivar Smolin)
+      - eu (Inaki Larranaga)
+      - fi (Ilkka Tuohela)
+      - gu (Ankit Patel)
+      - ml (Ani Peter)
+      - mk (Jovan Naumovski)
+      - nb (Kjartan Maraas)
+      - nl (Tino Meinen)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 11 Aug 2006 15:14:42 +0200
+
+gnome-system-tools (2.15.1-0ubuntu1) edgy; urgency=low
+
+  * New upstream release:
+    - Shares:
+      - Show emblem on shared folders
+    - Network:
+      - Reimplement network locations
+    - Common:
+      - Code cleanups
+      - Remove unused glade dialogs
+  * debian/control.in:
+    - bumped liboobs requirement.
+  * debian/patches/04_activate_avahi_option.patch:
+    - updated.
+  * debian/patches/05_fix_signals_enumeration.dpatch:
+    - dropped, used upstream.
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Wed,  2 Aug 2006 21:28:45 +0200
+
+gnome-system-tools (2.15.0-0ubuntu3) edgy; urgency=low
+
+  * debian/patches/04_activate_avahi_option.dpatch:
+    - add an option to activate the automatic service discovery
+  * debian/patches/05_fix_signals_enumeration.dpatch:
+    - make the last element of a signals list being NULL, fix a crasher 
+
+ -- Sebastien Bacher <seb128@canonical.com>  Wed, 26 Jul 2006 17:14:00 +0200
+
+gnome-system-tools (2.15.0-0ubuntu2) edgy; urgency=low
+
+  * rebuild with newest liboobs. 
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Thu, 13 Jul 2006 21:15:54 +0200
+
+gnome-system-tools (2.15.0-0ubuntu1) edgy; urgency=low
+
+  * New upstream release:
+    - Common:
+      - use intltool 0.35, move ALL_LINGUAS to po/LINGUAS
+      - Make g-s-t work fine with --as-needed
+    - All tools:
+      - Use liboobs. The XML interface is deprecated
+      - Adopt a more instant apply policy
+      - UI Changes
+      - Use named icons in menus and window icon for themeability
+      - Set translation domain for popups
+    - Users:
+      - Use adduser/addgroup if it's present
+    - Network:
+      - Use DHCP as the default
+    - Services:
+      - Add advanced runlevels/priorities editor
+    - Shares:
+      - Rework defaults for new shared folders
+    - Time:
+      - Update some NTP servers
+    - Translations: dz, es, et, fi, gl, gu, it, ka, nb, ru, th, tr.
+  * debian/control.in:
+    - added Build-Deps on libgtk2.0-dev (>= 2.9.0), liboobs-1-dev (>= 0.1.0),
+    - removed {Build-,}Dep on system-tools-backends*
+  * debian/patches/03_install_packages.patch,
+    debian/patches/04_install_ntp.patch,
+    debian/patches/08_desktops_changes.dpatch,
+    debian/patches/18_disable_uid.dpatch:
+    - updated.
+  * debian/patches/05_diskstranslations.dpatch,
+    debian/patches/20_use_sudo_user.dpatch,
+    debian/patches/23_i18n.dpatch:
+    - dropped, disks-admin is dead.
+  * debian/patches/06_install_smbnfs.dpatch,
+    debian/patches/17_ntpdate.dpatch,
+    debian/patches/24_nautilus_share_gksudo.dpatch:
+    - dropped, needs to be rewritten and new features in
+      system-tools-backends.
+  * debian/patches/07_fix_share_incorrect_free.dpatch,
+    debian/patches/16_use_sudo.dpatch,
+    debian/patches/27_amd64_fix_service_crash.dpatch,
+    debian/patches/28_break_long_lines.dpatch:
+    - dropped, not necessary any more.
+  * debian/patches/15_set_action_groups_translation_domain.dpatch:
+    debian/patches/19_fix_ntp_server.dpatch:
+    - dropped, fixed upstream.
+  * debian/patches/21_disable_login_edit.dpatch:
+    - coupled with debian/patches/18_disable_uid.dpatch.
+  * debian/patches/22_use_default_serial_speed.dpatch:
+    - dropped, fixed in system-tools-backends.
+  * debian/patches/26_use_gnu_crypt.dpatch:
+    - patch moved to liboobs.
+  * debian/patches/99_autoreconf.dpatch:
+    - dropped, replaced by debian/patches/98_automake.dpatch.
+  * Resynchronized with Debian.
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Tue, 13 Jun 2006 07:53:44 +0200
+
+gnome-system-tools (2.14.0-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Don't enable building boot-admin as it is still experimental (Closes: #309932).
+
+ -- Luk Claes <luk@debian.org>  Sat, 29 Apr 2006 19:19:53 +0200
+
+gnome-system-tools (2.14.0-1) unstable; urgency=low
+
+  * New upstream version.
+  * Add build-dep on gnome-doc-tools.
+  * Disable scrollkeeper at build time.
+  * Remove /var/scrollkeeper stuff installed by translations not converted to
+    gnome-doc-utils.
+  * Drop relibtoolisation patch.
+
+ -- Dafydd Harries <daf@debian.org>  Wed, 29 Mar 2006 18:43:45 +0100
+
+gnome-system-tools (2.14.0-0ubuntu11) dapper; urgency=low
+
+  * debian/patches/07_fix_share_incorrect_free.dpatch:
+    - fix incorrect g_free call and a crasher due to it (Ubuntu: #26117)
+
+ -- Sebastien Bacher <seb128@canonical.com>  Mon, 29 May 2006 12:12:34 +0200
+
+gnome-system-tools (2.14.0-0ubuntu10) dapper; urgency=low
+
+  * debian/patches/04_install_ntp.dpatch:
+    - don't show the button is GST_NO_INSTALL_NTP is set (for the 
+      installer) Ubuntu: #46743
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 26 May 2006 17:40:37 +0200
+
+gnome-system-tools (2.14.0-0ubuntu9) dapper; urgency=low
+
+  * debian/patches/15_set_action_groups_translation_domain.dpatch
+    - define the action groups translation domain so the context menu of the 
+      different applications is translated (Ubuntu: #44895)
+
+ -- Sebastien Bacher <seb128@canonical.com>  Sun, 21 May 2006 17:22:19 +0200
+
+gnome-system-tools (2.14.0-0ubuntu8) dapper; urgency=low
+
+  * debian/patches/08_desktops_changes.dpatch:
+    - use gksu for the menu items again so the UI is consistent with the other
+      applications of the desktop (Ubuntu: #40680)
+    - make package installation working again (Ubuntu: #40563)
+  * debian/patches/20_use_sudo_user.dpatch:
+    - patch by Dennis Kaarsemaker <dennis@kaarsemaker.net>
+    - Use su -c $SUDO_USER for launching nautilus/totem/gnome-cd if that
+      variable is set (Ubuntu: #23230)
+  * debian/rules:
+    - run "make pot" for the different doc directories of the package
+
+ -- Sebastien Bacher <seb128@canonical.com>  Thu,  4 May 2006 16:19:14 +0200
+
+gnome-system-tools (2.14.0-0ubuntu7) dapper; urgency=low
+
+  * debian/patches/07_menu_tooltip.dpatch, 
+    debian/patches/08_desktop-changes.dpatch,
+    debian/patches/64_gksu-in-desktop-files.dpatch:
+    - use only one patch for desktop changes to the package
+    - use themed icons suggested by Michael Monreal <michael.monreal@gmail.com>
+      (Closes: #41009)   
+  
+ -- Sebastien Bacher <seb128@canonical.com>  Sun, 30 Apr 2006 17:24:08 +0200
+
+gnome-system-tools (2.14.0-0ubuntu6) dapper; urgency=low
+
+  * debian/patches/17_ntpdate.dpatch:
+    - fix the ntpdate command to use "/etc/network/if-up.d/ntpdate", 
+      change pointed by Gary Coady <gary@lyranthe.org> (Ubuntu: #37230)
+  * debian/patches/19_fix_ntp_server.dpatch:
+    - use the correct Ireland ntp server, patch by 
+      Gary Coady <gary@lyranthe.org> (Ubuntu: #38633)
+  * debian/patches/64_gksu-in-desktop-files.dpatch:
+    - don't run the programs with gksu but use the sudo mode instead,
+      fix the issue with the UI running with sudo too (Ubuntu: #23230)
+    - use startup notification again since it's required without gksu
+
+ -- Sebastien Bacher <seb128@canonical.com>  Thu, 20 Apr 2006 18:19:55 +0200
+
+gnome-system-tools (2.14.0-0ubuntu5) dapper; urgency=low
+
+  * patches/64_gksu-in-desktop-files.dpatch:
+    - remove StartupNotification from the desktop files, gksu does this
+      now (ubuntu: #19494)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 11 Apr 2006 23:05:02 +0200
+
+gnome-system-tools (2.14.0-0ubuntu4) dapper; urgency=low
+
+  * patches/66_startup_notification.patch:
+    - remove StartupNotification from the desktop files, gksu does this
+      now (ubuntu: #19494)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 11 Apr 2006 22:35:53 +0200
+
+gnome-system-tools (2.14.0-0ubuntu3) dapper; urgency=low
+
+  * debian/patches/28_break_long_lines:
+    - add patch from Gary Coady <gary@lyranthe.org> to fix Malone: #31675
+      ("Problem when making many users with "users admin. tool" at one time")
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Tue,  4 Apr 2006 12:33:14 +0200
+
+gnome-system-tools (2.14.0-0ubuntu2) dapper; urgency=low
+
+  * debian/patches/07_menu_tooltip.dpatch:
+    - change share folders tooltip from "Configure which folders are available 
+      for your network neighborhood" to "Configure which folders will be shared
+      with others"
+
+ -- Sebastien Bacher <seb128@canonical.com>  Thu, 16 Mar 2006 14:27:52 +0100
+
+gnome-system-tools (2.14.0-0ubuntu1) dapper; urgency=low
+
+  * New upstream release:
+    - Translations: bg, bn, ca, cs, cy, da, de, el, en_CA, es, et, eu, fi, fr,
+      gl, gu, hu, ja, lt, nb, nl, no, pt, pt_BR, ro, ru, sq, sv, zk, vi, 
+      zh_HK, zh_TW.
+  * debian/patches/98_intltool.dpatch,
+    debian/patches/99_autoreconf.dpatch:
+    - updated.
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Mon, 13 Mar 2006 19:31:18 +0100
+
+gnome-system-tools (2.13.2-0ubuntu5) dapper; urgency=low
+
+  * debian/disks.desktop, debian/rules:
+    - don't overwrite the upstream disks.desktop, that was a hack to get
+      translations for the previous cycle (Ubuntu: #33893)
+
+ -- Sebastien Bacher <seb128@canonical.com>  Sun, 12 Mar 2006 15:32:12 +0100
+
+gnome-system-tools (2.13.2-0ubuntu4) dapper; urgency=low
+
+  * debian/patches/02_use-gksudo.dpatch:
+    - removed, we use gksu instead now (with the sudo-mode switch)
+  * debian/patches/64__gksu-in-desktop-files.dpatch:
+    - enabled, added X-KDE-SubstituteUID=true, removed the TryExec
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Wed,  1 Mar 2006 14:55:14 +0100
+
+gnome-system-tools (2.13.2-0ubuntu3) dapper; urgency=low
+
+  * Yet another rebuild with fixed cdbs; this will catch the late replacement
+    of disks.desktop in debian/rules.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Fri, 24 Feb 2006 08:48:27 +0100
+
+gnome-system-tools (2.13.2-0ubuntu2) dapper; urgency=low
+
+  * Rebuild to get gettext translation domain into .desktop file.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Thu, 23 Feb 2006 14:16:46 +0100
+
+gnome-system-tools (2.13.2-0ubuntu1) dapper; urgency=low
+
+  * New upstream release: 2.13.2 "Wrong way":
+    - Common:
+      - Add GTK and GNOME to .desktop Categories, make them validate against 
+        desktop-file-validate.
+      - Some string improvements
+    - Translations: ca (Josep Puigdemont i Casamajó), en_CA (Adam 
+      Weinberger), es (Francisco Javier F. Serrador), fi (Ilkka Tuohela), 
+      fr (Benoît Dejean), gl (Ignacio Casal Quinteiro), gu (Ankit Patel), nb 
+      (Kjartan Maraas), nl (Tino Meinen), no (Kjartan Maraas), pt_BR (Evandro 
+      Fernandes Giovanini), sr, sr@Latn (Slobodan D. Sredojevic), th 
+      (Theppitak Karoonboonyanan), vi (Clytie Siddall), zn_CH (Funda Wang)
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Tue, 31 Jan 2006 17:58:34 +0100
+
+gnome-system-tools (2.13.1-0ubuntu1) dapper; urgency=low
+
+  [Daniel Holbach]
+  * New upstream release: 2.13.0 "Circles":
+    - Common:
+      - Fix usage of gnome-doc-utils (Brent Smith)
+    - Users:
+      - Improve user privileges UI (Guillaume Desmottes)
+      - Use ngettext for a couple of strings (Slobodan D. Sredojevic, 
+        garnacho)
+    - Translations: bg (Alexander Shopov), ca (Josep Puigdemont i Casamajó),
+      en_CA (Adam Weinberger), es (Francisco Javier F. Serrador), fi (Ilkka 
+      Tuohela), gl (Ignacio Casal Quinteiro), gu (Ankit Patel), ja (Takeshi 
+      AIHANA), nb, no (Kjartan Maraas), sr, sr@Latn (Slobodan D. Sredojevic), 
+      th (Theppitak Karoonboonyanan), vi (Clytie Siddall)
+  * Resynchronized with Debian.
+    - debian/control.in:
+      - removed xlibs-dev dependency. (Malone: #28234)
+  * debian/patches/01_relibtoolise.dpatch:
+    - removed.
+  [Michael Vogt]
+  * debian/patches/99_autoreconf.dpatch:
+    - updated, gave it some extra aclocal -I m4;automake;autoconf love
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 16 Jan 2006 22:46:53 +0100
+
+gnome-system-tools (2.13.0-0ubuntu2) dapper; urgency=low
+
+  * debian/rules:
+    - added --disable-scrollkeeper.
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Mon, 16 Jan 2006 10:21:49 +0100
+
+gnome-system-tools (1.4.1-2) unstable; urgency=low
+
+  [ J.H.M. Dassen (Ray) ]
+  * [debian/patches/01_relibtoolise.dpatch] Added; does away with unused
+    direct dependencies.
+
+  [ Loic Minier ]
+  * Doesn't seem to need a xlibs-dev dep. (Closes: #346720)
+    [debian/control, debian/control.in]
+
+ -- Loic Minier <lool@dooz.org>  Mon,  9 Jan 2006 22:25:07 +0100
+
+gnome-system-tools (2.13.0-0ubuntu1) dapper; urgency=low
+  
+  [Daniel Holbach]
+  * New upstream release: "Sick":
+    - Common:
+      - Use gnome-doc-utils (garnacho)
+    - Disks:
+      - Use yes-no stock icons instead of checkboxes for cd-rom
+        capabilities (Felix Riemann)
+    - Services:
+      - Strings improvements (Adam Weinberger)
+    - Time:
+      - Strings improvements (Adam Weinberger)
+  * debian/control.in:
+    - added gnome-doc-utils to Build-Depends.
+  * Resynchronized with Debian. (Ubuntu: #21809)
+  * debian/patches/04_install_ntp.dpatch,
+    - updated
+  [Michael Vogt]
+  * debian/patches/10_relibtoolize.dpatch:
+    - removed.
+  * debian/patches/98_intltool.dpatch:
+    debian/patches/99_autoreconf.dpatch:
+    - added
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri,  6 Jan 2006 12:53:24 +0100
+
+gnome-system-tools (1.4.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Remove patch 32_missing-gst-platform-include.dpatch, it was included
+    by upstream.
+
+ -- Ondřej Surý <ondrej@sury.org>  Fri, 30 Dec 2005 15:18:57 +0100
+
+gnome-system-tools (1.4.1-0ubuntu2) dapper; urgency=low
+
+  * debian/patches/24_nautilus_share_gksudo.dpatch:
+    - fix a typo (Ubuntu: #17937)
+
+ -- Sebastien Bacher <seb128@canonical.com>  Mon,  2 Jan 2006 13:10:12 +0100
+
+gnome-system-tools (1.4.1-0ubuntu1) dapper; urgency=low
+
+  * New upstream release:
+    - Build fixes (Dann Frazier, garnacho)
+    - Network: Fixed crash reported in bug #317650 (garnacho)
+    - Translations: bg (Yavor Doganov, Vladimir Petkov), cs (Stanislav
+      Brabec), es (Francisco Javier F. Serrador), et (Ivar Smolin), eu 
+      (Inaki Larranaga), fa (Meelad Zakaria, Elnaz Sarbar), fi (Ilkka 
+      Tuohela), fr (Christophe Merlet), gl (Ignacio Casal Quinteiro), 
+      it (Francesco Marletta), ku (Erdal Ronahi), pt_BR (Guilherme de S. 
+      Pastore), sk (Ivan Noris), sv (Christian Rose), th (Theppitak 
+      Karoonboonyanan), vi (Clytie Siddall), zh_CN (Funda Wang)
+   * debian/patches/10_relibtoolize.dpatch:
+     - updated.
+   * debian/patches/25_fix_locations_from_cvs.dpatch,
+     debian/patches/32_missing-gst-platform-include.dpatch:
+     - dropped, done upstream.
+   * debian/patches/04_install_ntp.dpatch,
+     debian/patches/06_install_smbnfs.dpatch:
+     - updated.
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Thu,  8 Dec 2005 22:37:00 +0100
+
+gnome-system-tools (1.4.0-4) unstable; urgency=high
+
+  * Urgency high for RC bug fix.
+  * Add misc:Depends to pull a gconf dependency. (Closes: #333116)
+    [debian/control, debian/control.in]
+
+ -- Loic Minier <lool@dooz.org>  Tue, 11 Oct 2005 21:52:46 +0200
+
+gnome-system-tools (1.4.0-3) unstable; urgency=low
+
+  * List debian/patches/32_missing-gst-platform-include.dpatch in
+    debian/patches/00list, really closes: #330104. [debian/patches/00list]
+
+ -- Loic Minier <lool@dooz.org>  Mon,  3 Oct 2005 21:26:46 +0200
+
+gnome-system-tools (1.4.0-4ubuntu2) dapper; urgency=low
+
+  * debian/patches/02_use-gksudo.depatch:
+    - updated to use "X-KDE-SubstituteUID=true".
+
+ -- Sebastien Bacher <seb128@canonical.com>  Wed,  7 Dec 2005 21:52:35 +0100
+
+gnome-system-tools (1.4.0-4ubuntu1) dapper; urgency=low
+
+  * Resynchronize with Debian:
+    - AMD64 crashers:
+      - added debian/patches/27_amd64_fix_service_crash.dpatch
+      - added debian/patches/26_use_gnu_crypt.dpatch
+    - Translations:
+      - added debian/patches/05_diskstranslations.dpatch,
+      - added debian/patches/23_i18n.dpatch,
+    - Package installation:
+      - added debian/patches/03_install_packages.dpatch,
+      -  added debian/patches/04_install_ntp.dpatch,
+      -  added debian/patches/06_install_smbnfs.dpatch,
+    - Ubuntu specific (gksudo):
+      - added debian/patches/16_use_sudo.dpatch, 
+      - added debian/patches/02_use-gksudo.dpatch,
+      - added debian/patches/24_nautilus_share_gksudo.dpatch,
+      - disabled debian/patches/64_gksu-in-desktop-files.dpatch,
+    - User handling:
+      - added debian/profiles.xml, gnome-system-tools.install to install it
+      - added debian/patches/21_disable_login_edit.dpatch,
+      - added debian/patches/18_disable_uid.dpatch,
+    - added debian/disks.desktop, modified debian/rules to install it
+    - added debian/patches/25_fix_locations_from_cvs.dpatch,
+    - added debian/patches/17_ntpdate.dpatch,
+    - added debian/patches/22_use_default_serial_speed.dpatch
+    - udpated debian/patches/10_relibtoolize.dpatch.
+    - debian/control.in:
+      - bumped Build-Dep of system-tools-backends-dev to (>= 1.3.0)
+      - remove Runlevels from description
+    - debian/rules:
+      - don't --enable-boot
+    - debian/copyright:
+      - add Carlos Garnacho <garparr@teleline.es>
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Wed, 16 Nov 2005 12:00:44 +0100
+
+gnome-system-tools (1.4.0-4) unstable; urgency=high
+
+  * Urgency high for RC bug fix.
+  * Add misc:Depends to pull a gconf dependency. (Closes: #333116)
+    [debian/control, debian/control.in]
+
+ -- Loic Minier <lool@dooz.org>  Tue, 11 Oct 2005 21:52:46 +0200
+
+gnome-system-tools (1.4.0-3) unstable; urgency=low
+
+  * List debian/patches/32_missing-gst-platform-include.dpatch in
+    debian/patches/00list, really closes: #330104. [debian/patches/00list]
+
+ -- Loic Minier <lool@dooz.org>  Mon,  3 Oct 2005 21:26:46 +0200
+
+gnome-system-tools (1.4.0-2) unstable; urgency=low
+
+  * Section is optional not extra. [debian/control, debian/control.in]
+  * Add patch to fix missing include; patch by Dann Frazier AT hp.com.
+    (Closes: #330104) [debian/patches/32_missing-gst-platform-include.dpatch]
+
+ -- Loic Minier <lool@dooz.org>  Sun,  2 Oct 2005 19:41:58 +0200
+
+gnome-system-tools (1.4.0-1) unstable; urgency=low
+
+  [ Josselin Mouette ]
+  * Don't overwrite DEB_CONFIGURE_SCRIPT_ENV completely.
+
+  [ Loic Minier ]
+  * New upstream releases.
+  * Fix usage of Copyright and License [debian/copyright]
+  * Update FSF address. [debian/copyright]
+  * Bump up Standards-Version to 3.6.2. [debian/control, debian/control.in]
+  * Bump system-tool-backends dep to >= 1.3.0.
+    [debian/control, debian/control.in]
+  * Update watch file for 1.4 series. [debian/watch]
+  * Suggest ntp instead of ntp-simple. [debian/control, debian/control.in]
+  * Change := to += for configure flags. [debian/rules]
+  * Fix dpatch and add a new patch inspired by Ubuntu to use gksu in desktop
+    files. [debian/rules, debian/patches/00list,
+    debian/patches/64_gksu-in-desktop-files.dpatch]
+  * Recommend gksu. [debian/control, debian/control.in]
+
+ -- Loic Minier <lool@dooz.org>  Fri, 16 Sep 2005 22:18:44 +0200
+
+gnome-system-tools (1.4.0-0ubuntu10) breezy; urgency=low
+
+  * debian/patches/27_amd64_fix_service_crash.dpatch:
+    - Fix incorrect type in tree-model (G_TYPE_INT -> G_TYPE_POINTER)
+      This fixes a crash on amd64 (Ubuntu #16834)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu,  6 Oct 2005 20:07:55 +0200
+
+gnome-system-tools (1.4.0-0ubuntu9) breezy; urgency=low
+
+  * debian/patches/26_use_gnu_crypt.dpatch:
+    - Use crypt(3) in md5 mode to generate the crypted password on amd64.
+      This fixes a crash on amd64 (Ubuntu #15428)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu,  6 Oct 2005 13:39:48 +0200
+
+gnome-system-tools (1.4.0-0ubuntu8) breezy; urgency=low
+
+  * debian/disks.desktop:
+    - updated (Ubuntu: #17020).
+
+ -- Sebastien Bacher <seb128@canonical.com>  Tue,  4 Oct 2005 22:29:51 +0200
+
+gnome-system-tools (1.4.0-0ubuntu7) breezy; urgency=low
+
+  * debian/disks.desktop, debian/rules:
+    - use this version of the desktop file with translations
+  * debian/patches/05_translations.dpatch:
+    - not required, rosetta has these changes.
+  * debian/patches/05_diskstranslations.dpatch:
+    - fix some translations issue with the disks utility,
+      patch by Zygmunt Krynicki <zkrynicki@gmail.com>.
+  * debian/patches/07_missing-gst-platform-include.dpatch:
+    - patch from Debian.
+
+ -- Sebastien Bacher <seb128@canonical.com>  Mon,  3 Oct 2005 16:54:57 +0200
+
+gnome-system-tools (1.4.0-0ubuntu6) breezy; urgency=low
+
+  * debian/profiles.xml:
+    - the default profiles is "Desktop" (Ubuntu: #10403).
+
+ -- Sebastien Bacher <seb128@canonical.com>  Wed, 28 Sep 2005 22:22:49 +0200
+
+gnome-system-tools (1.4.0-0ubuntu5) breezy; urgency=low
+
+  * debian/rules:
+    - don't build boot-admin, it has issues with the Debian/Ubuntu grub files.
+
+ -- Sebastien Bacher <seb128@canonical.com>  Wed, 28 Sep 2005 12:55:57 +0200
+
+gnome-system-tools (1.4.0-0ubuntu4) breezy; urgency=low
+
+  * debian/patches/25_fix_locations_from_cvs.dpatch:
+    - fix the locations save/restore feature (ubuntu #15597)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 19 Sep 2005 11:48:50 +0200
+
+gnome-system-tools (1.4.0-0ubuntu3) breezy; urgency=low
+
+  * debian/patches/24_nautilus_share_gksudo.dpatch:
+    - use gksudo in the nautilus extension to get root (ubuntu #15247)
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 16 Sep 2005 16:25:36 +0200
+
+gnome-system-tools (1.4.0-0ubuntu2) breezy; urgency=low
+
+  * debian/patches/23_i18n.dpatch:
+    - add missing disk/* to POTFILES.in and regenerate
+      gnome-system-tools.pot
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 15 Sep 2005 13:12:07 +0200
+
+gnome-system-tools (1.4.0-0ubuntu1) breezy; urgency=low
+
+  * New upstream version.
+  * debian/patches/05_translations.dpatch:
+    - updated.
+  * debian/patches/10_relibtoolize.dpatch:
+    - updated.
+  * debian/watch:
+    - updated.
+
+ -- Sebastien Bacher <seb128@canonical.com>  Mon,  5 Sep 2005 08:35:07 +0200
+
+gnome-system-tools (1.3.92-0ubuntu1) breezy; urgency=low
+
+  * New upstream version.
+  * debian/patches/05_translations.dpatch:
+    - updated.
+  * debian/patches/10_relibtoolize.dpatch:
+    - updated.
+
+ -- Sebastien Bacher <seb128@canonical.com>  Wed, 24 Aug 2005 19:15:59 +0200
+
+gnome-system-tools (1.3.2-0ubuntu2) breezy; urgency=low
+
+  * Rebuild with the new cairo version
+
+ -- Sebastien Bacher <seb128@canonical.com>  Thu, 18 Aug 2005 17:19:22 +0000
+
+gnome-system-tools (1.3.2-0ubuntu1) breezy; urgency=low
+
+  * New upstream version.
+  * debian/patches/03_install_packages.dpatch:
+    - updated.
+  * debian/patches/06_install_smbnfs.dpatch:
+    - updated.
+  * debian/patches/10_relibtoolize.dpatch:
+    - updated.
+
+ -- Sebastien Bacher <seb128@canonical.com>  Wed, 10 Aug 2005 00:28:05 +0200
+
+gnome-system-tools (1.3.1-0ubuntu1) breezy; urgency=low
+
+  * New upstream version:
+    Network:
+    - small UI fixes (garnacho)
+    - Add ordering to interfaces,
+      so most used or most important are shown first.
+    - Improve DNS and search domains input cancelation.
+    Time:
+    - Fix compilation issues with gcc 4.0.
+    - Really close the time zone and time servers dialogs
+      when pressing on the X (Ubuntu: #12691).
+    Users:
+    - String improvements.
+    - Really close the profiles dialog when pressing the X.
+  * debian/patches/05_translations.dpatch:
+    - updated.
+  * debian/patches/10_relibtoolize.dpatch:
+    - updated.
+  * debian/rules:
+    - don't install scrollkeeper files.
+
+ -- Sebastien Bacher <seb128@canonical.com>  Sat, 30 Jul 2005 21:36:45 +0200
+
+gnome-system-tools (1.3.0.1-0ubuntu2) breezy; urgency=low
+
+  * debian/patches/02_use-gksudo.dpatch:
+    - fixed the list of desktop files using gksudo.
+
+ -- Sebastien Bacher <seb128@canonical.com>  Thu,  7 Jul 2005 01:43:08 +0200
+
+gnome-system-tools (1.3.0.1-0ubuntu1) breezy; urgency=low
+
+  * New upstream version:
+    General
+    - Fixed some typos.
+    - Center password dialog on main dialog.
+    Services
+    - Brand new UI, with lots of goodies.
+    Network
+    - Fix behavior of ESC key in combination of cellrenderer
+      editing + dialog cancelling.
+    - Improved IP filtering.
+    - Added option for using the peer DNS in dialup connection.
+    - Removed duplicated accelerators.
+    - Added option for WEP key type.
+    - Allow IPv6 DNS.
+    - Improved some strings.
+    Time
+    - Improved focus chain.
+    - Improved some strings and typos.
+    Boot
+    - Improved some strings and typos.
+    Disks
+    - Improved some strings.
+    Shares
+    - Improved some strings.
+    - Really check that all necessary fields are filled before adding a share.
+    Users
+    - Plugged some leaks.
+    - Remove unnecessary commas when showing users' data.
+    - Improved some strings and typos.
+  * debian/control.in:
+    - updated the Build-Depends.
+  * 03_install_smb.dpatch:
+    - renamed to 03_install_packages, updated to install different packages,
+      thanks to Guillaume Desmottes <cass@skynet.be> for the patch.
+  * debian/patches/04_install_ntp.dpatch:
+    - updated.
+  * debian/patches/05_translations.dpatch:
+    - updated.
+  * debian/patches/06_install_smbnfs.dpatch:
+    - dialog to install smb or nfs when using shares-admin,
+    - patch from Guillaume Desmottes <cass@skynet.be> (Ubuntu: #6743).
+  * debian/patches/10_relibtoolize.dpatch:
+    - updated.
+  * debian/patches/19_fix_initial_ppp.dpatch:
+    - fixed with the new version.
+  * debian/patches/20_add_peerdns.dpatch:
+    - fixed with the new version.
+  * debian/watch:
+    - updated.
+
+ -- Sebastien Bacher <seb128@canonical.com>  Wed,  6 Jul 2005 16:34:26 +0200
+
+gnome-system-tools (1.2.0-2ubuntu3) breezy; urgency=low
+
+  * debian/postinst:
+    - dh_gconf does this job.
+
+ -- Sebastien Bacher <seb128@canonical.com>  Tue,  5 Jul 2005 15:31:44 +0200
+
+gnome-system-tools (1.2.0-2ubuntu2) breezy; urgency=low
+
+  * fixed a FTBFS
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 23 Jun 2005 19:24:05 +0200
+
+gnome-system-tools (1.2.0-2ubuntu1) breezy; urgency=low
+
+  * Resynchronise with Debian.
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 23 Jun 2005 16:12:38 +0200
+
+gnome-system-tools (1.2.0-2) unstable; urgency=low
+
+  * Upload to unstable (GNOME Team upload).
+  * Deactivated services support which is too buggy and not adequate
+    with Debian systems (thanks to Clement `nodens' Hermann for his nice
+    testing report).
+  * Removed clean rule hack to work around #299010.
+  * Minor description update.
+  * Removed services menu entry and added disks menu entry with
+    corresponding xpm image.
+
+ -- Marc Dequènes (Duck) <Duck@DuckCorp.org>  Sun, 12 Jun 2005 20:14:08 +0200
+
+gnome-system-tools (1.2.0-1) experimental; urgency=low
+
+  * Marq Dequènes (Duck):
+    + New upstream release (Closes: #300593).
+    + Removed the following patches now obsolete :
+       - 05_sarge.dpatch
+       - 10_relibtoolize.dpatch
+    + Suggests 'wvdial' useful for networking tool (Closes: #291881).
+    + Suggests 'ntp-simple' instead of 'ntp' (Closes: #290370).
+    + Converted to CDBS (could not resist the temptation ;-).
+    + Rewrote 'debian/copyright'.
+    + Removed 'ximian-setup-tools' transitional package.
+    + Fixed 'debian/menu'.
+       - unquoted-string-in-menu-item
+       - menu-icon-not-in-xpm-format
+       - s/runlevel/services/
+    + Removed unnecessary call to ldconfig in maintainer scripts (CDBS
+      parameter in 'debian/rules').
+    + Activated 'services' and 'disks' tools to test them in experimental
+      and see if they can now be trusted (like 'boot' tool was enabled in
+      2.8).
+  * Jose Carlos:
+    + Add watch file for this package.
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Sat,  7 May 2005 17:42:10 +0200
+
+gnome-system-tools (1.2.0-0ubuntu9) breezy; urgency=low
+
+  * set default serial_speed to 115200
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 21 Jun 2005 16:15:40 +0200
+
+gnome-system-tools (1.2.0-0ubuntu8) breezy; urgency=low
+
+  * Add build dependency intltool to debian/control.in. *sigh*
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Fri, 10 Jun 2005 13:52:02 +0000
+
+gnome-system-tools (1.2.0-0ubuntu7) breezy; urgency=low
+
+  * debian/rules: Automatically generate a POT file.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Fri, 10 Jun 2005 12:31:16 +0000
+
+gnome-system-tools (1.2.0-0ubuntu6) hoary; urgency=low
+
+  * debian/profiles.xml: Put Desktop and Administrator users into groups
+    'video' and 'lpadmin'. (Ubuntu #7313, #7430)
+  * Added debian/patches/21_disable_login_edit.dpatch:
+    - Disable changing the username for now; this can be reevaluated for
+      Breezy, but for Hoary we need something safe. (Ubuntu #6387)
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Wed,  6 Apr 2005 09:05:20 +0200
+
+gnome-system-tools (1.2.0-0ubuntu5) hoary; urgency=low
+
+  * debian/patches/05_translations.dpatch:
+    - translations update.
+
+ -- Sebastien Bacher <seb128@canonical.com>  Mon,  4 Apr 2005 18:31:54 +0200
+
+gnome-system-tools (1.2.0-0ubuntu4) hoary; urgency=low
+
+  * debian/patches/20_add_peerdns.dpatch:
+    - add a peerdns property to the isdn/modem object
+    - activate it when "default gw to internet" is set
+    - make "default gw to internet" on by default for new users
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri,  1 Apr 2005 13:51:57 +0200
+
+gnome-system-tools (1.2.0-0ubuntu3) hoary; urgency=low
+
+  * debian/patches/19_fix_initial_ppp:
+    - fix the problem that g-s-t does not set "noauth" for newly
+      created connections
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 29 Mar 2005 18:42:20 +0200
+
+gnome-system-tools (1.2.0-0ubuntu2) hoary; urgency=low
+
+  * debian/patches/05_translations.dpatch:
+    - translations update.
+
+ -- Sebastien Bacher <seb128@canonical.com>  Tue, 22 Mar 2005 00:20:23 +0100
+
+gnome-system-tools (1.2.0-0ubuntu1) hoary; urgency=low
+
+  * New upstream release:
+    - fixed possible crasher when closing the main dialog with the top-left X
+      (Hoary: #6160).
+    - handled correctly "auto" values (Hoary: #5724).
+
+ -- Sebastien Bacher <seb128@canonical.com>  Tue,  8 Mar 2005 01:22:39 +0100
+
+gnome-system-tools (1.1.92-0ubuntu1) hoary; urgency=low
+
+  * New upstream release
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Tue,  1 Mar 2005 22:56:45 +0100
+
+gnome-system-tools (1.1.91-0ubuntu3) hoary; urgency=low
+
+  * debian/patches/18_disable_uid.dpatch:
+    - Made uid field disabled when modifying existing users  (Hoary: #6092).
+  * debian/profiles.xml:
+    - Added administrator profile and changed Desktop profile
+      to not allow get administrator rights by default (Hoary: #1849)
+
+ -- Sivan Greenberg <sivan@piware.de>  Wed, 16 Feb 2005 16:27:50 +0200
+
+gnome-system-tools (1.1.91-0ubuntu2) hoary; urgency=low
+
+  * debian/patches/17_ntpdate.dpatch:
+    - patch from Vincent Untz <vincent@vuntz.net>,
+      add a "Synchronize now" button (Hoary: #4191).
+
+ -- Sebastien Bacher <seb128@canonical.com>  Mon, 14 Feb 2005 12:34:09 +0100
+
+gnome-system-tools (1.1.91-0ubuntu1) hoary; urgency=low
+
+  * New upstream release:
+    - split the backends/frontends in two separated packages.
+    Network:
+    - do not crash with wrong hosts file syntax (Hoary: #5856).
+  * debian/control.in:
+    - Depends on system-tools-backends.
+  * debian/patches/04_install_ntp.dpatch:
+    - updated, fix the duplicated button (Hoary: #6177).
+  * debian/patches/05_ubuntu-no-warning.dpatch,
+    debian/patches/17_fix_groups_descriptions.dpatch,
+    debian/patches/18_fix_config_location.dpatch,
+    debian/patches/19_add_scanner_group.dpatch:
+    - system-tools-backends patch.
+  * debian/patches/10_relibtoolize.dpatch:
+    - updated.
+
+ -- Sebastien Bacher <seb128@canonical.com>  Tue,  8 Feb 2005 20:53:37 +0100
+
+gnome-system-tools (1.1.90-0ubuntu3) hoary; urgency=low
+
+  * debian/gnome-system.tools.install:
+    - Installs ubuntu proper user profiles for g-s-t.
+  * debian/rules:
+    - Added dh_install to make files go the right place from .install file.
+  * 17_fix_groups_descriptions.dpatch:
+    - Fixes some group description.
+  * 18_fix_config_location.dpatch:
+    - Make g-s-t use /etc/gnome-system-tools the persistent config storage.
+  * 19_add_scanner_group.dpatch:
+    - Make users-conf.in recognize the "scanner" group.
+  * profiles.xml:
+    - Add scanner group to default desktop user profile.
+
+ -- Sivan Greenberg <sivan@piware.de>  Tue,  1 Feb 2005 15:08:18 +0200
+
+gnome-system-tools (1.1.90-0ubuntu2) hoary; urgency=low
+
+  * debian/control.in:
+    - Build-Depends on libnautilus-extension-dev.
+
+ -- Sebastien Bacher <seb128@canonical.com>  Thu, 27 Jan 2005 10:20:00 +0100
+
+gnome-system-tools (1.1.90-0ubuntu1) hoary; urgency=low
+
+  * New upstream release:
+    General:
+    - removed tool descriptions in main windows.
+    - use the new GtkMessageDialog API.
+    - make the main windows behave like the other dialogs with cancel/OK.
+    Boot:
+    - use GtkFileChooserButton.
+    Network:
+    - fixed bootproto stanzas in debian.
+    - made it stop blocking with buggy wvdialconf.
+    - use a more generic regexp for getting phone numbers
+      (Hoary: #4452, #4453).
+    - made it explicitly drop the dhcp connection when doing ifconfig down
+      (Hoary: #2228).
+    - made it to really delete profiles (Hoary: #5796).
+    - made it to really save essid and WEP keys in profiles.
+    Disks:
+    - fixed an important bug in the scsi bus scanning.
+    - fixed the DMA detection (Hoary: #4469).
+    - UI Fixes.
+    Shares:
+    - added extra checks to know whether SMB/NFS servers are active.
+    - improved shared paths saving.
+    - fixed active interfaces network/netmask detection for the NFS acl dialog.
+    - require sambe to share folders (Hoary: #5772).
+    - use the Nautilus plugins API for the context menu in folders.
+    Time:
+    - use ntp-server instead of ntp-simple or ntp-refclock in Debian.
+    * debian/patches/03_install_smb.dpatch:
+      - updated.
+    * debian/patches/04_install_ntp.dpatch:
+      - updated.
+    * debian/patches/06_interfaces.dpatch:
+      - removed, the changes are in the new version.
+    * debian/patches/10_relibtoolize.dpatch:
+      - updated.
+    * debian/patches/14_ntp_detection.dpatch:
+     - these changes are in the new upstream release.
+
+ -- Sebastien Bacher <seb128@canonical.com>  Tue, 25 Jan 2005 15:31:16 +0100
+
+gnome-system-tools (1.1.4.1-0ubuntu4) hoary; urgency=low
+
+  * debian/patches/16_use_sudo: use sudo to do all authentication
+
+ -- Michael Vogt <mvo@debian.org>  Fri, 21 Jan 2005 23:25:35 +0100
+
+gnome-system-tools (1.1.4.1-0ubuntu3) hoary; urgency=low
+
+  * debian/patches/00list:
+    - updated so the interfaces patch is really used.
+
+ -- Sebastien Bacher <seb128@canonical.com>  Fri, 21 Jan 2005 16:01:10 +0100
+
+gnome-system-tools (1.1.4.1-0ubuntu2) hoary; urgency=low
+
+  * debian/patches/06_interfaces.dpatch:
+    - upstream patch to fix the iface syntax in network/interfaces
+      (Hoary: #5578).
+
+ -- Sebastien Bacher <seb128@canonical.com>  Mon, 17 Jan 2005 12:56:42 +0100
+
+gnome-system-tools (1.1.4.1-0ubuntu1) hoary; urgency=low
+
+  * New upstream release:
+    Users:
+    - fixed groups in profiles stuff.
+    - small UI fixes.
+    Shares:
+    - use GtkFileChooserButton.
+    General:
+    - fixed supported/unsupported tools compilation.
+  * debian/patches/10_relibtoolize.dpatch:
+    - updated.
+
+ -- Sebastien Bacher <seb128@canonical.com>  Thu, 13 Jan 2005 17:08:24 +0100
+
+gnome-system-tools (1.1.4-0ubuntu1) hoary; urgency=low
+
+  * New upstream release:
+    Users:
+     - added default groups in profiles.
+    Network:
+     - added support for isdn interfaces.
+    Shares:
+     - readded general Samba Settings.
+    General:
+     - added m4 file for using the backends from other modules.
+     - made password dialog more HIG.
+  * debian/patches/01_menu-changes.dpatch:
+     - removed, these changes are in the new version.
+  * debian/patches/06_gateway.dpatch:
+     - removed, that's fixed in the new version.
+  * debian/patches/10_relibtoolize.dpatch:
+    - updated.
+
+ -- Sebastien Bacher <seb128@canonical.com>  Wed, 12 Jan 2005 13:00:26 +0100
+
+gnome-system-tools (1.1.3-0ubuntu2) hoary; urgency=low
+
+  * debian/patches/06_gateway.dpatch:
+    - upstream patch to fix the gateway configuration (Hoary: #5002).
+
+ -- Sebastien Bacher <seb128@canonical.com>  Fri, 31 Dec 2004 13:04:42 +0100
+
+gnome-system-tools (1.1.3-0ubuntu1) hoary; urgency=low
+
+  * New upstream release:
+    - async communication with backend, allowing frontends to show a
+      dialog if a directive takes too long.
+    - fully rewritten network tool.
+  * debian/patches/01_menu-changes.dpatch:
+    - updated (Hoary: #4700).
+  * debian/patches/02_use-gksudo.dpatch:
+    - shares-admin use gksuo too (Hoary: #3244).
+    - updated.
+  * debian/patches/03_install_smb.dpatch:
+    - updated.
+  * debian/patches/10_relibtoolize.dpatch:
+    - updated.
+
+ -- Sebastien Bacher <seb128@canonical.com>  Tue, 21 Dec 2004 22:54:18 +0100
+
+gnome-system-tools (1.1.0-0ubuntu2) hoary; urgency=low
+
+  * Switch the services manager off.
+  * debian/control.in:
+    - updated the description (Closes: #2682).
+  * debian/rules:
+    - updated the configure parameters.
+
+ -- Sebastien Bacher <seb128@canonical.com>  Sun,  7 Nov 2004 20:38:39 +0100
+
+gnome-system-tools (1.1.0-0ubuntu1) hoary; urgency=low
+
+  * New upstream release.
+  * debian/patches/10_relibtoolize.dpatch:
+    - updated.
+  * debian/patches/11_new_user_groups.dpatch:
+    - removed, this part of the UI has changed.
+  * debian/patches/12_essid.dpatch:
+    - removed, the changes are in the new version.
+  * debian/patches/13_wep_key.dpatch:
+    - removed, the changes are in the new version.
+  * debian/patches/15_fix_double_free.dpatch:
+    - removed, the changes are in the new version.
+  * debian/patches/16_install_smb.dpatch:
+    - updated.
+
+ -- Sebastien Bacher <seb128@canonical.com>  Wed,  3 Nov 2004 12:15:32 +0100
+
+gnome-system-tools (1.0.0-1) unstable; urgency=medium
+
+  * New upstream release
+     + Updated translations for GNOME 2.8 release
+
+  * debian/rules:
+     + Don't build services tool, as it is causing lot of troubles in Debian,
+     moving around services. (Closes: #271859, 188425)
+
+  * debian/patches:
+     + 10_relibtoolize: updated
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Sun, 26 Sep 2004 10:56:25 +0200
+
+gnome-system-tools (1.0.0-0ubuntu8) hoary; urgency=low
+
+  * debian/patches/16_install_smb.dpatch:
+    - patch by Vincent Untz <vincent@vuntz.net> to add the function to install
+      a package with a button. Use that to add a button to install samba
+      (Hoary: #1739).
+  * debian/patches/17_install_ntp.dpatch:
+    - patch by Vincent Untz <vincent@vuntz.net> to add a button to install
+      ntp-simple (Hoary: #1418).
+
+ -- Sebastien Bacher <seb128@canonical.com>  Tue,  2 Nov 2004 12:19:59 +0100
+
+gnome-system-tools (1.0.0-0ubuntu7) warty; urgency=low
+
+  * debian/patches/15_fix_double_free.dpatch:
+    - added from upstream CVS, thanks to Carlos Garnacho
+    - fix a double free() which caused the network manager (and other tools)
+      to crash very often (Warty bug #2177)
+
+ -- Martin Pitt <mpitt@debian.org>  Thu, 14 Oct 2004 18:49:22 +0200
+
+gnome-system-tools (1.0.0-0ubuntu6) warty; urgency=low
+
+  * debian/patches/13_wep_key.dpatch:
+    - updated.
+
+ -- Sebastien Bacher <seb128@canonical.com>  Tue,  5 Oct 2004 23:35:08 +0200
+
+gnome-system-tools (1.0.0-0ubuntu5) warty; urgency=low
+
+  * debian/patches/13_wep_key.dpatch:
+    - patch by Vincent Untz <vincent@vuntz.net> to add an entry for the WEP
+      keys in the interface (Warty: #1851).
+  * debian/patches/14_ntp_detection.dpatch:
+    - patch by Vincent Untz <vincent@vuntz.net> to fix the ntp server detection
+      (Warty: #2024).
+
+ -- Sebastien Bacher <seb128@canonical.com>  Tue,  5 Oct 2004 22:22:59 +0200
+
+gnome-system-tools (1.0.0-0ubuntu4) warty; urgency=low
+
+  * debian/patches/12_essid.dpatch:
+    - patch by Vincent Untz <vincent@vuntz.net> to add a mention of the
+      ESSID after the Network Name (Warty: #1295).
+
+ -- Sebastien Bacher <seb128@canonical.com>  Thu, 30 Sep 2004 17:26:14 +0200
+
+gnome-system-tools (1.0.0-0ubuntu3) warty; urgency=low
+
+  * modified 11_new_user_groups: put new users also in group 'scanner' (Warty
+    bug #1485)
+
+ -- Martin Pitt <mpitt@debian.org>  Wed, 29 Sep 2004 10:57:18 +0200
+
+gnome-system-tools (1.0.0-0ubuntu2) warty; urgency=low
+
+  * 11_new_user_groups: put newly created users in some standard local groups
+    by default: audio, cdrom, dialout, floppy, lpadmin, video, plugdev
+    (Warty bug #1430)
+
+ -- Martin Pitt <mpitt@debian.org>  Mon, 20 Sep 2004 13:16:18 +0200
+
+gnome-system-tools (1.0.0-0ubuntu1) warty; urgency=low
+
+  * New upstream release.
+  * 10_relibtoolize.dpatch:
+    - updated.
+
+ -- Sebastien Bacher <seb128@canonical.com>  Tue, 14 Sep 2004 00:25:57 +0200
+
+gnome-system-tools (0.92.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Urgency medium as we still have a chance to put this version in Sarge,
+    which is interesting for the LSB check fix (below)
+  * debian/patches: 
+     - 05_sarge: modified. check_debian patch now included upstream, adding a
+     patch for people going through check_lsb instead.
+     - 10_relibtoolize: updated.
+  * debian/rules:
+     - enable compilation of boot and services tools
+  * Menu organization complies with GNOME usage. (Closes: #254483, #237485)
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Wed,  8 Sep 2004 22:07:04 +0200
+
+gnome-system-tools (0.92.0-0ubuntu2) warty; urgency=low
+
+  * debian/patches/02_use-gksudo.dpatch:
+    - launch all the system tools with gksudo, avoiding the need for a root
+      password.
+
+ -- Jeff Waugh <jdub@perkypants.org>  Thu,  2 Sep 2004 12:55:46 +1000
+
+gnome-system-tools (0.92.0-0ubuntu1) warty; urgency=low
+
+  * New upstream release.
+
+ -- Sebastien Bacher <seb128@debian.org>  Wed,  1 Sep 2004 20:33:47 +0200
+
+gnome-system-tools (0.91.0-0ubuntu1) warty; urgency=low
+
+  * New upstream release:
+    - improved communication with su/ssh, now works with users that don't need
+      password for becoming root.
+    - show all the groups when adding/modifying an user.
+  * debian/patches/05_sarge:
+    - removed since the changes are included in the new version.
+  * debian/patches/10_relibtoolize:
+    - updated.
+
+ -- Sebastien Bacher <seb128@debian.org>  Sat, 21 Aug 2004 23:37:35 +0200
+
+gnome-system-tools (0.90.0-3) unstable; urgency=low
+
+  * debian/rules:
+    + Using now dh_scrollkeeper and dh_gconf. This should move schemas to /etc
+    to /usr, where they belong.
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Fri,  6 Aug 2004 22:24:41 +0200
+
+gnome-system-tools (0.90.0-2) unstable; urgency=low
+
+  * The "I'm quicker than FTBFS bug submitters" release.
+  * Added missing Build-Dependency on scrollkeeper.
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Fri,  6 Aug 2004 18:27:33 +0200
+
+gnome-system-tools (0.90.0-1) unstable; urgency=low
+
+  * New upstream version. (Closes: #258228)
+     + /etc/hostname ended with newline. (Closes: #258551)
+     + it handles correctly multiboot configs. (Closes: #193300)
+  * /etc/hostname shouldn't contain fqdn (Closes: #258550)
+  * debian/patches:
+    + 05_sarge: fix detection of Sarge, now that /etc/debiaan_version
+      contains 3.1. Patch from Frederic Peters (Closes: #262080)
+    + 10_relibtoolize: updated
+      
+  * debian/control.in
+    + removed libvte-dev and libcracklib2-dev Build-Dependency, as they're not
+      needed any longer. 
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Wed,  4 Aug 2004 16:46:06 +0200
+
+gnome-system-tools (0.90.0-2ubuntu2) warty; urgency=low
+
+  * debian/patches/01_menu-changes.dpatch:
+    - add Jeff's patch for the menu changes. Now the system tools are in
+      "Desktop Preferences" -> "System Tools".
+
+ -- Sebastien Bacher <seb128@debian.org>  Thu, 19 Aug 2004 13:05:11 +0200
+
+gnome-system-tools (0.90.0-2ubuntu1) warty; urgency=low
+
+  * debian/patches/05_ubuntu-no-warning.dpatch:
+    - don't display a warning about warty not supported (Warty #461).
+
+ -- Sebastien Bacher <seb128@debian.org>  Mon,  9 Aug 2004 15:43:59 +0200
+
+gnome-system-tools (0.33.0-1) unstable; urgency=low
+
+  * New upstream release (Closes: #249759)
+     - Fixes problem with "Less" option not returning to "graphical mode"
+       (Closes: #231129)
+     - Offers a valid group id or new group (Closes: #211736)
+     - Init tool now ignores backups (Closes: #203801)
+  * debian/patches: 10_relibtoolize.dpatch
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Sat, 29 May 2004 10:36:51 +0200
+
+gnome-system-tools (0.32.0-2) unstable; urgency=low
+
+  * Build-Depend in libxml-parser-perl to fix intltool FTBFS.
+  This is a strange method, but... (Closes: #230952)
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Sat, 21 Feb 2004 17:10:59 +0100
+
+gnome-system-tools (0.32.0-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #232539)
+  * Users-admin patch applied upstream.
+  * Fixed again issue with intltool failing on buildds (Closes: #230952)
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Sat, 14 Feb 2004 20:10:08 +0100
+
+gnome-system-tools (0.31.0-3) unstable; urgency=high
+
+  * Applied patch from upstream to fix users-admin deleting /etc/group file.
+  Urgency high as this package was pushed to sarge so meta-gnome2 could do it.
+  (Closes: #227683)
+  * Using dpatch now. Build-Depend on it.
+  * Fixed menu entry for runlevel admin. (Closes: #228332)
+  * Re-intltoolize to be able to build the pakage with intltool 0.29
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Sat, 24 Jan 2004 20:46:07 +0100
+
+gnome-system-tools (0.31.0-2) unstable; urgency=low
+
+  * Modified src/common/CommonMakefile so those .desktop file are
+  not installed in $(DESTDIR)$(DESTIDR)/$(applications) which caused them 
+  to be packaged in /home/jose/devel/gst... (Closes: #226377)
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Tue,  6 Jan 2004 12:43:35 +0100
+
+gnome-system-tools (0.31.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Added intltool build dependency.
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Sat,  3 Jan 2004 18:37:39 +0100
+
+gnome-system-tools (0.30.0-1) unstable; urgency=low
+
+  * The "Xmas is here. BUY NOW!" release.
+  * New upstream version.
+     + Includes NMU path in backends/time-conf.in
+  * ACK of previous NMU. (Closes: #220801)
+  * Standars-Version upped to 3.6.1. No changes needed.
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Sun, 14 Dec 2003 16:53:28 +0100
+
+gnome-system-tools (0.29.0-0.1) unstable; urgency=low
+
+  * Non-Maintainer Upload.
+  * New upstream release (closes: #208450).
+    + doesn't do unwanted changes to grub's configuration
+      (closes: #215595, #198973).
+    + boot-admin now groks devfs and separate /boot partitions
+      (closes: #198974)
+    + fixes syntax error in time-conf backend
+      (closes: #217607, #199115, #206006).
+  * backends/backends/service.pl.in: make gst_service_sysv_installed() accept
+    two arguments. Patch from Alvaro del Castillo <acs@barrapunto.com>.
+  * backends/backends/time-conf.in:
+    + create a "debian-3.0" platform and configure it to look for ntp-simple
+      or ntp-refclock init scripts (closes: #200192).
+  * debian/control:
+    + remove tabs from long description (closes: #215595).
+    + suggest samba-common (closes: #198721).
+    + add a recommendation to remove x-s-t in its long description.
+  * debian/rules:
+    + remove gnome-system-tools.schemas on clean.
+
+ -- Jordi Mallach <jordi@debian.org>  Fri, 14 Nov 2003 15:14:49 +0100
+
+gnome-system-tools (0.26.1-1) unstable; urgency=low
+
+  * New upstream release:
+     - Grub config is not destroyed any more. (Closes: #194640)
+  * Description improved. Now it should be clearer for users and also you
+    should find GST when looking for "network config" or so using apt-cache.
+    (Closes: #197892)
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Wed, 18 Jun 2003 21:03:23 +0200
+
+gnome-system-tools (0.26.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Added programs to Debian menu. (Closes: #193089)
+  * ximian-setup-tools package is "arch: all" now. (Closes: #193965)
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Thu, 22 May 2003 23:49:56 +0200
+
+gnome-system-tools (0.25.0-1) unstable; urgency=low
+
+  * New upstream version:
+    - Added IPv6 support. (Closes: #170900)
+
+  * Added a XST transitional package to upgrade from Woody automatically.
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Tue,  6 May 2003 21:09:22 +0200
+
+gnome-system-tools (0.24.0-1) unstable; urgency=low
+
+  * New upstream version. Bugfixes.
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Wed, 12 Mar 2003 22:17:30 +0100
+
+gnome-system-tools (0.23.0-1) unstable; urgency=low
+
+  * The "I've tomorrow Sanitaria exam" release.
+     + Changed how 'su' is called. (Closes: #174953)
+     + Nautilus system-settings URL is now populated. (Closes: #169166)
+     + Time tool fixed. (Closes: #171106, #173894)
+  * Font config tool was removed when XST was ported to Gnome 2 and start
+    being named GST. (Closes: #128108)
+  * Cleaned some not needed Build-Depends, and added libvte and libgconf2..
+  * Removed undocumented(7) links for different tools.
+  * Bumped Standars-Version to 3.5.9 (Yeah! I have supercow-powers!)
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Fri, 21 Feb 2003 22:56:54 +0100
+
+gnome-system-tools (0.22.0-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #171712)
+  * Patch applied from upstream CVS to correct platform.pl detection system.
+  It now uses "uname" to guess the platform we're running on. (Closes: #171126)
+  * Changed Build-Dependency on xlibs6g for xlibs-dev one. (Closes: #170173)
+  * Upped Standars-Version to 3.5.8
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Mon, 16 Dec 2002 21:04:15 +0100
+
+gnome-system-tools (0.21.0-1) unstable; urgency=low
+
+  * New upstream release (Closes: #161135)
+  * Changed the name to gnome-system-tools (GST).
+  * Patched backend/platform.pl.in to properly detect Debian if lsb-release
+    package is installed. (Closes: #149411)
+  * Reinstalled files needed for GNOME Control Center support, as this is the
+    GNOME2 port of GST.
+  * Added a patch to detect Debian "testing/unstable".
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Sat,  9 Nov 2002 22:54:56 +0100
+
+ximian-setup-tools (0.11.0-3) unstable; urgency=low
+
+  * Added lost Build-Depends. (Closes: #126509)
+  * Removed files installed in /usr/share/control-center until this
+  package can be compiled with GNOME Control Center support.
+  (Closes: #127474)
+
+ -- Jose Carlos Garcia Sogo <jose@jaimedelamo.eu.org>  Sun, 20 Jan 2002 17:31:06 +0000
+
+ximian-setup-tools (0.11.0-2) unstable; urgency=low
+
+  * backends/platform.in.pl: applied the patch from upstream to detect
+  Debian Woody. This patch is now included in CVS. (Closes: #125717)
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Wed, 19 Dec 2001 15:13:17 +0100
+
+ximian-setup-tools (0.11.0-1) unstable; urgency=low
+
+  * New upstream release. HURRAY!!
+  * Compiled with '--without-archiver' option to avoid dependency on GNOME
+  Control Center >= 1.5 until it is available in Debian.
+  * This new version can compile with latest libgal. (Closes: #116465)
+  * config-{guess,sub} updated (Closes: #114996)
+  * backends/platform.pl.in: patch applied to correctly detect 
+  Debian 3.0 woody. Thanks to Gergely Nagy.
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Mon, 17 Dec 2001 23:26:53 +0100
+
+ximian-setup-tools (0.6.0-4) unstable; urgency=low
+
+  * Built with libgal11 (Closes: #110767)
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Fri, 31 Aug 2001 14:27:19 +0200
+
+ximian-setup-tools (0.6.0-3) unstable; urgency=low
+
+  * Added a missing perl dependency. I had used dh_perl for that, but the perl
+  scripts that the package include use #!/usr/bin/env perl, instead of 
+  #!/usr/bin/perl which is the line recognized by dh_perl.
+  
+  * Linked all the binaries manpage with the undocumented(7) manpage.
+  * debian/rules: now support DEB_BUILD_OPTIONS.
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Wed, 22 Aug 2001 23:32:55 +0200
+
+ximian-setup-tools (0.6.0-2) unstable; urgency=low
+
+  * Compiled with gettext support (I forgot to install gettext-base in the
+  sid chroot I used to compile this package)
+  * Added two lost build-dependecies.
+  * Compiled using libgal9
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Wed,  8 Aug 2001 13:27:08 +0200
+
+ximian-setup-tools (0.6.0-1) unstable; urgency=low
+
+  * Initial release. (Closes: #98874)
+
+ -- Jose Carlos Garcia Sogo <jsogo@debian.org>  Sun, 05 Aug 2001 11:45:14 +0200
+
+Local variables:
+mode: debian-changelog
+End:
