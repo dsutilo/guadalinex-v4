@@ -1,6 +1,6 @@
 # Install the Ubuntu desktop.
 tasksel			tasksel/first			multiselect guadalinex-desktop
-pkgsel			pkgsel/include			string guadalinex-standard-conf guadalinex-desktop-conf guadalinex-minimal-conf guadalinex-artwork guadalinex-doc
+pkgsel			pkgsel/include			string guadalinex-standard-conf guadalinex-desktop-conf guadalinex-minimal-conf guadalinex-artwork guadalinex-doc localization-config
 countrychooser		countrychooser/country-name	string Spain
 countrychooser		countrychooser/shortlist	string ES
 debconf			debconf/language		string es

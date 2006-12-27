@@ -33,7 +33,8 @@ case $MODE in
 				;;
 		esac
 		grep "^$SHIP:" "$STRUCTURE" | cut -d' ' -f2-
-		echo "$SHIP"
+		# Let's try...
+		#echo "$SHIP"
 		;;
 	installer)
 		if [ "$CDIMAGE_INSTALL_BASE" ]; then
