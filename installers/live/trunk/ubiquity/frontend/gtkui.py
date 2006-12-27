@@ -91,6 +91,8 @@ LOCALEDIR = "/usr/share/locale"
 # For the font wibbling later
 import pango
 
+_ = gettext.gettext
+
 class Wizard:
 
     def __init__(self, distro):
@@ -1489,13 +1491,13 @@ class Wizard:
         selected."""
 
         if widget.get_label() == self.resize_choice:
-            self.partition_message.set_text("Redimensionar una particion existente para crear espacio donde instalar la distribucion.")
+            self.partition_message.set_text(_("Resize a existing partition for make space where install the distribution."))
         elif widget.get_label() == self.do_nothing_choice:
-            self.partition_message.set_text("Usar la tabla de particionado en su estado actual para instalar la distribucion.")
+            self.partition_message.set_text(_("Use the partition table in the actual status for install the distribution."))
         elif widget.get_label() == self.manual_choice:
-            self.partition_message.set_text("Editar manualmente la tabla de particiones para hacer espacio donde instalar la distribucion.")
+            self.partition_message.set_text(_("Edit manually the partition table for make space where install the distribution."))
         else:
-            self.partition_message.set_text("Borrar todo el disco duro y utiliza todo el espacio para instalar la distribucion.")
+            self.partition_message.set_text(_("Delete all the hard disk and use all the space for install the distribution."))
 
     def on_autopartition_resize_toggled (self, widget):
         """Update autopartitioning screen when the resize button is

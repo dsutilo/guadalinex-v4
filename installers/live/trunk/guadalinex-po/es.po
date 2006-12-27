@@ -1,0 +1,46 @@
+# Spanish translations for ubiquity package
+# Traducciones al español para el paquete ubiquity.
+# Copyright (C) 2006 THE ubiquity'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the ubiquity package.
+# Jesús Espino García <jespinog@gmail.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ubiquity 1.2.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-12-26 23:33+0000\n"
+"PO-Revision-Date: 2006-12-26 23:38+0000\n"
+"Last-Translator: Jesús Espino García <jespinog@gmail.com>\n"
+"Language-Team: Spanish <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: gtkui.py:1494
+msgid ""
+"Resize a existing partition for make space where install the distribution."
+msgstr ""
+"Redimensionar una partición existente para crear espacio donde instalar la "
+"distribución."
+
+#: gtkui.py:1496
+msgid ""
+"Use the partition table in the actual status for install the distribution."
+msgstr ""
+"Usar la tabla de particiones en su estado actual para instalar la "
+"distribución."
+
+#: gtkui.py:1498
+msgid ""
+"Edit manually the partition table for make space where install the distribution."
+msgstr ""
+"Editar manualmente la tabla de particiones para hacer espacio donde instalar "
+"la distribucion."
+
+#: gtkui.py:1500
+msgid ""
+"Delete all the hard disk and use all the space for install the distribution."
+msgstr ""
+"Borrar todo el disco duro y utiliza todo el espacio para instalar la "
+"distribucion."
