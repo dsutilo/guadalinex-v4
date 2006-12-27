@@ -1,0 +1,21 @@
+Format: 1.7
+Date: Wed, 27 Dec 2006 10:55:19 +0100
+Source: main-menu
+Binary: main-menu
+Architecture: source i386
+Version: 1.13ubuntu1guada1
+Distribution: edgy
+Urgency: low
+Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
+Changed-By: Carlos Parra Camargo <cparra@emergya.info>
+Description: 
+ main-menu  - Debian installer main menu (udeb)
+Changes: 
+ main-menu (1.13ubuntu1guada1) edgy; urgency=low
+ .
+   * Guadalinex flavour
+Files: 
+ 18a8d09a09f7b32a93df9f0f2e5ec415 542 debian-installer standard main-menu_1.13ubuntu1guada1.dsc
+ cc99feecc2d30a592b668623f982ef55 45948 debian-installer standard main-menu_1.13ubuntu1guada1.tar.gz
+ aa8145390cc1c0a68e3f6480222c93de 21030 debian-installer standard main-menu_1.13ubuntu1guada1_i386.udeb
+Package-Type: udeb

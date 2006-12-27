@@ -1,0 +1,51 @@
+ fakeroot debian/rules clean
+dh_testdir
+dh_testroot
+rm -f build-stamp
+/usr/bin/make clean
+make[1]: se ingresa al directorio `/var/guadalinexv4/customize_system/packages/main-menu/main-menu-1.13ubuntu1guada1'
+rm -f main-menu main-menu.o *~
+make[1]: se sale del directorio `/var/guadalinexv4/customize_system/packages/main-menu/main-menu-1.13ubuntu1guada1'
+dh_clean
+ dpkg-source -b main-menu-1.13ubuntu1guada1
+dpkg-source: warning: missing information for output field Standards-Version
+dpkg-source: building main-menu in main-menu_1.13ubuntu1guada1.tar.gz
+dpkg-source: building main-menu in main-menu_1.13ubuntu1guada1.dsc
+ debian/rules build
+dh_testdir
+/usr/bin/make small
+make[1]: se ingresa al directorio `/var/guadalinexv4/customize_system/packages/main-menu/main-menu-1.13ubuntu1guada1'
+rm -f main-menu main-menu.o *~
+cc -Os -Wall -W -g -D_GNU_SOURCE -Os -fomit-frame-pointer -DSMALL   -c -o main-menu.o main-menu.c
+cc -o main-menu main-menu.o -ldebconfclient -ldebian-installer
+strip --remove-section=.comment --remove-section=.note main-menu
+ls -l main-menu
+-rwxr-xr-x 1 gensys gensys 10336 2006-12-27 10:56 main-menu
+make[1]: se sale del directorio `/var/guadalinexv4/customize_system/packages/main-menu/main-menu-1.13ubuntu1guada1'
+touch build-stamp
+ fakeroot debian/rules binary
+dh_testdir
+dh_testroot
+dh_clean -k
+dh_install main-menu usr/bin
+dh_testdir
+dh_testroot
+dh_installdebconf
+dh_compress
+dh_fixperms
+dh_installdeb
+dh_shlibdeps
+dh_gencontrol
+dh_builddeb
+tar: -: file name read contains nul character
+dpkg-deb: construyendo el paquete `main-menu' en `../main-menu_1.13ubuntu1guada1_i386.udeb'.
+ dpkg-genchanges
+dpkg-genchanges: including full source code in upload
+dpkg-buildpackage (debuild emulation): source only upload: Debian-native package
+Now running lintian...
+W: main-menu udeb: using-imperative-form-in-templates debian-installer/main-menu
+W: main-menu udeb: using-imperative-form-in-templates debian-installer/missing-provide
+E: main-menu source: no-standards-version-field
+W: main-menu source: changelog-should-mention-nmu
+W: main-menu source: source-nmu-has-incorrect-version-number 1.13ubuntu1guada1
+Finished running lintian.
