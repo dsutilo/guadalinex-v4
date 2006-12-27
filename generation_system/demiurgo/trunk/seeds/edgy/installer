@@ -30,6 +30,7 @@ This list was originally constructed based on a [http://people.debian.org/~cjwat
  * di-utils-reboot
  * di-utils-shell
  * di-utils-terminfo
+ * discover1
  * disk-detect
  * download-installer
  * e2fsprogs-udeb
@@ -53,12 +54,17 @@ This list was originally constructed based on a [http://people.debian.org/~cjwat
  * console-setup-sun4-ekmap [sparc]
  * console-setup-sun5-ekmap [sparc]
  * console-setup-fonts-udeb
+ * language-pack-en
+ * language-pack-gnome-en
+ * language-support-en
+ * language-support-es
  * libdevmapper1.02-udeb
  * libfribidi0-udeb
  * libnss-dns-udeb
  * libnss-files-udeb
  * libparted1.7-udeb
  * libtextwrap1-udeb
+ * localization-config
  * load-cdrom
  * load-iso # for USB boot
  * localechooser # replaces languagechooser and countrychooser
@@ -103,7 +109,7 @@ This list was originally constructed based on a [http://people.debian.org/~cjwat
  * pciutils-udeb # for lspci, so we can show descriptive names for devices
  * pcmciautils-udeb
  * pkgsel # after installing the base system, install everything else
- * ppp-udeb
+# * ppp-udeb
  * preseed-common
  * reiserfsprogs-udeb
  * rescue-check # initrd part of rescue mode
@@ -119,6 +125,21 @@ This list was originally constructed based on a [http://people.debian.org/~cjwat
  * user-setup-udeb # first-stage username/password question
  * wireless-tools-udeb
  * xfsprogs-udeb
+ * xresprobe
+
+= Languages =
+
+ # must have
+ * Languages: en
+ * language-pack-${Languages}
+ * language-pack-gnome-${Languages}
+ * language-support-${Languages}
+
+ # most popular languages
+ * Languages: es
+ * language-pack-${Languages}
+ * language-pack-gnome-${Languages}
+
 
 = Floppy Support =
 

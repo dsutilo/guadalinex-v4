@@ -9,8 +9,8 @@ includes lsb-desktop, which pulls in both gtk and qt, so we pick individual
 modules instead.
 
  * lsb-core
- * lsb-cxx
- * lsb-graphics
+# * lsb-cxx
+# * lsb-graphics
 
 == Server ==
 
@@ -20,7 +20,7 @@ modules instead.
  * ntp-simple
  * ntp-server
  * nfs-kernel-server   # need an NFS server
- * apache2-mpm-worker  # ThomMay; for simple file/web serving -> add zeroconf and we have swish mac os x style :-)
+# * apache2-mpm-worker  # ThomMay; for simple file/web serving -> add zeroconf and we have swish mac os x style :-)
  * samba               # for Windows filesharing and integration
  * nis                 # allows Kickstart to configure NIS
  * postfix             # LaMontJones; our chosen mail server
@@ -40,7 +40,7 @@ modules instead.
 == Networking ==
 
  * mailx
- * mutt                # ThomMay; we need a basic mail client, this is the best-smallest
+# * mutt                # ThomMay; we need a basic mail client, this is the best-smallest
 
 == NetworkManager ==
 
@@ -49,11 +49,11 @@ modules instead.
 
 == Development ==
 
- * build-essential
+# * build-essential
  * fakeroot
  * devscripts          # Debian package development
- * bzr                 # Obvious
- * cvs                 # RobertCollins
+# * bzr                 # Obvious
+# * cvs                 # RobertCollins
  * linux-headers-386 [i386]
 
 == Common UNIX stuff ==
@@ -76,7 +76,7 @@ modules instead.
 
  * pptp-linux             # client for Microsoft-compatible VPN's, needed for some ISPs
  * eagle-usb-utils        # needed for some ADSL modems
- * bpalogin
+# * bpalogin
  * ndiswrapper-utils [amd64 i386]
  * ndiswrapper-utils-1.8 [amd64 i386]
 
@@ -84,11 +84,11 @@ modules instead.
 
  * ipppd
  * isdnutils-xtools
- * capiutils
+# * capiutils
  * pppdcapiplugin
  * linux-wlan-ng
- * avm-fritz-firmware
- * drdsl
+# * avm-fritz-firmware
+# * drdsl
  * libatm1	# suggested by ppp for PPP-over-ATM
  * setserial	# needed by folks with nonstandard serial ports
 
