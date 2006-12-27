@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set -e
 
 . /usr/share/debconf/confmodule
@@ -9,40 +9,43 @@ log() {
     logger -t guadalinex-first-message "info: $@"
 }
 
-function get_mhz_offset ()
+get_mhz_offset ()
 {
         # MHz...
         MHZ=$(grep ^cpu\ MH /proc/cpuinfo | head -1 | sed -e 's/.*://g' | sed -e 's/\ //g')
         if [ "$?" == "0" ]; then
-                MHZ_OFFSET=$(perl -e "print ((1 / $MHZ) * 10000);")
+#                MHZ_OFFSET=$(perl -e "print ((1 / $MHZ) * 10000);")
+                MHZ_OFFSET=$(guadalinex-first-message-calcs 0 $MHZ 10000)
         else
                 MHZ_OFFSET=""
         fi
 }
 
-function get_cache_offset ()
+get_cache_offset ()
 {
         # KB...
         CACHE=$(grep ^cache /proc/cpuinfo | head -1 | sed -e 's/.*\:\ //g' | sed -e 's/ KB//g')
         if [ $? -eq 0 ]; then
-                CACHE_OFFSET=$(perl -e "print ((1 / $CACHE) * 1000);")
+#                CACHE_OFFSET=$(perl -e "print ((1 / $CACHE) * 1000);")
+                CACHE_OFFSET=$(guadalinex-first-message-calcs 0 $CACHE 1000)
         else
                 CACHE_OFFSET=""
         fi
 }
 
-function get_ram_offset ()
+get_ram_offset ()
 {
         # Ram...
         RAM=$(ls -s /proc/kcore | awk '{print $1}')
         if [ $? -eq 0 ]; then
-                RAM_OFFSET=$(perl -e "print ((1 / $RAM) * 7000000);")
+#                RAM_OFFSET=$(perl -e "print ((1 / $RAM) * 7000000);")
+                RAM_OFFSET=$(guadalinex-first-message-calcs 0 $RAM 7000000)
         else
                 RAM_OFFSET=""
         fi
 }
 
-function get_procs ()
+get_procs ()
 {
         # Number of kernel procs...
         PROCS=$(grep ^processor /proc/cpuinfo | wc -l)
@@ -64,13 +67,15 @@ if [ $MHZ_OFFSET -a $CACHE_OFFSET -a $RAM_OFFSET ]; then
 	# base time
 	BASE=26
 
-        SUM=$(perl -e "print ($BASE + $RAM_OFFSET + $CACHE_OFFSET + $MHZ_OFFSET);")
+        SUM=$(guadalinex-first-message-calcs 2 $BASE $RAM_OFFSET $CACHE_OFFSET $MHZ_OFFSET)
+
         if [ $PROCS -ge 2 ]; then
-                SUM=$(perl -e "print ((1 - ($PROCS / 10)) * $SUM);")
+#                SUM=$(perl -e "print ((1 - ($PROCS / 10)) * $SUM);")
+                SUM=$(guadalinex-first-message-calcs 1 $PROCS $SUM)
         fi
 
         # Round it
-        SUM=$(perl -e "printf(\"%d\", $SUM);")
+        SUM=$(guadalinex-first-message-calcs 3 $SUM 0)
 
 	db_subst guadalinex-first-message/install-time I_BEGIN "$(expr $SUM - 5)"
 	db_subst guadalinex-first-message/install-time I_END "$(expr $SUM + 5)"

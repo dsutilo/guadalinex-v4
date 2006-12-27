@@ -1,10 +1,18 @@
 #!/usr/bin/make -f
 
-build:
-#       debconf-updatepo
+build: build-stamp
+build-stamp:
+	dh_testdir
+
+        # Add here commands to compile the package.
+	gcc guadalinex-first-message-calcs.c -o guadalinex-first-message-calcs
+
+	touch build-stamp
+
 clean:
 	dh_testdir
 	dh_testroot
+	rm -f guadalinex-first-message-calcs.o guadalinex-first-message-calcs build-stamp
 	dh_clean
 
 install: build
@@ -13,6 +21,7 @@ install: build
 	dh_clean -k
 	dh_installdirs
 	dh_install guadalinex-first-message  usr/bin
+	dh_install guadalinex-first-message-calcs  usr/bin
 
 binary-indep: build install
 
