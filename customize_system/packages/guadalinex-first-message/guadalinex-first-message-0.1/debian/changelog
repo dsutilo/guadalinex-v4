@@ -1,3 +1,9 @@
+guadalinex-first-message (0.2) unstable; urgency=low
+
+  * Added a new template to inform about installation time 
+
+ -- Carlos Parra Camargo <cparra@emergya.info>  Wed, 27 Dec 2006 14:51:47 +0100
+
 guadalinex-first-message (0.1) unstable; urgency=low
 
   * Initial release

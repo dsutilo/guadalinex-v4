@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 . /usr/share/debconf/confmodule
@@ -9,12 +9,74 @@ log() {
     logger -t guadalinex-first-message "info: $@"
 }
 
+function get_mhz_offset ()
+{
+        # MHz...
+        MHZ=$(grep ^cpu\ MH /proc/cpuinfo | head -1 | sed -e 's/.*://g' | sed -e 's/\ //g')
+        if [ "$?" == "0" ]; then
+                MHZ_OFFSET=$(perl -e "print ((1 / $MHZ) * 10000);")
+        else
+                MHZ_OFFSET=""
+        fi
+}
+
+function get_cache_offset ()
+{
+        # KB...
+        CACHE=$(grep ^cache /proc/cpuinfo | head -1 | sed -e 's/.*\:\ //g' | sed -e 's/ KB//g')
+        if [ $? -eq 0 ]; then
+                CACHE_OFFSET=$(perl -e "print ((1 / $CACHE) * 1000);")
+        else
+                CACHE_OFFSET=""
+        fi
+}
+
+function get_ram_offset ()
+{
+        # Ram...
+        RAM=$(ls -s /proc/kcore | awk '{print $1}')
+        if [ $? -eq 0 ]; then
+                RAM_OFFSET=$(perl -e "print ((1 / $RAM) * 7000000);")
+        else
+                RAM_OFFSET=""
+        fi
+}
+
+function get_procs ()
+{
+        # Number of kernel procs...
+        PROCS=$(grep ^processor /proc/cpuinfo | wc -l)
+}
+
 db_settitle guadalinex-first-message/title
 db_input critical guadalinex-first-message/first-message || [ $? -eq 30 ]
 db_go
 
 db_input critical guadalinex-first-message/requirements || [ $? -eq 30 ]
 db_go
+
+get_mhz_offset
+get_cache_offset
+get_ram_offset
+get_procs
+
+if [ $MHZ_OFFSET -a $CACHE_OFFSET -a $RAM_OFFSET ]; then
+	# base time
+	BASE=26
+
+        SUM=$(perl -e "print ($BASE + $RAM_OFFSET + $CACHE_OFFSET + $MHZ_OFFSET);")
+        if [ $PROCS -ge 2 ]; then
+                SUM=$(perl -e "print ((1 - ($PROCS / 10)) * $SUM);")
+        fi
+
+        # Round it
+        SUM=$(perl -e "printf(\"%d\", $SUM);")
+
+	db_subst guadalinex-first-message/install-time I_BEGIN "$(expr $SUM - 5)"
+	db_subst guadalinex-first-message/install-time I_END "$(expr $SUM + 5)"
+	db_input critical guadalinex-first-message/install-time  || [ $? -eq 30 ]
+	db_go
+fi
 
 log "Showing Guadalinex first-message"
 

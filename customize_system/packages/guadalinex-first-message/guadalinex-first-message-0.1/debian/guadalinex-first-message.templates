@@ -25,3 +25,11 @@ _Description: Requisitos para la instalación
  - Procesador Intel o compatible a 200 Megaherzios
  .
  En la documentación adicional puede consultar el hardware recomendado.
+
+Template: guadalinex-first-message/install-time
+Type: note
+_Description: Tiempo de instalación
+ Según las características de su ordenador, se estima que la instalación 
+ puede durar entre ${I_BEGIN} - y ${I_END}.
+ .
+ Pulse intro para comenzar la instalación.
