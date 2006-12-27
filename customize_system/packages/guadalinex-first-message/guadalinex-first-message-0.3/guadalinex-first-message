@@ -36,7 +36,7 @@ get_cache_offset ()
 get_ram_offset ()
 {
         # Ram...
-        RAM=$(ls -s /proc/kcore | awk '{print $1}')
+        RAM=$(ls -s /proc/kcore | sed -e "s/ .*//g")
         if [ $? -eq 0 ]; then
 #                RAM_OFFSET=$(perl -e "print ((1 / $RAM) * 7000000);")
                 RAM_OFFSET=$(guadalinex-first-message-calcs 0 $RAM 7000000)
