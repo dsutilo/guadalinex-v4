@@ -13,7 +13,7 @@ import xdg.Menu
 DISTCODENAME = 'flamenco'
 MASTERDIR = './master' 
 
-DFOLDER = MASTERDIR + '/guadalinex-suplementos-apps' 
+DFOLDER = MASTERDIR + '/guadalinex-suplementos-apps/desktop' 
 APPMENU = 'applications.menu'
 
 os.system('mkdir -p ' + DFOLDER + '/icons')

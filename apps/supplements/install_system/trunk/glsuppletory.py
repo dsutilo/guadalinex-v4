@@ -2,17 +2,14 @@
 # -*- coding: utf-8 -*-
 import logging
 import os.path
+import sys
+sys.path.insert(0, '/usr/share/gsd')
 
+import config
 from utils.synaptic import Synaptic
 from volume import Actor
 
-
-GLVALIDLABELS = [
-    "Guadalinex.suppletory.disk",
-    "Guadalinex.Suppletory.Disk",
-    "GSD-"
-    ]
-
+GLVALIDLABELS = config.GLVALIDLABELS
 #GAI (guadalinex-app-install) Packages
 GAIPACKAGES = ['gnome-app-install']
 
@@ -197,16 +194,7 @@ class GlSuppletory(object):
         """
         Check if <labes> is a valid label for Guadalinex cd
         """
-
-        for valid_label in GLVALIDLABELS:
-            if label.startswith(valid_label):
-                return True
-
-        return False
-
-
-    
-
+        return config.is_valid_label(label)
 
 gls = GlSuppletory()
 gls.hack_volume_actor()
