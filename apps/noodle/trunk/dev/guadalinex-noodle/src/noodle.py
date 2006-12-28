@@ -19,12 +19,13 @@ import shutil
 import os
 import thread
 
+DATA_DIR="/usr/share/guadalinex-noodle/"
+
 class Config:
 	
         def __init__(self):
                 self.opensync_path = os.getenv("HOME") + "/.opensync/"
-		self.opensync_path_example == "/usr/share/guadalinex_noodle/example/group1"
-
+		self.opensync_path_example = DATA_DIR + "/examples/group1"
         def main(self, device):
 
                 if not os.path.exists(self.opensync_path):
@@ -36,7 +37,7 @@ class Config:
 		if not os.path.exists(self.opensync_path + "/group1"):
 			##FIXME:: Example path
 			##FIXME:: create groupX
-			shutil.copytree(opensync_path_example, self.opensync_path + "group1")
+			shutil.copytree(self.opensync_path_example, self.opensync_path + "group1")
 			xml = ConfigXML()
 			xml.main(self.opensync_path + "group1", device)
                 return
@@ -44,12 +45,10 @@ class Config:
 class ConfigXML:
 	##FIXME:: Por defecto, los ficheros estan pensados para Nokia
 	##FIXME:: Se deberia poder elegir calendario... de Evolution
-	def  __init__(self):
-
+	
 	def main(self,config_path, device):
-		for address, name in device:
-			self.__change(config_path + "/syncgroup.conf", groupname, name)
-			self.__change(config_path + "/2/syncml-obex-client.conf", bluetooth_address, address)
+		self.__change(config_path + "/syncgroup.conf", "groupname", device[1])
+		self.__change(config_path + "/2/syncml-obex-client.conf", "bluetooth_address", device[0])
 		return 0
 
 	def __change(self,file_conf,node,value):
@@ -58,9 +57,9 @@ class ConfigXML:
 		doc = parse(file_conf)
 		for child in  doc.getElementsByTagName(node)[0].childNodes:
 			child.data=value
-		doc_conf=open(file_conf,"w")
+      		doc_conf=open(file_conf,"w")
 		PrettyPrint(doc,doc_conf)
-		doc_conf.close(
+		doc_conf.close()
 
 #class Manage:
 #	def __init__(self):
@@ -69,7 +68,7 @@ class ConfigXML:
 class DeviceBrowser:
     
     def __init__(self):
-        gladefile = "main.glade"  
+        gladefile = DATA_DIR + "noodle.glade"  
         
         self.xml = gtk.glade.XML(gladefile) 
         self.window = self.xml.get_widget("device_browser")
@@ -83,13 +82,13 @@ class DeviceBrowser:
         self.pbar.pulse()
         return True
     
-    def active_rb(self, widget, data=None):
-        self.active = self.nearby_devices[data]
+    def active_rb(self, widget, index):
+	self.active = nearby_devices[index]
     
     def apply_config(self,widget, data=None):
         config = Config()
-        config.main(self.device)
-        gtk.main_hide()
+        config.main(self.active)
+        gtk.main_quit()
         return True
     
     def refresh(self, widget, data=None):
@@ -100,7 +99,6 @@ class DeviceBrowser:
         ##FIXME:: discover_devices blocker. No progress bar. Thread
         try:    
                 nearby_devices = bluetooth.discover_devices(lookup_names = True)
-                print nearby_devices
         except:
                 label = gtk.Label("No ha dispositivo blueetooth")
                 self.parent=self.xml.get_widget("pbar_parent")
@@ -121,11 +119,11 @@ class DeviceBrowser:
             
             table = gtk.Table(len(nearby_devices), 1, True)
             self.table_main.attach(table,0,1,0,1)
-            i=0
-            self.active=nearby_devices[i]
+            self.active=nearby_devices[0]
+	    i=0
             for address, name in nearby_devices:
                 button = gtk.RadioButton(None, name)
-                button.connect("toggled", self.active_rb, name)
+                button.connect("toggled", self.active_rb, i)
                 table.attach(button, 0,1,i,i+1)
                 i+=1
                 button.show()
@@ -157,7 +155,7 @@ class NoodleGTK:
 
     def __init__(self):
         
-        gladefile = "main.glade"  
+        gladefile = DATA_DIR + "noodle.glade"  
         
         self.xml = gtk.glade.XML(gladefile) 
         self.window = self.xml.get_widget("main")
