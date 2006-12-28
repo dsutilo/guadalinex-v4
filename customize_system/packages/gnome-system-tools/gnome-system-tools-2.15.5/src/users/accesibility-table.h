@@ -25,5 +25,6 @@
 #define __ACCESIBILITY_TABLE_H
 
 void create_accesibility_table (void);
+void accessibility_table_save (gchar *user_name);
 
 #endif /* __ACCESIBILITY_TABLE_H */

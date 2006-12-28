@@ -25,6 +25,7 @@
 #include "gst.h"
 #include <glib/gi18n.h>
 #include <string.h>
+#include <stdlib.h>
 #include "accesibility-table.h"
 
 #define PROFILE_PATH "/etc/desktop-profiles"
@@ -96,13 +97,14 @@ populate_accesibility_profiles (GtkTreeModel *model)
 	
 	current_file = g_dir_read_name (profile_dir);
 	while (current_file != NULL) {
-		/* mmm, horrible hack, I know */
-		profile_name = g_strndup (current_file, (strlen (current_file) - 4));
-		gtk_list_store_append (GTK_LIST_STORE (model), &iter);
-		gtk_list_store_set (GTK_LIST_STORE (model), &iter,
-				    COL_ACTIVATE, FALSE,
-				    COL_PROFILE_NAME, profile_name,
-				    -1);
+		if (g_str_has_suffix (current_file, "zip")) {
+			profile_name = g_strndup (current_file, (strlen (current_file) - 4));
+			gtk_list_store_append (GTK_LIST_STORE (model), &iter);
+			gtk_list_store_set (GTK_LIST_STORE (model), &iter,
+					    COL_ACTIVATE, FALSE,
+					    COL_PROFILE_NAME, profile_name,
+					    -1);
+		}
 
 		current_file = g_dir_read_name (profile_dir);
 	}
@@ -122,4 +124,31 @@ on_accesibility_toggled (GtkCellRendererToggle *cell, gchar *path_str, gpointer 
 	}
 
 	gtk_tree_path_free (path);
+}
+
+void
+accessibility_table_save (gchar *user_name)
+{
+	GtkWidget *table;
+	GtkTreeModel *model;
+	GtkTreeIter iter;
+	gchar *profile, *command_line;
+	gboolean valid, apply;
+	
+	table = gst_dialog_get_widget (tool->main_dialog, "user_accesibility");
+	model = gtk_tree_view_get_model (GTK_TREE_VIEW (table));
+	valid = gtk_tree_model_get_iter_first (model, &iter);
+
+	while (valid) {
+		gtk_tree_model_get (model, &iter,
+				    COL_ACTIVATE, &apply,
+				    COL_PROFILE_NAME, &profile,
+				    -1);
+		if (apply) {
+			command_line = g_strdup_printf ("/usr/bin/adp-admin.sh %s %s -f", user_name, profile);
+			system (command_line);
+		}
+		
+		valid = gtk_tree_model_iter_next (model, &iter);
+	}
 }

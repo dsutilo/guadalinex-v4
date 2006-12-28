@@ -37,6 +37,7 @@
 #include "callbacks.h"
 #include "user-settings.h"
 #include "privileges-table.h"
+#include "accesibility-table.h"
 #include "groups-table.h"
 #include "test-battery.h"
 #include "user-profiles.h"
@@ -314,8 +315,6 @@ user_settings_dialog_new (OobsUser *user)
 
 	privileges_table_set_from_user (user);
 	set_main_group (user);
-
-	/* TODO: Insert accesibility profiles */
 
 	widget = gst_dialog_get_widget (tool->main_dialog, "user_settings_name");
 	set_entry_text (widget, login);
@@ -630,6 +629,8 @@ user_settings_dialog_get_data (OobsUser *user)
 	oobs_user_set_main_group (user, group);
 
 	privileges_table_save (user);
+
+	accessibility_table_save (oobs_user_get_login_name (user));
 }
 
 void
