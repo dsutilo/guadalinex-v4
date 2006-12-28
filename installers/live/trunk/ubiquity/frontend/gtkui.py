@@ -389,7 +389,12 @@ class Wizard:
         gettext.textdomain(domain)
         gettext.install(domain, LOCALEDIR, unicode=1)
 
-
+    def atk_info_in_widget(self, widget, atk_desc):
+        atk_obj = widget.get_accessible()
+        atk_obj.set_description(atk_desc)
+        print "Desc : %s" % atk_desc
+        
+    
     def translate_widgets(self):
         if self.locale is None:
             languages = []
@@ -405,6 +410,7 @@ class Wizard:
     def translate_widget(self, widget, lang):
         if isinstance(widget, gtk.Button) and widget.get_use_stock():
             widget.set_label(widget.get_label())
+            self.atk_info_in_widget(widget, widget.get_label())
 
         text = get_string(widget.get_name(), lang)
         if text is None:
@@ -421,6 +427,7 @@ class Wizard:
                 text = text.replace('${INDEX}', curstep)
                 text = text.replace('${TOTAL}', str(self.steps_obj.get_total_steps()))
             widget.set_text(text)
+            self.atk_info_in_widget(widget, text)
 
             # Ideally, these attributes would be in the glade file somehow ...
             textlen = len(text.encode("UTF-8"))
@@ -442,9 +449,11 @@ class Wizard:
 
         elif isinstance(widget, gtk.Button):
             widget.set_label(text)
+            self.atk_info_in_widget(widget, text)
 
         elif isinstance(widget, gtk.Window):
             widget.set_title(text)
+            self.atk_info_in_widget(widget, text)
 
 
     def allow_change_step(self, allowed):
@@ -1492,12 +1501,16 @@ class Wizard:
 
         if widget.get_label() == self.resize_choice:
             self.partition_message.set_text(_("Resize a existing partition for make space where install the distribution."))
+            self.atk_info_in_widget(self.partition_message, self.partition_message.get_text())
         elif widget.get_label() == self.do_nothing_choice:
             self.partition_message.set_text(_("Use the partition table in the actual status for install the distribution."))
+            self.atk_info_in_widget(self.partition_message,self.partition_message.get_text())
         elif widget.get_label() == self.manual_choice:
             self.partition_message.set_text(_("Edit manually the partition table for make space where install the distribution."))
+            self.atk_info_in_widget(self.partition_message,self.partition_message.get_text())
         else:
             self.partition_message.set_text(_("Delete all the hard disk and use all the space for install the distribution."))
+            self.atk_info_in_widget(self.partition_message,self.partition_message.get_text())
 
     def on_autopartition_resize_toggled (self, widget):
         """Update autopartitioning screen when the resize button is
@@ -1641,6 +1654,7 @@ class Wizard:
         self.language_treeview.set_model(list_store)
         for choice in choices:
             list_store.append([choice])
+            print choice
 
 
     def set_language (self, language):
@@ -1719,6 +1733,7 @@ class Wizard:
                 self.part_disk_vbox.add(gtk.Alignment())
             else:
                 button = gtk.RadioButton(firstbutton, choice, False)
+                self.atk_info_in_widget(button, choice)
                 if firstbutton is None:
                     firstbutton = button
                 self.part_disk_vbox.add(button)
@@ -1750,6 +1765,7 @@ class Wizard:
         firstbutton = None
         for choice in choices:
             button = gtk.RadioButton(firstbutton, choice, False)
+            self.atk_info_in_widget(button, choice)
             if firstbutton is None:
                 firstbutton = button
             self.autopartition_vbox.add(button)

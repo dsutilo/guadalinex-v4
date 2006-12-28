@@ -2822,6 +2822,9 @@ You must mount one partition on the root file system (&quot;/&quot;), and you mu
 			      <property name="use_stock">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
 			      <property name="focus_on_click">True</property>
+			      <accessibility>
+				<atkproperty name="AtkObject::accessible_description" translatable="yes">Cancelar el proceso de instalación</atkproperty>
+			      </accessibility>
 			      <signal name="clicked" handler="on_cancel_clicked" last_modification_time="Wed, 10 Aug 2005 22:40:55 GMT"/>
 			    </widget>
 			  </child>
@@ -2836,6 +2839,9 @@ You must mount one partition on the root file system (&quot;/&quot;), and you mu
 			      <property name="use_stock">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
 			      <property name="focus_on_click">True</property>
+			      <accessibility>
+				<atkproperty name="AtkObject::accessible_description" translatable="yes">Retroceder al paso anterior del proceso de instalación</atkproperty>
+			      </accessibility>
 			      <signal name="clicked" handler="on_back_clicked" last_modification_time="Wed, 10 Aug 2005 22:40:39 GMT"/>
 			    </widget>
 			  </child>
@@ -2851,6 +2857,9 @@ You must mount one partition on the root file system (&quot;/&quot;), and you mu
 			      <property name="use_stock">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
 			      <property name="focus_on_click">True</property>
+			      <accessibility>
+				<atkproperty name="AtkObject::accessible_description" translatable="yes">Continuar al siguiente paso del proceso de la instalación</atkproperty>
+			      </accessibility>
 			      <signal name="clicked" handler="on_next_clicked" last_modification_time="Wed, 10 Aug 2005 22:40:20 GMT"/>
 			    </widget>
 			  </child>
@@ -2927,6 +2936,9 @@ You must mount one partition on the root file system (&quot;/&quot;), and you mu
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
 	      <property name="focus_on_click">True</property>
 	      <property name="response_id">-6</property>
+	      <accessibility>
+		<atkproperty name="AtkObject::accessible_description" translatable="yes">No deseo cancelar el proceso de instalación</atkproperty>
+	      </accessibility>
 	    </widget>
 	  </child>
 
@@ -2940,6 +2952,9 @@ You must mount one partition on the root file system (&quot;/&quot;), and you mu
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
 	      <property name="focus_on_click">True</property>
 	      <property name="response_id">-7</property>
+	      <accessibility>
+		<atkproperty name="AtkObject::accessible_description" translatable="yes">Realmente quiero salir del proceso de instalación</atkproperty>
+	      </accessibility>
 	    </widget>
 	  </child>
 	</widget>
@@ -3196,6 +3211,10 @@ You must mount one partition on the root file system (&quot;/&quot;), and you mu
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
 	      <property name="focus_on_click">True</property>
 	      <property name="response_id">0</property>
+	      <accessibility>
+		<atkproperty name="AtkObject::accessible_name" translatable="yes">Continuar usando el live CD</atkproperty>
+		<atkproperty name="AtkObject::accessible_description" translatable="yes">Deseo continuar usando el live CD</atkproperty>
+	      </accessibility>
 	      <signal name="clicked" handler="on_exitbutton_clicked" last_modification_time="Tue, 14 Feb 2006 16:54:05 GMT"/>
 	    </widget>
 	  </child>
@@ -3212,6 +3231,10 @@ You must mount one partition on the root file system (&quot;/&quot;), and you mu
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
 	      <property name="focus_on_click">True</property>
 	      <property name="response_id">0</property>
+	      <accessibility>
+		<atkproperty name="AtkObject::accessible_name" translatable="yes">Reiniciar ahora</atkproperty>
+		<atkproperty name="AtkObject::accessible_description" translatable="yes">Deseo reiniciar el ordenador ahora mismo</atkproperty>
+	      </accessibility>
 	      <signal name="clicked" handler="reboot" last_modification_time="Tue, 14 Feb 2006 16:53:32 GMT"/>
 	    </widget>
 	  </child>

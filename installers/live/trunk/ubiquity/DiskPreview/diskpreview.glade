@@ -26,6 +26,10 @@
       <property name="can_focus">True</property>
       <property name="expanded">False</property>
       <property name="spacing">0</property>
+      <accessibility>
+	<atkproperty name="AtkObject::accessible_name" translatable="yes">Previsualizar discos</atkproperty>
+	<atkproperty name="AtkObject::accessible_description" translatable="yes">Previsualizar los discos duros detectados en tu ordenador</atkproperty>
+      </accessibility>
 
       <child>
 	<widget class="GtkAlignment" id="alignment1">
@@ -94,6 +98,10 @@
 				  <property name="fixed_height_mode">False</property>
 				  <property name="hover_selection">False</property>
 				  <property name="hover_expand">False</property>
+				  <accessibility>
+				    <atkproperty name="AtkObject::accessible_name" translatable="yes">Lista de discos</atkproperty>
+				    <atkproperty name="AtkObject::accessible_description" translatable="yes">Lista de discos duros y particiones detectados en el sistema</atkproperty>
+				  </accessibility>
 				</widget>
 			      </child>
 			    </widget>
@@ -136,7 +144,7 @@
 				  <child>
 				    <widget class="GtkLabel" id="label4">
 				      <property name="visible">True</property>
-				      <property name="label" translatable="yes">&lt;b&gt;Informacíon : &lt;/b&gt;</property>
+				      <property name="label" translatable="yes">&lt;b&gt;Información : &lt;/b&gt;</property>
 				      <property name="use_underline">False</property>
 				      <property name="use_markup">True</property>
 				      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -744,6 +752,10 @@
 				  <property name="selection_mode">GTK_SELECTION_BROWSE</property>
 				  <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
 				  <property name="reorderable">False</property>
+				  <accessibility>
+				    <atkproperty name="AtkObject::accessible_name" translatable="yes">Navegador de archivos</atkproperty>
+				    <atkproperty name="AtkObject::accessible_description" translatable="yes">Navegador de archivos y directorios contenidos en una partición selecionada</atkproperty>
+				  </accessibility>
 				</widget>
 			      </child>
 			    </widget>
