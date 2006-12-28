@@ -123,7 +123,10 @@ class DiskPreview(gtk.VBox):
 
     def __disk_preview_treview_row_changed_cb(self, selection, data):
         model,pathlist = selection.get_selected_rows()
-
+        
+        if len(pathlist) == 0 :
+            return
+        
         path = pathlist[0]
 
         if len(path) > 1:
