@@ -1,3 +1,9 @@
+glig (0.10) unstable; urgency=low
+
+  * Upgrade packages versions after deboostrap
+
+ -- Rafa Martín <rmartin@emergya.es>  Thu, 28 Dec 2006 10:41:13 +0100
+
 glig (0.9) unstable; urgency=low
 
   * Final repositories 

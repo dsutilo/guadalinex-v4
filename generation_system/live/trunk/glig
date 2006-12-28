@@ -155,6 +155,10 @@ echo \"Warning: Fake start-stop-daemon called, doing nothing\"" > ${sources}/sbi
 
     # Force update, install and clean
     apt_get update
+
+    # Before continuing, we assure that most recent versions of all pkgs are
+    # installed (debootstrap don't assure that)
+    apt_get upgrade
     
     apt_get install
     apt_get install linux-image-generic
