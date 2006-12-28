@@ -18,6 +18,7 @@ import re
 import shutil
 import os
 import thread
+from  datetime import date
 
 DATA_DIR="/usr/share/guadalinex-noodle/"
 
@@ -30,10 +31,13 @@ class Config:
 
                 if not os.path.exists(self.opensync_path):
                         os.mkdir (self.opensync_path)
-                if os.path.exists(self.opensync_path + "group*"):
+                if os.path.exists(self.opensync_path + "group1"):
 			##FIXME:: Should add a new one, not remove everyother
-                        backup = os.mkdir (self.opensync_path + "backup" + date.today().strftine("%Y%m%d"))
-                        shutil.move (self.opensync_path + "group*" , backup)
+			backup_path=self.opensync_path + "backup" + date.today().strftime("%Y%m%d")
+			if os.path.exists(backup_path):
+				os.rmdir (backup_path)
+                        os.mkdir (backup_path)
+                        shutil.move (self.opensync_path + "group1" , backup_path)
 		if not os.path.exists(self.opensync_path + "/group1"):
 			##FIXME:: Example path
 			##FIXME:: create groupX
@@ -55,8 +59,12 @@ class ConfigXML:
 		from xml.dom.minidom import parse
 		from xml.dom.ext import PrettyPrint
 		doc = parse(file_conf)
-		for child in  doc.getElementsByTagName(node)[0].childNodes:
-			child.data=value
+		node = doc.getElementsByTagName(node)[0]
+		child = node.childNodes
+		if len(child) != 0:
+			child[0].data=value
+		else:
+			node.appendChild(doc.createTextNode(value))
       		doc_conf=open(file_conf,"w")
 		PrettyPrint(doc,doc_conf)
 		doc_conf.close()
