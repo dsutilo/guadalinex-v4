@@ -86,7 +86,8 @@
 	      <child>
 		<widget class="GtkNotebook" id="steps">
 		  <property name="visible">True</property>
-		  <property name="show_tabs">False</property>
+		  <property name="can_focus">True</property>
+		  <property name="show_tabs">True</property>
 		  <property name="show_border">False</property>
 		  <property name="tab_pos">GTK_POS_TOP</property>
 		  <property name="scrollable">False</property>
@@ -240,6 +241,10 @@ Please choose the language used for the installation process. This language will
 				  <property name="fixed_height_mode">True</property>
 				  <property name="hover_selection">False</property>
 				  <property name="hover_expand">False</property>
+				  <accessibility>
+				    <atkproperty name="AtkObject::accessible_name" translatable="yes">Lista de idiomas</atkproperty>
+				    <atkproperty name="AtkObject::accessible_description" translatable="yes">Listado de idiomas disponibles para el sistema instalado</atkproperty>
+				  </accessibility>
 				</widget>
 			      </child>
 			    </widget>
@@ -497,6 +502,10 @@ Please choose the language used for the installation process. This language will
 				      <property name="use_underline">True</property>
 				      <property name="relief">GTK_RELIEF_NORMAL</property>
 				      <property name="focus_on_click">True</property>
+				      <accessibility>
+					<atkproperty name="AtkObject::accessible_name" translatable="yes">Indiciar fecha/hora</atkproperty>
+					<atkproperty name="AtkObject::accessible_description" translatable="yes">Abre un dialogo para que el usuario pueda señalar manualmente la fecha y hora de su sistema</atkproperty>
+				      </accessibility>
 				      <signal name="clicked" handler="on_timezone_time_adjust_clicked" last_modification_time="Fri, 10 Mar 2006 02:08:15 GMT"/>
 				    </widget>
 				    <packing>
@@ -626,6 +635,10 @@ Please choose the language used for the installation process. This language will
 				      <property name="can_focus">True</property>
 				      <property name="add_tearoffs">False</property>
 				      <property name="focus_on_click">True</property>
+				      <accessibility>
+					<atkproperty name="AtkObject::accessible_name" translatable="yes">Lista de ciudades</atkproperty>
+					<atkproperty name="AtkObject::accessible_description" translatable="yes">Lista de ciudades disponibles para indicar la zona horaria en la que vive</atkproperty>
+				      </accessibility>
 				    </widget>
 				    <packing>
 				      <property name="left_attach">1</property>
@@ -790,6 +803,10 @@ Please choose the language used for the installation process. This language will
 				      <property name="fixed_height_mode">True</property>
 				      <property name="hover_selection">False</property>
 				      <property name="hover_expand">False</property>
+				      <accessibility>
+					<atkproperty name="AtkObject::accessible_name" translatable="yes">Lista de idiomas disponibles</atkproperty>
+					<atkproperty name="AtkObject::accessible_description" translatable="yes">Lista de idiomas disponibles para su teclado</atkproperty>
+				      </accessibility>
 				    </widget>
 				  </child>
 				</widget>
@@ -820,6 +837,10 @@ Please choose the language used for the installation process. This language will
 				      <property name="fixed_height_mode">True</property>
 				      <property name="hover_selection">False</property>
 				      <property name="hover_expand">False</property>
+				      <accessibility>
+					<atkproperty name="AtkObject::accessible_name" translatable="yes">Lista de variantes de teclado</atkproperty>
+					<atkproperty name="AtkObject::accessible_description" translatable="yes">Lista de las variantes de teclado en relacion con el idioma seleccionado para su teclado</atkproperty>
+				      </accessibility>
 				    </widget>
 				  </child>
 				</widget>
@@ -907,6 +928,10 @@ Please choose the language used for the installation process. This language will
 				      <property name="has_frame">True</property>
 				      <property name="invisible_char">*</property>
 				      <property name="activates_default">False</property>
+				      <accessibility>
+					<atkproperty name="AtkObject::accessible_name" translatable="yes">Area de prueba de teclado</atkproperty>
+					<atkproperty name="AtkObject::accessible_description" translatable="yes">Area en la que puede probar si su teclado es capaz de escribir caracteres propios de su idioma</atkproperty>
+				      </accessibility>
 				    </widget>
 				  </child>
 				</widget>
@@ -1074,6 +1099,10 @@ Please choose the language used for the installation process. This language will
 					      <property name="invisible_char">*</property>
 					      <property name="activates_default">True</property>
 					      <property name="width_chars">40</property>
+					      <accessibility>
+						<atkproperty name="AtkObject::accessible_name" translatable="yes">Entrada de texto para nombre real de usuario</atkproperty>
+						<atkproperty name="AtkObject::accessible_description" translatable="yes">Entrada de texto para nombre real de usuario</atkproperty>
+					      </accessibility>
 					      <signal name="changed" handler="info_loop" last_modification_time="Thu, 09 Mar 2006 13:09:46 GMT"/>
 					    </widget>
 					    <packing>
@@ -1221,6 +1250,10 @@ Please choose the language used for the installation process. This language will
 						  <property name="invisible_char">*</property>
 						  <property name="activates_default">True</property>
 						  <property name="width_chars">20</property>
+						  <accessibility>
+						    <atkproperty name="AtkObject::accessible_name" translatable="yes">Entrada de texto para su nombre de usuario</atkproperty>
+						    <atkproperty name="AtkObject::accessible_description" translatable="yes">Entrada de texto para su nombre de usuario</atkproperty>
+						  </accessibility>
 						  <signal name="changed" handler="info_loop" last_modification_time="Thu, 09 Mar 2006 13:09:56 GMT"/>
 						</widget>
 						<packing>
@@ -1408,6 +1441,10 @@ Please choose the language used for the installation process. This language will
 						      <property name="invisible_char">*</property>
 						      <property name="activates_default">True</property>
 						      <property name="width_chars">12</property>
+						      <accessibility>
+							<atkproperty name="AtkObject::accessible_name" translatable="yes">Entrada de texto para escribir su contraseña</atkproperty>
+							<atkproperty name="AtkObject::accessible_description" translatable="yes">Entrada de texto para escribir su contraseña</atkproperty>
+						      </accessibility>
 						      <signal name="changed" handler="info_loop" last_modification_time="Thu, 09 Mar 2006 13:10:09 GMT"/>
 						    </widget>
 						    <packing>
@@ -1429,6 +1466,10 @@ Please choose the language used for the installation process. This language will
 						      <property name="invisible_char">*</property>
 						      <property name="activates_default">True</property>
 						      <property name="width_chars">12</property>
+						      <accessibility>
+							<atkproperty name="AtkObject::accessible_name" translatable="yes">Entrada de texto para repetir la contraseña</atkproperty>
+							<atkproperty name="AtkObject::accessible_description" translatable="yes">Entrada de texto para repetir la contraseña y comprobar que es la misma que ha escrito anteriormente</atkproperty>
+						      </accessibility>
 						      <signal name="changed" handler="info_loop" last_modification_time="Thu, 09 Mar 2006 13:10:18 GMT"/>
 						    </widget>
 						    <packing>
@@ -1624,6 +1665,10 @@ Please choose the language used for the installation process. This language will
 					      <property name="invisible_char">*</property>
 					      <property name="activates_default">True</property>
 					      <property name="width_chars">20</property>
+					      <accessibility>
+						<atkproperty name="AtkObject::accessible_name" translatable="yes">Entrada de texto para el nombre de su ordenador</atkproperty>
+						<atkproperty name="AtkObject::accessible_description" translatable="yes">Entrada de texto para el nombre de su ordenador</atkproperty>
+					      </accessibility>
 					      <signal name="changed" handler="info_loop" last_modification_time="Thu, 09 Mar 2006 13:10:27 GMT"/>
 					    </widget>
 					    <packing>
@@ -2056,6 +2101,10 @@ Please choose the language used for the installation process. This language will
 				  <property name="update_policy">GTK_UPDATE_CONTINUOUS</property>
 				  <property name="inverted">False</property>
 				  <property name="adjustment">0 0 100 1 10 0</property>
+				  <accessibility>
+				    <atkproperty name="AtkObject::accessible_name" translatable="yes">Selector de tamaño de la partición</atkproperty>
+				    <atkproperty name="AtkObject::accessible_description" translatable="yes">Selector de tamaño de la partición, que describe cuanto tamaño desea que tenga la nueva partición</atkproperty>
+				  </accessibility>
 				  <signal name="format_value" handler="on_new_size_scale_format_value" last_modification_time="Tue, 16 May 2006 18:23:33 GMT"/>
 				</widget>
 				<packing>
@@ -2685,6 +2734,10 @@ You must mount one partition on the root file system (&quot;/&quot;), and you mu
 				      <property name="right_margin">0</property>
 				      <property name="indent">0</property>
 				      <property name="text"></property>
+				      <accessibility>
+					<atkproperty name="AtkObject::accessible_name" translatable="yes">Resumen del estado en que quedara la instalación</atkproperty>
+					<atkproperty name="AtkObject::accessible_description" translatable="yes">Resumen del estado en que quedara la instalación, indicando las particiones que se usaran y donde sera instalado el sistema</atkproperty>
+				      </accessibility>
 				    </widget>
 				  </child>
 				</widget>
