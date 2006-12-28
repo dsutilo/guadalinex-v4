@@ -53,7 +53,7 @@ from gettext import gettext as _
 
 
 class Actor(PkgDeviceActor):
-    __require__ = {'info.product':'Pocket PC PDA'}
+    __required__ = {'info.product':'Pocket PC PDA'}
 
     __icon_path__  = os.path.abspath('actors/img/wme.png')
     __iconoff_path__ = os.path.abspath('actors/img/wmeoff.png')

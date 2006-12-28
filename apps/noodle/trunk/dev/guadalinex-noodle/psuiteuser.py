@@ -21,12 +21,13 @@ from datetime import date
 import os
 import re
 import commands
+import pwd
 
 
 def first_use():
     example_path="/usr/share/guadalinex-noodle/"
-    username = os.getlogin()
-    home = os.getenv("HOME")
+    username = pwd.getpwuid(os.getuid())[0]
+    home = pwd.getpwuid(os.getuid())[5]
     multisync_path = home + "/.multisync/"
 
     if not os.path.exists(multisync_path):
@@ -43,12 +44,11 @@ def first_use():
     if not os.path.exists(multisync_path + "/localsettings"):
          cregex=re.compile("__HOME__")
          readlines=open(example_path + "/localsettings" ,'r').readlines()
+         write_file = open(multisync_path + "/1/localsettings",'w')
          for currentline in readlines:
              if cregex.search(currentline):
-                 currentline = re.sub("__HOME__",home,currentline)
-         write_file = open(multisync_path + "/1/localsettings",'w') 
-         for line in readlines:
-             write_file.write(line)
+                 currentline = re.sub("__HOME__",home,currentline) 
+             write_file.write(currentline)
          write_file.close()
 
     shutil.copy (example_path + "/syncpair", multisync_path + "/1/syncpair" )
@@ -60,13 +60,13 @@ def first_use():
     return
 
 def main():
-    home = os.getenv("HOME")
-    username = os.getlogin()
+    home = pwd.getpwuid(os.getuid())[5]
+    username = pwd.getpwuid(os.getuid())[0]
     
     if not os.path.exists(home):
         return 1
     
-    if not os.path.exists(home + ".psuite"):
+    if not os.path.exists(home + "/.psuite"):
         first_use()
     running =  not commands.getstatusoutput("pgrep -u " + username + " synce-trayicon")[0]
     if running:

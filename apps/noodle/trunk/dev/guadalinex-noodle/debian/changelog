@@ -1,3 +1,10 @@
+guadalinex-noodle (0.2-0guada2) unstable; urgency=low
+
+  * Small improvement
+  * More dependencies
+
+ -- cpd <cpd@hiscpdsistemas01>  Thu, 28 Dec 2006 21:08:14 +0100
+
 guadalinex-noodle (0.2-0guada1) unstable; urgency=low
 
   * Improvements on psuite_user (Rewriten on python)
