@@ -58,6 +58,14 @@ Description: KDE frontend for Ubiquity live installer
  This package provides a KDE-based user interface frontend for the Ubiquity
  live CD installer.
 
+Package: ubiquity-guadalinex-lang
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}, ubiquity, python-kde3, qtparted
+Provides: ubiquity-frontend-${source:Version}
+XB-Python-Version: ${python:Versions}
+Description: Translations of ubiquity
+ Text translated in ubiquity installer.
+
 #Package: ubiquity-frontend-cloner
 #Architecture: all
 #Depends: ${misc:Depends}, ${python:Depends}, ubiquity

@@ -64,6 +64,8 @@ ifndef UBIQUITY_NO_GTK
 endif
 	$(MAKE) -C d-i build
 
+	$(MAKE) -C guadalinex-po all
+
 	mkdir -p $(BUILDDIR)/ubuntu
 	mkdir -p $(BUILDDIR)/guadalinex
 
@@ -80,6 +82,7 @@ clean:
 	find -type f \( -name \*.pyc -o -name \*.pyo \) -print0 | xargs -0r rm -f
 
 	$(MAKE) -C d-i clean
+	$(MAKE) -C guadalinex-po clean
 	-$(MAKE) distclean
 
 	dh_clean debian/ubiquity.install ubiquity/keyboard_names.py
@@ -118,6 +121,7 @@ else
 	dh_install
 endif
 endif
+	$(MAKE) prefix=$(CURDIR)/debian/ubiquity-guadalinex-lang/ -C guadalinex-po install
 
 	# Bits of manual installation that can't be done by dh_install
 	sed 's/@VERSION@/$(VERSION)/g' installer \
