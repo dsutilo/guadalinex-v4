@@ -3,7 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Juanje Ojeda <jojeda@emergya.es>
 Build-Depends: debhelper (>= 4), gfxboot
-Standards-Version: 3.6.2
+Standards-Version: 3.7.2
 
 Package: gfxboot-theme-guadalinex
 Architecture: amd64 i386
