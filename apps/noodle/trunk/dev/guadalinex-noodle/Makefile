@@ -1,13 +1,14 @@
 default:
 
 install:
-	install 50_guadalinex_noodle ${DESTDIR}/usr/share/gconf/defaults/
-	install 60-*.rules ${DESTDIR}/etc/udev/rules.d/
-	install psuite	${DESTDIR}/usr/bin/
-	install psuiteuser.py	${DESTDIR}/usr/bin/psuiteuser
-	install examples/* ${DESTDIR}/usr/share/guadalinex-noodle/
-	install vdccm.desktop ${DESTDIR}/etc/xdg/autostart/
-	install dun ${DESTDIR}/etc/ppp/peers/
+	install -D 50_guadalinex_noodle ${DESTDIR}/usr/share/gconf/defaults/
+	install -D 60-*.rules ${DESTDIR}/etc/udev/rules.d/
+	install -D psuite	${DESTDIR}/usr/bin/
+	install -D psuiteuser.py	${DESTDIR}/usr/bin/psuiteuser
+	install -D examples/* ${DESTDIR}/usr/share/guadalinex-noodle/examples/
+	install -D img/* ${DESTDIR}/usr/share/guadalinex-noodle/img/
+	install -D vdccm.desktop ${DESTDIR}/etc/xdg/autostart/
+	install -D examples/dun ${DESTDIR}/etc/ppp/peers/
 
 uninstall:
 	rm -f ${DESTDIR}/usr/share/gconf/defaults/50_guadalinex_noodle
@@ -18,3 +19,4 @@ uninstall:
 	rm -f ${DESTDIR}/usr/bin/psuite-first-time
 	rm -f ${DESTDIR}/usr/share/guadalinex-noodle/*
 	rm -f ${DESTDIR}/etc/xdg/autostart/vdccm.desktop
+	rm -f ${DESTDIT}/etc/ppp/peers/dun

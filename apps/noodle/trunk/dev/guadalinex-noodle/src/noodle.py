@@ -16,32 +16,56 @@ except:
 import bluetooth
 import re
 import shutil
+import os
+import thread
 
 class Config:
+	
         def __init__(self):
-                self.opensync_path = os.getenv("HOME") + ".opensync"
-                self.username = os.getlogin()
+                self.opensync_path = os.getenv("HOME") + "/.opensync/"
+		self.opensync_path_example == "/usr/share/guadalinex_noodle/example/group1"
 
-                if not os.path.exits(self.opensync_path):
-                        os.mkdir (opensync_path)
-                if os.path.exits(self.opensynce_path + "group*"):
-                        backup = os.mkdir (opensync_path + "backup" + date.today().strftine("%Y%m%d"))
-                        shutil.move (opensync_path + "group*" , backup)
-                
-        def main(device):
-                if not os.path.exists(opensync_path + "/group1"):
-                        bluetooth_regex=re.compile("__BLUETOOTH__")
-                        readlines=open(example_path + "/" ,'r').readlines()
-                        for currentline in readlines:
-                                if cregex.search(currentline):
-                                        currentline = re.sub("__HOME__",home,currentline)
-                        write_file = open(multisync_path + "/1/localsettings",'w')
-                        for line in readlines:
-                                write_file.write(line)
-                        write_file.close()
-                                                                                                                  
+        def main(self, device):
+
+                if not os.path.exists(self.opensync_path):
+                        os.mkdir (self.opensync_path)
+                if os.path.exists(self.opensync_path + "group*"):
+			##FIXME:: Should add a new one, not remove everyother
+                        backup = os.mkdir (self.opensync_path + "backup" + date.today().strftine("%Y%m%d"))
+                        shutil.move (self.opensync_path + "group*" , backup)
+		if not os.path.exists(self.opensync_path + "/group1"):
+			##FIXME:: Example path
+			##FIXME:: create groupX
+			shutil.copytree(opensync_path_example, self.opensync_path + "group1")
+			xml = ConfigXML()
+			xml.main(self.opensync_path + "group1", device)
                 return
+	
+class ConfigXML:
+	##FIXME:: Por defecto, los ficheros estan pensados para Nokia
+	##FIXME:: Se deberia poder elegir calendario... de Evolution
+	def  __init__(self):
 
+	def main(self,config_path, device):
+		for address, name in device:
+			self.__change(config_path + "/syncgroup.conf", groupname, name)
+			self.__change(config_path + "/2/syncml-obex-client.conf", bluetooth_address, address)
+		return 0
+
+	def __change(self,file_conf,node,value):
+		from xml.dom.minidom import parse
+		from xml.dom.ext import PrettyPrint
+		doc = parse(file_conf)
+		for child in  doc.getElementsByTagName(node)[0].childNodes:
+			child.data=value
+		doc_conf=open(file_conf,"w")
+		PrettyPrint(doc,doc_conf)
+		doc_conf.close(
+
+#class Manage:
+#	def __init__(self):
+#	def main(self):
+		
 class DeviceBrowser:
     
     def __init__(self):
@@ -61,11 +85,10 @@ class DeviceBrowser:
     
     def active_rb(self, widget, data=None):
         self.active = self.nearby_devices[data]
-        print self.active
     
     def apply_config(self,widget, data=None):
         config = Config()
-        config.main()
+        config.main(self.device)
         gtk.main_hide()
         return True
     
@@ -74,6 +97,7 @@ class DeviceBrowser:
         return True
 
     def discover(self):
+        ##FIXME:: discover_devices blocker. No progress bar. Thread
         try:    
                 nearby_devices = bluetooth.discover_devices(lookup_names = True)
                 print nearby_devices

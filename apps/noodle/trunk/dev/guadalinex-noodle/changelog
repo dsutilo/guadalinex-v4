@@ -1,8 +1,9 @@
-guadalinex-noodle (0.2-0guada1) unstable; urgency=low
+guadalinex-noodle (0.2) unstable; urgency=low
 
   * Improvements on psuite_user (Rewriten on python)
   * New bluetooth/SyncML manager
-  * Guadalinex revision
+  * Rename psuite_gui->noodle
+  * Reescrito configurador syncml en XML
 
  -- Ghe Rivero <ghernando@yaco.es>  Wed, 27 Dec 2006 20:33:43 +0100
 

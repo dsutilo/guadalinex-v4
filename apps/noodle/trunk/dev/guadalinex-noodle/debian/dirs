@@ -1,4 +1,6 @@
 usr/share/guadalinex-noodle
+usr/share/guadalinex-noodle/examples
+usr/share/guadalinex-noodle/img
 etc/udev/rules.d
 usr/share/gconf/defaults
 usr/bin

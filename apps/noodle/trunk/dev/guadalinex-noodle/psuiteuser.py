@@ -18,9 +18,7 @@
 
 import shutil
 from datetime import date
-import shutil
 import os
-import shutil
 import re
 import commands
 
