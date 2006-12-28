@@ -32,7 +32,7 @@ cdrom/initrd.gz
 	floppy-modules-2.6.17-10-386-di 2.6.17-10.33 i386
 	floppy-retriever 1.08 all
 	grepmap-udeb 1.1.0-1 i386
-	guadalinex-first-message 0.1 i386
+	guadalinex-first-message 0.4 i386
 	hdparm-udeb 6.6-1ubuntu3 i386
 	hw-detect 1.41ubuntu2 i386
 	ide-modules-2.6.17-10-386-di 2.6.17-10.33 i386
@@ -54,7 +54,7 @@ cdrom/initrd.gz
 	localechooser 1.20ubuntu8 all
 	lowmemcheck 1.18ubuntu2 i386
 	lsb-release-udeb 3.1.13ubuntu2 all
-	main-menu 1.13ubuntu1 i386
+	main-menu 1.13ubuntu1guada1 i386
 	module-init-tools-udeb 3.2.2-3ubuntu3 i386
 	mountfloppy 0.7 all
 	nano-udeb 1.3.12-2 i386
