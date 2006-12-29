@@ -7,7 +7,7 @@ Standards-Version: 3.7.2
 
 Package: guadalinex-first-message
 XC-Package-Type: udeb
-XB-Installer-Menu-Item: 9
+XB-Installer-Menu-Item: 11
 Architecture: any
 Depends: debconf
 Description: shows the first message in d-i
