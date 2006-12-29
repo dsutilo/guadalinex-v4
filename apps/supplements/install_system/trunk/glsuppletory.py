@@ -44,7 +44,7 @@ class GlSuppletory(object):
             self.show_supplement_info()
 
         def action_install_sup():
-            os.system('sudo guadalinex-app-install %s' %\
+            os.system('gksudo guadalinex-app-install %s' %\
                     mountpoint)
 
         #Check for label and  README.diskdefines
