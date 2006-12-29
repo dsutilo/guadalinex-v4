@@ -1089,7 +1089,7 @@ To reload the list you need a working internet connection.</property>
 
 <widget class="GtkWindow" id="window_main">
   <property name="border_width">6</property>
-  <property name="title" translatable="yes" context="yes">Add/Remove Applications</property>
+  <property name="title" translatable="yes" context="yes">Instalador de suplementos</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
   <property name="modal">False</property>
@@ -1275,7 +1275,6 @@ To reload the list you need a working internet connection.</property>
 
 	      <child>
 		<widget class="GtkScrolledWindow" id="scrolledwindow_left">
-		  <property name="visible">True</property>
 		  <property name="hscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
 		  <property name="vscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
 		  <property name="shadow_type">GTK_SHADOW_IN</property>
