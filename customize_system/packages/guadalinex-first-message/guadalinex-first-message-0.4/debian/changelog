@@ -1,3 +1,9 @@
+guadalinex-first-message (0.5) unstable; urgency=low
+
+  * Changed XB-Installer-Menu-Item value 9 -> 11
+
+ -- Carlos Parra Camargo <cparra@emergya.info>  Fri, 29 Dec 2006 14:12:04 +0100
+
 guadalinex-first-message (0.4) unstable; urgency=low
 
   * no awk with d-i busybox..., using sed 
