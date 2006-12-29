@@ -146,11 +146,12 @@ def main(default_mountpoint = None):
     sys.path.insert(0, "/usr/lib/gnome-app-install")
     os.environ['APT_CONFIG'] = gsdutils.APTCONFPATH
 
-    from AppInstall.AppInstall import AppInstall
+    from GSDAppInstall import AppInstall
     desktop_folder = os.path.join(mount_point,"guadalinex-suplementos-apps")
     suppc = SupplementCustomizer(mount_point)
     suppc.customize()
-    app = AppInstall("/usr/share/gsd", desktop_folder, [sys.argv[0]] + sys.argv[2:])
+    app = AppInstall("/usr/share/gsd", 
+            desktop_folder, [sys.argv[0]] + sys.argv[2:])
     gtk.main()
 
 
