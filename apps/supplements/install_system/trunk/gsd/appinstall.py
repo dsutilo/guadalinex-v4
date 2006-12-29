@@ -24,6 +24,8 @@ import dbus
 
 sys.path.insert(0, '/usr/share/gsd')
 import config
+import gsdutils
+from gsdutils import SupplementCustomizer
 
 gettext.bindtextdomain("gnome-app-install", "/usr/share/locale")
 gettext.textdomain("gnome-app-install")
@@ -122,7 +124,7 @@ class Finder (object):
 
 
 
-def main():
+def main(default_mountpoint = None):
     if os.geteuid() != 0:
         _ = gettext.gettext
         dialog = gtk.MessageDialog(None, 0, gtk.MESSAGE_ERROR,
@@ -135,13 +137,19 @@ def main():
 
     if len(sys.argv) > 1:
         mount_point = sys.argv[1]
+    elif default_mountpoint:
+        mount_point = default_mountpoint
     else:
         finder = Finder()
         mount_point = finder.get_mount_point()
 
     sys.path.insert(0, "/usr/lib/gnome-app-install")
+    os.environ['APT_CONFIG'] = gsdutils.APTCONFPATH
+
     from AppInstall.AppInstall import AppInstall
     desktop_folder = os.path.join(mount_point,"guadalinex-suplementos-apps")
+    suppc = SupplementCustomizer(mount_point)
+    suppc.customize()
     app = AppInstall("/usr/share/gsd", desktop_folder, [sys.argv[0]] + sys.argv[2:])
     gtk.main()
 

@@ -6,6 +6,9 @@ import sys
 sys.path.insert(0, '/usr/share/gsd')
 
 import config
+import appinstall
+import gsdutils
+from gsdutils import SupplementCustomizer
 from utils.synaptic import Synaptic
 from volume import Actor
 
@@ -15,14 +18,6 @@ GAIPACKAGES = ['gnome-app-install']
 
 #Supplement icon (relative to cdrom path)
 RELATIVEICONPATH = '.icon.png'
-
-#apt.conf for apt system
-APTCONFPATH='/usr/share/gsd/apt.conf'
-SOURCESFILE='/tmp/gsd/sources.list'
-
-#The name of the repository
-DISTRONAME='flamenco'
-
 
 class GlSuppletory(object):
     """
@@ -49,14 +44,16 @@ class GlSuppletory(object):
             self.show_supplement_info()
 
         def action_install_sup():
-            self.guadalinex_suppletory_summoner(mountpoint)
+            os.system('sudo guadalinex-app-install %s' %\
+                    mountpoint)
 
         #Check for label and  README.diskdefines
         volumelabel = self.volume_actor.properties['volume.label']
         if self.__is_valid(volumelabel):
             s = Synaptic()
             actions = {}
-            diskdefines = self.__get_diskdefines()
+            suppc = SupplementCustomizer(mountpoint)
+            diskdefines = suppc.get_diskdefines()
             if diskdefines:
                 #Check for required packages
                 if s.check(GAIPACKAGES):
@@ -81,47 +78,6 @@ class GlSuppletory(object):
                             actions = actions)
 
 
-    def __prepare_system(self):
-        #Try for password. Three times.
-        res = 768 
-        attemps = 0
-
-        # Errno 768: Bad password
-        while res == 768 and attemps < 3:
-            res = os.system('gksudo -m "Introduzca contraseña" /bin/true')
-            # Errno 512: User press cancel
-            if res == 512:
-                self.logger.debug("User press cancel")
-                return
-            attemps += 1
-
-        if res == 768:
-            self.logger.debug("Three attemps for password")
-            return
-
-        #Prepare apt system
-        os.system('cp -a /usr/share/gsd /tmp')
-
-        #Generate sources.list
-        self.__create_sources_list()
-
-
-    def guadalinex_suppletory_summoner(self, mountpoint):    
-        """
-        This method install suppletory.
-        """
-        self.__prepare_system() 
-
-        #Update apt system
-        cmd = 'APT_CONFIG=' + APTCONFPATH + ' sudo synaptic --hide-main-window' 
-        cmd += ' --update-at-startup --non-interactive'
-        os.system(cmd)
-
-        #Exec app-install
-        os.system('APT_CONFIG=%s sudo guadalinex-app-install %s' % \
-                (APTCONFPATH, mountpoint ))
-
-
     def show_supplement_info(self):
         ddpath = self.volume_actor.properties['volume.mount_point']
         #parser = DiskDefinesParser()
@@ -139,57 +95,6 @@ class GlSuppletory(object):
         Actor.old_on_modified = Actor.on_modified
         Actor.on_modified = new_on_modified
 
-
-    def __create_sources_list(self):
-
-        self.logger.debug('Creating sources.list')
-        diskdefines = self.__get_diskdefines()
-        fileobj = open(SOURCESFILE, 'w')
-
-        #Create entries for the supplement's URIs
-        keys = diskdefines.keys()
-        keys.sort()
-        for key in keys:
-            if key.startswith('URI'):
-                self.__process_uri(diskdefines[key], fileobj)
-        fileobj.close()
-
-
-    def __process_uri(self, value, fileobj):
-        
-        self.logger.debug('Processing uri: ' + value)
-        if value.startswith('http://') or \
-                value.startswith('fto://'):
-            fileobj.write('deb ' + str(value) + '\n')
-
-        else:
-            mountpoint = self.volume_actor.properties['volume.mount_point']
-            fileobj.write('deb file:' + mountpoint + value + \
-                    ' '+ DISTRONAME +' main \n')
-
-
-    def __get_diskdefines(self ):
-        filepath = self.volume_actor.properties['volume.mount_point'] + \
-                '/README.diskdefines'
-
-        try:
-            fileobject = open(filepath)
-        except Exception, e:
-            self.logger.error(str(e))
-            return {}
-
-        result = {}
-        for line in fileobject.readlines():
-            items = line.split(None, 2)
-            try:
-                result[items[1]] = items[2]
-            except IndexError, e:
-                result[items[1]] = ''
-
-
-        return result
-
-    
     def __is_valid(self, label):
         """
         Check if <labes> is a valid label for Guadalinex cd
