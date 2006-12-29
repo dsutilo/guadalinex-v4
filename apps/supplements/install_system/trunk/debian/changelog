@@ -1,8 +1,10 @@
 guadalinex-supplement-installer (0.2) unstable; urgency=low
 
   * Initial release for gv4.
+  * Hook system implemented.
+  * New GUI (hermes indepent).
 
- -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Fri, 29 Dec 2006 10:21:37 +0100
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Fri, 29 Dec 2006 13:42:52 +0100
 
 guadalinex-suppletory-system (0.1) unstable; urgency=low
 
