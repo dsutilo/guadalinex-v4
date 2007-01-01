@@ -287,6 +287,8 @@ class Wizard:
             elif current_name == "stepKeyboardConf":
                 self.dbfilter = console_setup.ConsoleSetup(self)
             elif current_name == "stepUserInfo":
+		# Select the fullname as default entry box on User Info
+		self.fullname.grab_focus()
                 self.dbfilter = usersetup.UserSetup(self)
             elif current_name in ("stepPartDisk", "stepPartAuto"):
                 if isinstance(self.dbfilter, partman_auto.PartmanAuto):
