@@ -23,6 +23,16 @@ import pwd
 
 DATA_DIR="/usr/share/guadalinex-noodle/"
 
+class FinishConfig:
+	def __init__(self):
+		gladefile = DATA_DIR + "noodle.glade"
+                self.xml = gtk.glade.XML(gladefile)
+                self.window = self.xml.get_widget("exit")
+                self.xml.signal_autoconnect(self)
+         	if (self.window):
+			self.window.connect("destroy", gtk.main_quit)
+		self.window.show()
+		
 class Discover(threading.Thread):
 	def __init__(self):
 		threading.Thread.__init__(self)
@@ -100,14 +110,14 @@ class DeviceBrowser:
 	    return True
     
     def active_rb(self, widget, index):
-	    self.active = nearby_devices[index]
+	    self.active = self.nearby_devices[index]
 	    return True
     
     def apply_config(self,widget, data=None):
 	    config = Config()
 	    config.main(self.active)
-	    gtk.main_quit()
-	    return True
+	    self.window.hide()
+	    finish = FinishConfig()
     
     def refresh(self, widget, data=None):
 	    self.discover()
@@ -115,9 +125,8 @@ class DeviceBrowser:
 
     def discover_pda(self):
 	    os.popen("psuiteuser")
-	    gtk.main_quit()
-    
-	
+	    return True
+    	
     def discover_bt(self):
    
         ##FIXME:: discover_devices blocker. No progress bar. Thread
@@ -125,7 +134,7 @@ class DeviceBrowser:
 		#discover = Discover()
 		#nearby_devices=discover.start()
 		#discover.join()
-		nearby_devices = bluetooth.discover_devices(lookup_names = True)
+		self.nearby_devices = bluetooth.discover_devices(lookup_names = True)
 	except:
 		label = gtk.Label("No ha dispositivo blueetooth")
                 self.parent=self.xml.get_widget("pbar_parent")
@@ -133,7 +142,7 @@ class DeviceBrowser:
                 self.parent.add(label)
                 label.show()
                 return 0
-        if len(nearby_devices) != 0:
+        if len(self.nearby_devices) != 0:
             self.parent=self.xml.get_widget("pbar_parent")
             self.parent.remove(self.pbar)
             
@@ -144,16 +153,20 @@ class DeviceBrowser:
             self.table_main.attach(button, 0,1,1,2)
             button.show()
             
-            table = gtk.Table(len(nearby_devices), 1, True)
+            table = gtk.Table(len(self.nearby_devices), 1, True)
             self.table_main.attach(table,0,1,0,1)
-            self.active=nearby_devices[0]
+            self.active=self.nearby_devices[0]
 	    i=0
-            for address, name in nearby_devices:
-                button = gtk.RadioButton(None, name)
-                button.connect("toggled", self.active_rb, i)
-                table.attach(button, 0,1,i,i+1)
-                i+=1
-                button.show()
+            for address, name in self.nearby_devices:
+		    if i==0:
+			    button = gtk.RadioButton(None, name)
+		    else:
+			    button = gtk.RadioButton(parent, name)
+		    button.connect("toggled", self.active_rb, i)
+		    table.attach(button, 0,1,i,i+1)
+		    i+=1
+		    button.show()
+		    parent=button
             table.show()
             self.table_main.show()
         else:
@@ -175,12 +188,13 @@ class DeviceBrowser:
     def main(self, type):
 	if type == "pda":
 		self.discover_pda()
+		self.window.hide()
+		finish = FinishConfig()
 	else:
 		self.window.show()
 		self.pbar = self.xml.get_widget("pbar")
 		timer = gobject.timeout_add (100, self.timeout, self)
 		self.discover_bt()
-        
     
 class NoodleGTK:
 
@@ -204,9 +218,9 @@ class NoodleGTK:
              
    
     def on_bt_mobile_clicked(self,widget):
-        deviceBrowser=DeviceBrowser()
-        deviceBrowser.main("mobile")
-        self.window.hide()
+	    self.window.hide()
+	    deviceBrowser=DeviceBrowser()
+	    deviceBrowser.main("mobile")
     
     def main(self):
         self.window.show()
