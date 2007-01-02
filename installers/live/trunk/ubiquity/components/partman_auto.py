@@ -149,8 +149,10 @@ class PartmanAuto(FilteredCommand):
                 self.description('partman-auto/text/custom_partitioning')
             self.do_nothing_desc = \
                 self.description('partman-auto/text/do_nothing_partitioning')
+            self.use_biggest_free_desc = \
+                self.description('partman-auto/text/use_biggest_free')
             if not self.frontend.set_disk_choices(self.choices(question),
-                                                  self.manual_desc,self.do_nothing_desc):
+                                                  self.manual_desc,self.do_nothing_desc, self.use_biggest_free_desc):
                 # disk selector not implemented; just use first disk
                 return self.succeeded
 
@@ -170,6 +172,8 @@ class PartmanAuto(FilteredCommand):
                 self.description('partman-auto/text/custom_partitioning')
             self.do_nothing_desc = \
                 self.description('partman-auto/text/do_nothing_partitioning')
+            self.use_biggest_free_desc = \
+                self.description('partman-auto/text/use_biggest_free')
             choices = self.choices(question)
             if not self.resize_allowed:
                 try:
@@ -177,7 +181,7 @@ class PartmanAuto(FilteredCommand):
                 except ValueError:
                     pass
             self.frontend.set_autopartition_choices(
-                choices, self.resize_desc, self.manual_desc, self.do_nothing_desc)
+                choices, self.resize_desc, self.manual_desc, self.do_nothing_desc, self.use_biggest_free_desc)
             if self.resize_desc in choices:
                 # The resize option is available, so we need to present the
                 # user with an accurate resize slider before passing control

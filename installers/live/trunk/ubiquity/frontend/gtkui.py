@@ -63,10 +63,12 @@ try:
 except ImportError:
     pass
 
+NODISKPREVIEW=False
 try:
     from DiskPreview.DiskPreview import DiskPreview
 except:
     print "DiskPreview don't imported"
+    NODISKPREVIEW=True
     pass
 
 from ubiquity import filteredcommand, validation
@@ -847,7 +849,8 @@ class Wizard:
             self.hostname_error_box.hide()
 
         if step == "stepPartAuto":
-            self.diskpreview.umount_filesystems()
+	    if not NODISKPREVIEW:
+                self.diskpreview.umount_filesystems()
 
         if self.dbfilter is not None:
             self.dbfilter.ok_handler()
@@ -1503,16 +1506,19 @@ class Wizard:
         selected."""
 
         if widget.get_label() == self.resize_choice:
-            self.partition_message.set_text(_("Resize a existing partition for make space where install the distribution."))
+            self.partition_message.set_label(_("Resize a existing partition for make space where install the distribution."))
             self.atk_info_in_widget(self.partition_message, self.partition_message.get_text())
+        elif widget.get_label() == self.use_biggest_free_choice:
+            self.partition_message.set_label(_("Use the biggest free space in the partition table."))
+            self.atk_info_in_widget(self.partition_message,self.partition_message.get_text())
         elif widget.get_label() == self.do_nothing_choice:
-            self.partition_message.set_text(_("Use the partition table in the actual status for install the distribution."))
+            self.partition_message.set_label(_("Use the partition table in the actual status for install the distribution."))
             self.atk_info_in_widget(self.partition_message,self.partition_message.get_text())
         elif widget.get_label() == self.manual_choice:
-            self.partition_message.set_text(_("Edit manually the partition table for make space where install the distribution."))
+            self.partition_message.set_label(_("Edit manually the partition table for make space where install the distribution."))
             self.atk_info_in_widget(self.partition_message,self.partition_message.get_text())
         else:
-            self.partition_message.set_text(_("Delete all the hard disk and use all the space for install the distribution."))
+            self.partition_message.set_label(_("Delete all the hard disk and use all the space for install the distribution."))
             self.atk_info_in_widget(self.partition_message,self.partition_message.get_text())
 
     def on_autopartition_resize_toggled (self, widget):
@@ -1758,13 +1764,14 @@ class Wizard:
                 return widget.get_label()
 
 
-    def set_autopartition_choices (self, choices, resize_choice, manual_choice, do_nothing_choice):
+    def set_autopartition_choices (self, choices, resize_choice, manual_choice, do_nothing_choice, use_biggest_free_choice):
         for child in self.autopartition_vbox.get_children():
             self.autopartition_vbox.remove(child)
         
         self.manual_choice = manual_choice
         self.do_nothing_choice = do_nothing_choice
         self.resize_choice = resize_choice
+        self.use_biggest_free_choice = use_biggest_free_choice
         firstbutton = None
         for choice in choices:
             button = gtk.RadioButton(firstbutton, choice, False)
@@ -1777,9 +1784,10 @@ class Wizard:
                 button.connect('toggled', self.on_autopartition_resize_toggled)
             button.connect('toggled', self.on_autopartition_choice_toggled)
 
-        self.diskpreview = DiskPreview()
-        self.diskpreview.mount_filesystems()
-        self.autopartition_vbox.pack_end(self.diskpreview, expand=True)
+	if not NODISKPREVIEW:
+            self.diskpreview = DiskPreview()
+            self.diskpreview.mount_filesystems()
+            self.autopartition_vbox.pack_end(self.diskpreview, expand=True)
         
         if firstbutton is not None:
             firstbutton.set_active(True)
