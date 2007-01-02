@@ -54,9 +54,9 @@ This list was originally constructed based on a [http://people.debian.org/~cjwat
  * console-setup-sun4-ekmap [sparc]
  * console-setup-sun5-ekmap [sparc]
  * console-setup-fonts-udeb
- * language-pack-en
- * language-pack-gnome-en
- * language-support-en
+# * language-pack-en
+# * language-pack-gnome-en
+# * language-support-en
  * language-support-es
  * libdevmapper1.02-udeb
  * libfribidi0-udeb

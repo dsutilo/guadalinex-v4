@@ -18,9 +18,9 @@ Power management:
 
 Bluetooth:
 
- * (bluez-utils) # base for bluetooth support
- * (bluez-pin)   # bluetooth traffic disassembly
- * (bluez-cups)  # allow connecting to bluetooth printers from CUPS
+# * (bluez-utils) # base for bluetooth support
+# * (bluez-pin)   # bluetooth traffic disassembly
+# * (bluez-cups)  # allow connecting to bluetooth printers from CUPS
 
 == i386, i686, amd64 ==
 
@@ -118,7 +118,7 @@ We've chosen GNOME as our desktop user interface of choice. Rather than using th
  * gnome-btdownload       # simple GNOME frontend for bittorrent downloads
  * gnome-control-center
  * gnome-cups-manager
- * (gnome-games)
+# * (gnome-games)
  * gnome-icon-theme
  * gnome-media
  * gnome-menus
@@ -238,8 +238,8 @@ drivers, so that this is possible on the live CD and in scenarios where
 it is problematic to get these packages onto the installed system in order
 to compile a driver. -mdz
 
- * (gcc)
- * (make)
+# * (gcc)
+# * (make)
  * (linux-headers-generic) [i386]
  * (linux-headers-powerpc) [powerpc]
  * (linux-headers-powerpc64-smp) [powerpc]
@@ -258,7 +258,7 @@ to compile a driver. -mdz
 # * usplash-theme-ubuntu
  * libxp6 # required for some third party apps. See #15739
  * libpam-foreground
- * (example-content) # dholbach: dapper feature goal (wiki.ubuntu.com/ExampleContent)
+# * (example-content) # dholbach: dapper feature goal (wiki.ubuntu.com/ExampleContent)
  * libstdc++5 [i386]	# doko: requested from some closed source applications
  * landscape-client
  * readahead
@@ -267,3 +267,6 @@ to compile a driver. -mdz
 
  * libglut3 # depended upon by freeglut3
  * libgl1-mesa-glx # depended upon by freeglut3
+ * festvox-ellpc11k
+ * sun-java5-jre
+ * sun-java5-bin
