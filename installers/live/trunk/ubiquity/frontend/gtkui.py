@@ -287,8 +287,6 @@ class Wizard:
             elif current_name == "stepKeyboardConf":
                 self.dbfilter = console_setup.ConsoleSetup(self)
             elif current_name == "stepUserInfo":
-		# Select the fullname as default entry box on User Info
-		self.fullname.grab_focus()
                 self.dbfilter = usersetup.UserSetup(self)
             elif current_name in ("stepPartDisk", "stepPartAuto"):
                 if isinstance(self.dbfilter, partman_auto.PartmanAuto):
@@ -303,6 +301,9 @@ class Wizard:
             if self.dbfilter is not None and self.dbfilter != old_dbfilter:
                 self.allow_change_step(False)
                 self.dbfilter.start(auto_process=True)
+                if current_name == "stepUserInfo":
+		    # Select the fullname as default entry box on User Info
+		    self.fullname.grab_focus()
             else:
                 # Non-debconf steps don't have a mechanism for turning this
                 # back on, so we do it here. process_step should block until
