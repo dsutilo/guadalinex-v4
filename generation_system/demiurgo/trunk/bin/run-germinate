@@ -92,7 +92,7 @@ for arch in $CPUARCHES; do
 	if [ "$GERMINATE_HINTS" ] && [ -f "$GERMINATE_HINTS" ]; then
 		cp -a "$GERMINATE_HINTS" hints
 	fi
-	"$CDIMAGE_ROOT/germinate/germinate.py" --seed-source "$SEED_SOURCE" --mirror "file://$GERMINATE_OUT/" --seed-dist "$GERMINATE_SEED_DIST" --dist "$GERMINATE_DISTS" --arch "$arch" --components main --no-rdepends
+	"$CDIMAGE_ROOT/germinate/germinate.py" --seed-source "$SEED_SOURCE" --mirror "file://$GERMINATE_OUT/" --seed-dist "$GERMINATE_SEED_DIST" --dist "$GERMINATE_DISTS" --arch "$arch" --components main,$DERIVATIVE_CN --no-rdepends
 
 	if [ "$DIST" = breezy ]; then
 		# Unfortunately, we now need a second germinate run to
@@ -105,7 +105,7 @@ for arch in $CPUARCHES; do
 			EXTRAS="${EXTRAS:+$EXTRAS,}desktop/$pkg"
 			echo "$pkg" >> ship.acsets
 		done
-		"$CDIMAGE_ROOT/germinate/germinate.py" --seed-source "$SEED_SOURCE" --mirror "file://$GERMINATE_OUT/" --seed-dist "$GERMINATE_SEED_DIST" --dist "$GERMINATE_DISTS" --arch "$arch" --components main --no-rdepends ${EXTRAS:+--seed-packages "$EXTRAS"}
+		"$CDIMAGE_ROOT/germinate/germinate.py" --seed-source "$SEED_SOURCE" --mirror "file://$GERMINATE_OUT/" --seed-dist "$GERMINATE_SEED_DIST" --dist "$GERMINATE_DISTS" --arch "$arch" --components main,$DERIVATIVE_CN --no-rdepends ${EXTRAS:+--seed-packages "$EXTRAS"}
 	fi
 done
 
