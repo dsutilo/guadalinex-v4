@@ -1,5 +1,7 @@
 #!/bin/bash
 
+adduser $1 scard
+
 # Creating symlinks
 ln -s /home/$1/.fonts "/home/$1/Tipos de Letra"
 ln -s /home/compartido "/home/$1/Compartido"
