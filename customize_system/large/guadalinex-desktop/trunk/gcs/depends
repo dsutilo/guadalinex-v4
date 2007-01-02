@@ -12,6 +12,8 @@ avahi-daemon
 avidemux
 bc
 beagle
+brltty
+brltty-x11
 bug-buddy
 byzanz
 cdparanoia
@@ -57,6 +59,7 @@ gimp-print
 gimp-python
 gnochm
 gnome-about
+gnome-accessibility-themes
 gnome-app-install
 gnome-applets
 gnome-btdownload
@@ -75,6 +78,7 @@ gnome-pilot-conduits
 gnome-power-manager
 gnome-session
 gnome-spell
+gnome-screensaver
 gnome-sudoku
 gnome-system-monitor
 gnome-system-tools
@@ -99,6 +103,7 @@ hal
 hal-device-manager
 hermeshardware
 hotkey-setup
+hplip
 hwdb-client-gnome
 i2e
 inkscape
@@ -123,6 +128,7 @@ libpt-plugins-v4l2
 libsasl2-modules
 libstdc++5
 libxp6
+linux-image-generic
 linux-restricted-modules-2.6.17-10-generic
 metacity
 min12xxw
@@ -134,11 +140,13 @@ ndisgtk
 ndiswrapper-utils-1.8
 network-manager-gnome
 notification-daemon
+onboard
 openoffice.org
 openoffice.org-evolution
 openoffice.org-gnome
 openoffice.org-l10n-es
 pnm2ppa
+powernowd
 powermanagement-interface
 readahead
 rhythmbox
@@ -171,11 +179,11 @@ ubuntu-sounds
 unzip
 update-notifier
 usplash
-#usplash-theme-ubuntu
 vino
 #watermain
 wvdial
 x-ttcidfont-conf
+xcursor-themes
 xkeyboard-config
 xorg
 xsane
