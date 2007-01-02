@@ -17,16 +17,24 @@ import bluetooth
 import re
 import shutil
 import os
-import thread
 import threading
 from  datetime import date
+import pwd
 
 DATA_DIR="/usr/share/guadalinex-noodle/"
 
+class Discover(threading.Thread):
+	def __init__(self):
+		threading.Thread.__init__(self)
+
+	def run(self):
+		nearby_devices = bluetooth.discover_devices(lookup_names = True)
+		return nearby_devices
+		
 class Config:
-	
-        def __init__(self):
-                self.opensync_path = os.getenv("HOME") + "/.opensync/"
+	HOME=pwd.getpwuid(os.getuid())[5]
+	def __init__(self):
+                self.opensync_path = self.HOME + "/.opensync/"
 		self.opensync_path_example = DATA_DIR + "/examples/group1"
         def main(self, device):
 
@@ -36,7 +44,7 @@ class Config:
 			##FIXME:: Should add a new one, not remove everyother
 			backup_path=self.opensync_path + "backup" + date.today().strftime("%Y%m%d")
 			if os.path.exists(backup_path):
-				os.rmdir (backup_path)
+				shutil.rmtree (backup_path)
                         os.mkdir (backup_path)
                         shutil.move (self.opensync_path + "group1" , backup_path)
 		if not os.path.exists(self.opensync_path + "/group1"):
@@ -77,39 +85,49 @@ class ConfigXML:
 class DeviceBrowser:
     
     def __init__(self):
-        gladefile = DATA_DIR + "noodle.glade"  
+	    gladefile = DATA_DIR + "noodle.glade"  
         
-        self.xml = gtk.glade.XML(gladefile) 
-        self.window = self.xml.get_widget("device_browser")
+	    self.xml = gtk.glade.XML(gladefile) 
+	    self.window = self.xml.get_widget("device_browser")
         
-        self.xml.signal_autoconnect(self)
+	    self.xml.signal_autoconnect(self)
         
-        if (self.window):
-            self.window.connect("destroy", gtk.main_quit)
-       
+	    if (self.window):
+		    self.window.connect("destroy", gtk.main_quit)
+    
     def timeout(self,pbar):
-        self.pbar.pulse()
-        return True
+	    self.pbar.pulse()
+	    return True
     
     def active_rb(self, widget, index):
-	self.active = nearby_devices[index]
+	    self.active = nearby_devices[index]
+	    return True
     
     def apply_config(self,widget, data=None):
-        config = Config()
-        config.main(self.active)
-        gtk.main_quit()
-        return True
+	    config = Config()
+	    config.main(self.active)
+	    gtk.main_quit()
+	    return True
     
     def refresh(self, widget, data=None):
-        self.discover()
-        return True
+	    self.discover()
+	    return True
 
-    def discover(self):
+    def discover_pda(self):
+	    os.popen("psuiteuser")
+	    gtk.main_quit()
+    
+	
+    def discover_bt(self):
+   
         ##FIXME:: discover_devices blocker. No progress bar. Thread
-        try:    
-                nearby_devices = bluetooth.discover_devices(lookup_names = True)
-        except:
-                label = gtk.Label("No ha dispositivo blueetooth")
+        try:
+		#discover = Discover()
+		#nearby_devices=discover.start()
+		#discover.join()
+		nearby_devices = bluetooth.discover_devices(lookup_names = True)
+	except:
+		label = gtk.Label("No ha dispositivo blueetooth")
                 self.parent=self.xml.get_widget("pbar_parent")
                 self.parent.remove(self.pbar)
                 self.parent.add(label)
@@ -155,10 +173,14 @@ class DeviceBrowser:
       
         
     def main(self, type):
-        self.window.show()
-        self.pbar = self.xml.get_widget("pbar")
-        timer = gobject.timeout_add (100, self.timeout, self)
-        self.discover()        
+	if type == "pda":
+		self.discover_pda()
+	else:
+		self.window.show()
+		self.pbar = self.xml.get_widget("pbar")
+		timer = gobject.timeout_add (100, self.timeout, self)
+		self.discover_bt()
+        
     
 class NoodleGTK:
 
@@ -179,7 +201,7 @@ class NoodleGTK:
         self.window.hide()
         deviceBrowser=DeviceBrowser()
         deviceBrowser.main("pda")
-        
+             
    
     def on_bt_mobile_clicked(self,widget):
         deviceBrowser=DeviceBrowser()
@@ -188,7 +210,7 @@ class NoodleGTK:
     
     def main(self):
         self.window.show()
-        gtk.main()
+	gtk.main()
 
 if __name__ == "__main__":
     noodleGTK = NoodleGTK()
