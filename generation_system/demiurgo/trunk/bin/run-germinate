@@ -82,6 +82,7 @@ for arch in $CPUARCHES; do
 			files="$files dists/$germinate_dist/multiverse/$suffix"
 			files="$files dists/$germinate_dist/$DERIVATIVE_CN/$suffix"
 			mkindex $files
+			mkindex dists/$germinate_dist/$DERIVATIVE_CN/$suffix
 		done
 		IFS=,
 	done
