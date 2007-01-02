@@ -8,10 +8,15 @@ amule
 anacron
 apmd
 apport-gtk
+aspell-es
 avahi-daemon
 avidemux
 bc
 beagle
+binutils
+bluez-cups
+bluez-pin
+bluez-utils
 brltty
 brltty-x11
 bug-buddy
@@ -96,6 +101,7 @@ gstreamer0.10-fluendo-mp3
 gstreamer0.10-plugins-base-apps
 gthumb
 gtk2-engines
+guadalinex-eadmin
 guadalinex-example-content
 guadalinex-supplement-installer
 gucharmap
@@ -111,6 +117,7 @@ inkscape
 sun-java5-jre
 landscape-client
 language-selector
+language-support-es
 language-pack-es
 language-pack-gnome-es
 lemurae
@@ -119,7 +126,6 @@ libdvdread3
 liferea
 lftp
 libgl1-mesa-glx
-libglut3
 libgnome2-perl
 libgnomevfs2-bin
 libgnomevfs2-extra
@@ -129,11 +135,15 @@ libpt-plugins-v4l2
 libsasl2-modules
 libstdc++5
 libxp6
+linux-headers-generic
 linux-image-generic
 linux-restricted-modules-2.6.17-10-generic
+localization-config
+make
 metacity
 min12xxw
 mkisofs
+mtr-tiny
 nautilus
 nautilus-cd-burner
 nautilus-sendto
@@ -174,8 +184,6 @@ ttf-bitstream-vera
 ttf-dejavu
 ttf-freefont
 tvtime
-ubuntu-artwork
-ubuntu-docs
 ubuntu-sounds
 unzip
 update-notifier
