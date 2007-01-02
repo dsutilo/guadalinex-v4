@@ -1,6 +1,7 @@
-lemurae (0.2-1) unstable; urgency=low
+lemurae (0.2.1) unstable; urgency=low
 
   * Depends updated.
+  * Fixed webcontrol bug locating gtkmozembed library.
 
  -- Gumersindo Coronel Pérez <goomerko@gmail.com>  Wed, 13 Dec 2006 13:38:21 +0100
 

@@ -105,10 +105,6 @@ from utils.notification import NotificationDaemon, FileNotification
 #        0  #expire_timeout
 #        )
 
-
-
-
-
 class DeviceListener:
     
     def __init__(self, message_render):

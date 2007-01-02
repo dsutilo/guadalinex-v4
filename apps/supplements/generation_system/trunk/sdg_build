@@ -127,6 +127,7 @@ def main():
 
     cmd = "mkisofs -o guadalinex-suplementos.iso -joliet-long -V"
     cmd += "GSD-" + config['SHORTNAME'] + ' ' + MASTERDIR
+    print "mkisofs command:", cmd
     os.system(cmd)
 
 if __name__ == "__main__":

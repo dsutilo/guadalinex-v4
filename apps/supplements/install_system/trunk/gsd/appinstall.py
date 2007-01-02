@@ -88,10 +88,14 @@ class Finder (object):
             device = self._select_device(devices)
         else:
             # Not device found
-            msg = 'No se ha encontrado ningún disco de suplementos'
+            msg = '<b>No se ha encontrado ningún disco de suplementos.</b>\n\n'
+            msg += 'Si está intentando instalar un suplemento desde un CD-ROM '
+            msg += 'o DVD, asegúrese de que está presente en el lector.'
             dialog = gtk.MessageDialog(type = gtk.MESSAGE_ERROR,
                     buttons = gtk.BUTTONS_CLOSE,
-                    message_format = msg)
+                    message_format = '')
+            dialog.set_markup(msg)
+            dialog.set_title('Suplemento no encontrado')
             dialog.run()
             dialog.destroy()
             sys.exit(1)
@@ -127,10 +131,14 @@ class Finder (object):
 def main(default_mountpoint = None):
     if os.geteuid() != 0:
         _ = gettext.gettext
+        msg = 'Necesita ejecutar este programa como root '
+        msg += '(por ejemplo, con <i>sudo guadalinex-app-install</i>'
+        msg += ' desde un terminal).'
+
         dialog = gtk.MessageDialog(None, 0, gtk.MESSAGE_ERROR,
-                       gtk.BUTTONS_OK,
-                       "Necesitas ejecutar este programa como root " +\
-                       "(o con sudo).")
+                       gtk.BUTTONS_OK)
+        dialog.set_markup(msg)
+        dialog.set_title('Error')
         dialog.run()
         dialog.destroy()
         sys.exit(1)
