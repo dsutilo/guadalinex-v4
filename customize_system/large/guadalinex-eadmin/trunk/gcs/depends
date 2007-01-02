@@ -3,5 +3,13 @@
 #
 # gnome-terminal
 # nautilus  >=2.6.10
-
-libccid >= 1.0.1
+opensc-dnie
+mozilla-opensc
+opensc
+libopensc2-dev
+pinentry-gtk2
+libssl-dev
+pcscd
+pcsc-tools
+openct
+libccid
