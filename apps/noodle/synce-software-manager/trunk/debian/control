@@ -1,5 +1,5 @@
 Source: synce-software-manager
-Section: unknown
+Section: misc
 Priority: optional
 Maintainer: Ghe Rivero <ghernando@yaco.es>
 Build-Depends: debhelper (>= 5), autotools-dev, g++
