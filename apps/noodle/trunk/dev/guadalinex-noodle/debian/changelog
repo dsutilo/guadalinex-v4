@@ -1,3 +1,9 @@
+guadalinex-noodle (0.2-0guada4) unstable; urgency=low
+
+  * Created .desktop file for noodle.py
+
+ -- Ghe Rivero <ghernando@yaco.es>  Wed,  3 Jan 2007 02:40:44 +0100
+
 guadalinex-noodle (0.2-0guada3) unstable; urgency=low
 
   * Added python-xml as dependency
