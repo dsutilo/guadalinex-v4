@@ -5,7 +5,7 @@ install:
 	install -D 60-*.rules ${DESTDIR}/etc/udev/rules.d/
 	install -D psuite	${DESTDIR}/usr/bin/
 	install -D psuiteuser.py	${DESTDIR}/usr/bin/psuiteuser
-	mkdir -p /usr/share/guadalinex-noodle/ && cp -r examples/ ${DESTDIR}/usr/share/guadalinex-noodle/
+	mkdir -p ${DESTDIR}/usr/share/guadalinex-noodle/ && cp -r examples/ ${DESTDIR}/usr/share/guadalinex-noodle/
 	cp -r img/ ${DESTDIR}/usr/share/guadalinex-noodle/
 	install -D vdccm.desktop ${DESTDIR}/etc/xdg/autostart/
 	install -D examples/dun ${DESTDIR}/etc/ppp/peers/
