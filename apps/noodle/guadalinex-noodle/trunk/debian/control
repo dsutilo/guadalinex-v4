@@ -9,5 +9,5 @@ Package: guadalinex-noodle
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, synce-trayicon, synce-gnomevfs, synce-software-manager, synce-kde, multisync, bluez-utils, bluez-passkey-gnome, synce-serial, synce-dccm, libmultisync-plugin-evolution, synce-multisync-plugin, python-xml
 Recommends: kcemirror 
-Description: Sincornización de PDAs y móviles en Guadalinex
- Sincornización de PDAs y móviles en Guadalinex
+Description: Sincronización de PDAs y móviles en Guadalinex
+ Sincronización de PDAs y móviles en Guadalinex
