@@ -180,6 +180,7 @@ mostlyclean:
 	rm -f core core.* *.pox $(GETTEXT_PACKAGE).po *.old.po cat-id-tbl.tmp
 	rm -fr *.o
 	rm -f .intltool-merge-cache
+	rm -f *.gmo
 
 clean: mostlyclean
 
