@@ -395,6 +395,11 @@ distclean-am:  distclean-hdr distclean-tags distclean-generic clean-am
 
 distclean: distclean-recursive
 	-rm -f config.status
+	-rm -f config.log
+	-rm intltool-merge
+	-rm intltool-extract
+	-rm intltool-update
+
 
 maintainer-clean-am:  maintainer-clean-hdr maintainer-clean-tags \
 		maintainer-clean-generic distclean-am
