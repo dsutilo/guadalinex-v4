@@ -130,10 +130,10 @@ This list was originally constructed based on a [http://people.debian.org/~cjwat
 = Languages =
 
  # must have
- * Languages: en
- * language-pack-${Languages}
- * language-pack-gnome-${Languages}
- * language-support-${Languages}
+# * Languages: en
+# * language-pack-${Languages}
+# * language-pack-gnome-${Languages}
+# * language-support-${Languages}
 
  # most popular languages
  * Languages: es

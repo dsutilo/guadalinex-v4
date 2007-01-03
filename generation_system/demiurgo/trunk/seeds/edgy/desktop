@@ -229,7 +229,7 @@ Python Integrated Applications:
 Documentation:
 
  * doc-base			# integrates with scrollkeeper
- * ubuntu-docs
+# * ubuntu-docs
 
 = Development =
 
@@ -265,7 +265,7 @@ to compile a driver. -mdz
 
 = Germinate workarounds =
 
- * libglut3 # depended upon by freeglut3
+# * libglut3 # depended upon by freeglut3
  * libgl1-mesa-glx # depended upon by freeglut3
  * festvox-ellpc11k
  * sun-java5-jre
