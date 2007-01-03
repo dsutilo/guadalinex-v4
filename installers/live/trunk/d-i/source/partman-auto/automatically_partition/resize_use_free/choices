@@ -179,7 +179,7 @@ else
 fi
 
 if [ "$bestpart" ] && [ "$bestpart" != none ] && \
-    longint_le "$(expr 3 \* 1024 \* 1024 \* 1024)" $bestfree; then
+    longint_le "$(expr 4 \* 1024 \* 1024 \* 1024)" $bestfree; then
     log "Found resizable partition '$bestpart' ($bestpath) with $bestfree bytes free"
     db_subst partman-auto/text/resize_use_free PARTITION "$(humandev "$bestpath")"
     db_metaget partman-auto/text/resize_use_free description
