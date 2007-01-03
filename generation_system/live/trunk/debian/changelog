@@ -1,3 +1,9 @@
+glig (0.11) unstable; urgency=low
+
+  * Added ubiquity-guadalinex-lang 
+
+ -- Carlos Parra Camargo <cparra@emergya.es>  Wed,  3 Jan 2007 13:25:09 +0100
+
 glig (0.10) unstable; urgency=low
 
   * Upgrade packages versions after deboostrap
