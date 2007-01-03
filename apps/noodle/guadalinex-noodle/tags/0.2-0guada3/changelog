@@ -1,0 +1,9 @@
+Ghe Rivero <ghernando@yaco.es>: 2006-12-28
+ * Small improvemente psuiteuser
+
+Ghe Rivero <ghernando@yaco.es> :  Before
+  * Improvements on psuite_user (Rewriten on python)
+  * New bluetooth/SyncML manager
+  * Rename psuite_gui->noodle
+  * Reescrito configurador syncml en XML
+  * Initial release
