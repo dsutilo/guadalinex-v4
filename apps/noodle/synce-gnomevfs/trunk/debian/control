@@ -1,5 +1,5 @@
 Source: synce-gnomevfs
-Section: unknown
+Section: misc
 Priority: optional
 Maintainer: Ghe Rivero <ghernando@yaco.es>
 Build-Depends: debhelper (>= 5), autotools-dev, g++, libsynce0-dev, librra0-dev
