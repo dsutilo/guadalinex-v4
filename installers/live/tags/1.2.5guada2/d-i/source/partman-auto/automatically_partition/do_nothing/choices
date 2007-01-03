@@ -1,0 +1,10 @@
+#!/bin/bash
+
+. /lib/partman/definitions.sh
+
+dev="$1"
+
+if [ "$(grep ${dev//*=/} /proc/partitions | wc -l)" != "1" ]; then
+    db_metaget partman-auto/text/do_nothing_partitioning description
+    printf "custom\t$RET"
+fi
