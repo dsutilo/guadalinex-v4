@@ -1,3 +1,167 @@
+BETA2 (n/a)
+===========
+
+PERSONALICACIÓN Y CONFIGURACIÓN DEL SISTEMA (BRANDING)
+------------------------------------------------------
+
+- Incluido "ndiswrapper" para soporte de algunas tarjetas wifi
+- Añadidos iconos en el escritorio: "carpeta personal" y "equipo".
+- Repaso e inclusión en Guadalinex de todos los paquetes interesantes que
+incluye Ubuntu Edgy y que no estaban en Guadalinex: evolution-exchange,...
+- Añadidos repositorios oficiales de Guadalinex v4
+- Implementado interfaz de usuario para suplementos de manera que se pueda
+utilizar sin hermes
+- Compartición del directorio "Compartido" para permitir a los usuarios
+compartir ficheros a través de SAMBA
+- Regenerados "grub" y "grub-installer" para configurar adecuadamente el
+nombre de la distribución ("Ubuntu" -> "Guadalinex")
+- Comprobación de detección de entradas de GRUB para otros sistemas
+operativos tras instalación
+- Implementación de nueva funcionalidad para gnome-system-tools: soporte de
+perfiles de accesibilidad para los usuarios que se crean
+- Establecido número de escritorios virtuales a 4
+- Añadido "alacarte" para edición de menús
+- Añadido "camorama" para uso de webcams
+- Añadido "lemurae" para acceso al diccionario de la RAE
+- Traducido mensaje inicial al abrir una consola
+- Personalizado el icono de salida de sesión
+- Deshabilitado servidor SSH por defecto
+- Ficheros de audio asociados a "rythmbox" con interfaz pequeña
+- Revisados ficheros de ejemplo para eliminar aquéllos que no tienen sentido
+- Eliminada entrada de menú "gscriptor"
+
+
+
+ACCESIBILIDAD
+-------------
+
+- Implementado gestor de perfiles de accesibilidad, para facilitar y unificar
+la gestión de estos perfiles en el sistema live, en el instalador live y en la
+creacíon de usuarios (g-s-t)
+- Creados perfiles de accesibilidad a partir de los de Edgy para cumplir con
+el spec
+- Añadido soporte de accesibilidad al instalador live:
+    - Etiquetas atk a los widgets necesarios
+    - Menús navegables desde teclado
+    - Foco en la opción más probable
+    - Orden de los botones correcto
+- Añadidas algunas herramientas de accesibilidad: gnome-orca y gnome-mag
+- Comprobados perfiles de accesibilidad de Edgy para adaptación a Guadalinex
+- Añadido paquete "festival" y voz en castellano
+
+HERMES
+------
+
+- Mayor flexibilidad en la creacíon de actores, implementado tal y como está
+en el spec:
+http://forja.guadalinex.org/webs/guadalinexv4/doku.php?id=ecg:development_spec_actor_select
+- Añadido soporte para "sabores" de paquetes que se van a instalar, de manera
+que se puedan crear conjuntos de paquetes para, por ejemplo, diferentes
+escritorios. La utilidad estriba en la mayor flexibilidad que proporciona esta
+"feature" para desarrollar nuevos actores y ampliar la capacidad de Hermes.
+- Corregidos errores menores en la generación del paquete
+
+SISTEMA LIVE (LIVE-GENERATION-SYSTEM)
+-------------------------------------
+
+- Corregido un bug por el que nunca se usa una partición swap existente en el
+disco durante la sesión live: ahora ya sí se usa para ganar memoria
+- Corregidos errores diversos con la generación de "guadalinex-minimal"
+- Corregidos errores menores en glig: añadido componente "restricted"
+- Corregidos errores menores en la generación de sources.list (eliminada línea
+de CD-ROM)
+
+INSTALADOR LIVE (LIVE-INSTALLER)
+--------------------------------
+
+- Limitación de nombre de usuario a 8 caracteres como máximo
+- Limitación de longitud de contraseña a 4 caracteres
+- Añadido "widget" para visualización de las particiones de los discos y
+contenidos de las mismas
+- Añadida la opción "Utilizar todo el disco"
+- Añadida la opción "Redimensionado de particiones existentes"
+- Mejoradas algunas traducciones de opciones de particionado
+- Análisis de soporte de mensaje de introducción en "Ubiquity"; está
+implementado
+- Añadido "artwork" provisional
+
+
+SISTEMA NO LIVE (DI-GENERATION-SYSTEM)
+--------------------------------------
+
+- Optimización del sistema para consegir espacio adicional en el CD; ahorrados
+más de 70 MB.
+- Pregunta por el nombre del equipo, siendo la respuesta predeterminada
+"guadalinex".
+- Completado spec: 
+http://forja.guadalinex.org/webs/guadalinexv4/doku.php?id=ecg:system_spec_generation_system_no_live
+
+
+INSTALADOR NO LIVE (DI-INSTALLER)
+---------------------------------
+
+- Implementado e incluido motor de estimación de tiempo de instalación a
+partir del hardware de la máquina
+- Corrección de algunos errores de personalización menores ("Ubuntu" ->
+"Guadalinex")
+
+
+SISTEMA DE GENERACIÓN (DEMIURGO)
+--------------------------------
+
+- Corregidos algunos errores de incongruencias de listas de paquetes en
+versiones "live" y "d-i"
+- Implementado ejecutable para programación períodica de generaciones ("cron")
+
+
+
+SISTEMA DE PERSONALIZACIÓN (BANDING-SYSTEM)
+-------------------------------------------
+
+- Mejoras menores en el sistema de generación de paquetes (gcs)
+
+E-ADMIN
+
+-------
+
+- Incluidas funcionalidades para la gestión de certificados desde Firefox,
+Evolution y OpenOffice, con el siguiente estado actual:
+    - Con Firefox se pueden usar los servicios del DNIe del Gobierno central;
+    los de la JA aún no. WIP (Trabajo en progreso)
+    - Con Evolution se pueden firmar y cifrar correos con el certificado de la
+    FNMT. Con los certificados del DNIe no se puede firmar. WIP.
+    - OpenOffice de "edgy" está buggy y no funcionan las capacidades de
+    gestión de certificados digitales. WIP.
+- Implementado actor de hermes para gestión de certificados (certmanager.py)
+ubicados en dispositivos externos como pen drives y configuración del sistema.
+- Añadido soporte para dispositivos C3PO (añadidos VendorID/ProductID de los
+dispositivos de los que disponemos)
+- Pruebas en Hermes para distintos dispositivos:
+    - Teclado con lector incorporado (KBR36) -> OK
+    - Lector USB externo (LTC31) -> OK
+    - Lector USB interno (LTC32) -> OK
+- Reempaquetado "opensc-dnie" para Edgy e incluido, para evitar los problemas
+que se comentaban en el enlace siguiente con los paquetes de Dapper:
+http://forja.guadalinex.org/webs/guadalinexv4/doku.php?id=dev:system_spec_e-administration
+- Configuración de Firefox para que pregunte por el certificado que debe usar
+
+NOODLE
+------
+
+- Añadido asistente para sincronización
+- Soporte para sincronización de PDAs por USB:
+  - Creado actor de Hermes
+  - Añadidas reglas udev
+  - Integración con GNOME
+  - Adición de paquetes necesarios (synce-software, synce-gnomevfs,
+  synce-trayicon
+- Soporte para sincronización de PDAs por Bluetooth)
+
+MINI
+----
+
+- Creada infraestructura de generación
+
 BETA1 (14/12/06)
 ================
 
