@@ -1,2 +1,0 @@
-SUBDIRS = pixmaps script src
-
