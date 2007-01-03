@@ -11,6 +11,9 @@ function apply_profile
     su $1 -c "unzip -o $3 -d $2"
 
     if [ -d $2/.gconf.xml.defaults ]; then
+	if [ ! -d $2/.gconf ]; then
+		mkdir $2/.gconf
+	fi
 	cp -r $2/.gconf.xml.defaults/* $2/.gconf/
     fi
     if [ -e $2/metadata ]; then
@@ -42,7 +45,7 @@ fi
 
 if [ $3 ]; then
     case $3 in
-	"-f" ) apply_profile ${USERNAME} ${USER_HOME} ${PROFILE_PATH} && exit 0 ;;
+	"-f" ) apply_profile ${USER_NAME} ${USER_HOME} ${PROFILE_PATH} && exit 0 ;;
 	* ) echo "Opción $3 no reconocida" && exit -1 ;;
     esac
 else
