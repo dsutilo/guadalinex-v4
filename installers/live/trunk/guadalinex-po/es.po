@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity 1.2.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-02 19:56+0100\n"
+"POT-Creation-Date: 2007-01-03 11:05+0100\n"
 "PO-Revision-Date: 2006-12-26 23:38+0000\n"
 "Last-Translator: Jesús Espino García <jespinog@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -17,7 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../ubiquity/frontend/gtkui.py:1508
+#: ../ubiquity/frontend/gtkui.py:942
+msgid "_Install"
+msgstr "_Instalar"
+
+#: ../ubiquity/frontend/gtkui.py:1516
 msgid ""
 "Resize a existing partition for make space where install the distribution."
 msgstr ""
@@ -29,7 +33,7 @@ msgstr ""
 "Aunque es improbable que se produzca una pérdida de sus datos, se recomienda "
 "hacer una <b>copia de seguridad</b> antes de realizar la instalación.</span>"
 
-#: ../ubiquity/frontend/gtkui.py:1511
+#: ../ubiquity/frontend/gtkui.py:1519
 msgid "Use the biggest free space in the partition table."
 msgstr ""
 "<span>Con este método se utilizará <b>espacio libre</b> (es decir, en el que "
@@ -38,7 +42,7 @@ msgstr ""
 "modificará ninguna de las particiones o sistemas operativos ya existentes</"
 "b></span>"
 
-#: ../ubiquity/frontend/gtkui.py:1514
+#: ../ubiquity/frontend/gtkui.py:1522
 msgid ""
 "Use the partition table in the actual status for install the distribution."
 msgstr ""
@@ -48,19 +52,21 @@ msgstr ""
 "hubiese en ese sistema Linux previo se perderán de manera irreversible</b>.</"
 "span>"
 
-#: ../ubiquity/frontend/gtkui.py:1517
+#: ../ubiquity/frontend/gtkui.py:1525
 msgid ""
 "Edit manually the partition table for make space where install the "
 "distribution."
 msgstr ""
 "<span>Use este método de particionado si desea <b>total libertad</b> para "
-"decidir dónde instalar cada componente del sistema. Podrá crear, destruir "
-"y redimensionar cualquier partición para que cada parte ocupe el espacio que "
-"quiera.\n\n<b>Atención:</b> las operaciones que haga con el disco duro pueden "
-"suponer la <b>pérdida de todos los datos</b>, así que continúe por aquí "
-"únicamente si ya tiene experiencia particionando de forma manual.</span>"
+"decidir dónde instalar cada componente del sistema. Podrá crear, destruir y "
+"redimensionar cualquier partición para que cada parte ocupe el espacio que "
+"quiera.\n"
+"\n"
+"<b>Atención:</b> las operaciones que haga con el disco duro pueden suponer "
+"la <b>pérdida de todos los datos</b>, así que continúe por aquí únicamente "
+"si ya tiene experiencia particionando de forma manual.</span>"
 
-#: ../ubiquity/frontend/gtkui.py:1520
+#: ../ubiquity/frontend/gtkui.py:1528
 msgid ""
 "Delete all the hard disk and use all the space for install the distribution."
 msgstr ""

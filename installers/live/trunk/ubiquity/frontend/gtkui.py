@@ -935,7 +935,11 @@ class Wizard:
             syslog.syslog('Step_after = %s' % step)
 
             if step == "stepReady":
-                self.next.set_label("Install")
+		installer_icon = gtk.Image()
+		installer_icon.set_from_icon_name("ubiquity",24)
+		self.next.set_image(installer_icon)
+		self.next.set_use_underline(True)
+                self.next.set_label(_("_Install"))
 
     def process_identification (self):
         """Processing identification step tasks."""
@@ -1440,6 +1444,9 @@ class Wizard:
                 self.steps.set_current_page(self.steps.page_num(self.stepPartAuto))
                 changed_page = True
         elif step == "stepReady":
+	    stock_image = gtk.Image()
+	    stock_image.set_from_stock(gtk.STOCK_GO_FORWARD,24)
+	    self.next.set_image(stock_image)
             self.next.set_label("gtk-go-forward")
             self.steps.set_current_page(self.previous_partitioning_page)
             changed_page = True
@@ -1959,6 +1966,9 @@ class Wizard:
             # TODO self.previous_partitioning_page
             self.live_installer.show()
             self.steps.set_current_page(self.steps.page_num(self.stepPartDisk))
+	    stock_image = gtk.Image()
+	    stock_image.set_from_stock(gtk.STOCK_GO_FORWARD)
+	    self.next.set_image(stock_image)
             self.next.set_label("gtk-go-forward")
             self.backup = True
             self.installing = False

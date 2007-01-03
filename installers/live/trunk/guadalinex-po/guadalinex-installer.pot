@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-02 19:59+0100\n"
+"POT-Creation-Date: 2007-01-03 11:05+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,27 +16,31 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../ubiquity/frontend/gtkui.py:1508
+#: ../ubiquity/frontend/gtkui.py:942
+msgid "_Install"
+msgstr ""
+
+#: ../ubiquity/frontend/gtkui.py:1516
 msgid ""
 "Resize a existing partition for make space where install the distribution."
 msgstr ""
 
-#: ../ubiquity/frontend/gtkui.py:1511
+#: ../ubiquity/frontend/gtkui.py:1519
 msgid "Use the biggest free space in the partition table."
 msgstr ""
 
-#: ../ubiquity/frontend/gtkui.py:1514
+#: ../ubiquity/frontend/gtkui.py:1522
 msgid ""
 "Use the partition table in the actual status for install the distribution."
 msgstr ""
 
-#: ../ubiquity/frontend/gtkui.py:1517
+#: ../ubiquity/frontend/gtkui.py:1525
 msgid ""
 "Edit manually the partition table for make space where install the "
 "distribution."
 msgstr ""
 
-#: ../ubiquity/frontend/gtkui.py:1520
+#: ../ubiquity/frontend/gtkui.py:1528
 msgid ""
 "Delete all the hard disk and use all the space for install the distribution."
 msgstr ""
