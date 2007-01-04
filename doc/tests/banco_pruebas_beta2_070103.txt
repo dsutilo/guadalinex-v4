@@ -1,0 +1,145 @@
+﻿Para comprobar el perfecto funcionamiento de la distribución se anotan aquí todos los puntos que hay que revisar con cada versión.
+
+==== Arranque en modo Live ===
+
+  * ¿ El CD arranca ? Sí.
+  * ¿ Aparece algún mensaje de error durante la pantalla de inicio gráfica (//splash//) ? No.
+  * ¿ Llega a verse bien el escritorio? Sí.
+  * ¿ La resolución de pantalla es correcta ? Sí.
+  * ¿ Detecta la red correctamente cuando hay un servidor DHCP disponible ? Sí.
+  * ¿ La lista de paquetes está actualizada ? Sí.
+  * ¿ Sobra algún servicio en background ? No veo nada raro. ¿Se refiere a algún problema concreto de la v3? 
+
+
+
+==== Instalación ==== SIN PROBAR.
+ 
+  * ¿ Ha podido completar el proceso de instalación? (hasta la expulsión del CD y el rearranque del equipo)
+  * ¿ Se conservan íntegros los demás sistemas operativos ?
+  * ¿ El menú de arranque (grub) permite acceder a los demás sistemas ?
+  * ¿ Se pueden reformatear particiones en...
+    * VFAT ?
+    * NTFS ?
+    * EXT2 y 3 ?
+    * ReiserFS ?
+  * ¿ Hay rastros de archivos temporales en la versión instalada ?
+    * /tmp
+    * resolv.conf
+  * ¿ El usuario de instalación se ha creado correctamente ?
+  * ¿ Puede iniciar sesión y acceder a su directorio personal ?
+  * ¿ Tiene el usuario creado permisos de administración ?
+  * ¿ Sobra algún usuario ?  
+  * Caso de haber conservado la partición /home de una versión previa:
+    * ¿ Se han conservado los directorios de usuario y su contenido?
+    * ¿ Conserva su configuración de escritorio ?
+    * ¿ Observa un comportamiento anómalo de alguna de las aplicaciones que utilizaba en la versión previa?
+
+==== Escritorio ====
+
+  * ¿ Es correcto el fondo de pantalla ?  Sí.
+  * ¿ Se identifica un portátil y muestra los iconos de gestión de energía ?  SIN PROBAR.
+  * ¿ Hay un botón que sirva claramente para apagar ?  Sí.
+  * ¿ Hay iconos para las tareas más importantes ?  Sí: Firefox, OOo, Carpeta personal y Equipo.
+  * ¿ El menú muestra la descripción y el nombre de cada programa ? Sí.
+  * ¿ Hay alguna aplicación en el menú que no llegue a arrancar correctamente o produzca mensajes de error ? No.
+
+==== Aplicaciones ==== 
+
+  * ¿ Están todas las aplicaciones solicitadas ?   Todavía está pendiente la validación de la lista de aplicaciones.
+  * ¿ Hay utilidades para todas las tareas básicas de administración ?  Crear usuarios OK. Instalar paquetes con synaptic OK. Configurar red OK. Cambiar fecha y hora OK.
+  * ¿ Están traducidas ? Gxine y Avidemux están en inglés.
+  * ¿ Permiten usar caracteres españoles y el euro ? Sí.
+  * ¿ Es posible conectarse a Internet...
+    * Con modem ADSL ? SIN PROBAR. Relacionado con el ticket #129.
+    * Con router ?  Sí.
+    * Con modem RTB ? SIN PROBAR.
+    * Con WIFI ?  SIN PROBAR.
+    * Con GPRS/UMTS ? SIN PROBAR.
+  * ¿ Están asignados correctamente los tipos MIME en nautilus y en el navegador de Internet ? avi, mpg, mp3, odt, txt, pdf, doc, rtf, ps, jpg, gif, png, tif, xcf OK.
+  * ¿ Está personalizada la página de inicio del navegador ? Sí.
+  * ¿ Están personalizados los favoritos del navegador ? Sí.
+  * ¿ Se pueden reproducir todos los formatos de audio y video ?
+    * Audio:
+      * CD de música. Sí.
+      * MP3   Sí.
+      * OGG  Sí.
+      * Flac Sí
+      * MPC No encuentro un fichero con ese formato.
+      * AAF No encuentro un fichero con ese formato.
+      * WMA No. Depende de w32codecs.
+      * APE No encuentro un fichero con este formato.
+      * RealAudio No. Depende de w32codecs.
+    * Video:
+      * DVD (protegido). Sí.
+      * VideoCD (VCD, SVCD, CVCD, KVCD). Sí.
+      * DivX, Xvid  Sí.
+      * AVI  Sí.
+      * OGG Sí
+      * WMV No. Depende de w32codecs.
+      * RealVideo No. Depende de w32codecs.
+   * ¿ Hay visores/editores para los archivos más usuales ?
+      * TXT Sí.
+      * PDF Sí.
+      * DOC Sí.
+      * RTF Sí.
+      * XLS Sí.
+      * PPT Sí.
+      * CHM Sí.
+      * ODT Sí.
+      * ODS Sí.
+      * ODP Sí.
+      * PS Sí.
+      * JPG Sí.
+      * PNG Sí.
+      * GIF Sí.
+      * BMP Sí.
+ 
+
+==== Funcionalidades ====
+
+   * ¿ Se puede apagar el ordenador ?  Sí.
+   * ¿ Se puede suspender y recuperar ? NO PROBADO.
+   * ¿ Se puede hibernar y recuperar ? Sí.
+   * ¿ Se puede acceder a discos compartidos ? Con problemas. #120
+   * ¿ Se puede acceder a impresoras compartidas ? Sí.
+   * ¿ Se pueden compartir discos ? Sí.
+   * ¿ Se pueden compartir impresoras ? NO PROBADO.
+   * ¿ Se puede acceder a una disquetera ? Sí.
+   * ¿ Se puede acceder a un CD/DVD ? Sí.
+   * ¿ Se puede acceder a una memoria USB ? Sí.
+   * ¿ Se puede acceder a otras particiones ? Sí.
+   * ¿ Funciona bien un ratón (incluida rueda) ? Sí.
+   * ¿ Se puede configurar una impresora e imprimir ? Sí.
+   * ¿ Se puede ver la TV (digital/analógica) ? Si la tarjeta TDT o analógica está soportada, sí (con gxine y tvtime respectivamente), pero de manera nada user-friendly. En estos momentos no hay forma amigable de generar un channels.conf.
+   * ¿ Funciona la aceleración 3d ? En una nvidia, el módulo del kernel está incluido, pero hay que tocar el xorg.conf.
+   * ¿ Se puede acceder a las fotos al conectar una cámara digital ? Sí.
+   * ¿ Se puede acceder a ficheros al conectar un reproductor MP3 ? Sí. Pendrives-like e ipods.
+   * ¿ Se puede grabar DVD/*VCD a partir de ficheros de video ? No. Ni brasero ni el grabador de nautilus hacen esto. Hay que hacer muchas cosas (codificar el fichero con un encoder, generar el árbol con dvdauthor, generar una iso, grabarla) y no sé si hay alguna app de Gnome que lo haga todo fácilmente. 
+   * ¿ Se puede copiar un CD de datos ? Sí.
+   * ¿ Se pueden hacer copias de seguridad de vídeos en DVD ? SIN PROBAR.
+   * ¿ Se puede grabar sonido con el micrófono ? Sí.
+
+==== Aspecto ====
+
+  * ¿ Está personalizada la pantalla de ISOLINUX ? Sí.
+  * ¿ Está personalizada la pantalla de USPLASH ? Sí.
+  * ¿ Está personalizada la pantalla de inicio de Gnome ? Sí.
+  * ¿ Está personalizada la pantalla de login (GDM) ? Sí.
+  * ¿ El tema de Gnome es acorde con el escritorio ? Sí.
+  * ¿ Está personalizada la página de inicio del navegador ? Sí.
+  * ¿ Está personalizada la página de prueba de impresión ? No.
+  * ¿ Hay ejemplos de varios tipos de fichero en el directorio de usuario ? Los que había en V3 (anticuados).
+  * ¿ Estan disponibles los tipos de letra requeridos ? Sí.
+  * ¿ Se encuentran configurados los tipos de letra por defecto adecuados ? No entiendo bien esta prueba.
+  * ¿ Se puede usar una webcam ? Si está soportada sí, con Ekiga o Camorama.
+
+==== Accesibilidad ====
+
+  * ¿ Está incluido el sintetizador de voz en español ? Sí.
+  * ¿ Está incluido el magnificador ? Sí.
+  * ¿ Está incluido el teclado en pantalla ? Sí.
+  * ¿ Es fácil habilitar las opciones de accesibilidad ? Sí, pero no funciona todavía del todo bien.
+  * ¿ Existe el perfil de accesibilidad adecuado ? No.
+
+==== Varios ====
+  * ¿ Son correctas las fuentes de paquetes (/etc/apt/sources.list) ? Sí.
