@@ -2,10 +2,12 @@ ubiquity	languagechooser/language-name	select	Spanish
 ubiquity	languagechooser/language-name-fb	select	Spanish
 ubiquity	countrychooser/shortlist	select	ES
 ubiquity	countrychooser/countryname	select	Spain
+ubiquity	countrychooser/country-name	string	Spain
+debconf		debconf/language	string	es
 ubiquity	console-keymaps-at/keymap	select	es
 ubiquity	partman-auto/choose_recipe	select	60guadalinex
 ubiquity	partman-auto/expert_recipe_file	string	/lib/partman/recipes/60guadalinex
-ubiquity	localechooser/supported-locales	multiselect	es_ES.UTF-8, en_US.UTF-8
+ubiquity	localechooser/supported-locales	multiselect	es_ES.UTF-8
 
 ubiquity	tzconfig/gmt	boolean	false
 ubiquity	time/zone	select	Europe/Madrid
