@@ -30,6 +30,6 @@
 # Global settings.
 # Created by Antonio Olmo <aolmo#emergya._info> on 7 oct 2005.
 
-MINIMAL_PARTITION_SCHEME = {'swap':  205,
-                            'root': 3072,
-                            'home':  512}
+MINIMAL_PARTITION_SCHEME = {'swap':  64,
+                            'root': 3000,
+                            'home':  500}

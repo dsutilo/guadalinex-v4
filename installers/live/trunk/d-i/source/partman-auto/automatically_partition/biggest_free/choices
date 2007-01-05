@@ -28,7 +28,8 @@ else
     get_biggest_free_on_dev
 fi
 
-if [ "$mypart" -a "$mysize" -gt "3800000000" ]; then
+# mysize = 3564 * 1024 * 1024
+if [ "$mypart" -a "$mysize" -gt "3737124864" ]; then
     db_metaget partman-auto/text/use_biggest_free description
     printf "$mypart\t$RET"
 fi
