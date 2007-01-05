@@ -11,13 +11,16 @@ any_linux_on_dev() {
 	if [ "$fs" = "ext2" ] || [ "$fs" = "ext3" ] || [ "$fs" = "reiserfs" ]; then
 	    has_linux_part="yes"
 	fi
+	if [ "$fs" = "linux-swap" ]; then
+	    has_swap_part="yes"
+	fi
     done
     close_dialog
 }
 
 any_linux_on_dev
 
-if [ $has_linux_part = "yes" ]; then
+if [ $has_linux_part = "yes" ] && [ $has_swap_part = "yes" ]; then
     db_metaget partman-auto/text/do_nothing_partitioning description
     printf "custom\t$RET"
 fi
