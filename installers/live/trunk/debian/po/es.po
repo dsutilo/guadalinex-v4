@@ -268,7 +268,7 @@ msgstr "Partición"
 #. Description
 #: ../ubiquity.templates:34001
 msgid "Reformat?"
-msgstr "¿Volver a formatear?"
+msgstr "Formatear"
 
 #. Type: text
 #. Description
