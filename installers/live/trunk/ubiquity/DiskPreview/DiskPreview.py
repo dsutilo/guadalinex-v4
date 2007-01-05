@@ -115,11 +115,12 @@ class DiskPreview(gtk.VBox):
         iter = model.get_iter(path)
         if os.path.isdir(model.get_value(iter, 2)):
             self.__populate_browser_iconview(model.get_value(iter, 2))
-        else:
-            try:
-                os.system("gnome-open %s" % model.get_value(iter, 2))
-            except:
-                return
+        #UNCOMMENT THIS IF YOU WANT OPEN FILES TOO
+        #else:
+        #    try:
+        #        os.system("gnome-open %s" % model.get_value(iter, 2))
+        #    except:
+        #        return
 
     def __disk_preview_treview_row_changed_cb(self, selection, data):
         model,pathlist = selection.get_selected_rows()
