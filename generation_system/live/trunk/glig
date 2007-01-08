@@ -164,7 +164,10 @@ echo \"Warning: Fake start-stop-daemon called, doing nothing\"" > ${sources}/sbi
     apt_get install linux-image-generic
     
     apt_get install acpi-support
-    
+
+    mkdir -p ${sources}/etc/ssl/private/
+    touch ${sources}/etc/ssl/private/ssl-cert-snakeoil.key
+
     mount --bind /proc ${sources}/proc
     log_it "$?" "mount ${sources}/proc"
     mount --bind /sys ${sources}/sys
