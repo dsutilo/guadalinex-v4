@@ -228,6 +228,7 @@ class PartmanAuto(FilteredCommand):
                 self.preseed(question, 'false')
             return True
 
+	self.frontend.diskpreview.mount_filesystems()
         return super(PartmanAuto, self).run(priority, question)
 
     def ok_handler(self):

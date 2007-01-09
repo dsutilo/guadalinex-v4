@@ -1792,7 +1792,7 @@ class Wizard:
 
 	if not NODISKPREVIEW:
             self.diskpreview = DiskPreview()
-            self.diskpreview.mount_filesystems()
+            #self.diskpreview.mount_filesystems()
             self.autopartition_vbox.pack_end(self.diskpreview, expand=True)
         
         if firstbutton is not None:
@@ -1923,37 +1923,31 @@ class Wizard:
             device_end_iter = ready_buffer.get_iter_at_offset(device_index + 6)
             ready_buffer.delete(device_start_iter, device_end_iter)
             device_anchor = ready_buffer.create_child_anchor(device_start_iter)
-            self.summary_device_button = gtk.Button()
-            self.summary_device_button.connect(
-                'clicked', self.on_summary_device_button_clicked)
+            self.summary_device_button = gtk.combo_box_new_text()
             self.summary_device_button.show()
             self.ready_text.add_child_at_anchor(self.summary_device_button,
                                                 device_anchor)
 
-    def set_summary_device (self, device):
-        if not device.startswith('(') and not device.startswith('/dev/'):
-            device = '/dev/%s' % device
-        self.summary_device = device
-
+    def set_summary_device (self, device, devices):
         # i.e. set_summary_text has been called
         if self.summary_device_button is None:
             syslog.syslog(syslog.LOG_ERR,
                           "summary_device_button missing (broken "
                           "ubiquity/summary/grub translation?)")
             return
-        self.summary_device_button.set_label(device)
+
+	active=0
+	counter=0
+	for selectable_device in devices:
+	    self.summary_device_button.append_text(selectable_device)
+	    if selectable_device == device:
+		active=counter
+	    else:
+		counter = counter+1
+        self.summary_device_button.set_active(active)
 
     def get_summary_device (self):
-        return self.summary_device
-
-    def on_summary_device_button_clicked (self, button):
-        self.grub_device_entry.set_text(self.get_summary_device())
-        response = self.grub_device_dialog.run()
-        self.grub_device_dialog.hide()
-        if response == gtk.RESPONSE_OK:
-            self.set_summary_device(self.grub_device_entry.get_text())
-        return True
-
+        return self.summary_device_button.get_active_text()
 
     def return_to_autopartitioning (self):
         """If the install progress bar is up but still at the partitioning

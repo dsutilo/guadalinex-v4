@@ -17,6 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+import os
 import textwrap
 from ubiquity.components.partman_commit import PartmanCommit
 
@@ -46,7 +47,13 @@ class Summary(PartmanCommit):
             if self.using_grub:
                 # TODO cjwatson 2006-09-04: a bit inelegant, and possibly
                 # Ubuntu-specific?
-                self.frontend.set_summary_device('(hd0)')
+		os.system("mkdir -p /boot/grub; echo quit | sudo grub --device-map=/boot/grub/device.map --batch")
+		device_map_file = file("/boot/grub/device.map","r")
+		devices = []
+		for device_line in device_map_file:
+		    devices.append(device_line[0:5])
+		device_map_file.close()
+                self.frontend.set_summary_device('(hd0)',devices)
 
             # This component exists only to gather some information and then
             # get out of the way.
