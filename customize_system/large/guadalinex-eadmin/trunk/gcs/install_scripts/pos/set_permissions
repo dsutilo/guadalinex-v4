@@ -1,0 +1,2 @@
+/bin/chmod 755 /usr/lib/jvm/java-1.5.0-sun/jre/lib/i386/client/libjss3.so
+/bin/chmod 644 /usr/lib/jvm/java-1.5.0-sun/jre/lib/ext/jss33.jar
