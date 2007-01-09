@@ -152,7 +152,7 @@ class PartmanAuto(FilteredCommand):
             self.use_biggest_free_desc = \
                 self.description('partman-auto/text/use_biggest_free')
             if not self.frontend.set_disk_choices(self.choices(question),
-                                                  self.manual_desc,self.do_nothing_desc, self.use_biggest_free_desc):
+                                                  self.manual_desc):
                 # disk selector not implemented; just use first disk
                 return self.succeeded
 
