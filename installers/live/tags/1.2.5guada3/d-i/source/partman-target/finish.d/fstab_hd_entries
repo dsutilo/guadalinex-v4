@@ -1,0 +1,32 @@
+#!/bin/sh
+
+[ -f /target/etc/fstab ] || exit 0
+
+fstab=$(
+    for i in /lib/partman/fstab.d/*; do
+	[ -x "$i" ] || continue
+	$i
+    done |
+    while read fs mp type options dump pass; do
+	echo $mp $fs $type $options $dump $pass
+    done |
+    sort |
+    while read mp fs type options dump pass; do
+	case "$fs" in
+	    (/dev/disk/*|/dev/fd[0-9]*|/dev/mapper/*|/dev/evms/*|/dev/md[0-9]*)
+		printf "%-15s %-15s %-7s %-15s %-7s %s\n" "$(mapdevfs $fs)" "${mp}" "$type" "$options" "$dump" "$pass"
+		;;
+	    (/*)
+		uuid="$(PATH="/lib/udev:$PATH" vol_id -u $fs)"
+		if [ "$uuid" ]; then
+		    printf "# %s\n" "$(mapdevfs $fs)"
+		    printf "%-15s %-15s %-7s %-15s %-7s %s\n" "UUID=$uuid" "${mp}" "$type" "$options" "$dump" "$pass"
+		else
+		    printf "%-15s %-15s %-7s %-15s %-7s %s\n" "$(mapdevfs $fs)" "${mp}" "$type" "$options" "$dump" "$pass"
+		fi
+		;;
+	esac
+    done
+)
+
+echo "$fstab" >>/target/etc/fstab
