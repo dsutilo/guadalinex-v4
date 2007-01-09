@@ -100,6 +100,8 @@ class DiskPreview(gtk.VBox):
         
     #Public methods
     def mount_filesystems(self):
+        if len(self.mounted_list) == 0:
+            return
         self.__mount_filesystems()
         selection = self.disk_preview_treeview.get_selection()
         selection.select_path(0)
@@ -305,6 +307,7 @@ class DiskPreview(gtk.VBox):
             return None
         if os.system("mkdir -p %s" % mount_path) == 0:
             if os.system("mount -t %s %s %s" % (fstype, dev_path, mount_path)) == 0:
+                print "mount -t %s %s %s" % (fstype, dev_path, mount_path)
                 infd ,outfd ,errfd = os.popen3("df -h | grep %s" % mount_path)
                 line = outfd.readline().strip("\n").split()
                 if len(line) > 0 :
