@@ -1,3 +1,9 @@
+guadalinex-first-message (0.6) unstable; urgency=low
+
+  * updated minimal requirements 
+
+ -- Carlos Parra Camargo <cparra@emergya.es>  Wed, 10 Jan 2007 18:21:33 +0100
+
 guadalinex-first-message (0.5) unstable; urgency=low
 
   * Changed XB-Installer-Menu-Item value 9 -> 11
