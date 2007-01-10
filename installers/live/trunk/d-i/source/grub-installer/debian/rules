@@ -25,6 +25,7 @@ install: build
 	dh_testdir
 	dh_testroot
 	dh_clean -k
+	dh_install splash.xpm.gz usr/share/grub-installer
 
 binary-arch: build install
 	dh_testdir

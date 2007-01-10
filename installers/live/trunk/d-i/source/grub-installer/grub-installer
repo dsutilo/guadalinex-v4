@@ -477,14 +477,11 @@ if [ "$need_update_grub" ]; then
 	update_grub # again, to add new options to all the Debian kernel entries
 fi
 
-if [ -s /tmp/os-probed ]; then
-	# Other operating systems are installed, so show the menu by default
-	# and raise the timeout.
-	sed 's/^hiddenmenu[[:space:]]*$/#hiddenmenu/;
-	     s/^\(timeout[[:space:]][[:space:]]*\).*/\110/' \
-		< $ROOT/boot/grub/menu.lst > $ROOT/boot/grub/menu.lst.new
-	mv $ROOT/boot/grub/menu.lst.new $ROOT/boot/grub/menu.lst
-fi
+# show the pretty image  
+sed 's/^hiddenmenu[[:space:]]*$/#hiddenmenu/;
+     s/^\(timeout[[:space:]][[:space:]]*\).*/\110/' \
+	< $ROOT/boot/grub/menu.lst > $ROOT/boot/grub/menu.lst.new
+mv $ROOT/boot/grub/menu.lst.new $ROOT/boot/grub/menu.lst
 
 # Generation menu.lst addition for other OSes.
 tmpfile=/tmp/menu.lst.extras

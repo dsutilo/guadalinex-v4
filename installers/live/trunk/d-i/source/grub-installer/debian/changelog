@@ -1,3 +1,9 @@
+grub-installer (1.17ubuntu1guada1) edgy; urgency=low
+
+  * Added splash image to get a more spice guadalinex flavour 
+
+ -- Carlos Parra Camargo <cparra@emergya.es>  Tue,  9 Jan 2007 13:29:00 +0100
+
 grub-installer (1.17ubuntu1) edgy; urgency=low
 
   * Resynchronise with Debian.
