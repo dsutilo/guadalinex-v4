@@ -100,8 +100,8 @@ class DiskPreview(gtk.VBox):
         
     #Public methods
     def mount_filesystems(self):
-        if len(self.mounted_list) == 0:
-            return
+        #if len(self.mounted_list) == 0:
+        #    return
         self.__mount_filesystems()
         selection = self.disk_preview_treeview.get_selection()
         selection.select_path(0)
