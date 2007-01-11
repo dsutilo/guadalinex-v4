@@ -1412,9 +1412,6 @@ class Wizard:
 
         changed_page = False
 
-	if step == self.steps_obj.get_steps_list()[1]:
-	    self.back.hide()
-
         if step == "stepPartAuto":
             if self.diskpreview != None:
                 self.diskpreview.umount_filesystems()
@@ -1453,6 +1450,10 @@ class Wizard:
 
         if not changed_page:
             self.steps.prev_page()
+
+        step = self.step_name(self.steps.get_current_page())
+	if step == self.steps_obj.get_steps_list()[1]:
+	    self.back.hide()
 
         if self.dbfilter is not None:
             self.dbfilter.cancel_handler()
@@ -1911,22 +1912,28 @@ class Wizard:
             return unicode(model.get_value(iterator, 0))
 
     def set_summary_text (self, text):
-        for child in self.ready_text.get_children():
-            self.ready_text.remove(child)
-
-        ready_buffer = gtk.TextBuffer()
-        ready_buffer.set_text(text)
-        self.ready_text.set_buffer(ready_buffer)
-        device_index = text.find("DEVICE")
-        if device_index != -1:
-            device_start_iter = ready_buffer.get_iter_at_offset(device_index)
-            device_end_iter = ready_buffer.get_iter_at_offset(device_index + 6)
-            ready_buffer.delete(device_start_iter, device_end_iter)
-            device_anchor = ready_buffer.create_child_anchor(device_start_iter)
+	pre_grub=True
+	pre_grub_text = ""
+	post_grub_text = ""
+	for line in text.split("\n"):
+		if line.find(":") != -1:
+			line = line.replace(":",":</b>")
+			line = "<b>"+line
+        	if line.find("DEVICE") != -1:
+			pre_grub=False
+			grub_text = line.replace("DEVICE","")
+			grub_text = "<b>"+grub_text+"</b>"
+		elif pre_grub:
+			pre_grub_text += line+"\n"
+		else:
+			post_grub_text += line+"\n"
+	self.pre_grub_label.set_label(pre_grub_text)
+	self.post_grub_label.set_label(post_grub_text)
+	self.grub_label.set_label(grub_text)
+        if self.summary_device_button == None:
             self.summary_device_button = gtk.combo_box_new_text()
             self.summary_device_button.show()
-            self.ready_text.add_child_at_anchor(self.summary_device_button,
-                                                device_anchor)
+            self.grub_hbox.add(self.summary_device_button)
 
     def set_summary_device (self, device, devices):
         # i.e. set_summary_text has been called
@@ -1935,6 +1942,9 @@ class Wizard:
                           "summary_device_button missing (broken "
                           "ubiquity/summary/grub translation?)")
             return
+
+	while self.summary_device_button.get_active_text() != None:
+		self.summary_device_button.remove_text(0)
 
 	active=0
 	counter=0
