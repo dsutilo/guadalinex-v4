@@ -104,6 +104,7 @@ gstreamer0.10-alsa
 gstreamer0.10-esd
 gstreamer0.10-ffmpeg
 gstreamer0.10-fluendo-mp3
+gstreamer0.10-plugins-bad
 gstreamer0.10-plugins-base-apps
 gstreamer0.10-plugins-ugly
 gthumb
