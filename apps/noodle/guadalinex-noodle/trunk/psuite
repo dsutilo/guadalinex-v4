@@ -14,8 +14,8 @@ then
 	fi
 	if [ $SUBSYSTEM == "bluetooth" ]
         then
-        	/usr/bin/dund --listen --msdun call du
-			/usr/bin/sdptool add SP
+        	/usr/bin/dund --listen --msdun call dun
+		/usr/bin/sdptool add SP
         fi
 	
 elif [ "$ACTION" == "remove" ]
