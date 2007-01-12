@@ -1933,7 +1933,7 @@ class Wizard:
         if self.summary_device_button == None:
             self.summary_device_button = gtk.combo_box_new_text()
             self.summary_device_button.show()
-            self.grub_hbox.add(self.summary_device_button)
+            self.grub_hbox.pack_start(self.summary_device_button,False,False)
 
     def set_summary_device (self, device, devices):
         # i.e. set_summary_text has been called

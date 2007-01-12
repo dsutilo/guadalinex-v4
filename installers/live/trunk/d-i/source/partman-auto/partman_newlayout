@@ -57,9 +57,6 @@ ask_for_disk() {
 	    db_metaget partman-auto/text/use_biggest_free description
 	    printf "biggest_free: %s\t%s\n" "$mypart" "$RET"
 	fi
-	# add custom to menu selection
-	db_metaget partman-auto/text/custom_partitioning description
-	printf "custom\t%s\n" "$RET"
     )
     code=0
     targetdevice=""
