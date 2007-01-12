@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SearchingConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Autostart>false</Autostart>
+  <ShowSearchWindowBinding Ctrl="false" Alt="false">
+    <Key>F12</Key>
+  </ShowSearchWindowBinding>
+  <MaxDisplayed>5</MaxDisplayed>
+  <BeaglePosX>0</BeaglePosX>
+  <BeaglePosY>0</BeaglePosY>
+  <BeagleSearchWidth>0</BeagleSearchWidth>
+  <BeagleSearchHeight>0</BeagleSearchHeight>
+  <SearchHistory />
+</SearchingConfig>
