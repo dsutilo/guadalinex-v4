@@ -9,6 +9,7 @@ ed
 fdutils
 file
 ftp
+gsm-utils
 hdparm
 info
 inputattach
@@ -19,11 +20,15 @@ logrotate
 lshw
 lsof
 ltrace
+mc
 man-db
 manpages
 memtest86+
 mime-support
+minicom
 nano
+ncftp
+nmap
 parted
 popularity-contest
 ppp
@@ -33,8 +38,10 @@ psmisc
 reiserfsprogs
 rsync
 strace
+sqlite
 tcpdump
 telnet
 time
+vim-full
 w3m
 wget
