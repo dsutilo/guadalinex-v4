@@ -15,7 +15,9 @@ sys.path.insert(0, '/usr/share/gsd')
 import gsdutils
 
 DISTCODENAME = 'flamenco'
-MASTERDIR = './master' 
+DIR = os.path.abspath('./')
+MASTERDIR = DIR + '/master' 
+
 
 DFOLDER = MASTERDIR + '/guadalinex-suplementos-apps/desktop' 
 APPMENU = 'applications.menu'
@@ -59,21 +61,26 @@ def generate_pool():
 
     PACKAGESDIR = MASTERDIR + '/dists/' + DISTCODENAME + '/main/binary-i386'
     os.system('mkdir -p ' + PACKAGESDIR)
+    os.system('rm -rf ' + MASTERDIR + '/pool')
     os.system('mkdir ' + MASTERDIR + '/pool')
     os.system('cp -a ./debs/* ' + MASTERDIR + '/pool')
     
     os.chdir(MASTERDIR)
     os.system('rm ' + PACKAGESDIR + '/Packages.gz')
-    os.system('dpkg-scanpackages ./pool /dev/null > ../' + PACKAGESDIR + '/Packages')
+    os.system('dpkg-scanpackages ./pool /dev/null > ' + PACKAGESDIR + '/Packages')
     os.chdir('..')
     os.system('yes | gzip '+ PACKAGESDIR + '/Packages')
 
 
 def check_pool():
+    # Prepare system
     os.system('cp -a /usr/share/sdg /tmp/')
     gsdutils.APTCONFPATH = '/usr/share/sdg/apt.conf'
-    sc = gsdutils.SupplementCustomizer('./', use_xwindow = False)
+    gsdutils.SOURCESFILE = '/tmp/sdg/sources.list'
+    sc = gsdutils.SupplementCustomizer(MASTERDIR, as_user = True)
     sc.customize()
+
+    # Simulate supplement installation
 
 
 def main():

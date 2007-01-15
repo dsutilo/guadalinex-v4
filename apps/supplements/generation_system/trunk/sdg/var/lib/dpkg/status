@@ -12483,6 +12483,34 @@ Description: utility to control ATI Radeon backlight functions on laptops
  WARNING: Radeontool code has not been completely audited and may contain bugs
  that could damage your hardware. Use at your own risk.
 
+Package: python-syck
+Status: install ok installed
+Priority: optional
+Section: python
+Installed-Size: 260
+Maintainer: Ubuntu MOTU Developers <ubuntu-motu@lists.ubuntu.com>
+Architecture: i386
+Source: syck
+Version: 0.55-3.3build1
+Replaces: python2.3-syck, python2.4-syck
+Provides: python2.5-syck, python2.4-syck
+Depends: libc6 (>= 2.4-1), python-central (>= 0.5), python (<< 2.6), python (>= 2.4)
+Conflicts: python2.3-syck, python2.4-syck
+Description: YAML parser kit -- python bindings (default package)
+ Syck is a simple YAML parser kit.
+ .
+ YAML(tm) (rhymes with 'camel') is a straightforward machine parsable
+ data serialization format designed for human readability and
+ interaction with scripting languages such as Perl and Python. YAML is
+ optimized for data serialization, formatted dumping, configuration
+ files, log files, Internet messaging and filtering. This specification
+ describes the YAML information model and serialization format. Together
+ with the Unicode standard for characters, it provides all the
+ information necessary to understand YAML Version 1.0 and construct
+ computer programs to process it.
+Original-Maintainer: Robert Jordens <jordens@debian.org>
+Python-Version: 2.4, 2.5
+
 Package: xfonts-100dpi
 Status: install ok installed
 Priority: optional
