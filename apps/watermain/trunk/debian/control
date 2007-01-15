@@ -2,7 +2,7 @@ Source: watermain
 Section: admin
 Priority: optional
 Maintainer: Junta de Andalucía <packmaster@guadalinex.org>
-Build-Depends: debhelper (>= 4.0.0), docbook-xsl
+Build-Depends: debhelper (>= 4.0.0), docbook-xsl, python-dev
 Standards-Version: 3.6.2.1
 
 Package: watermain
