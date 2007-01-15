@@ -145,6 +145,7 @@ libxp6
 linux-headers-generic
 linux-image-generic
 linux-restricted-modules-2.6.17-10-generic
+lsr
 localization-config
 make
 metacity
