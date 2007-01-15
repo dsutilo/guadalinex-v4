@@ -59,6 +59,7 @@ install: build
 	#$(MAKE) install DESTDIR=$(CURDIR)/debian/suppletorydiskgenerator
 	dh_install sdg-skel /usr/share/sdg/
 	dh_install sdg_new sdg_build /usr/bin
+	dh_install apt.conf	/usr/share/sdg/
 	dh_install doc /usr/share/doc/sdg
 
 
