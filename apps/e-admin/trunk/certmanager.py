@@ -67,13 +67,15 @@ class FireFoxSecurityUtils(object):
         return status == 0
 
     def create_default_profile(self):
-        cmd = '%s -CreateProfile "default"'
+        cmd = '%s -CreateProfile "default"' % FIREFOX_CMD
         status, output = commands.getstatusoutput(cmd)
         return status == 0
 
     def get_default_profile_dir(self):
         user_dir = os.path.expanduser('~')
         ff_dir = os.path.join(user_dir, '.mozilla', 'firefox')
+	if not os.path.exists(ff_dir):
+            return
         for name in os.listdir(ff_dir):
             full_name = os.path.join(ff_dir, name)
             if os.path.isdir(full_name) and name.endswith('.default'):
@@ -135,17 +137,59 @@ class FireFoxSecurityUtils(object):
         fd, password_file = tempfile.mkstemp(text=True)
         os.write(fd, password)
         os.close(fd)
-        cmd = '%s -i "%s" -d "%s" -w "%s"'
-        cmd = cmd % (PK12UTIL_CMD, certificate_file, profile, password_file)
-        status, output = commands.getstatusoutput(cmd)
-        os.unlink(password_file)
-        return status == 0
+
+	cmd = "%s -i %s -d %s -w %s -K" % (PK12UTIL_CMD, certificate_file,
+                                           profile, password_file)
+	status, output = commands.getstatusoutput(cmd)
+	return status == 0
 
 DNIE_ROOT_CERT_NAME = "AC RAIZ DNIE - DIRECCION GENERAL DE LA POLICIA"
 DNIE_ROOT_CERT_FILE = "/usr/share/opensc-dnie/ac_raiz_dnie.crt"
 FNMT_ROOT_CERT_NAME = "FNMT"
 FNMT_ROOT_CERT_FILE = "/usr/share/ca-certificates/fnmt/FNMTClase2CA.crt"
+FNMT_LICENSE        = "/usr/share/ca-certificates/fnmt/condiciones_uso.txt"
 DNIE_PKCS11_LIB     = "/usr/lib/opensc-pkcs11.so"
+
+class LicenseDialog(gtk.Dialog):
+    def __init__(self):
+        gtk.Dialog.__init__(self,
+                            "Aceptación de Licencia de Usuario Final",
+                            None, gtk.DIALOG_NO_SEPARATOR | gtk.DIALOG_MODAL,
+                            (gtk.STOCK_NO, gtk.RESPONSE_REJECT,
+                            gtk.STOCK_YES, gtk.RESPONSE_ACCEPT))
+
+        self.set_position(gtk.WIN_POS_CENTER)
+	self.set_default_size(500,400)
+        self.set_border_width(12)
+	self.vbox.set_spacing(6)
+
+	title = gtk.Label('<b>Es necesario instalar el certificado raiz de la FNMT</b>')
+	title.set_use_markup(True)
+	title.set_property('xalign', 0.0)
+	self.vbox.pack_start(title, False, False)
+
+	license_box = gtk.TextView()
+	license_box.set_left_margin(6)
+	license_box.set_right_margin(6)
+	license_box.set_editable(False)
+	license_box.set_cursor_visible(False)
+	license_box.set_wrap_mode(gtk.WRAP_WORD)
+	license = file(FNMT_LICENSE).read()
+	license_box.get_buffer().set_text(license)
+
+	sw = gtk.ScrolledWindow()
+	sw.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+	sw.set_shadow_type(gtk.SHADOW_IN)
+	sw.add(license_box)
+
+	self.vbox.pack_start(sw, True, True)
+
+	question = gtk.Label('<b>¿Acepta los términos de esta licencia?</b>')
+	question.set_use_markup(True)
+	question.set_property('xalign', 0.0)
+	self.vbox.pack_start(question, False, False)
+
+	self.vbox.show_all()
 
 class Application(object):
     """Base abstract class Application that can use a certificate"""
@@ -154,7 +198,11 @@ class Application(object):
         self._name = name
 
     def setup(self, user_certificates=[], install_dnie=False):
-        """This method should be overriden in subclasses"""
+        """This method should be overriden in subclasses
+
+        It returns the success state of the process
+        """
+        return True
 
     def _wait_for_running_instances(self):
         dialog = gtk.MessageDialog(None, 0, gtk.MESSAGE_INFO,
@@ -190,6 +238,12 @@ class Application(object):
     def _is_app_running(self):
         """Subclasses should override this True/False method"""
 
+    def _ask_permission(self):
+	dialog = LicenseDialog()
+	result = dialog.run()
+	dialog.destroy()
+	return result == gtk.RESPONSE_ACCEPT
+
 class FireFoxApp(Application):
 
     def __init__(self, name='FireFox'):
@@ -214,27 +268,33 @@ class FireFoxApp(Application):
             if self._is_app_running():
                 abort = not self._wait_for_running_instances()
                 if abort:
-                    return
+                    return False
 
             if not has_fnmt_cert and user_certificates:
-                self._ff.add_root_ca_certificate(FNMT_ROOT_CERT_NAME,
-                                                 FNMT_ROOT_CERT_FILE)
+                if True == self._ask_permission():
+                    self._ff.add_root_ca_certificate(FNMT_ROOT_CERT_NAME,
+                                                     FNMT_ROOT_CERT_FILE)
+                else:
+                    return False
 
             if not has_dnie_cert and install_dnie:
                 self._ff.add_root_ca_certificate(DNIE_ROOT_CERT_NAME,
                                                  DNIE_ROOT_CERT_FILE)
 
-        if self._ff.is_firefox_running():
+        if self._is_app_running():
             abort = not self._wait_for_running_instances()
             if abort:
-                return
+                return False
 
         if install_dnie and not self._ff.has_security_method('DNIe'):
             self._ff.add_security_method('DNIe', DNIE_PKCS11_LIB)
 
         # install the user certificates
+        success = True
         for cert in user_certificates:
-            self._install_certificate(cert)
+            success = success and self._install_certificate(cert)
+
+        return success
 
     def _install_certificate(self, certificate):
         attempts = 0
@@ -247,7 +307,7 @@ class FireFoxApp(Application):
                 attempts += 1
                 print_warning = True
             else:
-                return # User cancel
+                return False # User cancel
 
         if not valid:
             msg = 'No fue posible agregar el certificado %s porque la contraseña no es válida' % certificate
@@ -257,6 +317,8 @@ class FireFoxApp(Application):
             dialog.set_position(gtk.WIN_POS_CENTER)
             dialog.run()
             dialog.destroy()
+
+        return valid
 
     def _ask_for_password(self, certificate, warn_user=False):
         dialog = gtk.MessageDialog(None, 0, gtk.MESSAGE_INFO,
@@ -300,7 +362,7 @@ class EvolutionApp(Application):
         if self._is_app_running():
             abort = not self._wait_for_running_instances()
             if abort:
-                return
+                return False
 
         if self._ff.get_default_profile_dir() is None:
             self._ff.create_default_profile()
@@ -316,16 +378,23 @@ class EvolutionApp(Application):
 
         self._create_links(ff_profile_dir)
 
+        return True
+
     def _backup_evo_database(self):
         for filename in ('cert8.db', 'key3.db', 'secmod.db'):
             src = os.path.join(self._evo_dir, filename)
-            dst = src + '.org'
-            os.rename(src, dst)
+            if os.path.exists(src):
+                dst = src + '.org'
+                os.rename(src, dst)
 
     def _create_links(self, ff_profile_dir):
         for filename in ('cert8.db', 'key3.db', 'secmod.db'):
             src = os.path.join(ff_profile_dir, filename)
             dst = os.path.join(self._evo_dir, filename)
+            try:
+                os.unlink(dst)
+            except OSError:
+                pass
             os.symlink(src, dst)
 
 class CertManager(object):
@@ -348,9 +417,10 @@ class CertManager(object):
                 certs = self.select_certificates(cert_list,
                                                  options.search_path)
 
+	success = True
         if options.install_dnie or certs:
             for app in self._applications:
-                app.setup(certs, options.install_dnie)
+                success = success and app.setup(certs, options.install_dnie)
 
             # Finish message
             if options.install_dnie and certs:
@@ -359,9 +429,13 @@ class CertManager(object):
                 what = 'el DNIe'
             else:
                 what = 'los certificados de usuario'
-            msg = 'La instalacion de %s ha finalizado correctamente' % what
-            dialog = gtk.MessageDialog(None, 0, gtk.MESSAGE_INFO,
-                                       gtk.BUTTONS_OK, msg)
+            if success:
+                msg = 'La instalacion de %s ha finalizado correctamente' % what
+                icon = gtk.MESSAGE_INFO
+            else:
+                msg = 'Ocurrió un error durante la instalación de %s y no se ha completado correctamente' % what
+                icon = gtk.MESSAGE_ERROR
+            dialog = gtk.MessageDialog(None, 0, icon, gtk.BUTTONS_OK, msg)
             dialog.set_position(gtk.WIN_POS_CENTER)
             dialog.run()
             dialog.destroy()
