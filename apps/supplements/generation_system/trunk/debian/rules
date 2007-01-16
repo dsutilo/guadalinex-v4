@@ -56,10 +56,10 @@ install: build
 
 	# Add here commands to install the package into debian/suppletorydiskgenerator.
 	#$(MAKE) install DESTDIR=$(CURDIR)/debian/suppletorydiskgenerator
-	dh_install sdg-skel /usr/share/sdg/
-	dh_install sdg_new sdg_build /usr/bin
-	dh_install apt.conf	/usr/share/sdg/
-	dh_install doc /usr/share/doc/sdg
+	dh_install gsg/* /usr/share/guadalinex-supplement-generator
+	dh_install gs_new gs_build /usr/bin
+	dh_install gsg/apt.conf	/usr/share/guadalinex-supplement-generator
+	dh_install doc /usr/share/doc/guadalinex-supplement-generator
 
 
 

@@ -1,6 +1,0 @@
-#!/bin/bash
-
-SDGPATH="/usr/share/sdg/skel"
-
-cp -a $SDGPATH/* .
-

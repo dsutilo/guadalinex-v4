@@ -14,9 +14,9 @@ import shutil
 
 sys.path.insert(0, '/usr/share/gsd')
 import gsdutils
-SDGTEMP = '/tmp/sdg/'
-gsdutils.APTCONFPATH = '/usr/share/sdg/apt.conf'
-gsdutils.SOURCESFILE = SDGTEMP + 'sources.list'
+GSGTEMP = '/tmp/guadalinex-supplement-generator/'
+gsdutils.APTCONFPATH = '/usr/share/guadalinex-supplement-generator/apt.conf'
+gsdutils.SOURCESFILE = GSGTEMP + 'sources.list'
 os.environ['APT_CONFIG'] = gsdutils.APTCONFPATH
 
 DISTCODENAME = 'toro'
@@ -73,7 +73,7 @@ def generate_pool():
 
 
 def add_extra_packages():
-    archives_dir = SDGTEMP + 'var/cache/apt/archives/'
+    archives_dir = GSGTEMP + 'var/cache/apt/archives/'
     archives_in_debs = os.listdir('./debs/')
     archives_in_debs = [ele for ele in archives_in_debs\
                if ele.endswith('.deb')]
@@ -97,7 +97,7 @@ def add_extra_packages():
 
 def check_pool(config):
     # Prepare system
-    os.system('cp -a /usr/share/sdg /tmp/')
+    os.system('cp -a /usr/share/guadalinex-supplement-generator /tmp/')
     sc = gsdutils.SupplementCustomizer(MASTERDIR, as_user = True)
     sc.customize()
 
@@ -126,7 +126,6 @@ def main():
 
     #Default URI objfile.write ('#define URI     \n') 
     objfile.write ('#define DISKNAME ' + config['NAME'] + '\n') 
-    objfile.write('#define URI\n')
     for ele in config.get_uris():
         objfile.write('#define URI ' + ele + '\n')
 
@@ -190,7 +189,7 @@ def main():
     print "mkisofs command:", cmd
     os.system(cmd)
 
-    os.system('rm -rf /tmp/sdg')
+    os.system('rm -rf ' +  GSGTEMP)
 
 if __name__ == "__main__":
     main()

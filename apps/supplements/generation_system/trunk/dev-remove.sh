@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Remove for develpers (if use links)
-[ -L  /usr/bin/sdg_new ] && rm /usr/bin/sdg_new
-[ -L  /usr/bin/sdg_build ] && rm /usr/bin/sdg_build
-[ -L  /usr/share/doc/sdg ] && rm /usr/share/doc/sdg
-rm /usr/share/sdg
+[ -L  /usr/bin/gs_new ] && rm /usr/bin/gs_new
+[ -L  /usr/bin/gs_build ] && rm /usr/bin/gs_build
+[ -L  /usr/share/doc/guadalinex-supplement-generator ] && rm /usr/share/doc/guadalinex-supplement-generator
+rm /usr/share/guadalinex-supplement-generator
