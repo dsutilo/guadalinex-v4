@@ -10,14 +10,18 @@ import sys
 import os.path
 import shutil
 import xdg.Menu
+import shutil
 
 sys.path.insert(0, '/usr/share/gsd')
 import gsdutils
+SDGTEMP = '/tmp/sdg/'
+gsdutils.APTCONFPATH = '/usr/share/sdg/apt.conf'
+gsdutils.SOURCESFILE = SDGTEMP + 'sources.list'
+os.environ['APT_CONFIG'] = gsdutils.APTCONFPATH
 
-DISTCODENAME = 'flamenco'
+DISTCODENAME = 'toro'
 DIR = os.path.abspath('./')
 MASTERDIR = DIR + '/master' 
-
 
 DFOLDER = MASTERDIR + '/guadalinex-suplementos-apps/desktop' 
 APPMENU = 'applications.menu'
@@ -55,10 +59,6 @@ class ConfigParser(dict):
 
 
 def generate_pool():
-    ############################################################################
-    # Step 1:  Generate debian repository (dists and pool directories)
-    ############################################################################
-
     PACKAGESDIR = MASTERDIR + '/dists/' + DISTCODENAME + '/main/binary-i386'
     os.system('mkdir -p ' + PACKAGESDIR)
     os.system('rm -rf ' + MASTERDIR + '/pool')
@@ -72,35 +72,71 @@ def generate_pool():
     os.system('yes | gzip '+ PACKAGESDIR + '/Packages')
 
 
-def check_pool():
+def add_extra_packages():
+    archives_dir = SDGTEMP + 'var/cache/apt/archives/'
+    archives_in_debs = os.listdir('./debs/')
+    archives_in_debs = [ele for ele in archives_in_debs\
+               if ele.endswith('.deb')]
+
+    archives = os.listdir(archives_dir)
+    new_debs = [ele for ele in archives \
+            if (ele.endswith('.deb')) and \
+                ele not in archives_in_debs]
+    if new_debs:
+        print "####################################"
+        print "WARNING !!!"
+        print "####################################"
+        print "You need to add these extra packages to pool:"
+        for pkg_name in new_debs:
+            print "\t* " + pkg_name
+        res = raw_input("Can I proceed (Y/n)?")
+        if (not res) or (res.lower().strip() == 'y'):
+            for pkg_name in new_debs:
+                shutil.move(archives_dir + '/' + pkg_name, './debs')
+
+
+def check_pool(config):
     # Prepare system
     os.system('cp -a /usr/share/sdg /tmp/')
-    gsdutils.APTCONFPATH = '/usr/share/sdg/apt.conf'
-    gsdutils.SOURCESFILE = '/tmp/sdg/sources.list'
     sc = gsdutils.SupplementCustomizer(MASTERDIR, as_user = True)
     sc.customize()
 
     # Simulate supplement installation
+    print "\n\n#########################################"
+    print "Simulation of metapackage installation..."
+    print "#########################################"
+    res = os.system('apt-get -d install ' + config['METAPACKAGE'])
+    if res != 0:
+        print "###########################################"
+        print "ERROR"
+        print "###########################################"
+        print "It's impossible to install " + config['METAPACKAGE']
+        sys.exit(1)
 
+
+    # Copy extra packages to pool
+    add_extra_packages()
+    generate_pool()
+    
 
 def main():
-    generate_pool()
-
-    check_pool()
-    
-    ############################################################################
-    # Step 2: Generate README.diskdefines and icon
-    ############################################################################
-
     config = ConfigParser()
+    # Generate README.diskdefines ###########################
     objfile = open(MASTERDIR + '/README.diskdefines', 'w') 
+
     #Default URI objfile.write ('#define URI     \n') 
     objfile.write ('#define DISKNAME ' + config['NAME'] + '\n') 
+    objfile.write('#define URI\n')
     for ele in config.get_uris():
         objfile.write('#define URI ' + ele + '\n')
 
     objfile.close()
 
+    # Generate nice tool.
+    generate_pool()
+    check_pool(config)
+    
+    # Icon 
     if os.path.isfile('./icon.png'):
         shutil.copy('./icon.png', MASTERDIR + '/.icon.png')
         shutil.copy('./icon.png', 
@@ -153,6 +189,8 @@ def main():
     cmd += "GSD-" + config['SHORTNAME'] + ' ' + MASTERDIR
     print "mkisofs command:", cmd
     os.system(cmd)
+
+    os.system('rm -rf /tmp/sdg')
 
 if __name__ == "__main__":
     main()

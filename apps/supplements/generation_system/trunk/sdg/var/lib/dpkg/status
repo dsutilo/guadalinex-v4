@@ -3755,20 +3755,6 @@ Description: X client - viewres
  This module can be found as the module 'app/viewres' at
  :pserver:anoncvs@cvs.freedesktop.org:/cvs/xorg
 
-Package: hermeshardware
-Status: install ok installed
-Priority: optional
-Section: utils
-Installed-Size: 836
-Maintainer: Gumersindo Coronel Pérez <gcoronel@emergya.es>
-Architecture: i386
-Version: 0.3-1
-Depends: hal, dbus, python2.4-dbus, python, python2.4, notification-daemon, libsane, grepmap
-Description: detección y soporte de dispositivos
- el sistema de detección de hardware engloba tanto las tareas de detección
- y soporte de dispositivos, como aquellas que tienen que ver con la
- configuración de los mismos y la interacción con el usuario.
-
 Package: libopenexr2c2a
 Status: install ok installed
 Priority: optional
@@ -11624,7 +11610,7 @@ Maintainer: Junta de Andalucía <packmaster@guadalinex.org>
 Architecture: i386
 Version: 0.2
 Replaces: guadalinex-suppletory-system
-Depends: python2.4, gnome-app-install, hermeshardware
+Depends: python2.4, gnome-app-install
 Description: Herramienta para la instalación de supplementos para Guadalinex
     El sistema de suplementos de Guadalinex es una herramienta que permite la detección e instalación de suplementos contenidos en diversos soportes, como Cd-roms o DVD.
 
@@ -12484,32 +12470,9 @@ Description: utility to control ATI Radeon backlight functions on laptops
  that could damage your hardware. Use at your own risk.
 
 Package: python-syck
-Status: install ok installed
+Status: purge ok not-installed
 Priority: optional
 Section: python
-Installed-Size: 260
-Maintainer: Ubuntu MOTU Developers <ubuntu-motu@lists.ubuntu.com>
-Architecture: i386
-Source: syck
-Version: 0.55-3.3build1
-Replaces: python2.3-syck, python2.4-syck
-Provides: python2.5-syck, python2.4-syck
-Depends: libc6 (>= 2.4-1), python-central (>= 0.5), python (<< 2.6), python (>= 2.4)
-Conflicts: python2.3-syck, python2.4-syck
-Description: YAML parser kit -- python bindings (default package)
- Syck is a simple YAML parser kit.
- .
- YAML(tm) (rhymes with 'camel') is a straightforward machine parsable
- data serialization format designed for human readability and
- interaction with scripting languages such as Perl and Python. YAML is
- optimized for data serialization, formatted dumping, configuration
- files, log files, Internet messaging and filtering. This specification
- describes the YAML information model and serialization format. Together
- with the Unicode standard for characters, it provides all the
- information necessary to understand YAML Version 1.0 and construct
- computer programs to process it.
-Original-Maintainer: Robert Jordens <jordens@debian.org>
-Python-Version: 2.4, 2.5
 
 Package: xfonts-100dpi
 Status: install ok installed
@@ -21100,7 +21063,7 @@ Installed-Size: 48
 Maintainer: Carlos Parra Camargo <cparra@emergya.info>
 Architecture: i386
 Version: r762
-Depends: acpi, acpi-support, acpid, acroread, accesibility-profiles, alacarte, amsn, amule, anacron, apmd, apport-gtk, aspell-es, avahi-daemon, avidemux, bc, beagle, binutils, bluez-cups, bluez-pin, bluez-utils, brasero, brltty, brltty-x11, bug-buddy, byzanz, camorama, cdparanoia, cdrecord, contact-lookup-applet, cupsys, cupsys-bsd, cupsys-client, cupsys-driver-gutenprint, dc, deskbar-applet, desktop-file-utils, doc-base, dvd+rw-tools, ekiga, eog, esound, evince, evolution, evolution-exchange, evolution-plugins, evolution-webcal, f-spot, festvox-ellpc11k, file-roller, firefox, firefox-gnome-support, mozilla-firefox-locale-es-es, foo2zjs, foomatic-db, foomatic-db-engine, foomatic-db-hpijs, foomatic-filters, fortune-mod, gaim, gcalctool, gcc, gconf-editor, gdebi, gdm, gedit, gimp, gimp-print, gimp-python, gnochm, gnome-about, gnome-accessibility-themes, gnome-app-install, gnome-applets, gnome-btdownload, gnome-control-center, gnome-cups-manager, gnome-icon-theme, gnome-keyring-manager, gnome-mag, gnome-media, gnome-menus, gnome-netstatus-applet, gnome-nettool, gnome-orca, gnome-panel, gnome-pilot-conduits, gnome-power-manager, gnome-session, gnome-spell, gnome-screensaver, gnome-sudoku, gnome-system-monitor, gnome-system-tools, gnome-terminal, gnome-themes, gnome-utils, gnome-volume-manager, gnome2-user-guide, gpaint, gs-esp, gstreamer0.10-alsa, gstreamer0.10-esd, gstreamer0.10-ffmpeg, gstreamer0.10-fluendo-mp3, gstreamer0.10-plugins-base-apps, gthumb, gtk2-engines, guadalinex-eadmin, guadalinex-example-content, guadalinex-noodle, guadalinex-supplement-installer, gucharmap, gxine, hal, hal-device-manager, hermeshardware, hotkey-setup, hplip, hwdb-client-gnome, i2e, inkscape, sun-java5-jre, landscape-client, language-selector, language-support-es, language-pack-es, language-pack-gnome-es, lemurae, libdvdcss2, libdvdread3, liferea, lftp, libgl1-mesa-glx, libgnome2-perl, libgnomevfs2-bin, libgnomevfs2-extra, libpam-foreground, libpt-plugins-v4l, libpt-plugins-v4l2, libsasl2-modules, libstdc++5, libxp6, linux-headers-generic, linux-image-generic, linux-restricted-modules-2.6.17-10-generic, localization-config, make, metacity, min12xxw, mkisofs, mtr-tiny, nautilus, nautilus-cd-burner, nautilus-sendto, ndisgtk, ndiswrapper-utils-1.8, network-manager-gnome, notification-daemon, onboard, openoffice.org, openoffice.org-evolution, openoffice.org-gnome, openoffice.org-l10n-es, pnm2ppa, powernowd, powermanagement-interface, readahead, rhythmbox, rss-glx, samba, screen, screensaver-default-images, scrollkeeper, serpentine, slocate, smbclient, sound-juicer, ssh, ssh-askpass-gnome, synaptic, tangerine-icon-theme, tango-icon-theme, tango-icon-theme-common, tomboy, totem, totem-mozilla, tsclient, ttf-bitstream-vera, ttf-dejavu, ttf-freefont, tvtime, ubuntu-sounds, unzip, update-notifier, usplash, vino, wvdial, x-ttcidfont-conf, xcursor-themes, xkeyboard-config, xorg, xsane, xscreensaver-data, xscreensaver-gl, xterm, xvncviewer, yelp, zenity, zip
+Depends: acpi, acpi-support, acpid, acroread, accesibility-profiles, alacarte, amsn, amule, anacron, apmd, apport-gtk, aspell-es, avahi-daemon, avidemux, bc, beagle, binutils, bluez-cups, bluez-pin, bluez-utils, brasero, brltty, brltty-x11, bug-buddy, byzanz, camorama, cdparanoia, cdrecord, contact-lookup-applet, cupsys, cupsys-bsd, cupsys-client, cupsys-driver-gutenprint, dc, deskbar-applet, desktop-file-utils, doc-base, dvd+rw-tools, ekiga, eog, esound, evince, evolution, evolution-exchange, evolution-plugins, evolution-webcal, f-spot, festvox-ellpc11k, file-roller, firefox, firefox-gnome-support, mozilla-firefox-locale-es-es, foo2zjs, foomatic-db, foomatic-db-engine, foomatic-db-hpijs, foomatic-filters, fortune-mod, gaim, gcalctool, gcc, gconf-editor, gdebi, gdm, gedit, gimp, gimp-print, gimp-python, gnochm, gnome-about, gnome-accessibility-themes, gnome-app-install, gnome-applets, gnome-btdownload, gnome-control-center, gnome-cups-manager, gnome-icon-theme, gnome-keyring-manager, gnome-mag, gnome-media, gnome-menus, gnome-netstatus-applet, gnome-nettool, gnome-orca, gnome-panel, gnome-pilot-conduits, gnome-power-manager, gnome-session, gnome-spell, gnome-screensaver, gnome-sudoku, gnome-system-monitor, gnome-system-tools, gnome-terminal, gnome-themes, gnome-utils, gnome-volume-manager, gnome2-user-guide, gpaint, gs-esp, gstreamer0.10-alsa, gstreamer0.10-esd, gstreamer0.10-ffmpeg, gstreamer0.10-fluendo-mp3, gstreamer0.10-plugins-base-apps, gthumb, gtk2-engines, guadalinex-eadmin, guadalinex-example-content, guadalinex-noodle, guadalinex-supplement-installer, gucharmap, gxine, hal, hal-device-manager, hotkey-setup, hplip, hwdb-client-gnome, i2e, inkscape, sun-java5-jre, landscape-client, language-selector, language-support-es, language-pack-es, language-pack-gnome-es, lemurae, libdvdcss2, libdvdread3, liferea, lftp, libgl1-mesa-glx, libgnome2-perl, libgnomevfs2-bin, libgnomevfs2-extra, libpam-foreground, libpt-plugins-v4l, libpt-plugins-v4l2, libsasl2-modules, libstdc++5, libxp6, linux-headers-generic, linux-image-generic, linux-restricted-modules-2.6.17-10-generic, localization-config, make, metacity, min12xxw, mkisofs, mtr-tiny, nautilus, nautilus-cd-burner, nautilus-sendto, ndisgtk, ndiswrapper-utils-1.8, network-manager-gnome, notification-daemon, onboard, openoffice.org, openoffice.org-evolution, openoffice.org-gnome, openoffice.org-l10n-es, pnm2ppa, powernowd, powermanagement-interface, readahead, rhythmbox, rss-glx, samba, screen, screensaver-default-images, scrollkeeper, serpentine, slocate, smbclient, sound-juicer, ssh, ssh-askpass-gnome, synaptic, tangerine-icon-theme, tango-icon-theme, tango-icon-theme-common, tomboy, totem, totem-mozilla, tsclient, ttf-bitstream-vera, ttf-dejavu, ttf-freefont, tvtime, ubuntu-sounds, unzip, update-notifier, usplash, vino, wvdial, x-ttcidfont-conf, xcursor-themes, xkeyboard-config, xorg, xsane, xscreensaver-data, xscreensaver-gl, xterm, xvncviewer, yelp, zenity, zip
 Description: The Guadalinex desktop system
  This package depends on all of the packages in the Guadalinex desktop system
   .
