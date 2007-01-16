@@ -138,8 +138,8 @@ class FireFoxSecurityUtils(object):
         os.write(fd, password)
         os.close(fd)
 
-	cmd = "%s -i %s -d %s -w %s -K" % (PK12UTIL_CMD, certificate_file,
-                                           profile, password_file)
+	cmd = '%s -i "%s" -d "%s" -w "%s" -K'
+        cmd = cmd % (PK12UTIL_CMD, certificate_file, profile, password_file)
 	status, output = commands.getstatusoutput(cmd)
 	os.unlink(password_file)
 	return status == 0
