@@ -6,70 +6,71 @@ import logging
 
 APTCONFPATH='/usr/share/gsd/apt.conf'
 SOURCESFILE='/tmp/gsd/sources.list'
-DISTRONAME='flamenco'
+DISTRONAME='toro'
 
 class SupplementCustomizer(object):
 
-    def __init__(self, mountpoint):
+    def __init__(self, mountpoint, use_xwindow = True,
+            as_user = False):
         self.logger = logging.getLogger()
         self.mountpoint = mountpoint
+        self.use_xwindow = use_xwindow
+        self.as_user = as_user
 
 
     def customize(self):
         """
         This method install suppletory.
         """
-        print "<#> Customizing"
         self.__prepare_system() 
 
         #Update apt system
-        cmd = 'APT_CONFIG=' + APTCONFPATH 
-        cmd += ' sudo synaptic --hide-main-window' 
-        cmd += ' --update-at-startup --non-interactive'
+        cmd = 'APT_CONFIG=%s ' % APTCONFPATH  
+        if not self.as_user:
+            cmd += 'sudo synaptic --hide-main-window' 
+            cmd += ' --update-at-startup --non-interactive'
+        else:
+            cmd += 'apt-get update'
         os.system(cmd)
 
 
     def get_diskdefines(self ):
         filepath = self.mountpoint + \
                 '/README.diskdefines'
-
         try:
             fileobject = open(filepath)
         except Exception, e:
             self.logger.error(str(e))
             return {}
 
-        result = {}
+        result = []
         for line in fileobject.readlines():
             items = line.split(None, 2)
             try:
-                result[items[1]] = items[2]
+                result.append((items[1],items[2]))
             except IndexError, e:
-                result[items[1]] = ''
+                result.append((items[1], ''))
 
         return result
 
 
     def __create_sources_list(self):
-
         self.logger.debug('Creating sources.list')
         diskdefines = self.get_diskdefines()
         fileobj = open(SOURCESFILE, 'w')
 
         #Create entries for the supplement's URIs
-        keys = diskdefines.keys()
-        keys.sort()
-        for key in keys:
+        for key, value in diskdefines:
             if key.startswith('URI'):
-                self.__process_uri(diskdefines[key], fileobj)
+                self.__process_uri(value, fileobj)
         fileobj.close()
 
 
     def __process_uri(self, value, fileobj):
-        
         self.logger.debug('Processing uri: ' + value)
         if value.startswith('http://') or \
-                value.startswith('fto://'):
+                value.startswith('ftp://'):
+            print "<#> http: ", value
             fileobj.write('deb ' + str(value) + '\n')
 
         else:
@@ -84,7 +85,10 @@ class SupplementCustomizer(object):
 
         # Errno 768: Bad password
         while res == 768 and attemps < 3:
-            res = os.system('gksudo -m "Introduzca contraseña" /bin/true')
+            if not self.as_user:
+                res = os.system('gksudo -m "Introduzca contraseña" /bin/true')
+            else:
+                res = 1
             # Errno 512: User press cancel
             if res == 512:
                 self.logger.debug("User press cancel")
