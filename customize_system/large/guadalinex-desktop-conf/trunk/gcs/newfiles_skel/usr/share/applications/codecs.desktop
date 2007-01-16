@@ -9,4 +9,4 @@ MultipleArgs=false
 Name=Instalar los codecs privativos
 Comment=Instala los codecs privativos
 Type=Application
-Categories=Application;System
+Categories=GNOME;Application;System;Settings;

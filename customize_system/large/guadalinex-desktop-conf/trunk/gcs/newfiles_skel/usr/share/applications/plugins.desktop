@@ -9,4 +9,4 @@ MultipleArgs=false
 Name=Instalar el plugin de Macromedia Flash
 Comment=Instala el plugin de Macromedia Flash
 Type=Application
-Categories=Application;System
+Categories=GNOME;Application;System;Settings;
