@@ -141,6 +141,7 @@ class FireFoxSecurityUtils(object):
 	cmd = "%s -i %s -d %s -w %s -K" % (PK12UTIL_CMD, certificate_file,
                                            profile, password_file)
 	status, output = commands.getstatusoutput(cmd)
+	os.unlink(password_file)
 	return status == 0
 
 DNIE_ROOT_CERT_NAME = "AC RAIZ DNIE - DIRECCION GENERAL DE LA POLICIA"
