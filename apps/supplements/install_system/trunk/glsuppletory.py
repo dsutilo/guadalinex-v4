@@ -65,7 +65,12 @@ class GlSuppletory(object):
                         "Instalar herramientas para suplementos" : action_install_gai
                         }
 
-                diskname = diskdefines['DISKNAME']
+                diskname = ''
+                for key, value in diskdefines:
+                    if key == 'DISKNAME':
+                        diskname = value
+                        break;
+
                 message  = diskname
                 summary = "Guadalinex Suplementos"
                 iconpath = mountpoint + '/' + RELATIVEICONPATH
