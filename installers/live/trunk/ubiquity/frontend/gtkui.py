@@ -397,7 +397,7 @@ class Wizard:
     def atk_info_in_widget(self, widget, atk_desc):
         atk_obj = widget.get_accessible()
         atk_obj.set_description(atk_desc)
-        print "Desc : %s" % atk_desc
+        ## print "Desc : %s" % atk_desc
         
     
     def translate_widgets(self):
