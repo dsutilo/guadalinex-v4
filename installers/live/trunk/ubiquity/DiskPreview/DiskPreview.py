@@ -72,6 +72,9 @@ class DiskPreview(gtk.VBox):
         # str : path of the mounted filesystem
         self.disk_preview_treeview_model = gtk.TreeStore(gtk.gdk.Pixbuf, str, str, str, str, str, str, str)
         self.disk_preview_treeview.set_model(self.disk_preview_treeview_model)
+        disk_preview_treeview_sort = gtk.TreeModelSort(self.disk_preview_treeview_model)
+        disk_preview_treeview_sort.set_sort_column_id(1, gtk.SORT_ASCENDING)
+        
         cellrenderpixbuf = gtk.CellRendererPixbuf()
         cellrendertext = gtk.CellRendererText()
         column = gtk.TreeViewColumn('hd_icon',
@@ -102,6 +105,7 @@ class DiskPreview(gtk.VBox):
     def mount_filesystems(self):
         #if len(self.mounted_list) == 0:
         #    return
+        self.disk_preview_treeview_model.clear()
         self.__mount_filesystems()
         selection = self.disk_preview_treeview.get_selection()
         selection.select_path(0)
@@ -303,7 +307,7 @@ class DiskPreview(gtk.VBox):
         
         
     def __try_to_mount_filesystem(self, fstype, dev_path, mount_path):
-        if fstype == "swap":
+        if fstype == "swap" or fstype == "":
             return None
         if os.system("mkdir -p %s" % mount_path) == 0:
             if os.system("mount -t %s %s %s" % (fstype, dev_path, mount_path)) == 0:

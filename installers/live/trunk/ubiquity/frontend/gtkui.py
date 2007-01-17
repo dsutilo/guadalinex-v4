@@ -173,6 +173,12 @@ class Wizard:
 
         # DiskPreviewWidget
         self.diskpreview = None
+        # DiskPreviewWidget in mount point step
+        if not NODISKPREVIEW:
+            self.diskpreview_mps = DiskPreview()
+            print "diskpreview_mps , created"
+        else:
+            self.diskpreview_mps = None
 
         # get widgets
         for widget in self.glade.get_widget_prefix(""):
@@ -185,6 +191,10 @@ class Wizard:
             # labels are unfocusable here.
             if isinstance(widget, gtk.Label):
                 widget.set_property('can-focus', False)
+
+        if self.diskpreview_mps != None:
+            self.stepPartMountpoints.pack_end(self.diskpreview_mps, expand=False)
+            self.diskpreview_mps.show()
 
         got_intro = self.show_intro()
         if got_intro:
@@ -700,7 +710,10 @@ class Wizard:
             self.dbfilter.cancel_handler()
         if self.diskpreview != None:
             self.diskpreview.umount_filesystems()
-        
+
+        if self.diskpreview_mps != None:
+            self.diskpreview_mps.umount_filesystems()
+
         if gtk.main_level() > 0:
             gtk.main_quit()
 
@@ -851,6 +864,11 @@ class Wizard:
         if step == "stepPartAuto":
 	    if not NODISKPREVIEW:
                 self.diskpreview.umount_filesystems()
+
+        if step == "stepPartAdvanced":
+            print "Ey Ey !!!"
+            if self.diskpreview_mps != None:
+                self.diskpreview_mps.mount_filesystems()
 
         if self.dbfilter is not None:
             self.dbfilter.ok_handler()
@@ -1409,7 +1427,7 @@ class Wizard:
         self.allow_go_forward(True)
         # Setting actual step
         step = self.step_name(self.steps.get_current_page())
-
+        print step
         changed_page = False
 
         if step == "stepPartAuto":
@@ -1434,6 +1452,7 @@ class Wizard:
             self.steps.set_current_page(self.steps.page_num(self.stepPartDisk))
             changed_page = True
         elif step == "stepPartMountpoints":
+            self.diskpreview_mps.umount_filesystems()
             choice = self.get_autopartition_choice()
             if self.manual_choice is None or choice == self.manual_choice:
                 self.gparted_loop()
@@ -1671,7 +1690,7 @@ class Wizard:
         self.language_treeview.set_model(list_store)
         for choice in choices:
             list_store.append([choice])
-            print choice
+            
 
 
     def set_language (self, language):

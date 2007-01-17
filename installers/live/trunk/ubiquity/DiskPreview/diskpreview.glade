@@ -24,7 +24,7 @@
     <widget class="GtkExpander" id="disk_preview_expander">
       <property name="visible">True</property>
       <property name="can_focus">True</property>
-      <property name="expanded">True</property>
+      <property name="expanded">False</property>
       <property name="spacing">0</property>
       <accessibility>
 	<atkproperty name="AtkObject::accessible_name" translatable="yes">Previsualizar discos</atkproperty>
