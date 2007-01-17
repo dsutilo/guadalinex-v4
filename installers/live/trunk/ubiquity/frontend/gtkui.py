@@ -1915,6 +1915,19 @@ class Wizard:
 	pre_grub=True
 	pre_grub_text = ""
 	post_grub_text = ""
+	counter = 0
+	if self.steps_obj.step_preseeded("stepLanguage"):
+		text = "\n".join(text.split("\n")[1:])
+		counter += 1
+
+	if self.steps_obj.step_preseeded("stepLocation"):
+		text = "\n".join(text.split("\n")[0:1-counter]+text.split("\n")[2-counter:])
+		counter += 1
+
+	if self.steps_obj.step_preseeded("stepKeyboardConf"):
+		text = "\n".join(text.split("\n")[0:4-counter]+text.split("\n")[5-counter:])
+		counter += 1
+
 	for line in text.split("\n"):
 		if line.find(":") != -1:
 			line = line.replace(":",":</b>")
