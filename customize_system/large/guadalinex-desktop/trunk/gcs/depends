@@ -15,6 +15,7 @@ avidemux
 bc
 beagle
 binutils
+bluefish
 bluez-cups
 bluez-pin
 bluez-utils
@@ -31,6 +32,8 @@ cupsys
 cupsys-bsd
 cupsys-client
 cupsys-driver-gutenprint
+d4x
+dasher
 dc
 deskbar-applet
 desktop-file-utils
@@ -65,6 +68,7 @@ gconf-editor
 gdebi
 gdm
 gedit
+gftp
 gimp
 gimp-print
 gimp-python
@@ -179,6 +183,7 @@ serpentine
 slocate
 smbclient
 sound-juicer
+soundtracker
 ssh
 ssh-askpass-gnome
 streamtuner
@@ -202,6 +207,7 @@ vino
 watermain
 wvdial
 x-ttcidfont-conf
+xchat
 xcursor-themes
 xkeyboard-config
 xorg
