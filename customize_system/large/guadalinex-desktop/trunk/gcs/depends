@@ -12,6 +12,7 @@ apport-gtk
 aspell-es
 avahi-daemon
 avidemux
+bb-assist
 bc
 beagle
 binutils
@@ -70,7 +71,6 @@ gdm
 gedit
 gftp
 gimp
-gimp-help-en
 gimp-print
 gimp-python
 gnochm
