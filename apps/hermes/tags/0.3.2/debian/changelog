@@ -1,0 +1,89 @@
+hermeshardware (0.3.2) unstable; urgency=low
+
+  * Added support for "Packages Actors".
+  * Added gnome flavour for packages install, using synaptic.
+  * Added stuff for rpm installation (basic features).
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Thu, 18 Jan 2007 17:11:13 +0100
+
+hermeshardware (0.3.1-1) unstable; urgency=low
+
+  * Fixed prefix problem.
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Tue, 19 Dec 2006 16:33:51 +0100
+
+hermeshardware (0.3) unstable; urgency=low
+
+  * Adding translation support.
+  * Merge branches/i18n.
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Wed, 13 Dec 2006 16:41:28 +0100
+
+hermeshardware (0.2) unstable; urgency=low
+
+  * Improve volume listeners. 
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Wed, 13 Dec 2006 16:40:36 +0100
+
+hermeshardware (0.1-8) unstable; urgency=low
+
+  * Dapper compatible
+  * -
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Wed, 13 Dec 2006 16:40:32 +0100
+
+hermeshardware (0.1-7) unstable; urgency=low
+
+  * Added hermesdruid icon.
+  * Added help in local file (html).
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.info>  Wed, 31 May 2006 13:59:10 +0200
+
+hermeshardware (0.1-6) unstable; urgency=low
+
+  * Added support for Apple iPod.
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.info>  Tue, 20 Dec 2005 11:03:16 +0100
+
+hermeshardware (0.1-5) unstable; urgency=low
+
+  * Added support for usb webcam devices.
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.info>  Wed, 23 Nov 2005 13:08:48 +0100
+
+hermeshardware (0.1-4) unstable; urgency=low
+
+  * Added support for usb scanners and usb printers. 
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.info>  Tue, 22 Nov 2005 13:44:46 +0100
+
+hermeshardware (0.1-3) unstable; urgency=low
+
+  * Added support for net devices and printers.
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.info>  Tue, 22 Nov 2005 13:44:11 +0100
+
+hermeshardware (0.1-2) unstable; urgency=low
+
+  * Added support for more devices. 
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.info>  Thu,  3 Nov 2005 09:04:04 +0100
+
+hermeshardware (0.1-1) unstable; urgency=low
+
+  * Hermes/notification-daemon init bug. 
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.info>  Wed,  2 Nov 2005 10:26:39 +0100
+
+hermeshardware (0.1) unstable; urgency=low
+
+  * Release for Guadalinex 2005 beta
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.info>  Wed,  2 Nov 2005 10:26:25 +0100
+
+hermeshardware (0-1) unstable; urgency=low
+
+  * Initial release 
+
+ -- Carlos Parra Camargo <cparra@emergya.info>  Mon, 10 Oct 2005 09:57:39 +0200
+

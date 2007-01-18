@@ -1,0 +1,6 @@
+packages:
+    - gtkpod
+
+
+conn_commands:
+    - gtkpod &
