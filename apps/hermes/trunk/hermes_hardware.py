@@ -55,6 +55,7 @@ if getattr(dbus, "version", (0, 0, 0)) >= (0, 41, 0):
     import dbus.glib
 import logging
 import gtk
+import gtk.gdk
 import os
 import os.path
 import sys
@@ -81,6 +82,7 @@ def setup_gettext(domain, data_dir):
 from utils import DeviceList, ColdPlugListener, CaptureLogGui
 from optparse import OptionParser
 from utils.notification import NotificationDaemon, FileNotification
+import actors
 
 
 # notification-daemon spec: -------------------------------------------
@@ -143,6 +145,11 @@ class DeviceListener:
         obj = dbus.Interface(obj, 'org.freedesktop.Hal.Device')
 
         properties = obj.GetAllProperties()
+        print
+        print
+        print "#############################################"
+        print "CONNECTED ################################"
+        print "#############################################"
         self.__print_properties(properties)
 
         actor = self.get_actor_from_properties(properties)
@@ -377,16 +384,14 @@ def main():
     else:
         iface = NotificationDaemon()
 
+    logging.getLogger().info("----------------------------- Hermes init.")
+
     global DeviceActor
     from actors.deviceactor import DeviceActor
 
-    ##################################################################
-    # Init application.   #
-    #######################
-    logging.getLogger().info("----------------------------- Hermes init.")
 
     DeviceListener(iface)
-    gtk.threads_init()
+    gtk.gdk.threads_init()
     try:
         gtk.main()
     except:

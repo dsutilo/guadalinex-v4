@@ -53,7 +53,11 @@ from gettext import gettext as _
 
 
 class Actor(PkgDeviceActor):
-    __required__ = {'info.product':'Pocket PC PDA'}
+    msg = """
+    python: (value == 'Pocket PC PDA') or ('PocketLOOX' in value)
+    """
+    __required__ = {'info.product': msg,
+                    'linux.subsystem': 'usb'}
 
     __icon_path__  = os.path.abspath('actors/img/wme.png')
     __iconoff_path__ = os.path.abspath('actors/img/wmeoff.png')

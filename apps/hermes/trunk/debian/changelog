@@ -1,10 +1,10 @@
 hermeshardware (0.3.2) unstable; urgency=low
 
-  * Added support for "Packages Actors". 
+  * Added support for "Packages Actors".
   * Added gnome flavour for packages install, using synaptic.
   * Added stuff for rpm installation (basic features).
 
- -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Tue, 19 Dec 2006 16:34:31 +0100
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Thu, 18 Jan 2007 17:11:13 +0100
 
 hermeshardware (0.3.1-1) unstable; urgency=low
 
