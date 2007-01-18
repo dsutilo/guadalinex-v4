@@ -68,7 +68,8 @@ class Builder(object):
                 if (not '/.svn' in abs_path) and \
                         (not abs_path.endswith(config['config_extension']))\
                         and (os.path.isfile(abs_path)):
-                    shutil.copy(abs_path, abs_path + '.gv4')
+                    shutil.copy(abs_path, abs_path + \
+                            config['config_extension'])
 
         os.path.walk(config['source_path'] + '/gcs/conffiles_skel/',
                 copy_file, None)
@@ -82,7 +83,7 @@ class Builder(object):
             for fname in file_names:
                 abs_path = dirname + os.sep + fname
 
-                if abs_path.endswith(".gv4"):
+                if abs_path.endswith(config['config_extension']):
                     os.remove(abs_path)
 
         os.path.walk(config['source_path'] + '/gcs/conffiles_skel/',

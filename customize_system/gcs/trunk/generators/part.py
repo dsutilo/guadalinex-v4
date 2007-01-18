@@ -93,8 +93,6 @@ class DivertPart(Part):
         self.removes.append(command)
 
 
-
-
 class ScriptsPart(Part):
 
     def __init__(self, scripts_dir_path):
