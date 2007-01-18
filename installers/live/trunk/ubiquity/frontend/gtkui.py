@@ -864,6 +864,10 @@ class Wizard:
         if step == "stepPartAuto":
 	    if not NODISKPREVIEW:
                 self.diskpreview.umount_filesystems()
+            choice = self.get_autopartition_choice()
+            if choice == self.do_nothing_choice:
+                if self.diskpreview_mps != None:
+                    self.diskpreview_mps.mount_filesystems()
 
         if step == "stepPartAdvanced":
             print "Ey Ey !!!"
@@ -1454,11 +1458,17 @@ class Wizard:
         elif step == "stepPartMountpoints":
             self.diskpreview_mps.umount_filesystems()
             choice = self.get_autopartition_choice()
+            #print "'%s' '%s' '%s' '%s' '%s'" % (choice, self.resize_choice, self.manual_choice, self.do_nothing_choice, self.use_biggest_free_choice)
             if self.manual_choice is None or choice == self.manual_choice:
                 self.gparted_loop()
 	    elif choice == self.do_nothing_choice:
                 self.steps.set_current_page(self.steps.page_num(self.stepPartAuto))
                 changed_page = True
+
+            if choice == self.do_nothing_choice:
+                if self.diskpreview_mps != None:
+                    self.diskpreview_mps.umount_filesystems()
+                
         elif step == "stepReady":
 	    stock_image = gtk.Image()
 	    stock_image.set_from_stock(gtk.STOCK_GO_FORWARD,24)
