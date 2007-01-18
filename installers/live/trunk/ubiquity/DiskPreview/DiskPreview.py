@@ -105,15 +105,20 @@ class DiskPreview(gtk.VBox):
     def mount_filesystems(self):
         #if len(self.mounted_list) == 0:
         #    return
+        self.set_expanded(False)
         self.disk_preview_treeview_model.clear()
         self.__mount_filesystems()
         selection = self.disk_preview_treeview.get_selection()
         selection.select_path(0)
         
     def umount_filesystems(self):
+        self.set_expanded(False)
         for fs in self.mounted_list :
             os.system ("umount %s" % fs)
         self.mounted_list = []
+
+    def set_expanded(self, expanded):
+        self.disk_preview_expander.set_expanded(expanded)
 
     #Class Callbacks
     def __disk_preview_browser_iconview_item_activated_cb(self, iconview, path, data):
