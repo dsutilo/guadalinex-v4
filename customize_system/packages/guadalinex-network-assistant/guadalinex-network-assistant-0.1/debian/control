@@ -1,0 +1,13 @@
+Source: guadalinex-network-assistant
+Section: admin
+Priority: optional
+Maintainer: Carlos Parra Camargo <cparra@emergya.es>
+Build-Depends: debhelper (>> 3.0.0)
+Standards-Version: 3.7.2
+
+Package: guadalinex-network-assistant
+Architecture: i386
+Depends: gnome-system-tools, bb-assist
+Description: network assistant for guadalinex 
+ this asssistant helps to configure common network devices
+ ADSL, analogic modems, wired and wireless networks.

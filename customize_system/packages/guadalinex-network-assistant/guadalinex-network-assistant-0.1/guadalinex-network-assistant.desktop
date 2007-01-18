@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Asistente de conexión a internet
+Comment=Utility to configure your network
+Exec=guadalinex-network-assistant
+Icon=guadalinex-network-assistant.png
+Terminal=false
+Type=Application
+Categories=Application;Network;

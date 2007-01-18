@@ -1,0 +1,33 @@
+#!/bin/sh
+
+if [ "$(whoami)" != "root" ]; then
+	gksudo $0
+	exit $?
+fi
+
+OP1="Tarjeta wireless"
+OP2="Tarjeta de red cableada"
+OP3="Módem analógico"
+OP4="Módem ADSL"
+
+select=$(zenity --list --height 200 --title="Asiste de conexión a internet" \
+	--text="Seleccione el tipo de conexión que desea configurar."           \
+	--radiolist  --column="Selección" --column="Opción" 1 "$OP1" 2      \
+	"$OP2" 3 "$OP3" 4 "$OP4")
+
+case $select in
+	$OP1)
+		network-admin -t wireless
+		;;
+	$OP2)
+		network-admin -t ethernet
+		;;
+	$OP3)
+		network-admin -t modem
+		;;
+	$OP4)
+		bb-assist
+		;;
+esac
+
+exit 0
