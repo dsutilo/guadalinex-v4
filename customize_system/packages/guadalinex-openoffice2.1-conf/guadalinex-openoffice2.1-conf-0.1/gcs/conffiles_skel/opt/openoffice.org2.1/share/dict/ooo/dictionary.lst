@@ -44,3 +44,5 @@ DICT sw TZ sw_TZ
 DICT sw KE sw_TZ
 DICT th TH th_TH
 DICT es ES es_ES
+HYPH es ES es_ES
+THES es ES es_ES
