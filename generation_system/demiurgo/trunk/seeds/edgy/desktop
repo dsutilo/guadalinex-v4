@@ -270,3 +270,6 @@ to compile a driver. -mdz
  * festvox-ellpc11k
  * sun-java5-jre
  * sun-java5-bin
+ * meta-guadalinex-v4
+ * python-syck
+ * hermeshardware-guada

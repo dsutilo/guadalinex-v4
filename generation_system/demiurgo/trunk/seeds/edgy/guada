@@ -2,10 +2,7 @@
 
 This packages makes the Guadalinex flavour.
 
-# * festvox-ellpc11k
  * gfxboot-theme-guadalinex
-# * guadalinex-keyring
-# * tasksel
  * guadalinex-keyring-udeb
 # * guadalinex-minimal
  * guadalinex-minimal-conf
@@ -16,9 +13,8 @@ This packages makes the Guadalinex flavour.
  * guadalinex-doc
  * guadalinex-artwork
  * acroread
-# * sun-java5-jre
-# * sun-java5-bin
  * guadalinex-pregrub-message
  * guadalinex-prepartman-message
  * guadalinex-sources-setup
+# * meta-guadalinex-v4
 
