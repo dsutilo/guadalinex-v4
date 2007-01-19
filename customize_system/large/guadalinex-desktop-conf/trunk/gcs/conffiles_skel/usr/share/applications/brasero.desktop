@@ -1,0 +1,48 @@
+[Desktop Entry]
+Name=Disc burning application
+Name[ca]=Aplicació per a la gravació de discos
+Name[de]=CD/DVD Brenn Programm
+Name[es]=Programa para grabación de CD/DVD (Brasero)
+Name[fr]=Gravure de CD / DVD
+Name[it]=Applicazione di scrittura dischi
+Name[ja]=ディスク作成のアプリケーション
+Name[pl]=Nagrywanie płyt CD/DVD Brasero
+Name[pt_BR]=Aplicação para gravar discos
+Comment=Write and copy CD / DVD
+Comment[ca]=Escriu i copia CD / DVD
+Comment[de]=Schreibe und kopiere CD/DVD
+Comment[es]=Escribir y copiar CD / DVD
+Comment[fr]=Écrit et copie des CD et DVD
+Comment[it]=Scrive e copia CD / DVD
+Comment[ja]=CD / DVD に書き込んだりコピーを作成します
+Comment[pl]=Nagrywanie i kopiowanie płyt CD / DVD
+Comment[pt_BR]=Gravar e copiar CD / DVD
+Categories=GNOME;Application;AudioVideo;
+Encoding=UTF-8
+Exec=brasero -e %U
+Icon=brasero.png
+MimeType=application/x-cd-image;application/x-cdrdao-toc;application/x-brasero;
+StartupNotify=true
+Terminal=false
+Type=Application
+
+Actions=BurnImage;OpenProject;
+
+[Desktop Action BurnImage]
+Icon=brasero.png
+MimeType=application/x-cd-image;application/x-cdrdao-toc;
+Exec=brasero -e -i %u
+Name=Burn Image
+Name[it]=Scrivi un'immagine
+
+[Desktop Action OpenProject]
+Icon=brasero.png
+MimeType=application/x-brasero;
+Exec=brasero -e -p %u
+Name=Open project
+Name[it]=Apri un progetto
+
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=bonfire
+X-GNOME-Bugzilla-Component=general
+X-Ubuntu-Gettext-Domain=brasero
