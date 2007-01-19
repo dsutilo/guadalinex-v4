@@ -1,9 +1,9 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=TVtime Television Viewer
-Name[es]=Visor de TV TVtime
+Name[es]=Visor de TV analógica (TVtime)
 Comment=High quality video deinterlacer
-Comment[es]=Visor de televisión analógica (TVtime)
+Comment[es]=Visor de televisión analógica
 Icon=tvtime.png
 Exec=tvtime
 GenericName=Television Viewer
