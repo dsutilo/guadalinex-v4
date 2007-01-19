@@ -378,4 +378,9 @@ else
     fi
 fi
 
+
+cd $CDDIR
+tar xvzf $CDIMAGE_ROOT/live/edgy/ubuntu/current/ubuntu-winfoss-6.10.tar.gz
+cd -
+
 # th,th, thats all
