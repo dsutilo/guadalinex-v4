@@ -1,0 +1,46 @@
+# List of All Dictionaries to be Loaded by OpenOffice
+# ---------------------------------------------------
+# Each Entry in the list have the following space delimited fields
+#
+# Field 1: Entry Type "DICT" - spellchecking dictionary
+#                     "HYPH" - hyphenation dictionary
+#                     "THES" - thesaurus files
+#
+# Field 2: Language code from Locale "en" or "de" or "pt" ...
+#
+# Field 3: Country Code from Locale "US" or "GB" or "PT"
+#
+# Field 4: Root name of file(s) "en_US" or "hyph_de" or "th_en_US 
+#          (do not add extensions to the name) 
+
+THES cs CZ th_cs_CZ_v2
+HYPH da DK hyph_da_DK
+HYPH de AT hyph_de_DE
+DICT de AT de_AT
+THES de AT th_de_DE_v2
+HYPH de CH hyph_de_DE
+DICT de CH de_CH
+THES de CH th_de_CH_v2
+HYPH de DE hyph_de_DE
+DICT de DE de_DE
+THES de DE th_de_DE_v2
+DICT en GB en_GB
+HYPH en GB hyph_en_GB
+THES en GB th_en_US_v2
+DICT en US en_US
+HYPH en US hyph_en_US
+THES en US th_en_US_v2
+DICT et EE et_EE
+HYPH et EE hyph_et_EE
+DICT hu HU hu_HU
+HYPH hu HU hyph_hu_HU
+DICT it IT it_IT
+HYPH it IT hyph_it_IT
+DICT nl NL nl_NL
+HYPH nl NL hyph_nl_NL
+HYPH ru RU hyph_ru_RU
+THES sk SK th_sk_SK_v2
+DICT sw TZ sw_TZ
+DICT sw KE sw_TZ
+DICT th TH th_TH
+DICT es ES es_ES
