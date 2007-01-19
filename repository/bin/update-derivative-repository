@@ -17,7 +17,7 @@ cd -
 # Ready...
 for pkg in $(ls $DERIVATIVE_PACKAGES | grep .*deb\$)
 do
-	SRC_NAME=$(dpkg --field $DERIVATIVE_PACKAGES/$pkg Source)
+	SRC_NAME=$(dpkg --field $DERIVATIVE_PACKAGES/$pkg Source | sed -e 's/(.*)//g' | sed -e 's/ //g')
 	[ -z "$SRC_NAME" ] && SRC_NAME=$(dpkg --field $DERIVATIVE_PACKAGES/$pkg Package)
 
 	DEST_PKG_DIR=$DERIVATIVE_POOL/$(echo $SRC_NAME | cut -c 1)/$SRC_NAME
