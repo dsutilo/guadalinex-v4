@@ -98,7 +98,7 @@ class FireFoxSecurityUtils(object):
         # we need to use the subprocess module since this command request
         # interactive input
         cmd = [MODUTIL_CMD, '-add', "%s" % name, '-libfile', library,
-               '-mechanisms', "%s" % mechanisms, '-dbdir', "%s" % profile]
+               '-dbdir', "%s" % profile]
         process = subprocess.Popen(cmd,
                                    stdin=subprocess.PIPE,
                                    stdout=subprocess.PIPE,
