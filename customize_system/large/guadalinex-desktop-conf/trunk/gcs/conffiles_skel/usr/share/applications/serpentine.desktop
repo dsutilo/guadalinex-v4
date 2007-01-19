@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Serpentine Audio CD Creator
+Name[es]=Grabación de CDs de audio (Serpentine)
+Comment=Create audio CDs from music files and playlists
+Comment[es]=Cree CDs de audio a partir de ficheros de música y listas de canciones
+Type=Application
+Exec=serpentine -o %U
+Icon=gnome-dev-cdrom-audio.png
+Terminal=False
+Categories=GNOME;GTK;AudioVideo;DiscBurning;
+MimeType=audio/x-scpls;audio/x-mpegurl;
+StartupNotify=true
+X-Ubuntu-Gettext-Domain=serpentine
