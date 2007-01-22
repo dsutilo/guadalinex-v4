@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=noodle
+GenericName=noodle
+Name[es]=Sincronización de dispositivos (noodle)
+Comment=Mobile syncronization
+Comment[es]=Asistente para la sincronización de datos con dispositivos móbiles
+Exec=noodle.py
+Icon=/usr/share/guadalinex-noodle/img/synce-color.png
+Terminal=false
+Type=Application
+Categories=GNOME;Settings;
+StartupNotify=true
