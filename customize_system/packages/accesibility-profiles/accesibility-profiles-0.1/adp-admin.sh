@@ -10,6 +10,13 @@ function apply_profile
 {
     su $1 -c "unzip -o $3 -d $2"
 
+    if [ ${4::6} == "Visual" ]; then
+	if [ -e /boot/grub/menu.lst ]; then
+		sed -e '/title/ s/$/ /' /boot/grub/menu.lst > /tmp/menu.lst
+		mv /tmp/menu.lst /boot/grub/menu.lst
+	fi
+    fi
+
     if [ -d $2/.gconf.xml.defaults ]; then
 	if [ ! -d $2/.gconf ]; then
 		mkdir $2/.gconf
@@ -54,7 +61,7 @@ else
     read OPT
     while [ true ]; do
 	case $OPT in
-	    s ) apply_profile ${USER_NAME} ${USER_HOME} ${PROFILE_PATH} && exit 0 ;;
+	    s ) apply_profile ${USER_NAME} ${USER_HOME} ${PROFILE_PATH} ${2} && exit 0 ;;
 	    n ) echo "Aplicación cancelada" && exit 0 ;;
 	    * ) echo "Pulse \"s\" para aplicar o \"n\" para cancelar" ;;
 	esac

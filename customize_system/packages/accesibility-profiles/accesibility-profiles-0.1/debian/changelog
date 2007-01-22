@@ -1,3 +1,9 @@
+accesibility-profiles (0.1-4) unstable; urgency=low
+
+  * append grub beep when selected a Visual profile
+
+ -- Alvaro Peña <apg@openshine.com>  Mon, 22 Jan 2007 12:10:03 +0100
+
 accesibility-profiles (0.1-3) unstable; urgency=low
 
   * New accesibility profiles
