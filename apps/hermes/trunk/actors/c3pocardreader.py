@@ -44,10 +44,13 @@
 #along with Foobar; if not, write to the Free Software
 #Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+import commands
+import os
 import os.path
 
 from deviceactor import PkgDeviceActor
 from utils.pkginstaller import PkgInstaller
+from utils import get_sudo
 from gettext import gettext as _
 
 CERTMANAGER_CMD = '/usr/bin/certmanager.py'
@@ -66,8 +69,30 @@ class Actor(PkgDeviceActor):
     __device_conn_description__ = _("Card reader detected")
     __device_disconn_description__ = _("Card reader disconnected")
 
-    def on_added(self, actor):
-        super(Actor, self).on_added(actor)
+    def on_added(self):
+        actions = {}
+	def configure_dnie():
+            os.system('%s --install-dnie' % CERTMANAGER_CMD)
 
         if os.path.exists(CERTMANAGER_CMD):
-            os.system('%s --install-dnie' % CERTMANAGER_CMD)
+            actions[_("Configure DNIe")] = configure_dnie
+
+        def add_user_to_scard():
+            user = os.getlogin()
+            # get root access
+            if get_sudo():
+                cmd = '/usr/bin/sudo /usr/sbin/adduser %s scard' % user
+                status, output = commands.getstatusoutput(cmd)
+                self.msg_render.show_info(_('Session restart needed'),
+                                          _('You must restart your session to apply the changes'))
+
+        status, output = commands.getstatusoutput('/usr/bin/groups')
+        if 'scard' not in output:
+            actions[_("Add user to scard group")] = add_user_to_scard
+
+        self.msg_render.show(self.__device_title__, 
+                             self.__device_conn_description__,
+                             self.__icon_path__, actions=actions)
+
+
+
