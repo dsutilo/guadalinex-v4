@@ -180,6 +180,9 @@ class Wizard:
         else:
             self.diskpreview_mps = None
 
+        # Disable hermeshardware
+        os.system('pkill hermes_hardware')
+
         # get widgets
         for widget in self.glade.get_widget_prefix(""):
             setattr(self, widget.get_name(), widget)
@@ -345,13 +348,18 @@ class Wizard:
         PIXMAPSDIR = os.path.join(PATH, 'pixmaps', self.distro)
 
         # set pixmaps
-        if ( gtk.gdk.get_default_root_window().get_screen().get_width() > 1024 ):
+        screen_width = gtk.gdk.get_default_root_window().get_screen().get_width()
+        if ( screen_width > 1024 ):
             logo = os.path.join(PIXMAPSDIR, "logo_1280.jpg")
             photo = os.path.join(PIXMAPSDIR, "photo_1280.jpg")
-        else:
+        elif (screen_width == 1024):
             logo = os.path.join(PIXMAPSDIR, "logo_1024.jpg")
             #photo = os.path.join(PIXMAPSDIR, "photo_1024.jpg")
             photo = ''
+        else:
+            logo = ''
+            photo = ''
+
         if not os.path.exists(logo):
             logo = None
         if not os.path.exists(photo):
@@ -715,6 +723,9 @@ class Wizard:
             self.diskpreview_mps.umount_filesystems()
 
         if gtk.main_level() > 0:
+            # Enable hermeshardware
+            os.system('hermeshardware')
+
             gtk.main_quit()
 
 
