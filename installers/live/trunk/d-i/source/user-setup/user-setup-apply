@@ -122,6 +122,12 @@ if [ "$RET" = true ] && ! is_system_user; then
 		$log $chroot $ROOT useradd -c "$RET" -m "$USER" $UIDOPT >/dev/null || true
 	fi
 
+	if [ "$HOME_EXISTED" ]; then
+		find $ROOT/home/$USER -exec touch '{}' \;
+		cp -a /etc/skel /tmp/$USER
+		cp -ur /tmp/$USER $ROOT/home
+	fi
+
 	# Clear the user password from the database.
 	db_set passwd/user-password-crypted ''
 	db_set passwd/user-password ''
