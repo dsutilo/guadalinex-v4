@@ -65,7 +65,7 @@ get_procs
 
 if [ $MHZ_OFFSET -a $CACHE_OFFSET -a $RAM_OFFSET ]; then
 	# base time
-	BASE=26
+	BASE=10
 
         SUM=$(guadalinex-first-message-calcs 2 $BASE $RAM_OFFSET $CACHE_OFFSET $MHZ_OFFSET)
 
