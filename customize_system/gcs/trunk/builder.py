@@ -27,6 +27,9 @@ class Builder(object):
     def __init__(self, path):
         config['source_path'] = path
         config['info'] = syck.load(open(path + '/gcs/info').read())
+        extension = config['info'].get('config_extension', None)
+        if extension:
+            config['config_extension'] = extension
 
 
     def make_package(self):
