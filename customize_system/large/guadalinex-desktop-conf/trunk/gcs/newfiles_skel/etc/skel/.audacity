@@ -1,0 +1,15 @@
+Version=1.2.4
+PrefsVersion=1.1.1r1
+DefaultOpenPath=$HOME/Audio
+[Locale]
+Language=es
+[Directories]
+TempDir=/tmp/audacity1.2-guada
+[Window]
+Width=640
+Height=480
+Maximized=0
+[wxWindows]
+[wxWindows/wxFileDialog]
+ViewStyle=16
+ShowHidden=0
