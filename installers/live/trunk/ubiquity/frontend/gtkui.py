@@ -885,6 +885,10 @@ class Wizard:
             if self.diskpreview_mps != None:
                 self.diskpreview_mps.mount_filesystems()
 
+        if step == "stepPartMountpoints":
+            if self.diskpreview_mps != None:
+                self.diskpreview_mps.umount_filesystems()
+
         if self.dbfilter is not None:
             self.dbfilter.ok_handler()
             # expect recursive main loops to be exited and
@@ -1467,7 +1471,8 @@ class Wizard:
             self.steps.set_current_page(self.steps.page_num(self.stepPartDisk))
             changed_page = True
         elif step == "stepPartMountpoints":
-            self.diskpreview_mps.umount_filesystems()
+            if self.diskpreview_mps != None:
+                self.diskpreview_mps.umount_filesystems()
             choice = self.get_autopartition_choice()
             #print "'%s' '%s' '%s' '%s' '%s'" % (choice, self.resize_choice, self.manual_choice, self.do_nothing_choice, self.use_biggest_free_choice)
             if self.manual_choice is None or choice == self.manual_choice:
