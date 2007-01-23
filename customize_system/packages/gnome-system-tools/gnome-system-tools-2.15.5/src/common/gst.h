@@ -1,6 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 #include <config.h>
-#include "gst-package.h"
 #include "gst-types.h"
 #include "gst-widget.h"
 #include "gst-tool.h"

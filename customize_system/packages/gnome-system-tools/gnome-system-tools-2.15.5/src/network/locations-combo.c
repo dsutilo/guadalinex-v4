@@ -34,7 +34,6 @@ struct _GstLocationsComboPrivate
   GtkWidget *combo;
   GtkWidget *save_button;
   GtkWidget *delete_button;
-  GtkWidget *apply_button;
 
   GtkWidget *save_dialog;
   GtkWidget *location_entry;
@@ -45,8 +44,7 @@ enum {
   PROP_TOOL,
   PROP_COMBO,
   PROP_SAVE,
-  PROP_DELETE,
-  PROP_APPLY
+  PROP_DELETE
 };
 
 static void gst_locations_combo_class_init   (GstLocationsComboClass *class);
@@ -110,13 +108,6 @@ gst_locations_combo_class_init (GstLocationsComboClass *class)
 							"Delete",
 							GTK_TYPE_BUTTON,
 							G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
-  g_object_class_install_property (object_class,
-				   PROP_APPLY,
-				   g_param_spec_object ("apply",
-							"Apply",
-							"Apply",
-							GTK_TYPE_BUTTON,
-							G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
   g_type_class_add_private (object_class,
 			    sizeof (GstLocationsComboPrivate));
 }
@@ -149,9 +140,6 @@ gst_locations_combo_finalize (GObject *object)
   if (priv->delete_button)
     g_object_unref (priv->delete_button);
 
-  if (priv->apply_button)
-    g_object_unref (priv->apply_button);
-
   if (priv->model)
     g_object_unref (priv->model);
 }
@@ -181,9 +169,6 @@ gst_locations_combo_set_property (GObject         *object,
     case PROP_DELETE:
       priv->delete_button = GTK_WIDGET (g_value_dup_object (value));
       break;
-    case PROP_APPLY:
-      priv->apply_button = GTK_WIDGET (g_value_dup_object (value));
-      break;
     }
 }
 
@@ -212,9 +197,6 @@ gst_locations_combo_get_property (GObject         *object,
     case PROP_DELETE:
       g_value_set_object (value, priv->delete_button);
       break;
-    case PROP_APPLY:
-      g_value_set_object (value, priv->apply_button);
-      break;
     }
 }
 
@@ -236,9 +218,11 @@ on_combo_changed (GtkWidget *widget, gpointer data)
       gtk_tree_model_get (model, &iter, 0, &str, -1);
       gst_network_locations_set_location (locations, str);
       gst_tool_update_gui (priv->tool);
-      g_free (str);
 
-      gtk_widget_set_sensitive (priv->apply_button, TRUE);
+      oobs_object_commit (locations->hosts_config);
+      gst_tool_commit_async (priv->tool, locations->ifaces_config,
+			     _("Changing network location"));
+      g_free (str);
     }
 }
 
@@ -449,22 +433,6 @@ on_delete_button_clicked (GtkWidget *widget, gpointer data)
 }
 
 static void
-on_apply_button_clicked (GtkWidget *widget, gpointer data)
-{
-  GstNetworkLocations *locations;
-  GstLocationsComboPrivate *priv;
-
-  priv = GST_LOCATIONS_COMBO (data)->_priv;
-  locations = GST_NETWORK_LOCATIONS (data);
-
-  oobs_object_commit (locations->hosts_config);
-  gst_tool_commit_async (priv->tool, locations->ifaces_config,
-			 _("Changing network location"));
-
-  gtk_widget_set_sensitive (widget, FALSE);
-}
-
-static void
 fill_model (GstLocationsCombo *combo,
 	    GtkTreeModel      *model)
 {
@@ -515,11 +483,6 @@ gst_locations_combo_constructor (GType                  type,
 		    G_CALLBACK (on_save_button_clicked), object);
   g_signal_connect (G_OBJECT (priv->delete_button), "clicked",
 		    G_CALLBACK (on_delete_button_clicked), object);
-  g_signal_connect (G_OBJECT (priv->apply_button), "clicked",
-		    G_CALLBACK (on_apply_button_clicked), object);
-
-  /* set the apply button initially unsensitive */
-  gtk_widget_set_sensitive (priv->apply_button, FALSE);
 
   return object;
 }
@@ -541,14 +504,12 @@ GstLocationsCombo*
 gst_locations_combo_new (GstTool   *tool,
 			 GtkWidget *combo,
 			 GtkWidget *save,
-			 GtkWidget *delete,
-			 GtkWidget *apply)
+			 GtkWidget *delete)
 {
   return g_object_new (GST_TYPE_LOCATIONS_COMBO,
 		       "tool", tool,
 		       "combo", combo,
 		       "save", save,
 		       "delete", delete,
-		       "apply", apply,
 		       NULL);
 }

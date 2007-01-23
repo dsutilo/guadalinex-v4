@@ -50,10 +50,10 @@ LIBRARIES = $(noinst_LIBRARIES)
 ARFLAGS = cru
 libsetuptool_a_AR = $(AR) $(ARFLAGS)
 libsetuptool_a_LIBADD =
-am_libsetuptool_a_OBJECTS = gst-package.$(OBJEXT) gst-widget.$(OBJEXT) \
-	gst-dialog.$(OBJEXT) gst-tool.$(OBJEXT) \
-	gst-platform-dialog.$(OBJEXT) gst-conf.$(OBJEXT) \
-	gst-filter.$(OBJEXT) gst-service-role.$(OBJEXT)
+am_libsetuptool_a_OBJECTS = gst-widget.$(OBJEXT) gst-dialog.$(OBJEXT) \
+	gst-tool.$(OBJEXT) gst-platform-dialog.$(OBJEXT) \
+	gst-conf.$(OBJEXT) gst-filter.$(OBJEXT) \
+	gst-service-role.$(OBJEXT)
 libsetuptool_a_OBJECTS = $(am_libsetuptool_a_OBJECTS)
 DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
@@ -138,7 +138,6 @@ GMOFILES = @GMOFILES@
 GMSGFMT = @GMSGFMT@
 GNOME_CFLAGS = @GNOME_CFLAGS@
 GNOME_LIBS = @GNOME_LIBS@
-GREP = @GREP@
 GST_CFLAGS = @GST_CFLAGS@
 GST_DEPENDS_CFLAGS = @GST_DEPENDS_CFLAGS@
 GST_DEPENDS_LIBS = @GST_DEPENDS_LIBS@
@@ -216,9 +215,13 @@ STRIP = @STRIP@
 USE_NLS = @USE_NLS@
 VERSION = @VERSION@
 XGETTEXT = @XGETTEXT@
+ac_ct_AR = @ac_ct_AR@
 ac_ct_CC = @ac_ct_CC@
 ac_ct_CXX = @ac_ct_CXX@
 ac_ct_F77 = @ac_ct_F77@
+ac_ct_RANLIB = @ac_ct_RANLIB@
+ac_ct_STRIP = @ac_ct_STRIP@
+ac_pt_PKG_CONFIG = @ac_pt_PKG_CONFIG@
 am__fastdepCC_FALSE = @am__fastdepCC_FALSE@
 am__fastdepCC_TRUE = @am__fastdepCC_TRUE@
 am__fastdepCXX_FALSE = @am__fastdepCXX_FALSE@
@@ -235,9 +238,6 @@ build_cpu = @build_cpu@
 build_os = @build_os@
 build_vendor = @build_vendor@
 datadir = @datadir@
-datarootdir = @datarootdir@
-docdir = @docdir@
-dvidir = @dvidir@
 exec_prefix = @exec_prefix@
 gnomelocaledir = @gnomelocaledir@
 host = @host@
@@ -245,23 +245,19 @@ host_alias = @host_alias@
 host_cpu = @host_cpu@
 host_os = @host_os@
 host_vendor = @host_vendor@
-htmldir = @htmldir@
 includedir = @includedir@
 infodir = @infodir@
 install_sh = @install_sh@
 interfacesdir = @interfacesdir@
 libdir = @libdir@
 libexecdir = @libexecdir@
-localedir = @localedir@
 localstatedir = @localstatedir@
 mandir = @mandir@
 mkdir_p = @mkdir_p@
 oldincludedir = @oldincludedir@
-pdfdir = @pdfdir@
 pixmapsdir = @pixmapsdir@
 prefix = @prefix@
 program_transform_name = @program_transform_name@
-psdir = @psdir@
 sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 sysconfdir = @sysconfdir@
@@ -276,7 +272,6 @@ INCLUDES = \
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"
 
 libsetuptool_a_SOURCES = \
-	gst-package.c		\
 	gst-widget.c		\
 	gst-dialog.c		\
 	gst-tool.c		\
@@ -348,7 +343,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gst-conf.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gst-dialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gst-filter.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gst-package.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gst-platform-dialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gst-service-role.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gst-tool.Po@am__quote@

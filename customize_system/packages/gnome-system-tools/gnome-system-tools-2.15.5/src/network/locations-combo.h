@@ -53,8 +53,7 @@ GType                  gst_locations_combo_get_type        (void);
 GstLocationsCombo*     gst_locations_combo_new             (GstTool   *tool,
 							    GtkWidget *combo,
 							    GtkWidget *add,
-							    GtkWidget *remove,
-							    GtkWidget *apply);
+							    GtkWidget *remove);
 
 
 G_END_DECLS

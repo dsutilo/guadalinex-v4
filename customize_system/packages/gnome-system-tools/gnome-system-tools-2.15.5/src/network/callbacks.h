@@ -69,7 +69,4 @@ gboolean on_domain_focus_out   (GtkWidget     *widget,
 				GdkEventFocus *event,
 				gpointer       data);
 
-void on_avahi_toggled (GtkWidget *item, 
-		       gpointer user_data);
-
 #endif /* __CALLBACKS_H */

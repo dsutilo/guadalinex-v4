@@ -1,4 +1,0 @@
-patching file interfaces/network.glade.in
-patching file src/network/locations-combo.c
-patching file src/network/locations-combo.h
-patching file src/network/network-tool.c

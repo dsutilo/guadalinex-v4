@@ -563,24 +563,5 @@ on_domain_focus_out (GtkWidget *widget, GdkEventFocus *event, gpointer data)
   g_object_set_data (G_OBJECT (widget), "content-changed", GINT_TO_POINTER (FALSE));
 
   return FALSE;
-}   
-
-void
-on_avahi_toggled (GtkWidget *item, gpointer user_data)
-{
-  gboolean bstat, checkbox_state;
-  GstNetworkTool *tool;
-  
-  tool = GST_NETWORK_TOOL (user_data);
-  
-  item = gst_dialog_get_widget (GST_TOOL (tool)->main_dialog, "enable_avahi");
-
-  bstat = avahi_status();
-  checkbox_state = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (item));
-  
-  if (bstat != checkbox_state)
-    {
-      avahi_set(checkbox_state);
-      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (item), avahi_status());
-    }
 }
+     

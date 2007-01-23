@@ -54,7 +54,6 @@ static PrivilegeDescription descriptions[] = {
 	{ "dip", N_("Connect to Internet using a modem") },
 	{ "fax", N_("Send and receive faxes") },
 	{ "floppy", N_("Use floppy drives") },
-	{ "fuse", N_("Allow use of fuse filesystems like LTSP Thin Client blockdevices") },
 	{ "plugdev", N_("Access external storage devices automatically") },
 	{ "scanner", N_("Use scanners") },
 	{ "tape", N_("Use tape drives") },

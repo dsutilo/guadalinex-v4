@@ -1,4 +1,0 @@
-patching file src/common/Makefile.am
-patching file src/common/gst-package.c
-patching file src/common/gst-package.h
-patching file src/common/gst.h

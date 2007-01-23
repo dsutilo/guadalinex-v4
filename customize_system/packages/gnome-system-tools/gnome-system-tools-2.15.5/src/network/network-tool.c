@@ -20,8 +20,6 @@
 
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
-#include <sys/types.h>
-#include <sys/wait.h>
 #include "gst.h"
 #include "network-tool.h"
 #include "ifaces-list.h"
@@ -94,65 +92,9 @@ static void
 save_search_domains (GList *list, gpointer data)
 {
   GstNetworkTool *tool = (GstNetworkTool *) data;
-  
+
   oobs_hosts_config_set_search_domains (tool->hosts_config, list);
   oobs_object_commit (tool->hosts_config);
-}
-
-gint avahi_status()
-{
-  
-  gchar *argv_stat[] = { "/usr/share/avahi/avahi_status", NULL};
-  GSpawnFlags flags = G_SPAWN_FILE_AND_ARGV_ZERO;
-  GError *error=NULL;
-  gint spawn_exit_code, my_return_code;	
-  gboolean ok;
-  
-  if (!g_file_test ("/usr/share/avahi/avahi_status", G_FILE_TEST_EXISTS))
-    return -1;
-
-  ok = g_spawn_sync (NULL, argv_stat, NULL, flags,NULL, NULL, NULL, NULL, &spawn_exit_code, &error);
-  
-  if (ok)
-    my_return_code = WEXITSTATUS (spawn_exit_code);
-  else
-    {
-      my_return_code = -1;
-      fprintf (stderr, "Error occured spawning: %s\n", error->message);
-    }
-  
-  return (my_return_code);
-}
-
-gint avahi_set(gboolean enable)
-{
-  char msg[1024];
-  char const *argv_enable[] = { "gksudo", msg, "/usr/share/avahi/enable_avahi 1", NULL };
-  char const *argv_disable[] = { "gksudo", msg, "/usr/share/avahi/enable_avahi 0", NULL };
-  GSpawnFlags flags = G_SPAWN_SEARCH_PATH;
-  GError *error=NULL;
-  gint spawn_exit_code, my_return_code;	
-  gboolean ok;
-	
-  if (enable)
-    {
-      snprintf(msg , sizeof(msg), "-m %s", _("Enter your password to enable the automatic service discovery."));
-      ok = g_spawn_sync (NULL,(gchar**) argv_enable, NULL, flags,NULL, NULL, NULL, NULL, &spawn_exit_code, &error);
-    }
-  else
-    {
-      snprintf(msg , sizeof(msg), "-m %s", _("Enter your password to disable the automatic service discovery."));		   
-      ok = g_spawn_sync (NULL, (gchar**) argv_disable, NULL, flags,NULL, NULL, NULL, NULL, &spawn_exit_code, &error);
-    }
-  
-  if (ok)
-    my_return_code = WEXITSTATUS (spawn_exit_code);
-  else
-    {
-      my_return_code = -1;
-      fprintf (stderr, "Error occured spawning: %s\n", error->message);
-    }
-  return (my_return_code);
 }
 
 static GObject*
@@ -162,9 +104,7 @@ gst_network_tool_constructor (GType                  type,
 {
   GObject *object;
   GstNetworkTool *tool;
-  gboolean avahi_stat;
-
-  GtkWidget *widget, *add_button, *delete_button, *apply_button;;
+  GtkWidget *widget, *add_button, *delete_button;
 
   object = (* G_OBJECT_CLASS (gst_network_tool_parent_class)->constructor) (type,
 									    n_construct_properties,
@@ -206,20 +146,7 @@ gst_network_tool_constructor (GType                  type,
   widget = gst_dialog_get_widget (GST_TOOL (tool)->main_dialog, "locations_combo");
   add_button = gst_dialog_get_widget (GST_TOOL (tool)->main_dialog, "add_location");
   delete_button = gst_dialog_get_widget (GST_TOOL (tool)->main_dialog, "remove_location");
-  apply_button = gst_dialog_get_widget (GST_TOOL (tool)->main_dialog, "apply_location");
-  tool->location = gst_locations_combo_new (GST_TOOL (tool), widget, add_button, delete_button, apply_button);
-  
-  widget = gst_dialog_get_widget (GST_TOOL (tool)->main_dialog, "enable_avahi");
-  avahi_stat = avahi_status();
- 
-  if (avahi_stat == 0)
-    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), FALSE);
-  else if (avahi_stat == 1)
-    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), TRUE);
-  else
-    gtk_widget_set_sensitive (GTK_TOGGLE_BUTTON (widget), FALSE);
-
-  g_signal_connect (widget, "toggled", G_CALLBACK (on_avahi_toggled), GST_NETWORK_TOOL (tool));
+  tool->location = gst_locations_combo_new (GST_TOOL (tool), widget, add_button, delete_button);
 
   tool->dialog = connection_dialog_init (tool);
 

@@ -348,7 +348,6 @@ check_ntp_support (GstTool  *tool,
 		   gboolean  active)
 {
 	GtkWidget *message, *widget;
-	gint response;
 
 	if (GST_TIME_TOOL (tool)->ntp_service)
 		return TRUE;
@@ -367,22 +366,8 @@ check_ntp_support (GstTool  *tool,
 						  _("Please install and activate NTP support in the system to enable "
 						    "synchronization of your local time server with "
 						    "internet time servers."));
-
-	gtk_dialog_add_button (GTK_DIALOG (message), _("Install NTP support"), GTK_RESPONSE_OK);
-	response = gtk_dialog_run (GTK_DIALOG (message));
+	gtk_dialog_run (GTK_DIALOG (message));
 	gtk_widget_destroy (message);
-
-	if (response == GTK_RESPONSE_OK) {
-		const gchar *packages[] = { "ntp-server", NULL };
-
-		if (gst_packages_install (GTK_WINDOW (tool->main_dialog), packages)) {
-			gst_tool_update_config (tool);
-			gst_tool_update_gui (tool);
-
-			if (GST_TIME_TOOL (tool)->ntp_service)
-				return TRUE;
-		}
-	}
 
 	return FALSE;
 }
@@ -501,11 +486,6 @@ gst_time_tool_update_gui (GstTool *tool)
 	timezone = gst_dialog_get_widget (tool->main_dialog, "tzlabel");
 	ntp_use = gst_dialog_get_widget (tool->main_dialog, "ntp_use");
 	timeserver_button = gst_dialog_get_widget (tool->main_dialog, "timeserver_button");
-	if(getenv("GST_NO_NTP") != NULL) {
-		gtk_widget_hide(ntp_use);
-		gtk_widget_hide(timeserver_button);
-	}
-		
 
 	gtk_label_set_text (GTK_LABEL (timezone),
 			    oobs_time_config_get_timezone (OOBS_TIME_CONFIG (time_tool->time_config)));
