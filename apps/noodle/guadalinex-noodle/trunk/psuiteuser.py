@@ -25,7 +25,7 @@ import pwd
 
 
 def first_use():
-    example_path="/usr/share/guadalinex-noodle/example"
+    example_path="/usr/share/guadalinex-noodle/examples"
     username = pwd.getpwuid(os.getuid())[0]
     home = pwd.getpwuid(os.getuid())[5]
     multisync_path = home + "/.multisync/"
