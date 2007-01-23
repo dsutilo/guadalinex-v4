@@ -126,6 +126,7 @@ if [ "$RET" = true ] && ! is_system_user; then
 		find $ROOT/home/$USER -exec touch '{}' \;
 		cp -a /etc/skel /tmp/$USER
 		cp -ur /tmp/$USER $ROOT/home
+		$log $chroot $ROOT chown -R "$USER:$USER" "/home/$USER" >/dev/null || true
 	fi
 
 	# Clear the user password from the database.
