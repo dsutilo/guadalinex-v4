@@ -1,0 +1,193 @@
+FAQ del sistema de generación
+=============================
+o ¿Cómo añado un nuevo paquete al repositorio?
+o ¿Cómo añado una nueva dependencia para que se instale en el sistema final?
+o ¿Cómo sincronizo gensys y zufre?
+o ¿Cómo genero una imagen oficial?
+o ¿Cómo genero una imagen sin recompilar los paquetes?
+o ¿Cómo recompilo todos los paquetes?
+o ¿Cómo actualizo el repositorio con los nuevos paquetes que existan en 
+o ¿Cómo regenero el squashfs?
+o ¿Dónde están los logs de las compilaciones?
+o ¿Dónde se generan las imágenes?
+o ¿Dónde se define el tag (alpha, beta1, beta2, beta3, ...) de las imágenes?
+o ¿Qué se debe comprobar antes de generar una imagen?
+o ¿Qué se debe comprobar después de generar una imagen?
+o ¿Qué es lo que pasa cuando ejecuto ./cron.daily?
+o ¿Qué es lo que pasa cuando ejecuto ./cron.daily-live?
+
+---
+
+o ¿Cómo añado un nuevo paquete al repositorio?
+  
+    Copialo a /var/mirror/guada-packages. El paquete que incluyes ha de ser más reciente que los contenidos en /var/mirror/ubuntu
+  
+o ¿Cómo añado una nueva dependencia para que se instale en el sistema final?
+ 
+  Si es un guadalinex-* paquete:
+
+    Añade la depedencia a meta-guadalinex-v4
+ 
+  Si es una aplicación a nivel de escritorio:
+  
+    Añade la dependencia a guadalinex-desktop
+  
+  Si es a nivel de linea de comandos:
+  
+    Añade la dependencia a guadalinex-standard
+
+  Si el paquete no ha de estar como dependencia a ninguno de los anteriores 
+  paquetes por el motivo que sea:
+
+    live: 
+      Modificar el paquete fuente glig, añadiendo en el ejecutable glig
+      justo después de la instalación de meta-guadalinex-v4 las dos lineas
+      siguientes:
+
+          apt_get install nombre-de-paquete
+          apt_get install
+
+    di:
+      Modificar el fichero de preseed (/var/cdimage/debian-cd/data/edgy/preseed/ubuntu/ubuntu.seed)
+
+         pkgsel                  pkgsel/include                  string meta-guadalinex-v4
+
+      Por:
+
+         pkgsel                  pkgsel/include                  string meta-guadalinex-v4 nombre-de-paquete
+
+  
+o ¿Cómo sincronizo gensys y zufre?
+  
+    1. Comprueba que en gensys no queda ningún cambio por comitear importante.
+    2. ssh root@217.12.17.254
+    3  screen -> IMPORTANTE por si se corta la conexión.
+    4. chroot /var/edgy-chroot
+    4. su gensys
+    5. guadalinex-sync
+  
+o ¿Cómo genero una imagen oficial?
+  
+    cd /var/cdimage 
+  
+    En este directorio, en función de lo que se vaya a generar:
+  
+               di: ./cron.daily --official
+             live: ./cron.daily-live --official
+    Todo el juego: sudo ./cron --official
+  
+o ¿Cómo genero una imagen sin recompilar los paquetes?
+  
+    cd /var/cdimage 
+  
+    En este directorio, en función de lo que se vaya a generar:
+  
+               di: ./cron.daily --no-gen-pkgs
+             live: ./cron.daily-live --no-gen-pkgs
+  
+o ¿Cómo recompilo todos los paquetes?
+  
+    cd /var/mirror/bin
+    ./compile-svn
+  
+o ¿Cómo actualizo el repositorio con los nuevos paquetes que existan en 
+  /var/mirror/guada-packages?
+  
+    cd /var/mirror/bin
+    ./update-derivative-repository
+  
+o ¿Cómo regenero el squashfs?
+  
+    1. Comprobar que no existe el directorio /tmp/sources, en cuyo caso es 
+       necesario borrarlo. CUIDADO al borrarlo, puede que haya particiones
+       montadas dentro de ese directorio.
+  
+    2. sudo glig
+  
+o ¿Dónde están los logs de las compilaciones?
+  
+    En /var/cdimage/log/ubuntu/edgy/*
+  
+o ¿Dónde se generan las imágenes?
+  
+    En /var/cdimage/www/full/*
+
+o ¿Dónde se define el tag (alpha, beta1, beta2, beta3, ...) de las imágenes?
+
+    En /var/cdimage/etc/derivative ha de cambiarse la variable IMAGEOFFICIAL.
+    Esta variable únicamente es útil cuando el sistema de generación es 
+    llamado con el argumento "--official".
+
+    Si la generación no es oficial, el tag que se usará será el
+    correspondiente a la última versión del subversion.
+
+o ¿Qué se debe comprobar antes de generar una imagen?
+
+   1. Comprobar que hay espacio suficiente en el disco, una generación 
+      completa de live y no live requiere del orden de 2 o 3 GB (Hay que 
+      contar los directorios temporales (/var/cdimage/scratch), imagenes 
+      squashfs, directorio /tmp/sources, imagenes finales, ...)
+
+   2. Comprobar que no quedan cosas por actualizar bajo /var/cdimage y
+      /var/mirror. En zufre se puede ejecutar guadalinex-sync para 
+      facilitar esta tarea.
+
+   3. Comprobar que se está en una sesión screen por posibles fallos en 
+      la conexión ssh. De este modo si hay perdida de conexión el sistema 
+      continuará ejecutandose.
+
+o ¿Qué se debe comprobar después de generar una imagen?
+
+   1. Comprobar que la imagen no ha sido sobrepasada de tamaño. Cuando esto 
+      ocurre se crea un fichero al mismo nivel de la .iso con el posfijo
+      .OVERSIZED. Por tanto, hay que comprobar que este fichero no existe.
+
+   2. Si la generación se ha hecho en paralelo en zufre y en gensys, ha 
+      de comprobarse que los tamaños no difieren en gran medida.
+
+   3. Las imagenes generadas deben de, al menos, instalarse para validar
+      al menos el arranque y la instalación.
+
+o ¿Qué es lo que pasa cuando ejecuto ./cron.daily?
+
+   Al menos que el argumento "--no-gen-pkgs" sea pasado al ejecutarse, 
+   comenzará a recompilarse todo el repositorio, el resultado se deja en 
+   /var/mirror/guada-packages. Justo después se actualiza el repositorio
+   dejando en /var/mirror/ubuntu un repositorio bien formado cuyo codename
+   es edgy y tiene las secciones main, restricted, universe, multiverse y
+   toro.
+
+   Llegado a este punto, germinate se pone a leer sus listas y calcula
+   los paquetes que han de __incluirse__ en el cd.
+
+   Una vez la lista definitiva esté lista, se crean enlaces duros de los 
+   paquetes a incluir en la imagen al directorio temporal 
+   /var/cdimage/scratch/ubuntu/daily/tm/edgy-i386/CD1/pool.
+
+   Seguidamente, cabe destacar la ejecución de
+   /var/cdimage/debian-cd/tools/boot/edgy/boot-i386, en el cual se 
+   prepara la imagen para que sea arrancable.
+
+   Por último se llama a mkisofs y generará la imagen a partir de los 
+   datos de /var/cdimage/scratch/ubuntu/daily/tmp/edgy-i386/CD1/ en
+   /var/cdimage/www/full/daily/current/
+
+   Si el argumento "--official" es usado en la ejecución de ./cron.daily, 
+   el nombre de la imagen será el especificado en la variable
+   IMAGEOFFICIAL declarada en /var/cdimage/etc/derivative
+
+o ¿Qué es lo que pasa cuando ejecuto ./cron.daily-live?
+
+   El proceso es idéntico al del di con una modificación y varios 
+   añadidos. La modificación es que germinate se ejecuta pero únicamente
+   incluye los paquetes de la lista live, así se generará un pequeño
+   pool/ con aplicaciones extras que se pueden instalar desde el live.
+
+   En un punto de ejecución de debian-cd, se copia el squashfs y demás
+   contenidos del directorio /var/cdimage/live/edgy/ubuntu/current/ al 
+   directorio temporal del live 
+   /var/cdimage/scratch/ubuntu/daily-live/tmp/edgy-i386/CD1/
+
+   Por lo demás, el comportamiento es idéntico al del di. Importante, el
+   tratamiento de los argumentos "--official" y "--no-gen-pkgs" es 
+   también el mismo.
