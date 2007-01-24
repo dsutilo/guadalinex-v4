@@ -990,11 +990,11 @@ class Wizard:
         hostname = self.hostname.get_property('text')
         for result in validation.check_hostname(hostname):
             if result == validation.HOSTNAME_LENGTH:
-                error_msg.append("The hostname must be between 3 and 18 characters long.")
+                error_msg.append(_("The hostname must be between 3 and 18 characters long."))
             elif result == validation.HOSTNAME_WHITESPACE:
-                error_msg.append("The hostname may not contain spaces.")
+                error_msg.append(_("The hostname may not contain spaces."))
             elif result == validation.HOSTNAME_BADCHAR:
-                error_msg.append("The hostname may only contain letters, digits, and hyphens.")
+                error_msg.append(_("The hostname may only contain letters, digits, and hyphens."))
 
         # showing warning message is error is set
         if len(error_msg) != 0:
@@ -1345,8 +1345,7 @@ class Wizard:
             if check in (None, '', ' '):
                 continue
             if partitions.count(check) > 1:
-                error_msg.append("A partition is assigned to more than one "
-                                 "mount point.")
+                error_msg.append(_("A partition is assigned to more than one mount point."))
                 break
 
         # Processing more validation stuff
@@ -1374,8 +1373,7 @@ class Wizard:
                     error_msg.append(get_string(
                         'partman-target/no_root', self.locale))
                 elif check == validation.MOUNTPOINT_DUPPATH:
-                    error_msg.append("Two file systems are assigned the same "
-                                     "mount point.")
+                    error_msg.append(_("Two file systems are assigned the same mount point."))
                 elif check == validation.MOUNTPOINT_BADSIZE:
                     for mountpoint, format, fstype, flags in \
                             self.mountpoints.itervalues():
@@ -1385,34 +1383,19 @@ class Wizard:
                     else:
                         min_root = (MINIMAL_PARTITION_SCHEME['root'] +
                                     MINIMAL_PARTITION_SCHEME['swap'])
-                    error_msg.append("The partition assigned to '/' is too "
-                                     "small (minimum size: %d Mb)." % min_root)
+                    error_msg.append(_("The partition assigned to '/' is too small (minimum size: %d Mb).") % min_root)
                 elif check == validation.MOUNTPOINT_BADCHAR:
                     error_msg.append(get_string(
                         'partman-basicfilesystems/bad_mountpoint',
                         self.locale))
                 elif check == validation.MOUNTPOINT_XFSROOT:
-                    error_msg.append("XFS may not be used on the filesystem "
-                                     "containing /boot. Either use a "
-                                     "different filesystem for / or create a "
-                                     "non-XFS filesystem for /boot.")
+                    error_msg.append(_("XFS may not be used on the filesystem containing /boot. Either use a different filesystem for / or create a non-XFS filesystem for /boot."))
                 elif check == validation.MOUNTPOINT_XFSBOOT:
-                    error_msg.append("XFS may not be used on the /boot "
-                                     "filesystem. Use a different filesystem "
-                                     "type for /boot.")
+                    error_msg.append(_("XFS may not be used on the /boot filesystem. Use a different filesystem type for /boot."))
                 elif check == validation.MOUNTPOINT_UNFORMATTED:
-                    error_msg.append("Filesystems used by the system (/, "
-                                     "/boot, /usr, /var) must be reformatted "
-                                     "for use by this installer. Other "
-                                     "filesystems (/home, /media/*, "
-                                     "/usr/local, etc.) may be used without "
-                                     "reformatting.")
+                    error_msg.append(_("Filesystems used by the system (/, /boot, /usr, /var) must be reformatted for use by this installer. Other filesystems (/home, /media/*, /usr/local, etc.) may be used without reformatting."))
                 elif check == validation.MOUNTPOINT_NEEDPOSIX:
-                    error_msg.append("FAT and NTFS filesystems may not be "
-                                     "used on filesystems used by the system "
-                                     "(/, /boot, /home, /usr, /var, etc.). "
-                                     "It is usually best to mount them "
-                                     "somewhere under /media/.")
+                    error_msg.append(_("FAT and NTFS filesystems may not be used on filesystems used by the system (/, /boot, /home, /usr, /var, etc.). It is usually best to mount them somewhere under /media/."))
                 elif check == validation.MOUNTPOINT_NONEWWORLD:
                     error_msg.append(get_string(
                         'partman-newworld/no_newworld',

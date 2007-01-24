@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity 1.2.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-23 14:17+0100\n"
+"POT-Creation-Date: 2007-01-24 17:33+0100\n"
 "PO-Revision-Date: 2006-12-26 23:38+0000\n"
 "Last-Translator: Jesús Espino García <jespinog@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -21,7 +21,70 @@ msgstr ""
 msgid "_Install"
 msgstr "_Instalar"
 
-#: ../ubiquity/frontend/gtkui.py:1562
+#: ../ubiquity/frontend/gtkui.py:993
+msgid "The hostname must be between 3 and 18 characters long."
+msgstr "El nombre del equipo debe tener entre 3 y 18 caracteres de largo."
+
+#: ../ubiquity/frontend/gtkui.py:995
+msgid "The hostname may not contain spaces."
+msgstr "El nombre del equipo no puede contener espacios."
+
+#: ../ubiquity/frontend/gtkui.py:997
+msgid "The hostname may only contain letters, digits, and hyphens."
+msgstr "El nombre del equipo solo puede contener letras, números y guiones"
+
+#: ../ubiquity/frontend/gtkui.py:1348
+msgid "A partition is assigned to more than one mount point."
+msgstr "Una particione esta asignada a mas de un punto de montaje."
+
+#: ../ubiquity/frontend/gtkui.py:1376
+msgid "Two file systems are assigned the same mount point."
+msgstr "Dos sistemas de ficheros estan asignados al mismo punto de montaje."
+
+#: ../ubiquity/frontend/gtkui.py:1386
+#, python-format
+msgid "The partition assigned to '/' is too small (minimum size: %d Mb)."
+msgstr "La partición asignada a '/' es muy pequeña (tamaño mínimo %d Mb)."
+
+#: ../ubiquity/frontend/gtkui.py:1392
+msgid ""
+"XFS may not be used on the filesystem containing /boot. Either use a "
+"different filesystem for / or create a non-XFS filesystem for /boot."
+msgstr ""
+"XFS no puede ser usado para el sistema de ficheros que contenga /boot.Puede "
+"usar un sistema de ficheros diferente para / o crear un sistema deficheros "
+"no-XFS para /boot"
+
+#: ../ubiquity/frontend/gtkui.py:1394
+msgid ""
+"XFS may not be used on the /boot filesystem. Use a different filesystem type "
+"for /boot."
+msgstr ""
+"XFS no puede ser usado para el sistema de ficheros /boot. Use un sistema "
+"deficheros diferente para /boot"
+
+#: ../ubiquity/frontend/gtkui.py:1396
+msgid ""
+"Filesystems used by the system (/, /boot, /usr, /var) must be reformatted "
+"for use by this installer. Other filesystems (/home, /media/*, /usr/local, "
+"etc.) may be used without reformatting."
+msgstr ""
+"Los sistemas de ficheros usados por el sistema (/, /boot, /usr, /var) deben "
+"serreformateados para ser usados por el instalador. Otros sistemas de "
+"ficheros(/home, /media/*, /usr/local, /etc.) pueden ser usados sin "
+"reformatear."
+
+#: ../ubiquity/frontend/gtkui.py:1398
+msgid ""
+"FAT and NTFS filesystems may not be used on filesystems used by the system "
+"(/, /boot, /home, /usr, /var, etc.). It is usually best to mount them "
+"somewhere under /media/."
+msgstr ""
+"Los sistemas de ficheros FAT y NTFS no pueden ser usados para sistemas "
+"deficheros utilizados por el sistema (/, /boot, /home, /usr, /var, etc.). "
+"Lomás habitual es montarlos en algún punto debajo de /media."
+
+#: ../ubiquity/frontend/gtkui.py:1545
 msgid ""
 "Resize a existing partition for make space where install the distribution."
 msgstr ""
@@ -33,7 +96,7 @@ msgstr ""
 "Aunque es improbable que se produzca una pérdida de sus datos, se recomienda "
 "hacer una <b>copia de seguridad</b> antes de realizar la instalación.</span>"
 
-#: ../ubiquity/frontend/gtkui.py:1565
+#: ../ubiquity/frontend/gtkui.py:1548
 msgid "Use the biggest free space in the partition table."
 msgstr ""
 "<span>Con este método se utilizará <b>espacio libre</b> (es decir, en el que "
@@ -42,7 +105,7 @@ msgstr ""
 "modificará ninguna de las particiones o sistemas operativos ya existentes</"
 "b></span>"
 
-#: ../ubiquity/frontend/gtkui.py:1568
+#: ../ubiquity/frontend/gtkui.py:1551
 msgid ""
 "Use the partition table in the actual status for install the distribution."
 msgstr ""
@@ -52,7 +115,7 @@ msgstr ""
 "hubiese en ese sistema Linux previo se perderán de manera irreversible</b>.</"
 "span>"
 
-#: ../ubiquity/frontend/gtkui.py:1571
+#: ../ubiquity/frontend/gtkui.py:1554
 msgid ""
 "Edit manually the partition table for make space where install the "
 "distribution."
@@ -66,7 +129,7 @@ msgstr ""
 "la <b>pérdida de todos los datos</b>, así que continúe por aquí únicamente "
 "si ya tiene experiencia particionando de forma manual.</span>"
 
-#: ../ubiquity/frontend/gtkui.py:1574
+#: ../ubiquity/frontend/gtkui.py:1557
 msgid ""
 "Delete all the hard disk and use all the space for install the distribution."
 msgstr ""
