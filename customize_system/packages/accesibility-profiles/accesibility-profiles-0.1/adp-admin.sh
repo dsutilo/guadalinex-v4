@@ -12,8 +12,7 @@ function apply_profile
 
     if [ ${4::6} == "Visual" ]; then
 	if [ -e /boot/grub/menu.lst ]; then
-		sed -e '/title/ s/$/ /' /boot/grub/menu.lst > /tmp/menu.lst
-		mv /tmp/menu.lst /boot/grub/menu.lst
+		sed -i '/title/ s/$/ /' /boot/grub/menu.lst 
 	fi
     fi
 
