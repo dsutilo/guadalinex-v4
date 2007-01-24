@@ -20,7 +20,9 @@ o ¿Qué es lo que pasa cuando ejecuto ./cron.daily-live?
 
 o ¿Cómo añado un nuevo paquete al repositorio?
   
-    Copialo a /var/mirror/guada-packages. El paquete que incluyes ha de ser más reciente que los contenidos en /var/mirror/ubuntu y una vez hecho deberas ejecutar el script /var/mirror/bin/update-derivative-repository.sh
+    Copialo a /var/mirror/guada-packages. El paquete que incluyes ha de ser 
+más reciente que los contenidos en /var/mirror/ubuntu y una vez hecho 
+deberas ejecutar el script /var/mirror/bin/update-derivative-repository.sh
   
 o ¿Cómo añado una nueva dependencia para que se instale en el sistema final?
  
@@ -65,6 +67,7 @@ o ¿Cómo sincronizo gensys y zufre?
     4. chroot /var/edgy-chroot
     4. su gensys
     5. guadalinex-sync
+    6. comprobar que las versiones de gcs y glig son las mismas en ambas máquinas.
   
 o ¿Cómo genero una imagen oficial?
   
