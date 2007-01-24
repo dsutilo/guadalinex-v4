@@ -1,5 +1,120 @@
-BETA2 (n/a)
+BETA3 (n/a)
 ===========
+
+PERSONALIZACIÓN Y CONFIGURACIÓN DEL SISTEMA (BRANDING)
+------------------------------------------------------
+
+- Cerrada lista prácticamente definitiva de aplicaciones
+- Incluidas nuevas aplicaciones:
+  - lsr
+  - mozilla-acroread
+  - dasher
+  - gFTP (BTS 1087)
+  - xchat (BTS 1086)
+  - bluefish (BTS 1085)
+  - d4x (BTS 1084)
+  - soundtracker (BTS 1063)
+  - gnome-games
+  - firestarter
+  - streamtuner
+  - aMSN (v. 0.96)
+  - gdebi
+  - audacity (BTS 1059)
+- Incluidas aplicaciones de consola (del spec): mc, ncftp, minicom, vim, ssh,
+wget, rsync, dillo, sqlite, nmap, gsm-utils, brltty, joe
+- Mejoras en el sistema de suplementos: comprobación de si el suplemento se
+instala correctamente, comprobación de dependencias,...
+- Adaptación de "contenido para Windows" de la v3 a la v4: pendiente de
+terminar de depurar (BTS 1044)
+- Solucionado problema de acceso a unidades SAMBA de la red: no se refrescaban
+correctamente las unidades de red a través de nautilus
+- Incluidos ficheros de ejemplo, adaptando los de la v3
+- Pruebas de hibernación y gestión de energía en equipos portátiles correctas
+- Añadido asistente para instalación de codecs de audio/vídeo
+- Homogeneizadas entradas del menú: descripción (nombre aplicación)
+- Implementado e incluido asistente para conexión a Internet
+- Incluido "watermain"
+- Traducido "gxine" (al final, descartada de la distribución base)
+- Incluida imagen de fondo de Grub
+- Personalizada página de prueba de impresión
+- Configuración adecuada de "rhythmbox": inclusión de algunas radios
+nacionales (tal y como se indica en el "spec")
+- Configuración adecuada de "liferea": inclusión de algunos periódicos
+nacionales (tal y como se indica en el "spec")
+- Las aplicaciones en "Herramientas de Sistema" pasan a "Sistema ->
+Administración"
+- Configuración adecuada de "amule": navegador y reproductor de vídeo por
+defecto (BTS 1017)
+
+
+INSTALADOR LIVE (LIVE-INSTALLER)
+--------------------------------
+
+- Añadido visualizador de particiones de disco en selección de puntos de
+montaje
+- Mejorado (más usable y sencillo) el resumen final del instalador (BTS 955)
+- Corregido problema de instalación de paquetes de soporte de inglés al final
+de la instalación (ya no los instala)
+- Corregido error de instalación cuando existen múltiples discos duros (BTS
+965 y 1126)
+- Mejorado sistema de redimensionado: permitía disminuir el tamaño por debajo
+del mínimo necesario para la instalación
+- Mejorado opción de utilizar espacio libre: permitía usar espacio sin
+particionar demasiado pequeño
+- Añadido soporte para instalación del perfil de accesibilidad con el que se
+arranca en live al usuario que se crea en el sistema instalado
+- Mejoradas descripciones de opciones de particionado
+- Corregidos errores de unidades montadas tras usar "DiskPreview"
+- Establecidos valores mínimos de instalación: 3 GB (/), 500 MB (/home), 64 MB
+(swap)
+- Análisis de soporte de accesibilidad de "gparted": habría que hacer un "fork"
+- Personalizado botón de instalar incluyendo nuevo logo
+
+INSTALADOR NO LIVE (DI-INSTALLER)
+---------------------------------
+
+- Corregidos algunos problemas leves de traducción
+
+ACCESIBILIDAD
+-------------
+
+- Análisis y repaso de perfiles de accesibilidad
+- Validación de funcionamiento de los perfiles de accesibilidad
+
+NOODLE
+------
+
+- Implementado e incluido actor de Hermes para gestión de PDAs
+- Finalizada integración en Guadalinex: paquetes guadalinex-noodle
+- Análisis de la tecnología "opensync" para sincronización a través de
+"syncml" (eg: symbian); probadas diferentes versiones (0.18 (dapper), 0.19,
+020svn): descartado por considerarse poco estable aún.
+- Corregidos algunos errores.
+
+SISTEMA DE GENERACIÓN (GENERATION SYSTEM)
+-----------------------------------------
+
+- Actualizados paquetes relevantes de "-updates", "-security" y "-backports"
+- Mejorada la estructura de metapaquetes de Guadalinex para hacer más flexible
+la desinstalación de paquetes sin afectar a las configuraciones del resto
+
+E-ADMIN
+-------
+
+- Incluido sistema de instalación de certificado raíz de la FNMT:
+  - Cuando se detecta un certificado de usuario y se va a instalar en Firefox,
+  se pide permiso al usuario para la instalación del certificado raíz,
+  pidiendo que acepte la licencia.
+  - Hecho lo anterior, se instala el certificado raíz en el sistema
+- Modificado sistema de creación de usuarios para añadir a los nuevos usuarios
+al grupo "scard"
+- Añadidas librerías "jss" para acceso a diferentes servicios Java de la JA
+- Análisis de firma en Evolution con DNIe: descartado (no es posible firmar
+con el DNIe)
+
+
+BETA2 (12/01/07)
+================
 
 PERSONALICACIÓN Y CONFIGURACIÓN DEL SISTEMA (BRANDING)
 ------------------------------------------------------
