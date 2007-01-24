@@ -171,8 +171,13 @@ class Wizard:
         # load the interface
         self.glade = gtk.glade.XML('%s/ubiquity.glade' % GLADEDIR)
 
-        # DiskPreviewWidget
-        self.diskpreview = None
+        # DiskPreviewWidget in part auto step
+        if not NODISKPREVIEW:
+            self.diskpreview = DiskPreview()
+            print "diskpreview , created"
+        else:
+            self.diskpreview = None
+        
         # DiskPreviewWidget in mount point step
         if not NODISKPREVIEW:
             self.diskpreview_mps = DiskPreview()
@@ -195,8 +200,12 @@ class Wizard:
             if isinstance(widget, gtk.Label):
                 widget.set_property('can-focus', False)
 
+        if self.diskpreview != None:
+            self.spa_diskpreview_vbox.pack_end(self.diskpreview, expand=True)
+            self.diskpreview.show()
+        
         if self.diskpreview_mps != None:
-            self.stepPartMountpoints.pack_end(self.diskpreview_mps, expand=False)
+            self.smp_diskpreview_vbox.pack_end(self.diskpreview_mps, expand=True)
             self.diskpreview_mps.show()
 
         got_intro = self.show_intro()
@@ -1818,11 +1827,6 @@ class Wizard:
                 self.on_autopartition_resize_toggled(button)
                 button.connect('toggled', self.on_autopartition_resize_toggled)
             button.connect('toggled', self.on_autopartition_choice_toggled)
-
-	if not NODISKPREVIEW:
-            self.diskpreview = DiskPreview()
-            #self.diskpreview.mount_filesystems()
-            self.autopartition_vbox.pack_end(self.diskpreview, expand=True)
         
         if firstbutton is not None:
             firstbutton.set_active(True)

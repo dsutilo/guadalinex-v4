@@ -26,9 +26,8 @@ class DiskPreview(gtk.VBox):
 
         #Glade stuff
         GLADEDIR = "/usr/lib/ubiquity/glade/"
-        self.xml = gtk.glade.XML(GLADEDIR + "diskpreview.glade", root="disk_preview_expander")
-
-        self.disk_preview_expander = self.xml.get_widget("disk_preview_expander")
+        self.xml = gtk.glade.XML(GLADEDIR + "diskpreview.glade", root="disk_preview_main_hbox")
+        
         self.disk_preview_main_hbox = self.xml.get_widget("disk_preview_main_hbox")
         self.disk_preview_sidebar_vbox = self.xml.get_widget("disk_preview_sidebar_vbox")
         self.disk_preview_browser_vbox = self.xml.get_widget("disk_preview_browser_vbox")
@@ -86,7 +85,7 @@ class DiskPreview(gtk.VBox):
                                     markup=1)
         self.disk_preview_treeview.append_column(column)
 
-        self.pack_start(self.disk_preview_expander, expand=True)
+        self.pack_start(self.disk_preview_main_hbox, expand=True)
 
         selection = self.disk_preview_treeview.get_selection()
         selection.set_mode(gtk.SELECTION_SINGLE)
@@ -105,20 +104,17 @@ class DiskPreview(gtk.VBox):
     def mount_filesystems(self):
         #if len(self.mounted_list) == 0:
         #    return
-        self.set_expanded(False)
+        
         self.disk_preview_treeview_model.clear()
         self.__mount_filesystems()
         selection = self.disk_preview_treeview.get_selection()
         selection.select_path(0)
         
     def umount_filesystems(self):
-        self.set_expanded(False)
         for fs in self.mounted_list :
             os.system ("umount %s" % fs)
         self.mounted_list = []
-
-    def set_expanded(self, expanded):
-        self.disk_preview_expander.set_expanded(expanded)
+    
 
     #Class Callbacks
     def __disk_preview_browser_iconview_item_activated_cb(self, iconview, path, data):
