@@ -20,7 +20,7 @@ o ¿Qué es lo que pasa cuando ejecuto ./cron.daily-live?
 
 o ¿Cómo añado un nuevo paquete al repositorio?
   
-    Copialo a /var/mirror/guada-packages. El paquete que incluyes ha de ser más reciente que los contenidos en /var/mirror/ubuntu
+    Copialo a /var/mirror/guada-packages. El paquete que incluyes ha de ser más reciente que los contenidos en /var/mirror/ubuntu y una vez hecho deberas ejecutar el script /var/mirror/bin/update-derivative-repository.sh
   
 o ¿Cómo añado una nueva dependencia para que se instale en el sistema final?
  
@@ -68,7 +68,7 @@ o ¿Cómo sincronizo gensys y zufre?
   
 o ¿Cómo genero una imagen oficial?
   
-    cd /var/cdimage 
+    cd /var/cdimage/bin 
   
     En este directorio, en función de lo que se vaya a generar:
   
@@ -78,7 +78,7 @@ o ¿Cómo genero una imagen oficial?
   
 o ¿Cómo genero una imagen sin recompilar los paquetes?
   
-    cd /var/cdimage 
+    cd /var/cdimage/bin 
   
     En este directorio, en función de lo que se vaya a generar:
   
@@ -110,7 +110,8 @@ o ¿Dónde están los logs de las compilaciones?
   
 o ¿Dónde se generan las imágenes?
   
-    En /var/cdimage/www/full/*
+    En /var/cdimage/www/full/daily o daily-live según el caso
+    La última generada directamente enlazada en /var/cdimage/www/full/(daily daily-live)/current
 
 o ¿Dónde se define el tag (alpha, beta1, beta2, beta3, ...) de las imágenes?
 
@@ -160,7 +161,7 @@ o ¿Qué es lo que pasa cuando ejecuto ./cron.daily?
    Llegado a este punto, germinate se pone a leer sus listas y calcula
    los paquetes que han de __incluirse__ en el cd.
 
-   Una vez la lista definitiva esté lista, se crean enlaces duros de los 
+   Una vez la lista definitiva esté lista (valga la redundancia), se crean enlaces duros de los 
    paquetes a incluir en la imagen al directorio temporal 
    /var/cdimage/scratch/ubuntu/daily/tm/edgy-i386/CD1/pool.
 
