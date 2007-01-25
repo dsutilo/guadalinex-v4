@@ -1489,7 +1489,7 @@ class Wizard:
             self.steps.prev_page()
 
         step = self.step_name(self.steps.get_current_page())
-	if step == self.steps_obj.get_steps_list()[1]:
+	if step == self.steps_obj.get_steps_list()[0]:
 	    self.back.hide()
 
         if self.dbfilter is not None:
@@ -1994,15 +1994,40 @@ class Wizard:
 	active=0
 	counter=0
 	for selectable_device in devices:
-	    self.summary_device_button.append_text(selectable_device)
-	    if selectable_device == device:
-		active=counter
+	    if selectable_device.find("hd")!=-1:
+	        self.summary_device_button.append_text(self.get_ordinal(selectable_device[3])+_(" Hard Disk ")+selectable_device)
 	    else:
-		counter = counter+1
+	        self.summary_device_button.append_text(self.get_ordinal(selectable_device[3])+_(" Floppy Disk ")+selectable_device)
+
+	    if selectable_device == device:
+	        active=counter
+	    else:
+	        counter = counter+1
         self.summary_device_button.set_active(active)
 
+    def get_ordinal(self,number):
+	if number == "0":
+	    ordinal = _("First")
+	elif number == "1":
+	    ordinal = _("Second")
+	elif number == "2":
+	    ordinal = _("Third")
+	elif number == "3":
+	    ordinal = _("Fourth")
+	elif number == "4":
+	    ordinal = _("Fifth")
+	elif number == "5":
+	    ordinal = _("Sixth")
+	elif number == "6":
+	    ordinal = _("Seventh")
+	elif number == "7":
+	    ordinal = _("Eighth")
+	else:
+	    ordinal = ""
+	return ordinal
+
     def get_summary_device (self):
-        return self.summary_device_button.get_active_text()
+        return self.summary_device_button.get_active_text().split()[-1]
 
     def return_to_autopartitioning (self):
         """If the install progress bar is up but still at the partitioning
