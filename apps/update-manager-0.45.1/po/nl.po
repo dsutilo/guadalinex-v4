@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: update-manager HEAD\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2006-10-10 18:58+0200\n"
+"POT-Creation-Date: 2007-01-29 12:37+0100\n"
 "PO-Revision-Date: 2006-10-05 20:40+0000\n"
 "Last-Translator: Tino Meinen <a.t.meinen@chello.nl>\n"
 "Language-Team: Nederlands <vertaling@vrijschrift.org>\n"
@@ -534,7 +534,7 @@ msgid "Fetching file %li of %li at %s/s"
 msgstr "Downloaden van bestand %li uit %li met %s/s"
 
 #: ../DistUpgrade/DistUpgradeViewGtk.py:130
-#: ../DistUpgrade/DistUpgradeViewGtk.py:249
+#: ../DistUpgrade/DistUpgradeViewGtk.py:253
 #, fuzzy, python-format
 msgid "About %s remaining"
 msgstr "Ongeveer %li minuten resterend"
@@ -563,7 +563,7 @@ msgid ""
 msgstr ""
 
 #. self.expander.set_expanded(True)
-#: ../DistUpgrade/DistUpgradeViewGtk.py:202
+#: ../DistUpgrade/DistUpgradeViewGtk.py:203
 #, fuzzy, python-format
 msgid ""
 "Replace the customized configuration file\n"
@@ -572,21 +572,21 @@ msgstr ""
 "Het configuratiebestand vervangen?\n"
 "'%s'"
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:203
+#: ../DistUpgrade/DistUpgradeViewGtk.py:204
 msgid ""
 "You will lose any changes you have made to this configuration file if you "
 "choose to replace it with a newer version."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:216
+#: ../DistUpgrade/DistUpgradeViewGtk.py:217
 msgid "The 'diff' command was not found"
 msgstr "De opdracht 'diff' is niet gevonden"
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:355
+#: ../DistUpgrade/DistUpgradeViewGtk.py:365
 msgid "A fatal error occured"
 msgstr "Er is een ernstige fout ontstaan"
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:356
+#: ../DistUpgrade/DistUpgradeViewGtk.py:366
 #, fuzzy
 msgid ""
 "Please report this as a bug and include the files /var/log/dist-upgrade/main."
@@ -602,28 +602,28 @@ msgstr ""
 
 #. FIXME: make those two seperate lines to make it clear
 #. that the "%" applies to the result of ngettext
-#: ../DistUpgrade/DistUpgradeViewGtk.py:487
+#: ../DistUpgrade/DistUpgradeViewGtk.py:501
 #, fuzzy, python-format
 msgid "%d package is going to be removed."
 msgid_plural "%d packages are going to be removed."
 msgstr[0] "Er zal %s pakket verwijderd worden."
 msgstr[1] "Er zullen %s pakketten verwijderd worden."
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:492
+#: ../DistUpgrade/DistUpgradeViewGtk.py:506
 #, fuzzy, python-format
 msgid "%d new package is going to be installed."
 msgid_plural "%d new packages are going to be installed."
 msgstr[0] "Er zal %s nieuw pakket geïnstalleerd worden."
 msgstr[1] "Er zullen %s nieuwe pakketten geïnstalleerd worden."
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:498
+#: ../DistUpgrade/DistUpgradeViewGtk.py:512
 #, fuzzy, python-format
 msgid "%d package is going to be upgraded."
 msgid_plural "%d packages are going to be upgraded."
 msgstr[0] "%s pakket zal een upgrade krijgen"
 msgstr[1] "%s pakketten zullen een upgrade krijgen."
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:503
+#: ../DistUpgrade/DistUpgradeViewGtk.py:517
 #, fuzzy, python-format
 msgid ""
 "\n"
@@ -634,7 +634,7 @@ msgstr ""
 "\n"
 "U moet in totaal %s downloaden. "
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:509
+#: ../DistUpgrade/DistUpgradeViewGtk.py:523
 #, fuzzy
 msgid ""
 "Fetching and installing the upgrade can take several hours and cannot be "
@@ -643,35 +643,35 @@ msgstr ""
 "Het upgraden kan enkele uren in beslag nemen en kan tussentijds niet worden "
 "afgebroken."
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:512
+#: ../DistUpgrade/DistUpgradeViewGtk.py:526
 msgid "To prevent data loss close all open applications and documents."
 msgstr ""
 "Sluit alle openstaande toepassingen en documenten om dataverlies te "
 "voorkomen."
 
 #. FIXME: this should go into DistUpgradeController
-#: ../DistUpgrade/DistUpgradeViewGtk.py:518
+#: ../DistUpgrade/DistUpgradeViewGtk.py:532
 #: ../UpdateManager/UpdateManager.py:622
 msgid "Your system is up-to-date"
 msgstr "Uw systeem is up-to-date"
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:519
+#: ../DistUpgrade/DistUpgradeViewGtk.py:533
 msgid ""
 "There are no upgrades available for your system. The upgrade will now be "
 "canceled."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:535
+#: ../DistUpgrade/DistUpgradeViewGtk.py:549
 #, python-format
 msgid "<b>Remove %s</b>"
 msgstr "<b>%s verwijderen</b>"
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:537
+#: ../DistUpgrade/DistUpgradeViewGtk.py:551
 #, python-format
 msgid "Install %s"
 msgstr "%s installeren"
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:539
+#: ../DistUpgrade/DistUpgradeViewGtk.py:553
 #, python-format
 msgid "Upgrade %s"
 msgstr "%s upgraden"
@@ -795,6 +795,7 @@ msgid "_Keep"
 msgstr "_Behouden"
 
 #: ../DistUpgrade/DistUpgrade.glade.h:19
+#: ../data/glade/SoftwarePropertiesDialogs.glade.h:21
 msgid "_Replace"
 msgstr "_Vervangen"
 
@@ -832,47 +833,47 @@ msgid "Please check your internet connection."
 msgstr "Controleer uw internetverbinding."
 
 #. no script file found in extracted tarbal
-#: ../UpdateManager/DistUpgradeFetcher.py:149
+#: ../UpdateManager/DistUpgradeFetcher.py:150
 msgid "Could not run the upgrade tool"
 msgstr "Kon het upgrade-programma niet uitvoeren"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:150
+#: ../UpdateManager/DistUpgradeFetcher.py:151
 msgid ""
 "This is most likely a bug in the upgrade tool. Please report it as a bug"
 msgstr ""
 "Dit is waarschijnlijk een fout in het upgrade-programma. Rapporteer deze "
 "fout."
 
-#: ../UpdateManager/DistUpgradeFetcher.py:171
+#: ../UpdateManager/DistUpgradeFetcher.py:172
 msgid "Downloading the upgrade tool"
 msgstr "Downloaden van het upgrade-programma"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:173
+#: ../UpdateManager/DistUpgradeFetcher.py:174
 msgid "The upgrade tool will guide you through the upgrade process."
 msgstr "Het upgrade-programma zal u door het upgrade-proces gidsen."
 
-#: ../UpdateManager/DistUpgradeFetcher.py:180
+#: ../UpdateManager/DistUpgradeFetcher.py:181
 msgid "Upgrade tool signature"
 msgstr "Upgrade-programma handtekening"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:183
+#: ../UpdateManager/DistUpgradeFetcher.py:184
 msgid "Upgrade tool"
 msgstr "Upgrade-programma"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:208
+#: ../UpdateManager/DistUpgradeFetcher.py:209
 msgid "Failed to fetch"
 msgstr "Ophalen is mislukt"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:209
+#: ../UpdateManager/DistUpgradeFetcher.py:210
 msgid "Fetching the upgrade failed. There may be a network problem. "
 msgstr ""
 "Het ophalen van de upgrade is mislukt. Er is mogelijk een netwerkprobleem. "
 
-#: ../UpdateManager/DistUpgradeFetcher.py:214
+#: ../UpdateManager/DistUpgradeFetcher.py:215
 msgid "Failed to extract"
 msgstr "Uitpakken is mislukt"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:215
+#: ../UpdateManager/DistUpgradeFetcher.py:216
 msgid ""
 "Extracting the upgrade failed. There may be a problem with the network or "
 "with the server. "
@@ -880,11 +881,11 @@ msgstr ""
 "Het uitpakken van de upgrade is mislukt. Er is mogelijk een probleem met het "
 "netwerk of de server. "
 
-#: ../UpdateManager/DistUpgradeFetcher.py:221
+#: ../UpdateManager/DistUpgradeFetcher.py:222
 msgid "Verfication failed"
 msgstr "Verificatie is mislukt"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:222
+#: ../UpdateManager/DistUpgradeFetcher.py:223
 #, fuzzy
 msgid ""
 "Verifying the upgrade failed.  There may be a problem with the network or "
@@ -893,11 +894,11 @@ msgstr ""
 "Het verifiëren van de upgrade is mislukt. Er is mogelijk een probleem met "
 "het netwerk of de server. "
 
-#: ../UpdateManager/DistUpgradeFetcher.py:228
+#: ../UpdateManager/DistUpgradeFetcher.py:229
 msgid "Authentication failed"
 msgstr "Echtheidscontrole is mislukt"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:229
+#: ../UpdateManager/DistUpgradeFetcher.py:230
 msgid ""
 "Authenticating the upgrade failed. There may be a problem with the network "
 "or with the server. "
@@ -1197,10 +1198,15 @@ msgstr "Up_dates installeren"
 
 #: ../data/glade/UpdateManager.glade.h:25
 #, fuzzy
+msgid "_Upgrade"
+msgstr "U_pgraden"
+
+#: ../data/glade/UpdateManager.glade.h:26
+#, fuzzy
 msgid "changes"
 msgstr "Wijzigingen"
 
-#: ../data/glade/UpdateManager.glade.h:26
+#: ../data/glade/UpdateManager.glade.h:27
 msgid "updates"
 msgstr ""
 

@@ -4,7 +4,7 @@
 
 datadir=$(prefix)/share/update-manager
 dinfodir = $(datadir)/dists
-dinfo_DATA = Debian.info Ubuntu.info
+dinfo_DATA = Debian.info Ubuntu.info Guadalinex.info
 
 EXTRA_DIST= $(dinfo_DATA)
 
