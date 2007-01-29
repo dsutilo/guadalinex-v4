@@ -1,0 +1,2 @@
+# udev rules file for SynCE
+PHYSDEVDRIVER=="ipaq", ACTION=="add", KERNEL=="ttyUSB*", RUN+="/usr/bin/psuite"

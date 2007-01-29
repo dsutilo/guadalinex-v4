@@ -1,0 +1,13 @@
+Source: guadalinex-noodle
+Section: misc
+Priority: optional
+Maintainer: Ghe Rivero <ghernando@yaco.es>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.2
+
+Package: guadalinex-noodle
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, synce-trayicon, synce-gnomevfs, synce-software-manager, synce-kde, multisync, bluez-utils, bluez-passkey-gnome, synce-serial, synce-dccm, libmultisync-plugin-evolution, synce-multisync-plugin, python-xml, python-bluez
+Recommends: kcemirror 
+Description: Sincronización de PDAs y móviles
+ Sincronización de PDAs y móviles en Guadalinex

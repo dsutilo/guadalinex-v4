@@ -1,0 +1,28 @@
+#!/bin/bash
+DEVICE="/dev/ttyUSB"
+LOGFILE=/var/log/synce
+export PATH="/sbin:/bin:/usr/bin:/usr/sbin"
+
+if [ "$ACTION" == "add" ]
+then
+	if [ `echo $DEVNAME | grep $DEVICE` != 0 ]
+	then
+        echo "`date +"%b %d %X"` `uname -n`: iPAQ plugged, starting connection..." >> $LOGFILE
+		synce-serial-abort >> $LOGFILE
+		synce-serial-config $DEVNAME >> $LOGFILE
+		synce-serial-start >> $LOGFILE
+	fi
+	if [ $SUBSYSTEM == "bluetooth" ]
+        then
+        	/usr/bin/dund --listen --msdun call dun
+		/usr/bin/sdptool add SP
+        fi
+	
+elif [ "$ACTION" == "remove" ]
+then
+	if [ `echo $DEVNAME | grep $DEVICE` != 0 ] 
+	then
+	    echo "`date +"%b %d %X"` `uname -n`: iPAQ removed" >> $LOGFILE
+		synce-serial-abort
+	fi
+fi

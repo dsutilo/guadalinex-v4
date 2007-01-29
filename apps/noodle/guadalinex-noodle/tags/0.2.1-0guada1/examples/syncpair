@@ -1,0 +1,13 @@
+remoteclient = synce-plugin
+localclient = evolution2-sync
+syncinterval = 1800
+dwelltime = 5
+manualonly = no 
+reconninterval = 10
+object_types = 0x7
+syncsound =
+welcomesound =
+displayname =
+playsyncsound = no
+playwelcomesound = no
+duplicatemode = 0
