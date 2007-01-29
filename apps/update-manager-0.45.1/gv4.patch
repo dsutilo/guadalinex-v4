@@ -1,0 +1,11 @@
+--- UpdateManager/Common/aptsources.py.orig	2007-01-29 11:33:48.000000000 +0100
++++ UpdateManager/Common/aptsources.py	2007-01-29 11:34:00.000000000 +0100
+@@ -543,7 +543,7 @@
+ 
+     # try to guess the nearest mirror from the locale
+     # FIXME: for debian we need something different
+-    if self.id == "Ubuntu":
++    if (self.id == "Ubuntu") or (self.id == "Guadalinex"):
+         locale = os.getenv("LANG", default="en.UK")
+         a = locale.find("_")
+         z = locale.find(".")
