@@ -1486,7 +1486,10 @@ class Wizard:
             changed_page = True
 
         if not changed_page:
-            self.steps.prev_page()
+	    curstep_index = self.steps_obj.get_steps_list().index(step)
+	    back_step_name = self.steps_obj.get_steps_list()[curstep_index-1]
+	    while self.step_name(self.steps.get_current_page())!= back_step_name:
+                self.steps.prev_page()
 
         step = self.step_name(self.steps.get_current_page())
 	if step == self.steps_obj.get_steps_list()[0]:
