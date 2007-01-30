@@ -1,5 +1,376 @@
---- UpdateManager/Common/aptsources.py.orig	2007-01-29 11:33:48.000000000 +0100
-+++ UpdateManager/Common/aptsources.py	2007-01-29 11:34:00.000000000 +0100
+diff -urN -x .svn update-manager-0.45.1.orig/data/channels/Guadalinex.info update-manager-0.45.1/data/channels/Guadalinex.info
+--- update-manager-0.45.1.orig/data/channels/Guadalinex.info	1970-01-01 01:00:00.000000000 +0100
++++ update-manager-0.45.1/data/channels/Guadalinex.info	2007-01-29 12:31:25.000000000 +0100
+@@ -0,0 +1,46 @@
++ChangelogURI: http://changelogs.ubuntu.com/changelogs/pool/%s/%s/%s/%s_%s/changelog
++
++Suite: toro 
++RepositoryType: deb
++BaseURI: http://v4.guadalinex.org/guadalinex-toro
++MatchURI: v4.guadalinex.org/guadalinex-toro
++MirrorsFile: /usr/share/update-manager/mirrors-gv4.cfg
++Description: Guadalinex v4
++Component: main
++CompDescription: Repositorio principal
++CompDescriptionLong: Repositorio principal de la Junta de Andalucía
++Component: universe
++CompDescription: Community maintained
++CompDescriptionLong: Community maintained Open Source software
++Component: restricted
++CompDescription: Non-free drivers
++CompDescriptionLong: Proprietary drivers for devices
++Component: multiverse
++CompDescription: Restricted software
++CompDescriptionLong: Software restricted by copyright or legal issues
++
++Suite: edgy
++MatchName: .*
++BaseURI: cdrom:\[Ubuntu.*6.10
++Description: Cdrom with Ubuntu 6.10 'Edgy Eft'
++Available: False
++Component: main
++CompDescription: Officially supported
++Component: restricted
++CompDescription: Restricted copyright
++
++Suite: toro-security
++ParentSuite: toro
++RepositoryType: deb
++Description: Important security updates
++
++Suite: toro-updates
++ParentSuite: toro
++RepositoryType: deb
++Description: Recommended updates
++
++Suite: toro-backports
++ParentSuite: toro
++RepositoryType: deb
++Description: Backported updates
++
+diff -urN -x .svn update-manager-0.45.1.orig/data/channels/Guadalinex.info.in update-manager-0.45.1/data/channels/Guadalinex.info.in
+--- update-manager-0.45.1.orig/data/channels/Guadalinex.info.in	1970-01-01 01:00:00.000000000 +0100
++++ update-manager-0.45.1/data/channels/Guadalinex.info.in	2007-01-29 12:31:03.000000000 +0100
+@@ -0,0 +1,46 @@
++_ChangelogURI: http://changelogs.ubuntu.com/changelogs/pool/%s/%s/%s/%s_%s/changelog
++
++Suite: toro 
++RepositoryType: deb
++BaseURI: http://v4.guadalinex.org/guadalinex-toro
++MatchURI: v4.guadalinex.org/guadalinex-toro
++MirrorsFile: /usr/share/update-manager/mirrors-gv4.cfg
++_Description: Guadalinex v4
++Component: main
++_CompDescription: Repositorio principal
++_CompDescriptionLong: Repositorio principal de la Junta de Andalucía
++Component: universe
++_CompDescription: Community maintained
++_CompDescriptionLong: Community maintained Open Source software
++Component: restricted
++_CompDescription: Non-free drivers
++_CompDescriptionLong: Proprietary drivers for devices
++Component: multiverse
++_CompDescription: Restricted software
++_CompDescriptionLong: Software restricted by copyright or legal issues
++
++Suite: edgy
++MatchName: .*
++BaseURI: cdrom:\[Ubuntu.*6.10
++_Description: Cdrom with Ubuntu 6.10 'Edgy Eft'
++Available: False
++Component: main
++_CompDescription: Officially supported
++Component: restricted
++_CompDescription: Restricted copyright
++
++Suite: toro-security
++ParentSuite: toro
++RepositoryType: deb
++_Description: Important security updates
++
++Suite: toro-updates
++ParentSuite: toro
++RepositoryType: deb
++_Description: Recommended updates
++
++Suite: toro-backports
++ParentSuite: toro
++RepositoryType: deb
++_Description: Backported updates
++
+diff -urN -x .svn update-manager-0.45.1.orig/data/channels/Guadalinex.info.in.h update-manager-0.45.1/data/channels/Guadalinex.info.in.h
+--- update-manager-0.45.1.orig/data/channels/Guadalinex.info.in.h	1970-01-01 01:00:00.000000000 +0100
++++ update-manager-0.45.1/data/channels/Guadalinex.info.in.h	2007-01-29 12:31:25.000000000 +0100
+@@ -0,0 +1,49 @@
++# -1 "Guadalinex.info.in"
++/* ChangelogURI */
++/* xgettext:no-c-format */
++char *s = N_("http://changelogs.ubuntu.com/changelogs/pool/%s/%s/%s/%s_%s/changelog");
++# 7 "Guadalinex.info.in"
++/* Description */
++char *s = N_("Guadalinex v4");
++# 9 "Guadalinex.info.in"
++/* CompDescription */
++char *s = N_("Repositorio principal");
++# 10 "Guadalinex.info.in"
++/* CompDescriptionLong */
++char *s = N_("Repositorio principal de la Junta de Andalucía");
++# 12 "Guadalinex.info.in"
++/* CompDescription */
++char *s = N_("Community maintained");
++# 13 "Guadalinex.info.in"
++/* CompDescriptionLong */
++char *s = N_("Community maintained Open Source software");
++# 15 "Guadalinex.info.in"
++/* CompDescription */
++char *s = N_("Non-free drivers");
++# 16 "Guadalinex.info.in"
++/* CompDescriptionLong */
++char *s = N_("Proprietary drivers for devices");
++# 18 "Guadalinex.info.in"
++/* CompDescription */
++char *s = N_("Restricted software");
++# 19 "Guadalinex.info.in"
++/* CompDescriptionLong */
++char *s = N_("Software restricted by copyright or legal issues");
++# 24 "Guadalinex.info.in"
++/* Description */
++char *s = N_("Cdrom with Ubuntu 6.10 'Edgy Eft'");
++# 27 "Guadalinex.info.in"
++/* CompDescription */
++char *s = N_("Officially supported");
++# 29 "Guadalinex.info.in"
++/* CompDescription */
++char *s = N_("Restricted copyright");
++# 34 "Guadalinex.info.in"
++/* Description */
++char *s = N_("Important security updates");
++# 39 "Guadalinex.info.in"
++/* Description */
++char *s = N_("Recommended updates");
++# 44 "Guadalinex.info.in"
++/* Description */
++char *s = N_("Backported updates");
+diff -urN -x .svn update-manager-0.45.1.orig/data/channels/Makefile.am update-manager-0.45.1/data/channels/Makefile.am
+--- update-manager-0.45.1.orig/data/channels/Makefile.am	2006-09-11 09:26:24.000000000 +0200
++++ update-manager-0.45.1/data/channels/Makefile.am	2007-01-29 11:57:14.000000000 +0100
+@@ -4,7 +4,7 @@
+ 
+ datadir=$(prefix)/share/update-manager
+ dinfodir = $(datadir)/dists
+-dinfo_DATA = Debian.info Ubuntu.info
++dinfo_DATA = Debian.info Ubuntu.info Guadalinex.info
+ 
+ EXTRA_DIST= $(dinfo_DATA)
+ 
+diff -urN -x .svn update-manager-0.45.1.orig/DistUpgrade/aptsources.py update-manager-0.45.1/DistUpgrade/aptsources.py
+--- update-manager-0.45.1.orig/DistUpgrade/aptsources.py	2006-10-06 23:02:33.000000000 +0200
++++ update-manager-0.45.1/DistUpgrade/aptsources.py	2007-01-29 11:34:00.000000000 +0100
+@@ -543,7 +543,7 @@
+ 
+     # try to guess the nearest mirror from the locale
+     # FIXME: for debian we need something different
+-    if self.id == "Ubuntu":
++    if (self.id == "Ubuntu") or (self.id == "Guadalinex"):
+         locale = os.getenv("LANG", default="en.UK")
+         a = locale.find("_")
+         z = locale.find(".")
+diff -urN -x .svn update-manager-0.45.1.orig/DistUpgrade/mirrors-gv4.cfg update-manager-0.45.1/DistUpgrade/mirrors-gv4.cfg
+--- update-manager-0.45.1.orig/DistUpgrade/mirrors-gv4.cfg	1970-01-01 01:00:00.000000000 +0100
++++ update-manager-0.45.1/DistUpgrade/mirrors-gv4.cfg	2007-01-29 12:30:45.000000000 +0100
+@@ -0,0 +1,2 @@
++#==Spain==
++http://gv4.guadalinex.org/guadalinex-toro
+diff -urN -x .svn update-manager-0.45.1.orig/gv4.patch update-manager-0.45.1/gv4.patch
+--- update-manager-0.45.1.orig/gv4.patch	1970-01-01 01:00:00.000000000 +0100
++++ update-manager-0.45.1/gv4.patch	2007-01-30 09:46:55.000000000 +0100
+@@ -0,0 +1,183 @@
++diff -urN -x .svn update-manager-0.45.1.orig/data/channels/Guadalinex.info update-manager-0.45.1/data/channels/Guadalinex.info
++--- update-manager-0.45.1.orig/data/channels/Guadalinex.info	1970-01-01 01:00:00.000000000 +0100
+++++ update-manager-0.45.1/data/channels/Guadalinex.info	2007-01-29 12:31:25.000000000 +0100
++@@ -0,0 +1,46 @@
+++ChangelogURI: http://changelogs.ubuntu.com/changelogs/pool/%s/%s/%s/%s_%s/changelog
+++
+++Suite: toro 
+++RepositoryType: deb
+++BaseURI: http://v4.guadalinex.org/guadalinex-toro
+++MatchURI: v4.guadalinex.org/guadalinex-toro
+++MirrorsFile: /usr/share/update-manager/mirrors-gv4.cfg
+++Description: Guadalinex v4
+++Component: main
+++CompDescription: Repositorio principal
+++CompDescriptionLong: Repositorio principal de la Junta de Andalucía
+++Component: universe
+++CompDescription: Community maintained
+++CompDescriptionLong: Community maintained Open Source software
+++Component: restricted
+++CompDescription: Non-free drivers
+++CompDescriptionLong: Proprietary drivers for devices
+++Component: multiverse
+++CompDescription: Restricted software
+++CompDescriptionLong: Software restricted by copyright or legal issues
+++
+++Suite: edgy
+++MatchName: .*
+++BaseURI: cdrom:\[Ubuntu.*6.10
+++Description: Cdrom with Ubuntu 6.10 'Edgy Eft'
+++Available: False
+++Component: main
+++CompDescription: Officially supported
+++Component: restricted
+++CompDescription: Restricted copyright
+++
+++Suite: toro-security
+++ParentSuite: toro
+++RepositoryType: deb
+++Description: Important security updates
+++
+++Suite: toro-updates
+++ParentSuite: toro
+++RepositoryType: deb
+++Description: Recommended updates
+++
+++Suite: toro-backports
+++ParentSuite: toro
+++RepositoryType: deb
+++Description: Backported updates
+++
++diff -urN -x .svn update-manager-0.45.1.orig/data/channels/Guadalinex.info.in update-manager-0.45.1/data/channels/Guadalinex.info.in
++--- update-manager-0.45.1.orig/data/channels/Guadalinex.info.in	1970-01-01 01:00:00.000000000 +0100
+++++ update-manager-0.45.1/data/channels/Guadalinex.info.in	2007-01-29 12:31:03.000000000 +0100
++@@ -0,0 +1,46 @@
+++_ChangelogURI: http://changelogs.ubuntu.com/changelogs/pool/%s/%s/%s/%s_%s/changelog
+++
+++Suite: toro 
+++RepositoryType: deb
+++BaseURI: http://v4.guadalinex.org/guadalinex-toro
+++MatchURI: v4.guadalinex.org/guadalinex-toro
+++MirrorsFile: /usr/share/update-manager/mirrors-gv4.cfg
+++_Description: Guadalinex v4
+++Component: main
+++_CompDescription: Repositorio principal
+++_CompDescriptionLong: Repositorio principal de la Junta de Andalucía
+++Component: universe
+++_CompDescription: Community maintained
+++_CompDescriptionLong: Community maintained Open Source software
+++Component: restricted
+++_CompDescription: Non-free drivers
+++_CompDescriptionLong: Proprietary drivers for devices
+++Component: multiverse
+++_CompDescription: Restricted software
+++_CompDescriptionLong: Software restricted by copyright or legal issues
+++
+++Suite: edgy
+++MatchName: .*
+++BaseURI: cdrom:\[Ubuntu.*6.10
+++_Description: Cdrom with Ubuntu 6.10 'Edgy Eft'
+++Available: False
+++Component: main
+++_CompDescription: Officially supported
+++Component: restricted
+++_CompDescription: Restricted copyright
+++
+++Suite: toro-security
+++ParentSuite: toro
+++RepositoryType: deb
+++_Description: Important security updates
+++
+++Suite: toro-updates
+++ParentSuite: toro
+++RepositoryType: deb
+++_Description: Recommended updates
+++
+++Suite: toro-backports
+++ParentSuite: toro
+++RepositoryType: deb
+++_Description: Backported updates
+++
++diff -urN -x .svn update-manager-0.45.1.orig/data/channels/Guadalinex.info.in.h update-manager-0.45.1/data/channels/Guadalinex.info.in.h
++--- update-manager-0.45.1.orig/data/channels/Guadalinex.info.in.h	1970-01-01 01:00:00.000000000 +0100
+++++ update-manager-0.45.1/data/channels/Guadalinex.info.in.h	2007-01-29 12:31:25.000000000 +0100
++@@ -0,0 +1,49 @@
+++# -1 "Guadalinex.info.in"
+++/* ChangelogURI */
+++/* xgettext:no-c-format */
+++char *s = N_("http://changelogs.ubuntu.com/changelogs/pool/%s/%s/%s/%s_%s/changelog");
+++# 7 "Guadalinex.info.in"
+++/* Description */
+++char *s = N_("Guadalinex v4");
+++# 9 "Guadalinex.info.in"
+++/* CompDescription */
+++char *s = N_("Repositorio principal");
+++# 10 "Guadalinex.info.in"
+++/* CompDescriptionLong */
+++char *s = N_("Repositorio principal de la Junta de Andalucía");
+++# 12 "Guadalinex.info.in"
+++/* CompDescription */
+++char *s = N_("Community maintained");
+++# 13 "Guadalinex.info.in"
+++/* CompDescriptionLong */
+++char *s = N_("Community maintained Open Source software");
+++# 15 "Guadalinex.info.in"
+++/* CompDescription */
+++char *s = N_("Non-free drivers");
+++# 16 "Guadalinex.info.in"
+++/* CompDescriptionLong */
+++char *s = N_("Proprietary drivers for devices");
+++# 18 "Guadalinex.info.in"
+++/* CompDescription */
+++char *s = N_("Restricted software");
+++# 19 "Guadalinex.info.in"
+++/* CompDescriptionLong */
+++char *s = N_("Software restricted by copyright or legal issues");
+++# 24 "Guadalinex.info.in"
+++/* Description */
+++char *s = N_("Cdrom with Ubuntu 6.10 'Edgy Eft'");
+++# 27 "Guadalinex.info.in"
+++/* CompDescription */
+++char *s = N_("Officially supported");
+++# 29 "Guadalinex.info.in"
+++/* CompDescription */
+++char *s = N_("Restricted copyright");
+++# 34 "Guadalinex.info.in"
+++/* Description */
+++char *s = N_("Important security updates");
+++# 39 "Guadalinex.info.in"
+++/* Description */
+++char *s = N_("Recommended updates");
+++# 44 "Guadalinex.info.in"
+++/* Description */
+++char *s = N_("Backported updates");
++diff -urN -x .svn update-manager-0.45.1.orig/data/channels/Makefile.am update-manager-0.45.1/data/channels/Makefile.am
++--- update-manager-0.45.1.orig/data/channels/Makefile.am	2006-09-11 09:26:24.000000000 +0200
+++++ update-manager-0.45.1/data/channels/Makefile.am	2007-01-29 11:57:14.000000000 +0100
++@@ -4,7 +4,7 @@
++ 
++ datadir=$(prefix)/share/update-manager
++ dinfodir = $(datadir)/dists
++-dinfo_DATA = Debian.info Ubuntu.info
+++dinfo_DATA = Debian.info Ubuntu.info Guadalinex.info
++ 
++ EXTRA_DIST= $(dinfo_DATA)
++ 
++diff -urN -x .svn update-manager-0.45.1.orig/DistUpgrade/aptsources.py update-manager-0.45.1/DistUpgrade/aptsources.py
++--- update-manager-0.45.1.orig/DistUpgrade/aptsources.py	2006-10-06 23:02:33.000000000 +0200
+++++ update-manager-0.45.1/DistUpgrade/aptsources.py	2007-01-29 11:34:00.000000000 +0100
++@@ -543,7 +543,7 @@
++ 
++     # try to guess the nearest mirror from the locale
++     # FIXME: for debian we need something different
++-    if self.id == "Ubuntu":
+++    if (self.id == "Ubuntu") or (self.id == "Guadalinex"):
++         locale = os.getenv("LANG", default="en.UK")
++         a = locale.find("_")
++         z = locale.find(".")
++diff -urN -x .svn update-manager-0.45.1.orig/DistUpgrade/mirrors-gv4.cfg update-manager-0.45.1/DistUpgrade/mirrors-gv4.cfg
++--- update-manager-0.45.1.orig/DistUpgrade/mirrors-gv4.cfg	1970-01-01 01:00:00.000000000 +0100
+++++ update-manager-0.45.1/DistUpgrade/mirrors-gv4.cfg	2007-01-29 12:30:45.000000000 +0100
++@@ -0,0 +1,2 @@
+++#==Spain==
+++http://gv4.guadalinex.org/guadalinex-toro
+diff -urN -x .svn update-manager-0.45.1.orig/UpdateManager/Common/aptsources.py update-manager-0.45.1/UpdateManager/Common/aptsources.py
+--- update-manager-0.45.1.orig/UpdateManager/Common/aptsources.py	2006-10-06 23:02:33.000000000 +0200
++++ update-manager-0.45.1/UpdateManager/Common/aptsources.py	2007-01-29 11:34:00.000000000 +0100
 @@ -543,7 +543,7 @@
  
      # try to guess the nearest mirror from the locale
