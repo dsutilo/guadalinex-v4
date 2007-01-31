@@ -412,11 +412,11 @@ class CertManager(object):
     def run(self, options):
         certs = []
         if options.search_path is not None:
-            cert_list = self.search_certificates(options.search_path)
+            search_path = options.search_path.replace('~', os.path.expanduser('~'))
+            cert_list = self.search_certificates(search_path)
 
             if cert_list:
-                certs = self.select_certificates(cert_list,
-                                                 options.search_path)
+                certs = self.select_certificates(cert_list, search_path)
 
 	success = True
         if options.install_dnie or certs:
@@ -546,6 +546,9 @@ class CertificatesDialog(gtk.Dialog):
         return ret
 
 if __name__ == '__main__':
+    user_dir = os.path.expanduser('~')
+    witness_file = os.path.join(user_dir, '.certmanager.lock')
+
     parser = optparse.OptionParser()
     parser.add_option('-p', '--search-path',
                       dest='search_path',
@@ -556,8 +559,23 @@ if __name__ == '__main__':
                       dest='install_dnie',
                       default=False,
                       help='Install necesary modules for the DNIe')
+    parser.add_option('-r', '--run-only-once',
+                      action='store_true',
+                      dest='run_only_once',
+                      default=False,
+                      help='Do not run if this command was executed before')
+    parser.add_option('-s', '--sm-client-id',
+                      dest='sm_client_id',
+                      default=None,
+                      help='Session Manager client id (not used so far)')
 
     (options, args) = parser.parse_args()
 
-    cert_manager = CertManager([FireFoxApp(), EvolutionApp()])
-    cert_manager.run(options)
+    if not (options.run_only_once and os.path.exists(witness_file)):
+
+        cert_manager = CertManager([FireFoxApp(), EvolutionApp()])
+        cert_manager.run(options)
+
+    if not os.path.exists(witness_file):
+        f = file(witness_file, 'w')
+        f.write('Remove this file to allow certmanager run again\n')
