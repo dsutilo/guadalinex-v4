@@ -1,0 +1,119 @@
+librapi2 (0.9.3-3) unstable; urgency=low
+
+  * kcemirror: FTBFS: /usr/lib/librapi.so: undefined reference to
+    `synce_socket_get_descriptor' (Closes: #392938)
+
+ -- Volker Christian <voc@debian.org>  Sun, 15 Oct 2006 00:09:46 +0200
+
+librapi2 (0.9.3-2) unstable; urgency=low
+
+  * Added build-dependency of pkg-config
+
+ -- Volker Christian <voc@debian.org>  Fri, 22 Sep 2006 15:39:26 +0200
+
+librapi2 (0.9.3-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Volker Christian <voc@debian.org>  Wed, 20 Sep 2006 21:53:31 +0200
+
+librapi2 (0.9.1-2) unstable; urgency=low
+
+  * Fixed libtool-version to be 1.5.6 from debian
+
+ -- Volker Christian <voc@debian.org>  Thu,  8 Sep 2005 20:36:37 +0200
+
+librapi2 (0.9.1-1) unstable; urgency=low
+
+  * New upstream release
+  * FTBFS (amd64/gcc-4.0): pointer targets in passing argument 2 of
+    'rapi_buffer_read_uint32' differ in signedness (Closes: #289276)
+  * Changed the Maintainer Email Address
+  * Updated watch file to conform to version 3
+  * Updated to the Policy standard 3.6.2
+  * Suggests now synce-dccm
+
+ -- Volker Christian <voc@debian.org>  Thu,  8 Sep 2005 19:28:13 +0200
+
+librapi2 (0.9.0-6) unstable; urgency=low
+
+  * Closes: #290824: Tools renamed but scripts not updated to reflect
+    the change
+  * Fixed scripts which have been broken due to prefixing the rapi tools
+    with synce-
+
+ -- Volker Christian <voc@users.sourceforge.net>  Wed, 23 Feb 2005 23:56:13 +0100
+
+librapi2 (0.9.0-5) unstable; urgency=low
+
+  * Closes: #274797: file conflicts in pimppa librapi2-tools
+  * Closes: #279946: synce-registry.1.gz: truncated
+  * Closes: #279952: /usr/share/man/man1/pcp.1.gz: typos
+  * Closes: #279943: /usr/bin/pls: check for errors
+
+ -- Volker Christian <voc@users.sourceforge.net>  Sun,  3 Dec 2004 23:41:18 +0200
+
+librapi2 (0.9.0-4) unstable; urgency=low
+
+  * Closes: #270027: Please rebuild against new libsynce0.
+
+ -- Volker Christian <voc@users.sourceforge.net>  Sun,  5 Sep 2004 11:18:21 +0200
+
+librapi2 (0.9.0-3) unstable; urgency=low
+
+  * changed prefix=$\(CURDIR\)/debian/tmp/usr to
+    DESTDIR=$\(CURDIR\)/debian/tmp
+
+ -- Volker Christian <voc@users.sourceforge.net>  Thu,  2 Sep 2004 21:14:43 +0200
+
+librapi2 (0.9.0-2) unstable; urgency=low
+
+  * Added --version-info to dh_makeshlib
+
+ -- Volker Christian <voc@users.sourceforge.net>  Fri, 29 Aug 2004 13:34:43 +0100
+
+librapi2 (0.9.0-1) unstable; urgency=low
+
+  * New upstream release
+  * Added a watch file
+
+ -- Volker Christian <voc@users.sourceforge.net>  Fri, 20 Aug 2004 20:16:55 +0100
+
+librapi2 (0.8.9-3) unstable; urgency=low
+
+  * Updated ltmain.sh to support also arm first try was not successfull
+
+ -- Volker Christian <voc@users.sourceforge.net>  Sat, 25 Mar 2004 15:38:55 +0100
+
+librapi2 (0.8.9-2) unstable; urgency=low
+
+  * Updated ltmain.sh to support also arm
+
+ -- Volker Christian <voc@users.sourceforge.net>  Sat, 24 Mar 2004 20:17:03 +0100
+
+librapi2 (0.8.9-1) unstable; urgency=low
+
+  * New upstream release
+  * New Maintainer Volker Christian
+
+ -- Volker Christian <voc@users.sourceforge.net>  Sat, 14 Feb 2004 20:34:43 +0100
+
+librapi2 (0.8-1) unstable; urgency=low
+
+  * First proper Debian upload.
+
+ -- Jonathan McDowell <noodles@earth.li>  Thu, 07 Aug 2003 21:19:29 +0100
+
+librapi2 (0.7-2) unstable; urgency=low
+
+  * added bootstrap to rules
+  * changed description
+
+ -- Thomas Butter <thomas@i.rule-the.net>  Sun,  8 Jun 2003 22:08:05 +0200
+
+librapi2 (0.7-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Thomas Butter <thomas@i.rule-the.net>  Thu,  6 Mar 2003 13:33:07 +0100
+

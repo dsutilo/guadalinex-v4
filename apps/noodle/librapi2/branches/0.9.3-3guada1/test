@@ -1,0 +1,14 @@
+#!/bin/sh
+CURDIR=`pwd`
+
+	for i in pcp pls pmkdir pmv prm prmdir prun pstatus; do
+		mv $CURDIR/debian/tmp/usr/bin/$i $CURDIR/debian/tmp/usr/bin/synce-$i
+		mv $CURDIR/debian/tmp/usr/share/man/$i.1 \
+			$CURDIR/debian/tmp/usr/share/man/synce-$i.1
+		for j in pcp pls pmkdir pmv prm prmdir prun pstatus; do
+			sed s/$j/synce-$j/ $CURDIR/debian/tmp/usr/share/synce-$i.1 \
+				> $CURDIR/debian/tmp/usr/share/tmp-synce-$i.1
+			mv $CURDIR/debian/tmp/usr/share/tmp-synce-$i.1 \
+				$CURDIR/debian/tmp/usr/share/synce-$i.1
+		done
+	done
