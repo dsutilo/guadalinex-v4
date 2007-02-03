@@ -1,3 +1,9 @@
+libsynce (0.9.3-1guada1) unstable; urgency=low
+
+  * Added --enable-desktop-integration to configure in debian/rules
+
+ -- Ghe <ghernando@yaco.es>  Sat,  3 Feb 2007 11:15:55 +0100
+
 libsynce (0.9.3-1) unstable; urgency=low
 
   * New upstream release
