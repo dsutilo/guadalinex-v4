@@ -1,0 +1,87 @@
+libsynce (0.9.3-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Volker Christian <voc@debian.org>  Wed, 20 Sep 2006 21:28:45 +0200
+
+libsynce (0.9.1+wm5-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Volker Christian <voc@debian.org>  Tue, 19 Sep 2006 19:39:38 +0200
+
+libsynce (0.9.1-2) unstable; urgency=low
+
+  * Fixed the Maintainer Email address
+
+ -- Volker Christian <voc@debian.org>  Thu,  8 Sep 2005 00:07:52 +0200
+
+libsynce (0.9.1-1) unstable; urgency=low
+
+  * New upstream release
+  * Changed Maintainer-Email to voc@debian.org
+  * Updated watch file to conform to version 3
+  * Updated the the Policy standard 3.6.2
+  * FTBFS (amd64/gcc-4.0): pointer targets in passing argument 3 of
+    'accept' differ in signedness (Closes: #287451)
+  * debian/rules not also removes config.log during the clean-rule
+
+ -- Volker Christian <voc@debian.org>  Wed,  7 Sep 2005 23:29:35 +0200
+
+libsynce (0.9.0-3) unstable; urgency=low
+
+  * Closes: #279944: synce.1.gz: how to stop 
+  * Closes: #279951: libsynce0: Perhaps add Suggests: librapi2-tools
+    it suggests librapi2 but not librapi2-tools.
+
+ -- Volker Christian <voc@users.sourceforge.net>  Thu,  4 Dec 2004 00:58:35 +0200
+
+libsynce (0.9.0-2) unstable; urgency=low
+
+  * Closes: #269649: libsynce: Wrong directory when installing.
+  * changed prefix=$\(CURDIR\)/debian/tmp/usr to
+    DESTDIR=$\(CURDIR\)/debian/tmp
+
+ -- Volker Christian <voc@users.sourceforge.net>  Thu,  2 Sep 2004 21:22:09 +0200
+
+libsynce (0.9.0-1) unstable; urgency=low
+
+  * New upstream release
+  * Added a watch file
+
+ -- Volker Christian <voc@users.sourceforge.net>  Fri, 20 Aug 2004 20:30:13 +0100
+
+libsynce (0.8.9-2) unstable; urgency=low
+
+  * Updated ltmain.sh to support also arm
+  * Changed the section of the dev package to libdevel
+
+ -- Volker Christian <voc@users.sourceforge.net>  Sat, 24 Mar 2004 20:12:03 +0100
+
+libsynce (0.8.9-1) unstable; urgency=low
+
+  * New upstream release
+  * New maintainer Volker Christian
+  * Added --disable-rpath
+
+ -- Volker Christian <voc@users.sourceforge.net>  Sat, 14 Feb 2004 20:27:01 +0100
+
+libsynce (0.8-1) unstable; urgency=low
+
+  * First proper Debian upload.
+  * added bootstrap to rules
+
+ -- Thomas Butter <thomas@i.rule-the.net>  Sun,  8 Jun 2003 20:47:51 +0200
+
+libsynce (0.7-2) unstable; urgency=low
+
+  * fixed a dependency
+
+ -- Thomas Butter <thomas@i.rule-the.net>  Sun,  9 Mar 2003 21:59:58 +0100
+
+libsynce (0.7-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Thomas Butter <thomas@i.rule-the.net>  Thu,  6 Mar 2003 13:14:33 +0100
+

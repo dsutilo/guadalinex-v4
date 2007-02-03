@@ -1,0 +1,7 @@
+# Example watch control file for uscan
+# Rename this file to "watch" and then you can run the "uscan" command
+# to check for upstream updates and more.
+# Format version number
+version=3
+# Full-site-with-pattern  [Version  [Action]]
+ftp://osdn.dl.sourceforge.net/pub/sourceforge/s/sy/synce/synce-libsynce-(.*)\.tar\.gz	debian	uupdate

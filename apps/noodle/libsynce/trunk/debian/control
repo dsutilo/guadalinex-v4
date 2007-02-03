@@ -1,0 +1,22 @@
+Source: libsynce
+Section: libs
+Priority: optional
+Maintainer: Volker Christian <voc@debian.org>
+Build-Depends: debhelper (>> 4.0.0)
+Standards-Version: 3.7.2
+
+Package: libsynce0-dev
+Section: libdevel
+Architecture: any
+Suggests: librapi2-dev
+Depends: libsynce0 (= ${Source-Version})
+Description: A helper library for synce, a tool to sync WinCE devices
+ This package contains the development files
+
+Package: libsynce0
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: librapi2
+Description: A helper library for synce, a tool to sync WinCE devices
+ This package contains the library itself.
