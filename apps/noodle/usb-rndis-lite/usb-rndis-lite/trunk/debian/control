@@ -1,0 +1,19 @@
+Source: usb-rndis-lite
+Section: unknown
+Priority: optional
+Maintainer: ghe <ghernando@yaco.es>
+Build-Depends: debhelper (>= 5), bzip2
+Standards-Version: 3.7.2
+
+Package: usb-rndis-lite
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: <insert up to 60 chars description> <insert long description, indented with spaces>
+
+Package: usb-rndis-lite-source
+Architecture: all
+Depends: module-assistant, debhelper (>>4.0.0), make, bzip2
+Description: Source for the usb-rndis-lite driver.
+ This package provides the source code for the usb-rndis-lite kernel modules.
+ The usb-rndis-lite package is also required in order to make use of these
+ modules. Kernel source or headers are required to compile these modules.
