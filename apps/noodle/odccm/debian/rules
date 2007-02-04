@@ -58,6 +58,7 @@ install: build
 
 	# Add here commands to install the package into debian/odccm.
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/odccm
+	install data/dbus/odccm.conf $(CURDIR)/debian/odccm/etc/dbus-1/system.d/
 
 
 # Build architecture-independent files here.

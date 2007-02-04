@@ -1,1 +1,0 @@
-shlibs:Depends=libc6 (>= 2.4-1), libdbus-1-3, libdbus-glib-1-2 (>= 0.71), libglib2.0-0 (>= 2.12.0), libgnet2.0-0 (>= 2.0.7), libhal1 (>= 0.5), libsynce0

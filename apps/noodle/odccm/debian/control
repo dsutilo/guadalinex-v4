@@ -8,5 +8,6 @@ Standards-Version: 3.7.2
 Package: odccm
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Description: legacy-free dccm-implementation
+ odccm is a legacy-free dccm-implementation 
+ for Windows Mobile 5 (and newer) devices.
