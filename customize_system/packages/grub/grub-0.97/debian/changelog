@@ -1,3 +1,9 @@
+grub (0.97-11ubuntu14guada2) edgy; urgency=low
+
+  * more friendly entry for memtest 
+
+ -- Carlos Parra Camargo <cparra@emergya.es>  Mon,  5 Feb 2007 14:49:54 +0100
+
 grub (0.97-11ubuntu14guada1) edgy; urgency=low
 
   * guadalinex flavour 
