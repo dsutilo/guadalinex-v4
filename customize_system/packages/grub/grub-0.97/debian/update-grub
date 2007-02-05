@@ -634,8 +634,8 @@ write_kernel_entry()
 	savedefault=$9
 
 	echo -n "title		$title, " >> $buffer
-	# memtest86 is not strictly a kernel
-	if ! echo "$kernel_version" | grep -q ^memtest86; then
+	# memtest86 is not strictly a kernel  
+	if ! echo "$kernel_version" | grep -q -e ^memtest86 -e ^comproba; then
 		echo -n "kernel " >> $buffer
 	fi
 	echo -n "$kernel_version" >> $buffer
@@ -1039,7 +1039,8 @@ memtest86names="memtest86 memtest86+"
 if test ! x"$memtest86" = x"false" ; then
 	for name in $memtest86names ; do
 		if test -f "/boot/$name.bin" ; then
-			kernelVersion="$name"
+#			kernelVersion="$name"
+			kernelVersion="comprobar memoria RAM del sistema"
 			kernel="$kernel_dir/$name.bin"
 			currentOpt=
 			initrd=
