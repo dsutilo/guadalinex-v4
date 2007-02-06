@@ -1,0 +1,543 @@
+# translation of es.po to spanish
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Roberto Majadas <roberto.majadas@openshine.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: es\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-01-23 12:07+0100\n"
+"PO-Revision-Date: 2007-01-23 13:35+0100\n"
+"Last-Translator: Roberto Majadas <roberto.majadas@openshine.com>\n"
+"Language-Team: spanish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../data/gnochm.desktop.in.h:1
+msgid "A viewer for HTML Help files"
+msgstr "Un visor de archivos de ayuda HTML"
+
+#: ../data/gnochm.desktop.in.h:2 ../glade/gnochm.glade.h:5 ../gnochm.py:701
+msgid "CHM Viewer"
+msgstr "Visor CHM"
+
+#: ../glade/gnochm.glade.h:1 ../glade/prefdialog.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: ../glade/gnochm.glade.h:2
+msgid "Add current page to bookmarks"
+msgstr "Añadir la pagina actual como marcador"
+
+#: ../glade/gnochm.glade.h:3
+msgid "Back to previous page"
+msgstr "Atras a la página anterior"
+
+#: ../glade/gnochm.glade.h:4
+msgid "Book_marks"
+msgstr "_Marcadores"
+
+#: ../glade/gnochm.glade.h:6
+msgid "Contents"
+msgstr "Contenidos"
+
+#: ../glade/gnochm.glade.h:7
+msgid "Decrease size"
+msgstr "Disminuir tamaño"
+
+#: ../glade/gnochm.glade.h:8
+msgid "Display selected bookmark"
+msgstr "Mostrar marcador seleccionado"
+
+#: ../glade/gnochm.glade.h:9
+msgid "Display selected entry"
+msgstr "Mostrar entrada seleccionada"
+
+#: ../glade/gnochm.glade.h:10
+msgid "Display the selected entry"
+msgstr "Mostrar la entrada seleccionada"
+
+#: ../glade/gnochm.glade.h:11
+msgid "Forward to next page"
+msgstr "Adelante a la siguiente página"
+
+#: ../glade/gnochm.glade.h:12
+msgid "Go to home page"
+msgstr "Ir a la página de inicio"
+
+#: ../glade/gnochm.glade.h:13
+msgid "I_ndex"
+msgstr "_Índice"
+
+#: ../glade/gnochm.glade.h:14
+msgid "Increase size"
+msgstr "Aumentar tamaño"
+
+#: ../glade/gnochm.glade.h:15
+msgid "Only search for complete words"
+msgstr "Solo busca palabras completas"
+
+#: ../glade/gnochm.glade.h:16
+msgid "Only search for words in page titles"
+msgstr "Solo busca palabras in los títulos de las páginas"
+
+#: ../glade/gnochm.glade.h:17
+msgid "Open File"
+msgstr "Abrir Archivo"
+
+#: ../glade/gnochm.glade.h:18
+msgid "Recent _Files"
+msgstr "Archivos _Recientes"
+
+#: ../glade/gnochm.glade.h:19
+msgid "Remove selected bookmark from list"
+msgstr "Borrar marcador seleccionado de la lista"
+
+#: ../glade/gnochm.glade.h:20
+msgid "Reset to default size"
+msgstr "Restaura el tamaño por defecto"
+
+#: ../glade/gnochm.glade.h:21
+msgid "Sea_rch"
+msgstr "_Buscar"
+
+#: ../glade/gnochm.glade.h:22
+msgid "Search"
+msgstr "Buscar"
+
+#: ../glade/gnochm.glade.h:23
+msgid "Search _previous results"
+msgstr "Buscar _anteriores resultados"
+
+#: ../glade/gnochm.glade.h:24
+msgid "Search only in previous results"
+msgstr "Buscar solo en resultados anteriores"
+
+#: ../glade/gnochm.glade.h:25
+msgid "Search the CHM archive"
+msgstr "Buscar el archivo CHM"
+
+#: ../glade/gnochm.glade.h:26
+msgid "Select File"
+msgstr "Seleccionar Archivo"
+
+#: ../glade/gnochm.glade.h:27 ../gnochm.py:738
+msgid "View source"
+msgstr "Ver código fuente"
+
+#: ../glade/gnochm.glade.h:29
+#, no-c-format
+msgid "Zoom _100%"
+msgstr "Zoom _100%"
+
+#: ../glade/gnochm.glade.h:30
+msgid "Zoom _In"
+msgstr "Acercarse"
+
+#: ../glade/gnochm.glade.h:31
+msgid "Zoom _Out"
+msgstr "Alejarse"
+
+#: ../glade/gnochm.glade.h:32
+msgid "_Add"
+msgstr "_Añadir"
+
+#: ../glade/gnochm.glade.h:33
+msgid "_Back"
+msgstr "_Atras"
+
+#: ../glade/gnochm.glade.h:34
+msgid "_Contents"
+msgstr "_Contenidos"
+
+#: ../glade/gnochm.glade.h:35
+msgid "_Display"
+msgstr "_Mostrar"
+
+#: ../glade/gnochm.glade.h:36
+msgid "_Edit"
+msgstr "_Editar"
+
+#: ../glade/gnochm.glade.h:37
+msgid "_Forward"
+msgstr "_Adelante"
+
+#: ../glade/gnochm.glade.h:38
+msgid "_Go"
+msgstr "_Ir"
+
+#: ../glade/gnochm.glade.h:39
+msgid "_Home"
+msgstr "I_nicio"
+
+#: ../glade/gnochm.glade.h:40
+msgid "_New"
+msgstr "_Nuevo"
+
+#: ../glade/gnochm.glade.h:41
+msgid "_Remove"
+msgstr "B_orrar"
+
+#: ../glade/gnochm.glade.h:42
+msgid "_Search"
+msgstr "_Buscar"
+
+#: ../glade/gnochm.glade.h:43
+msgid "_Search in archive"
+msgstr "Buscar en _archivo"
+
+#: ../glade/gnochm.glade.h:44
+msgid "_Titles only"
+msgstr "Solo _Títulos"
+
+#: ../glade/gnochm.glade.h:45
+msgid "_View source"
+msgstr "_Ver código fuente"
+
+#: ../glade/gnochm.glade.h:46
+msgid "_Whole words only"
+msgstr "_Solo palabras enteras"
+
+#: ../glade/prefdialog.glade.h:2
+msgid "Add more directories to search path"
+msgstr "Añadir mas directorios al las rutas de busqueda"
+
+#: ../glade/prefdialog.glade.h:3
+msgid "All Collapsed"
+msgstr "Todo Contraido"
+
+#: ../glade/prefdialog.glade.h:4
+msgid "All Expanded"
+msgstr "Todo Expandido"
+
+#: ../glade/prefdialog.glade.h:5
+msgid "All collapsed"
+msgstr "Todo contraido"
+
+#: ../glade/prefdialog.glade.h:6
+msgid "All expanded"
+msgstr "Todo expandido"
+
+#: ../glade/prefdialog.glade.h:7
+msgid "Auto _raise browser window"
+msgstr "_Lanzar automaticamente una ventana de navegador"
+
+#: ../glade/prefdialog.glade.h:8
+msgid "CHM _search path:"
+msgstr "Ruta de busqueda de CHM:"
+
+#: ../glade/prefdialog.glade.h:9
+msgid "Colon separated list of directories to search for CHM files"
+msgstr "Lista de directorios separados por dos puntos para la busqueda de archivos CHM"
+
+#: ../glade/prefdialog.glade.h:10
+msgid "Contents _tree initial state:"
+msgstr "Contenidos estado inicial del _arbol:"
+
+#: ../glade/prefdialog.glade.h:11
+msgid "Enable H_TTP support"
+msgstr "Activar soporte H_TTP"
+
+#: ../glade/prefdialog.glade.h:12
+msgid "Enable this option to open a web browser when clicking on a HTTP link"
+msgstr "Activar esta opción para abrir un navegador web cuando pulses sobre un enlace HTTP"
+
+#: ../glade/prefdialog.glade.h:13
+msgid "First item expanded"
+msgstr "Primer elemento expandido"
+
+#: ../glade/prefdialog.glade.h:14
+msgid "HTML window background color"
+msgstr "Color de fondo de la ventana HTML"
+
+#: ../glade/prefdialog.glade.h:15
+msgid "HT_ML window background:"
+msgstr "Fondo de la ventana HT_ML"
+
+#: ../glade/prefdialog.glade.h:16
+msgid "If a new browser window should be created when a HTTP link is clicked"
+msgstr "Si una nueva ventana de navegar será creada cuando pulses un enlace HTTP"
+
+#: ../glade/prefdialog.glade.h:17
+msgid "If set, gnochm will save the last path used between executions."
+msgstr "Si está activado, gnochm guardará la última ruta usada entre ejecuciones"
+
+#: ../glade/prefdialog.glade.h:18
+msgid "If the browser window should be raised"
+msgstr "Si la ventana del navegador debería ser lanzada"
+
+#: ../glade/prefdialog.glade.h:19
+msgid ""
+"If this is selected, a new separate window will be created to display the "
+"document source"
+msgstr "Si esto está seleccionado, una nueva ventana separada será creada para mostrar el código fuente del documento"
+
+#: ../glade/prefdialog.glade.h:20
+msgid "Minimum 1, maximum 20"
+msgstr "Mínimo 1, máximo 20"
+
+#: ../glade/prefdialog.glade.h:21
+msgid "Open _new browser window"
+msgstr "Abrir _nueva ventana de navegador"
+
+#: ../glade/prefdialog.glade.h:22
+msgid "Pick a color"
+msgstr "Cojer un color"
+
+#: ../glade/prefdialog.glade.h:23
+msgid "Preferences"
+msgstr "Preferencias"
+
+#: ../glade/prefdialog.glade.h:24
+msgid "Save last used _path"
+msgstr "Guardar la última ruta usada"
+
+#: ../glade/prefdialog.glade.h:25
+msgid "Select Directory"
+msgstr "Selecciona Directorio"
+
+#: ../glade/prefdialog.glade.h:26
+msgid "Select this option to enable tooltips"
+msgstr "Selecciona esta opción para activar las descripciones"
+
+#: ../glade/prefdialog.glade.h:27
+msgid "Select this option to make the toolbar visible"
+msgstr "Selecciona esta opción para hacer la barra de herramientas visible"
+
+#: ../glade/prefdialog.glade.h:28
+msgid ""
+"Select this option to synchronise the selection in the contents pane when "
+"the visited page changes"
+msgstr "Selecciona esta opción para sincronizar la selección en el panel de contenidos cuando cambien las páginas visitadas"
+
+#: ../glade/prefdialog.glade.h:29
+msgid "State of the Index tree when a new file is opened"
+msgstr "Estado del índice cuando un archivo nuevo esta abierto"
+
+#: ../glade/prefdialog.glade.h:30
+msgid "State of the contents tree when a new file is opened"
+msgstr "Estado del arbol de contenidos cuando un nuevo archivo es abierto"
+
+#: ../glade/prefdialog.glade.h:31
+msgid "Synchronise page and contents tree"
+msgstr "Sincroniza página y arbol de contenidos"
+
+#: ../glade/prefdialog.glade.h:32
+msgid "Toolbar _enabled"
+msgstr "Activar _barra de herramientas"
+
+#: ../glade/prefdialog.glade.h:33
+msgid "Toolbar _tooltips enabled"
+msgstr "Activar _descripciones de la barra de herramientas"
+
+#: ../glade/prefdialog.glade.h:34
+msgid "Use _Locale (LCID) from archive"
+msgstr "Usar _Localización (LCID) desde el archivo"
+
+#: ../glade/prefdialog.glade.h:35
+msgid ""
+"Use locale information from CHM to render topics/index when there is no "
+"encoding"
+msgstr "Usa información de la localización desde el archivo CHM para renderizar topico/índice cuando no este codificada"
+
+#: ../glade/prefdialog.glade.h:36
+msgid "View _source in a new window"
+msgstr "Ver _código fuente en una nueva ventana"
+
+#: ../glade/prefdialog.glade.h:37
+msgid "_Browse..."
+msgstr "_Navegar..."
+
+#: ../glade/prefdialog.glade.h:38
+msgid "_CHM"
+msgstr "_CHM"
+
+#: ../glade/prefdialog.glade.h:39
+msgid "_General"
+msgstr "_General"
+
+#: ../glade/prefdialog.glade.h:40
+msgid "_HTTP"
+msgstr "_HTTP"
+
+#: ../glade/prefdialog.glade.h:41
+msgid "_Index tree initial state:"
+msgstr "Estado del arbol _Índice inicial:"
+
+#: ../glade/prefdialog.glade.h:42
+msgid "_Number of entries in recents menu:"
+msgstr "_Número de entradas en menú de recientes:"
+
+#. (longName, shortName, type , default, flags, descrip , argDescrip)
+#: ../gnochm.py:91
+msgid "enables debug data to be written to ~/.gnochm/gnochm.log"
+msgstr "activar datos de depuración serán escritos en ~/.gnochm/gnochm.log"
+
+#: ../gnochm.py:697
+msgid "__Translator__"
+msgstr "__Traductor__"
+
+#: ../gnochm.py:704
+msgid "A viewer for Compressed HTML help archives"
+msgstr "Un visor de archivos de ayuda comprimidos de HTML"
+
+#: ../gnochm.py:796
+msgid "Welcome to GnoCHM!"
+msgstr "¡Bienvenido a GnoCHM!"
+
+#: ../gnochm.py:1027
+msgid ""
+"It appears that gnochm has not been properly installed in your system. The "
+"README file included with the package contains instructions on how to fix "
+"this. Check the Troubleshooting section for the error:\n"
+"\n"
+"* TypeError: color_parse() argument 1 must be string, not None"
+msgstr ""
+"Parece que gnochm no ha sido apropiadamente instalado en tu sistema. El archivo README incluido con el paquete contiene instrucciones de como resolver esto. Revisa la sección de resolución de errores para encontrar el siguiente error:\n"
+"\n"
+"* TypeError: color_parse() argument 1 must be string, not None"
+
+#: ../gnochm.py:1193
+msgid "HTTP links not enabled."
+msgstr "Enlaces HTTP no actiados"
+
+#: ../gnochm.py:1214
+msgid "Link opened in external browser"
+msgstr "Enlace abierto en un navegador externo"
+
+#: ../gnochm.py:1219
+#, python-format
+msgid "Failed to open %s"
+msgstr "Falló al abrir %s"
+
+#: ../gnochm.py:1266
+#, python-format
+msgid "Could not open %s in %s"
+msgstr "No ha podido ser abierto %s en %s"
+
+#: ../gnochm.py:1271
+#, python-format
+msgid "Failed to resolve %s"
+msgstr "Falló al resolver %s"
+
+#: ../gnochm.py:1275
+#, python-format
+msgid "Failed to load %s"
+msgstr "Falló al cargar %s"
+
+#: ../gnochm.py:1279
+#, python-format
+msgid "Invalid files %s %s"
+msgstr "Archivos inválidos %s %s"
+
+#: ../gnochm.py:1296
+#, python-format
+msgid "Link not supported: %s"
+msgstr "Enlace no soportado: %s"
+
+#: ../gnochm.py:1351
+#, python-format
+msgid "Opened %s"
+msgstr "Abierto %s"
+
+#: ../gnochm.py:1462
+#, python-format
+msgid ""
+"Your Python installation does not support %s (%s - %s). It is likely that "
+"the characters in the navigation tabs will not be correctly displayed."
+msgstr "Tu instalación de Python no soporta %s (%s -%s). Los caracteres en las pestaña de navegación no serán correctamente mostrados."
+
+#: ../gnochm.py:1481 ../gnochm.py:1485
+#, python-format
+msgid "CHM Viewer - %s"
+msgstr "Visor CHM - %s"
+
+#: ../gnochm.py:1499
+#, python-format
+msgid "File not recognized: %s"
+msgstr "Archivo no reconocido: %s"
+
+#: ../gnochm.py:1503
+#, python-format
+msgid "File not found: %s"
+msgstr "Archivo no encontrado: %s"
+
+#: ../gnochm.py:1614
+msgid "_View Source"
+msgstr "Ver _Código fuente"
+
+#: ../gnochm.py:1635
+#, python-format
+msgid "Viewing source for %s"
+msgstr "Viendo código fuente de %s"
+
+#: ../gnochm.py:1637
+msgid "_View HTML"
+msgstr "_Ver HTML"
+
+#: ../gnochm.py:1716
+msgid "Searching, please wait..."
+msgstr "Buscando, porfavor espere..."
+
+#: ../gnochm.py:1751
+#, python-format
+msgid "No matches for '%s' found"
+msgstr "No hay coincidencias para %s encontradas"
+
+#: ../gnochm.py:1753
+msgid "Search Done!"
+msgstr "Busqueda completa!"
+
+#: ../gnochm.py:1777
+#, python-format
+msgid "Could not find %s"
+msgstr "No se ha encontró %s"
+
+#: ../gnochm.py:1803
+#, python-format
+msgid "'%s' already exists, overwrite?"
+msgstr "%s, ya existe, desea sobreescribir ?"
+
+#: ../gnochm.py:1831
+msgid ""
+"gnochm is free software; you can redistribute it and/or\n"
+"modify it under the terms of the GNU General Public License as\n"
+"published by the Free Software Foundation; either version 2 of the\n"
+"License, or (at your option) any later version."
+msgstr ""
+"gnochm es software libre, usted puede redistribuirlo y/o \n"
+"modificar bajo los terminos de la licencia GNU General Public License como\n"
+"fue publicada por la Free Software Foundation, en la versión 2 de esta licencia\n"
+"o (a su disposición) cualquier versión superior"
+
+#: ../gnochm.py:1837
+msgid "A CHM viewer for Gnome"
+msgstr "Un visor CHM para Gnome"
+
+#: ../gnochm.py:1841
+msgid "Syntax: "
+msgstr "Sintaxis: "
+
+#: ../gnochm.py:1842
+msgid " gnochm [options] [filename]..."
+msgstr "gnochm [opciones] [nombre de archivo]..."
+
+#: ../gnochm.py:1844
+msgid "Options:"
+msgstr "Opciones:"
+
+#: ../gnochm.py:1845
+msgid " -v | --version: prints the program version and exits"
+msgstr " -v | --version: muestra la versión del programa y sale"
+
+#: ../gnochm.py:1846
+msgid " -h | --help: prints this help message and exits"
+msgstr " -h | --help: muestra el mensaje de ayuda y sale"
+
+#: ../gnochm.py:1847
+msgid " -d | --debug: enables debug data to be written to ~/.gnochm/gnochm.log"
+msgstr " -d | --debug: activa datos de depuración serán escritos en ~/.gnochm/gnochm.log"
+
