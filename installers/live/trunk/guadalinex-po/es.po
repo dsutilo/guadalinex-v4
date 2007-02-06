@@ -31,15 +31,15 @@ msgstr "El nombre del equipo no puede contener espacios."
 
 #: ../ubiquity/frontend/gtkui.py:1006
 msgid "The hostname may only contain letters, digits, and hyphens."
-msgstr "El nombre del equipo solo puede contener letras, números y guiones"
+msgstr "El nombre del equipo sólo puede contener letras, números y guiones"
 
 #: ../ubiquity/frontend/gtkui.py:1357
 msgid "A partition is assigned to more than one mount point."
-msgstr "Una particione esta asignada a mas de un punto de montaje."
+msgstr "Una partición está asignada a más de un punto de montaje."
 
 #: ../ubiquity/frontend/gtkui.py:1385
 msgid "Two file systems are assigned the same mount point."
-msgstr "Dos sistemas de ficheros estan asignados al mismo punto de montaje."
+msgstr "Dos sistemas de ficheros están asignados al mismo punto de montaje."
 
 #: ../ubiquity/frontend/gtkui.py:1395
 #, python-format
@@ -51,8 +51,8 @@ msgid ""
 "XFS may not be used on the filesystem containing /boot. Either use a "
 "different filesystem for / or create a non-XFS filesystem for /boot."
 msgstr ""
-"XFS no puede ser usado para el sistema de ficheros que contenga /boot.Puede "
-"usar un sistema de ficheros diferente para / o crear un sistema deficheros "
+"XFS no puede ser usado para el sistema de ficheros que contenga /boot. Puede "
+"usar un sistema de ficheros diferente para / o crear un sistema de ficheros "
 "no-XFS para /boot"
 
 #: ../ubiquity/frontend/gtkui.py:1403
@@ -61,7 +61,7 @@ msgid ""
 "for /boot."
 msgstr ""
 "XFS no puede ser usado para el sistema de ficheros /boot. Use un sistema "
-"deficheros diferente para /boot"
+"de ficheros diferente para /boot"
 
 #: ../ubiquity/frontend/gtkui.py:1405
 msgid ""
@@ -81,8 +81,8 @@ msgid ""
 "somewhere under /media/."
 msgstr ""
 "Los sistemas de ficheros FAT y NTFS no pueden ser usados para sistemas "
-"deficheros utilizados por el sistema (/, /boot, /home, /usr, /var, etc.). "
-"Lomás habitual es montarlos en algún punto debajo de /media."
+"de ficheros utilizados por el sistema (/, /boot, /home, /usr, /var, etc.). "
+"Lo más habitual es montarlos en algún punto debajo de /media."
 
 #: ../ubiquity/frontend/gtkui.py:1557
 msgid ""
