@@ -1,0 +1,31 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 90_from_cvs_fix_incorrect_loop.dpatch by Sebastien Bacher <seb128@canonical.com>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: No description.
+
+@DPATCH@
+diff -urNad gnome-system-tools-2.15.5~/src/time/time-tool.c gnome-system-tools-2.15.5/src/time/time-tool.c
+--- gnome-system-tools-2.15.5~/src/time/time-tool.c	2006-09-23 20:48:02.000000000 +0200
++++ gnome-system-tools-2.15.5/src/time/time-tool.c	2006-11-03 12:31:14.000000000 +0100
+@@ -336,7 +336,7 @@
+ 	w = gst_dialog_get_widget (tool->main_dialog, "location_combo");
+ 	locs = tz_get_locations (e_tz_map_get_tz_db (time_tool->tzmap));
+ 
+-	for (i = 0; g_ptr_array_index (locs, i); i++)
++	for (i = 0; i < locs->len; i++)
+ 		gtk_combo_box_append_text (GTK_COMBO_BOX (w),
+ 					   tz_location_get_zone (g_ptr_array_index (locs, i)));
+ 
+diff -urNad gnome-system-tools-2.15.5~/src/time/tz-map.c gnome-system-tools-2.15.5/src/time/tz-map.c
+--- gnome-system-tools-2.15.5~/src/time/tz-map.c	2006-09-23 20:51:52.000000000 +0200
++++ gnome-system-tools-2.15.5/src/time/tz-map.c	2006-11-03 12:31:14.000000000 +0100
+@@ -76,7 +76,7 @@
+ 	
+ 	locs = tz_get_locations (tzmap->tzdb);
+ 	
+-	for (i = 0; g_ptr_array_index(locs, i); i++)
++	for (i = 0; i < locs->len; i++)
+ 	{
+ 		tzl = g_ptr_array_index (locs, i);
+ 		e_map_add_point (tzmap->map, NULL, tzl->longitude, tzl->latitude,

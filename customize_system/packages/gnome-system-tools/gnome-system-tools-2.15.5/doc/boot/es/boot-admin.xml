@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY toolversion "0.35">
+<!ENTITY manrevision "0.35">
+<!ENTITY date "June 2004">
+<!ENTITY tool "Bootloader Administration Tool">
+]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 06, 2003
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="es">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Manual de la Herramienta de Administración del Gestor de Arranque</title> 
+    <copyright>
+      <year>2004</year>
+      <holder>Carlos Garnacho Parro</holder>
+    </copyright><copyright><year>2006</year><holder>María Majadas (maria.majadas@hispalinux.es)</holder></copyright>
+
+<!-- translators: uncomment this:
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+   -->
+
+    <publisher> 
+	 <publishername>Carlos Garnacho Parro</publishername> 
+    </publisher> 
+
+  <legalnotice id="legalnotice">
+	<para>Se concede permiso para copiar, distribuir y/o modificar este documento bajo los términos de la Licencia de Documentación Libre de GNU, Versión 1.1 o cualquier otra versión posterior publicada por la Free Software Foundation; sin Secciones Invariantes ni Textos de Cubierta Delantera ni Textos de Cubierta Trasera. Puede encontrar una copia de la licencia GFDL en este <ulink type="help" url="ghelp:fdl">enlace</ulink> o en el archivo COPYING-DOCS distribuido con este manual.</para>
+         <para>Este manual es parte de una colección de manuales de Gnome distribuido bajo la GFDL. Si quiere distribuir este manual por separado de la colección, puede hacerlo añadiendo una copia de la licencia al manual, tal como se describe en la sección 6 de la licencia.</para>
+
+	<para>Muchos de los nombres usados por compañías para distinguir sus productos y servicios son mencionados como marcas comerciales. Donde esos nombres aparezcan en cualquier documentación de Gnome, y los miembros del Proyecto de Documentación de Gnome están al corriente de esas marcas comerciales, entonces los nombres se pondrán en mayúsculas o con la inicial en mayúsculas.</para>
+
+	<para>ESTE DOCUMENTO Y LAS VERSIONES MODIFICADAS DEL MISMO SE PROPORCIONAN SEGÚN LAS CONDICIONES ESTABLECIDAS EN LA LICENCIA DE DOCUMENTACIÓN LIBRE DE GNU (GFDL) Y TENIENDO EN CUENTA QUE: <orderedlist>
+		<listitem>
+		  <para>EL DOCUMENTO SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, NI EXPLÍCITA NI IMPLÍCITA INCLUYENDO, SIN LIMITACIÓN, GARANTÍA DE QUE EL DOCUMENTO O VERSIÓN MODIFICADA DE ÉSTE CAREZCA DE DEFECTOS COMERCIALES, SEA ADECUADO A UN FIN CONCRETO O INCUMPLA ALGUNA NORMATIVA. TODO EL RIESGO RELATIVO A LA CALIDAD, PRECISIÓN Y UTILIDAD DEL DOCUMENTO O SU VERSIÓN MODIFICADA RECAE EN USTED. SI CUALQUIER DOCUMENTO O VERSIÓN MODIFICADA DE AQUÉL RESULTARA DEFECTUOSO EN CUALQUIER ASPECTO, USTED (Y NO EL REDACTOR INICIAL, AUTOR O CONTRIBUYENTE) ASUMIRÁ LOS COSTES DE TODA REPARACIÓN, MANTENIMIENTO O CORRECCIÓN NECESARIOS. ESTA RENUNCIA DE GARANTÍA ES UNA PARTE ESENCIAL DE ESTA LICENCIA. NO SE AUTORIZA EL USO DE NINGÚN DOCUMENTO NI VERSIÓN MODIFICADA DE ÉSTE POR EL PRESENTE, SALVO DENTRO DEL CUMPLIMIENTO DE LA RENUNCIA;Y</para>
+		</listitem>
+		<listitem>
+		  <para>BAJO NINGUNA CIRCUNSTANCIA NI BAJO NINGUNA TEORÍA LEGAL, SEA POR ERROR (INCLUYENDO NEGLIGENCIA), CONTRATO O DE ALGÚN OTRO MODO, EL AUTOR, EL ESCRITOR INICIAL, CUALQUIER CONTRIBUIDOR, O CUALQUIER DISTRIBUIDOR DEL DOCUMENTO O VERSIÓN MODIFICADA DEL DOCUMENTO, O CUALQUIER PROVEEDOR DE CUALQUIERA DE ESAS PARTES, SERÁ RESPONSABLE ANTE NINGUNA PERSONA POR NINGÚN DAÑO DIRECTO, INDIRECTO, ESPECIAL, INCIDENTAL O DERIVADO DE NINGÚN TIPO, INCLUYENDO, SIN LIMITACIÓN DAÑOS POR PÉRDIDA DE MERCANCÍAS, PARO TÉCNICO, FALLO INFORMÁTICO O MAL FUNCIONAMIENTO O CUALQUIER OTRO POSIBLE DAÑO O PÉRDIDAS DERIVADAS O RELACIONADAS CON EL USO DEL DOCUMENTO O SUS VERSIONES MODIFICADAS, AUNQUE DICHA PARTE HAYA SIDO INFORMADA DE LA POSIBILIDAD DE QUE SE PRODUJESEN DICHOS DAÑOS.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+<!-- This file  contains link to license for the documentation (GNU FDL), and 
+     other legal stuff such as "NO WARRANTY" statement. Please do not change 
+     any of this. -->
+
+    <authorgroup> 
+      <author>
+        <firstname>Carlos</firstname>
+        <surname>Garnacho Parro</surname>
+      </author>
+      <!-- This is appropriate place for other contributors: translators,
+           maintainers,  etc. Commented out by default.
+        <othercredit role="translator">
+	      <firstname>Latin</firstname> 
+	      <surname>Translator 1</surname> 
+	      <affiliation> 
+	      	<orgname>Latin Translation Team</orgname> 
+	       	<address> <email>translator@gnome.org</email> </address> 
+	      </affiliation>
+	      <contrib>Latin translation</contrib>
+        </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+	 <revision>
+	   <revnumber>Manual de la Herramienta de Admistración del Gestor de Arranque V0.35</revnumber>
+	   <date>June 2004</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+    </revhistory>
+
+    <releaseinfo>Este manual describe la versión 0.35 de la Herramienta de Administración del Gestor de Arranque.</releaseinfo> 
+
+    <legalnotice> 
+	 <title>Comentarios</title> 
+	 <para>Para informar un error o hacer una sugerencia con respecto a la Herramienta de Administración del Gestor de Arranque o este manual, siga las indicaciones en la <ulink url="ghelp:gnome-feedback" type="help">Página de Feedback de GNOME</ulink>.</para>
+    </legalnotice> 
+    <abstract role="description">
+      <para>La Herramienta de Administración del Gestor de Arranque le permite especificar los sistemas operativos e imágenes de linux que el gestor de arranque podrá cargar al arrancar.</para>
+    </abstract>
+  </articleinfo> 
+
+  <indexterm zone="index"> 
+    <primary>La Herramienta de Administración del Gestor de Arranque</primary> 
+  </indexterm> 
+
+  <!-- ============= Document Body ============================= -->
+  <sect1 id="tool-introduction"> 
+    <title>Introducción</title> 
+    <para>La <application>Herramienta de Administración del Gestor de Arranque</application> le permite especificar las imágenes de los sistemas operativos y de linux que el gestor de arranque cargará a la hora de arrancar.</para>
+  </sect1>
+
+  <sect1 id="tool-getting-started">
+    <title>Empezar</title>
+
+    <para>Puede iniciar la <application>Herramienta de Administración del Gestor de Arranque</application> de los siguientes modos:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term>Menú <guimenu>Aplicaciones</guimenu></term>
+	   <listitem>
+		<para>Elija <menuchoice><guisubmenu>Herramientas del sistema</guisubmenu><guimenuitem>Arranque</guimenuitem></menuchoice>.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>Línea de órdenes</term>
+	   <listitem>
+		<para>Ejecute el siguiente comando: <command>boot-admin</command></para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+
+    <para>Cuando inicie la <application>Herramienta de Administración del Gestor de Arranque</application>, se le pedirá la contraseña del administrador, esto es necesario porque los cambios que se haga con esta herramienta afectarán a todo el sistema.</para>
+
+    <para>Después de introducir la contraseña del administrador, se muestra la siguiente ventana.</para>
+
+    <figure id="boot-main-window">
+	 <title>Ventana principal de la Herramienta de Administración del Gestor de Arranque</title>
+	 <screenshot>
+	   <mediaobject>
+		<imageobject>
+		  <imagedata fileref="figures/boot-tool.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+		  <phrase>Muestra la ventana principal de la Herramienta de Administración del Gestor de Arranque</phrase>
+		</textobject>
+	   </mediaobject>
+	 </screenshot>
+    </figure>
+
+    <para>La ventana principal de la <application>Herramienta de Administración del Gestor de Arranque</application> contiene los siguientes elementos:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term>Lista de imágenes</term>
+	   <listitem>
+		<para>Esta es una lista de las opciones actuales en su menú del gestor de arranque, al lado de la lista hay botones para añadir nuevas opciones, y modificar o borrar las ya existentes.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>Sección «Iniciar su equipo»</term>
+	   <listitem>
+		<para>Esto le permite especificar el tiempo que el menú del gestor de arranque se visuliza antes de que la imagen predeterminada arranque.</para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+  </sect1>
+
+  <sect1 id="tool-usage">
+    <title>Uso</title>
+
+    <sect2 id="tool-adding-entries">
+	 <title>Para crear una entrada de menú nueva</title>
+	 <para>Pulsar el botón <guilabel>Añadir</guilabel>, un asistente aparecerá, dependiendo del tipo de entrada que quiera añadir en el menú, se le pedirán diferentes datos.</para>
+
+	 <variablelist>
+	   <varlistentry>
+		<term>Para entradas Linux</term>
+		<listitem>
+		  <para>Se le pedirán el nombre que se mostrará en el menú, la ruta a la imagen del núcleo que quiere arrancar y la partición que será el sistema de archivos raíz, opcionalmente también podrá poner los contenidos del disco RAM (initrd) inicial y los parámetros a pasar al núcleo.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>Para entradas Hurd</term>
+		<listitem>
+		  <para>Se le pedirá el nombre que se mostrará en el menú, la ruta a la imagen del núcleo que quiere arrancar y la partición que será el sistema de archivos raíz, opcionalmente también puede poner las rutas a los módulos.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>Para otro tipo de entradas</term>
+		<listitem>
+		  <para>Se le preguntará por el nombre que se mostrará en el menú y la partición que contiene el sistema operativo que quiere arrancar.</para>
+		</listitem>
+	   </varlistentry>
+	 </variablelist>
+    </sect2>
+
+    <sect2 id="tool-modifying-entries">
+	 <title>Para modificar una entrada de menú ya existente</title>
+	 <para>Pulse el botón <guilabel>Propiedades</guilabel>, una ventana nueva aparecerá, dependiendo que tipo de entrada del menú que quiera modificar, puede modificar diferentes datos.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Para borrar una entrada de menú</title>
+	 <para>Seleccione la imagen que quiere borrar y pulse el botón <guilabel>Borrar</guilabel></para>
+    </sect2>
+
+    <sect2>
+	 <title>Para cambiar la cantidad de tiempo que se mostrará el gestor de arranque</title>
+	 <para>Cambie el botón de incremento en la ventana principal.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Para cambiar las opciones que se pasan al núcleo</title>
+	 <para>Puede añadirlas a mano en el texto de entrada <guilabel>Parámetros</guilabel>, opcionalmente, puede pulsar el botón <guilabel>Editar</guilabel>al lado del texto de entrada, aparecerá una ventana, dejándole modificar los parámetros más usuales que han pasado al núcleo.</para>
+    </sect2>
+  </sect1>
+</article>

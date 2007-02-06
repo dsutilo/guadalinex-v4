@@ -1,8 +1,56 @@
-gnome-system-tools (2.15.5-0ubuntu2guada1) edgy; urgency=low
+gnome-system-tools (2.15.5-0ubuntu5guada1) edgy; urgency=low
 
   * Added accesibility selection
 
  -- Alvaro Peña <apg@openshine.com>  Sat, 23 Dec 2006 09:45:57 +0000
+
+gnome-system-tools (2.15.5-0ubuntu5) edgy-updates; urgency=low
+
+  * No-change upload to edgy-updates.
+  * Thanks to Simon Law for verifying the fix.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Fri, 26 Jan 2007 17:23:01 +0100
+
+gnome-system-tools (2.15.5-0ubuntu5~prop2) edgy-proposed; urgency=low
+
+  * debian/patches/22_root_only.dpatch:
+    - src/shares/nautilus/nautilus-shares.c: Call shares-admin with gksu in
+      the nautilus extension. Closes: LP#76055
+    - src/shares/shares-tool.c: Temporarily drop to sudo user uid in
+      gst_shares_tool_init(), since the various oobs_*_config_get() functions
+      access the user's session bus (which hangs when being called as
+      root). This is the same patch as previously applied to time-tool.c.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Wed,  3 Jan 2007 19:43:42 +0100
+
+gnome-system-tools (2.15.5-0ubuntu5~prop1) edgy-proposed; urgency=low
+
+  * Add debian/patches/22_root_only.dpatch:
+    - *.desktop files: Execute programs through gksu.
+    - src/time/time-tool.c: If executing through sudo as root, temporarily
+      switch real user id to SUDO_UID, so that we can connect to the actual
+      user's session dbus for disabling the screensaver. Attempting to connect
+      to root's nonexisting session dbus just hangs.
+    - This reintroduces checking of the user's password to defend against
+      viruses and trojans modifying system settings, and also removes the
+      dependency to the 'admin' system group. 
+    - Closes: LP#59946
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Tue,  5 Dec 2006 10:17:03 +0000
+
+gnome-system-tools (2.15.5-0ubuntu4) edgy-updates; urgency=low
+
+  * Upload to edgy-upates, the crasher fix has been confirmed to work 
+    by Simon Law
+
+ -- Sebastien Bacher <seb128@canonical.com>  Wed, 29 Nov 2006 15:38:23 +0100
+
+gnome-system-tools (2.15.5-0ubuntu3) edgy-proposed; urgency=low
+
+  * debian/patches/90_from_cvs_fix_incorrect_loop.dpatch:
+    - patch from CVS, fix a crasher due to an incorrect loop (Ubuntu: #69566)
+
+ -- Sebastien Bacher <seb128@canonical.com>  Fri,  3 Nov 2006 12:22:37 +0100
 
 gnome-system-tools (2.15.5-0ubuntu2) edgy; urgency=low
 

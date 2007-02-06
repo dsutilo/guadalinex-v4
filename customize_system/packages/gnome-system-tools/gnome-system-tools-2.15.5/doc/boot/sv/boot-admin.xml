@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY toolversion "0.35">
+<!ENTITY manrevision "0.35">
+<!ENTITY date "June 2004">
+<!ENTITY tool "Bootloader Administration Tool">
+]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 06, 2003
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="sv">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Handbok för Startadministrationsverktyg</title> 
+    <copyright>
+      <year>2004</year>
+      <holder>Carlos Garnacho Parro</holder>
+    </copyright><copyright><year>2006.</year><holder>Daniel Nylander (po@danielnylander.se)</holder></copyright>
+
+<!-- translators: uncomment this:
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+   -->
+
+    <publisher> 
+	 <publishername>Carlos Garnacho Parro</publishername> 
+    </publisher> 
+
+  <legalnotice id="legalnotice">
+	<para>Tillstånd att kopiera, distribuera och/eller modifiera detta dokument ges under villkoren i GNU Free Documentation License (GFDL), version 1.1 eller senare, utgivet av Free Software Foundation utan standardavsnitt och omslagstexter.  En kopia av GFDL finns att hämta på denna <ulink type="help" url="ghelp:fdl">länk</ulink> eller i filen COPYING-DOCS som medföljer denna handbok.</para>
+         <para>Denna handbok utgör en av flera GNOME-handböcker som distribueras under villkoren i GFDL.  Om du vill distribuera denna handbok separat från övriga handböcker kan du göra detta genom att lägga till en kopia av licensavtalet i handboken enligt instruktionerna i avsnitt 6 i licensavtalet.</para>
+
+	<para>Flera namn på produkter och tjänster är registrerade varumärken. I de fall dessa namn förekommer i GNOME-dokumentation - och medlemmarna i GNOME-dokumentationsprojektet är medvetna om dessa varumärken - är de skrivna med versaler eller med inledande versal.</para>
+
+	<para>DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET TILLHANDAHÅLLS UNDER VILLKOREN I GNU FREE DOCUMENTATION LICENSE ENDAST UNDER FÖLJANDE FÖRUTSÄTTNINGAR: <orderedlist>
+		<listitem>
+		  <para>DOKUMENTET TILLHANDAHÅLLS I "BEFINTLIGT SKICK" UTAN NÅGRA SOM HELST GARANTIER, VARE SIG UTTRYCKLIGA ELLER UNDERFÖRSTÅDDA, INKLUSIVE, MEN INTE BEGRÄNSAT TILL, GARANTIER ATT DOKUMENTET ELLER EN MODIFIERAD VERSION AV DOKUMENTET INTE INNEHÅLLER NÅGRA FELAKTIGHETER, ÄR LÄMPLIGT FÖR ETT VISST ÄNDAMÅL ELLER INTE STRIDER MOT LAG. HELA RISKEN VAD GÄLLER KVALITET, EXAKTHET OCH UTFÖRANDE AV DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET LIGGER HELT OCH HÅLLET PÅ ANVÄNDAREN. OM ETT DOKUMENT ELLER EN MODIFIERAD VERSION AV ETT DOKUMENT SKULLE VISA SIG INNEHÅLLA FELAKTIGHETER I NÅGOT HÄNSEENDE ÄR DET DU (INTE DEN URSPRUNGLIGA SKRIBENTEN, FÖRFATTAREN ELLER NÅGON ANNAN MEDARBETARE) SOM FÅR STÅ FÖR ALLA EVENTUELLA KOSTNADER FÖR SERVICE, REPARATIONER ELLER KORRIGERINGAR. DENNA GARANTIFRISKRIVNING UTGÖR EN VÄSENTLIG DEL AV DETTA LICENSAVTAL. DETTA INNEBÄR ATT ALL ANVÄNDNING AV ETT DOKUMENT ELLER EN MODIFIERAD VERSION AV ETT DOKUMENT BEVILJAS ENDAST UNDER DENNA ANSVARSFRISKRIVNING;</para>
+		</listitem>
+		<listitem>
+		  <para>UNDER INGA OMSTÄNDIGHETER ELLER INOM RAMEN FÖR NÅGON LAGSTIFTNING, OAVSETT OM DET GÄLLER KRÄNKNING (INKLUSIVE VÅRDSLÖSHET), KONTRAKT ELLER DYLIKT, SKA FÖRFATTAREN, DEN URSPRUNGLIGA SKRIBENTEN ELLER ANNAN MEDARBETARE ELLER ÅTERFÖRSÄLJARE AV DOKUMENTET ELLER AV EN MODIFIERAD VERSION AV DOKUMENTET ELLER NÅGON LEVERANTÖR TILL NÅGON AV NÄMNDA PARTER STÄLLAS ANSVARIG GENTEMOT NÅGON FÖR NÅGRA DIREKTA, INDIREKTA, SÄRSKILDA ELLER OFÖRUTSEDDA SKADOR ELLER FÖLJDSKADOR AV NÅGOT SLAG, INKLUSIVE, MEN INTE BEGRÄNSAT TILL, SKADOR BETRÄFFANDE FÖRLORAD GOODWILL, HINDER I ARBETET, DATORHAVERI ELLER NÅGRA ANDRA TÄNKBARA SKADOR ELLER FÖRLUSTER SOM KAN UPPKOMMA PÅ GRUND AV ELLER RELATERAT TILL ANVÄNDNINGEN AV DOKUMENTET ELLER MODIFIERADE VERSIONER AV DOKUMENTET, ÄVEN OM PART SKA HA BLIVIT INFORMERAD OM MÖJLIGHETEN TILL SÅDANA SKADOR.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+<!-- This file  contains link to license for the documentation (GNU FDL), and 
+     other legal stuff such as "NO WARRANTY" statement. Please do not change 
+     any of this. -->
+
+    <authorgroup> 
+      <author>
+        <firstname>Carlos</firstname>
+        <surname>Garnacho Parro</surname>
+      </author>
+      <!-- This is appropriate place for other contributors: translators,
+           maintainers,  etc. Commented out by default.
+        <othercredit role="translator">
+	      <firstname>Latin</firstname> 
+	      <surname>Translator 1</surname> 
+	      <affiliation> 
+	      	<orgname>Latin Translation Team</orgname> 
+	       	<address> <email>translator@gnome.org</email> </address> 
+	      </affiliation>
+	      <contrib>Latin translation</contrib>
+        </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+	 <revision>
+	   <revnumber>Handbok för Startadministrationsverktyg v0.35</revnumber>
+	   <date>Juni 2004</date>
+	   <revdescription>
+          <para role="author">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+    </revhistory>
+
+    <releaseinfo>Denna handbok beskriver version 0.35 av Startadministrationsverktyg.</releaseinfo> 
+
+    <legalnotice> 
+	 <title>Återkoppling</title> 
+	 <para>För att rapportera ett fel eller komma med förslag angående Startadministrationsverktyget eller denna handbok, följ anvisningarna på <ulink url="ghelp:gnome-feedback" type="help">GNOME:s återkopplingssida</ulink>.</para>
+    </legalnotice> 
+    <abstract role="description">
+      <para>Startadministrationsverktyget låter dig ange de operativsystem och linux-avbilder som starthanteraren ska kunna läsa in vid uppstart</para>
+    </abstract>
+  </articleinfo> 
+
+  <indexterm zone="index"> 
+    <primary>Startadministrationsverktyg</primary> 
+  </indexterm> 
+
+  <!-- ============= Document Body ============================= -->
+  <sect1 id="tool-introduction"> 
+    <title>Introduktion</title> 
+    <para><application>Startadministrationsverktyget</application> låter dig ange de operativsystem och linux-avbilder som starthanteraren ska kunna läsa in vid uppstart.</para>
+  </sect1>
+
+  <sect1 id="tool-getting-started">
+    <title>Komma igång</title>
+
+    <para>Du kan starta <application>Startadministrationsverktyg</application> på följande sätt:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term>Menyn <guimenu>Program</guimenu></term>
+	   <listitem>
+		<para>Välj <menuchoice><guisubmenu>Systemverktyg</guisubmenu><guimenuitem>Start</guimenuitem></menuchoice>.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>Kommandorad</term>
+	   <listitem>
+		<para>Kör följande kommando: <command>boot-admin</command></para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+
+    <para>When you start <application>Bootloader Administration Tool</application>, you will be prompted for the administrator password, this is necessary because the changes done with this tool will affect the whole system.</para>
+
+    <para>After entering the administrator password, the following window is displayed.</para>
+
+    <figure id="boot-main-window">
+	 <title>Bootloader Administration Tool main window</title>
+	 <screenshot>
+	   <mediaobject>
+		<imageobject>
+		  <imagedata fileref="figures/boot-tool.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+		  <phrase>Shows Bootloader Administration Tool main window.</phrase>
+		</textobject>
+	   </mediaobject>
+	 </screenshot>
+    </figure>
+
+    <para>The <application>Bootloader Administration Tool</application> main window contains the following elements:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term>Avbildslista</term>
+	   <listitem>
+		<para>This is a list of the current options in your bootloader menu, beside the list there are buttons for adding new options, and modifying or deleting the already created ones.x</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>"Starting your computer" section</term>
+	   <listitem>
+		<para>This let's you specify the time that the bootloader menu will be displayed before running the default image.</para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+  </sect1>
+
+  <sect1 id="tool-usage">
+    <title>Användning</title>
+
+    <sect2 id="tool-adding-entries">
+	 <title>To create a new menu entry</title>
+	 <para>Press the <guilabel>Add</guilabel> button, an assistant will appear, depending on the menu entry type you want to add, you will be asked for different data.</para>
+
+	 <variablelist>
+	   <varlistentry>
+		<term>For Linux entries</term>
+		<listitem>
+		  <para>You will be asked for the name that will be shown in the menu, the path to the kernel image you want to boot and the partition that will be the root file system, optionally you can also set the contents of the initial RAM disk (initrd) and the parameters to pass to the kernel.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>For Hurd entries</term>
+		<listitem>
+		  <para>You will be asked for the name that will be shown in the menu, the path to the kernel image you want to boot and the partition that will be the root file system, optionally you can also set the modules path.</para>
+		</listitem>
+	   </varlistentry>
+
+	   <varlistentry>
+		<term>For other entry types</term>
+		<listitem>
+		  <para>You will be asked for the name that will be shown in the menu and the partition that contains the operating system you want to boot.</para>
+		</listitem>
+	   </varlistentry>
+	 </variablelist>
+    </sect2>
+
+    <sect2 id="tool-modifying-entries">
+	 <title>To modify an already existing menu entry</title>
+	 <para>Press the <guilabel>Properties</guilabel> button, a new window will appear, depending on the menu entry type you want to modify, you will be able to modify different data.</para>
+    </sect2>
+
+    <sect2>
+	 <title>To delete a menu entry</title>
+	 <para>Select the image you want to delete and press the <guilabel>Delete</guilabel> button</para>
+    </sect2>
+
+    <sect2>
+	 <title>To change the ammount of time that the bootloader will be displayed</title>
+	 <para>Change the spin button in the main window.</para>
+    </sect2>
+
+    <sect2>
+	 <title>To change the options that are passed to the kernel</title>
+	 <para>You can add they by hand in the <guilabel>Parameters</guilabel> text entry, optionally, you can press the <guilabel>Edit</guilabel> button beside the text entry, a window will appear, letting you modify the most usual parameters that are passed to the kernel.</para>
+    </sect2>
+  </sect1>
+</article>
