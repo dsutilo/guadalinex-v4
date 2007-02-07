@@ -58,7 +58,7 @@ class Actor(PkgDeviceActor):
 		    'info.linux.driver': "python: (value == 'cinergyT2') or (value == 'dvb-usb-a800') or \
                                                   (value == 'dvb-usb-dibusb-mb') or (value == 'dvb-usb-dtt200u') or \
                                                   (value == 'dvb-usb-vp702x') or (value == 'dvb-usb-vp7045') or \
-                                                  (value == 'dvb-usb-umt-010')"
+                                                  (value == 'dvb-usb-umt-010') or (value.startswith('dvb_usb'))"
    		   }
 
     __icon_path__  = os.path.abspath('actors/img/dvb.png')

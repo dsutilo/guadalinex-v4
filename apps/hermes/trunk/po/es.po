@@ -7,20 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-18 15:54+0100\n"
-"PO-Revision-Date: 2006-12-13 17:32+0100\n"
+"POT-Creation-Date: 2007-02-07 15:22+0100\n"
+"PO-Revision-Date: 2007-02-07 15:22+0100\n"
 "Last-Translator:  <(null)>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../actors/deviceactor.py:241
+#: ../actors/deviceactor.py:264
 msgid "Use device"
 msgstr "Utilizar dispositivo"
 
-#: ../actors/deviceactor.py:244 ../actors/c3pocardreader.py:76
-#: ../actors/camera.py:75 ../actors/usbscanner.py:114
+#: ../actors/deviceactor.py:268 ../actors/usbscanner.py:114
 #: ../actors/usbwebcam.py:117
 msgid "Install required packages"
 msgstr "Instalar paquetes requeridos"
@@ -33,28 +32,44 @@ msgstr "Interfaz Bluetooth desconectado"
 msgid "Bluetooth device disconnected"
 msgstr "Interfaz Bluetooth desconectado"
 
-#: ../actors/c3pocardreader.py:72 ../actors/c3pocardreader.py:77
-#: ../actors/c3pocardreader.py:82
+#: ../actors/c3pocardreader.py:68
 msgid "C3PO"
 msgstr "C3PO"
 
-#: ../actors/c3pocardreader.py:73 ../actors/c3pocardreader.py:77
+#: ../actors/c3pocardreader.py:69
 msgid "Card reader detected"
 msgstr "Se ha detectado un lector de tarjetas"
 
-#: ../actors/c3pocardreader.py:83
+#: ../actors/c3pocardreader.py:70
 msgid "Card reader disconnected"
 msgstr "Lector de tarjetas desconectado"
 
-#: ../actors/camera.py:77 ../actors/camera.py:83
+#: ../actors/c3pocardreader.py:78
+#, fuzzy
+msgid "Configure DNIe"
+msgstr "Configurando:"
+
+#: ../actors/c3pocardreader.py:86
+msgid "Session restart needed"
+msgstr "Es necesario reiniciar la sesión"
+
+#: ../actors/c3pocardreader.py:87
+msgid "You must restart your session to apply the changes"
+msgstr "Debe reiniciar su sesión para aplicar los cambios"
+
+#: ../actors/c3pocardreader.py:91
+msgid "Add user to scard group"
+msgstr "Añadir usuario al grupo scard"
+
+#: ../actors/camera.py:62
 msgid "CAMERA"
 msgstr "CÁMARA"
 
-#: ../actors/camera.py:78
+#: ../actors/camera.py:63
 msgid "Digital camera connected."
 msgstr "Cámara digital conectada."
 
-#: ../actors/camera.py:83
+#: ../actors/camera.py:64
 msgid "Digital camera disconnected"
 msgstr "Cámara digital desconectada"
 
@@ -169,19 +184,19 @@ msgstr "Se ha detectado una cámara web"
 msgid "Webcam disconnected"
 msgstr "Cámara web desconectada"
 
-#: ../actors/volume.py:80 ../actors/volume.py:89
+#: ../actors/volume.py:81 ../actors/volume.py:90
 msgid "Storage"
 msgstr "Almacenamiento"
 
-#: ../actors/volume.py:81
+#: ../actors/volume.py:82
 msgid "Device mounted on"
 msgstr "Dispositivo montado en"
 
-#: ../actors/volume.py:90
+#: ../actors/volume.py:91
 msgid "Device unmounted"
 msgstr "Dispositivo desmontado"
 
-#: ../actors/volume.py:97
+#: ../actors/volume.py:98
 msgid "Error:"
 msgstr "Error:"
 
@@ -208,7 +223,7 @@ msgstr "Mensaje de prueba"
 msgid "Information"
 msgstr "Información"
 
-#: ../tests/test_notify.py:62 ../hermes_hardware.py:201
+#: ../tests/test_notify.py:62 ../hermes_hardware.py:204
 msgid "Warning"
 msgstr "Advertencia"
 
@@ -313,7 +328,7 @@ msgstr "Instalando paquetes"
 msgid "Installed packages"
 msgstr "Paquetes instalados"
 
-#: ../hermes_hardware.py:202
+#: ../hermes_hardware.py:205
 msgid "Device REMOVED."
 msgstr "Dispositivo DESCONECTADO."
 
