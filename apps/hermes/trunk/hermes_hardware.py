@@ -109,7 +109,7 @@ import actors
 
 class DeviceListener:
     
-    def __init__(self, message_render):
+    def __init__(self, message_render, with_cold = True):
         self.message_render = message_render
         self.logger = logging.getLogger()
 
@@ -131,8 +131,9 @@ class DeviceListener:
 
         self.__init_actors()
 
-        coldplug = ColdPlugListener(self)
-        coldplug.start()
+        if with_cold:
+            coldplug = ColdPlugListener(self)
+            coldplug.start()
 
         self.logger.info("DeviceListener iniciado")
 

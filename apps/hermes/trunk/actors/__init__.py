@@ -8,7 +8,7 @@ import os
 import os.path
 import logging
                 
-DIR=os.path.dirname(__file__) + os.sep 
+DIR = os.path.dirname(__file__) + os.sep 
 file_list = [ele for ele in os.listdir(DIR) if os.path.isfile(DIR + os.sep + ele)]
 logger = logging.getLogger()
 

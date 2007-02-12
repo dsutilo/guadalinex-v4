@@ -62,7 +62,8 @@ class Actor(DeviceActor):
             product = self.properties['usb_device.product']
             vendor = self.properties['info.vendor']
             vendor = vendor and vendor + ', ' or ''
-            self.msg_render.show(_("USB"), _("USB device detected:\n") +\
+
+            if vendor + product: self.msg_render.show(_("USB"), _("USB device detected:\n") +\
                     vendor + product, USBICON)
             self.vendorproduct = vendor + product
 
@@ -72,7 +73,8 @@ class Actor(DeviceActor):
 
     def on_removed(self):
         try:
-            self.msg_render.show(_("USB"), _("USB device disconnected:\n") + \
+            if self.vendorproduct:
+                self.msg_render.show(_("USB"), _("USB device disconnected:\n") + \
                     self.vendorproduct, USBICONOFF)
         except:
             self.msg_render.show(_("USB"), _("USB device disconnected"),
