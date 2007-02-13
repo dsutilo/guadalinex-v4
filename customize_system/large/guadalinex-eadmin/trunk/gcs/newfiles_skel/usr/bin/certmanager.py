@@ -150,6 +150,7 @@ FNMT_ROOT_CERT_NAME = "FNMT"
 FNMT_ROOT_CERT_FILE = "/usr/share/ca-certificates/fnmt/FNMTClase2CA.crt"
 FNMT_LICENSE        = "/usr/share/ca-certificates/fnmt/condiciones_uso.txt"
 DNIE_PKCS11_LIB     = "/usr/lib/opensc-pkcs11.so"
+CERES_PKCS11_LIB    = "/usr/lib/opensc-pkcs11.so"
 
 class LicenseDialog(gtk.Dialog):
     def __init__(self):
@@ -198,7 +199,10 @@ class Application(object):
     def __init__(self, name):
         self._name = name
 
-    def setup(self, user_certificates=[], install_dnie=False):
+    def setup(self,
+              user_certificates=[],
+              install_dnie=False,
+              install_ceres=False):
         """This method should be overriden in subclasses
 
         It returns the success state of the process
@@ -254,7 +258,10 @@ class FireFoxApp(Application):
     def _is_app_running(self):
         return self._ff.is_firefox_running()
 
-    def setup(self, user_certificates=[], install_dnie=False):
+    def setup(self,
+              user_certificates=[],
+              install_dnie=False,
+              install_ceres=False):
         # check that we have the root certificates of relevant spanish agencies
         has_fnmt_cert = self._ff.has_root_ca_certificate(FNMT_ROOT_CERT_NAME)
         has_dnie_cert = self._ff.has_root_ca_certificate(DNIE_ROOT_CERT_NAME)
@@ -262,7 +269,7 @@ class FireFoxApp(Application):
         if self._ff.get_default_profile_dir() is None:
             self._ff.create_default_profile()
 
-        if ((not has_fnmt_cert and user_certificates) or
+        if ((not has_fnmt_cert and (user_certificates or install_ceres)) or
             (not has_dnie_cert and install_dnie)):
             # install the root certificates stopping Firefox if needed
 
@@ -271,7 +278,7 @@ class FireFoxApp(Application):
                 if abort:
                     return False
 
-            if not has_fnmt_cert and user_certificates:
+            if not has_fnmt_cert and (user_certificates or install_ceres):
                 if True == self._ask_permission():
                     self._ff.add_root_ca_certificate(FNMT_ROOT_CERT_NAME,
                                                      FNMT_ROOT_CERT_FILE)
@@ -289,6 +296,9 @@ class FireFoxApp(Application):
 
         if install_dnie and not self._ff.has_security_method('DNIe'):
             self._ff.add_security_method('DNIe', DNIE_PKCS11_LIB)
+
+        if install_ceres and not self._ff.has_security_method('Tarjeta Inteligente'):
+            self._ff.add_security_method('Tarjeta Inteligente', CERES_PKCS11_LIB)
 
         # install the user certificates
         success = True
@@ -357,7 +367,10 @@ class EvolutionApp(Application):
         status, output = commands.getstatusoutput(cmd)
         return status == 0
 
-    def setup(self, user_certificates=[], install_dnie=False):
+    def setup(self,
+              user_certificates=[],
+              install_dnie=False,
+              install_ceres=False):
         """Link Evolution database to Firefox database"""
 
         if self._is_app_running():
@@ -419,17 +432,21 @@ class CertManager(object):
                 certs = self.select_certificates(cert_list, search_path)
 
 	success = True
-        if options.install_dnie or certs:
+        if options.install_dnie or options.install_ceres or certs:
             for app in self._applications:
-                success = success and app.setup(certs, options.install_dnie)
+                success = success and app.setup(certs,
+                                                options.install_dnie,
+                                                options.install_ceres)
 
             # Finish message
+            what = [],
             if options.install_dnie and certs:
-                what = 'el DNIe y los certificados de usuario'
-            elif options.install_dnie:
-                what = 'el DNIe'
-            else:
-                what = 'los certificados de usuario'
+                what.append('el DNIe')
+            if options.install_certs:
+                what.append('los módulos CERES')
+            if certs:
+                what.append('los certificados de usuario')
+            what = ', '.join(what)
             if success:
                 msg = 'La instalacion de %s ha finalizado correctamente' % what
                 icon = gtk.MESSAGE_INFO
@@ -559,6 +576,11 @@ if __name__ == '__main__':
                       dest='install_dnie',
                       default=False,
                       help='Install necesary modules for the DNIe')
+    parser.add_option('-c', '--install-ceres',
+                      action='store_true',
+                      dest='install_ceres',
+                      default=False,
+                      help='Install necesary modules for CERES cards')
     parser.add_option('-r', '--run-only-once',
                       action='store_true',
                       dest='run_only_once',
