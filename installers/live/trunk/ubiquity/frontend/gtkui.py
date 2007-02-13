@@ -889,11 +889,6 @@ class Wizard:
                 if self.diskpreview_mps != None:
                     self.diskpreview_mps.mount_filesystems()
 
-        if step == "stepPartAdvanced":
-            print "Ey Ey !!!"
-            if self.diskpreview_mps != None:
-                self.diskpreview_mps.mount_filesystems()
-
         if step == "stepPartMountpoints":
             if self.diskpreview_mps != None:
                 self.diskpreview_mps.umount_filesystems()
@@ -1213,6 +1208,9 @@ class Wizard:
         if not gparted_reply.startswith('0 '):
             # something other than OK or Cancel
             return
+
+        if self.diskpreview_mps != None:
+            self.diskpreview_mps.mount_filesystems()
 
         # Set up list of partition names for use in the mountpoints table.
         self.partition_choices = []
