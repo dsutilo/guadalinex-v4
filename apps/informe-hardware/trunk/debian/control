@@ -7,6 +7,6 @@ Standards-Version: 3.6.2
 
 Package: informe-hardware 
 Architecture: any
-Depends: zenity 
+Depends: zenity, xresprobe 
 Description: Error reporting tool.
  Utility to report information about the operating system.
