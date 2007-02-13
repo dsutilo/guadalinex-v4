@@ -74,8 +74,12 @@ class Actor(PkgDeviceActor):
 	def configure_dnie():
             os.system('%s --install-dnie' % CERTMANAGER_CMD)
 
+        def configure_ceres():
+            os.system('%s --install-ceres' % CERTMANAGER_CMD)
+
         if os.path.exists(CERTMANAGER_CMD):
             actions[_("Configure DNIe")] = configure_dnie
+            actions[_("Configure CERES")] = configure_ceres
 
         def add_user_to_scard():
             user = os.getlogin()
