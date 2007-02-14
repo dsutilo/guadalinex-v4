@@ -161,12 +161,17 @@
   <Filename>gnome-app-install.desktop</Filename>
 </Include>
 
+<Include>
+  <Filename>extras-installer.desktop</Filename>
+</Include>
+
 <!-- Separator between menus and gnome-app-install -->
 <Layout>
   <Merge type="menus"/>
   <Merge type="files"/>
   <Separator/>
   <Filename>gnome-app-install.desktop</Filename>
+  <Filename>extras-installer.desktop</Filename>
 </Layout>
 
 </Menu> <!-- End Applications -->
