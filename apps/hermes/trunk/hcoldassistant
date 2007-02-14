@@ -1,5 +1,5 @@
 #!/bin/sh
 
 cd /usr/share/hermes
-./coldassistant/app.py
+python ./coldassistant/app.py
 exit 0
