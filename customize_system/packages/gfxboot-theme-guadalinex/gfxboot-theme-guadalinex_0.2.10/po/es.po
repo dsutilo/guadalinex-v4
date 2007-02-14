@@ -296,7 +296,7 @@ msgstr "^Iniciar o instalar Guadalinex"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_ubuntu_xforcevesa
 msgid "Start Guadalinex in safe ^graphics mode"
-msgstr "Iniciar Guadalinex en modo ^gráfico seguro"
+msgstr "Inicio a prueba de ^fallos"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_live_kubuntu
@@ -361,7 +361,7 @@ msgstr "Instal^ar un sistema en línea de comandos"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_check
 msgid "^Check CD for defects"
-msgstr "Verificar el ^CD en busca de errores"
+msgstr "Verifi^car la integridad de este disco"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_rescue
