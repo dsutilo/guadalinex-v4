@@ -221,7 +221,8 @@ msgstr "Dominio\n"
 #. button label for other/more options
 #. txt_other_options
 msgid "Other Options"
-msgstr "Otras opciones"
+#msgstr "Otras opciones"
+msgstr "Modo experto"
 
 #. label for language selection
 #. txt_language
