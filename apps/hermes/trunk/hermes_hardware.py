@@ -62,6 +62,7 @@ import sys
 import traceback
 
 from gettext import gettext as _
+from utils.hermestrayicon import HermesTrayIcon
 
 # Internacionalización
 import gettext, locale
@@ -390,8 +391,8 @@ def main():
     global DeviceActor
     from actors.deviceactor import DeviceActor
 
-
     DeviceListener(iface)
+    HermesTrayIcon()
     gtk.gdk.threads_init()
     try:
         gtk.main()

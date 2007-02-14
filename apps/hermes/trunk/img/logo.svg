@@ -7,18 +7,18 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://inkscape.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="64px"
    height="64px"
    id="svg1307"
    sodipodi:version="0.32"
-   inkscape:version="0.43"
-   sodipodi:docbase="/home/goomerko/Desktop"
-   sodipodi:docname="hermes_logo.svg"
-   inkscape:export-filename="/home/goomerko/Desktop/hermes_logo.png"
-   inkscape:export-xdpi="90"
-   inkscape:export-ydpi="90">
+   inkscape:version="0.44"
+   sodipodi:docbase="/home/gcoronel/Work/gv4/svn/apps/hermes/trunk/img"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="/home/gcoronel/Desktop/logo_16.png"
+   inkscape:export-xdpi="27.731649"
+   inkscape:export-ydpi="27.731649">
   <defs
      id="defs1309">
     <linearGradient

@@ -7,7 +7,7 @@ Standards-Version: 3.7.2
 
 Package: hermeshardware
 Architecture: any
-Depends: hal, dbus, python2.4-dbus, python, python2.4, notification-daemon, libsane, grepmap, python-syck, hermeshardware-descriptors, ${shlibs:Depends}, ${misc:Depends}
+Depends: hal, dbus, python2.4-dbus, python, python2.4, notification-daemon, libsane, grepmap, python-syck, hermeshardware-descriptors, python-gnome2-extras, ${shlibs:Depends}, ${misc:Depends}
 Description: detección y soporte de dispositivos
  el sistema de detección de hardware engloba tanto las tareas de detección
  y soporte de dispositivos, como aquellas que tienen que ver con la 
