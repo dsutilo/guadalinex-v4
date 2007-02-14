@@ -1,4 +1,4 @@
-defs.py actors doc img utils hermes_hardware.py README /usr/share/hermes
-hermeshardware hermesdruid /usr/bin
-hermesdruid.desktop /usr/share/applications/
+defs.py actors doc img utils hermes_hardware.py README coldassistant /usr/share/hermes
+hermeshardware hermesdruid hcoldassistant /usr/bin
+hermesdruid.desktop hcoldassistant.desktop /usr/share/applications/
 

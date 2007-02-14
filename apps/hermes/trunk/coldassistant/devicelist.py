@@ -25,10 +25,7 @@ class DeviceList(gtk.VBox):
     __instance__ = None
 
     def __init__(self):
-        gtk.VBox.__init__(self)
-
-        self.progressbar = self.init_progressbar = gtk.ProgressBar()
-        #self._populate()
+        gtk.VBox.__init__(self, spacing = 10)
 
 
     @staticmethod
@@ -54,11 +51,11 @@ class DeviceList(gtk.VBox):
         bus = dbus.SystemBus()
         obj = bus.get_object('org.freedesktop.Hal', '/org/freedesktop/Hal/Manager')
         manager = dbus.Interface(obj, 'org.freedesktop.Hal.Manager')
-        self.progressbar.set_fraction(0)
-        if self.progressbar == self.init_progressbar:
-            self.progressbar.set_text('Buscando dispositivos...')
+        progressbar = gtk.ProgressBar()
+        progressbar.set_fraction(0)
+        progressbar.set_text('Buscando dispositivos...')
 
-        self.pack_start(self.progressbar)
+        self.pack_start(progressbar)
         self.show_all()
         while gtk.events_pending():
             gtk.main_iteration()
@@ -76,22 +73,27 @@ class DeviceList(gtk.VBox):
         total = len(good_actors)
         i = 1
         actor_renderers = []
+        if not good_actors:
+            self.remove(progressbar)
+            msg = 'No se encontraron dispositivos que requieran acciones por parte del usuario.'
+            label = gtk.Label(msg)
+            label.set_line_wrap(True)
+            self.pack_start(label)
+            self.show_all()
+            return
+
         for good_actor in good_actors:
-            self.progressbar.set_fraction(i / float(total))
+            progressbar.set_fraction(i / float(total))
             while gtk.events_pending():
                 gtk.main_iteration()
             i += 1
-
             actor_renderers.append(ActorRenderer(good_actor))
 
-        if self.progressbar == self.init_progressbar:
-            self.remove(self.progressbar)
-
+        self.remove(progressbar)
         for renderer in actor_renderers:
             self.pack_start(renderer)
             self.pack_start(gtk.HSeparator())
         self.show_all()
-
 
 
     def _actor_is_good(self, actor):
@@ -120,7 +122,6 @@ class  ActorRenderer(gtk.HBox):
         self.actor = actor
 
         self._configure()
-
         self.show_all()
 
 
@@ -132,6 +133,9 @@ class  ActorRenderer(gtk.HBox):
     # Notification interface #######################################################
 
     def show (self, summary, body, icon, actions = {}):
+        if not actions:
+            return 
+
         # Icon
         if os.sep in icon:
             self.image.set_from_file(icon)
@@ -203,11 +207,8 @@ class ActionRenderer(gtk.Button):
                 gtk.main_iteration()
             pulse_bar.pulse()
             time.sleep(0.2)
-        #devlist = DeviceList.get_instance()
-        #devlist.progressbar = pulse_bar
-        #devlist.reset()
 
-        self.remove(pulse_bar)
-        self.add(label)
-        self.set_sensitive(True)
+        #self.remove(pulse_bar)
+        #self.add(label)
+        #self.set_sensitive(True)
         gtk.main_quit()
