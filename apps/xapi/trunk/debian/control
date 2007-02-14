@@ -1,0 +1,16 @@
+Source: xapi
+Section: utils
+Priority: optional
+Maintainer: Junta de Andalucía <packmaster@guadalinex.org>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.2
+
+Package: xapi
+Architecture: any
+Pre-Depends: firefox
+Depends: perl-base (>= 4.0), libui-dialog-perl, zenity, synaptic
+Description: Support for the so named "apt protocol" in Firefox
+ Xapi is a perl script that uses synaptic to install packages from repositories.
+ It can also, if called with a local route, install a single package. This
+ packages add support for "apt protocol" in Firefox. When Firefox founds a
+ apt:// link, it calls xapi with the url as argument.
