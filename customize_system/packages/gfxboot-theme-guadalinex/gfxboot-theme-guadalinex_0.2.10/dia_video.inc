@@ -115,7 +115,9 @@
     video.modes.list {
       dup .vm_width get
       dup 0 eq {
-        pop pop "VGA"
+% We want it to say "Resolucion"
+%        pop pop "VGA"
+        pop pop "Resolucion"
       } {
         over .vm_depth get rot .vm_height get rot
         "%d x %d x %d" 32 string dup 6 1 roll sprintf
