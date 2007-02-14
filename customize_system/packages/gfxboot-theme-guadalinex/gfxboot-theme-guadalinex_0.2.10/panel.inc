@@ -41,15 +41,21 @@
 
     syslinux {
 
-      [ .panel.both [ keyF2 0 "F2" /panel.lang /panel.lang.width /panel.lang.update /lang.init ] ]
-      [ .panel.both [ keyF3 0 "F3" /panel.keymap /panel.keymap.width /panel.keymap.update /keymap.init ] ]
-      [ .panel.both [ keyF4 0 "F4" /panel.video /panel.video.width /panel.video.update /video.init ] ]
-      [ .panel.both [ keyF5 0 "F5" /panel.access /panel.access.width /panel.access.update /access.init ] ]
-
-      [ .panel.short [ keyF6 0 "F6" /panel.options /panel.options.width /panel.options.update .undef ] ]
+% Don't want to select different langs; we also change F? asignments
+%      [ .panel.both [ keyF2 0 "F2" /panel.lang /panel.lang.width /panel.lang.update /lang.init ] ]
+%      [ .panel.both [ keyF3 0 "F3" /panel.keymap /panel.keymap.width /panel.keymap.update /keymap.init ] ]
+      [ .panel.both [ keyF3 0 "F2" /panel.keymap /panel.keymap.width /panel.keymap.update /keymap.init ] ]
+%      [ .panel.both [ keyF4 0 "F4" /panel.video /panel.video.width /panel.video.update /video.init ] ]
+      [ .panel.both [ keyF4 0 "F3" /panel.video /panel.video.width /panel.video.update /video.init ] ]
+%      [ .panel.both [ keyF5 0 "F5" /panel.access /panel.access.width /panel.access.update /access.init ] ]
+      [ .panel.both [ keyF5 0 "F4" /panel.access /panel.access.width /panel.access.update /access.init ] ]
+%
+%      [ .panel.short [ keyF6 0 "F6" /panel.options /panel.options.width /panel.options.update .undef ] ]
+      [ .panel.short [ keyF6 0 "F5" /panel.options /panel.options.width /panel.options.update .undef ] ]
 
       is_live not {
-	[ .panel.full [ keyF6 0 "F6" /panel.dimode /panel.dimode.width /panel.dimode.update /dimode.init ] ]
+%	[ .panel.full [ keyF6 0 "F6" /panel.dimode /panel.dimode.width /panel.dimode.update /dimode.init ] ]
+	[ .panel.full [ keyF6 0 "F5" /panel.dimode /panel.dimode.width /panel.dimode.update /dimode.init ] ]
       } if
 
       32+64bit_source {
@@ -58,7 +64,8 @@
 	  64bit_boot_dir .undef ne
 	  32bit_boot_dir 64bit_boot_dir ne
 	  and and {
-	    [ .panel.full [ keyF7 0 "F7" /panel.bits /panel.bits.width /panel.bits.update /bits.init ] ]
+%	    [ .panel.full [ keyF7 0 "F7" /panel.bits /panel.bits.width /panel.bits.update /bits.init ] ]
+	    [ .panel.full [ keyF7 0 "F6" /panel.bits /panel.bits.width /panel.bits.update /bits.init ] ]
 	  } if
 	} if
       } if
@@ -67,10 +74,11 @@
 
     } {
 
-      [ .panel.both [ keyF2 0 "F2" /panel.lang /panel.lang.width /panel.lang.update /lang.init ] ]
+%      [ .panel.both [ keyF2 0 "F2" /panel.lang /panel.lang.width /panel.lang.update /lang.init ] ]
       "profiles" findfile dup {
         /profile.data exch def
-        [ .panel.both [ keyF3 0 "F3" /panel.profile /panel.profile.width /panel.profile.update /profile.init ] ]
+%        [ .panel.both [ keyF3 0 "F3" /panel.profile /panel.profile.width /panel.profile.update /profile.init ] ]
+        [ .panel.both [ keyF3 0 "F2" /panel.profile /panel.profile.width /panel.profile.update /profile.init ] ]
       } { pop } ifelse
 
     } ifelse
