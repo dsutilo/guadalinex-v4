@@ -1,6 +1,6 @@
 packages:
-    - gtkpod
+    - rhythmbox
 
 
 conn_commands:
-    - gtkpod &
+    - rhythmbox &

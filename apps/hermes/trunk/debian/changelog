@@ -1,3 +1,9 @@
+hermeshardware (0.3.3) unstable; urgency=low
+
+  * Added coldassistant for connected devices. 
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Wed, 14 Feb 2007 13:31:23 +0100
+
 hermeshardware (0.3.2) unstable; urgency=low
 
   * Added support for "Packages Actors".

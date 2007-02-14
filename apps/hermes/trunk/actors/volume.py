@@ -76,7 +76,7 @@ class Actor (DeviceActor):
                     mount_point = self.properties['volume.mount_point']
 
                     def open_volume():
-                        os.system('nautilus ' + mount_point) 
+                        os.system('nautilus "%s"' % mount_point) 
 
                     self.message_render.show(_("Storage"), 
                         _("Device mounted on"), VOLUMEICON,

@@ -7,13 +7,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-14 12:23+0100\n"
-"PO-Revision-Date: 2007-02-14 12:24+0100\n"
+"POT-Creation-Date: 2007-02-14 13:37+0100\n"
+"PO-Revision-Date: 2007-02-14 13:37+0100\n"
 "Last-Translator:  <(null)>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: ../actors/deviceactor.py:264
 msgid "Use device"
@@ -216,7 +216,10 @@ msgstr "Hermes: Listado de dispositivos"
 msgid ""
 "The following list shows the <b>already installed  devices</b>, which are "
 "<b>supported by Hermes</b> and have some associated action."
-msgstr "El siguiente listado muestra los dispositivos <b>instalados en su sistema</b> que están <b>soportados por Hermes</b> y disponen de alguna acción asociada."
+msgstr ""
+"El siguiente listado muestra los dispositivos <b>instalados en su sistema</"
+"b> que están <b>soportados por Hermes</b> y disponen de alguna acción "
+"asociada."
 
 #: ../tests/test_bluetooth.py:18
 msgid "Configuring:"
@@ -353,7 +356,7 @@ msgstr "Dispositivo DESCONECTADO."
 #: ../hermesdruid.desktop.in.h:1
 #: ../debian/hermeshardware/usr/share/applications/hermesdruid.desktop.in.h:1
 msgid "Druid for capture hardware data"
-msgstr "Asistente para la recogida de datos sobre dispositivos para Hermes."
+msgstr "Asistente para la recogida de datos sobre dispositivos para Hermes"
 
 #: ../hermesdruid.desktop.in.h:2
 #: ../debian/hermeshardware/usr/share/applications/hermesdruid.desktop.in.h:2
@@ -368,15 +371,23 @@ msgstr "Informe sobre nuevos dispositivos (Hermes)"
 #: ../hcoldassistant.desktop.in.h:1
 #: ../debian/hermeshardware/usr/share/applications/hcoldassistant.desktop.in.h:1
 msgid "Hermes ColdAssistant"
-msgstr "Asistente de acciones sobre dispositivos."
+msgstr "Asistente de acciones sobre dispositivos"
 
 #: ../hcoldassistant.desktop.in.h:2
+msgid "Hermes wizard for device actions"
+msgstr ""
+"Asistente para ejecutar acciones sobre dispositivos ya conectados al sistema"
+
+#: ../hcoldassistant.desktop.in.h:3
+msgid "Wizard for device actions"
+msgstr ""
+"Asistente para ejecutar acciones sobre dispositivos ya conectados al sistema"
+
 #: ../debian/hermeshardware/usr/share/applications/hcoldassistant.desktop.in.h:2
 msgid "Wizard for device actions."
 msgstr ""
 "Asistente para ejecutar acciones sobre dispositivos ya conectados al sistema."
 
-#: ../hcoldassistant.desktop.in.h:3
 #: ../debian/hermeshardware/usr/share/applications/hcoldassistant.desktop.in.h:3
 msgid "hcoldassistant"
 msgstr "Asistente de acciones sobre dispositivos."
