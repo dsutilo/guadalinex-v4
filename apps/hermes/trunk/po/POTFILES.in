@@ -12,9 +12,17 @@ actors/usbprinter.py
 actors/usbscanner.py
 actors/usbwebcam.py
 actors/volume.py
+coldassistant/app.py
+coldassistant/devicelist.py
+coldassistant/ui.glade
 tests/test_bluetooth.py
 tests/test_notify.py
 utils/captureloggui.glade
 utils/hermes_notifier.py
 utils/synaptic.py
 hermes_hardware.py
+# files added by intltool-prepare
+hermesdruid.desktop.in
+hcoldassistant.desktop.in
+debian/hermeshardware/usr/share/applications/hermesdruid.desktop.in
+debian/hermeshardware/usr/share/applications/hcoldassistant.desktop.in

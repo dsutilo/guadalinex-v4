@@ -6,7 +6,9 @@ sys.path.insert(0, './')
 
 import gtk
 import gtk.glade
+import gettext
 
+from hermes_hardware import setup_gettext
 from devicelist import DeviceList
 
 
@@ -40,6 +42,12 @@ class Controller(object):
 
 
 if __name__ == '__main__':
+    try:
+        import defs
+        setup_gettext('hermes-hardware', defs.DATA_DIR)
+    except ImportError:
+        print 'WARNING: Running uninstalled, no gettext support'
+
     controller = Controller()
     while not controller.finalize:
         controller.reset()

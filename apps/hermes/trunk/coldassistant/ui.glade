@@ -5,7 +5,7 @@
 
 <widget class="GtkWindow" id="mainwindow">
   <property name="visible">True</property>
-  <property name="title" translatable="yes">Hermes: Listado de dispositivos</property>
+  <property name="title" translatable="yes">Hermes: Device list</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
   <property name="modal">False</property>
@@ -54,7 +54,7 @@
 	  <child>
 	    <widget class="GtkLabel" id="label1">
 	      <property name="visible">True</property>
-	      <property name="label" translatable="yes">En el siguiente listado se muestran los dispositivos &lt;b&gt;instalados en su sistema&lt;/b&gt; que están &lt;b&gt;soportados por Hermes&lt;/b&gt; y disponen de alguna acción asociada.</property>
+	      <property name="label" translatable="yes" comments="En el siguiente listado se muestran los dispositivos &lt;b&gt;instalados en su sistema&lt;/b&gt; que están &lt;b&gt;soportados por Hermes&lt;/b&gt; y disponen de alguna acción asociada.">The following list shows the &lt;b&gt;already installed  devices&lt;/b&gt;, which are &lt;b&gt;supported by Hermes&lt;/b&gt; and have some associated action.</property>
 	      <property name="use_underline">False</property>
 	      <property name="use_markup">True</property>
 	      <property name="justify">GTK_JUSTIFY_LEFT</property>

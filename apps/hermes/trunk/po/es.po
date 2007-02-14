@@ -7,13 +7,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-07 15:22+0100\n"
-"PO-Revision-Date: 2007-02-07 15:22+0100\n"
+"POT-Creation-Date: 2007-02-14 12:23+0100\n"
+"PO-Revision-Date: 2007-02-14 12:24+0100\n"
 "Last-Translator:  <(null)>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit"
 
 #: ../actors/deviceactor.py:264
 msgid "Use device"
@@ -44,20 +44,23 @@ msgstr "Se ha detectado un lector de tarjetas"
 msgid "Card reader disconnected"
 msgstr "Lector de tarjetas desconectado"
 
-#: ../actors/c3pocardreader.py:78
-#, fuzzy
+#: ../actors/c3pocardreader.py:81
 msgid "Configure DNIe"
-msgstr "Configurando:"
+msgstr "Configurando DNIe"
 
-#: ../actors/c3pocardreader.py:86
+#: ../actors/c3pocardreader.py:82
+msgid "Configure FNMT-Ceres card"
+msgstr "Configurar tarjeta FNMT-Ceres"
+
+#: ../actors/c3pocardreader.py:90
 msgid "Session restart needed"
 msgstr "Es necesario reiniciar la sesión"
 
-#: ../actors/c3pocardreader.py:87
+#: ../actors/c3pocardreader.py:91
 msgid "You must restart your session to apply the changes"
 msgstr "Debe reiniciar su sesión para aplicar los cambios"
 
-#: ../actors/c3pocardreader.py:91
+#: ../actors/c3pocardreader.py:95
 msgid "Add user to scard group"
 msgstr "Añadir usuario al grupo scard"
 
@@ -111,24 +114,24 @@ msgstr "Dispositivo PCMCIA conectado"
 msgid "PCMCIA device disconnected"
 msgstr "Dispositivo PCMCIA desconectado"
 
-#: ../actors/usbdevice.py:65 ../actors/usbdevice.py:70
-#: ../actors/usbdevice.py:75 ../actors/usbdevice.py:78
+#: ../actors/usbdevice.py:66 ../actors/usbdevice.py:71
+#: ../actors/usbdevice.py:77 ../actors/usbdevice.py:80
 msgid "USB"
 msgstr "USB"
 
-#: ../actors/usbdevice.py:65
+#: ../actors/usbdevice.py:66
 msgid "USB device detected:\n"
 msgstr "Se ha detectado un dispositivo USB:\n"
 
-#: ../actors/usbdevice.py:70
+#: ../actors/usbdevice.py:71
 msgid "USB device detected"
 msgstr "Se ha detectado un dispositivo USB"
 
-#: ../actors/usbdevice.py:75
+#: ../actors/usbdevice.py:77
 msgid "USB device disconnected:\n"
 msgstr "Dispositivo USB desconectado:\n"
 
-#: ../actors/usbdevice.py:78
+#: ../actors/usbdevice.py:80
 msgid "USB device disconnected"
 msgstr "Dispositivo USB desconectado"
 
@@ -200,6 +203,21 @@ msgstr "Dispositivo desmontado"
 msgid "Error:"
 msgstr "Error:"
 
+#: ../coldassistant/devicelist.py:58
+msgid "Searching for devices..."
+msgstr "Buscando dispositivos..."
+
+#: ../coldassistant/ui.glade.h:1
+msgid "Hermes: Device list"
+msgstr "Hermes: Listado de dispositivos"
+
+#. En el siguiente listado se muestran los dispositivos <b>instalados en su sistema</b> que están <b>soportados por Hermes</b> y disponen de alguna acción asociada.
+#: ../coldassistant/ui.glade.h:3
+msgid ""
+"The following list shows the <b>already installed  devices</b>, which are "
+"<b>supported by Hermes</b> and have some associated action."
+msgstr "El siguiente listado muestra los dispositivos <b>instalados en su sistema</b> que están <b>soportados por Hermes</b> y disponen de alguna acción asociada."
+
 #: ../tests/test_bluetooth.py:18
 msgid "Configuring:"
 msgstr "Configurando:"
@@ -223,7 +241,7 @@ msgstr "Mensaje de prueba"
 msgid "Information"
 msgstr "Información"
 
-#: ../tests/test_notify.py:62 ../hermes_hardware.py:204
+#: ../tests/test_notify.py:62 ../hermes_hardware.py:205
 msgid "Warning"
 msgstr "Advertencia"
 
@@ -328,9 +346,40 @@ msgstr "Instalando paquetes"
 msgid "Installed packages"
 msgstr "Paquetes instalados"
 
-#: ../hermes_hardware.py:205
+#: ../hermes_hardware.py:206
 msgid "Device REMOVED."
 msgstr "Dispositivo DESCONECTADO."
+
+#: ../hermesdruid.desktop.in.h:1
+#: ../debian/hermeshardware/usr/share/applications/hermesdruid.desktop.in.h:1
+msgid "Druid for capture hardware data"
+msgstr "Asistente para la recogida de datos sobre dispositivos para Hermes."
+
+#: ../hermesdruid.desktop.in.h:2
+#: ../debian/hermeshardware/usr/share/applications/hermesdruid.desktop.in.h:2
+msgid "Hermes druid"
+msgstr "Informe sobre nuevos dispositivos (Hermes)"
+
+#: ../hermesdruid.desktop.in.h:3
+#: ../debian/hermeshardware/usr/share/applications/hermesdruid.desktop.in.h:3
+msgid "hermesdruid"
+msgstr "Informe sobre nuevos dispositivos (Hermes)"
+
+#: ../hcoldassistant.desktop.in.h:1
+#: ../debian/hermeshardware/usr/share/applications/hcoldassistant.desktop.in.h:1
+msgid "Hermes ColdAssistant"
+msgstr "Asistente de acciones sobre dispositivos."
+
+#: ../hcoldassistant.desktop.in.h:2
+#: ../debian/hermeshardware/usr/share/applications/hcoldassistant.desktop.in.h:2
+msgid "Wizard for device actions."
+msgstr ""
+"Asistente para ejecutar acciones sobre dispositivos ya conectados al sistema."
+
+#: ../hcoldassistant.desktop.in.h:3
+#: ../debian/hermeshardware/usr/share/applications/hcoldassistant.desktop.in.h:3
+msgid "hcoldassistant"
+msgstr "Asistente de acciones sobre dispositivos."
 
 #~ msgid "Open iPod Manager"
 #~ msgstr "Abrir gestor iPod"

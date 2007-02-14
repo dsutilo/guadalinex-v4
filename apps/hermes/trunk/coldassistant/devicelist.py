@@ -8,6 +8,8 @@ import thread
 import threading
 import time
 
+from gettext import gettext as _
+
 from actors import ACTORSLIST
 from actors.deviceactor import DeviceActor
 from actors.deviceactor import PkgDeviceActor
@@ -53,7 +55,7 @@ class DeviceList(gtk.VBox):
         manager = dbus.Interface(obj, 'org.freedesktop.Hal.Manager')
         progressbar = gtk.ProgressBar()
         progressbar.set_fraction(0)
-        progressbar.set_text('Buscando dispositivos...')
+        progressbar.set_text(_('Searching for devices...'))
 
         self.pack_start(progressbar)
         self.show_all()
@@ -75,8 +77,8 @@ class DeviceList(gtk.VBox):
         actor_renderers = []
         if not good_actors:
             self.remove(progressbar)
-            msg = 'No se encontraron dispositivos que requieran acciones por parte del usuario.'
-            label = gtk.Label(msg)
+            msg = "Sorry, can't find any device with actions."
+            label = gtk.Label(_(msg))
             label.set_line_wrap(True)
             self.pack_start(label)
             self.show_all()
@@ -92,7 +94,6 @@ class DeviceList(gtk.VBox):
         self.remove(progressbar)
         for renderer in actor_renderers:
             self.pack_start(renderer)
-            self.pack_start(gtk.HSeparator())
         self.show_all()
 
 
@@ -112,14 +113,15 @@ class DeviceList(gtk.VBox):
 
 
 
-class  ActorRenderer(gtk.HBox):
+class  ActorRenderer(gtk.VBox):
 
     def __init__(self, actor):
-        gtk.HBox.__init__(self)
+        gtk.VBox.__init__(self, spacing = 10)
 
         self.label = gtk.Label()
         self.image = gtk.Image()
         self.actor = actor
+        self.hbox = gtk.HBox()
 
         self._configure()
         self.show_all()
@@ -142,11 +144,11 @@ class  ActorRenderer(gtk.HBox):
         else:
             self.image.set_from_stock(icon, gtk.ICON_SIZE_DIALOG)
 
-        self.pack_start(self.image, False, False)
+        self.hbox.pack_start(self.image, False, False)
 
         # Text
         self.label.set_text(summary)
-        self.pack_start(self.label, False, False)
+        self.hbox.pack_start(self.label, False, False)
 
         # Actions
         action_vbox = gtk.VBox()
@@ -154,7 +156,10 @@ class  ActorRenderer(gtk.HBox):
             actionrenderer = ActionRenderer(text, action)
             action_vbox.pack_start(actionrenderer, True, False)
 
-        self.pack_start(action_vbox, True, False)
+        self.hbox.pack_start(action_vbox, True, False)
+
+        self.pack_start(self.hbox)
+        self.pack_start(gtk.HSeparator())
 
 
     def show_info(self, summary, body, actions = {}):
