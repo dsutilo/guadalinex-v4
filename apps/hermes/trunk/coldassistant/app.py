@@ -18,6 +18,9 @@ class Controller(object):
 
         self.window = xml.get_widget('mainwindow')
         self.finalize = False
+
+        icon = gtk.gdk.pixbuf_new_from_file("/usr/share/hermes/img/logo.svg")
+        self.window.set_icon(icon)
         
         vbox = xml.get_widget('treeview_vbox')
 
