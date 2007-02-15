@@ -77,8 +77,8 @@ class DeviceList(gtk.VBox):
         actor_renderers = []
         if not good_actors:
             self.remove(progressbar)
-            msg = "Sorry, can't find any device with actions."
-            label = gtk.Label(_(msg))
+            msg = _("Sorry, can't find any device with actions.")
+            label = gtk.Label(msg)
             label.set_line_wrap(True)
             self.pack_start(label)
             self.show_all()

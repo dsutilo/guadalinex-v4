@@ -1,3 +1,9 @@
+hermeshardware (0.3.4) unstable; urgency=low
+
+  * Added Hermes trayicon. 
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Thu, 15 Feb 2007 17:06:52 +0100
+
 hermeshardware (0.3.3) unstable; urgency=low
 
   * Added coldassistant for connected devices. 

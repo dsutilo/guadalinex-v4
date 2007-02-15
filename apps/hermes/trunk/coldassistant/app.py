@@ -26,9 +26,6 @@ class Controller(object):
         
         vbox = xml.get_widget('treeview_vbox')
 
-        cursor = gtk.gdk.Cursor(gtk.gdk.TOP_LEFT_ARROW)
-        self.get_screen().get_root_window().set_cursor(cursor)
-
         devicelist = DeviceList()
         vbox.pack_start(devicelist, False, False)
         self.devicelist = devicelist

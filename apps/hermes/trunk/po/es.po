@@ -7,13 +7,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-14 13:37+0100\n"
-"PO-Revision-Date: 2007-02-14 13:37+0100\n"
+"POT-Creation-Date: 2007-02-15 16:59+0100\n"
+"PO-Revision-Date: 2007-02-15 17:01+0100\n"
 "Last-Translator:  <(null)>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit"
 
 #: ../actors/deviceactor.py:264
 msgid "Use device"
@@ -64,15 +64,15 @@ msgstr "Debe reiniciar su sesión para aplicar los cambios"
 msgid "Add user to scard group"
 msgstr "Añadir usuario al grupo scard"
 
-#: ../actors/camera.py:62
+#: ../actors/camera.py:61
 msgid "CAMERA"
 msgstr "CÁMARA"
 
-#: ../actors/camera.py:63
+#: ../actors/camera.py:62
 msgid "Digital camera connected."
 msgstr "Cámara digital conectada."
 
-#: ../actors/camera.py:64
+#: ../actors/camera.py:63
 msgid "Digital camera disconnected"
 msgstr "Cámara digital desconectada"
 
@@ -207,6 +207,10 @@ msgstr "Error:"
 msgid "Searching for devices..."
 msgstr "Buscando dispositivos..."
 
+#: ../coldassistant/devicelist.py:80
+msgid "Sorry, can't find any device with actions."
+msgstr "No se ha encontrado ningún dispositivo con acciones asociadas."
+
 #: ../coldassistant/ui.glade.h:1
 msgid "Hermes: Device list"
 msgstr "Hermes: Listado de dispositivos"
@@ -244,7 +248,7 @@ msgstr "Mensaje de prueba"
 msgid "Information"
 msgstr "Información"
 
-#: ../tests/test_notify.py:62 ../hermes_hardware.py:205
+#: ../tests/test_notify.py:62 ../hermes_hardware.py:185
 msgid "Warning"
 msgstr "Advertencia"
 
@@ -349,7 +353,7 @@ msgstr "Instalando paquetes"
 msgid "Installed packages"
 msgstr "Paquetes instalados"
 
-#: ../hermes_hardware.py:206
+#: ../hermes_hardware.py:186
 msgid "Device REMOVED."
 msgstr "Dispositivo DESCONECTADO."
 
@@ -374,23 +378,24 @@ msgid "Hermes ColdAssistant"
 msgstr "Asistente de acciones sobre dispositivos"
 
 #: ../hcoldassistant.desktop.in.h:2
+#: ../debian/hermeshardware/usr/share/applications/hcoldassistant.desktop.in.h:2
 msgid "Hermes wizard for device actions"
 msgstr ""
 "Asistente para ejecutar acciones sobre dispositivos ya conectados al sistema"
 
 #: ../hcoldassistant.desktop.in.h:3
+#: ../debian/hermeshardware/usr/share/applications/hcoldassistant.desktop.in.h:3
 msgid "Wizard for device actions"
 msgstr ""
 "Asistente para ejecutar acciones sobre dispositivos ya conectados al sistema"
 
-#: ../debian/hermeshardware/usr/share/applications/hcoldassistant.desktop.in.h:2
-msgid "Wizard for device actions."
-msgstr ""
-"Asistente para ejecutar acciones sobre dispositivos ya conectados al sistema."
+#~ msgid "Wizard for device actions."
+#~ msgstr ""
+#~ "Asistente para ejecutar acciones sobre dispositivos ya conectados al "
+#~ "sistema."
 
-#: ../debian/hermeshardware/usr/share/applications/hcoldassistant.desktop.in.h:3
-msgid "hcoldassistant"
-msgstr "Asistente de acciones sobre dispositivos."
+#~ msgid "hcoldassistant"
+#~ msgstr "Asistente de acciones sobre dispositivos."
 
 #~ msgid "Open iPod Manager"
 #~ msgstr "Abrir gestor iPod"
