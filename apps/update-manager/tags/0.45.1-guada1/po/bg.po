@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: update manager\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2006-10-10 18:58+0200\n"
+"POT-Creation-Date: 2007-02-15 08:59+0100\n"
 "PO-Revision-Date: 2006-10-05 20:41+0000\n"
 "Last-Translator: Nikola Kasabov <nikola.kasabov@gmail.com>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -515,7 +515,7 @@ msgid "Fetching file %li of %li at %s/s"
 msgstr "Сваляне на файл %li от %li при %s/сек"
 
 #: ../DistUpgrade/DistUpgradeViewGtk.py:130
-#: ../DistUpgrade/DistUpgradeViewGtk.py:249
+#: ../DistUpgrade/DistUpgradeViewGtk.py:253
 #, python-format
 msgid "About %s remaining"
 msgstr ""
@@ -544,7 +544,7 @@ msgid ""
 msgstr ""
 
 #. self.expander.set_expanded(True)
-#: ../DistUpgrade/DistUpgradeViewGtk.py:202
+#: ../DistUpgrade/DistUpgradeViewGtk.py:203
 #, fuzzy, python-format
 msgid ""
 "Replace the customized configuration file\n"
@@ -553,21 +553,21 @@ msgstr ""
 "Замяна на конфигурационния файл\n"
 "\"%s\"?"
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:203
+#: ../DistUpgrade/DistUpgradeViewGtk.py:204
 msgid ""
 "You will lose any changes you have made to this configuration file if you "
 "choose to replace it with a newer version."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:216
+#: ../DistUpgrade/DistUpgradeViewGtk.py:217
 msgid "The 'diff' command was not found"
 msgstr "Командата \"diff\" не бе намерена"
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:355
+#: ../DistUpgrade/DistUpgradeViewGtk.py:365
 msgid "A fatal error occured"
 msgstr "Възникна фатална грешка"
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:356
+#: ../DistUpgrade/DistUpgradeViewGtk.py:366
 #, fuzzy
 msgid ""
 "Please report this as a bug and include the files /var/log/dist-upgrade/main."
@@ -583,28 +583,28 @@ msgstr ""
 
 #. FIXME: make those two seperate lines to make it clear
 #. that the "%" applies to the result of ngettext
-#: ../DistUpgrade/DistUpgradeViewGtk.py:487
+#: ../DistUpgrade/DistUpgradeViewGtk.py:501
 #, fuzzy, python-format
 msgid "%d package is going to be removed."
 msgid_plural "%d packages are going to be removed."
 msgstr[0] "Пакетът %s ще бъде премахнат."
 msgstr[1] "Пакетите %s ще бъдат премахнати."
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:492
+#: ../DistUpgrade/DistUpgradeViewGtk.py:506
 #, fuzzy, python-format
 msgid "%d new package is going to be installed."
 msgid_plural "%d new packages are going to be installed."
 msgstr[0] "%s нов пакет ще бъде инсталиран."
 msgstr[1] "%s нови пакети ще бъдат инталирани."
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:498
+#: ../DistUpgrade/DistUpgradeViewGtk.py:512
 #, fuzzy, python-format
 msgid "%d package is going to be upgraded."
 msgid_plural "%d packages are going to be upgraded."
 msgstr[0] "%s пакет ще бъде надграден."
 msgstr[1] "%s нови пакети ще бъдат надградени."
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:503
+#: ../DistUpgrade/DistUpgradeViewGtk.py:517
 #, fuzzy, python-format
 msgid ""
 "\n"
@@ -615,7 +615,7 @@ msgstr ""
 "\n"
 "Трябва да изтеглите данни общо %s. "
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:509
+#: ../DistUpgrade/DistUpgradeViewGtk.py:523
 #, fuzzy
 msgid ""
 "Fetching and installing the upgrade can take several hours and cannot be "
@@ -624,35 +624,35 @@ msgstr ""
 "Надграждането може да отнеме няколко часа, като не може да бъде отменено по-"
 "нататък."
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:512
+#: ../DistUpgrade/DistUpgradeViewGtk.py:526
 msgid "To prevent data loss close all open applications and documents."
 msgstr ""
 "За да предодвратите загуба на данни, затворете всички отворени приложения и "
 "документи."
 
 #. FIXME: this should go into DistUpgradeController
-#: ../DistUpgrade/DistUpgradeViewGtk.py:518
+#: ../DistUpgrade/DistUpgradeViewGtk.py:532
 #: ../UpdateManager/UpdateManager.py:622
 msgid "Your system is up-to-date"
 msgstr "Системата Ви е актуална"
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:519
+#: ../DistUpgrade/DistUpgradeViewGtk.py:533
 msgid ""
 "There are no upgrades available for your system. The upgrade will now be "
 "canceled."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:535
+#: ../DistUpgrade/DistUpgradeViewGtk.py:549
 #, python-format
 msgid "<b>Remove %s</b>"
 msgstr "<b>Премахване на %s</b>"
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:537
+#: ../DistUpgrade/DistUpgradeViewGtk.py:551
 #, python-format
 msgid "Install %s"
 msgstr "Инсталиране на %s"
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:539
+#: ../DistUpgrade/DistUpgradeViewGtk.py:553
 #, python-format
 msgid "Upgrade %s"
 msgstr "Надграждане на %s"
@@ -776,6 +776,7 @@ msgid "_Keep"
 msgstr "_Задържане"
 
 #: ../DistUpgrade/DistUpgrade.glade.h:19
+#: ../data/glade/SoftwarePropertiesDialogs.glade.h:21
 msgid "_Replace"
 msgstr "_Замяна"
 
@@ -813,49 +814,49 @@ msgid "Please check your internet connection."
 msgstr "Моля, проверете Интернет връзката си!"
 
 #. no script file found in extracted tarbal
-#: ../UpdateManager/DistUpgradeFetcher.py:149
+#: ../UpdateManager/DistUpgradeFetcher.py:150
 msgid "Could not run the upgrade tool"
 msgstr "Не може да бъде стартирана помощната програма за надграждане."
 
-#: ../UpdateManager/DistUpgradeFetcher.py:150
+#: ../UpdateManager/DistUpgradeFetcher.py:151
 msgid ""
 "This is most likely a bug in the upgrade tool. Please report it as a bug"
 msgstr ""
 "Това най-верроятно е грешка в помощната програма за надграждане. Моля, "
 "съобщете това като грешка!"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:171
+#: ../UpdateManager/DistUpgradeFetcher.py:172
 msgid "Downloading the upgrade tool"
 msgstr "Изтегляне на помощната програма за надграждане"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:173
+#: ../UpdateManager/DistUpgradeFetcher.py:174
 msgid "The upgrade tool will guide you through the upgrade process."
 msgstr ""
 "Помощната програма за надграждане ще Ви води през процеса на надграждане."
 
-#: ../UpdateManager/DistUpgradeFetcher.py:180
+#: ../UpdateManager/DistUpgradeFetcher.py:181
 msgid "Upgrade tool signature"
 msgstr "Подпис на помощната програма за надграждане"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:183
+#: ../UpdateManager/DistUpgradeFetcher.py:184
 msgid "Upgrade tool"
 msgstr "Помощна програма за надграждане"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:208
+#: ../UpdateManager/DistUpgradeFetcher.py:209
 msgid "Failed to fetch"
 msgstr "Грешка при доставянето"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:209
+#: ../UpdateManager/DistUpgradeFetcher.py:210
 msgid "Fetching the upgrade failed. There may be a network problem. "
 msgstr ""
 "Доставянето на надграждането бе неуспешно. Възможно е да има проблем с "
 "мрежата. "
 
-#: ../UpdateManager/DistUpgradeFetcher.py:214
+#: ../UpdateManager/DistUpgradeFetcher.py:215
 msgid "Failed to extract"
 msgstr "Грешка при извличането"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:215
+#: ../UpdateManager/DistUpgradeFetcher.py:216
 msgid ""
 "Extracting the upgrade failed. There may be a problem with the network or "
 "with the server. "
@@ -863,11 +864,11 @@ msgstr ""
 "Извличането на надграждането бе неуспешно. Възможно е да има проблем с "
 "мрежата или сървъра. "
 
-#: ../UpdateManager/DistUpgradeFetcher.py:221
+#: ../UpdateManager/DistUpgradeFetcher.py:222
 msgid "Verfication failed"
 msgstr "Грешка при удостоверяване"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:222
+#: ../UpdateManager/DistUpgradeFetcher.py:223
 #, fuzzy
 msgid ""
 "Verifying the upgrade failed.  There may be a problem with the network or "
@@ -876,11 +877,11 @@ msgstr ""
 "Удостоверяването на надграждането не успя. Възможно е да има проблем с "
 "мрежата или със сървъра. "
 
-#: ../UpdateManager/DistUpgradeFetcher.py:228
+#: ../UpdateManager/DistUpgradeFetcher.py:229
 msgid "Authentication failed"
 msgstr "Идентификацията неуспешна"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:229
+#: ../UpdateManager/DistUpgradeFetcher.py:230
 msgid ""
 "Authenticating the upgrade failed. There may be a problem with the network "
 "or with the server. "
@@ -1174,10 +1175,15 @@ msgstr "_Инсталиране на актуализациите"
 
 #: ../data/glade/UpdateManager.glade.h:25
 #, fuzzy
+msgid "_Upgrade"
+msgstr "_Надграждане"
+
+#: ../data/glade/UpdateManager.glade.h:26
+#, fuzzy
 msgid "changes"
 msgstr "Промени"
 
-#: ../data/glade/UpdateManager.glade.h:26
+#: ../data/glade/UpdateManager.glade.h:27
 msgid "updates"
 msgstr ""
 

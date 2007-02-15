@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: update-manager\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2006-10-10 18:58+0200\n"
+"POT-Creation-Date: 2007-02-15 08:59+0100\n"
 "PO-Revision-Date: 2006-10-05 20:38+0000\n"
 "Last-Translator: Andy Apdhani <imtheface@gmail.com>\n"
 "Language-Team: Indonesian <id@li.org>\n"
@@ -521,7 +521,7 @@ msgid "Fetching file %li of %li at %s/s"
 msgstr "Mengunduh berkas %li dari %li pada %s/s"
 
 #: ../DistUpgrade/DistUpgradeViewGtk.py:130
-#: ../DistUpgrade/DistUpgradeViewGtk.py:249
+#: ../DistUpgrade/DistUpgradeViewGtk.py:253
 #, fuzzy, python-format
 msgid "About %s remaining"
 msgstr "Sekitar %li menit lagi"
@@ -550,7 +550,7 @@ msgid ""
 msgstr ""
 
 #. self.expander.set_expanded(True)
-#: ../DistUpgrade/DistUpgradeViewGtk.py:202
+#: ../DistUpgrade/DistUpgradeViewGtk.py:203
 #, fuzzy, python-format
 msgid ""
 "Replace the customized configuration file\n"
@@ -559,21 +559,21 @@ msgstr ""
 "Mengganti berkas konfigurasi\n"
 "'%s'?"
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:203
+#: ../DistUpgrade/DistUpgradeViewGtk.py:204
 msgid ""
 "You will lose any changes you have made to this configuration file if you "
 "choose to replace it with a newer version."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:216
+#: ../DistUpgrade/DistUpgradeViewGtk.py:217
 msgid "The 'diff' command was not found"
 msgstr "Perintah 'diff' tidak dapat ditemukan"
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:355
+#: ../DistUpgrade/DistUpgradeViewGtk.py:365
 msgid "A fatal error occured"
 msgstr "Terjadi kesalahan fatal"
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:356
+#: ../DistUpgrade/DistUpgradeViewGtk.py:366
 #, fuzzy
 msgid ""
 "Please report this as a bug and include the files /var/log/dist-upgrade/main."
@@ -588,25 +588,25 @@ msgstr ""
 
 #. FIXME: make those two seperate lines to make it clear
 #. that the "%" applies to the result of ngettext
-#: ../DistUpgrade/DistUpgradeViewGtk.py:487
+#: ../DistUpgrade/DistUpgradeViewGtk.py:501
 #, fuzzy, python-format
 msgid "%d package is going to be removed."
 msgid_plural "%d packages are going to be removed."
 msgstr[0] "%s paket akan dihapus."
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:492
+#: ../DistUpgrade/DistUpgradeViewGtk.py:506
 #, fuzzy, python-format
 msgid "%d new package is going to be installed."
 msgid_plural "%d new packages are going to be installed."
 msgstr[0] "%s paket baru akan diinstal."
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:498
+#: ../DistUpgrade/DistUpgradeViewGtk.py:512
 #, fuzzy, python-format
 msgid "%d package is going to be upgraded."
 msgid_plural "%d packages are going to be upgraded."
 msgstr[0] "%s paket akan diupgrade."
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:503
+#: ../DistUpgrade/DistUpgradeViewGtk.py:517
 #, fuzzy, python-format
 msgid ""
 "\n"
@@ -617,7 +617,7 @@ msgstr ""
 "\n"
 "Anda harus mengunduh sebanyak %s. "
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:509
+#: ../DistUpgrade/DistUpgradeViewGtk.py:523
 #, fuzzy
 msgid ""
 "Fetching and installing the upgrade can take several hours and cannot be "
@@ -626,34 +626,34 @@ msgstr ""
 "Upgrade membutuhkan waktu beberapa jam dan tidak dapat dibatalkan setelah "
 "itu."
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:512
+#: ../DistUpgrade/DistUpgradeViewGtk.py:526
 msgid "To prevent data loss close all open applications and documents."
 msgstr ""
 "Untuk mencegah kehilangan data silakan tutup seluruh aplikasi dan dokumen."
 
 #. FIXME: this should go into DistUpgradeController
-#: ../DistUpgrade/DistUpgradeViewGtk.py:518
+#: ../DistUpgrade/DistUpgradeViewGtk.py:532
 #: ../UpdateManager/UpdateManager.py:622
 msgid "Your system is up-to-date"
 msgstr "Sistem anda telah up-to-date"
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:519
+#: ../DistUpgrade/DistUpgradeViewGtk.py:533
 msgid ""
 "There are no upgrades available for your system. The upgrade will now be "
 "canceled."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:535
+#: ../DistUpgrade/DistUpgradeViewGtk.py:549
 #, python-format
 msgid "<b>Remove %s</b>"
 msgstr "<b>Hapus %s</b>"
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:537
+#: ../DistUpgrade/DistUpgradeViewGtk.py:551
 #, python-format
 msgid "Install %s"
 msgstr "Instal %s"
 
-#: ../DistUpgrade/DistUpgradeViewGtk.py:539
+#: ../DistUpgrade/DistUpgradeViewGtk.py:553
 #, python-format
 msgid "Upgrade %s"
 msgstr "Upgrade %s"
@@ -778,6 +778,7 @@ msgid "_Keep"
 msgstr "_Simpan"
 
 #: ../DistUpgrade/DistUpgrade.glade.h:19
+#: ../data/glade/SoftwarePropertiesDialogs.glade.h:21
 msgid "_Replace"
 msgstr "_Ganti"
 
@@ -815,45 +816,45 @@ msgid "Please check your internet connection."
 msgstr "Silakan periksa koneksi internet anda."
 
 #. no script file found in extracted tarbal
-#: ../UpdateManager/DistUpgradeFetcher.py:149
+#: ../UpdateManager/DistUpgradeFetcher.py:150
 msgid "Could not run the upgrade tool"
 msgstr "Tidak dapat menjalankan alat upgrade"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:150
+#: ../UpdateManager/DistUpgradeFetcher.py:151
 msgid ""
 "This is most likely a bug in the upgrade tool. Please report it as a bug"
 msgstr ""
 "Sepertinya ada bug dalam peralatan upgrade. Silakan laporkan ini sebagai bug"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:171
+#: ../UpdateManager/DistUpgradeFetcher.py:172
 msgid "Downloading the upgrade tool"
 msgstr "Mengunduh peralatan upgrade"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:173
+#: ../UpdateManager/DistUpgradeFetcher.py:174
 msgid "The upgrade tool will guide you through the upgrade process."
 msgstr "Peralatan upgrade akan memandu anda untuk melalui proses upgrade."
 
-#: ../UpdateManager/DistUpgradeFetcher.py:180
+#: ../UpdateManager/DistUpgradeFetcher.py:181
 msgid "Upgrade tool signature"
 msgstr "Tanda tangan peralatan upgrade"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:183
+#: ../UpdateManager/DistUpgradeFetcher.py:184
 msgid "Upgrade tool"
 msgstr "Peralatan upgrade"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:208
+#: ../UpdateManager/DistUpgradeFetcher.py:209
 msgid "Failed to fetch"
 msgstr "Gagal untuk fetch"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:209
+#: ../UpdateManager/DistUpgradeFetcher.py:210
 msgid "Fetching the upgrade failed. There may be a network problem. "
 msgstr "Gagal meng-fetch upgrade. Terjadi masalah pada jaringan. "
 
-#: ../UpdateManager/DistUpgradeFetcher.py:214
+#: ../UpdateManager/DistUpgradeFetcher.py:215
 msgid "Failed to extract"
 msgstr "Gagal mengekstrak"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:215
+#: ../UpdateManager/DistUpgradeFetcher.py:216
 msgid ""
 "Extracting the upgrade failed. There may be a problem with the network or "
 "with the server. "
@@ -861,11 +862,11 @@ msgstr ""
 "Gagal mengekstrak upgrade. Mungkin terjadi masalah dengan jaringan atau "
 "dengan server. "
 
-#: ../UpdateManager/DistUpgradeFetcher.py:221
+#: ../UpdateManager/DistUpgradeFetcher.py:222
 msgid "Verfication failed"
 msgstr "Verifikasi gagal"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:222
+#: ../UpdateManager/DistUpgradeFetcher.py:223
 #, fuzzy
 msgid ""
 "Verifying the upgrade failed.  There may be a problem with the network or "
@@ -874,11 +875,11 @@ msgstr ""
 "Gagal memeriksa upgrade. Mungkin terjadi masalah dengan jaringan atau dengan "
 "server. "
 
-#: ../UpdateManager/DistUpgradeFetcher.py:228
+#: ../UpdateManager/DistUpgradeFetcher.py:229
 msgid "Authentication failed"
 msgstr "Otentikasi gagal"
 
-#: ../UpdateManager/DistUpgradeFetcher.py:229
+#: ../UpdateManager/DistUpgradeFetcher.py:230
 msgid ""
 "Authenticating the upgrade failed. There may be a problem with the network "
 "or with the server. "
@@ -1172,10 +1173,15 @@ msgstr "_Instal Update"
 
 #: ../data/glade/UpdateManager.glade.h:25
 #, fuzzy
+msgid "_Upgrade"
+msgstr "U_pgrade"
+
+#: ../data/glade/UpdateManager.glade.h:26
+#, fuzzy
 msgid "changes"
 msgstr "Perubahan"
 
-#: ../data/glade/UpdateManager.glade.h:26
+#: ../data/glade/UpdateManager.glade.h:27
 msgid "updates"
 msgstr ""
 

@@ -1,3 +1,9 @@
+update-manager (0.45.1-guada1) edgy-proposed; urgency=low
+
+  * Guadalinex support.
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Thu, 15 Feb 2007 08:59:07 +0100
+
 update-manager (0.45.1) edgy-proposed; urgency=low
 
   * UpdateManager/DistUpgradeFetcher.py:
