@@ -5,6 +5,7 @@ import os
 import sys
 
 import gtk
+import gobject
 from egg.trayicon import TrayIcon
 
 class HermesTrayIcon(TrayIcon):
@@ -35,7 +36,7 @@ class HermesTrayIcon(TrayIcon):
             self.menu.show_all()
 
         elif event.button ==  1:
-            os.system('hcoldassistant &')
+            self.menu.on_open()
 
         return True
 
@@ -69,5 +70,16 @@ class HermesMenu(gtk.Menu):
         sys.exit(0)
 
 
-    def on_open(self, widget):
+    def on_open(self, widget = None):
+        cursor = gtk.gdk.Cursor(gtk.gdk.WATCH)
+        self.get_screen().get_root_window().set_cursor(cursor)
         os.system('hcoldassistant &')
+        gobject.timeout_add(2000, self.__timeout)
+
+
+    def __timeout(self):
+        cursor = gtk.gdk.Cursor(gtk.gdk.TOP_LEFT_ARROW)
+        self.get_screen().get_root_window().set_cursor(cursor)
+        # Exit loop
+        return False
+

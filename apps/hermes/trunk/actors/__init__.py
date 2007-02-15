@@ -10,8 +10,8 @@ import logging
                 
 DIR = os.path.dirname(__file__) + os.sep 
 file_list = [ele for ele in os.listdir(DIR) if os.path.isfile(DIR + os.sep + ele)]
-logger = logging.getLogger()
 
+logger = logging.getLogger()
 logger.debug("/##################### IMPORTING ACTORS")
 for filename in file_list:
 

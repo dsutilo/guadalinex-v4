@@ -60,6 +60,7 @@ import os
 import os.path
 import sys
 import traceback
+import types
 
 from gettext import gettext as _
 from utils.hermestrayicon import HermesTrayIcon
@@ -83,7 +84,6 @@ def setup_gettext(domain, data_dir):
 from utils import DeviceList, ColdPlugListener, CaptureLogGui
 from optparse import OptionParser
 from utils.notification import NotificationDaemon, FileNotification
-import actors
 
 
 # notification-daemon spec: -------------------------------------------
@@ -162,17 +162,6 @@ class DeviceListener:
             except:
                 self.logger.warning(str(traceback.format_exc()))
 
-            #from actors.deviceactor import DeviceActor
-            #if actor.__class__ == DeviceActor:
-            #    if properties.has_key('info.product') and \
-            #            properties['info.product'] != '':
-            #        product = properties['info.product']
-            #        self.message_render.show_info(_("Information"),
-            #            _("Device CONNECTED:") + "\:n %s" % (product,))
-            #    else:
-            #        self.message_render.show_warning(_("Warning"), 
-            #                _("Device detected, but unidentificated"))
-
 
     def on_device_removed(self, udi, *args): 
         self.logger.debug("DeviceRemoved: " + str(udi))
@@ -191,20 +180,11 @@ class DeviceListener:
             print "DISCONNECTED ################################"
             print "#############################################"
             self.__print_properties(disp.properties)
-
-            #from actors.deviceactor import DeviceActor
-            #if disp.__class__ == DeviceActor:
-            #    properties = disp.properties
-            #    if properties.has_key('info.product') and \
-            #            properties['info.product'] != '':
-            #        product = properties['info.product']
-            #        self.message_render.show_info(_("Information"), 
-            #                _("Device DISCONNECTED:") + "\n %s" % product)
-
             del self.udi_dict[udi]
         else:
             self.message_render.show_warning(_("Warning"),
                     _("Device REMOVED."))
+
 
     def on_property_modified(self, udi, num, values):
         for ele in values:
@@ -229,7 +209,6 @@ class DeviceListener:
                     actor.on_modified(key)
                 except Exception, e:
                     self.logger.warning(str(traceback.format_exc()))
-
 
 
     def get_actor_from_properties(self, prop):
@@ -306,15 +285,22 @@ class DeviceListener:
         for key in required.keys():
             if not prop.has_key(key): 
                 return 0
-            
-            # Eval required expressions
+
+            value =  prop[key]
+            # Eval required python expressions
             reqvalue = required[key]
             if isinstance(reqvalue,  str) and \
                     reqvalue.strip().startswith('python:'):
                 expression = reqvalue.strip()[7:]
-                value =  prop[key]
                 if not eval(expression):
                     return 0
+
+            # Add support for methods and functions
+            elif isinstance(reqvalue, types.FunctionType) or \
+                    isinstance(reqvalue, types.MethodType):
+                if not reqvalue(value):
+                    return 0
+
             else:
                 if prop[key] != required[key]:
                     return 0

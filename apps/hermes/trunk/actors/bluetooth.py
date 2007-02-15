@@ -62,3 +62,4 @@ class Actor(PkgDeviceActor):
     __device_title__ = 'BLUETOOTH'
     __device_conn_description__ = _('Bluetooth device connected')
     __device_disconn_description__ = _('Bluetooth device disconnected')
+

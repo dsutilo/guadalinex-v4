@@ -51,8 +51,7 @@ from utils.synaptic import Synaptic
 from deviceactor import DeviceActor
 from gettext import gettext as _
 
-CAMERAICON = 
-CAMERAICONOFF = 
+
 class Actor(DeviceActor):
 
     __required__ = {'info.category':'camera', 'info.bus':'usb'}
