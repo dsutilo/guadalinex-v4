@@ -528,7 +528,8 @@ class CertManager(object):
 
         if new_certificates and options.search_path is not None:
             # Save a log file
-            f = file(os.path.join(options.search_path, 'certmanager.log'), 'w')
+            user_dir = os.path.expanduser('~')
+            f = file(os.path.join(user_dir, '.certmanager.log'), 'w')
             f.write('\n'.join(new_certificates))
 
     def search_certificates(self, search_path):
