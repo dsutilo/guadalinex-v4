@@ -439,10 +439,10 @@ class CertManager(object):
                                                 options.install_ceres)
 
             # Finish message
-            what = [],
+            what = []
             if options.install_dnie and certs:
                 what.append('el DNIe')
-            if options.install_certs:
+            if options.install_ceres:
                 what.append('los módulos CERES')
             if certs:
                 what.append('los certificados de usuario')
