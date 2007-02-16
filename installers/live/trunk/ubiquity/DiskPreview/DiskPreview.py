@@ -5,6 +5,7 @@ import gnome.ui
 import gnomevfs
 import os
 import dbus
+import popen2
 import DiskPreviewUtils
 
 class DiskPreview(gtk.VBox):
@@ -113,6 +114,7 @@ class DiskPreview(gtk.VBox):
     def umount_filesystems(self):
         for fs in self.mounted_list :
             os.system ("umount %s" % fs)
+            print "umount %s" % fs
         self.mounted_list = []
     
 
@@ -327,29 +329,56 @@ class DiskPreview(gtk.VBox):
     
     def __mount_filesystems(self):
         big_hd_pixbuf, hd_part_pixbuf = self.utils.get_harddisk_icons()
-        
         disk_dict = {}
-        
+
+################## HAL STUFF ##################
+## This stuff doesn't works now because there is a bug in hald running on live cd. This
+## bug is that hal doesn't refresh when you change a partition
+## You can uncomment this in the future. And comment the rest of the code
+##
+##         devices = self.hal_manager.GetAllDevices()
+##         for dev in devices:
+##             device_dbus_obj = self.bus.get_object("org.freedesktop.Hal", dev)
+##             dev_info = device_dbus_obj.GetAllProperties(dbus_interface="org.freedesktop.Hal.Device")
+##             if dev_info.has_key("info.category") and dev_info["info.category"] == "volume" :
+##                 parent_dbus_obj =  self.bus.get_object("org.freedesktop.Hal", dev_info["info.parent"])
+##                 parent_info = parent_dbus_obj.GetAllProperties(dbus_interface="org.freedesktop.Hal.Device")
+##                 parent_path = parent_info["block.device"]
+##                 if not disk_dict.has_key(parent_path) and parent_info["storage.drive_type"] == "disk" :
+##                     hd_description = "<b>%s</b>\n<small>Dispositivo : (%s)</small>" % (parent_info["info.product"], parent_path) 
+##                     disk_dict[parent_path] = self.disk_preview_treeview_model.append(None, [big_hd_pixbuf, hd_description , "", "", "", "", "", ""])
+##                 dev_path = dev_info["block.device"]
+##                 fstype = dev_info["volume.fstype"]
+##                 mount_point = os.path.join("/var/tmp/diskpreview/", os.path.basename(parent_path), os.path.basename(dev_path))
+##                 if parent_info["storage.drive_type"] == "disk":
+##                     tam_info = self.__try_to_mount_filesystem(fstype, dev_path, mount_point)
+##                     if tam_info != None:
+##                         self.disk_preview_treeview_model.append(disk_dict[parent_path], [hd_part_pixbuf, os.path.basename(dev_path),
+##                                                                                          tam_info[0], tam_info[1], tam_info[2],
+##                                                                                          fstype, dev_path, mount_point])
+################################################
+
         devices = self.hal_manager.GetAllDevices()
         for dev in devices:
             device_dbus_obj = self.bus.get_object("org.freedesktop.Hal", dev)
             dev_info = device_dbus_obj.GetAllProperties(dbus_interface="org.freedesktop.Hal.Device")
-            if dev_info.has_key("info.category") and dev_info["info.category"] == "volume" :
-                parent_dbus_obj =  self.bus.get_object("org.freedesktop.Hal", dev_info["info.parent"])
-                parent_info = parent_dbus_obj.GetAllProperties(dbus_interface="org.freedesktop.Hal.Device")
-                parent_path = parent_info["block.device"]
-                if not disk_dict.has_key(parent_path) and parent_info["storage.drive_type"] == "disk" :
-                    hd_description = "<b>%s</b>\n<small>Dispositivo : (%s)</small>" % (parent_info["info.product"], parent_path) 
-                    disk_dict[parent_path] = self.disk_preview_treeview_model.append(None, [big_hd_pixbuf, hd_description , "", "", "", "", "", ""])
-                dev_path = dev_info["block.device"]
-                fstype = dev_info["volume.fstype"]
-                mount_point = os.path.join("/var/tmp/diskpreview/", os.path.basename(parent_path), os.path.basename(dev_path))
-                if parent_info["storage.drive_type"] == "disk":
-                    tam_info = self.__try_to_mount_filesystem(fstype, dev_path, mount_point)
+            if dev_info.has_key("block.device") and dev_info.has_key("storage.drive_type") and dev_info["storage.drive_type"] == "disk" :
+                hd_description = "<b>%s</b>\n<small>Dispositivo : (%s)</small>" % (dev_info["info.product"], dev_info["block.device"]) 
+                disk_dict[dev_info["block.device"]] = self.disk_preview_treeview_model.append(None, [big_hd_pixbuf, hd_description , "", "", "", "", "", ""])
+                parts_cmd = popen2.Popen3("ls %s[0-9]*" % dev_info["block.device"])
+                parts_cmd.wait()
+                for partition in parts_cmd.fromchild.readlines():
+                    dev_path = partition.strip("\n")
+                    mount_point = os.path.join("/var/tmp/diskpreview/", os.path.basename(dev_info["block.device"]), os.path.basename(dev_path))
+                    tam_info = self.__try_to_mount_filesystem("auto", dev_path, mount_point)
                     if tam_info != None:
-                        self.disk_preview_treeview_model.append(disk_dict[parent_path], [hd_part_pixbuf, os.path.basename(dev_path),
-                                                                                         tam_info[0], tam_info[1], tam_info[2],
-                                                                                         fstype, dev_path, mount_point])
+                        mount_cmd = popen2.Popen3("mount | grep %s" % dev_path)
+                        mount_cmd.wait()
+                        mount_line = mount_cmd.fromchild.readline()
+                        fstp = mount_line.split()[4]
+                        self.disk_preview_treeview_model.append(disk_dict[dev_info["block.device"]], [hd_part_pixbuf, os.path.basename(dev_path),
+                                                                                                      tam_info[0], tam_info[1], tam_info[2],
+                                                                                                      fstp, dev_path, mount_point]) 
         self.disk_preview_treeview.expand_all()
         
             
