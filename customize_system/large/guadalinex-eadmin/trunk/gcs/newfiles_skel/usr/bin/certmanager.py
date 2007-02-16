@@ -144,6 +144,27 @@ class FireFoxSecurityUtils(object):
 	os.unlink(password_file)
 	return status == 0
 
+    def remove_user_certificate(self, certificate_name):
+        profile = self.get_default_profile_dir()
+        if not profile:
+            return False
+
+        cmd = '%s -D -d "%s" -n "%s"'
+        cmd = cmd % (CERTUTIL_CMD, profile, certificate_name)
+        status, output = commands.getstatusoutput(cmd)
+        return status == 0
+
+    def list_certificates(self):
+        profile = self.get_default_profile_dir()
+        if not profile:
+            return False
+
+        cmd = '%s -L -d "%s"' % (CERTUTIL_CMD, profile)
+        status, output = commands.getstatusoutput(cmd)
+        if status == 0:
+            certificates = output.split('\n')
+            return certificates
+
 DNIE_ROOT_CERT_NAME = "AC RAIZ DNIE - DIRECCION GENERAL DE LA POLICIA"
 DNIE_ROOT_CERT_FILE = "/usr/share/opensc-dnie/ac_raiz_dnie.crt"
 FNMT_ROOT_CERT_NAME = "FNMT"
@@ -208,6 +229,9 @@ class Application(object):
         It returns the success state of the process
         """
         return True
+
+    def remove_certificates(self, certs):
+        pass
 
     def _wait_for_running_instances(self):
         dialog = gtk.MessageDialog(None, 0, gtk.MESSAGE_INFO,
@@ -302,15 +326,18 @@ class FireFoxApp(Application):
 
         # install the user certificates
         success = True
+        new_certificates = []
         for cert in user_certificates:
-            success = success and self._install_certificate(cert)
+            success = success and self._install_certificate(cert,
+                                                            new_certificates)
 
-        return success
+        return success, new_certificates
 
-    def _install_certificate(self, certificate):
+    def _install_certificate(self, certificate, new_certificates):
         attempts = 0
         valid = False
         print_warning = False
+        certificates_before = self._ff.list_certificates()
         while attempts < 3 and not valid:
             password = self._ask_for_password(certificate, print_warning)
             if password:
@@ -328,6 +355,12 @@ class FireFoxApp(Application):
             dialog.set_position(gtk.WIN_POS_CENTER)
             dialog.run()
             dialog.destroy()
+        else:
+            certificates_after = self._ff.list_certificates()
+            new_certificate = self._get_new_certificate(certificates_before,
+                                                        certificates_after)
+            if new_certificate:
+                new_certificates.append(new_certificate)
 
         return valid
 
@@ -352,6 +385,30 @@ class FireFoxApp(Application):
             retval = entry.get_text()
         dialog.destroy()
         return retval
+
+    def _get_new_certificate(self, certificates_before, certificates_after):
+        def _filter(cert):
+            """True if cert is a user certificate"""
+            if 'u,u,u' in cert:
+                return True
+            return False
+
+        users_before = [c for c in certificates_before if _filter(c)]
+        users_after = [c for c in certificates_after if _filter(c)]
+        new_cert = None
+        for c in users_after:
+            if c not in users_before:
+                new_cert = c
+                break
+
+        if new_cert:
+            new_cert = new_cert.replace('u,u,u', '')
+            return new_cert.strip()
+
+    def remove_certificates(self, certs):
+        for cert in certs:
+            self._ff.remove_user_certificate(cert)
+
 
 class EvolutionApp(Application):
     """Firefox should be configured since Evolution depends on its security
@@ -392,7 +449,7 @@ class EvolutionApp(Application):
 
         self._create_links(ff_profile_dir)
 
-        return True
+        return True, []
 
     def _backup_evo_database(self):
         for filename in ('cert8.db', 'key3.db', 'secmod.db'):
@@ -424,6 +481,15 @@ class CertManager(object):
 
     def run(self, options):
         certs = []
+        new_certificates = []
+        if options.log_file is not None:
+            old_certs = file(options.log_file, 'r').readlines()
+            if old_certs:
+                to_remove = self.select_certificates(old_certs, 'el sistema',
+                                                     False)
+                for app in self._applications:
+                    app.remove_certificates(to_remove)
+
         if options.search_path is not None:
             search_path = options.search_path.replace('~', os.path.expanduser('~'))
             cert_list = self.search_certificates(search_path)
@@ -434,15 +500,17 @@ class CertManager(object):
 	success = True
         if options.install_dnie or options.install_ceres or certs:
             for app in self._applications:
-                success = success and app.setup(certs,
-                                                options.install_dnie,
-                                                options.install_ceres)
+                status, new_certs = app.setup(certs,
+                                              options.install_dnie,
+                                              options.install_ceres)
+                success = success and status
+                new_certificates += new_certs
 
             # Finish message
-            what = [],
+            what = []
             if options.install_dnie and certs:
                 what.append('el DNIe')
-            if options.install_certs:
+            if options.install_ceres:
                 what.append('los módulos CERES')
             if certs:
                 what.append('los certificados de usuario')
@@ -458,6 +526,12 @@ class CertManager(object):
             dialog.run()
             dialog.destroy()
 
+        if new_certificates and options.search_path is not None:
+            # Save a log file
+            user_dir = os.path.expanduser('~')
+            f = file(os.path.join(user_dir, '.certmanager.log'), 'w')
+            f.write('\n'.join(new_certificates))
+
     def search_certificates(self, search_path):
         ret = []
         for extension in self.known_extensions:
@@ -466,8 +540,8 @@ class CertManager(object):
 
         return ret
 
-    def select_certificates(self, cert_list, search_path):
-        dialog = CertificatesDialog(search_path, cert_list)
+    def select_certificates(self, cert_list, search_path, add=True):
+        dialog = CertificatesDialog(search_path, cert_list, add)
         ret = []
 
         if gtk.RESPONSE_ACCEPT == dialog.run():
@@ -477,8 +551,8 @@ class CertManager(object):
         return ret
 
 class CertificatesDialog(gtk.Dialog):
-    """Dialog to ask the user which certicicates he/she wishes to use"""
-    def __init__(self, path, cert_list, parent=None):
+    """Dialog to ask the user which certicicates he/she wishes to add/remove"""
+    def __init__(self, path, cert_list, add=True, parent=None):
         gtk.Dialog.__init__(self,
                             title="CertManager",
                             parent=parent,
@@ -536,7 +610,10 @@ class CertificatesDialog(gtk.Dialog):
         vbox.pack_start(scrolled_window, True, True)
 
         # Request label
-        request = 'Seleccione aquellos certificados que desee utilizar'
+        if add:
+            request = 'Seleccione aquellos certificados que desee utilizar'
+        else:
+            request = 'Seleccione aquellos certificados que desee eliminar'
         label = gtk.Label(request)
         label.set_alignment(0.0, 0.5)
         label.show()
@@ -590,6 +667,10 @@ if __name__ == '__main__':
                       dest='sm_client_id',
                       default=None,
                       help='Session Manager client id (not used so far)')
+    parser.add_option('-u', '--uninstall',
+                      dest='log_file',
+                      default=None,
+                      help='Remove user certificates in the log file')
 
     (options, args) = parser.parse_args()
 
