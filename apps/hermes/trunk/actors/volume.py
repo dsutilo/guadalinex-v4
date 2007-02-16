@@ -153,4 +153,9 @@ class CertificateListener(VolumeListener):
             os.system('%s -p %s' % (CERTMANAGER_CMD, self.mount_point))
 
     def volume_unmounted(self):
+        if os.path.exists(CERTMANAGER_CMD):
+            user_dir = os.path.expanduser('~')
+            log_file = os.path.join(user_dir, '.certmanager.log')
+            if os.path.exists(log_file):
+                os.system('%s -u %s' % (CERTMANAGER_CMD, log_file))
         self.mount_point = None
