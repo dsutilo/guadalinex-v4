@@ -49,6 +49,15 @@ donde "#d0d0d0" es el color que usa isolinux para el texto.
 
 DEFAULT_LANG = es -> Para que aparezca el idioma por defecto en castellano
 
+* generation_system/packages/gfxboot-theme-guadalinex/gfxboot-theme-guadalinex_0.2.10guada1/xmenu.inc
+
+/xmenu.selected.bg     orange def -> Para que la barra de selección del menú aparezca en naranja
+
+* generation_system/packages/gfxboot-theme-guadalinex/gfxboot-theme-guadalinex_0.2.10guada1/panel.inc
+
+/panel.high    orange def -> Para que el texto resaltado del panel aparezca naranja
+
+
 ¿Cómo modificar las opciones disponibles en GFXBOOT?
 ====================================================
 
