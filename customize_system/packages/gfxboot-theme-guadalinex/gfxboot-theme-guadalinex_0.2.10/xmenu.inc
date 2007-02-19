@@ -16,7 +16,8 @@
 /xmenu.normal.bg	lightgray def
 /xmenu.normal.fg	black def
 /xmenu.selected.fg	white def
-/xmenu.selected.bg	0x6c6c6c newcolor
+%/xmenu.selected.bg	0x6c6c6c newcolor
+/xmenu.selected.bg	orange def
 
 small_layout {
   /xmenu.maxlines	22 def

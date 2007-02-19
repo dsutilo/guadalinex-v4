@@ -1478,6 +1478,8 @@ dup .undef eq { pop "back.jpg" findfile } if
 /dotcolor            0xa9bbcd          newcolor
 /lightdotcolor       0xeff2f6          newcolor
 /somegreen           0x78a424          newcolor
+/orange		     0xfeb012          newcolor
+
 
 /lightblue 0x7da3d1 def
 
