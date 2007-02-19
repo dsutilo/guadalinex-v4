@@ -1,0 +1,10 @@
+#! /bin/sh -e
+mkdir -p /var/lib/ubiquity
+for package; do
+	echo "$package" >> /var/lib/ubiquity/apt-installed
+done
+# TODO cjwatson 2006-09-04: queueing not implemented
+if [ -f /target/etc/apt/sources.list ]; then
+	# TODO: use chroot-setup
+	DEBIAN_FRONTEND=noninteractive DEBIAN_HAS_FRONTEND= DEBCONF_ADMIN_EMAIL= chroot /target apt-get --no-upgrade -o Acquire::gpgv::Options::=--ignore-time-conflict -y install "$@" </dev/null
+fi
