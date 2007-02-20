@@ -1,4 +1,4 @@
-grubaker (0.11) unstable; urgency=low
+grubaker (0.1.1) unstable; urgency=low
 
   * Improving error messages (just in case menu.lst doesn't exist)
 
