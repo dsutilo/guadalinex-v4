@@ -1,3 +1,9 @@
+casper-guada (0.3) unstable; urgency=low
+
+  * Translated the check integrity messages. 
+  
+ -- Juanje Ojeda <jojeda@emergya.es>  Tue, 20 Feb 2007 14:10:00 +0100
+
 casper-guada (0.2) unstable; urgency=low
 
   * Minor changes: debian package related stuff.

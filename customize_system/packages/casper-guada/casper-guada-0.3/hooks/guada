@@ -24,6 +24,12 @@ cp -a /usr/share/casper-guada/scripts/casper-bottom/* $DESTDIR/scripts/casper-bo
 # upstream bug and it should be fixed there.
 cp -a /usr/share/casper-guada/scripts/casper $DESTDIR/scripts/
 
+# integrity check
+# HACK: It replace the casper one by the guadalinex spanish translation
+rm -f $DESTDIR/bin/casper-md5check
+copy_exec /usr/lib/casper-guada/casper-md5check /bin
+
+
 if [ -e /usr/share/casper-guada/casper.conf ]; then
     mkdir -p ${DESTDIR}/etc
     cp -a /usr/share/casper-guada/casper.conf ${DESTDIR}/etc
