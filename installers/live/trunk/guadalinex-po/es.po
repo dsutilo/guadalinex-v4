@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubiquity 1.2.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-31 12:19+0100\n"
+"POT-Creation-Date: 2007-02-14 15:41+0100\n"
 "PO-Revision-Date: 2006-12-26 23:38+0000\n"
 "Last-Translator: Jesús Espino García <jespinog@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -17,36 +17,36 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../ubiquity/frontend/gtkui.py:988
+#: ../ubiquity/frontend/gtkui.py:983
 msgid "_Install"
 msgstr "_Instalar"
 
-#: ../ubiquity/frontend/gtkui.py:1002
+#: ../ubiquity/frontend/gtkui.py:997
 msgid "The hostname must be between 3 and 18 characters long."
 msgstr "El nombre del equipo debe tener entre 3 y 18 caracteres de largo."
 
-#: ../ubiquity/frontend/gtkui.py:1004
+#: ../ubiquity/frontend/gtkui.py:999
 msgid "The hostname may not contain spaces."
 msgstr "El nombre del equipo no puede contener espacios."
 
-#: ../ubiquity/frontend/gtkui.py:1006
+#: ../ubiquity/frontend/gtkui.py:1001
 msgid "The hostname may only contain letters, digits, and hyphens."
 msgstr "El nombre del equipo sólo puede contener letras, números y guiones"
 
-#: ../ubiquity/frontend/gtkui.py:1357
+#: ../ubiquity/frontend/gtkui.py:1355
 msgid "A partition is assigned to more than one mount point."
 msgstr "Una partición está asignada a más de un punto de montaje."
 
-#: ../ubiquity/frontend/gtkui.py:1385
+#: ../ubiquity/frontend/gtkui.py:1383
 msgid "Two file systems are assigned the same mount point."
 msgstr "Dos sistemas de ficheros están asignados al mismo punto de montaje."
 
-#: ../ubiquity/frontend/gtkui.py:1395
+#: ../ubiquity/frontend/gtkui.py:1393
 #, python-format
 msgid "The partition assigned to '/' is too small (minimum size: %d Mb)."
 msgstr "La partición asignada a '/' es muy pequeña (tamaño mínimo %d Mb)."
 
-#: ../ubiquity/frontend/gtkui.py:1401
+#: ../ubiquity/frontend/gtkui.py:1399
 msgid ""
 "XFS may not be used on the filesystem containing /boot. Either use a "
 "different filesystem for / or create a non-XFS filesystem for /boot."
@@ -55,15 +55,15 @@ msgstr ""
 "usar un sistema de ficheros diferente para / o crear un sistema de ficheros "
 "no-XFS para /boot"
 
-#: ../ubiquity/frontend/gtkui.py:1403
+#: ../ubiquity/frontend/gtkui.py:1401
 msgid ""
 "XFS may not be used on the /boot filesystem. Use a different filesystem type "
 "for /boot."
 msgstr ""
-"XFS no puede ser usado para el sistema de ficheros /boot. Use un sistema "
-"de ficheros diferente para /boot"
+"XFS no puede ser usado para el sistema de ficheros /boot. Use un sistema de "
+"ficheros diferente para /boot"
 
-#: ../ubiquity/frontend/gtkui.py:1405
+#: ../ubiquity/frontend/gtkui.py:1403
 msgid ""
 "Filesystems used by the system (/, /boot, /usr, /var) must be reformatted "
 "for use by this installer. Other filesystems (/home, /media/*, /usr/local, "
@@ -74,17 +74,17 @@ msgstr ""
 "ficheros(/home, /media/*, /usr/local, /etc.) pueden ser usados sin "
 "reformatear."
 
-#: ../ubiquity/frontend/gtkui.py:1407
+#: ../ubiquity/frontend/gtkui.py:1405
 msgid ""
 "FAT and NTFS filesystems may not be used on filesystems used by the system "
 "(/, /boot, /home, /usr, /var, etc.). It is usually best to mount them "
 "somewhere under /media/."
 msgstr ""
-"Los sistemas de ficheros FAT y NTFS no pueden ser usados para sistemas "
-"de ficheros utilizados por el sistema (/, /boot, /home, /usr, /var, etc.). "
-"Lo más habitual es montarlos en algún punto debajo de /media."
+"Los sistemas de ficheros FAT y NTFS no pueden ser usados para sistemas de "
+"ficheros utilizados por el sistema (/, /boot, /home, /usr, /var, etc.). Lo "
+"más habitual es montarlos en algún punto debajo de /media."
 
-#: ../ubiquity/frontend/gtkui.py:1557
+#: ../ubiquity/frontend/gtkui.py:1555
 msgid ""
 "Resize a existing partition for make space where install the distribution."
 msgstr ""
@@ -96,7 +96,7 @@ msgstr ""
 "Aunque es improbable que se produzca una pérdida de sus datos, se recomienda "
 "hacer una <b>copia de seguridad</b> antes de realizar la instalación.</span>"
 
-#: ../ubiquity/frontend/gtkui.py:1560
+#: ../ubiquity/frontend/gtkui.py:1558
 msgid "Use the biggest free space in the partition table."
 msgstr ""
 "<span>Con este método se utilizará <b>espacio libre</b> (es decir, en el que "
@@ -105,7 +105,7 @@ msgstr ""
 "modificará ninguna de las particiones o sistemas operativos ya existentes</"
 "b></span>"
 
-#: ../ubiquity/frontend/gtkui.py:1563
+#: ../ubiquity/frontend/gtkui.py:1561
 msgid ""
 "Use the partition table in the actual status for install the distribution."
 msgstr ""
@@ -115,7 +115,7 @@ msgstr ""
 "hubiese en ese sistema Linux previo se perderán de manera irreversible</b>.</"
 "span>"
 
-#: ../ubiquity/frontend/gtkui.py:1566
+#: ../ubiquity/frontend/gtkui.py:1564
 msgid ""
 "Edit manually the partition table for make space where install the "
 "distribution."
@@ -129,7 +129,7 @@ msgstr ""
 "la <b>pérdida de todos los datos</b>, así que continúe por aquí únicamente "
 "si ya tiene experiencia particionando de forma manual.</span>"
 
-#: ../ubiquity/frontend/gtkui.py:1569
+#: ../ubiquity/frontend/gtkui.py:1567
 msgid ""
 "Delete all the hard disk and use all the space for install the distribution."
 msgstr ""
@@ -138,42 +138,42 @@ msgstr ""
 "instalará ahí el sistema.<b> Se perderá cualquier información que haya en el "
 "disco</b></span>"
 
-#: ../ubiquity/frontend/gtkui.py:2004
+#: ../ubiquity/frontend/gtkui.py:2002
 msgid " Hard Disk "
 msgstr " Disco Duro "
 
-#: ../ubiquity/frontend/gtkui.py:2006
+#: ../ubiquity/frontend/gtkui.py:2004
 msgid " Floppy Disk "
 msgstr " Disquete "
 
-#: ../ubiquity/frontend/gtkui.py:2016
+#: ../ubiquity/frontend/gtkui.py:2014
 msgid "First"
 msgstr "Primer"
 
-#: ../ubiquity/frontend/gtkui.py:2018
+#: ../ubiquity/frontend/gtkui.py:2016
 msgid "Second"
 msgstr "Segundo"
 
-#: ../ubiquity/frontend/gtkui.py:2020
+#: ../ubiquity/frontend/gtkui.py:2018
 msgid "Third"
 msgstr "Tercero"
 
-#: ../ubiquity/frontend/gtkui.py:2022
+#: ../ubiquity/frontend/gtkui.py:2020
 msgid "Fourth"
 msgstr "Cuarto"
 
-#: ../ubiquity/frontend/gtkui.py:2024
+#: ../ubiquity/frontend/gtkui.py:2022
 msgid "Fifth"
 msgstr "Quinto"
 
-#: ../ubiquity/frontend/gtkui.py:2026
+#: ../ubiquity/frontend/gtkui.py:2024
 msgid "Sixth"
 msgstr "Sexto"
 
-#: ../ubiquity/frontend/gtkui.py:2028
+#: ../ubiquity/frontend/gtkui.py:2026
 msgid "Seventh"
 msgstr "Séptimo"
 
-#: ../ubiquity/frontend/gtkui.py:2030
+#: ../ubiquity/frontend/gtkui.py:2028
 msgid "Eighth"
 msgstr "Octavo"
