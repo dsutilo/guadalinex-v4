@@ -1,3 +1,15 @@
+hermeshardware (0.3.7-1) unstable; urgency=low
+
+  * Added hermeshardware-actors package 
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Tue, 20 Feb 2007 22:01:09 +0100
+
+hermeshardware (0.3.7) unstable; urgency=low
+
+  * 
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Tue, 20 Feb 2007 22:00:45 +0100
+
 hermeshardware (0.3.5) unstable; urgency=low
 
   * Coldassistants explanations. 
