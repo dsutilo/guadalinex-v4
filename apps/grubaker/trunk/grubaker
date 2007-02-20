@@ -38,7 +38,7 @@ class Menu:
 		try:
 			file=open(self.filename)
 		except:
-			self.error="No se puede editar el menu\nNo tiene permiso para modificar "+self.filename
+			self.error="No se puede editar el menu.\nNo tiene permiso para modificar "+self.filename+". Posiblemente se encuentre en un sistema Live donde no se puede modificar el gestor de arranque. Pruebe en el sistema una vez instalado."
 			print self.error
 		else:
 			options=""
