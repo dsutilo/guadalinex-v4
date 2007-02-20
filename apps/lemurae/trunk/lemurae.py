@@ -1,14 +1,17 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import sys
+
 import gtk
 import gtk.gdk
 import gtk.glade
 import gtkmozembed
+from egg.trayicon import TrayIcon
 
 ICON = "/usr/share/pixmaps/lemurae.svg"
 
-class Lemurae:
+class Lemurae(object):
 
     def __init__(self):
 
@@ -23,16 +26,14 @@ class Lemurae:
         self.next_button = xml.get_widget("bAdelante")
         self.statusbar = xml.get_widget("statusbar")
         self.web_control = gtkmozembed.MozEmbed()
-
         self.__set_widgets()
 
+
         self.appw.show_all()
+        self.is_showed = True
 
 
     def __set_widgets(self):
-        # Quit app
-        self.appw.connect("destroy", gtk.main_quit)
-
         # Set buttons sensitive
         self.back_button.set_sensitive(False)
         self.next_button.set_sensitive(False)
@@ -72,13 +73,23 @@ class Lemurae:
         dlg = gtk.AboutDialog()
 
         dlg.set_name("Lemurae")
-        dlg.set_copyright("(c) 2006 Gumer Coronel Pérez")
-        dlg.set_version('0.2.1')
+        dlg.set_copyright("(c) 2007 Gumer Coronel Pérez")
+        dlg.set_version('0.2.2')
 
         logo = gtk.gdk.pixbuf_new_from_file(ICON)
         dlg.set_logo(logo)
         dlg.run()
         dlg.destroy()
+
+
+    def on_exit_clicked(self, widget):
+        gtk.main_quit()
+        sys.exit(0)
+
+
+    def on_appw_delete_event(self, widget, event):
+        self.hide_window()
+        return True
 
 
     def __on_net_start(self, *args):
@@ -92,8 +103,48 @@ class Lemurae:
         self.appw.set_focus(self.word)
 
 
+    def show_window(self):
+        self.appw.show_all()
+        self.is_showed = True
+
+
+    def hide_window(self):
+        self.appw.hide()
+        self.is_showed = False
+
+
+
+class LemuraeTrayIcon (TrayIcon):
+
+    def __init__(self):
+        TrayIcon.__init__(self, 'lemurae')
+
+        self.lemurae_window = Lemurae()
+        self._configure_image()
+        self.show_all()
+
+
+    def on_clicked(self, widget, event):
+        if self.lemurae_window.is_showed:
+            self.lemurae_window.hide_window()
+        else:
+            self.lemurae_window.show_window()
+        return False 
+
+
+    def _configure_image(self):
+        eb = gtk.EventBox()
+        eb.connect('button-press-event', self.on_clicked)
+        pixbuf = gtk.gdk.pixbuf_new_from_file(ICON)
+        pixbuf = pixbuf.scale_simple(20, 20, gtk.gdk.INTERP_HYPER)
+        image = gtk.Image()
+        image.set_from_pixbuf(pixbuf)
+        eb.add(image)
+        self.add(eb)
+        
+
 
 if __name__ == "__main__":
-    lm = Lemurae()
+    LemuraeTrayIcon()
     gtk.main()
 
