@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-15 16:59+0100\n"
-"PO-Revision-Date: 2007-02-15 17:01+0100\n"
+"POT-Creation-Date: 2007-02-20 18:30+0100\n"
+"PO-Revision-Date: 2007-02-20 18:39+0100\n"
 "Last-Translator:  <(null)>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -212,18 +212,34 @@ msgid "Sorry, can't find any device with actions."
 msgstr "No se ha encontrado ningún dispositivo con acciones asociadas."
 
 #: ../coldassistant/ui.glade.h:1
+msgid "<b>Action list</b> for supported devices."
+msgstr "<b>Lista de acciones</b> para los dispositivos soportados."
+
+#: ../coldassistant/ui.glade.h:2
 msgid "Hermes: Device list"
 msgstr "Hermes: Listado de dispositivos"
 
-#. En el siguiente listado se muestran los dispositivos <b>instalados en su sistema</b> que están <b>soportados por Hermes</b> y disponen de alguna acción asociada.
 #: ../coldassistant/ui.glade.h:3
+msgid "More info..."
+msgstr "Más información"
+
+#: ../coldassistant/ui.glade.h:4
 msgid ""
-"The following list shows the <b>already installed  devices</b>, which are "
-"<b>supported by Hermes</b> and have some associated action."
+"This is the list of actions associated to new detected devices.  In this "
+"context, <b>an action is anything the system should do to make the device "
+"work propertly</b>.\n"
+"\n"
+"For example, an action might be <i>install software</i>, <i>configure "
+"something</i> in the system, or even <i>run programs</i>  to set up or use "
+"the device."
 msgstr ""
-"El siguiente listado muestra los dispositivos <b>instalados en su sistema</"
-"b> que están <b>soportados por Hermes</b> y disponen de alguna acción "
-"asociada."
+"Este es el listado de acciones asociadas a los nuevos dispositivos "
+"detectados. En este contexto, <b>una acción es cualquier cosa que el sistema "
+"debería realizar para hacer que un dispositivo funcione correctamente</b>.\n"
+"\n"
+"Por ejemplo, una acción podría ser <i>instalar software</i>, <i>configurar algo</"
+"i> en el sistema, o incluso <i>ejecutar programas</i> para usar el "
+"dispositivo, o hacer que funcione."
 
 #: ../tests/test_bluetooth.py:18
 msgid "Configuring:"
@@ -388,6 +404,11 @@ msgstr ""
 msgid "Wizard for device actions"
 msgstr ""
 "Asistente para ejecutar acciones sobre dispositivos ya conectados al sistema"
+
+#~ msgid ""
+#~ "The following list shows the <b>already installed  devices</b>, which are "
+#~ "<b>supported by Hermes</b> and have some associated action."
+#~ msgstr "Listado de <b>acciones</b> asociadas a los dispositivos soportados."
 
 #~ msgid "Wizard for device actions."
 #~ msgstr ""
