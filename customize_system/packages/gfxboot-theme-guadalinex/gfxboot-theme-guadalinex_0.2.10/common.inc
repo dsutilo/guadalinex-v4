@@ -1105,7 +1105,7 @@
   /infobox.bg          lightgray         def
   /infobox.text.normal black             def
 
-  /menu.bar.color      black       def
+  /menu.bar.color      orange		 def
 
   small_layout {
     /frame1.pos  { 190 208 } def
