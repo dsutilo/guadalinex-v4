@@ -1,0 +1,59 @@
+#! /usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+export DH_ALWAYS_EXCLUDE=.svn
+
+build:
+	dh_testdir
+	set -e; \
+	for x in scripts/casper-bottom/* ubiquity-hooks/*; do \
+		sh -n $$x; \
+	done
+
+clean:
+	dh_testdir
+
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_clean -k
+	dh_installdirs
+	dh_install
+	install -m644 casper.conf debian/casper-guada/usr/share/casper-guada/casper.conf
+	for L in po/*.po ; do \
+		L=$${L##*/} ; \
+		mkdir -p debian/casper-guada/usr/share/locale/$${L%.po}/LC_MESSAGES/ ; \
+		msgfmt -o debian/casper-guada/usr/share/locale/$${L%.po}/LC_MESSAGES/casper-guada.mo po/$$L ; \
+	done
+
+
+binary-indep: build install
+	dh_testdir
+	dh_testroot
+	dh_installexamples -i
+	dh_installdocs -i
+	dh_installchangelogs -i
+	dh_compress -i
+	dh_fixperms -i
+	dh_installdeb -i
+	dh_gencontrol -i
+	dh_md5sums -i
+	dh_builddeb -i
+
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installdocs -a
+	dh_installchangelogs -a
+	dh_link -a
+	dh_compress -a
+	dh_fixperms -a
+	dh_installdeb -a
+	dh_gencontrol -a
+	dh_md5sums -a
+	dh_builddeb -a
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install
