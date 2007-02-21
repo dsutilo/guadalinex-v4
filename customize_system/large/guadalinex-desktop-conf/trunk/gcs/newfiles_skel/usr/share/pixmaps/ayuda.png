@@ -1,0 +1,79 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+ <title>#390: ayuda.png - gv4 - Trac</title><link rel="start" href="/gv4/wiki" /><link rel="search" href="/gv4/search" /><link rel="help" href="/gv4/wiki/TracGuide" /><link rel="stylesheet" href="/gv4/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/gv4/chrome/common/css/code.css" type="text/css" /><link rel="icon" href="/gv4/chrome/common/emergya.ico" type="image/x-icon" /><link rel="shortcut icon" href="/gv4/chrome/common/emergya.ico" type="image/x-icon" /><link rel="up" href="/gv4/ticket/390" title="Ticket #390" /><link rel="alternate" href="/gv4/attachment/ticket/390/ayuda.png?format=raw" title="Original Format" type="image/png" /><style type="text/css">
+</style>
+ <script type="text/javascript" src="/gv4/chrome/common/js/trac.js"></script>
+</head>
+<body>
+
+
+<div id="banner">
+
+<div id="header"><a id="logo" href="http://trac.edgewall.com/"><img src="/gv4/chrome/common/emergya_ticketing.png" width="236" height="73" alt="Trac" /></a><hr /></div>
+
+<form id="search" action="/gv4/search" method="get">
+ <div>
+  <label for="proj-search">Search:</label>
+  <input type="text" id="proj-search" name="q" size="10" accesskey="f" value="" />
+  <input type="submit" value="Search" />
+  <input type="hidden" name="wiki" value="on" />
+  <input type="hidden" name="changeset" value="on" />
+  <input type="hidden" name="ticket" value="on" />
+ </div>
+</form>
+
+
+
+<div id="metanav" class="nav"><ul><li class="first">logged in as dteyssiere</li><li><a href="/gv4/logout">Logout</a></li><li><a href="/gv4/settings">Settings</a></li><li><a href="/gv4/wiki/TracGuide" accesskey="6">Help/Guide</a></li><li class="last"><a href="/gv4/about">About Trac</a></li></ul></div>
+</div>
+
+<div id="mainnav" class="nav"><ul><li class="first"><a href="/gv4/wiki" accesskey="1">Wiki</a></li><li><a href="/gv4/timeline" accesskey="2">Timeline</a></li><li><a href="/gv4/roadmap" accesskey="3">Roadmap</a></li><li><a href="/gv4/browser">Browse Source</a></li><li><a href="/gv4/report">View Tickets</a></li><li><a href="/gv4/newticket" accesskey="7">New Ticket</a></li><li class="last"><a href="/gv4/search" accesskey="4">Search</a></li></ul></div>
+<div id="main">
+
+
+
+
+<div id="ctxtnav" class="nav"></div>
+
+<div id="content" class="attachment">
+
+
+ <h1><a href="/gv4/ticket/390">Ticket #390</a>: ayuda.png</h1>
+ <div id="preview">
+   <div class="image-file"><img src="?format=raw" alt="" /></div>
+ </div>
+ <div class="buttons">
+  <form method="get" action=""><div id="delete">
+   <input type="hidden" name="action" value="delete" />
+   <input type="submit" value="Delete attachment" />
+  </div></form>
+ </div>
+
+
+</div>
+<script type="text/javascript">searchHighlight()</script>
+<div id="altlinks"><h3>Download in other formats:</h3><ul><li class="first last"><a href="/gv4/attachment/ticket/390/ayuda.png?format=raw">Original Format</a></li></ul></div>
+
+</div>
+
+<div id="footer">
+ <hr />
+ <a id="tracpowered" href="http://trac.edgewall.com/"><img src="/gv4/chrome/common/trac_logo_mini.png" height="30" width="107"
+   alt="Trac Powered"/></a>
+ <p class="left">
+  Powered by <a href="/gv4/about"><strong>Trac 0.9.5</strong></a><br />
+  By <a href="http://www.edgewall.com/">Edgewall Software</a>.
+ </p>
+ <p class="right">
+  Visit the Trac open source project at<br /><a href="http://trac.edgewall.com/">http://trac.edgewall.com/</a>
+ </p>
+</div>
+
+
+
+ </body>
+</html>
+
