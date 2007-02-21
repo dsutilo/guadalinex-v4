@@ -48,6 +48,7 @@ evolution
 evolution-exchange
 evolution-plugins
 evolution-webcal
+extras-installer
 f-spot
 festvox-ellpc11k
 file-roller
@@ -220,3 +221,5 @@ zenity
 zip
 extras-installer
 grubaker
+devede
+vcdimager
