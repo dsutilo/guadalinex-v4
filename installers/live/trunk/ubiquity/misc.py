@@ -218,6 +218,11 @@ def get_default_partition_selection(size, fstype, auto_mountpoints):
                 mounted.add(selection['/home'])
                 selection['/'] = size_orderer_partition[1][1]
                 mounted.add(selection['/'])
+
+                if size_orderer_partition[1][0] < 3145728: # 3 GB
+                    selection['/home'], selection['/'] = \
+                            selection['/'], selection['/home']  
+
             else:
                 selection['/'] = size_orderer_partition[0][1]
                 mounted.add(selection['/'])
