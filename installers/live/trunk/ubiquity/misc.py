@@ -186,29 +186,41 @@ def get_default_partition_selection(size, fstype, auto_mountpoints):
     selection = {}
     mounted = set()
     if len(device_list.items()) != 0:
-        root, swap = False, False
-        for partition in new_devices + old_devices:
+        swap = False
+        home_maxsize = 0
+        root_maxsize = 0
+
+        all_devices = new_devices + old_devices
+
+        swap = False
+        size_orderer_partition = []
+        for partition in all_devices:
             size_selected = size[partition]
             try:
                 fs = device_list['/dev/%s' % partition]
             except:
                 continue
-            if swap and root:
-                break
-            elif (fs in ('ext2', 'ext3', 'jfs', 'reiserfs', 'xfs') and
-                  size_selected > 1024):
-                if not root:
-                    path = '/dev/%s' % partition
-                    selection['/'] = path
-                    mounted.add(path)
-                    root = True
-            elif fs == 'linux-swap':
-                path = '/dev/%s' % partition
+
+            path = '/dev/%s' % partition
+
+            if (fs == 'linux-swap') and (not swap):
                 selection['swap'] = path
                 mounted.add(path)
                 swap = True
+            elif fs in ('ext2', 'ext3', 'jfs', 'reiserfs', 'xfs'): 
+                size_orderer_partition.append((size_selected, path))
+
+        size_orderer_partition.sort()
+        size_orderer_partition.reverse()
+        if size_orderer_partition:
+            if (len(size_orderer_partition) >= 2):
+                selection['/home'] = size_orderer_partition[0][1]
+                mounted.add(selection['/home'])
+                selection['/'] = size_orderer_partition[1][1]
+                mounted.add(selection['/'])
             else:
-                continue
+                selection['/'] = size_orderer_partition[0][1]
+                mounted.add(selection['/'])
 
     if auto_mountpoints is not None:
         for device, mountpoint in auto_mountpoints.items():
