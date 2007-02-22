@@ -1,0 +1,35 @@
+#!/bin/bash
+
+CONFFILE="/usr/share/g3g/soportados"
+COUNT=0
+SELECCIONADO="${HOME}/.g3g"
+set -x
+if [ -f "$CONFFILE" ]; then
+    for a in `awk {'print $1'} $CONFFILE`;do
+        OPERADORES[$COUNT]="FALSE $a"
+        COUNT=$(expr ${COUNT} + 1)
+    done
+else
+    echo "No existe el fichero \"soportados\" en /usr/share/g3g"
+    exit 1
+fi
+
+if [ -e "$SELECCIONADO" ]; then
+   SEL=`cat $SELECCIONADO`
+   for i in `seq 0 ${#OPERADORES[@]}`;do
+       if [ "${OPERADORES[$i]}" = "FALSE $SEL" ];then
+          OPERADORES[$i]="TRUE ${OPERADORES[$i]#FALSE}"
+       fi
+   done
+fi
+
+SELECCION=`zenity --height=300 --window-icon=/usr/share/pixmaps/g3g.png --list --radiolist --title="Asistente para conexión 3G" --text="Actualmente existe soporte en Guadalinex para los siguientes operadores.\n Seleccione el suyo para lanzar el programa apropiado" --column="" --column="OPERADORES" ${OPERADORES[@]}`
+
+if [ -z "$SELECCION" ];then
+    exit 1
+else
+    echo $SELECCION > ~/.g3g
+    COMMAND=`grep $SELECCION $CONFFILE|cut -f2`
+    exec $COMMAND
+fi
+
