@@ -1,8 +1,8 @@
 [GdmGreeterTheme]
 Greeter=Guadalinex.xml
 Name=Guadalinex
-Description=Guadalinex Default Welcome Theme
-Author=Jeff Waugh, Mark Shuttleworth, Jozef Mak, Jonathan Austin, Frank Schoep, Gabriel Rodriguez Alberich
-Copyright=(c) 2004-2006 Canonical Ltd., (c) 2006 Junta de Andalucia
+Description=Tema de bienvenida de Guadalinex v4
+Author=Junta de Andalucía
+Copyright=(c) 2007 Junta de Andalucía
 Screenshot=screenshot.png
-X-Ubuntu-Gettext-Domain=edgy-gdm-themes
+X-Ubuntu-Gettext-Domain=guadalinex-artwork

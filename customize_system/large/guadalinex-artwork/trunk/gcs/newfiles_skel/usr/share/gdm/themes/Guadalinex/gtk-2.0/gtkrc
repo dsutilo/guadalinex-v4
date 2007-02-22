@@ -1,5 +1,3 @@
-gtk-icon-theme-name = "Human"
-
 style "clearlooks-default"
 {
   GtkButton      ::default_border    = { 0, 0, 0, 0 }
@@ -8,58 +6,83 @@ style "clearlooks-default"
   GtkRange       ::slider_width      = 15
   GtkRange       ::stepper_size      = 15
   
-  GtkScrollbar   ::min_slider_length = 35
+  GtkScrollbar   ::min_slider_length = 30
   GtkCheckButton ::indicator_size    = 14
   GtkMenuBar     ::internal-padding  = 0
   GtkTreeView    ::expander_size     = 14
   GtkExpander    ::expander_size     = 16
-  GtkScale       ::slider-length     = 31
+  GtkScale       ::slider-length     = 27
 #  GtkToolbar     ::button-relief     = GTK_RELIEF_NORMAL
 #  GtkMenuBar     ::shadow-type       = GTK_SHADOW_OUT
 #  GtkScrollbar   ::has-secondary-forward-stepper = 1
 #  GtkScrollbar   ::has-secondary-backward-stepper = 1
 
-  GtkButton      ::child-displacement-x = 0
-  GtkButton      ::child-displacement-y = 0
+  GtkButton      ::child-displacement-x = 1
+  GtkButton      ::child-displacement-y = 1
+
+  WnckTasklist   ::fade-overlay-rect = 0
 
   xthickness = 1
   ythickness = 1
 
-        fg[NORMAL]        = "#101010"
-        fg[PRELIGHT]      = "#101010"
-        fg[ACTIVE]        = "#000000"
-        fg[SELECTED]      = "#ffffff"
-        fg[INSENSITIVE]   = "#b5b3ac"
+  fg[NORMAL]        = "#000000" # black
+  fg[PRELIGHT]      = "#000000" # black
+  fg[SELECTED]      = "#ffffff" # white 
+  fg[ACTIVE]        = "#000000" # black
+  fg[INSENSITIVE]   = "#b5b3ac" # dark beige
+#
+  bg[NORMAL]        = "#ede9e3"
+  bg[PRELIGHT]      = "#f9f7f3" # very light beige
+  bg[SELECTED]	    = "#131313" # deepsky
+  bg[INSENSITIVE]   = "#efebe5" # beige
+  bg[ACTIVE]        = "#d7d3ca" #"#d7d3ca" # dark beige
+#
+  base[NORMAL]      = "#ffffff" # white 
+  base[PRELIGHT]    = "#5f8ec4" # dark beige
+  base[ACTIVE]      = "#a69f91" # darker deepsky
+  base[SELECTED]    = "#5598d7" # deepsky
+  base[INSENSITIVE] = "#e8e5de" # beige
+#
+  text[NORMAL]      = "#000000" # black
+  text[PRELIGHT]    = "#ffffff" # black
+#  text[ACTIVE]      = "#ffffff" # white
+#  text[SELECTED]    = "#ffffff" # white
+#  text[INSENSITIVE] = "#b5b3ac" # dark beige
 
-        bg[NORMAL]        = "#F7F4E8" # was #efebe7
-        bg[PRELIGHT]      = "#f5f3f0"
-        bg[ACTIVE]        = "#d0c8c1"
-        #bg[SELECTED]      = "#ff6600" # Human c8ad8c
-        bg[SELECTED]      = "#A68D59"
-        bg[INSENSITIVE]   = "#efebe7"
+#  fg[NORMAL]      = "#000000"
+#  text[NORMAL]      = "#ffffff"
+#  bg[NORMAL]      = "#000033"
+#  base[NORMAL]    = "#000033"
 
-        base[NORMAL]      = "#ffffff"
-        base[PRELIGHT]    = "#ffffff" # Human b39169
-        base[ACTIVE]      = "#DBC19A" # "#70442b" # Human c8ad8c
-        base[SELECTED]    = "#FFD799" # Human b39169
-        base[INSENSITIVE] = "#efebe7"
+#  fg[INSENSITIVE]      = "#999999"
+#  bg[INSENSITIVE]      = "#333333"
+#  text[INSENSITIVE]      = "#999999"
+#  base[INSENSITIVE]      = "#333333"
 
-        text[NORMAL]      = "#000000"
-        text[PRELIGHT]    = "#000000"
-        text[ACTIVE]      = "#000000"
-        text[SELECTED]    = "#000000"
-        text[INSENSITIVE] = "#b5b3ac"
+#  fg[PRELIGHT]    = "#000000"
+#  text[PRELIGHT]    = "#003333"
+#  bg[PRELIGHT]    = "#ffffff"
+#  base[PRELIGHT]    = "#ffffff"
 
-  font_name = "Sans 11"
+#  fg[ACTIVE]      = "#000000"
+  text[ACTIVE]      = "#ffffff"
+#  bg[ACTIVE]      = "#666699"
+#  base[ACTIVE]      = "#666699"
 
-  engine "ubuntulooks" 
+#  fg[SELECTED]    = "#ffffff"
+  text[SELECTED]    = "#000033"
+#  bg[SELECTED]    = "#ffffff"
+#  base[SELECTED]    = "#ffcccc"
+                                   
+
+  engine "clearlooks" 
   {
+    #scrollbar_color   = "#76acde"
     menubarstyle      = 2       # 0 = flat, 1 = sunken, 2 = flat gradient
     menuitemstyle     = 1       # 0 = flat, 1 = 3d-ish (gradient), 2 = 3d-ish (button)
     listviewitemstyle = 1       # 0 = flat, 1 = 3d-ish (gradient)
     progressbarstyle  = 1       # 0 = candy bar, 1 = fancy candy bar, 2 = flat
     animation         = FALSE
-    gdm               = TRUE
   }
 }
 
@@ -78,11 +101,9 @@ style "clearlooks-wider" = "clearlooks-default"
 
 style "clearlooks-button" = "clearlooks-wider"
 {
-  #bg[NORMAL] = "#f8f5f2" # was #eae4df
-#  bg[NORMAL] = "#CCC9C5"
-  bg[ACTIVE] = "#efebe7"
-  #bg[PRELIGHT] = "#fcfaf7"
-  bg[PRELIGHT] = "#eae4df"
+  bg[NORMAL]        = "#f6f4f1"
+  bg[INSENSITIVE]   = "#f2efeb"
+  bg[PRELIGHT]      = "#faf9f8"
 }
 
 style "clearlooks-notebook" = "clearlooks-wide"
@@ -101,7 +122,7 @@ style "clearlooks-menu" = "clearlooks-default"
 {
   xthickness = 2
   ythickness = 1
-  bg[NORMAL] = "#E5D6B7"
+  bg[NORMAL] = "#f9f7f3"
 }
 
 style "clearlooks-menubar-item" = "clearlooks-button"
@@ -113,9 +134,8 @@ style "clearlooks-menu-item" = "clearlooks-default"
 {
   xthickness = 2
   ythickness = 3
-  bg[SELECTED] = "#FFD799"
-  fg[PRELIGHT] = "#000000"
-  text[PRELIGHT] = "#000000"
+  fg[PRELIGHT] = "#ffffff"
+  text[PRELIGHT] = "#ffffff"
 }
 
 style "clearlooks-tree" = "clearlooks-default"
@@ -138,8 +158,8 @@ style "clearlooks-tooltips" = "clearlooks-default"
 
 style "clearlooks-progressbar" = "clearlooks-wide"
 {
-  xthickness = 2
-  ythickness = 2
+  xthickness = 1
+  ythickness = 1
   fg[PRELIGHT]  = "#ffffff"
 }
 
@@ -147,19 +167,16 @@ style "clearlooks-combo" = "clearlooks-button"
 {
 }
 
-style "metacity-frame" = "clearlooks-default"
+style "clearlooks-menubar" = "blackrock-default"
 {
-  bg[SELECTED] = "#fb8b00" #yellowish
-  bg[SELECTED] = "#888888" #gray
-  #bg[SELECTED] = "#ae7249" #old human
-  bg[SELECTED] = "#BA5A30" #modified old human
+  bg[NORMAL]   = "#bacedb"
 }
 	
 
 # widget styles
 class "GtkWidget" style "clearlooks-default"
 class "GtkButton" style "clearlooks-button"
-#class "GtkScale"  style "clearlooks-button"
+class "GtkScale"  style "clearlooks-button"
 class "GtkCombo"  style "clearlooks-button"
 class "GtkRange"  style "clearlooks-wide"
 class "GtkFrame"  style "clearlooks-wide"
@@ -168,7 +185,6 @@ class "GtkEntry"  style "clearlooks-wider"
 class "GtkMenuItem"    style "clearlooks-menu-item"
 class "GtkNotebook"    style "clearlooks-notebook"
 class "GtkProgressBar" style "clearlooks-progressbar"
-class "MetaFrames" style "metacity-frame"
  
 #class "GtkMenuBar" style "clearlooks-menubar"
 
@@ -192,3 +208,4 @@ widget_class "*.GtkFrame.GtkLabel" style "clearlooks-frame-title"
 # notebook stuff
 widget_class "*.GtkNotebook.*.GtkEventBox" style "clearlooks-notebook"
 widget_class "*.GtkNotebook.*.GtkViewport" style "clearlooks-notebook"
+
