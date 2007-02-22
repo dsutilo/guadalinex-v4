@@ -1,0 +1,8 @@
+#!/bin/sh
+
+dev=$1
+
+autopartition $dev
+
+# accept the autopartitioning
+exit 100

@@ -1,0 +1,37 @@
+#!/bin/sh
+
+set -e
+
+test -f /bin/setupcon || exit 0
+
+. /lib/lsb/init-functions
+
+case "$1" in
+    stop)
+        # console-setup isn't a daemon
+        ;;
+    start|force-reload|restart|reload)
+	if [ -z "$DISPLAY" ]; then
+	    if pidof usplash >/dev/null; then
+		log_begin_msg "Setting up console keymap..."
+		if setupcon -k --force; then
+		    log_end_msg 0
+		else
+		    log_end_msg $?
+		fi
+	    else
+		log_begin_msg "Setting up console font and keymap..."
+		if setupcon --force; then
+		    log_end_msg 0
+		else
+		    log_end_msg $?
+		fi
+	    fi
+	fi
+	;;
+    *)
+        echo 'Usage: /etc/init.d/console-setup {start|reload|restart|force-reload|stop}'
+        exit 1
+        ;;
+esac
+
