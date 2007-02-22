@@ -15,6 +15,7 @@ Description: detección y soporte de dispositivos
 
 Package: hermeshardware-actors
 Depends: hermeshardware, ${shlibs:Depends}, ${misc:Depends}
+Architecture: any
 Description: hermeshardware actors set.
  el sistema de detección de hardware engloba tanto las tareas de detección
  y soporte de dispositivos, como aquellas que tienen que ver con la 
