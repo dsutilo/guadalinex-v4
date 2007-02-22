@@ -50,41 +50,58 @@ import os.path
 from utils.pkginstaller import PkgInstaller
 from deviceactor import PkgDeviceActor
 from gettext import gettext as _
+import logging
 
 # [(vendor_id, product_id)]
+# This VP_IDS is valid for g3gusb.Actor too.
 VP_IDS = [
-        (1033, 0035), 
-        (35, 12)
+        (4817, 4097), 
+        (6449, 12)
         ]
 
+product_id = None
+vendor_id = None
 
 def is_valid_vendor(value):
+    logging.getLogger().debug('g3g is_valid_vendor(%s)' % value)
     value = int(value)
     global vendor_id
     vendor_id = None
-    if value in [ele[0] for ele in VP_IDS]:
+    if product_id:
         vendor_id = value
-        return True
-    else:
-        return False
+        return (vendor_id, product_id) in VP_IDS
+    elif value in [ele[0] for ele in VP_IDS]:
+            vendor_id = value
+            return True
+    return False
 
 
 def is_valid_product(value):
+    logging.getLogger().debug('g3g is_valid_product(%s)' % value)
+    value = int(value)
+    global product_id
+    product_id = None
     if vendor_id:
-        product_id = int(value)
+        product_id = value
         return (vendor_id, product_id) in VP_IDS
+    elif value in [ele[1] for ele in VP_IDS]:
+        product_id = value
+        return True
+    return False
 
 
 
 class Actor(PkgDeviceActor):
 
-    __required__ = {'usb.vendor_id': is_valid_vendor,
-            'usb.product_id': is_valid_product}
+    __required__ = {
+            'pci.vendor_id': is_valid_vendor,
+            'pci.product_id': is_valid_product
+            }
 
     __priority__ = 4
 
     __icon_path__  = os.path.abspath('actors/img/g3g.png')
-    __iconoff_path__ = os.path.abspath('actors/img/g3g.png')
+    __iconoff_path__ = os.path.abspath('actors/img/g3goff.png')
 
     __device_title__ = '3G'
     __device_conn_description__ = _('3G device connected')

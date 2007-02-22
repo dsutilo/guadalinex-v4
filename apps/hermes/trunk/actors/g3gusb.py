@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 
-#Módulo usbdevice - Módulo que implementa el "actor hardware" para los
-#dispositivos usb
+#Módulo bluetooth - Módulo que implementa el "actor hardware" para los
+#dispositivos bluetooth
 #
 #Copyright (C) 2005 Junta de Andalucía
 #
@@ -47,36 +47,21 @@
 
 import os.path
 
-from deviceactor import DeviceActor
+from utils.pkginstaller import PkgInstaller
+from deviceactor import PkgDeviceActor
 from gettext import gettext as _
+import logging
 
-USBICON = os.path.abspath('actors/img/usb.png')
-USBICONOFF = os.path.abspath('actors/img/usboff.png')
-
-class Actor(DeviceActor):
-
-    #__required__ = {'info.bus' : 'usb_device'}
-    __required__ = {}
-
-    def on_added(self):
-        try:
-            product = self.properties['usb_device.product']
-            vendor = self.properties['info.vendor']
-            vendor = vendor and vendor + ', ' or ''
-
-            if vendor + product: self.msg_render.show(_("USB"), _("USB device detected:\n") +\
-                    vendor + product, USBICON)
-            self.vendorproduct = vendor + product
-
-        except:
-            self.msg_render.show(_("USB"), _("USB device detected"), USBICON)
+from g3gpcmcia import Actor as G3gActor
+from g3gpcmcia import is_valid_vendor
+from g3gpcmcia import is_valid_product
+from g3gpcmcia import VP_IDS
 
 
-    def on_removed(self):
-        try:
-            if self.vendorproduct:
-                self.msg_render.show(_("USB"), _("USB device disconnected:\n") + \
-                    self.vendorproduct, USBICONOFF)
-        except:
-            self.msg_render.show(_("USB"), _("USB device disconnected"),
-                    USBICONOFF)
+class Actor(G3gActor):
+
+    __required__ = {
+            'info.bus': 'usb_device',
+            'usb_device.vendor_id': is_valid_vendor,
+            'usb_device.product_id': is_valid_product
+            }

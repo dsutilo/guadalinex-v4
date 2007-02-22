@@ -35,7 +35,7 @@ class ColdPlugListener:
             try:
                 udi = ele[0]
                 properties = ele[1]
-                self.devicelistener.add_actor_from_properties(properties)
+                self.devicelistener.get_actor_from_properties(properties)
                 self.logger.debug("Coldplug: DeviceRemoved: " + str(udi))
                 self.devicelistener.on_device_removed(udi)
                 time.sleep(0.5)

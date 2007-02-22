@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-20 18:30+0100\n"
-"PO-Revision-Date: 2007-02-20 18:39+0100\n"
+"POT-Creation-Date: 2007-02-22 17:03+0100\n"
+"PO-Revision-Date: 2007-02-22 17:03+0100\n"
 "Last-Translator:  <(null)>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -114,24 +114,24 @@ msgstr "Dispositivo PCMCIA conectado"
 msgid "PCMCIA device disconnected"
 msgstr "Dispositivo PCMCIA desconectado"
 
-#: ../actors/usbdevice.py:66 ../actors/usbdevice.py:71
-#: ../actors/usbdevice.py:77 ../actors/usbdevice.py:80
+#: ../actors/usbdevice.py:67 ../actors/usbdevice.py:72
+#: ../actors/usbdevice.py:78 ../actors/usbdevice.py:81
 msgid "USB"
 msgstr "USB"
 
-#: ../actors/usbdevice.py:66
+#: ../actors/usbdevice.py:67
 msgid "USB device detected:\n"
 msgstr "Se ha detectado un dispositivo USB:\n"
 
-#: ../actors/usbdevice.py:71
+#: ../actors/usbdevice.py:72
 msgid "USB device detected"
 msgstr "Se ha detectado un dispositivo USB"
 
-#: ../actors/usbdevice.py:77
+#: ../actors/usbdevice.py:78
 msgid "USB device disconnected:\n"
 msgstr "Dispositivo USB desconectado:\n"
 
-#: ../actors/usbdevice.py:80
+#: ../actors/usbdevice.py:81
 msgid "USB device disconnected"
 msgstr "Dispositivo USB desconectado"
 
@@ -203,6 +203,14 @@ msgstr "Dispositivo desmontado"
 msgid "Error:"
 msgstr "Error:"
 
+#: ../actors/g3gpcmcia.py:107
+msgid "3G device connected"
+msgstr "Dispositivo 3G conectado"
+
+#: ../actors/g3gpcmcia.py:108
+msgid "3G device disconnected"
+msgstr "Dispositivo 3G desconectado"
+
 #: ../coldassistant/devicelist.py:58
 msgid "Searching for devices..."
 msgstr "Buscando dispositivos..."
@@ -237,8 +245,8 @@ msgstr ""
 "detectados. En este contexto, <b>una acción es cualquier cosa que el sistema "
 "debería realizar para hacer que un dispositivo funcione correctamente</b>.\n"
 "\n"
-"Por ejemplo, una acción podría ser <i>instalar software</i>, <i>configurar algo</"
-"i> en el sistema, o incluso <i>ejecutar programas</i> para usar el "
+"Por ejemplo, una acción podría ser <i>instalar software</i>, <i>configurar "
+"algo</i> en el sistema, o incluso <i>ejecutar programas</i> para usar el "
 "dispositivo, o hacer que funcione."
 
 #: ../tests/test_bluetooth.py:18

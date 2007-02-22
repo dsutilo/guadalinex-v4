@@ -1,8 +1,15 @@
+hermeshardware (0.3.8) unstable; urgency=low
+
+  * Added g3g actor for 3G devices.
+  * Disable usbdevice actor.
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Thu, 22 Feb 2007 16:49:53 +0100
+
 hermeshardware (0.3.7-1) unstable; urgency=low
 
-  * Added hermeshardware-actors package
+  * Added hermeshardware-actors package.
 
- -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Tue, 20 Feb 2007 22:10:58 +0100
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Thu, 22 Feb 2007 14:19:20 +0100
 
 hermeshardware (0.3.7) unstable; urgency=low
 

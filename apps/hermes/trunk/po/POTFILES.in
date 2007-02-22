@@ -12,6 +12,7 @@ actors/usbprinter.py
 actors/usbscanner.py
 actors/usbwebcam.py
 actors/volume.py
+actors/g3gpcmcia.py
 coldassistant/app.py
 coldassistant/devicelist.py
 coldassistant/ui.glade
