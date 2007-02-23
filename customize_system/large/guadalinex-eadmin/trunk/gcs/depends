@@ -3,6 +3,8 @@
 #
 # gnome-terminal
 # nautilus  >=2.6.10
+libnss3-0d
+libnss3-tools
 opensc-dnie
 mozilla-opensc
 opensc

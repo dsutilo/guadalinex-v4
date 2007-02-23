@@ -20,8 +20,9 @@ shortdesc: "E-Admin support for Guadalinex"
 longdesc: "This package add support for different hardware and software systems\n needed to communicate with the electronic administration systems \n of Andalucía.\n Initially it just patch libccid conf file tu support C3PO card readers"
 
 # Versión del paquete
-version: 0.1
+version: 0.2
 
 # Cambios en esta versión
 changes:
+    - Added libnss3-0d and libnss3-tools dependencies
     - Initial release
