@@ -15,11 +15,13 @@ class Actor (DeviceActor):
     "linux.subsystem":"net"
     }
 
+
     def on_added(self):
         interface = self.properties['net.interface']
         self.msg_render.show(_("Network"), 
                 _("Connected network interface %s") % interface,
                 NETWORKICON)
+
 
     def on_removed(self):
         interface = self.properties['net.interface']
