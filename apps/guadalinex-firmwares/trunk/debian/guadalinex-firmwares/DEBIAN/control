@@ -1,0 +1,9 @@
+Package: guadalinex-firmwares
+Version: 0.1
+Section: main
+Priority: optional
+Architecture: i386
+Installed-Size: 52
+Maintainer: Gumersindo Coronel Pérez <gcoronel@emergya.es>
+Description: Firmwares para Guadalinex
+ Firmwares para Guadalinex

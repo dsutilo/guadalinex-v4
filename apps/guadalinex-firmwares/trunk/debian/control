@@ -1,0 +1,12 @@
+Source: guadalinex-firmwares
+Section: main
+Priority: optional
+Maintainer: Gumersindo Coronel Pérez <gcoronel@emergya.es>
+Build-Depends: debhelper (>> 3.0.0)
+Standards-Version: 3.7.2
+
+Package: guadalinex-firmwares
+Architecture: i386
+Depends: 
+Description: Firmwares para Guadalinex 
+ Firmwares para Guadalinex
