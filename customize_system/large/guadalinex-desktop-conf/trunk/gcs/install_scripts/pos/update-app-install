@@ -1,0 +1,6 @@
+if [ -f "/var/cache/app-install/menu.p" ]; then
+	rm -f /var/cache/app-install/menu.p
+        # cache the application data
+        /usr/sbin/update-app-install
+fi
+
