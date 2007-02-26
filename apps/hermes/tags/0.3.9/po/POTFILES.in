@@ -13,6 +13,9 @@ actors/usbscanner.py
 actors/usbwebcam.py
 actors/volume.py
 actors/g3gpcmcia.py
+actors/wifinetwork.py
+actors/dvb.py
+actors/dvbfw.py
 coldassistant/app.py
 coldassistant/devicelist.py
 coldassistant/ui.glade
