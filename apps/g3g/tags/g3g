@@ -1,13 +1,19 @@
 #!/bin/bash
 
-CONFFILE="/usr/share/g3g/soportados"
-COUNT=0
+GROUPS = `id -nG`
+CONFFICH="/usr/share/g3g/soportados"
+CONT=0
 SELECCIONADO="${HOME}/.g3g"
-set -x
-if [ -f "$CONFFILE" ]; then
-    for a in `awk {'print $1'} $CONFFILE`;do
-        OPERADORES[$COUNT]="FALSE $a"
-        COUNT=$(expr ${COUNT} + 1)
+
+if [[ $GROUPS =~ "admin" ]] && [[ ! $GROUPS =~ "dialout" ]];then
+   gksudo -m "Es necesario que usted pertenezca al grupo \"dialout\", introduzca la clave del administrador para añadir a su usuario sino no podrá conectarse a internet con su dispositivo 3G" adduser dialout $USERNAME
+fi
+   
+
+if [ -f "$CONFFICH" ]; then
+    for a in `awk {'print $1'} $CONFFICH`;do
+        OPERADORES[$CONT]="FALSE $a"
+        CONT=$(expr ${CONT} + 1)
     done
 else
     echo "No existe el fichero \"soportados\" en /usr/share/g3g"
@@ -29,7 +35,7 @@ if [ -z "$SELECCION" ];then
     exit 1
 else
     echo $SELECCION > ~/.g3g
-    COMMAND=`grep $SELECCION $CONFFILE|cut -f2`
+    COMANDO=`grep $SELECCION $CONFFICH|cut -f2`
     exec $COMMAND
 fi
 
