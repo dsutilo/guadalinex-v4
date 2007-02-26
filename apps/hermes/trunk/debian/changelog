@@ -1,3 +1,10 @@
+hermeshardware (0.3.9) unstable; urgency=low
+
+  * TDT without firmware support.
+  * Basic support for Wifi network cards.
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Mon, 26 Feb 2007 13:35:56 +0100
+
 hermeshardware (0.3.8) unstable; urgency=low
 
   * Added g3g actor for 3G devices.
