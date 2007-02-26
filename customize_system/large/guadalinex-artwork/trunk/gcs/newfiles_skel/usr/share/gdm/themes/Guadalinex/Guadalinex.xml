@@ -12,7 +12,7 @@
   <item type="rect" id="halt_button" button="true">
     <show type="halt" modes="console"/>
     <pos y="0" width="box" height="box" anchor="nw"/>
-    <box xpadding="10" ypadding="4" spacing="2" orientation="horizontal">
+    <box xpadding="10" ypadding="5" spacing="2" orientation="horizontal">
       <item type="pixmap">
         <normal file="icon-shutdown.png"/>
         <prelight file="icon-shutdown-prelight.png"/>
@@ -32,7 +32,7 @@
   <item type="rect" id="reboot_button" button="true">
     <show type="reboot" modes="console"/>
     <pos x="12%" y="0" width="box" height="box" anchor="nw"/>
-    <box xpadding="10" ypadding="4" spacing="2" orientation="horizontal">
+    <box xpadding="10" ypadding="5" spacing="2" orientation="horizontal">
       <item type="pixmap">
         <normal file="icon-reboot.png"/>
         <prelight file="icon-reboot-prelight.png"/>
@@ -50,27 +50,27 @@
 
   <!-- hostname and clock -->
   <item type="label">
-    <pos anchor="ne" x="80%" y="2"/>
+    <pos anchor="ne" x="85%" y="3"/>
     <normal font="FrancophilSans Bold 11" color="#ffffff"/>
     <text>%h</text>
   </item>
   <item type="label" id="clock">
-    <pos anchor="ne" x="98%" y="2"/>
+    <pos anchor="ne" x="98%" y="3"/>
     <normal font="FrancophilSans 11" color="#ffffff"/>
     <text>%c</text>
   </item>
   
-  <!-- title box -->
+  <!-- title box
   <item type="rect">
     <pos x="50%" y="50%" width="box" height="box" anchor="c"/>
     <box xpadding="0" ypadding="15" spacing="10" orientation="horizontal">
       <item type="label" id="title">
-        <pos x="-95%" y="-100%" anchor="nw"/>
-        <normal font="FrancophilSans 10" color="#ffffff"/>
+        <pos x="-115%" y="-130%" anchor="nw"/>
+        <normal font="FrancophilSans 11" color="#ffffff"/>
         <text>Acceso al sistema</text>
       </item>
     </box>
-  </item>
+  </item> -->
    
   <!-- password box -->
   <item type="rect">
@@ -78,7 +78,7 @@
     <box xpadding="0" ypadding="20" spacing="5" orientation="vertical">
       <item type="rect">
         <pos x="0" y="0" width="box" height="box" expand="true"/>
-        <box xpadding="0" ypadding="15" spacing="10" orientation="horizontal">
+        <box xpadding="0" ypadding="25" spacing="10" orientation="horizontal">
           <item type="label" id="pam-prompt">
             <pos x="-50%" y="100%" anchor="nw"/>
             <normal font="FrancophilSans Bold 11" color="#212a3d"/>
