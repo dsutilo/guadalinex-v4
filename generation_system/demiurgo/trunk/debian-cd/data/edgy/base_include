@@ -2,3 +2,12 @@ guadalinex-minimal
 guadalinex-keyring
 tasksel
 tasksel-data
+gnupg
+libc6
+libc6-i686
+libvolumeid0
+tar
+tzdata
+udev
+volumeid
+x11-common
