@@ -66,6 +66,7 @@ class Actor(PkgDeviceActor):
             'info.linux.driver': is_valid,
             }
 
+    # Important for compatibility with dvbfw !!
     __priority__ = 4
 
     __icon_path__  = os.path.abspath('actors/img/dvb.png')

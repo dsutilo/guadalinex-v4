@@ -45,6 +45,9 @@
 #Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import os
+import webbrowser
+
+from gettext import gettext as _
 
 from dvb import Actor as DvbActor
 
@@ -107,6 +110,14 @@ class Actor(DvbActor):
             'usb.product_id': is_valid_product,
             }
 
+    # Important for compatibility with dvb !!
     __priority__ = 3
 
-    __device_title__ = 'DVB FW'
+    def on_added(self):
+
+        def open_browser():
+            webbrowser.open('http://hermes.guadalinex.org')
+
+        self.msg_render.show_warning('TDT', 
+                _('TDT device without firmware!!'),
+                actions = {_('More info...'): open_browser})
