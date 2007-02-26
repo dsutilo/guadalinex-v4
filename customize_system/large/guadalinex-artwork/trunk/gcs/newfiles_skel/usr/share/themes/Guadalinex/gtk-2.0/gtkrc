@@ -30,58 +30,32 @@ style "clearlooks-default"
   fg[SELECTED]      = "#ffffff" # white 
   fg[ACTIVE]        = "#000000" # black
   fg[INSENSITIVE]   = "#b5b3ac" # dark beige
-#
-  bg[NORMAL]        = "#ede9e3"
+
+  bg[NORMAL]        = "#f6f6f6" # light grey
   bg[PRELIGHT]      = "#f9f7f3" # very light beige
   bg[SELECTED]	    = "#131313" # deepsky
   bg[INSENSITIVE]   = "#efebe5" # beige
-  bg[ACTIVE]        = "#d7d3ca" #"#d7d3ca" # dark beige
-#
+  bg[ACTIVE]        = "#d7d3ca" # dark beige
+
   base[NORMAL]      = "#ffffff" # white 
   base[PRELIGHT]    = "#5f8ec4" # dark beige
   base[ACTIVE]      = "#a69f91" # darker deepsky
-  base[SELECTED]    = "#5598d7" # deepsky
+  base[SELECTED]    = "#131313" # deepsky
   base[INSENSITIVE] = "#e8e5de" # beige
-#
+
   text[NORMAL]      = "#000000" # black
-  text[PRELIGHT]    = "#ffffff" # black
-#  text[ACTIVE]      = "#ffffff" # white
-#  text[SELECTED]    = "#ffffff" # white
-#  text[INSENSITIVE] = "#b5b3ac" # dark beige
-
-#  fg[NORMAL]      = "#000000"
-#  text[NORMAL]      = "#ffffff"
-#  bg[NORMAL]      = "#000033"
-#  base[NORMAL]    = "#000033"
-
-#  fg[INSENSITIVE]      = "#999999"
-#  bg[INSENSITIVE]      = "#333333"
-#  text[INSENSITIVE]      = "#999999"
-#  base[INSENSITIVE]      = "#333333"
-
-#  fg[PRELIGHT]    = "#000000"
-#  text[PRELIGHT]    = "#003333"
-#  bg[PRELIGHT]    = "#ffffff"
-#  base[PRELIGHT]    = "#ffffff"
-
-#  fg[ACTIVE]      = "#000000"
+  text[PRELIGHT]    = "#ffffff" # white
   text[ACTIVE]      = "#ffffff"
-#  bg[ACTIVE]      = "#666699"
-#  base[ACTIVE]      = "#666699"
-
-#  fg[SELECTED]    = "#ffffff"
-  text[SELECTED]    = "#000033"
-#  bg[SELECTED]    = "#ffffff"
-#  base[SELECTED]    = "#ffcccc"
+  text[SELECTED]    = "#ffffff"
                                    
 
   engine "clearlooks" 
   {
     #scrollbar_color   = "#76acde"
     menubarstyle      = 2       # 0 = flat, 1 = sunken, 2 = flat gradient
-    menuitemstyle     = 1       # 0 = flat, 1 = 3d-ish (gradient), 2 = 3d-ish (button)
+    menuitemstyle     = 2       # 0 = flat, 1 = 3d-ish (gradient), 2 = 3d-ish (button)
     listviewitemstyle = 1       # 0 = flat, 1 = 3d-ish (gradient)
-    progressbarstyle  = 1       # 0 = candy bar, 1 = fancy candy bar, 2 = flat
+    progressbarstyle  = 0       # 0 = candy bar, 1 = fancy candy bar, 2 = flat
     animation         = FALSE
   }
 }
@@ -122,12 +96,14 @@ style "clearlooks-menu" = "clearlooks-default"
 {
   xthickness = 2
   ythickness = 1
-  bg[NORMAL] = "#f9f7f3"
+  bg[NORMAL] = "#f6f6f6"
+  text[SELECTED] = "#ffffff"
 }
 
 style "clearlooks-menubar-item" = "clearlooks-button"
 {
-    fg[PRELIGHT] = "#000000"
+  fg[PRELIGHT] = "#000000"
+  text[SELECTED] = "#ffffff"
 }
 
 style "clearlooks-menu-item" = "clearlooks-default"
@@ -142,6 +118,7 @@ style "clearlooks-tree" = "clearlooks-default"
 {
   xthickness = 2
   ythickness = 2
+  fg[SELECTED] = "#131313"
 }
 
 style "clearlooks-frame-title" = "clearlooks-default"
@@ -165,13 +142,25 @@ style "clearlooks-progressbar" = "clearlooks-wide"
 
 style "clearlooks-combo" = "clearlooks-button"
 {
+  bg[SELECTED] = "#131313"
 }
 
 style "clearlooks-menubar" = "blackrock-default"
 {
   bg[NORMAL]   = "#bacedb"
 }
-	
+
+style "metacity-frame" = "clearlooks-default"
+{
+        bg[SELECTED] = "#131313"
+
+}
+
+style "extra-view-widgets" = "clearlooks-default"
+{
+        bg[NORMAL] = "#131313"
+}
+
 
 # widget styles
 class "GtkWidget" style "clearlooks-default"
@@ -185,6 +174,9 @@ class "GtkEntry"  style "clearlooks-wider"
 class "GtkMenuItem"    style "clearlooks-menu-item"
 class "GtkNotebook"    style "clearlooks-notebook"
 class "GtkProgressBar" style "clearlooks-progressbar"
+class "MetaFrames"     style "metacity-frame"
+class "GtkWindow"      style "metacity-frame"
+
  
 #class "GtkMenuBar" style "clearlooks-menubar"
 
@@ -208,4 +200,7 @@ widget_class "*.GtkFrame.GtkLabel" style "clearlooks-frame-title"
 # notebook stuff
 widget_class "*.GtkNotebook.*.GtkEventBox" style "clearlooks-notebook"
 widget_class "*.GtkNotebook.*.GtkViewport" style "clearlooks-notebook"
+
+# extra
+widget "*.nautilus-extra-view-widget" style:highest "extra-view-widgets"
 
