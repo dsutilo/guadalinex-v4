@@ -17,7 +17,7 @@ section: help
 shortdesc: "Guía de usuario de Guadalinex v4"
 
 # Descipción larga, las lineas han de estar separadas por "\n "
-longdesc: "Esta guía hace un repaso y una breve introducción a Guadalinex,\nel sistema operativo de la Junta de Andalucía. "
+longdesc: "Esta guía hace un repaso y una breve introducción a Guadalinex,\n el sistema operativo de la Junta de Andalucía."
 
 # Versión del paquete
 version: 0.1
