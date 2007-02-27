@@ -1,4 +1,4 @@
---- gnome-panel-2.16.0/gnome-panel/panel-default-setup.entries	2007-02-27 04:18:56.000000000 +0100
+--- gnome-panel-2.16.0.new/gnome-panel/panel-default-setup.entries	2007-02-27 04:18:56.000000000 +0100
 +++ gnome-panel-2.16.0.new/gnome-panel/panel-default-setup.entries	2007-02-27 04:19:20.000000000 +0100
 @@ -36,9 +36,6 @@
              <string>email_launcher</string>
