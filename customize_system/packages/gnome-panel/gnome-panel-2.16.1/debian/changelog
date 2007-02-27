@@ -1,3 +1,18 @@
+gnome-panel (2.16.1-0ubuntu4) edgy-updates; urgency=low
+
+  * No-change upload to edgy-updates.
+  * Thanks to Simon Law for verifying the fix.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Fri, 26 Jan 2007 17:34:22 +0100
+
+gnome-panel (2.16.1-0ubuntu4~prop1) edgy-proposed; urgency=low
+
+  * Add 16_gksu_time_admin.patch:
+    - clock-applet: Run time-admin through gksudo.
+    - New system-tools-backends confines frontends to root user, see LP#59946.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Tue,  5 Dec 2006 16:44:35 +0100
+
 gnome-panel (2.16.1-0ubuntu3) edgy; urgency=low
 
   * debian/patches/09_help_submenu.patch:
