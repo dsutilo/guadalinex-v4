@@ -54,19 +54,19 @@ struct usplash_theme usplash_theme = {
 	.pixmap = &pixmap_usplash_640_400,
 
 	/* Palette indexes */
-	.background             = 0x0,
-  	.progressbar_background = 0x7,
-  	.progressbar_foreground = 0x156,
-	.text_background        = 0x0,
-	.text_foreground        = 0x33,
-	.text_success           = 0x15,
-	.text_failure           = 0x144,
+	.background             = 0x125,
+  	.progressbar_background = 0x0,
+  	.progressbar_foreground = 0x62,
+	.text_background        = 0x125,
+	.text_foreground        = 0x0,
+	.text_success           = 0x199,
+	.text_failure           = 0x198,
 
 	/* Progress bar position and size in pixels */
-  	.progressbar_x      = 212,
-  	.progressbar_y      = 196,
-  	.progressbar_width  = 216,
-  	.progressbar_height = 8,
+  	.progressbar_x      = 160,
+  	.progressbar_y      = 230,
+  	.progressbar_width  = 190,
+  	.progressbar_height = 2,
 
 	/* Text box position and size in pixels */
   	.text_x      = 96,
@@ -96,19 +96,21 @@ struct usplash_theme usplash_theme_640_480 = {
 	.pixmap = &pixmap_usplash_640_480,
 
 	/* Palette indexes */
-	.background             = 0x0,
-  	.progressbar_background = 0x7,
-  	.progressbar_foreground = 0x156,
-	.text_background        = 0x0,
-	.text_foreground        = 0x33,
-	.text_success           = 0x15,
-	.text_failure           = 0x144,
+	/* FIXME: changed palette index values */
+	.background             = 0x125,
+  	.progressbar_background = 0x0,
+  	.progressbar_foreground = 0x62,
+	.text_background        = 0x125,
+	.text_foreground        = 0x0,
+	.text_success           = 0x199,
+	.text_failure           = 0x198,
 
 	/* Progress bar position and size in pixels */
-  	.progressbar_x      = 212,
-  	.progressbar_y      = 251,
-  	.progressbar_width  = 216,
-  	.progressbar_height = 8,
+	/* FIXME: changed geometry values */
+  	.progressbar_x      = 160,
+  	.progressbar_y      = 230,
+  	.progressbar_width  = 190,
+  	.progressbar_height = 2,
 
 	/* Text box position and size in pixels */
   	.text_x      = 120,
@@ -138,19 +140,19 @@ struct usplash_theme usplash_theme_800_600 = {
 	.pixmap = &pixmap_usplash_800_600,
 
 	/* Palette indexes */
-	.background             = 0x0,
-  	.progressbar_background = 0x7,
-  	.progressbar_foreground = 0x156,
-	.text_background        = 0x0,
-	.text_foreground        = 0x33,
-	.text_success           = 0x15,
-	.text_failure           = 0x144,
+	.background             = 0x125,
+  	.progressbar_background = 0x0,
+  	.progressbar_foreground = 0x62,
+	.text_background        = 0x125,
+	.text_foreground        = 0x0,
+	.text_success           = 0x199,
+	.text_failure           = 0x198,
 
 	/* Progress bar position and size in pixels */
   	.progressbar_x      = 240,
   	.progressbar_y      = 321,
   	.progressbar_width  = 216,
-  	.progressbar_height = 8,
+  	.progressbar_height = 4,
 
 	/* Text box position and size in pixels */
   	.text_x      = 220,
@@ -179,19 +181,19 @@ struct usplash_theme usplash_theme_1024_768 = {
 	.pixmap = &pixmap_usplash_1024_768,
 
 	/* Palette indexes */
-	.background             = 0x0,
-  	.progressbar_background = 0x7,
-  	.progressbar_foreground = 0x156,
-	.text_background        = 0x0,
-	.text_foreground        = 0x33,
-	.text_success           = 0x15,
-	.text_failure           = 0x144,
+	.background             = 0x125,
+  	.progressbar_background = 0x0,
+  	.progressbar_foreground = 0x62,
+	.text_background        = 0x125,
+	.text_foreground        = 0x0,
+	.text_success           = 0x199,
+	.text_failure           = 0x198,
 
 	/* Progress bar position and size in pixels */
   	.progressbar_x      = 352,
   	.progressbar_y      = 400,
   	.progressbar_width  = 320,
-  	.progressbar_height = 8,
+  	.progressbar_height = 4,
 
 	/* Text box position and size in pixels */
   	.text_x      = 322,
@@ -220,19 +222,19 @@ struct usplash_theme usplash_theme_1365_768_scaled = {
 	.pixmap = &pixmap_usplash_1365_768_scaled,
 
 	/* Palette indexes */
-	.background             = 0x0,
-  	.progressbar_background = 0x7,
-  	.progressbar_foreground = 0x156,
-	.text_background        = 0x0,
-	.text_foreground        = 0x33,
-	.text_success           = 0x15,
-	.text_failure           = 0x144,
+	.background             = 0x4,
+  	.progressbar_background = 0x36,
+  	.progressbar_foreground = 0x0,
+	.text_background        = 0x4,
+	.text_foreground        = 0x35,
+	.text_success           = 0x33,
+	.text_failure           = 0x34,
 
 	/* Progress bar position and size in pixels */
   	.progressbar_x      = 352,
   	.progressbar_y      = 475,
   	.progressbar_width  = 380,
-  	.progressbar_height = 8,
+  	.progressbar_height = 4,
 
 	/* Text box position and size in pixels */
   	.text_x      = 322,
