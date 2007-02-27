@@ -1,0 +1,41 @@
+#!/bin/bash
+
+GROUPS = `id -nG`
+CONFFICH="/usr/share/g3g/soportados"
+CONT=0
+SELECCIONADO="${HOME}/.g3g"
+
+if [[ $GROUPS =~ "admin" ]] && [[ ! $GROUPS =~ "dialout" ]];then
+   gksudo -m "Es necesario que usted pertenezca al grupo \"dialout\", introduzca la clave del administrador para añadir a su usuario sino no podrá conectarse a internet con su dispositivo 3G" adduser dialout $USERNAME
+fi
+   
+
+if [ -f "$CONFFICH" ]; then
+    for a in `awk {'print $1'} $CONFFICH`;do
+        OPERADORES[$CONT]="FALSE $a"
+        CONT=$(expr ${CONT} + 1)
+    done
+else
+    echo "No existe el fichero \"soportados\" en /usr/share/g3g"
+    exit 1
+fi
+
+if [ -e "$SELECCIONADO" ]; then
+   SEL=`cat $SELECCIONADO`
+   for i in `seq 0 ${#OPERADORES[@]}`;do
+       if [ "${OPERADORES[$i]}" = "FALSE $SEL" ];then
+          OPERADORES[$i]="TRUE ${OPERADORES[$i]#FALSE}"
+       fi
+   done
+fi
+
+SELECCION=`zenity --height=300 --window-icon=/usr/share/pixmaps/g3g.png --list --radiolist --title="Asistente para conexión 3G" --text="Actualmente existe soporte en Guadalinex para los siguientes operadores.\n Seleccione el suyo para lanzar el programa apropiado" --column="" --column="OPERADORES" ${OPERADORES[@]}`
+
+if [ -z "$SELECCION" ];then
+    exit 1
+else
+    echo $SELECCION > ~/.g3g
+    COMANDO=`grep $SELECCION $CONFFICH|cut -f2`
+    exec $COMMAND
+fi
+
