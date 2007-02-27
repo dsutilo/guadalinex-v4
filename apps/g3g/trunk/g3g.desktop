@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Asistente para conexión 3G
-Name[es]=Asistente para conexión 3G
+Name=Asistente para conexión móvil 3G
+Name[es]=Asistente para conexión móvil 3G
 Exec=/usr/share/g3g/g3g
 StartupNotify=true
 Terminal=false
