@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appletversion "2.7.92">
+<!ENTITY manrevision "2.8">
+<!ENTITY date "August 2004">
+<!ENTITY applet "Window List">
+]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 12, 2002
+  
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="es">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+	 <title>Manual de la Lista de ventanas</title> 
+	 <copyright> 
+		<year>2002</year>
+		<year>2003</year> 
+		<year>2004</year> 
+		<holder>Sun Microsystems</holder> 
+	 </copyright> 
+	 <copyright> 
+		<year>2001</year> 
+		<holder>John Fleck</holder> 
+	 </copyright><copyright><year>2005.</year><holder>Francisco Javier F. Serrador (serrador@gnome.org)</holder></copyright>
+<!-- translators: uncomment this:
+
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+
+   -->
+	 <publisher> 
+		<publishername>Proyecto de Documentación de GNOME</publishername> 
+	 </publisher> 
+
+   <legalnotice id="legalnotice">
+         <para>Se concede permiso para copiar, distribuir o modificar este documento según las condiciones de la GNU Free Documentation License (GFDL), Versión 1.1 o cualquier versión posterior publicada por la Free Software Foundation sin Secciones invariantes, Textos de portada y Textos de contraportada. Encontrará una copia de la GFDL en este <ulink type="help" url="ghelp:fdl">enlace</ulink> o en el archivo COPYING-DOCS distribuido con este manual.</para>
+          <para>Este manual forma parte de una colección de documentos de GNOME distribuidos según la GFDL. Si desea distribuir este manual de forma independiente de la colección, puede hacerlo agregando una copia de la licencia al documento, según se describe en la sección 6 de la misma.</para>
+ 
+         <para>Muchos de los nombres utilizados por las empresas para distinguir sus productos y servicios se consideran marcas comerciales. Cuando estos nombres aparezcan en la documentación de GNOME, y siempre que se haya informado a los miembros del Proyecto de documentación de GNOME de dichas marcas comerciales, los nombres aparecerán en mayúsculas o con las iniciales en mayúsculas.</para>
+ 
+         <para>ESTE DOCUMENTO Y LAS VERSIONES MODIFICADAS DEL MISMO SE OFRECEN SEGÚN LAS CONDICIONES ESTABLECIDAS EN LA LICENCIA DE DOCUMENTACIÓN LIBRE DE GNU (GFDL) Y TENIENDO EN CUENTA QUE: <orderedlist>
+                 <listitem>
+                   <para>EL DOCUMENTO SE ENTREGA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, NI EXPLÍCITA NI IMPLÍCITA INCLUYENDO, SIN LIMITACIÓN, GARANTÍA DE QUE EL DOCUMENTO O VERSIÓN MODIFICADA DE ÉSTE CAREZCA DE DEFECTOS EN EL MOMENTO DE SU VENTA, SEA ADECUADO A UN FIN CONCRETO O INCLUMPLA ALGUNA NORMATIVA. TODO EL RIESGO RELATIVO A LA CALIDAD, PRECISIÓN Y UTILIDAD DEL DOCUMENTO O SU VERSIÓN MODIFICADA RECAE EN USTED. SI CUALQUIER DOCUMENTO O VERSIÓN MODIFICADA DE AQUÉL RESULTARA DEFECTUOSO EN CUALQUIER ASPECTO, USTED (Y NO EL REDACTOR INICIAL, AUTOR O AUTOR DE APORTACIONES) ASUMIRÁ LOS COSTES DE TODA REPARACIÓN, MANTENIMIENTO O CORRECCIÓN NECESARIOS. ESTA EXENCIÓN DE RESPONSABILIDAD SOBRE LA GARANTÍA ES UNA PARTE ESENCIAL DE ESTA LICENCIA. NO SE AUTORIZA EL USO DE NINGÚN DOCUMENTO NI VERSIÓN MODIFICADA DE ÉSTE POR EL PRESENTE, SALVO DENTRO DEL CUMPLIMIENTO DE LA EXENCIÓN DE RESPONSABILIDAD;Y</para>
+                 </listitem>
+                 <listitem>
+                   <para>EN NINGUNA CIRCUNSTANCIA NI BAJO NINGUNA TEORÍA LEGAL, SEA POR ERROR (INCLUYENDO NEGLIGENCIA) CONTRATO O DOCUMENTO DE OTRO TIPO, EL AUTOR, EL ESCRITOR INICIAL, EL AUTOR DE APORTACIONES NI NINGÚN DISTRIBUIDOR DEL DOCUMENTO O VERSIÓN MODIFICADA DEL DOCUMENTO, NI NINGÚN PROVEEDOR DE NINGUNA DE ESAS PARTES, SERÁ RESPONSABLE ANTE NINGUNA PERSONA POR NINGÚN DAÑO DIRECTO, INDIRECTO, ESPECIAL, INCIDENTAL O DERIVADO DE NINGÚN TIPO, INCLUYENDO, SIN LIMITACIÓN DAÑOS POR PÉRDIDA DE FONDO DE COMERCIO, PARO TÉCNICO, FALLO INFORMÁTICO O AVERÍA O CUALQUIER OTRO POSIBLE DAÑO O AVERÍA DERIVADO O RELACIONADO CON EL USO DEL DOCUMENTO O SUS VERSIONES MODIFICADAS, AUNQUE DICHA PARTE HAYA SIDO INFORMADA DE LA POSIBILIDAD DE QUE SE PRODUJESEN ESOS DAÑOS.</para>
+                 </listitem>
+           </orderedlist></para>
+   </legalnotice>
+ 
+<!-- This file  contains link to license for the documentation (GNU FDL), and 
+     other legal stuff such as "NO WARRANTY" statement. Please do not change 
+     any of this. -->
+
+	 <authorgroup> 
+		<author> 
+		  <firstname>Sun</firstname> 
+		  <surname>Equipo de documentación de GNOME</surname> 
+		  <affiliation> 
+			 <orgname>Sun Microsystems</orgname> 
+			 <!-- <address> <email>gdocteam@sun.com</email> </address> -->
+		  </affiliation> 
+		</author> 
+		<author> 
+		  <firstname>John</firstname> 
+		  <surname>Fleck</surname> 
+		  <affiliation> 
+			 <orgname>Proyecto de Documentación de GNOME</orgname> 
+			 <address> <email>jfleck@inkstain.net</email> </address> 
+		  </affiliation> 
+		</author> 
+      <!-- This is appropriate place for other contributors: translators,
+           maintainers,  etc. Commented out by default.
+           <othercredit role="translator">
+	     <firstname>Latin</firstname> 
+	     <surname>Translator 1</surname> 
+	     <affiliation> 
+	       <orgname>Latin Translation Team</orgname> 
+	       <address> <email>translator@gnome.org</email> </address> 
+	     </affiliation>
+	     <contrib>Latin translation</contrib>
+           </othercredit>
+-->
+	 </authorgroup>
+	 <revhistory>
+		<revision> 
+		  <revnumber>Manual de la miniaplicación Lista de ventanas V2.3</revnumber> 
+		  <date>Agosto de 2004</date> 
+		  <revdescription> 
+			 <para role="author">Equipo de documentación del escritorio de Sun Java Desktop System</para> 
+			 <para role="publisher">Proyecto de Documentación de GNOME</para> 
+		  </revdescription> 
+		</revision>
+		<revision> 
+		  <revnumber>Manual de la miniaplicación Lista de ventanas V2.3</revnumber> 
+		  <date>Febrero de 2004</date> 
+		  <revdescription> 
+			 <para role="author">Equipo de documentación de GNOME de Sun</para> 
+			 <para role="publisher">Proyecto de Documentación de GNOME</para> 
+		  </revdescription> 
+		</revision>
+		<revision> 
+		  <revnumber>Manual de la miniaplicación Lista de ventanas V2.3</revnumber> 
+		  <date>Septiembre de 2003</date> 
+		  <revdescription> 
+			 <para role="author">Equipo de documentación de GNOME de Sun</para> 
+			 <para role="publisher">Proyecto de Documentación de GNOME</para> 
+		  </revdescription> 
+		</revision>
+		<revision> 
+		  <revnumber>Manual de la miniaplicación Lista de ventanas V2.3</revnumber> 
+		  <date>Agosto de 2004</date> 
+		  <revdescription> 
+			 <para role="author">Equipo de documentación de GNOME de Sun</para> 
+			 <para role="publisher">Proyecto de Documentación de GNOME</para> 
+		  </revdescription> 
+		</revision>
+		<revision> 
+		  <revnumber>Manual de la miniaplicación Lista de ventanas V2.3</revnumber> 
+		  <date>Febrero de 2003</date> 
+		  <revdescription> 
+			 <para role="author">Equipo de documentación de GNOME de Sun</para> 
+			 <para role="publisher">Proyecto de Documentación de GNOME</para> 
+		  </revdescription> 
+		</revision>
+		<revision> 
+		  <revnumber>Manual de la miniaplicación Lista de ventanas V2.3</revnumber> 
+		  <date>Enero 2003</date> 
+		  <revdescription> 
+			 <para role="author">Equipo de documentación de GNOME de Sun</para> 
+			 <para role="publisher">Proyecto de Documentación de GNOME</para> 
+		  </revdescription> 
+		</revision>
+		<revision> 
+		  <revnumber>Manual de la miniaplicación Lista de ventanas V2.2</revnumber> 
+		  <date>Agosto de 2002</date> 
+		  <revdescription> 
+			 <para role="author">Equipo de documentación de GNOME de Sun</para> 
+			 <para role="publisher">Proyecto de Documentación de GNOME</para> 
+		  </revdescription> 
+		</revision>
+		<revision> 
+		  <revnumber>Manual de la miniaplicación Lista de ventanas V2.1</revnumber> 
+		  <date>Julio de 2002</date> 
+		  <revdescription> 
+			 <para role="author">Equipo de documentación de GNOME de Sun</para> 
+			 <para role="publisher">Proyecto de Documentación de GNOME</para> 
+		  </revdescription> 
+		</revision>
+		<revision> 
+		  <revnumber>Manual de la miniaplicación Lista de ventanas V2.0</revnumber> 
+		  <date>Marzo de 2002</date> 
+		  <revdescription> 
+			 <para role="author">Equipo de documentación de GNOME de Sun</para> 
+			 <para role="publisher">Proyecto de Documentación de GNOME</para> 
+		  </revdescription> 
+		</revision> 
+		<revision> 
+		  <revnumber>Manual de la miniaplicación Lista de tareas</revnumber> 
+		  <date>2001</date> 
+		  <revdescription> 
+			 <para role="author">John Fleck <email>jfleck@inkstain.net</email></para> 
+			 <para role="publisher">Proyecto de Documentación de GNOME</para> 
+		  </revdescription> 
+		</revision> 
+	 </revhistory> 
+	 <releaseinfo>Este manual describe la versión 2.7.92 de la Lista de ventanas.</releaseinfo> 
+	 <legalnotice> 
+		<title>Comentarios</title> 
+		<para>Para informar sobre un fallo o hacer sugerencias sobre la miniaplicación Lista de ventanas o sobre este manual, siga las indicaciones en la <ulink url="ghelp:gnome-feedback" type="help">Página de sugerencias de GNOME</ulink>.</para>
+		
+	 </legalnotice> 
+	 <abstract role="description">
+		<para>La Lista de ventanas le permite gestionar las ventanas que están abiertas en el Escritorio GNOME. Cada ventana está representada por un botón en el panel en el que se encuentra esta miniaplicación situada.</para>
+	 </abstract>
+  </articleinfo> 
+  <indexterm> 
+	 <primary>Lista de ventanas</primary> 
+  </indexterm> 
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+  <sect1 id="windowlist-introduction"> 
+	 <title>Introducción</title> 
+	<!-- ==== Figure ============================================= -->
+	 <figure id="windowlist-applet-fig"> 
+		<title>Miniaplicación Lista de ventanas</title> 
+		<screenshot> 
+		  <mediaobject> 
+			 <imageobject><imagedata fileref="figures/window_list_applet.png" format="PNG"/> 
+			 </imageobject>
+			 <textobject> 
+				<phrase>Muestra la miniaplicación Lista de ventanas.</phrase> 
+			 </textobject> 
+		  </mediaobject> 
+		</screenshot> 
+	 </figure> 
+    	<!-- ==== End of Figure ======================================= -->
+	 <para>La miniaplicación <application>Lista de ventanas</application> permite administrar las ventanas que están abiertas en el escritorio de GNOME. La miniaplicación <application>Lista de ventanas</application>  usa un botón para representar cada ventana o grupo de ventanas que están abiertas. El estado de los botones de la miniaplicación varía según el de la ventana a la que representa el botón. La tabla siguiente explica los distintos estados que pueden mostrar los botones de la miniaplicación <application>Lista de ventanas</application>.</para>
+	<informaltable>
+	<tgroup cols="2">
+	<colspec colname="col1"/>
+	<colspec colname="col2"/>
+	<thead>
+	<row valign="top">
+	<entry colname="col1"><para>Estado</para></entry>
+	<entry colname="col2"><para>Indica...</para></entry>
+	</row>
+	</thead>
+	<tbody>
+	<row valign="top">
+	<entry colname="col1"><para>El botón está pulsado.</para></entry>
+	<entry colname="col2"><para>La ventana tiene el foco.</para></entry>
+	</row>
+	<row valign="top">
+	<entry colname="col1"><para>El título de la ventana entre corchetes y el contenido del botón está atenuado.</para></entry>
+	<entry colname="col2"><para>La ventana está minimizada.</para></entry>
+	</row> 
+	<row valign="top">
+	<entry colname="col1"><para>El botón está sin pulsar y no hay corchetes en el título.</para></entry>
+	<entry colname="col2"><para>La ventana se muestra en el escritorio y no está minimizada.</para></entry>
+	</row>
+	<row valign="top">
+	<entry colname="col1"><para>Hay una forma triangular con puntos en la parte superior derecha del botón y un número entre paréntesis.</para></entry>
+	<entry colname="col2"><para>El botón representa un grupo de botones.</para></entry>
+	</row>
+	</tbody>
+	</tgroup>
+	</informaltable>
+                                                                               
+    <sect2 id="windowlist-introduction-add">
+      <title>Para añadir la Lista de ventanas al panel</title>
+	 <para>Realice los siguientes pasos:</para>
+         <orderedlist>
+           <listitem>
+             <para>Pulse el botón derecho del ratón sobre el panel.</para>
+           </listitem>
+           <listitem>
+             <para>Escoja <guimenuitem>Añadir al panel</guimenuitem>.</para>
+           </listitem>
+           <listitem>
+             <para>Desplácese hacia abajo en la lista de objetos del diálogo <guilabel>Añadir al panel superior</guilabel> y  escoja <guilabel>Lista de ventanas</guilabel>.</para>
+           </listitem>
+           <listitem>
+             <para>Pulse en <guibutton>Añadir</guibutton>.</para>
+           </listitem>
+         </orderedlist>
+         <para>El número de filas que la <application>Lista de ventanas</application> usa para mostrar los botones depende del tamaño del panel en el que la miniaplicación reside.</para> 
+    </sect2>
+	
+	<sect2 id="window-groups">
+	<title>El botón representa un grupo de botones.</title>
+	<para>Si el espacio de un panel es limitado, la <application>Lista de ventanas</application> puede agrupar los botones que representan ventanas de la misma clase bajo el mismo botón de la miniaplicación <application>Lista de ventanas</application>. Para abrir una lista de los botones de un grupo, pulse en el botón de la miniaplicación <application>Lista de ventanas</application> que representa el grupo de botones. El botón de <guibutton>Terminal</guibutton> de la <xref linkend="windowlist-applet-fig"/>  es un ejemplo de botón que representa un grupo de botones.	La figura siguiente muestra un ejemplo de la miniaplicación <application>Lista de ventanas</application> con un grupo de botones abierto.</para> 
+	<!-- ==== Figure ============================================= -->
+	 <figure id="windowgroup-open-fig"> 
+		<title>Miniaplicación Lista de ventanas con un grupo de botones abierto</title> 
+		<screenshot> 
+		  <mediaobject> 
+			 <imageobject><imagedata fileref="figures/window_list_group_applet.png" format="PNG"/> 
+			 </imageobject>
+			 <textobject> 
+				<phrase>Muestra la miniaplicación Lista de ventanas. Con un botón de apertura de grupo.</phrase> 
+			 </textobject> 
+		  </mediaobject> 
+		</screenshot> 
+	 </figure> 
+ 
+	</sect2>
+  </sect1>
+<!-- ================ Usage ================================ -->
+  <sect1 id="windowlist-usage"> 
+	 <title>Uso</title> 
+	 <para>Puede usar la <application>Lista de ventanas</application> para hacer las siguientes tareas:</para>
+	<itemizedlist>
+	<listitem>
+	<para>Para dar el foco a una ventana</para>
+	<para>Si pulsa en el botón de la miniaplicación <application>Lista de ventanas</application> que representa una ventana que se muestra en el escritorio pero que no tiene el foco, la miniaplicación da el foco a esa ventana.</para>
+	</listitem>
+	<listitem>
+	<para>Para minimizar una ventana nueva</para>
+	<para>Su pulsa en el botón de la <application>Lista de ventanas</application> que representa la ventana que tiene el foco, la miniaplicación minimiza la ventana.</para>
+	</listitem>
+	<listitem>
+	<para>Para restaurar una ventana minimizada</para>
+	<para>Si pulsa en el botón de la <application>Lista de ventanas</application> que representa una ventana minimizada,la miniaplicación restaura la ventana.</para>
+	</listitem>
+	</itemizedlist>
+  </sect1>
+<!-- ============= Preferences ============================= -->
+  <sect1 id="windowlist-prefs"> 
+	 <title>Preferencias</title> 
+	 <para>Para configurar la miniaplicación <application>Lista de ventanas</application>, pulse con el botón derecho del ratón sobre la miniaplicación y escoja <guimenuitem>Preferencias</guimenuitem>. Se mostrará la ventana de diálogo de <guilabel>Preferencias de la lista de ventanas</guilabel> conteniendo las siguientes secciones.</para>
+         <itemizedlist>
+           <listitem>
+             <para><xref linkend="windowlist-prefs-behavior"/></para>
+           </listitem>
+           <listitem>
+             <para><xref linkend="windowlist-prefs-size"/></para>
+           </listitem>
+         </itemizedlist>
+
+  <sect2 id="windowlist-prefs-behavior"> 
+	 <title>Comportamiento</title> 
+	 <variablelist>
+	 <varlistentry><term><guilabel>Contenido de la Lista de ventanas</guilabel> </term>
+	 <listitem>
+	 <para>Para especificar qué ventanas mostrar en la miniaplicación <application>Lista de ventanas</application>, seleccione una de las opciones siguientes: </para>
+	 	<itemizedlist>
+	 	<listitem>
+	 	<para><guilabel>Mostrar las ventanas del área de trabajo actual</guilabel></para>
+	 	<para>Seleccione esta opción para mostrar las ventanas que están abiertas en el área de trabajo actual.</para>
+	 	</listitem>
+	 	<listitem><para><guilabel>Mostrar ventanas de todas las áreas de trabajo</guilabel></para>
+	 	<para>Seleccione esta opción para mostrar las ventanas que están abiertas en todas las áreas de trabajo.</para>
+	 	</listitem>
+	 	</itemizedlist>
+	 </listitem>
+	 </varlistentry>
+	 <varlistentry><term><guilabel>Agrupación de ventanas</guilabel> </term>
+	 <listitem>
+	 <para>Para especificar cuándo la miniaplicación <application>Lista de ventanas</application> debe agrupar ventanas que pertenezcan al mismo proceso, seleccione una de las opciones siguientes:</para>
+		<itemizedlist>
+	 	<listitem>
+	 	<para><guilabel>Nunca agrupar ventanas</guilabel></para>
+	 	<para>Seleccione esta opción para no agrupar nunca las ventanas del mismo proceso bajo un botón de la <application>Lista de ventanas</application>.</para>
+		</listitem>
+	 	<listitem>
+	 	<para><guilabel>Agrupar ventanas cuando el espacio esté limitado</guilabel></para>
+	 	<para>Seleccione esta opción para agrupar ventanas del mismo proceso bajo un botón de la miniaplicación <application>Lista de ventanas</application> cuando el espacio del panel está limitado.</para>
+		</listitem>
+	 	<listitem>
+	 	<para><guilabel>Agrupar ventanas siempre</guilabel></para>
+	 	<para>Seleccione esta opción para agrupar siempre las ventanas del mismo proceso bajo un botón de la <application>Lista de ventanas</application>.</para>
+		</listitem>
+		</itemizedlist>
+	 </listitem>
+	 </varlistentry>
+	 <varlistentry><term><guilabel>Restaurar ventanas minimizadas</guilabel> </term>
+	 <listitem>
+	 <para>Para especificar cómo se comporta la <application>Lista de ventanas</application> cuando restaura ventanas, seleccione una de las opciones siguientes:</para>
+	 	<itemizedlist>
+	 	<listitem>
+	 	<para><guilabel>Restaurar al área de trabajo actual</guilabel></para>
+	 	<para>Seleccione esta opción para restaurar una ventanade la miniaplicación al área de trabajo actual,incluso si la ventana no residía en el área de trabajo actual.</para>
+	 	</listitem>
+	 	<listitem><para><guilabel>Restaurar al área de trabajo nativa</guilabel></para>
+	 	<para>Seleccione esta opción para cambiar al área de trabajo nativa en la que reside una ventana cuando restaura la ventana desde la miniaplicación.</para>
+	 	</listitem>
+	 	</itemizedlist>
+	 </listitem>
+	 </varlistentry>
+	 </variablelist>
+  </sect2>
+
+  <sect2 id="windowlist-prefs-size"> 
+	 <title>Tamaño</title> 
+	 <variablelist>
+	 <varlistentry><term><guilabel>Tamaño de la Lista de ventanas</guilabel> </term>
+	 <listitem>
+	 <para>El tamaño de la miniaplicación <application>Lista de ventanas</application> varía según el del panel en el que se encuentra. Use los marcadores de incremento siguientes para establecer los límites en el tamaño de la miniaplicación:</para>
+		<itemizedlist>
+	 	<listitem>
+	 	<para><guilabel>Tamaño mínimo .. píxeles</guilabel></para>
+	 	<para>Use la caja incrementable para especificar el tamaño mínimo de la miniaplicación. Si el panel es más pequeño que el tamaño mínimo especificado, el panel ajusta su tamaño para que quepa la miniaplicación.</para>
+		</listitem>
+	 	<listitem>
+	 	<para><guilabel>Tamaño máximo .. píxeles</guilabel></para>
+	 	<para>Use esta caja rotatoria para especificar el tamaño máximo de la miniaplicación.</para>
+		</listitem>
+		</itemizedlist>
+	 </listitem>
+	 </varlistentry>
+	 </variablelist>
+  </sect2>
+  </sect1>
+
+</article>

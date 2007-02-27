@@ -1,0 +1,60 @@
+diff -Nur gnome-panel-2.16.0/gnome-panel/panel-menu-items.c gnome-panel-2.16.0.new/gnome-panel/panel-menu-items.c
+--- gnome-panel-2.16.0/gnome-panel/panel-menu-items.c	2006-09-13 15:43:14.000000000 +0200
++++ gnome-panel-2.16.0.new/gnome-panel/panel-menu-items.c	2006-09-13 15:49:57.000000000 +0200
+@@ -709,6 +709,7 @@
+ {
+ 	gboolean  add_separator;
+ 	GList    *children;
++	GtkWidget *add_menu, *item;
+ 
+ 	if (!g_object_get_data (G_OBJECT (menu), "panel-menu-needs-appending"))
+ 		return;
+@@ -733,7 +734,47 @@
+ 	if (add_separator)
+ 		add_menu_separator (menu);
+ 
+-	panel_menu_items_append_from_desktop (menu, "yelp.desktop", NULL);
++	item = gtk_image_menu_item_new ();
++	setup_menu_item_with_icon (item, panel_menu_icon_get_size (),
++				   "stock_help-agent", NULL,
++				   _("Help"), TRUE);
++	  
++	gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
++	gtk_widget_show (item);
++	
++	add_menu = create_empty_menu ();
++	gtk_menu_item_set_submenu (GTK_MENU_ITEM (item), add_menu);
++	
++	panel_menu_items_append_from_desktop (add_menu, "yelp.desktop", _("System Documentation"));
++	
++	panel_menu_items_append_place_item ("gnome-globe",
++					    _("Online Documentation"),
++					    _("Find more documentation online"),
++					    add_menu,
++					    G_CALLBACK (activate_uri),
++					    "http://help.ubuntu.com");
++	
++	panel_menu_items_append_place_item ("stock_new-meeting",
++					    _("Community Support"),
++					    _("Get help from other Ubuntu users"),
++					    add_menu,
++					    G_CALLBACK (activate_uri),
++					    "http://www.ubuntu.com/support/supportoptions/freesupport");
++
++	panel_menu_items_append_place_item ("stock_send-fax",
++					    _("Commercial Support"),
++					    _("Find a commercial support provider"),
++					    add_menu,
++					    G_CALLBACK (activate_uri),
++					    "http://www.ubuntu.com/support/marketplace");
++
++	panel_menu_items_append_place_item ("stock_book_open",
++					    _("Ubuntu Book Excerpt"),
++					    _("Read selected book chapters"),
++					    add_menu,
++					    G_CALLBACK (activate_uri),
++					    "http://help.ubuntu.com/6.10/book/book-toc.html");
++
+ 	panel_menu_items_append_from_desktop (menu, "gnome-about.desktop", NULL);
+ 
+ 	if (g_file_test (DATADIR"/omf/about-ubuntu/about-ubuntu-C.omf",

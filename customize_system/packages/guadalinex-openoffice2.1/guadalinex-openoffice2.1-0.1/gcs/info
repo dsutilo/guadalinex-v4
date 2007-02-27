@@ -14,7 +14,7 @@ priority: optional
 section: editors
 
 # Descripción corta
-shortdesc: "Guadalinex Openoffice 2.1 version"
+shortdesc: "Guadalinex Openoffice 2.1 version metapackage"
 
 # Descipción larga, las lineas han de estar separadas por "\n "
 longdesc: "Guadalinex Metapackage to install OpenOffice 2.1"

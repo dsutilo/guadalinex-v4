@@ -1,0 +1,21 @@
+--- gnome-panel-2.13.90/gnome-panel/panel-menu-items.c.use-beagle	2006-02-13 13:26:43.000000000 -0500
++++ gnome-panel-2.13.90/gnome-panel/panel-menu-items.c	2006-02-13 13:28:08.000000000 -0500
+@@ -634,9 +634,15 @@
+ 
+ 	add_menu_separator (places_menu);
+ 
+-	panel_menu_items_append_from_desktop (places_menu,
+-					      "gnome-search-tool.desktop",
+-					      NULL);
++        if (panel_is_program_in_path ("beagle-search")) {
++              panel_menu_items_append_from_desktop (places_menu,
++                                                    "beagle-search.desktop",
++                                                    NULL);
++        } else {
++              panel_menu_items_append_from_desktop (places_menu,
++                                                    "gnome-search-tool.desktop",
++                                                    NULL);
++        }
+ 
+ 	*recent_view = panel_recent_append_documents_menu (places_menu,
+ 							   *recent_view);
