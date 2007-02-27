@@ -1,0 +1,9 @@
+Package: guadalinex-about
+Version: 0.1
+Section: base
+Priority: optional
+Architecture: i386
+Installed-Size: 128
+Maintainer: Junta de Andalucía <packmaster@juntadeandalucia.es>
+Description: About Guadalinex
+ Some information about Guadalinex distribution
