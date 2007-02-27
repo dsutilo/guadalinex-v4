@@ -1,3 +1,9 @@
+hermeshardware (0.3.10) unstable; urgency=low
+
+  * Modifying TDT URL
+
+ --  <rmartin@emergya.es>  Tue, 27 Feb 2007 00:50:19 +0100
+
 hermeshardware (0.3.9) unstable; urgency=low
 
   * TDT without firmware support.
