@@ -1,9 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Name=Ayuda
-Name[es]=Ayuda
-Comment=Te lleva a la página de ayuda de Guadalinex
-Exec="firefox file:///usr/share/doc/guadalinex-user-manual/manual.html"
-Terminal=false
-Type=Application
-Icon=ayuda
