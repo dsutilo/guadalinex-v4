@@ -50,7 +50,9 @@ import os.path
 from utils.pkginstaller import PkgInstaller
 from deviceactor import PkgDeviceActor
 from gettext import gettext as _
+from hermes_hardware import setup_gettext
 
+setup_gettext('hermes-hardware', '/usr/share')
 
 class Actor(PkgDeviceActor):
 

@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 #Módulo volumeactor- Módulo que implementa el "actor hardware" para los
 #dispositivos de volumen (dispositivos que se montan como unidades de disco) 
