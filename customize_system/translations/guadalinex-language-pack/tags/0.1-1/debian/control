@@ -1,5 +1,5 @@
 Source: guadalinex-language-pack
-Section: unknown
+Section: translations
 Priority: optional
 Maintainer: Roberto Majadas <roberto.majadas@openshine.com>
 Build-Depends: debhelper (>= 5), gettext
