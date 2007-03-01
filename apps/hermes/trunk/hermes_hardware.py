@@ -50,24 +50,6 @@
 # along with Foobar; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-import dbus
-if getattr(dbus, "version", (0, 0, 0)) >= (0, 41, 0):
-    import dbus.glib
-import logging
-import gtk
-import gtk.gdk
-import os
-import os.path
-import sys
-import traceback
-import types
-
-from gettext import gettext as _
-from utils.hermestrayicon import HermesTrayIcon
-
-# Internacionalización
-import gettext, locale
-
 def setup_gettext(domain, data_dir):
     directory = os.path.abspath(os.path.join(data_dir, "locale"))
     gettext.bindtextdomain(domain, directory)
@@ -80,10 +62,30 @@ def setup_gettext(domain, data_dir):
         locale.bind_textdomain_codeset(domain, 'UTF-8')
     locale.textdomain(domain)
 
+import dbus
+if getattr(dbus, "version", (0, 0, 0)) >= (0, 41, 0):
+    import dbus.glib
+import logging
+import gtk
+import gtk.gdk
+import os
+import os.path
+import sys
+import traceback
+import types
 
+
+# Internacionalización
+import gettext, locale
+from gettext import gettext as _
+import defs
+setup_gettext('hermes-hardware', defs.DATA_DIR)
+
+from utils.hermestrayicon import HermesTrayIcon
 from utils import DeviceList, ColdPlugListener, CaptureLogGui
 from optparse import OptionParser
 from utils.notification import NotificationDaemon, FileNotification
+import actors
 
 
 # notification-daemon spec: -------------------------------------------
