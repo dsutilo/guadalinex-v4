@@ -1,0 +1,222 @@
+<!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML XMLNSXML:LANGDIRLANG>
+  <HEAD>
+    <META / HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    <META NAME="KEYWORDS" / CONTENT="Guia v4/Rutinas del sysadmin amateur,Guia v4/Quiero más">
+<META NAME="robots" / CONTENT="index,follow">
+<LINK / REL="shortcut icon" HREF="http://www.guadalinex.org/favicon.ico">
+<LINK TITLE="Creative Commons" / REL="meta" TYPE="application/rdf+xml" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php?title=Guia_v4/Rutinas_del_sysadmin_amateur&amp;action=creativecommons">
+<LINK / REL="copyright" HREF="http://creativecommons.org/licenses/by-sa/2.1/es/">
+
+    <TITLE>Guia v4/Rutinas del sysadmin amateur - Guadapedia</TITLE>
+    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="screen,projection" HREF="../stylesheets/main.css">
+    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="print" HREF="http://www.guadalinex.org/guadapedia-estatica/stylesheets/commonPrint.css">
+    <!-- [if IE]><STYLE TYPE="text/css" MEDIA="all">@import "/guadapedia-estatica/stylesheets/monobook/IEFixes.css";</STYLE>
+    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/IEFixes.js" TYPE="text/javascript"></SCRIPT>
+    <META / HTTP-EQUIV="imagetoolbar" CONTENT="no"><![ENDIF]-->
+    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/index.php?title=-&amp;action=raw&amp;gen=js" TYPE="text/javascript"></SCRIPT>
+    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/wikibits.js" TYPE="text/javascript"></SCRIPT>
+    <STYLE TYPE="text/css">/*<![CDATA[*/ @import "/guadapedia-estatica/index.php?title=-&action=raw&gen=css";
+ /*]]>*/</STYLE>
+    
+  </HEAD>
+  <BODY CLASS="ns-0">
+    <DIV ID="globalWrapper">
+      <DIV ID="column-content">
+	<DIV ID="content">
+	    
+	  <A ID="contentTop" NAME="top"></A>
+	  <H1 CLASS="firstHeading">Guia v4/Rutinas del sysadmin amateur</H1>
+	  <DIV ID="bodyContent">
+	    <H3 ID="siteSub">De Guadapedia, la enciclopedia libre.</H3>
+	    <DIV ID="contentSub"></DIV>
+	    
+
+	    
+	    <!--  start content -->
+	    <TABLE ID="toc" BORDER="0"><TR ID="toctitle"><TD ALIGN="center">
+<B>Tabla de contenidos</B> <SCRIPT TYPE="text/javascript">showTocToggle("mostrar","esconder")</SCRIPT></TD></TR><TR ID="tocinside"><TD>
+<DIV CLASS="tocline"><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Rutinas_del_sysadmin_amateur#Rutinas_del_sysadmin_amateur" HREF="Rutinas_del_sysadmin_amateur#Rutinas_del_sysadmin_amateur">1 Rutinas del sysadmin amateur</A><BR /></DIV>
+<DIV CLASS="tocindent">
+<P><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Rutinas_del_sysadmin_amateur#Mantener_seguro_nuestro_servidor" HREF="Rutinas_del_sysadmin_amateur#Mantener_seguro_nuestro_servidor">1.1 Mantener seguro nuestro servidor</A><BR />
+</P>
+<DIV CLASS="tocindent">
+<P><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Rutinas_del_sysadmin_amateur#Paquetes_que_cuidan_del_servidor" HREF="Rutinas_del_sysadmin_amateur#Paquetes_que_cuidan_del_servidor">1.1.1 Paquetes que cuidan del servidor</A><BR />
+</P>
+</DIV>
+<P><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Rutinas_del_sysadmin_amateur#Estad.C3.ADsticas_de_acceso_con_Webalizer" HREF="Rutinas_del_sysadmin_amateur#Estad.C3.ADsticas_de_acceso_con_Webalizer">1.2 Estadísticas de acceso con Webalizer</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Rutinas_del_sysadmin_amateur#Administraci.C3.B3n_web_de_bases_de_datos" HREF="Rutinas_del_sysadmin_amateur#Administraci.C3.B3n_web_de_bases_de_datos">1.3 Administración web de bases de datos</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Rutinas_del_sysadmin_amateur#Monitorizar_el_tr.C3.A1fico" HREF="Rutinas_del_sysadmin_amateur#Monitorizar_el_tr.C3.A1fico">1.4 Monitorizar el tráfico</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Rutinas_del_sysadmin_amateur#Monitorizar_el_estado_del_servidor" HREF="Rutinas_del_sysadmin_amateur#Monitorizar_el_estado_del_servidor">1.5 Monitorizar el estado del servidor</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Rutinas_del_sysadmin_amateur#Administraci.C3.B3n_v.C3.ADa_web" HREF="Rutinas_del_sysadmin_amateur#Administraci.C3.B3n_v.C3.ADa_web">1.6 Administración vía web</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Rutinas_del_sysadmin_amateur#Gestionando_backups" HREF="Rutinas_del_sysadmin_amateur#Gestionando_backups">1.7 Gestionando backups</A><BR />
+</P>
+</DIV>
+</TD></TR></TABLE>
+<A NAME="Rutinas_del_sysadmin_amateur"></A><H1> Rutinas del sysadmin amateur </H1>
+<P>Una vez que tengamos nuestro servidor en funcionamiento nos daremos cuenta de que esta historia no ha hecho más que empezar. Si hemos disfrutado llegando hasta donde hemos llegado y obteniendo los resultados que hemos obtenido, más disfrutaremos con lo que viene a continuación. Posiblemente.
+</P><P><BR />
+</P>
+<A NAME="Mantener_seguro_nuestro_servidor"></A><H2> Mantener seguro nuestro servidor </H2>
+<P>Tener un servidor totalmente seguro requiere un elevado nivel de conocimientos y bastante trabajo, por lo que nos vamos a centrar en cómo tener un servidor medianamente seguro. 
+</P><P>Al igual que ocurre con nuestra casa, debemos seguir una pautas para mantener un servidor medianamente seguro. Aunque técnicamente es difícil mantener una casa totalmente protegida frente a robos, tampoco vivimos agobiados constantemente por este hecho y seguimos siempre una serie de recomendaciones básicas para prevenir la entrada de intrusos (como no dejar la puerta abierta o las llaves de la puerta puestas).
+</P><P>Con el servidor sucede prácticamente lo mismo:
+</P>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Un paso del Asistente Gnome-lokkit para configuración sencilla de nuestro cortafuegos" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Asistente-gnome-lokkit.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/images/thumb/2/28/180px-180px-Asistente-gnome-lokkit.png" SRC="images/thumb/2/28/180px-180px-Asistente-gnome-lokkit.png" HEIGHT="135" / WIDTH="180" ALT="Un paso del Asistente Gnome-lokkit para configuración sencilla de nuestro cortafuegos"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Asistente-gnome-lokkit.png"><IMG SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Un paso del Asistente Gnome-lokkit para configuración sencilla de nuestro cortafuegos</DIV></DIV></DIV>
+<UL><LI> Mantener el sistema continuamente actualizado. Si todo lo que instalamos es a través de paquetes de los repositorios estándares, tendremos un sistema bastante seguro frente a vulnerabilidades. Hay que tener mucho cuidado con las aplicaciones que se instalan a mano, no a través de los repositorios, porque es fácil que queden desactualizadas y que expongamos nuestro servidor a ataques. Una forma sencilla de estar al tanto de los paquetes que se necesitan actualizar en nuestro sistema es tener instalado el paquete <STRONG>apticron</STRONG> que nos avisará por correo sobre las actualizaciones pendientes en nuestro servidor.
+</LI><LI> Cuantos menos programas tengamos instalados y cuantos menos servicios disponibles desde Internet, menos posibilidad de ser atacados. Si no vamos a usar el escritorio gráfico, mejor desinstalarlo (<STRONG>sudo apt-get remove gnome-* xserver-* xorg-*</STRONG>, se dice rápido pero mejor ir con cuidado con esta operación). Los servidores habitualmente no instalan escritorio por motivos de seguridad.
+</LI><LI> Mantener un cortafuegos o <EM>firewall</EM> instalado y configurado en el servidor, sólo permitirá el tráfico autorizado de los servicios que tenemos. La aplicación <STRONG>gnome-lookit'<EM> configura nuestro cortafuegos de una forma sencilla mendiante un asistente. Para una configuración más elaborada, existen otras aplicaciones gráficas como </EM></STRONG><EM>fwbuilder<STRONG> o </STRONG>firestarter</EM>.
+</LI><LI> Hacer copias de seguridad regularmente de la información que creamos valiosa. Si podemos dejar los <EM>backups</EM> en otra localización diferente, siempre será mejor.
+</LI><LI> Usar contraseñas seguras para todos los usuarios de la máquina. Una contraseña sencilla puede equivaler a dejar las llaves puestas en la puerta de nuestra casa.
+</LI><LI> Si queremos estar al tanto de posibles problemas, es recomendable suscribirse a listas de anuncios de seguridad o listas que informen sobre la seguridad del software de los servicios que usamos.
+</LI></UL>
+<P>Además tenemos que tener en cuenta que si detrás de nuestro servidor tenemos otras máquinas locales, podemos también comprometerlas a ellas si el servidor no es seguro.
+</P><P>Muchos de los ataques que se reciben desde Internet suelen basarse en un rastreo de los servicios que un servidor tiene habilitados, y una posterior búsqueda de debilidades de los servicios disponibles. Ningún software es totalmente seguro frente a ataques y continuamente se actualizan frente a debilidades que se van encontrando. La conclusión a esto es que una puesta al día del sistema siempre es una buena medida contra ataques.
+</P><P>El documento Debian Security Howto <A CLASS="external" TITLE="http://www.debian.org/doc/manuals/securing-debian-howto/index.en.html" HREF="http://www.debian.org/doc/manuals/securing-debian-howto/index.en.html">[1]</A><SPAN CLASS="urlexpansion"> (<I>http://www.debian.org/doc/manuals/securing-debian-howto/index.en.html</I>)</SPAN> es una buena referencia para profundizar conocimientos y mejorar y endurecer la seguridad de nuestro servidor.
+</P><P><BR />
+</P>
+<A NAME="Paquetes_que_cuidan_del_servidor"></A><H3> Paquetes que cuidan del servidor </H3>
+<P>A continuación enunciamos paquetes disponibles en nuestra distribución que pueden ayudarnos en las tareas de securización de nuestro servidor:
+</P>
+<UL><LI> <STRONG>logcheck</STRONG> - Notifica por correo las anomalías en los logs de cualquier aplicación. Esta aplicación necesita una configuración muy precisa según nuestro sistema, pero una vez ajustada es muy útil para detectar ataques, intrusiones, etc. En Ubuntu y distribuciones derivadas dicha configuración se hace llevadera.
+</LI><LI> <STRONG>fcheck</STRONG> - Comprueba si se han modificado ficheros en nuestro servidor y detectar así ataques. Se guarda inicialmente el MD5 (una especie de comprobante de integridad) de los ficheros del sistema de nuestro servidor y periódicamente se comprueba si ha habido alguna modificación, notificándonos por correo cualquier anomalía. 
+</LI><LI> <STRONG>Snort</STRONG> - Un IDS (<EM>Intrusion Detection System</EM>) para análisis en tiempo real de paquetes en redes IP. Es muy configurable y existe bastante documentación y libros sobre su uso. A modo de ejemplo, puede detectar ataques a webs, DNS, y otros servicios habituales, escaneos de puertos, tráfico de bases de datos malicioso, ataques de denegación de servicio (DOS), etc. 
+</LI><LI> <STRONG>acidlab</STRONG> - Una consola PHP para analizar bases de datos de intrusiones (Analisys Console for Intrusion Databases), para buscar y procesar los eventos de seguridad generados por varios IDS como snort.
+</LI><LI> <STRONG>oinkmaster</STRONG> - Script para mantener las reglas de snort al día fácilmente.
+</LI><LI> <STRONG>Módulos para Apache</STRONG> - Apache dispone de varios módulos para mejorar la seguridad de nuestro servicio web como <STRONG>mod-ssl</STRONG>, <STRONG>mod-chroot</STRONG>, <STRONG>mod-security</STRONG>, <STRONG>mod-suphp</STRONG> y varios de autenticación. Todos ellos están empaquetados en nuestra distribución.
+</LI></UL>
+<P><BR />
+</P>
+<A NAME="Estad.C3.ADsticas_de_acceso_con_Webalizer"></A><H2> Estadísticas de acceso con Webalizer </H2>
+<P>Webalizer es un software de análisis de logs de servidores web. Nos muestra estadísticas de visitas a nuestras web, páginas más visitadas, etc. Realiza unas vistosas gráficas y las deja accesibles vía web.
+</P><P>Para usarlo instalamos el paquete 'webalizer':
+</P>
+<PRE>
+$ sudo apt-get install webalizer
+</PRE>
+<P>Editamos el fichero de configuración:
+</P>
+<PRE>
+$ sudo nano /etc/webalizer.conf
+</PRE>
+<P>para que analice los logs de apache2 en vez de apache (como está configurado por defecto):
+</P>
+<PRE>
+LogFile         /var/log/apache2/access.log.1
+</PRE>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Webalizer mostrando nuestras primeras estadísticas" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Webalizer1.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/images/thumb/b/b3/180px-180px-Webalizer1.png" SRC="images/thumb/b/b3/180px-180px-Webalizer1.png" HEIGHT="123" / WIDTH="180" ALT="Webalizer mostrando nuestras primeras estadísticas"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Webalizer1.png"><IMG SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Webalizer mostrando nuestras primeras estadísticas</DIV></DIV></DIV>
+<P>Ejecutamos el script (normalmente se encargará el servidor de hacerlo diariamente pero queremos ver incialmente el resultado):
+</P>
+<PRE>
+$ sudo /etc/cron.daily/webalizer
+</PRE>
+<P>y analizará los logs que tengamos en nuestro servidor web y dejará accesible el resultado en la carpeta webalizer de nuestro servidor: <A CLASS="external" TITLE="http://guias-ubuntu.dyndns.org/webalizer/" HREF="http://guias-ubuntu.dyndns.org/webalizer/">http://guias-ubuntu.dyndns.org/webalizer/</A>
+</P>
+<A NAME="Administraci.C3.B3n_web_de_bases_de_datos"></A><H2> Administración web de bases de datos </H2>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="administración de nuestra base de datos del CMS drupal a través de phpmyadmin" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Phpmyadmin1.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/images/thumb/1/1a/180px-180px-Phpmyadmin1.png" SRC="images/thumb/1/1a/180px-180px-Phpmyadmin1.png" HEIGHT="116" / WIDTH="180" ALT="administración de nuestra base de datos del CMS drupal a través de phpmyadmin"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Phpmyadmin1.png"><IMG SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>administración de nuestra base de datos del CMS drupal a través de phpmyadmin</DIV></DIV></DIV>
+<P>Para una gestión web de nuestra base de datos, instalamos el paquete <STRONG>phpmyadmin</STRONG>:
+</P>
+<PRE>
+$ sudo apt-get install phpmyadmin
+</PRE>
+<P>Nos dejará accesible su interfaz web, para administrar cómoda y remotamente nuestras base de datos MySQL: <A CLASS="external" TITLE="http://guias-ubuntu.dyndns.org/phpmyadmin/" HREF="http://guias-ubuntu.dyndns.org/phpmyadmin/">http://guias-ubuntu.dyndns.org/phpmyadmin/</A>
+</P><P>Es recomendable añadir soporte de SSL a nuestro servidor Apache y a esta instalación si vamos a acceder desde Internet a la gestión de las Base de Datos, ya que si no las contraseñas circularían transparentemente por Internet.
+</P>
+<A NAME="Monitorizar_el_tr.C3.A1fico"></A><H2> Monitorizar el tráfico </H2>
+<P>Las aplicaciones <STRONG>iptraf</STRONG> y <STRONG>tcptrack</STRONG> nos ayudan a analizar en tiempo real el tráfico IP de nuestro servidor.
+</P><P>Su instalación es sencilla:
+</P>
+<PRE>
+$ sudo apt-get install tcptrack iptraf
+</PRE>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="tcptrack en acción" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Tcptrack1.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/images/thumb/5/57/180px-180px-Tcptrack1.png" SRC="images/thumb/5/57/180px-180px-Tcptrack1.png" HEIGHT="138" / WIDTH="180" ALT="tcptrack en acción"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Tcptrack1.png"><IMG SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>tcptrack en acción</DIV></DIV></DIV>
+<P>Para arrancar tcptrack indicamos como parámetro el interfaz que hay que analizar:
+</P>
+<PRE>
+$ sudo tcptrack -i eth0
+</PRE>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="iptraf en acción" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Iptraf1.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/images/thumb/f/fa/180px-180px-Iptraf1.png" SRC="images/thumb/f/fa/180px-180px-Iptraf1.png" HEIGHT="138" / WIDTH="180" ALT="iptraf en acción"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Iptraf1.png"><IMG SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>iptraf en acción</DIV></DIV></DIV>
+<P><STRONG>Iptraf</STRONG> es más interactivo, permitiendo más opciones por medio de menús en modo texto:
+</P>
+<PRE>
+$ sudo iptraf
+</PRE>
+<P>Con ayuda de estos programas podemos identificar cómo se usa el tráfico de nuestra red, identificar abusos, etc.
+</P>
+<A NAME="Monitorizar_el_estado_del_servidor"></A><H2> Monitorizar el estado del servidor </H2>
+<P>Es importante llevar un control de los recursos que consume nuestro servidor: el uso que tiene de memoria, de CPU, de red, de swap. Esta tarea la podemos hacer con herramientas de línea de comando (como <STRONG>top</STRONG> o <STRONG>htop</STRONG>), pero es interesante llevar un historial del uso de estos recursos de una forma gráfica, de forma que podamos ver cuál es la progresión, detectar problemas en el pasado, tener suficientes datos para actuar frente a problemas, etc.
+</P><P>Una herramienta muy completa que nos puede ayudar en esta labor es <STRONG>cacti</STRONG>, que permite monitorizar sistemas y servicios de una forma gráfica.
+</P><P>Para instalarla:
+</P>
+<PRE>
+$ sudo apt-get install cacti php-pear librrds-perl
+</PRE>
+<P>Durante la instalación nos pregunta una serie de informaciones que luego deberemos recordar a la hora de crear manualmente la base de datos en el siguiente paso:
+</P>
+<PRE>
+$ mysql -u root -p -e &quot;create database cacti&quot;
+$ mysql -u root -p -e &quot;grant all privileges on cacti.* to cacti@localhost identified by 'contrasenyaanterior'; flush privileges&quot;
+$ zcat /usr/share/doc/cacti/cacti.sql.gz | mysql -u cacti -p cacti
+</PRE>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Monitorización de nuestro servidor a través de cacti" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Cacti.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/images/thumb/f/fc/180px-180px-Cacti.png" SRC="images/thumb/f/fc/180px-180px-Cacti.png" HEIGHT="116" / WIDTH="180" ALT="Monitorización de nuestro servidor a través de cacti"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Cacti.png"><IMG SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Monitorización de nuestro servidor a través de cacti</DIV></DIV></DIV>
+<P>Una vez hecho esto, podemos acceder a <A CLASS="external" TITLE="http://guias-ubuntu.dyndns.org/cacti/" HREF="http://guias-ubuntu.dyndns.org/cacti/">http://guias-ubuntu.dyndns.org/cacti/</A>
+</P><P>Allí completaremos la instalación. Nos solicitará un usuario (admin/admin inicialmente) y luego nos pedirá que cambiemos la contraseña de este usuario. Completado este paso accederemos al interfaz web de cacti donde podremos ya administrar la monitorización de nuestro sistema.
+</P><P>Por defecto, la propia máquina donde se instala se configura para ser monitorizada, por lo que si esperamos unos minutos, veremos los primeros gráficos de nuestro servidor.
+</P><P><BR />
+</P>
+<A NAME="Administraci.C3.B3n_v.C3.ADa_web"></A><H2> Administración vía web </H2>
+<P><STRONG>Webmin</STRONG> es un sistema de administración a través de una interfaz web. Para usarlo, instalamos todos los módulos que creamos interesantes con base en lo visto en apartados anteriores.
+</P><P>Pero antes vamos a configurar la contraseña del superusuario 'root' en nuestro servidor si no lo hemos hecho ya:
+</P>
+<PRE>
+$ sudo passwd
+</PRE>
+<P>ya que webmin usará esta contraseña inicialmente y porque siempre es conveniente que en nuestro servidor conozcamos la contraseña de 'root'.
+Seguidamente instalamos los paquetes que nos interesan:
+</P>
+<PRE>
+$ sudo apt-get install webmin webmin-apache webmin-jabber webmin-mysql webmin-samba webmin-sshd webmin-firewall webmin-core libmailtools-perl libhtml-format-perl libcompress-zlib-perl libio-socket-ssl-perl libmail-audit-perl mail-audit-tools
+</PRE>
+<P>También instalamos algunos paquetes adicionales que nos sugiere apt-get para que webmin funcione de una forma más completa.
+</P><P>Esto levantará un servidor web específico para webmin en el puerto 10000 (si usamos un cortafuegos, debemos habilitar este tráfico) en concreto podemos apuntar nuestro navegador a <A CLASS="external" TITLE="https://guias-ubuntu.dyndns.org:10000/" HREF="https://guias-ubuntu.dyndns.org:10000/">https://guias-ubuntu.dyndns.org:10000/</A>
+</P><P>Si no estamos accediendo localmente, nos dará un mensaje de error, indicando que nuestra dirección IP no tiene permisos para acceder a webmin. Es necesario acceder en local o habilitar nuestra dirección editando el fichero:
+</P>
+<PRE>
+$ sudo nano /etc/webmin/miniserv.conf
+</PRE>
+<P>añadiendo nuestra dirección IP, por ejemplo:
+</P>
+<PRE>
+allow=127.0.0.1 10.0.0.6
+</PRE>
+<P>y rearrancado nuestro servidor de webmin:
+</P>
+<PRE>
+$ sudo /etc/init.d/webmin restart              
+</PRE>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Webmin listo par ser usado" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Webmin1.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/images/thumb/e/e5/180px-180px-Webmin1.png" SRC="images/thumb/e/e5/180px-180px-Webmin1.png" HEIGHT="116" / WIDTH="180" ALT="Webmin listo par ser usado"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Webmin1.png"><IMG SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Webmin listo par ser usado</DIV></DIV></DIV>Esto ya hará accesible webmin desde nuestra dirección. Podemos entrar usando el usuario 'root' e introduciendo su contraseña.
+<P>Webmin tiene una gestión de usuarios de forma que podemos crear nuevos usuarios que puedan acceder a webmin. Organizados en pestañas, veremos todos los módulos de webmin que hemos instalado y podremos gestionar sus servicios asociados.
+</P><P>Como usamos apache2, el módulo de apache de nuestro webmin tiene que ser ajustado para acceder a la configuración de apache2, en vez de a la configuración de apache versión 1. Básicamente hay que cambiar las menciones a 'apache' por 'apache2' en la configuración del módulo.
+</P>
+<A NAME="Gestionando_backups"></A><H2> Gestionando backups </H2>
+<P>Una tarea importante que debemos realizar es la de hacer copias de seguridad de la información importante de nuestro servidor. Vamos a encargarle esta tarea al software <STRONG>slbackup</STRONG>, que con el módulo correspondiente de webmin nos permitirá hacer y restaurar copias de seguridad, de una máquina local de forma sencilla.
+</P><P>Para ello instalaremos los paquetes <STRONG>slbackup</STRONG> y <STRONG>webmin-slbackup</STRONG>:
+</P>
+<PRE>
+$ sudo apt-get install slbackup webmin-slbackup
+</PRE>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Una de las pantallas de administración de slbackup desde webmin" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Slbackup1.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/images/thumb/1/11/180px-180px-Slbackup1.png" SRC="images/thumb/1/11/180px-180px-Slbackup1.png" HEIGHT="116" / WIDTH="180" ALT="Una de las pantallas de administración de slbackup desde webmin"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Slbackup1.png"><IMG SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Una de las pantallas de administración de slbackup desde webmin</DIV></DIV></DIV>
+<P>Ya desde el interfaz web de webmin podremos gestionar de una forma sencilla que directorios se salvan, de qué máquinas, con qué periodicidad, cómo acceder de una forma segura a las máquinas remotas, así como la restauración de copias de seguridad.
+</P><P>Sigue: <A TITLE="Guia v4/Quiero más" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Quiero_m%C3%A1s" HREF="Quiero_m%C3%A1s">Quiero más</A>
+</P><DIV CLASS="printfooter">
+Obtenido de "<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Rutinas_del_sysadmin_amateur" HREF="Rutinas_del_sysadmin_amateur">http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Rutinas_del_sysadmin_amateur</A>"</DIV>
+
+	    
+	    <!--  end content -->
+	    <DIV CLASS="visualClear"></DIV>
+	  </DIV>
+	</DIV>
+      </DIV>
+      <DIV CLASS="visualClear"></DIV>
+    </DIV>
+  </BODY>
+</HTML>
