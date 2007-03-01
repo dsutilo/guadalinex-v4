@@ -217,7 +217,7 @@ class RulesGenerator(FileGenerator):
             exclude_arg = ''
             if os.path.isdir(orig_path + '/.svn'):
                 exclude_arg = '--exclude=.svn'
-            command = "\tdh_install %s %s %s" % (exclude_arg, orig_path, dest_path)
+            command = '\tdh_install %s "%s" "%s"' % (exclude_arg, orig_path, dest_path)
 
         if command:
             self.dhinstall_list.append(command)
