@@ -8,6 +8,6 @@ case "$1" in
     configure)
         update-alternatives --install /usr/lib/usplash/usplash-artwork.so usplash-artwork.so /usr/lib/usplash/usplash-theme-guadalinex.so 10
 	update-alternatives --set usplash-artwork.so /usr/lib/usplash/usplash-theme-guadalinex.so
-        update-initramfs -u -k `uname -r`
+        update-initramfs -u
         ;;
 esac
