@@ -1,0 +1,230 @@
+<!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML XMLNSXML:LANGDIRLANG>
+  <HEAD>
+    <META / HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    <META NAME="KEYWORDS" / CONTENT="Guia v4/Ubuntu, la hija aventajada,Guia v4/Mil y un programas libres y gratuitos,Guia v4/Quiero más">
+<META NAME="robots" / CONTENT="index,follow">
+<LINK / REL="shortcut icon" HREF="http://www.guadalinex.org/favicon.ico">
+<LINK TITLE="Creative Commons" / REL="meta" TYPE="application/rdf+xml" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php?title=Guia_v4/Ubuntu%2C_la_hija_aventajada&amp;action=creativecommons">
+<LINK / REL="copyright" HREF="http://creativecommons.org/licenses/by-sa/2.1/es/">
+
+    <TITLE>Guia v4/Ubuntu, la hija aventajada - Guadapedia</TITLE>
+    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="screen,projection" HREF="stylesheets/main.css">
+    <LINK / REL="stylesheet" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/stylesheets/commonPrint.css" TYPE="text/css" MEDIA="print" HREF="stylesheets/commonPrint.css">
+    <!-- [if IE]><STYLE TYPE="text/css" MEDIA="all">@import "/guadapedia-estatica/stylesheets/monobook/IEFixes.css";</STYLE>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/IEFixes.js" SRC="stylesheets/IEFixes.js" TYPE="text/javascript"></SCRIPT>
+    <META / HTTP-EQUIV="imagetoolbar" CONTENT="no"><![ENDIF]-->
+    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/index.php?title=-&amp;action=raw&amp;gen=js" TYPE="text/javascript"></SCRIPT>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/wikibits.js" SRC="stylesheets/wikibits.js" TYPE="text/javascript"></SCRIPT>
+    <STYLE TYPE="text/css">/*<![CDATA[*/ @import "/guadapedia-estatica/index.php?title=-&action=raw&gen=css";
+ /*]]>*/</STYLE>
+    
+  </HEAD>
+  <BODY CLASS="ns-0">
+    <DIV ID="globalWrapper">
+      <DIV ID="column-content">
+	<DIV ID="content">
+	    
+	  <A ID="contentTop" NAME="top"></A>
+	  <H1 CLASS="firstHeading"><a href=Indice>Guia v4/Ubuntu, la hija aventajada</a></H1>
+	  <DIV ID="bodyContent">
+	    <H3 ID="siteSub">De Guadapedia, la enciclopedia libre.</H3>
+	    <DIV ID="contentSub"></DIV>
+	    
+
+	    
+	    <!--  start content -->
+	    <TABLE ID="toc" BORDER="0"><TR ID="toctitle"><TD ALIGN="center">
+<B>Tabla de contenidos</B> <SCRIPT TYPE="text/javascript">showTocToggle("mostrar","esconder")</SCRIPT></TD></TR><TR ID="tocinside"><TD>
+<DIV CLASS="tocline"><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Ubuntu%2C_la_hija_aventajada#Ubuntu.2C_la_hija_aventajada" HREF="Ubuntu%2C_la_hija_aventajada#Ubuntu.2C_la_hija_aventajada">1 Ubuntu, la hija aventajada</A><BR /></DIV>
+<DIV CLASS="tocindent">
+<P><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Ubuntu%2C_la_hija_aventajada#Compromisos" HREF="Ubuntu%2C_la_hija_aventajada#Compromisos">1.1 Compromisos</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Ubuntu%2C_la_hija_aventajada#Organizaci.C3.B3n_de_los_repositorios_de_Ubuntu" HREF="Ubuntu%2C_la_hija_aventajada#Organizaci.C3.B3n_de_los_repositorios_de_Ubuntu">1.2 Organización de los repositorios de Ubuntu</A><BR />
+</P>
+<DIV CLASS="tocindent">
+<P><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Ubuntu%2C_la_hija_aventajada#Arquitecturas" HREF="Ubuntu%2C_la_hija_aventajada#Arquitecturas">1.2.1 Arquitecturas</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Ubuntu%2C_la_hija_aventajada#Versiones" HREF="Ubuntu%2C_la_hija_aventajada#Versiones">1.2.2 Versiones</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Ubuntu%2C_la_hija_aventajada#Componentes" HREF="Ubuntu%2C_la_hija_aventajada#Componentes">1.2.3 Componentes</A><BR />
+</P>
+</DIV>
+<P><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Ubuntu%2C_la_hija_aventajada#La_plataforma_colaborativa_Launchpad" HREF="Ubuntu%2C_la_hija_aventajada#La_plataforma_colaborativa_Launchpad">1.3 La plataforma colaborativa Launchpad</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Ubuntu%2C_la_hija_aventajada#Impulsores" HREF="Ubuntu%2C_la_hija_aventajada#Impulsores">1.4 Impulsores</A><BR />
+</P>
+<DIV CLASS="tocindent">
+<P><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Ubuntu%2C_la_hija_aventajada#La_comunidad_Ubuntu" HREF="Ubuntu%2C_la_hija_aventajada#La_comunidad_Ubuntu">1.4.1 La comunidad Ubuntu</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Ubuntu%2C_la_hija_aventajada#Ubuntu_Foundation" HREF="Ubuntu%2C_la_hija_aventajada#Ubuntu_Foundation">1.4.2 Ubuntu Foundation</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Ubuntu%2C_la_hija_aventajada#Canonical_Ltd." HREF="Ubuntu%2C_la_hija_aventajada#Canonical_Ltd.">1.4.3 Canonical Ltd.</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Ubuntu%2C_la_hija_aventajada#Mark_Shuttleworth" HREF="Ubuntu%2C_la_hija_aventajada#Mark_Shuttleworth">1.4.4 Mark Shuttleworth</A><BR />
+</P>
+</DIV>
+<P><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Ubuntu%2C_la_hija_aventajada#Distribuciones_basadas_en_Ubuntu" HREF="Ubuntu%2C_la_hija_aventajada#Distribuciones_basadas_en_Ubuntu">1.5 Distribuciones basadas en Ubuntu</A><BR />
+</P>
+<DIV CLASS="tocindent">
+<P><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Ubuntu%2C_la_hija_aventajada#Derivaciones_oficiales" HREF="Ubuntu%2C_la_hija_aventajada#Derivaciones_oficiales">1.5.1 Derivaciones oficiales</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Ubuntu%2C_la_hija_aventajada#Derivaciones_institucionales" HREF="Ubuntu%2C_la_hija_aventajada#Derivaciones_institucionales">1.5.2 Derivaciones institucionales</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Ubuntu%2C_la_hija_aventajada#Derivaciones_oficiosas" HREF="Ubuntu%2C_la_hija_aventajada#Derivaciones_oficiosas">1.5.3 Derivaciones oficiosas</A><BR />
+</P>
+</DIV>
+</DIV>
+</TD></TR></TABLE>
+<A NAME="Ubuntu.2C_la_hija_aventajada"></A><H1>Ubuntu, la hija aventajada</H1>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="El logotipo de Ubuntu." W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Ubuntulogo.png" HREF="imagenes/Ubuntulogo.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/2/2c/180px-Ubuntulogo.png" SRC="mini/2/2c/180px-Ubuntulogo.png" HEIGHT="47" / WIDTH="180" ALT="El logotipo de Ubuntu."></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Ubuntulogo.png" HREF="extra/Imagen:Ubuntulogo.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>El logotipo de Ubuntu.</DIV></DIV></DIV>
+<P>... Debian avanzaba a paso lento pero seguro, acompañada de cada vez más distribuciones derivadas de ella que atraían nuevos usuarios a la espiral. Y cuando nos estábamos acostumbrando a esta evolución apareció Ubuntu y trastocó el panorama. 
+</P><P>El proyecto Ubuntu <A CLASS="external" TITLE="http://ubuntulinux.org" HREF="http://ubuntulinux.org/">[1]</A><SPAN CLASS="urlexpansion"> (<I>http://ubuntulinux.org</I>)</SPAN><A CLASS="external" TITLE="http://es.wikipedia.org/wiki/Ubuntu (Linux)" HREF="http://es.wikipedia.org/wiki/Ubuntu_(Linux)">[2]</A><SPAN CLASS="urlexpansion"> (<I>http://es.wikipedia.org/wiki/Ubuntu_(Linux)</I>)</SPAN> fue anunciado en círculos allegados durante el verano del 2004 y en octubre de ese mismo año lanzó su primera versión en medio de una notable expectación y controversia. A lo largo del 2005 esta distribución libre, destinada al gran público y basada en Debian GNU/Linux <A CLASS="external" TITLE="http://debian.org" HREF="http://debian.org/">[3]</A><SPAN CLASS="urlexpansion"> (<I>http://debian.org</I>)</SPAN> y el escritorio GNOME <A CLASS="external" TITLE="http://gnome.org" HREF="http://gnome.org/">[4]</A><SPAN CLASS="urlexpansion"> (<I>http://gnome.org</I>)</SPAN> fue incrementando su popularidad, sumando usuarios y configurando una diversificada comunidad de desarrollo. En el momento de escribir estas lineas el proyecto Ubuntu es una referencia básica en la comunidad del software libre y su distribución figura entre las mejores.
+</P><P>Pero ¿qué tiene Ubuntu de especial? Su lanzamiento introdujo nuevos elementos a la ya de por sí novedosa y trepidante evolución del software libre:
+</P>
+<UL><LI> Publicación regular y previsible de nuevas versiones cada seis meses. Ninguna distribución se había comprometido de antemano con un calendario de lanzamientos, menos aún Debian y sus derivadas.
+</LI><LI> Soporte garantizado y gratuito a un millar de paquetes 100% libres considerados clave. Hasta entonces la tónica en las distribuciones había sido no garantizar soporte de paquetes libres, garantizar soporte de paquetes no libres o garantizar soporte de pago.
+</LI><LI> Disponibilidad de las versiones más recientes invirtiendo un gran esfuerzo en su estabilidad. Lo habitual era escoger entre versiones recientes con todas sus novedades e inestabilidades o versiones estables pero ya maduritas y sin las nuevas funcionalidades.
+</LI><LI> Envío gratuito de CDs por correo. Hasta la fecha lo gratuito se bajaba por Internet y los envíos por correo implicaban un pago, por mínimo que fuera.
+</LI><LI> Insistencia en lo humano por encima de lo tecnológico: <EM>ubuntu</EM> viene a significar &quot;humanidad hacia los demás&quot; en zulú, el eslogan rezaba <EM>Linux para seres humanos</EM>, la estética estaba basada en tonos cutáneos y tres humanos en corro. Algunas de sus imágenes mostraba personas semidesnudas (o semivestidas, o seminaturales, según se vea), lo que añadió más pimienta a los debates sobre el nuevo proyecto. 
+</LI><LI> La empresa Canonical Ltd. impulsaba el proyecto contratando a desarrolladores clave de Debian y GNOME residentes en varios países, no tenía oficinas visitables y se comunicaba internamente y de forma abierta vía Internet. Esta mezcla de componentes de empresa y comunidad despertó interés y a la vez suspicacias. 
+</LI><LI> Desarrollo paralelo de una plataforma de suscripción abierta pero software no libre para facilitar la colaboración en el desarrollo de distribuciones libres. Esta mezcla de componentes libres y no libres despertó más interés y más suspicacias.
+</LI><LI> Y si detrás de todo esto se encontraban las ideas e inversión de un sudafricano turista del espacio y multimillonario gracias al fenómeno PuntoCom... lo original ya pasaba a curioso y hasta exótico para los medios de comunicación y la propia comunidad. 
+</LI></UL>
+<P>Los planteamientos iniciales novedosos se reforzaron con un buen quehacer en la preparación y lanzamiento de nuevas versiones, con fases de planificación y desarrollo abiertas a quien quisiera participar. La facilidad de instalación y uso de Ubuntu combinada con su recopilación de últimas versiones estabilizadas ha hecho que muchos usuarios de software libre hicieran de ella su distribución favorita. El rápido éxito se ha visto reforzado con las buenas críticas en blogs y medios especializados, además del hecho de que incluso quienes se han mantenido en Debian, Gentoo, etc, recomiendan a usuarios noveles (familiares, amistades, parejas, colegas del trabajo, etc) que empiecen con Ubuntu. 
+</P>
+<A NAME="Compromisos"></A><H2>Compromisos</H2>
+<P>El proyecto Ubuntu firma unilateralmente una serie de compromisos con su comunidad y sus usuarios, al estilo del compromiso de Debian mediante su contrato social. Estos compromisos definen a su vez buena parte de sus peculiaridades:
+</P>
+<UL><LI> Ubuntu será siempre gratuita a diferencia de algunas distribuciones comerciales que tienen ediciones comunitarias gratuitas junto a ediciones corporativas de pago. El trabajo realizado para mantener Ubuntu en plena forma es sustentado por la Fundación Ubuntu, la empresa Canonical y la comunidad de desarrolladores voluntarios.
+</LI><LI> Cada seis meses se lanza una nueva versión de Ubuntu. Cada versión es soportada durante 18 meses como mínimo, con actualizaciones de seguridad y resolución de errores ofrecidos también como servicios gratuitos. Paralelamente Canonical ofrece servicios comerciales de pago para quienes tengan otras necesidades más exigentes, basando en estos servicios su modelo de negocio.
+</LI><LI> Ubuntu introducirá las mejores infraestructuras que la comunidad del software libre pueda ofrecer en cuanto a traducciones y accesibilidad, con el objetivo de que Ubuntu sea utilizable por el máximo de personas posible. Ubuntu colabora lo más ampliamente posible resolviendo errores de programación y compartiendo código. El fruto de este compromiso es la plataforma Launchpad <A CLASS="external" TITLE="http://launchpad.net" HREF="http://launchpad.net/">[5]</A><SPAN CLASS="urlexpansion"> (<I>http://launchpad.net</I>)</SPAN>, que fomenta la colaboración en traducciones, la detección y resolución de incidencias y la organización de repositorios de software.
+</LI><LI> Ubuntu está enteramente comprometida con los principios del desarrollo de software libre. Estos principios se pueden resumir en el seguimiento de la definición de software libre de Debian, la planificación y debate abiertos, la publicación regular del código desarrollado desde las versiones más prematuras y la utilización de las herramientas habituales en los entornos de desarrollo de software libre (listas de correo, salas de chat, wiki webs, sistemas de control de versiones, gestores de incidencias, etc). Más la opinión conceptual de que el software debe ser libre, gratuito y accesible a todos. 
+</LI></UL>
+<P><BR />
+</P>
+<A NAME="Organizaci.C3.B3n_de_los_repositorios_de_Ubuntu"></A><H2>Organización de los repositorios de Ubuntu</H2>
+<P>Ubuntu deriva de Debian y utiliza el mismo sistema de gestión de paquetes APT, pero es completamente autónoma a la hora de organizar su software y lo organiza de forma diferente. 
+</P><P>Decimos que Ubuntu deriva de Debian porque en cada ciclo semestral de desarrollo Ubuntu realiza una copia del respositorio <EM>unstable</EM> de Debian (Sid) para empezar a construir sobre esta base la nueva versión. A su vez, Ubuntu va aportando a Debian todas las mejoras realizadas sobre los paquetes copiados. Mejoras que los mantenedores de los paquetes Debian (a veces las mismas personas que los mantenedores de los paquetes Ubuntu) deciden si incorporan o no, puesto que ambas distribuciones tienen objetivos y estrategias diferentes.
+</P><P><BR />
+</P>
+<A NAME="Arquitecturas"></A><H3>Arquitecturas</H3>
+<P>Si en el anterior apartado veíamos que Debian se ofrecía en once arquitecturas, Ubuntu se especializa en las tres de mayor implantación: x86, AMD64 y PowerPC. Ubuntu está destinada a la gran masa de usuarios que hoy o algún día pueden utilizar GNU/Linux en su ordenador personal (portátil o de sobremesa), y estas tres arquitecturas cubren prácticamente el 100% del espectro.
+</P><P><BR />
+</P>
+<A NAME="Versiones"></A><H3>Versiones</H3>
+<P>Mientras que Debian mantiene un sistema de versiones continuo basado en el grado de estabilidad de los paquetes (<EM>stable</EM>, <EM>testing</EM>, <EM>unstable</EM> y <EM>experimental</EM>), Ubuntu pasa del nivel <EM>experimental</EM> al <EM>stable</EM> en ciclos de desarrollo y estabilización semestrales, volviendo a empezar con la experimentación el día siguiente al lanzamiento público de una nueva versión.
+</P><P>Ubuntu ha introducido un sistema de versiones basado en fechas (4.10, 5.04, 5.10, etc) y no en el tradicional sistema de versiones numeradas (0.9, 1.2, 2.0, etc). Además, cada versión recibe el nombre más o menos rimbombante de algún animal:
+</P>
+<UL><LI> La primera versión fue la 4.10, correspondiendo el 4 al año 2004 y el 10 al mes de octubre. Su denominación fue Warty Warthog (Jabalí Verrugoso).
+</LI><LI> La segunda fue la 5.04, correspondiendo el 5 al año 2005 y el 04 al mes de abril. Se denominó Hoary Hedgehog (Erizo Canoso).
+</LI><LI> La tercera versión es la 5.10 y es conocida como Breezy Badger (Tejón Inquieto). 
+</LI><LI> La cuarta versión es la 6.04, bautizada como Dapper Drake (Dragón Pulcro).
+</LI><LI> La quinta versión es la 6.10, con el nombre en clave de Edgy Eft (Elefante Nervioso), en la que está basada la actual Guadalinex v4.
+</LI><LI> La sexta y aún sin finalizar al escribir estas líneas es la 7.04, que se conocerá como Feisty Fawn (Cervatillo Inquieto).
+</LI></UL>
+<A NAME="Componentes"></A><H3>Componentes</H3>
+<P>Los componentes son ramas del repositorio, concepto remotamente equivalente a las secciones del repositorio Debian. Ubuntu tiene cuatro componentes que definen el tipo de paquetes que se clasifican en cada uno de ellos:
+</P>
+<UL><LI> <STRONG>Main</STRONG>. El millar de paquetes 100% libres de este componente configuran Ubuntu en su sentido estricto. Se trata de los paquetes soportados directamente con un plazo de garantía de 18 meses como mínimo. Según los desarrolladores de Ubuntu, esta selección es lo mejorcito que el software libre puede ofrecer a los usuarios corrientes, tanto en su versión de escritorio como de servidor de Internet. De forma regular se añaden nuevos paquetes a este componente, a medida que son considerados apropiados y encuentran mantenedores de confianza que garanticen su soporte.
+</LI><LI> <STRONG>Restricted</STRONG>. Unos cuantos paquetes no libres pero que Ubuntu selecciona por considerarlos importantes y sobre los que ofrece algún grado de soporte. Estos paquetes acostumbran a ser drivers no libres de elementos de hardware, imprescindibles para el correcto funcionamiento de una pantalla, un módem, etc. El soporte es limitado ya que por norma general los desarrolladores no tienen acceso al código, o por su licencia restrictiva no pueden modificarlo o incluso redistribuirlo.
+</LI><LI> <STRONG>Universe</STRONG>. Unos 15.000 paquetes procedentes principalmente del repositorio <EM>unstable</EM> de Debian y preparados para Ubuntu de forma automática. Ubuntu pone estos paquetes a la disposición de los usuarios, que deben activar este componente manualmente, pero no responde por ellos.
+</LI><LI> <STRONG>Multiverse</STRONG>. Paquetes de aplicaciones que no son libres al 100%, que no pueden ser distribuidos desde Estados Unidos y que sufren algún tipo de restricción. Ubuntu tampoco se responsabiliza del correcto funcionamiento de estos paquetes. 
+</LI></UL>
+<P>Ubuntu ofrece un sistema extremamente sencillo y potente para gestionar paquetes: instalar, actualizar y desinstalar programas. Se trata de una herramienta que suaviza aún más el uso de Synaptic y es la delicia de los usuarios noveles. La explicamos con detalle en el capítulo <STRONG><A TITLE="Guia v4/Mil y un programas libres y gratuitos" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Mil_y_un_programas_libres_y_gratuitos" HREF="Mil_y_un_programas_libres_y_gratuitos">6 (Mil y un programas libres y gratuitos)</A></STRONG>.
+</P><P>Dado que los paquetes Ubuntu se rigen por la tecnología APT que comparten con Debian y sus distribuciones derivadas, es posible que cualquier paquete .deb de cualquier otro repositorio funcione... o no. La instalación de paquetes .deb externos al repositorio de Ubuntu es sólo recomendable para usuarios experimentados.
+</P>
+<A NAME="La_plataforma_colaborativa_Launchpad"></A><H2>La plataforma colaborativa Launchpad</H2>
+<P>El proyecto Ubuntu está estrechamente ligado a Launchpad, la plataforma de desarrollo de esta distribución y a la vez un emergente espacio de colaboración en el desarrollo de otras distribuciones vecinas. 
+</P><P>Launchpad (en inglés, <EM>plataforma de lanzamiento</EM>) es un espacio para desarrolladores pero lo analizaremos brevemente ya que representa una primera puerta de acceso de los usuarios de a pie al lado salvaje de la colaboración en red. La apuesta de Ubuntu en Launchpad se basa en la creencia de que no sólo el software libre debe ser accesible y de fácil uso a los usuarios corrientes, sino que también los canales de colaboración y desarrollo deben tener pasarelas accesibles a los usuarios que, aun sin tener habilidades informáticas, deseen echar una mano. 
+</P><P>Launchpad dispone de estas pasarelas básicas siendo a la vez lugar de encuentro y colaboración al más alto nivel de especialistas en el desarrollo de distribuciones y aplicaciones. No hay una separación clara entre novatos y expertos, por lo que unos pueden aprender de los otros (y viceversa también).
+</P><P>Demos un repaso a sus componentes para ver cómo nos pueden ser útiles:
+</P>
+<UL><LI> Rosetta <A CLASS="external" TITLE="http://launchpad.net/rosetta" HREF="http://launchpad.net/rosetta">[6]</A><SPAN CLASS="urlexpansion"> (<I>http://launchpad.net/rosetta</I>)</SPAN> entró en producción con el ciclo de Hoary. Es una herramienta de traducción de software libre vía web. Cualquier desarrollador puede dar de alta su proyecto en Rosetta y cualquier usuario puede ponerse a traducir a su idioma las aplicaciones que desee, sin necesidad de más conocimientos que los idiomas implicados en la traducción y el uso de un navegador web. La traducción de Ubuntu (y sus distribuciones derivadas) al español se realiza a través de Rosetta <A CLASS="external" TITLE="https://launchpad.net/people/ubuntu-l10n-es" HREF="https://launchpad.net/people/ubuntu-l10n-es">[25]</A><SPAN CLASS="urlexpansion"> (<I>https://launchpad.net/people/ubuntu-l10n-es</I>)</SPAN> y la búsqueda de nuevos traductores voluntarios es permanente.
+</LI><LI> Malone <A CLASS="external" TITLE="http://launchpad.net/malone" HREF="http://launchpad.net/malone">[7]</A><SPAN CLASS="urlexpansion"> (<I>http://launchpad.net/malone</I>)</SPAN> entró en producción con el ciclo de Breezy. Es un gestor de incidencias (<EM>bug tracker</EM> en inglés) en el que usuarios y desarrolladores de aplicaciones y distribuciones pueden compartir información y soluciones. La tesis es que cuanto mejor se conozcan los errores y mejor se transmitan sus soluciones, mejor será la calidad resultante del software libre desarrollado. Cualquier posible error que un usuario encuentre en Ubuntu puede ser reportado sin mayores complicaciones en Malone. Ubuntu y las aplicaciones que distribuye lo agradecen.
+</LI><LI> El resto de componentes operativos de Launchpad están en una fase de primera implantación en el momento de escribir estas líneas y lo más probable es que entren en seria producción en el ciclo de Dapper:
+<UL><LI> Un canalizador de soporte <A CLASS="external" TITLE="http://launchpad.net/support" HREF="http://launchpad.net/support">[8]</A><SPAN CLASS="urlexpansion"> (<I>http://launchpad.net/support</I>)</SPAN> que utiliza los mismos canales que el canalizador de incidencias Malone. Quien tenga dudas sobre el uso de una aplicación puede preguntar allí.
+</LI><LI> Un canalizador de <EM>bounties</EM> <A CLASS="external" TITLE="http://launchpad.net/bounties" HREF="http://launchpad.net/bounties">[9]</A><SPAN CLASS="urlexpansion"> (<I>http://launchpad.net/bounties</I>)</SPAN>, premios en metálico entregados a quienes programen pequeñas soluciones a grandes problemas, o viceversa. Sólo apto para desarrolladores.
+</LI><LI> Un gestor de planificación de proyectos de software libre <A CLASS="external" TITLE="http://launchpad.net/specs" HREF="http://launchpad.net/specs">[10]</A><SPAN CLASS="urlexpansion"> (<I>http://launchpad.net/specs</I>)</SPAN>. Sólo apto para coordinadores de proyecto y desarrolladores muy metidos en el meollo.
+</LI><LI> Una agenda de actividades personalizada <A CLASS="external" TITLE="http://launchpad.net/calendar" HREF="http://launchpad.net/calendar">[11]</A><SPAN CLASS="urlexpansion"> (<I>http://launchpad.net/calendar</I>)</SPAN> basada en la recopilación de actividades de los equipos y proyectos en los que el usuario está implicado. Sólo necesario para quien esté trabajando regularmente en Launchpad.
+</LI></UL>
+</LI></UL>
+<P>Hay más proyectos que se están planeando y desarrollando para completar Launchpad, como el sistema de control de revisiones distribuído Bazaar <A CLASS="external" TITLE="https://launchpad.net/products/bazaar" HREF="https://launchpad.net/products/bazaar">[26]</A><SPAN CLASS="urlexpansion"> (<I>https://launchpad.net/products/bazaar</I>)</SPAN> y la herramienta de generación de distribuciones Soyuz. Son herramientas pensadas para equipos involucrados en la gestión de distribuciones y el usuario medio de software libre nunca llegará a ellas. 
+</P><P>Launchpad ha sido recibido por la comunidad del software libre de forma ambivalente. Por un lado algunas de sus propuestas son muy innovadoras y prometedoras por su potencial colaborativo. Por otro lado las herramientas de Launchpad no son ellas mismas software libre, lo que ha despertado críticas. La versión oficial es que este software ha nacido no-libre para conseguir un posicionamiento respecto a su posible competencia, y que una vez obtenga una masa crítica de usuarios distintiva iniciará un proceso de liberación. En cualquier caso el software de Launchpad no es ni más ni menos libre que el de Sourceforge <A CLASS="external" TITLE="http://sf.net" HREF="http://sf.net/">[12]</A><SPAN CLASS="urlexpansion"> (<I>http://sf.net</I>)</SPAN>, la muy popular y veterana plataforma de desarrollo de proyectos de software libre.
+</P><P>Entramos en más detalles sobre Launchpad en el apartado <STRONG><A TITLE="Guia v4/Quiero más" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Quiero_m%C3%A1s#Colaborar:_el_lado_salvaje_del_software_libre" HREF="Quiero_m%C3%A1s#Colaborar:_el_lado_salvaje_del_software_libre">Colaborar: el lado salvaje del software libre</A></STRONG> del capítulo <STRONG><A TITLE="Guia v4/Quiero más" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Quiero_m%C3%A1s" HREF="Quiero_m%C3%A1s">9 (Quiero más)</A></STRONG>.
+</P><P><BR />
+</P>
+<A NAME="Impulsores"></A><H2>Impulsores</H2>
+<P>El proyecto Ubuntu ha realizado un largo recorrido en muy poco tiempo, consiguiendo metas a una velocidad inusual en la comunidad del software libre e incluso en sus aledaños empresariales. Esto se debe posiblemente a la combinación de buenas ideas con personas eficientes colaborando acertadamente sobre un terreno abonado y con casi todos los recursos necesarios provistos.
+</P><P>Deshilemos la madeja, desde su superficie hasta el meollo.
+</P><P><BR />
+</P>
+<A NAME="La_comunidad_Ubuntu"></A><H3>La comunidad Ubuntu</H3>
+<P>Por supuesto en el día cero Ubuntu tuvo una comunidad cero. Pero ésta ha germinado y crecido rápidamente, no sólo bajo las webs oficiales de Ubuntu sino también en proyectos indepedientes como Ubuntu-es <A CLASS="external" TITLE="http://www.ubuntu-es.org/" HREF="http://www.ubuntu-es.org/">[13]</A><SPAN CLASS="urlexpansion"> (<I>http://www.ubuntu-es.org/</I>)</SPAN>. El crecimiento y despliegue de esta comunidad es, quizás, un elemento más sorprendente que el propio éxito y calidad de la distribución, aunque un factor va acompañado del otro. El tema está en que para desarrollar una buena distribución necesitas buenos desarrolladores, pero consolidar una amplia comunidad requiere de unas ciencias más ocultas.
+</P><P>Las actividades de los integrantes de la comunidad oficial pueden ser de lo más diversas: hacer proselitismo, apoyar a los usuarios, aportar ideas, creación y mejora de documentación y gráficos, así como las ya mencionadas tareas de traducción, reporte de errores y mantenimiento de paquetes o programación, en el contexto de Launchpad.
+</P><P>Las bases de la comunidad se estructuran en equipos de trabajo. Por un lado están las comunidades locales que se organizan por idiomas y por territorios. Por otro lado están los equipos especializados en alguna actividad o ámbito: documentación, portátiles, traducción...
+</P><P>La participación en la comunidad se puede realizar desde diferentes roles:
+</P>
+<UL><LI> <STRONG>Colaborador</STRONG> a secas. Dado que todos los entornos de comunicación son abiertos, cualquier persona puede contribuir en cualquier aspecto sin más trámite que saludar y realizar la aportación que desee.
+</LI><LI> <STRONG>Ubuntero</STRONG> (sic) es una condición que se adquiere de forma casi automática. Sólo hay que firmar el Código de Conducta de Ubuntu y enviarlo por correo electrónico al destino apropiado.  
+</LI><LI> <STRONG>Miembro</STRONG> es quien realiza una contribución cualitativa notable y continuada a la comunidad, ha solicitado su membresía cumpliendo unos requisitos y ésta ha sido aprobada por el Consejo de la Comunidad.
+</LI><LI> <EM>Desarrollador</EM> es aquel miembro que además mantiene uno o más paquetes. Hay más niveles en este grado: 
+<UL><LI> <STRONG>Master of the Universe</STRONG> (<STRONG>MOTU</STRONG>) es el desarrollador que tiene acceso a todos los paquetes de los componentes Universe y Multiverse.
+</LI><LI> <STRONG>Ubuntu Core developer</STRONG> tiene permisos para todo lo anterior y además tiene acceso al componente Main, la parte más sensible de la distribución.
+</LI></UL>
+</LI></UL>
+<P>Además de los equipos, la comunidad tiene dos órganos y pico de gobierno:
+</P>
+<OL><LI> <STRONG>Technical Board</STRONG> es la junta directiva que se encarga de decidir en los aspectos clave de desarrollo presente y futuro de Ubuntu.
+</LI><LI> <STRONG>Community Council</STRONG> es el consejo de la comunidad encargado de supervisar las cuestiones sociales y organizativas: creación de nuevos equipos y comunidades locales, designación de coordinadores de equipos, revisión del Código de Conducta, etc.
+</LI></OL>
+<P>El <EM>pico</EM> le corresponde a Mark Shuttleworth quien ostenta como fundador de Ubuntu el cargo de SABDFL (Self-Appointed Benevolent Dictator For Life o <EM>Autonombrado Dictador Benevolente De Por Vida</EM>). Este tipo de cargo tiene cierta tradición en el mundillo, siendo el caso mas popular el de Linus Torvalds en la comunidad que desarrolla el kernel Linux.
+</P><P><BR />
+</P>
+<A NAME="Ubuntu_Foundation"></A><H3>Ubuntu Foundation</H3>
+<P>En el verano del 2005 fue creada la Ubuntu Foundation con un capital de 10 millones de dólares para asentar la confianza en Ubuntu como distribución GNU/Linux y 100% libre, fiel y obligada a su comunidad. El principal eje de acción de esta fundación es la disposición de los recursos necesarios para garantizar el soporte a los usuarios de Ubuntu a medio plazo. El primer objetivo anunciado fue el soporte de la versión Dapper Drake durante tres años para su versión de escritorio y cinco para su versión de servidor. La fundación se presenta también como la infraestructura legal en la que se plasmarían las estructuras de la comunidad, siguiendo el ejemplo de iniciativas como la GNOME Foundation o la Mozilla Foundation.
+</P><P>El hecho de que detrás de la distribución libre de moda hubiera una empresa privada había sido un elemento que despertaba recelos y dudas.  
+</P><P>Los pragmáticos pensaban ¿y qué sucederá con Ubuntu si Canonical va a la quiebra? La duda era lógica, sobretodo si pasarse a Ubuntu implicaba una migración seria o una decisión estratégica a medio plazo. El proyecto era joven, avanzaba a velocidad de cohete y en poco tiempo se convirtió en la <EM>distro de moda</EM>. Esto propiciaba el muy razonable pensamiento de que la moda podía ser pasajera, que el cohete veloz se podía estrellar y que la vida rápida se podía combinar con la muerte joven. 
+</P><P>Los éticos pensaban ¿y qué tipo de distribución GNU/Linux libre y comunitaria es esta que depende de una empresa privada? Desde una perspectiva Debian y Free Software Foundation, terrenos de los que Ubuntu había surgido y en los que se sigue moviendo, el razonamiento era también consecuente. El hecho de que el software de Launchpad no es libre reforzaba las sospechas, ya que podía ser una herramienta que Canonical utilizara en un futuro para poner peaje a los servicios gratuitos y finalizar así la bonita historia de transparencia y apertura. 
+</P><P>Tras la creación de la fundación Ubuntu las sendas comercial y no comercial están más claras. La vertiente comunitaria se consolida y toma cuerpo propio en el contexto de la fundación y el ciclo de desarrollo de Dapper Drake que culmina en abril del 2006.
+</P><P><BR />
+</P>
+<A NAME="Canonical_Ltd."></A><H3>Canonical Ltd.</H3>
+<P>En la primavera del 2004, cuando llegó el momento de que Ubuntu pasara del mundo de las ideas a la realidad, Mark Shuttleworth fundó Canonical Ltd <A CLASS="external" TITLE="http://canonical.com" HREF="http://canonical.com/">[14]</A><SPAN CLASS="urlexpansion"> (<I>http://canonical.com</I>)</SPAN> y a través de su empresa de capital riesgo HBD <A CLASS="external" TITLE="http://www.hbd.com/" HREF="http://www.hbd.com/">[15]</A><SPAN CLASS="urlexpansion"> (<I>http://www.hbd.com/</I>)</SPAN> aportó un capital inicial que permitiera afrontar el desarrollo de una muy buena distribución a corto plazo. Su sede legal se ubicó en la Isla de Man (ese paraíso fiscal que flota en aguas británicas) pero los trabajos se desarrollaron y desarrollan sin oficinas al uso y con una plantilla de élite repartida por Europa, el continente americano y Australia.
+</P><P>El personal contratado inicialmente, una veintena de desarrolladores, casi no tuvo ni que entregar currículos. Su mejor CV era su participación cualitativa en proyectos como Debian o GNOME. Fichajes con gran reputación en la comunidad como Benjamin Mako-Hill, Matt Zimmerman, Jeff Waugh o Colin Watson no pasaron desapercibidos en la comunidad y empezaron a saltar rumores sobre el futuro de estos proyectos si estos voluntarios claves pasaban a ser profesionales contratados en una nueva aventura empresarial. Hoy Canonical se mantiene en unos treinta empleados, Debian y GNOME siguen su camino, en algunos casos los mismos nombres siguen ejerciendo casi los mismos voluntariados y en otros casos el paso a la vida profesional ha facilitado relevos y neuronas frescas en las cúspides de estas grandes comunidades.
+</P><P>Al principio e incluso ahora había una confusión sobre el modelo de negocio de Canonical. Los rumores y la impresión externa era que Mark Shuttleworth había extendido un cheque en blanco y que Canonical funcionaría mientras ese grifo financiero estuviera abierto. En realidad, Canonical tiene un modelo de financiación típico en las empresas de emprendedores apoyadas por el capital riesgo: tienen el corto plazo solucionado a cambio de ofrecer unas perspectivas tangibles de sostenibilidad a medio plazo. Canonical está forjando esta sostenibilidad siguiendo un modelo de negocio ya conocido en el aún tierno sector del software libre: servicios de soporte combinados con certificación de hardware y desarrollos a medida, siempre basados en distribuciones y herramientas para gestionar distribuciones.
+</P><P>Canonical trabaja para la implantación mundial de Ubuntu y su consolidación como uno de los sistemas operativos de referencia dentro de unos años. Plantando cara no sólo a las distribuciones Linux comerciales, sino también a los sistemas operativos propietarios como Mac OS X y MS Windows. No obstante, a nivel empresarial no pretenden abrir oficinas en los cinco continentes, y su modelo de expansión y extensión se basa en el establecimiento de relaciones de colaboración con partners y empresas complementarias centradas en el mercado local <A CLASS="external" TITLE="http://www.ubuntu.com/partners/" HREF="http://www.ubuntu.com/partners/">[16]</A><SPAN CLASS="urlexpansion"> (<I>http://www.ubuntu.com/partners/</I>)</SPAN>.
+</P><P><BR />
+</P>
+<A NAME="Mark_Shuttleworth"></A><H3>Mark Shuttleworth</H3>
+<P>Como hemos dicho, Ubuntu es un proyecto inicialmente ideado por el informático sudafricano y empresario multimillonario Mark Shuttleworth <A CLASS="external" TITLE="http://www.markshuttleworth.com/" HREF="http://www.markshuttleworth.com/">[17]</A><SPAN CLASS="urlexpansion"> (<I>http://www.markshuttleworth.com/</I>)</SPAN>, conocido también por ser el primer astronauta africano y segundo turista espacial de la historia. Shuttleworth aporta ideas y capital de forma bastante equilibrada. Aunque de lejos lo que llama la atención son sus dineros, quienes trabajan en sus proximidades comprueban el valor de sus ideas (que son las que le trajeron el dinero y no al revés). Dada la expectación e interrogantes que genera a su propio pesar, daremos un repaso a sus aportaciones.
+</P><P>Los millones de Shuttleworth provienen de la venta de la empresa de certificados digitales Thawte a la multinacional norteamericana VeriSign en el año 2000 coincidiendo con el pleno apogeo del fenómeno PuntoCom.  Por aquel entonces si alguien en cualquier parte del mundo deseaba certificar un servidor seguro para ponerlo a trabajar en comercio electrónico, lo más probable es que recurriera a esta empresa ideada en un garaje de Sudáfrica en 1996. Lo primero que hizo Shuttleworth tras la venta fue regalarse un viaje a la estratosfera en el 2002. Casi lo segundo fue empezar a donar e invertir dinero en proyectos relacionados con software libre y el mundo de la educación, creando a tal efecto la empresa de capital riesgo HBD y la fundación que lleva su apellido <A CLASS="external" TITLE="http://www.shuttleworthfoundation.org" HREF="http://www.shuttleworthfoundation.org/">[18]</A><SPAN CLASS="urlexpansion"> (<I>http://www.shuttleworthfoundation.org</I>)</SPAN>.
+</P><P>Las ideas de Shuttleworth relacionadas con el software libre y su aplicación en proyectos innovadores arrancan de sus tiempos de universitario, cuando cursaba en Ciudad del Cabo estudios de finanzas y sistemas de información dentro de la carrera de ciencias empresariales. Fue el primer mantenedor del paquete de la base de datos MySQL en Debian y desde entonces fue siguiendo el fenómeno de las distribuciones GNU/Linux. Más adelante se aficionó al lenguaje de programación Python, que hoy día se encuentra bien presente en las entrañas de Ubuntu y Launchpad. Suyas son muchas ideas innovadoras y arriesgadas que incorporan ambos proyectos.
+</P><P>Suya es también la apuesta por trabajar empresarialmente de forma abierta, deslocalizada y bastante horizontal o meritocrática en la línea habitual de los proyectos de software libre. Mark Shuttleworth participa a diario y a golpe de correo electrónico en las tareas de planificación, desarrollo, testeo y evolución en múltiples rincones de Ubuntu y Launchpad. No ejerce de jefe-capataz ni tampoco se resigna a quedarse en la sombra, ejerciendo el mencionado rol de SABDFL.
+</P><P>A título anecdótico, se le adivina una afición por la búsqueda y captura de nombres propios para sus proyectos bandera:
+</P>
+<UL><LI> Ubuntu se denomina así por la afinidad que Shuttleworth ve entre la filosofía del software libre y la corriente filosófica sudafricana que lleva este nombre y fue popularizada por Desmond Tutu, y que se resumiría en la frase &quot;soy lo que soy por que ustedes son&quot;.
+</LI><LI> Launchpad fue bautizado así por el hecho de ser una plataforma de lanzamiento de distribuciones, pero sobretodo por el símil con las plataformas de lanzamiento de naves espaciales.
+</LI><LI> Soyuz, el futuro epicentro de Launchpad, lleva este nombre siguiendo el paralelismo espacial. Así se denomina el programa espacial de Rusia desde los tiempo de la URSS y así se denominaba la nave con la que Shuttleworth llegó a la ingravidez y vio el planeta Tierra en su conjunto.
+</LI><LI> Dapper Drake, versión de Ubuntu en la que Shuttleworth ha puesto hincapié especial, remite a una afición suya por los dragones. Las iniciales HBD de su empresa de capital riesgo responden a &quot;Here Be Dragons&quot; (<EM>Aquí Hay Dragones</EM>), frase que, por lo visto, cartógrafos de mapas antiguos escribían sobre los territorios desconocidos.
+</LI></UL>
+<A NAME="Distribuciones_basadas_en_Ubuntu"></A><H2>Distribuciones basadas en Ubuntu</H2>
+<P>Ubuntu está concebida no sólo como una distribución de fácil instalación y uso, sino también como una base de la cual se pueda derivar con (relativa y progresiva) facilidad. En su corta pero intensa vida ya le han aparecido filiaciones, algunas de las cuales han pasado a ser variantes oficiales del proyecto Ubuntu.
+</P>
+<A NAME="Derivaciones_oficiales"></A><H3>Derivaciones oficiales</H3>
+<UL><LI> <STRONG>Kubuntu</STRONG> <A CLASS="external" TITLE="http://kubuntu.org/" HREF="http://kubuntu.org/">[19]</A><SPAN CLASS="urlexpansion"> (<I>http://kubuntu.org/</I>)</SPAN> ofrece todas las bondades de Ubuntu pero con escritorio <A CLASS="external" TITLE="http://kde.org" HREF="http://kde.org/">KDE</A><SPAN CLASS="urlexpansion"> (<I>http://kde.org</I>)</SPAN> en vez de GNOME.
+</LI><LI> <STRONG>Edubuntu</STRONG> <A CLASS="external" TITLE="http://edubuntu.org" HREF="http://edubuntu.org/">[20]</A><SPAN CLASS="urlexpansion"> (<I>http://edubuntu.org</I>)</SPAN> es una distribución pensada para el ámbito escolar y se basa en una versión para redes de clientes ligeros (ordenadores de pocos recursos que dependen de un servidor central)  a ser implementadas en las aulas.
+</LI><LI> <STRONG>Xubuntu</STRONG> <A CLASS="external" TITLE="http://www.xubuntu.org/" HREF="http://www.xubuntu.org/">[21]</A><SPAN CLASS="urlexpansion"> (<I>http://www.xubuntu.org/</I>)</SPAN> comparte lo básico del sistema con Ubuntu, pero el entorno de escritorio es <A CLASS="external" TITLE="http://www.xfce.org/" HREF="http://www.xfce.org/">XFCE</A><SPAN CLASS="urlexpansion"> (<I>http://www.xfce.org/</I>)</SPAN>, más ligero que KDE o Gnome, para que gente con ordenadores más modestos que los de última generación también puedan contar con las bondades de Ubuntu y un sistema operativo completo.
+</LI></UL>
+<P><BR />
+</P>
+<A NAME="Derivaciones_institucionales"></A><H3>Derivaciones institucionales</H3> 
+<UL><LI> <STRONG>Guadalinex</STRONG> <A CLASS="external" TITLE="http://www.guadalinex.org" HREF="http://www.guadalinex.org/">[22]</A><SPAN CLASS="urlexpansion"> (<I>http://www.guadalinex.org</I>)</SPAN>, ya comentada, promovida por la Junta de Andalucía. Inicialmente basada en Debian Sarge, en su tercera versión ha pasado a basarse en Breezy.
+</LI><LI> <STRONG>MoLinux</STRONG> <A CLASS="external" TITLE="http://molinux.info" HREF="http://molinux.info/">[23]</A><SPAN CLASS="urlexpansion"> (<I>http://molinux.info</I>)</SPAN>, promovida por la Junta de Comunidades de Castilla - La Mancha, estaba inicialmente basada en Linex / Progeny Componentized Linux y en su versión 1.2 ha pasado a basarse en Hoary.
+</LI></UL>
+<A NAME="Derivaciones_oficiosas"></A><H3>Derivaciones oficiosas</H3>
+<UL><LI> <STRONG>Ubuntu Lite</STRONG> <A CLASS="external" TITLE="http://ubuntulite.org/" HREF="http://ubuntulite.org/">[24]</A><SPAN CLASS="urlexpansion"> (<I>http://ubuntulite.org/</I>)</SPAN> es una variante pensada para equipos antiguos o con recursos limitados.
+</LI></UL>
+<DIV CLASS="printfooter">
+Obtenido de "<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Ubuntu%2C_la_hija_aventajada" HREF="Ubuntu%2C_la_hija_aventajada">http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Ubuntu%2C_la_hija_aventajada</A>"</DIV>
+
+	    
+	    <!--  end content -->
+	    <DIV CLASS="visualClear"></DIV>
+	  </DIV>
+	</DIV>
+      </DIV>
+      <DIV CLASS="visualClear"></DIV>
+    </DIV>
+  </BODY>
+</HTML>

@@ -1,0 +1,143 @@
+<!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML XMLNSXML:LANGDIRLANG>
+  <HEAD>
+    <META / HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    <META NAME="KEYWORDS" / CONTENT="Guía v4/Accesibilidad para usuarios especiales,Guia v4/Conecta (a) tu ordenador">
+<META NAME="robots" / CONTENT="index,follow">
+<LINK / REL="shortcut icon" HREF="http://www.guadalinex.org/favicon.ico">
+<LINK TITLE="Creative Commons" / REL="meta" TYPE="application/rdf+xml" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php?title=Gu%C3%ADa_v4/Accesibilidad_para_usuarios_especiales&amp;action=creativecommons">
+<LINK / REL="copyright" HREF="http://creativecommons.org/licenses/by-sa/2.1/es/">
+
+    <TITLE>Guía v4/Accesibilidad para usuarios especiales - Guadapedia</TITLE>
+    <STYLE TYPE="text/css" MEDIA="screen,projection">/*<![CDATA[*/ @import "/guadapedia-estatica/stylesheets/monobook/main.css"; /*]]>*/</STYLE>
+    <LINK / REL="stylesheet" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/stylesheets/commonPrint.css" TYPE="text/css" MEDIA="print" HREF="../../../../../../../../manual/stylesheets/commonPrint.css">
+    <!-- [if IE]><STYLE TYPE="text/css" MEDIA="all">@import "/guadapedia-estatica/stylesheets/monobook/IEFixes.css";</STYLE>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/IEFixes.js" SRC="../../../../../../../../manual/stylesheets/IEFixes.js" TYPE="text/javascript"></SCRIPT>
+    <META / HTTP-EQUIV="imagetoolbar" CONTENT="no"><![ENDIF]-->
+    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/index.php?title=-&amp;action=raw&amp;gen=js" TYPE="text/javascript"></SCRIPT>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/wikibits.js" SRC="../../../../../../../../manual/stylesheets/wikibits.js" TYPE="text/javascript"></SCRIPT>
+    <STYLE TYPE="text/css">/*<![CDATA[*/ @import "/guadapedia-estatica/index.php?title=-&action=raw&gen=css";
+ /*]]>*/</STYLE>
+    
+  </HEAD>
+  <BODY CLASS="ns-0">
+    <DIV ID="globalWrapper">
+      <DIV ID="column-content">
+	<DIV ID="content">
+	    
+	  <A ID="contentTop" NAME="top"></A>
+	  <H1 CLASS="firstHeading">Guía v4/Accesibilidad para usuarios especiales</H1>
+	  <DIV ID="bodyContent">
+	    <H3 ID="siteSub">De Guadapedia, la enciclopedia libre.</H3>
+	    <DIV ID="contentSub"></DIV>
+	    
+
+	    
+	    <!--  start content -->
+	    <TABLE ID="toc" BORDER="0"><TR ID="toctitle"><TD ALIGN="center">
+<B>Tabla de contenidos</B> <SCRIPT TYPE="text/javascript">showTocToggle("mostrar","esconder")</SCRIPT></TD></TR><TR ID="tocinside"><TD>
+<DIV CLASS="tocline"><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Gu%C3%ADa_v4/Accesibilidad_para_usuarios_especiales#Accesibilidad_para_usuarios_especiales" HREF="../../../../../../../../manual/extra/Gu%C3%ADa_v4/Accesibilidad_para_usuarios_especiales#Accesibilidad_para_usuarios_especiales">1 Accesibilidad para usuarios especiales</A><BR /></DIV>
+<DIV CLASS="tocindent">
+<P><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Gu%C3%ADa_v4/Accesibilidad_para_usuarios_especiales#Dasher" HREF="../../../../../../../../manual/extra/Gu%C3%ADa_v4/Accesibilidad_para_usuarios_especiales#Dasher">1.1 Dasher</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Gu%C3%ADa_v4/Accesibilidad_para_usuarios_especiales#XZoom" HREF="../../../../../../../../manual/extra/Gu%C3%ADa_v4/Accesibilidad_para_usuarios_especiales#XZoom">1.2 XZoom</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Gu%C3%ADa_v4/Accesibilidad_para_usuarios_especiales#Accesible_desde_el_arranque" HREF="../../../../../../../../manual/extra/Gu%C3%ADa_v4/Accesibilidad_para_usuarios_especiales#Accesible_desde_el_arranque">1.3 Accesible desde el arranque</A><BR />
+</P>
+<DIV CLASS="tocindent">
+<P><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Gu%C3%ADa_v4/Accesibilidad_para_usuarios_especiales#Activar_la_accesibilidad_en_la_pantalla_de_entrada" HREF="../../../../../../../../manual/extra/Gu%C3%ADa_v4/Accesibilidad_para_usuarios_especiales#Activar_la_accesibilidad_en_la_pantalla_de_entrada">1.3.1 Activar la accesibilidad en la pantalla de entrada</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Gu%C3%ADa_v4/Accesibilidad_para_usuarios_especiales#Soporte_para_tecnolog.C3.ADa_de_asistencia" HREF="../../../../../../../../manual/extra/Gu%C3%ADa_v4/Accesibilidad_para_usuarios_especiales#Soporte_para_tecnolog.C3.ADa_de_asistencia">1.3.2 Soporte para tecnología de asistencia</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Gu%C3%ADa_v4/Accesibilidad_para_usuarios_especiales#Gnopernicus" HREF="../../../../../../../../manual/extra/Gu%C3%ADa_v4/Accesibilidad_para_usuarios_especiales#Gnopernicus">1.3.3 Gnopernicus</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Gu%C3%ADa_v4/Accesibilidad_para_usuarios_especiales#GOK" HREF="../../../../../../../../manual/extra/Gu%C3%ADa_v4/Accesibilidad_para_usuarios_especiales#GOK">1.3.4 GOK</A><BR />
+</P>
+</DIV>
+</DIV>
+</TD></TR></TABLE>
+<A NAME="Accesibilidad_para_usuarios_especiales"></A><H1>Accesibilidad para usuarios especiales</H1>
+<P>Este apartado describe la situación tal cual está en Guadalinex V3
+</P><P>El proyecto GNOME lleva años invirtiendo esfuerzos para ser una alternativa libre viable para aquellos usuarios con necesidades de accesibilidad especiales, como por ejemplo personas con deficiencia visual o problemas motrices. El Grupo de Accesiblidad de GNOME reúne a programadores discapacitados, especialistas en esta disciplina y empresas con interés en el desarrollo de aplicaciones accesibles como IBM o Sun.
+</P><P>Los esfuerzos de este equipo de trabajo se centran en tres aspectos:
+</P>
+<UL><LI>Garantía de que el escritorio en sí puede ser utilizado por usuarios con varios tipos de discapacidad, manteniendo los estándares de programación y de accesibilidad necesarios para llegar a esta meta.
+</LI><LI>Desarrollo de aplicaciones especialmente pensadas para estos usuarios.
+</LI><LI>Trabajo a nivel de librerías de programación y difusión en la comunidad de desarrolladores para que las aplicaciones libres superen los tests de accesibilidad.
+</LI></UL>
+<P>Veamos algunos resultados concretos de este esfuerzo.
+</P><P><BR />
+</P>
+<A NAME="Dasher"></A><H2>Dasher</H2>
+<P><STRONG>Aplicaciones</STRONG> > <STRONG>Accesibilidad</STRONG> > <STRONG>Sistema predictivo de entrada (Dasher)</STRONG>
+</P><P><BR />
+Dasher <A CLASS="external" TITLE="http://www.inference.phy.cam.ac.uk/dasher/" HREF="http://www.inference.phy.cam.ac.uk/dasher/">[1]</A><SPAN CLASS="urlexpansion"> (<I>http://www.inference.phy.cam.ac.uk/dasher/</I>)</SPAN> es un juego de letras, una máquina de poesía, un pasaje hacia nuestro subconsciente, un pasatiempos mucho más inteligente que el Buscaminas y al nivel de un Tetris o un ajedrez. También es, por supuesto, una aplicación que permite escribir en situaciones en las que no se puede acceder a un teclado completo.
+</P><P>Esta aplicación permite elaborar textos con el movimiento del ratón, de un <EM>joystick</EM>, de un mando articulado con la cabeza... También es operativo con otros dispositivos elementales como por ejemplo un teclado compuesto por tres teclas grandes y hasta se puede controlar con la mirada o... ¡con la respiración! Un usuario entrenado escribe con un sensor visual (dispositivo que capta hacia dónde apuntamos la mirada) a una media de 29 palabras por minuto, equivalente a una velocidad de escritura a mano. 
+</P><P>Los estudios confirman que con <STRONG>Dasher</STRONG> y un ratón se puede llegar a escribir 39 palabras de media por minuto. Esta estadística es una esperanza para los usuarios discapacitados que no pueden utilizar un teclado completo con las dos manos, pero si esta aplicación fuera tan popular entre la comunidad en general como lo es en el entorno de la accesibilidad, seguramente sería útil para quienes utilizan PDAs y demás pantallas táctiles reducidas. Y en la sección de <STRONG>Juegos</STRONG> sería la delicia de muchos, pequeños y mayores.
+</P><P>Si alguien cree que estamos exagerando le invitamos a que pruebe esta aplicación durante 15 minutos de reloj, y a ver si a partir de allí le entra o no más curiosidad. <STRONG>Dasher</STRONG> aprende a predecirnos mientras nosotros aprendemos a utilizarlo, por lo que cuanto más lo utilizamos mejor se adapta a lo que queremos escribir.
+</P><P>Su uso es bien sencillo. El juego consiste en llevar de la derecha a la izquierda las letras que componen nuestro mensaje, asegurándonos de que pasan por el medio. Tras un minuto de juego ya se ve por donde van los tiros y en poco más se empieza acumular fluidez. En las <STRONG>Preferencias</STRONG> es posible seleccionar multitud de idiomas con vocabularios predictivos preinstalados. Acentos, eñes y signos de puntuación están incluidos.
+</P>
+<A NAME="XZoom"></A><H2>XZoom</H2>
+<P><STRONG>Aplicaciones </STRONG> > <STRONG>Accesibilidad</STRONG> > <STRONG>Magnificador (XZoom)</STRONG>
+</P><P><BR />
+Pequeño programa que trabaja como una lupa sobre la pantalla. Tan sólo hay que abrir la aplicación, clicar a la ventana y sin dejar de presionar llevar el puntero a la zona que queremos aumentar. Hay una serie de comandos que podemos activar a través del teclado:
+</P>
+<UL><LI><STRONG>+</STRONG> amplia el zoom, que por defecto es de 2x, el doble.
+</LI><LI><STRONG>-</STRONG> disminuye el zoom.
+</LI><LI>Mediante las flechas del teclado nos podemos desplazar lentamente, por ejemplo para ir leyendo un texto.
+</LI><LI>Otras teclas nos permiten ampliar sólo horizontalmente (w+ o w-), vertical (h+  h-), girar 90 grados (z), mostrar imágenes invertidas (x y)...
+</LI></UL>
+<P>Si colocamos XZoom como minimaplicación en el panel, su activación es instantánea. Sólo le falta mango por donde asirla.
+</P><P><BR />
+</P>
+<A NAME="Accesible_desde_el_arranque"></A><H2>Accesible desde el arranque</H2>
+<P>Para unas necesidades de accesibilidad más intensivas, lo recomendado es adaptar el sistema desde su arranque. Para ello debemos dotarlo de aplicaciones adicionales que deberemos instalar y que se pondrán en marcha de forma automática cada vez que entremos en nuestro escritorio.
+</P><P><BR />
+</P>
+<A NAME="Activar_la_accesibilidad_en_la_pantalla_de_entrada"></A><H3>Activar la accesibilidad en la pantalla de entrada</H3>
+<P><STRONG>Sistema</STRONG> > <STRONG>Administración</STRONG> > <STRONG>Configuración de la pantalla de entrada</STRONG>
+</P><P><BR />
+La pantalla de entrada, donde introducimos usuario y contraseña, puede ya ser un obstáculo insalvable. Si hay un único usuario en el ordenador podemos desactivar la contraseña, aterrizando directamente en el escritorio sin pregunta alguna. Ahora bien, el GDM, la aplicación que gestiona la entrada al escritorio, debe poner en marcha los módulos de accesibilidad para que todo esté a punto una vez que entremos en el escritorio.
+</P><P>Para ello tenemos que activar la <STRONG>Configuración de la pantalla de entrada</STRONG> e ir a su pestaña de <STRONG>Accesibilidad</STRONG>. Allí nos encontramos con las siguientes opciones:
+</P>
+<UL><LI><STRONG>Activar módulos de accesibilidad</STRONG> es la opción básica para que el teclado y el ratón se adapten al comportamiento de un entorno accesible. Por ejemplo, las acciones que requieren una combinación simultánea de dos teclas pasan a poder ser activadas con una combinación secuencial.
+</LI><LI><STRONG>Permitir selección de temas en la interfaz GTK+</STRONG> nos permite disponer pantallas de entrada más flexibles y sencillas.
+</LI><LI>Las siguientes opciones son relativas a la emisión de <STRONG>sonidos</STRONG>, muy útiles para que los usuarios invidentes sepamos cuándo la pantalla de entrada está preparada (ese repique de timbal), cuándo hemos entrado con éxito en el escritorio o cuándo ha sucedido algún error.
+</LI></UL>
+<P><BR />
+</P>
+<A NAME="Soporte_para_tecnolog.C3.ADa_de_asistencia"></A><H3>Soporte para tecnología de asistencia</H3>
+<P><STRONG>Sistema</STRONG> > <STRONG>Preferencias</STRONG> > <STRONG>Soporte para tecnología de asistencia</STRONG>
+</P><P><BR />
+El paso dado anteriormente se complementa con la activación del <STRONG>Soporte para tecnología de asistencia</STRONG>, que se encarga de gestionar las capacidades y aplicaciones de accesibilidad en el escritorio. Antes de activar este soporte deberemos instalar dos aplicaciones que explicamos a continuación, <STRONG>Gnopernicus</STRONG> (principalmente para usuarios invidentes o con problemas de visión) y <STRONG>GOK</STRONG> (para usuarios que no puedan operar con el teclado o incluso el ratón).
+</P><P>Para instalar estas aplicaciones debemos dar los siguientes pasos:
+</P>
+<OL><LI>Seleccionar <STRONG>Aplicaciones</STRONG> en el menú del panel superior.
+</LI><LI>Seleccionar  <STRONG>Añadir programas</STRONG>.
+</LI><LI>Buscar <STRONG>Gnopernicus</STRONG> y/o <STRONG>GOK</STRONG> mediante el buscador situado en la parte baja de la ventana.
+</LI><LI>Instalar el programa. En el caso de instalar los dos hay que buscar e instalar primero uno y luego el otro.
+</LI></OL>
+<P>Una vez que ya tengamos el software instalado debemos volver al <STRONG>Soporte para tecnología de asistencia</STRONG>. Si la instalación ha sido correcta los mensajes de advertencia habrán desaparecido y podremos seleccionar tanto la opción de <STRONG>Soporte</STRONG> como las aplicaciones de <STRONG>Lector en pantalla</STRONG> y/o <STRONG>Teclado en pantalla</STRONG>. La <STRONG>Lupa</STRONG> ya la tenemos instalada, se trata del XZoom, que ya hemos repasado y que es parte del paquete <STRONG>Gnopernicus</STRONG>.
+</P><P>Una vez hecha la selección deberemos salir de la sesión y volver a entrar para que los cambios surjan efecto.
+</P><P><BR />
+</P>
+<A NAME="Gnopernicus"></A><H3>Gnopernicus</H3>
+<P><BR />
+<STRONG>Gnopernicus</STRONG> [www.baum.ro/gnopernicus.html] es una aplicación muy versátil formada por diversos componentes. Su principal objetivo es servir de lazarillo digital a los usuarios con problemas visuales. Este completo programa consigue que las aplicaciones debidamente programadas y basadas para GNOME/GTK+2 o Java puedan ser operadas por usuarios con visión nula o muy deficiente. XZoom, como hemos dicho, forma parte del paquete.
+</P><P>Los textos en pantalla pueden ser <EM>leídos en voz alta</EM> mediante síntesis de voz. Hay varias voces disponibles, femeninas y masculinas, jóvenes y maduras. Los idiomas disponibles son el español (incluso con acento ibérico o mexicano, a escoger), inglés y galés. Los actores y actrices sonoros son provistos por el sistema libre de síntesis de voz Festival <A CLASS="external" TITLE="http://www.cstr.ed.ac.uk/projects/festival/" HREF="http://www.cstr.ed.ac.uk/projects/festival/">[2]</A><SPAN CLASS="urlexpansion"> (<I>http://www.cstr.ed.ac.uk/projects/festival/</I>)</SPAN>. También es posible la lectura de textos por braille, disponiendo del dispositivo adecuado.
+</P><P>Además, el proyecto <STRONG>Gnopernicus</STRONG> ofrece a los desarrolladores la información y los elementos necesarios para que produzcan aplicaciones plenamente compatibles con este sistema y, por tanto, accesibles.
+</P>
+<A NAME="GOK"></A><H3>GOK</H3>
+<P>El proyecto <STRONG>GOK</STRONG> <A CLASS="external" TITLE="http://www.gok.ca/" HREF="http://www.gok.ca/">[3]</A><SPAN CLASS="urlexpansion"> (<I>http://www.gok.ca/</I>)</SPAN> desarrolla un teclado sobre pantalla para ser operado sin teclado físico  incluso sin ratón. Sus siglas responden a <EM>GNOME On-screen Keyboard</EM> (en español, <EM>teclado sobre pantalla de GNOME</EM>). Los mismos usuarios que, por ejemplo, son capaces de pintar con pincel en la boca pueden moverse por el escritorio y las aplicaciones mediante este programa y el hardware adecuado.
+</P><P><STRONG>GOK</STRONG> no ofrece sólo un teclado literal sobre pantalla asistido por un sistema predictivo de palabras similar al de los móviles. Este programa también sirve de elemento navegador por el escritorio y el sistema, así como para el uso de las aplicaciones. 
+</P><P><BR />
+El soporte de accesibilidad permite a usuarios discapacitados la colonización de su escritorio casi hasta los mismos extremos a los que puede llegar cualquiera. La comunidad del software libre cuenta con numerosos ejemplos de programadores con algunas capacidades visuales o motrices mermadas, combinadas con capacidades de desarrollo y colaboración excepcionales.
+</P>
+<PRE>   Sigue: <A TITLE="Guia v4/Conecta (a) tu ordenador" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Conecta_(a)_tu_ordenador" HREF="../../../../../../../../manual/Conecta_(a)_tu_ordenador">Conecta (a) tu ordenador</A>
+</PRE><DIV CLASS="printfooter">
+Obtenido de "<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Gu%C3%ADa_v4/Accesibilidad_para_usuarios_especiales" HREF="../../../../../../../../manual/extra/Gu%C3%ADa_v4/Accesibilidad_para_usuarios_especiales">http://www.guadalinex.org/guadapedia-estatica/index.php/Gu%C3%ADa_v4/Accesibilidad_para_usuarios_especiales</A>"</DIV>
+
+	    
+	    <!--  end content -->
+	    <DIV CLASS="visualClear"></DIV>
+	  </DIV>
+	</DIV>
+      </DIV>
+      <DIV CLASS="visualClear"></DIV>
+    </DIV>
+  </BODY>
+</HTML>

@@ -1,0 +1,111 @@
+<!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML XMLNSXML:LANGDIRLANG>
+  <HEAD>
+    <META / HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    <META NAME="KEYWORDS" / CONTENT="Guia v4/Sincronización de dispositivos móviles">
+<META NAME="robots" / CONTENT="index,follow">
+<LINK / REL="shortcut icon" HREF="http://www.guadalinex.org/favicon.ico">
+<LINK TITLE="Creative Commons" / REL="meta" TYPE="application/rdf+xml" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php?title=Guia_v4/Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles&amp;action=creativecommons">
+<LINK / REL="copyright" HREF="http://creativecommons.org/licenses/by-sa/2.1/es/">
+
+    <TITLE>Guia v4/Sincronización de dispositivos móviles - Guadapedia</TITLE>
+    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="screen,projection" HREF="stylesheets/main.css">
+    <LINK / REL="stylesheet" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/stylesheets/commonPrint.css" TYPE="text/css" MEDIA="print" HREF="stylesheets/commonPrint.css">
+    <!-- [if IE]><STYLE TYPE="text/css" MEDIA="all">@import "/guadapedia-estatica/stylesheets/monobook/IEFixes.css";</STYLE>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/IEFixes.js" SRC="stylesheets/IEFixes.js" TYPE="text/javascript"></SCRIPT>
+    <META / HTTP-EQUIV="imagetoolbar" CONTENT="no"><![ENDIF]-->
+    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/index.php?title=-&amp;action=raw&amp;gen=js" TYPE="text/javascript"></SCRIPT>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/wikibits.js" SRC="stylesheets/wikibits.js" TYPE="text/javascript"></SCRIPT>
+    <STYLE TYPE="text/css">/*<![CDATA[*/ @import "/guadapedia-estatica/index.php?title=-&action=raw&gen=css";
+ /*]]>*/</STYLE>
+    
+  </HEAD>
+  <BODY CLASS="ns-0">
+    <DIV ID="globalWrapper">
+      <DIV ID="column-content">
+	<DIV ID="content">
+	    
+	  <A ID="contentTop" NAME="top"></A>
+	  <H1 CLASS="firstHeading"><a href=Indice>Guia v4/Sincronización de dispositivos móviles</a></H1>
+	  <DIV ID="bodyContent">
+	    <H3 ID="siteSub">De Guadapedia, la enciclopedia libre.</H3>
+	    <DIV ID="contentSub"></DIV>
+	    
+
+	    
+	    <!--  start content -->
+	    <TABLE ID="toc" BORDER="0"><TR ID="toctitle"><TD ALIGN="center">
+<B>Tabla de contenidos</B> <SCRIPT TYPE="text/javascript">showTocToggle("mostrar","esconder")</SCRIPT></TD></TR><TR ID="tocinside"><TD>
+<DIV CLASS="tocline"><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles#Introducci.C3.B3n" HREF="Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles#Introducci.C3.B3n">1 Introducción</A><BR /></DIV>
+<DIV CLASS="tocline"><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles#Requisitos_de_los_dispositivos_m.C3.B3viles" HREF="Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles#Requisitos_de_los_dispositivos_m.C3.B3viles">2 Requisitos de los dispositivos móviles</A><BR /></DIV>
+<DIV CLASS="tocline"><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles#Paquetes_requeridos" HREF="Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles#Paquetes_requeridos">3 Paquetes requeridos</A><BR /></DIV>
+<DIV CLASS="tocline"><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles#MultiSync" HREF="Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles#MultiSync">4 MultiSync</A><BR /></DIV>
+<DIV CLASS="tocline"><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles#Configuraci.C3.B3n" HREF="Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles#Configuraci.C3.B3n">5 Configuración</A><BR /></DIV>
+<DIV CLASS="tocline"><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles#Preguntas_y_respuestas" HREF="Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles#Preguntas_y_respuestas">6 Preguntas y respuestas</A><BR /></DIV>
+<DIV CLASS="tocindent">
+<P><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles#La_sincronizaci.C3.B3n_no_funciona._.C2.BFQu.C3.A9_puedo_hacer.3F" HREF="Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles#La_sincronizaci.C3.B3n_no_funciona._.C2.BFQu.C3.A9_puedo_hacer.3F">6.1 La sincronización no funciona. ¿Qué puedo hacer?</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles#.C2.BFComo_conecto_mi_dispositivo_bluetooth.3F" HREF="Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles#.C2.BFComo_conecto_mi_dispositivo_bluetooth.3F">6.2 ¿Como conecto mi dispositivo bluetooth?</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles#.C2.BFPuedo_crear_elementos_en_mi_PDA.3F" HREF="Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles#.C2.BFPuedo_crear_elementos_en_mi_PDA.3F">6.3 ¿Puedo crear elementos en mi PDA?</A><BR />
+</P>
+</DIV>
+</TD></TR></TABLE>
+<A NAME="Introducci.C3.B3n"></A><H1> Introducción </H1>
+<P>Nuestro objetivo es la sincronización de nuestra libreta de direcciones y nuestras citas con nuestro PDA o teléfono móvil. Para ello se ha proporcionado el programa MultiSync que permite justamente esta operación. Existenten diferentes tecnologías de sincronización:
+</P>
+<UL><LI> Windows Mobile / ActiveSync: se basa en un protocolo propietario de Microsoft y es usado por la mayor parte de PDAs y teléfonos móviles que usan este sistema operativo. Opera a bajo nivel. La implementación bajo Linux en SynCE.
+</LI><LI> Palm HotSync: Aunque es propietario, la buena documentación ha permitido una buena implementación en Linux.
+</LI><LI> SyncML: es un protocolo genérico, pero en muchos casos requiere un programa de sincronización especial. 
+</LI></UL>
+<A NAME="Requisitos_de_los_dispositivos_m.C3.B3viles"></A><H1> Requisitos de los dispositivos móviles </H1>
+<P>Dispositivo móvil con sistema operativo:
+</P>
+<UL><LI> Windows Mobile 4 (Windows CE, PocketPC)
+</LI><LI> PalmOS
+</LI><LI> Sharp Zaurus
+</LI></UL>
+<P>y conexión por USB, Bluetooth o puerto serie.
+</P><P>Desgraciadamente, actualmente existen problemas de sincronización con los dispositivos más recientes con sistema operativo Windows Mobile 5.
+</P>
+<A NAME="Paquetes_requeridos"></A><H1> Paquetes requeridos </H1>
+<P>Para facilitar la configuración se ha creado el paquete <STRONG>guadalinex-noodle</STRONG> que viene preinstalado y engloba una serie de utilidades.
+</P><P><BR />
+</P>
+<A NAME="MultiSync"></A><H1> MultiSync </H1>
+<P>Se trata de programa que enlaza Evolution (y otros programas) con nuestro dispositivo móvil. Este programa es accesible a través del menú Accesorios.
+</P><P><BR />
+</P>
+<A NAME="Configuraci.C3.B3n"></A><H1> Configuración </H1>
+<OL><LI> Si su dispositivo usa USB, enchufélo. Aparecerá una notificación que indica el estado de la detección del dispositivo.
+</LI><LI> Arranque MultiSync.
+</LI><LI> Agregue un nuevo par de conexión: Nuevo... (o menú Archivo | Nuevo par de sincronización).
+</LI><LI> En primer Plugin, elija Ximian Evolution.
+</LI><LI> En el segundo Plugin elija el Plugin para su dispositivo: SynCE en caso de Windows Mobile (PocketPC, Windows CE).
+</LI><LI> Active las opciones del primer plugin y elija qué datos desea sincronizar. Evolution permite el uso varias libretas de direcciones, calendarios y listas de tareas, sin embargo, los PDAs normalmente sólo la existencia de uno por tipo (una libreta de direcciones, un calendario y una lista de tareas).
+</LI><LI> El conector de SynCE no tiene opciones.
+</LI><LI> Asigne un nombrer a esta conexión.
+</LI><LI> Indique los tipos de datos que desea sincronzar habitualmente.
+</LI><LI> Deje las demás opciones como están.
+</LI><LI> Sincronice ambos dispositivos: para ello compruebe que el par de sincronización esté seleccionado y pulse al botón de sincronización en la barra de herramientes.
+</LI></OL>
+<P><BR />
+</P>
+<A NAME="Preguntas_y_respuestas"></A><H1> Preguntas y respuestas </H1>
+<A NAME="La_sincronizaci.C3.B3n_no_funciona._.C2.BFQu.C3.A9_puedo_hacer.3F"></A><H2> La sincronización no funciona. ¿Qué puedo hacer? </H2>
+<P>Es importante detectar si el error proviene de la conexión entre PDA y ordenador. Compruebe que le aparezca un mensaje de notificación a la hora de enchufar el dispositivo. 
+</P><P><BR />
+</P>
+<A NAME=".C2.BFComo_conecto_mi_dispositivo_bluetooth.3F"></A><H2> ¿Como conecto mi dispositivo bluetooth? </H2>
+<A NAME=".C2.BFPuedo_crear_elementos_en_mi_PDA.3F"></A><H2> ¿Puedo crear elementos en mi PDA? </H2>
+<P>Sí. Se insertará automáticamente con Evolution.
+</P><DIV CLASS="printfooter">
+Obtenido de "<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles" HREF="Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles">http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles</A>"</DIV>
+
+	    
+	    <!--  end content -->
+	    <DIV CLASS="visualClear"></DIV>
+	  </DIV>
+	</DIV>
+      </DIV>
+      <DIV CLASS="visualClear"></DIV>
+    </DIV>
+  </BODY>
+</HTML>

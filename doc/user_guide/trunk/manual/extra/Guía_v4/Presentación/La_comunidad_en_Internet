@@ -1,0 +1,84 @@
+<!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML XMLNSXML:LANGDIRLANG>
+  <HEAD>
+    <META / HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    <META NAME="KEYWORDS" / CONTENT="Guía v4/Presentación/La comunidad en Internet">
+<META NAME="robots" / CONTENT="index,follow">
+<LINK / REL="shortcut icon" HREF="http://www.guadalinex.org/favicon.ico">
+<LINK TITLE="Creative Commons" / REL="meta" TYPE="application/rdf+xml" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php?title=Gu%C3%ADa_v4/Presentaci%C3%B3n/La_comunidad_en_Internet&amp;action=creativecommons">
+<LINK / REL="copyright" HREF="http://creativecommons.org/licenses/by-sa/2.1/es/">
+
+    <TITLE>Guía v4/Presentación/La comunidad en Internet - Guadapedia</TITLE>
+    <STYLE TYPE="text/css" MEDIA="screen,projection">/*<![CDATA[*/ @import "/guadapedia-estatica/stylesheets/monobook/main.css"; /*]]>*/</STYLE>
+    <LINK / REL="stylesheet" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/stylesheets/commonPrint.css" TYPE="text/css" MEDIA="print" HREF="../../../../../../../../../manual/stylesheets/commonPrint.css">
+    <!-- [if IE]><STYLE TYPE="text/css" MEDIA="all">@import "/guadapedia-estatica/stylesheets/monobook/IEFixes.css";</STYLE>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/IEFixes.js" SRC="../../../../../../../../../manual/stylesheets/IEFixes.js" TYPE="text/javascript"></SCRIPT>
+    <META / HTTP-EQUIV="imagetoolbar" CONTENT="no"><![ENDIF]-->
+    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/index.php?title=-&amp;action=raw&amp;gen=js" TYPE="text/javascript"></SCRIPT>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/wikibits.js" SRC="../../../../../../../../../manual/stylesheets/wikibits.js" TYPE="text/javascript"></SCRIPT>
+    <STYLE TYPE="text/css">/*<![CDATA[*/ @import "/guadapedia-estatica/index.php?title=-&action=raw&gen=css";
+ /*]]>*/</STYLE>
+    
+  </HEAD>
+  <BODY CLASS="ns-0">
+    <DIV ID="globalWrapper">
+      <DIV ID="column-content">
+	<DIV ID="content">
+	    
+	  <A ID="contentTop" NAME="top"></A>
+	  <H1 CLASS="firstHeading">Guía v4/Presentación/La comunidad en Internet</H1>
+	  <DIV ID="bodyContent">
+	    <H3 ID="siteSub">De Guadapedia, la enciclopedia libre.</H3>
+	    <DIV ID="contentSub"></DIV>
+	    
+
+	    
+	    <!--  start content -->
+	    <TABLE ID="toc" BORDER="0"><TR ID="toctitle"><TD ALIGN="center">
+<B>Tabla de contenidos</B> <SCRIPT TYPE="text/javascript">showTocToggle("mostrar","esconder")</SCRIPT></TD></TR><TR ID="tocinside"><TD>
+<DIV CLASS="tocline"><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Gu%C3%ADa_v4/Presentaci%C3%B3n/La_comunidad_en_Internet#La_comunidad_en_Internet" HREF="../../../../../../../../../manual/extra/Gu%C3%ADa_v4/Presentaci%C3%B3n/La_comunidad_en_Internet#La_comunidad_en_Internet">1 La comunidad en Internet</A><BR /></DIV>
+<DIV CLASS="tocindent">
+<P><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Gu%C3%ADa_v4/Presentaci%C3%B3n/La_comunidad_en_Internet#Guadalinex.org" HREF="../../../../../../../../../manual/extra/Gu%C3%ADa_v4/Presentaci%C3%B3n/La_comunidad_en_Internet#Guadalinex.org">1.1 Guadalinex.org</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Gu%C3%ADa_v4/Presentaci%C3%B3n/La_comunidad_en_Internet#Ubuntu-es.org" HREF="../../../../../../../../../manual/extra/Gu%C3%ADa_v4/Presentaci%C3%B3n/La_comunidad_en_Internet#Ubuntu-es.org">1.2 Ubuntu-es.org</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Gu%C3%ADa_v4/Presentaci%C3%B3n/La_comunidad_en_Internet#Ubuntu.com" HREF="../../../../../../../../../manual/extra/Gu%C3%ADa_v4/Presentaci%C3%B3n/La_comunidad_en_Internet#Ubuntu.com">1.3 Ubuntu.com</A><BR />
+</P>
+</DIV>
+</TD></TR></TABLE>
+<A NAME="La_comunidad_en_Internet"></A><H1>La comunidad en Internet</H1>
+<P>El software libre es el producto dinámico de unas comunidades vivas. Detrás de cada distribución y cada programa hay generalmente un equipo de desarrolladores y usuarios que se comunican, trabajan y se ayudan de forma abierta y colaborativa. 
+</P><P>Estas comunidades te pueden ayudar con las dudas y problemas que vayas encontrado en tu proceso de aprendizaje. Secciones habituales como la <STRONG>Documentación</STRONG> y las <STRONG>Preguntas Frecuentes</STRONG> (o su acrónimo en inglés <EM>FAQ</EM>, de <EM>Frequently Asked Questions</EM>) pueden ser de gran utilidad, sobre todo en combinación con un buscador. Si necesitas saber más de lo que esta Guía explica no dudes en recurrir a esas fuentes de información.
+</P><P>Si no encuentras las respuestas que buscas no temas en preguntar. El intercambio de saberes es una dinámica corriente en las comunidades de software libre. Quien te responda seguramente preguntó y sigue preguntando alguna vez. O muchas veces. Con los conocimientos que adquieras preguntando podrás responder tú a otros algún día (menos lejano de lo que posiblemente crees). En esta ecuación se basa la sostenibilidad del denominado <EM>soporte comunitario</EM>.
+</P><P>Más sobre comunidades de software libre y cómo interactuar con ellas en el capítulo <STRONG>8. Quiero más</STRONG>.
+</P>
+<A NAME="Guadalinex.org"></A><H2>Guadalinex.org</H2>
+<P>Existe una cada vez mayor comunidad de usuarios en torno a Guadalinex. El nexo común a todos ellos, además de la distribución, es el portal de Guadalinex. Existen multitud de foros repletos de interesantes temas de debate en torno a esta distribución. ¡Anímate a participar!
+</P><P>Este portal está repleto de información que puede resultar muy útil de cara a los usuarios. Una sección interesante para comenzar es la de <STRONG>Preguntas y respuestas (FAQ)</STRONG>. Ahí tienes algunas preguntas y respuestas básicas en torno a todo el proyecto Guadalinex de la Junta de Andalucía.
+</P><P>Aparte, existen otros muchos recursos e información disponibles para los usuarios en el portal. Te esperamos allí.
+</P>
+<A NAME="Ubuntu-es.org"></A><H2>Ubuntu-es.org</H2>
+<P>La comunidad hispanohablante de Ubuntu cuenta con una web no oficial donde encontrarse, compartir experiencias y pareceres: <A CLASS="external" TITLE="http://ubuntu-es.org" HREF="http://ubuntu-es.org/">http://ubuntu-es.org</A>. Esta nutrida y poblada comunidad puede ser útil no sólo para los usuarios de Ubuntu, sino también para los de distribuciones que deriven de ella, como es el caso de Guadalinex. 
+</P><P>Ubuntu y sus distribuciones derivadas comparten un buen porcentaje de código y aplicaciones, lo que implica que pueden compartir un buen porcentaje de información, materiales, apoyo, trucos y chismes de la comunidad. Ubuntu-es ofrece foros, documentación, material gráfico y enlaces a otros puntos interesantes de la comunidad Ubuntu hispana. Eso sí, su nivel medio puede resultar a veces excesivamente técnico para usuarios noveles. 
+</P><P>Hay más recursos en Internet relacionados con Ubuntu y disponibles en español. Hemos recopilado una selección en la <STRONG>Webografía y bibliografía comentada</STRONG> del capítulo 8. 
+</P><P><BR />
+</P>
+<A NAME="Ubuntu.com"></A><H2>Ubuntu.com</H2>
+<P>El epicentro de la comunidad internacional Ubuntu se encuentra en <A CLASS="external" TITLE="http://ubuntu.com" HREF="http://ubuntu.com/">http://ubuntu.com</A>. Hoy por hoy esta comunidad es seguramente demasiado técnica para usuarios noveles. Además, el idioma corriente de comunicación es el inglés, aunque dispone de algunos espacios periféricos en español:
+</P>
+<UL><LI> <STRONG>Documentación en español</STRONG> <A CLASS="external" TITLE="https://wiki.ubuntu.com/SpanishDocumentation" HREF="https://wiki.ubuntu.com/SpanishDocumentation">[3]</A><SPAN CLASS="urlexpansion"> (<I>https://wiki.ubuntu.com/SpanishDocumentation</I>)</SPAN>, un apartado dentro de la wiki web de la comunidad Ubuntu. Contiene la información básica sobre Ubuntu y enlaces a todos los rincones del proyecto redactados en español.
+</LI><LI> <STRONG>Lista de correo oficial ubuntu-es</STRONG> <A CLASS="external" TITLE="http://lists.ubuntu.com/mailman/listinfo/ubuntu-es" HREF="http://lists.ubuntu.com/mailman/listinfo/ubuntu-es">[1]</A><SPAN CLASS="urlexpansion"> (<I>http://lists.ubuntu.com/mailman/listinfo/ubuntu-es</I>)</SPAN>, de suscripción abierta y archivos públicos. Su tráfico de correos diarios es considerable y puede resultar indigesto para quienes no estén acostumbrados a estos flujos de información en su buzón.
+</LI></UL>
+<P>Nuestra recomendación para introducirse en la comunidad Ubuntu internacional es empezar leyendo <EM>The Fridge</EM> <A CLASS="external" TITLE="http://fridge.ubuntu.com/" HREF="http://fridge.ubuntu.com/">[2]</A><SPAN CLASS="urlexpansion"> (<I>http://fridge.ubuntu.com/</I>)</SPAN>, canal informativo donde se recogen las noticias que la comunidad genera o debe saber.
+</P><P><BR />
+Más información sobre estas y otras comunidades de usuarios y desarrolladores en el apartado <STRONG>Al encuentro de nuestros pares</STRONG> del capítulo 8.
+</P><DIV CLASS="printfooter">
+Obtenido de "<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Gu%C3%ADa_v4/Presentaci%C3%B3n/La_comunidad_en_Internet" HREF="../../../../../../../../../manual/extra/Gu%C3%ADa_v4/Presentaci%C3%B3n/La_comunidad_en_Internet">http://www.guadalinex.org/guadapedia-estatica/index.php/Gu%C3%ADa_v4/Presentaci%C3%B3n/La_comunidad_en_Internet</A>"</DIV>
+
+	    
+	    <!--  end content -->
+	    <DIV CLASS="visualClear"></DIV>
+	  </DIV>
+	</DIV>
+      </DIV>
+      <DIV CLASS="visualClear"></DIV>
+    </DIV>
+  </BODY>
+</HTML>
