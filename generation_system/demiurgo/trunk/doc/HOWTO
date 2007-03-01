@@ -111,9 +111,9 @@ repository/installer-i386/current/images/cdrom/debian-cd_info.tar.gz
 
 Hay que modificarlos dentro de este fichero y el sistema de generación se encargará de su ubicación correcta en la ISO generada.
 
-* Formato de estos ficheros
-
-TODO
+Para hacer cambios en el contenido de isolinux.cfg -> Modificar "demiurgo/trunk/debian-cd/tools/boot/edgy/boot-i386"
+Para hacer cambios en el contenido de isolinux.txt -> Modificar "boot.txt"/"boot.txt.live" en "debian-cd_info.tar.gz"
+Los textos correspondientes a las ayudas de F? -> En "debian-cd_info.tar.gz" (hay versiones "live" (.live) y "no-live" (sin terminación))
 
 ¿Cómo añadir aplicaciones e información para Windows?
 =====================================================
