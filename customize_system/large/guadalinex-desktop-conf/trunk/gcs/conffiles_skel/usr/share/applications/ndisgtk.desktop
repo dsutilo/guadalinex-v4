@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Windows Wireless Drivers
+Name[fr]=Pilotes sans fil Windows
+Name[es]=Drivers de tarjetas WiFi de Windows
+Comment=Ndiswrapper driver installation tool
+Comment[fr]=Outil d'installation de pilotes Ndiswrapper
+Comment[es]=Herramienta para instalación de drivers de Windows de tarjetas WiFi (ndisgtk)
+Exec=gksudo /usr/bin/ndisgtk
+Icon=/usr/share/ndisgtk/ndisgtk.png
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Categories=Application;System;Settings;
