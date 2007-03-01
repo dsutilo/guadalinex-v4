@@ -1,4 +1,0 @@
-#! /bin/sh
-# Some scripts use this to figure out the architecture. In ubiquity, just
-# call dpkg instead.
-exec dpkg "$@"

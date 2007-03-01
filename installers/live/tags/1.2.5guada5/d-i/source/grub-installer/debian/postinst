@@ -1,4 +1,0 @@
-#! /bin/sh -e
-mkdir -p /target/boot/grub/
-cp -a /usr/share/grub-installer/splash.xpm.gz /target/boot/grub/
-grub-installer /target
