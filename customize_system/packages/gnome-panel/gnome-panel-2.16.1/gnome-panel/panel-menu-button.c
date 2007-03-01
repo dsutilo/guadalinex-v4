@@ -735,8 +735,15 @@ panel_menu_button_get_icon (PanelMenuButton *button)
 			retval = g_strdup (gmenu_tree_directory_get_icon (directory));
 	}
 
-	if (!retval)
-		retval = g_strdup (PANEL_MAIN_MENU_ICON);
+	if (!retval) {
+		const char *logo;
+
+		logo = panel_get_distributor_logo ();
+		if (logo != NULL)
+			retval = g_strdup (logo);
+		else
+			retval = g_strdup (PANEL_MAIN_MENU_ICON);
+	}
 
 	return retval;
 }

@@ -67,6 +67,9 @@ GtkWidget      *add_menu_separator   (GtkWidget *menu);
 gboolean menu_dummy_button_press_event (GtkWidget      *menuitem,
 					GdkEventButton *event);
 
+void create_submenu (GtkWidget          *menu,
+		     GMenuTreeDirectory *directory,
+		     GMenuTreeDirectory *alias_directory);
 
 G_END_DECLS
 

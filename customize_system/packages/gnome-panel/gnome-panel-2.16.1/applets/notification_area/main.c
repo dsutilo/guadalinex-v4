@@ -29,6 +29,7 @@
 #include <gtk/gtkmessagedialog.h>
 #include <gtk/gtkhbox.h>
 #include <libgnomeui/gnome-help.h>
+#include <lpint-bonobo.h>
 
 #include "na-tray-manager.h"
 #include "fixedtip.h"
@@ -580,6 +581,7 @@ applet_factory (PanelApplet *applet,
   SystemTray *tray;
   AtkObject  *atko;
   int         screen_number;
+  BonoboUIComponent* popup_component;
   
   if (!(strcmp (iid, "OAFIID:GNOME_NotificationAreaApplet") == 0 ||
         strcmp (iid, "OAFIID:GNOME_SystemTrayApplet") == 0))
@@ -706,6 +708,10 @@ applet_factory (PanelApplet *applet,
                                      NULL,
                                      menu_verbs,
                                      tray);
+
+  popup_component = panel_applet_get_popup_component (applet);
+
+  launchpad_integration_add_bonobo_ui(popup_component, "/popups/button3/LaunchpadItems");
   
   return TRUE;
 }

@@ -79,6 +79,8 @@ struct _PanelDesktopMenuItemPrivate {
 	GtkWidget   *menu;
 	PanelWidget *panel;
 
+	GMenuTree    *tree;
+
 	guint        use_image : 1;
 	guint        append_lock_logout : 1;
 };
@@ -87,6 +89,8 @@ static GObjectClass *place_parent_class;
 static GObjectClass *desktop_parent_class;
 
 static GnomeVFSVolumeMonitor *volume_monitor = NULL;
+
+static void panel_desktop_menu_item_recreate_menu (PanelDesktopMenuItem *desktop_item);
 
 static void
 activate_uri (GtkWidget *menuitem,
@@ -559,6 +563,7 @@ panel_place_menu_item_create_menu (PanelPlaceMenuItem *place_item)
 	GtkWidget *places_menu;
 	GtkWidget *item;
 	char      *gconf_name;
+	char      *path;
 
 	places_menu = panel_create_menu ();
 
@@ -570,6 +575,16 @@ panel_place_menu_item_create_menu (PanelPlaceMenuItem *place_item)
 					      gconf_name);
 	if (gconf_name)
 		g_free (gconf_name);
+
+	path = g_build_filename (g_get_home_dir (), "Documents", NULL);
+	if (g_file_test (path, G_FILE_TEST_IS_DIR))
+	  panel_menu_items_append_place_item ("gnome-fs-directory",
+					      _("Documents"),
+					      _("Documents directory"),
+					      places_menu,
+					      G_CALLBACK (activate_uri),
+					      "Documents");
+	g_free (path);
 
 	if (!gconf_client_get_bool (panel_gconf_get_client (),
 				    DESKTOP_IS_HOME_DIR_KEY,
@@ -627,9 +642,15 @@ panel_place_menu_item_create_menu (PanelPlaceMenuItem *place_item)
 
 	add_menu_separator (places_menu);
 
-	panel_menu_items_append_from_desktop (places_menu,
-					      "gnome-search-tool.desktop",
-					      NULL);
+        if (panel_is_program_in_path ("beagle-search")) {
+              panel_menu_items_append_from_desktop (places_menu,
+                                                    "beagle-search.desktop",
+                                                    NULL);
+        } else {
+              panel_menu_items_append_from_desktop (places_menu,
+                                                    "gnome-search-tool.desktop",
+                                                    NULL);
+        }
 
 	panel_recent_append_documents_menu (places_menu,
 					    place_item->priv->recent_manager);
@@ -688,6 +709,7 @@ panel_desktop_menu_item_append_menu (GtkWidget            *menu,
 {
 	gboolean  add_separator;
 	GList    *children;
+	GtkWidget *add_menu, *item;
 
 	if (!g_object_get_data (G_OBJECT (menu), "panel-menu-needs-appending"))
 		return;
@@ -712,23 +734,105 @@ panel_desktop_menu_item_append_menu (GtkWidget            *menu,
 	if (add_separator)
 		add_menu_separator (menu);
 
-	panel_menu_items_append_from_desktop (menu, "yelp.desktop", NULL);
+	item = gtk_image_menu_item_new ();
+	setup_menu_item_with_icon (item, panel_menu_icon_get_size (),
+				   "stock_help-agent", NULL,
+				   _("Help"), TRUE);
+	  
+	gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+	gtk_widget_show (item);
+	
+	add_menu = create_empty_menu ();
+	gtk_menu_item_set_submenu (GTK_MENU_ITEM (item), add_menu);
+	
+	panel_menu_items_append_from_desktop (add_menu, "guadalinex-user-manual.desktop", _("Guía de usuario de Guadalinex"));
+	
+	panel_menu_items_append_place_item ("gnome-globe",
+					    _("Asistencia (por Internet)"),
+					    _("Obtener ayuda a través de Internet"),
+					    add_menu,
+					    G_CALLBACK (activate_uri),
+					    "http://www.guadalinex.org/distro/V4/ayuda/");
+	
+	panel_menu_items_append_place_item ("stock_new-meeting",
+					    _("Comunidad Guadalinex"),
+					    _("Obtener ayuda de otros usuarios de Guadalinex"),
+					    add_menu,
+					    G_CALLBACK (activate_uri),
+					    "http://www.guadalinex.org/distro/V4/foros/");
+
+
+	panel_menu_items_append_from_desktop (add_menu, "hermesdruid.desktop", NULL);
+
+	panel_menu_items_append_from_desktop (add_menu, "guadalinex-about.desktop", NULL);
+
 	panel_menu_items_append_from_desktop (menu, "gnome-about.desktop", NULL);
+
+	if (g_file_test (DATADIR"/omf/about-ubuntu/about-ubuntu-C.omf",
+			 G_FILE_TEST_IS_REGULAR))
+		panel_menu_items_append_from_desktop (menu, "ubuntu-about.desktop", NULL);
 
 	if (parent->priv->append_lock_logout)
 		panel_menu_items_append_lock_logout (menu);
+}
+
+static void
+handle_menu_tree_changed (GMenuTree  *tree,
+			  PanelDesktopMenuItem *desktop_item)
+{
+	panel_desktop_menu_item_recreate_menu (desktop_item);
 }
 
 static GtkWidget *
 panel_desktop_menu_item_create_menu (PanelDesktopMenuItem *desktop_item)
 {
 	GtkWidget *desktop_menu;
+	GMenuTreeDirectory *directory;
 
-	desktop_menu = create_applications_menu ("settings.menu", NULL);
+	desktop_menu = create_empty_menu ();
 
-	g_signal_connect (desktop_menu, "show",
-			  G_CALLBACK (panel_desktop_menu_item_append_menu),
-			  desktop_item);
+	/*
+	g_object_set_data_full (G_OBJECT (desktop_menu),
+				"panel-menu-tree-filename",
+				g_strdup ("settings.menu"),
+				(GDestroyNotify) g_free);
+
+	g_object_set_data_full (G_OBJECT (desktop_menu),
+				"panel-menu-tree",
+				menu_tree_ref (tree),
+				(GDestroyNotify) menu_tree_unref);
+
+	g_object_set_data_full (G_OBJECT (desktop_menu),
+				"panel-menu-tree-path",
+				g_strdup ("/"),
+				(GDestroyNotify) g_free);
+
+	g_object_set_data (G_OBJECT (desktop_menu),
+			   "panel-menu-needs-loading",
+			   GUINT_TO_POINTER (TRUE));
+	*/
+
+	g_object_set_data (G_OBJECT (desktop_menu),
+			   "panel-menu-needs-appending",
+			   GUINT_TO_POINTER (TRUE));
+
+	directory = gmenu_tree_get_directory_from_path (desktop_item->priv->tree,
+						       "/Preferences");
+
+	if (directory) {
+		create_submenu (desktop_menu, directory, NULL);
+		gmenu_tree_item_unref (directory);
+	}
+
+	directory = gmenu_tree_get_directory_from_path (desktop_item->priv->tree,
+						       "/Administration");
+
+	if (directory) {
+		create_submenu (desktop_menu, directory, NULL);
+		gmenu_tree_item_unref (directory);
+	}
+
+	panel_desktop_menu_item_append_menu (desktop_menu, desktop_item);
 
 	return desktop_menu;
 }
@@ -785,6 +889,14 @@ panel_desktop_menu_item_finalize (GObject *object)
 		panel_lockdown_notify_remove (G_CALLBACK (panel_desktop_menu_item_recreate_menu),
 					      menuitem);
 	desktop_parent_class->finalize (object);
+
+	if (menuitem->priv->tree) {
+		gmenu_tree_remove_monitor (menuitem->priv->tree,
+					  (GMenuTreeChangedFunc) handle_menu_tree_changed,
+					  menuitem);
+		gmenu_tree_unref (menuitem->priv->tree);
+	}
+	menuitem->priv->tree = NULL;
 }
 
 static void
@@ -863,6 +975,12 @@ panel_desktop_menu_item_instance_init (PanelDesktopMenuItem      *menuitem,
 				       PanelDesktopMenuItemClass *klass)
 {
 	menuitem->priv = PANEL_DESKTOP_MENU_ITEM_GET_PRIVATE (menuitem);
+
+	menuitem->priv->tree = gmenu_tree_lookup ("settings.menu", GMENU_TREE_FLAGS_NONE);
+
+	gmenu_tree_add_monitor (menuitem->priv->tree,
+			       (GMenuTreeChangedFunc) handle_menu_tree_changed,
+			       menuitem);
 }
 
 static void
@@ -1059,7 +1177,7 @@ panel_menu_items_append_lock_logout (GtkWidget *menu)
 		separator_inserted = GTK_IS_SEPARATOR (GTK_WIDGET (children->data));
 	}
 
-	if (panel_lock_screen_action_available ("lock")) {
+	if (gconf_client_get_bool (panel_gconf_get_client (), "/apps/panel/global/upstream_session", NULL) && panel_lock_screen_action_available ("lock")) {
 		item = panel_menu_items_create_action_item (PANEL_ACTION_LOCK);
 		if (item != NULL) {
 			if (!separator_inserted) {
@@ -1075,30 +1193,38 @@ panel_menu_items_append_lock_logout (GtkWidget *menu)
 	 * but "1" if "Log Out %s" doesn't make any sense in your
 	 * language (where %s is a username).
 	 */
+
 	translate = Q_("panel:showusername|1");
-	if (strcmp (translate, "1") == 0) {
-		const char *user_name;
 
-		user_name = g_get_real_name ();
-		if (!user_name || !user_name [0])
-			user_name = g_get_user_name ();
-
-		/* keep those strings in sync with the ones in
-		 * panel-action-button.c */
-		/* Translators: this string is used ONLY if you translated
-		 * "panel:showusername|1" to "1" */
-		label = g_strdup_printf (_("Log Out %s..."),
-					 g_get_user_name ());
-		/* Translators: this string is used ONLY if you translated
-		 * "panel:showusername|1" to "1" */
-		tooltip = g_strdup_printf (_("Log out %s of this session to "
-					     "log in as a different user"),
-					   user_name);
-	} else {
-		label   = NULL;
+	if (gconf_client_get_bool (panel_gconf_get_client (), "/apps/panel/global/upstream_session", NULL)) {
+		if (strcmp (translate, "1") == 0) {
+			const char *user_name;
+			
+			user_name = g_get_real_name ();
+			if (!user_name || !user_name [0])
+				user_name = g_get_user_name ();
+			
+			/* keep those strings in sync with the ones in
+			 * panel-action-button.c */
+			/* Translators: this string is used ONLY if you translated
+			 * "panel:showusername|1" to "1" */
+			label = g_strdup_printf (_("Log Out %s..."),
+						 g_get_user_name ());
+			/* Translators: this string is used ONLY if you translated
+			 * "panel:showusername|1" to "1" */
+			tooltip = g_strdup_printf (_("Log out %s of this session to "
+						     "log in as a different user"),
+						   user_name);
+		} else {
+			label   = g_strdup_printf (_("Log Out..."));
+			tooltip = g_strdup_printf (_("Log out of this session to log in as a different user"));
+		}
+	}
+	else {
+		label = NULL;
 		tooltip = NULL;
 	}
-
+	
 	item = panel_menu_items_create_action_item_full (PANEL_ACTION_LOGOUT,
 							 label, tooltip);
 	g_free (label);

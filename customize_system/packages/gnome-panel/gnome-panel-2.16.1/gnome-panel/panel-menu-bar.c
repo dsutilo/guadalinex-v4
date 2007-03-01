@@ -173,6 +173,7 @@ panel_menu_bar_instance_init (PanelMenuBar      *menubar,
 			      PanelMenuBarClass *klass)
 {
 	GtkWidget *image;
+	const char *logo;
 
 	menubar->priv = PANEL_MENU_BAR_GET_PRIVATE (menubar);
 
@@ -181,8 +182,15 @@ panel_menu_bar_instance_init (PanelMenuBar      *menubar,
 	menubar->priv->applications_menu = create_applications_menu ("applications.menu", NULL);
 
 	menubar->priv->applications_item = gtk_image_menu_item_new_with_label (_("Applications"));
-	image = gtk_image_new_from_icon_name (PANEL_GNOME_LOGO_ICON,
-					      panel_menu_bar_icon_get_size ());
+
+	logo = panel_get_distributor_logo ();
+	if (logo != NULL)
+		image = gtk_image_new_from_icon_name (logo,
+						      panel_menu_bar_icon_get_size ());
+	else
+		image = gtk_image_new_from_icon_name (PANEL_GNOME_LOGO_ICON,
+						      panel_menu_bar_icon_get_size ());
+
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menubar->priv->applications_item),
 				       image);
 

@@ -1438,7 +1438,7 @@ create_submenu_entry (GtkWidget          *menu,
 	return menuitem;
 }
 
-static void
+void
 create_submenu (GtkWidget          *menu,
 		GMenuTreeDirectory *directory,
 		GMenuTreeDirectory *alias_directory)
@@ -1503,7 +1503,7 @@ create_menuitem (GtkWidget          *menu,
 					NULL,
 					alias_directory ? gmenu_tree_directory_get_icon (alias_directory) :
 							  gmenu_tree_entry_get_icon (entry),
-					NULL);
+					PANEL_STOCK_DEFAULT_ICON);
 
 	setup_menuitem (menuitem,
 			panel_menu_icon_get_size (),
@@ -1693,6 +1693,7 @@ populate_menu_from_directory (GtkWidget          *menu,
 	GSList   *l;
 	GSList   *items;
 	gboolean  add_separator;
+	gboolean  pending_separator = FALSE;
 
 	add_separator = (GTK_MENU_SHELL (menu)->children != NULL);
 
@@ -1703,16 +1704,24 @@ populate_menu_from_directory (GtkWidget          *menu,
 
 		if (add_separator ||
 		    gmenu_tree_item_get_type (item) == GMENU_TREE_ITEM_SEPARATOR) {
-			add_menu_separator (menu);
+			pending_separator = TRUE;
 			add_separator = FALSE;
 		}
 
 		switch (gmenu_tree_item_get_type (item)) {
 		case GMENU_TREE_ITEM_DIRECTORY:
+			if (pending_separator) {
+				add_menu_separator (menu);
+				pending_separator = FALSE;
+			}
 			create_submenu (menu, GMENU_TREE_DIRECTORY (item), NULL);
 			break;
 
 		case GMENU_TREE_ITEM_ENTRY:
+			if (pending_separator) {
+				add_menu_separator (menu);
+				pending_separator = FALSE;
+			}
 			create_menuitem (menu, GMENU_TREE_ENTRY (item), NULL);
 			break;
 
@@ -1721,10 +1730,18 @@ populate_menu_from_directory (GtkWidget          *menu,
 			break;
 
 		case GMENU_TREE_ITEM_ALIAS:
+			if (pending_separator) {
+				add_menu_separator (menu);
+				pending_separator = FALSE;
+			}
 			create_menuitem_from_alias (menu, GMENU_TREE_ALIAS (item));
 			break;
 
 		case GMENU_TREE_ITEM_HEADER:
+			if (pending_separator) {
+				add_menu_separator (menu);
+				pending_separator = FALSE;
+			}
 			create_header (menu, GMENU_TREE_HEADER (item));
 			break;
 

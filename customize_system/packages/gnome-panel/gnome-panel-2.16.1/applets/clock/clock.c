@@ -41,6 +41,7 @@
 
 #include "config.h"
 
+#include <stdlib.h>
 #include <stdio.h>
 #include <sys/stat.h>
 #include <unistd.h>
@@ -82,7 +83,7 @@ static const char *clock_config_tools [] = {
 	"system-config-date",
 	"redhat-config-date",
         "/sbin/yast2 timezone",
-	"time-admin",
+	"gksu time-admin",
 };
 
 /* Needs to match the indices in the combo */
@@ -1281,7 +1282,7 @@ calendar_day_activated (ClockData   *cd,
 			       &year, &month, &day);
 
 	command_line = g_strdup_printf ("evolution "
-					"calendar:///?startdate=%.4d%.2d%.2d",
+					"calendar:///?startdate=%.4d%.2d%.2dT120000",
 					year, month + 1, day);
 
 	error = NULL;

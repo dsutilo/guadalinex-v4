@@ -38,6 +38,7 @@
 #define NEVER_SENSITIVE "never_sensitive"
 #define NUM_WORKSPACES "/apps/metacity/general/num_workspaces"
 #define WORKSPACE_NAME "/apps/metacity/workspace_names/name_1"
+#include <lpint-bonobo.h>
 
 typedef struct {
 	GtkWidget *applet;
@@ -409,6 +410,7 @@ workspace_switcher_applet_fill (PanelApplet *applet)
 	PagerData *pager;
 	GError *error;
 	gboolean display_names;
+        BonoboUIComponent* popup_component;
 	
 	panel_applet_add_preferences (applet, "/schemas/apps/workspace_switcher_applet/prefs", NULL);
 	
@@ -523,6 +525,11 @@ workspace_switcher_applet_fill (PanelApplet *applet)
 					      "hidden", "1",
 					      NULL);
 	}
+
+        popup_component = panel_applet_get_popup_component (PANEL_APPLET (pager->applet));
+
+        launchpad_integration_add_bonobo_ui(popup_component, "/popups/button3/LaunchpadItems");        
+
 
 	return TRUE;
 }

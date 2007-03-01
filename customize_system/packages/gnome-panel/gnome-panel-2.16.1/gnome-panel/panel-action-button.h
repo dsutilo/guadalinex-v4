@@ -87,12 +87,14 @@ gboolean   panel_action_button_load_from_drag   (PanelToplevel          *topleve
 						 const char             *drag_string,
 						 int                    *old_applet_idx);
 
-gboolean             panel_action_get_is_disabled (PanelActionButtonType type);
-GCallback            panel_action_get_invoke      (PanelActionButtonType type);
-G_CONST_RETURN char *panel_action_get_icon_name   (PanelActionButtonType type);
-G_CONST_RETURN char *panel_action_get_text        (PanelActionButtonType type);
-G_CONST_RETURN char *panel_action_get_tooltip     (PanelActionButtonType type);
-G_CONST_RETURN char *panel_action_get_drag_id     (PanelActionButtonType type);
+gboolean             panel_action_get_is_disabled      (PanelActionButtonType type);
+GCallback            panel_action_get_invoke           (PanelActionButtonType type);
+G_CONST_RETURN char *panel_action_get_icon_name        (PanelActionButtonType type);
+G_CONST_RETURN char *panel_action_get_text             (PanelActionButtonType type);
+G_CONST_RETURN char *panel_action_get_category         (PanelActionButtonType type);
+G_CONST_RETURN char *panel_action_get_english_category (PanelActionButtonType type);
+G_CONST_RETURN char *panel_action_get_tooltip          (PanelActionButtonType type);
+G_CONST_RETURN char *panel_action_get_drag_id          (PanelActionButtonType type);
 
 G_END_DECLS
 

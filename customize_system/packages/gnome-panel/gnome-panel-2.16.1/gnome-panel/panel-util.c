@@ -1205,3 +1205,19 @@ panel_util_key_file_remove_locale_key (GKeyFile    *keyfile,
 		g_key_file_remove_key (keyfile, "Desktop Entry",
 				       key, NULL);
 }
+
+#define PANEL_DISTRIBUTOR_LOGO_ICON "distributor-logo"
+const char *
+panel_get_distributor_logo (void)
+{
+	int desired_width, desired_height;
+
+	if (gtk_icon_size_lookup (GTK_ICON_SIZE_DIALOG,
+				  &desired_width, &desired_height) &&
+	    panel_find_icon (gtk_icon_theme_get_default (),
+			     PANEL_DISTRIBUTOR_LOGO_ICON,
+			     desired_height))
+		return PANEL_DISTRIBUTOR_LOGO_ICON;
+	else
+		return NULL;
+}
