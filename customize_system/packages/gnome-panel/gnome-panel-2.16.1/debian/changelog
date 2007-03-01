@@ -1,3 +1,9 @@
+gnome-panel (2.16.1-0ubuntu4guada1) edgy-updates; urgency=low
+
+  * Guadalinex panel modifications 
+
+ --  <rmartin@powergugui>  Thu,  1 Mar 2007 18:07:14 +0100
+
 gnome-panel (2.16.1-0ubuntu4) edgy-updates; urgency=low
 
   * No-change upload to edgy-updates.
