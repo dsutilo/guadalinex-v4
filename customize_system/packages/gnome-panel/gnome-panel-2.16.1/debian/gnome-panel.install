@@ -1,0 +1,8 @@
+debian/tmp/usr/bin usr/
+debian/tmp/usr/lib/gnome-panel/ usr/lib/
+debian/tmp/usr/lib/gnome-panel/libfish-applet-2.so
+debian/tmp/usr/lib/gnome-panel/libfish-applet-2.so.0.*
+debian/tmp/usr/lib/gnome-panel/libnotification-area-applet.so
+debian/tmp/usr/lib/gnome-panel/libnotification-area-applet.so.0.*
+debian/tmp/usr/lib/gnome-panel/libwnck-applet.so
+debian/tmp/usr/lib/gnome-panel/libwnck-applet.so.0.*

@@ -1,0 +1,124 @@
+Index: panel-addto.c
+===================================================================
+RCS file: /cvs/gnome/gnome-panel/gnome-panel/panel-addto.c,v
+retrieving revision 1.38
+diff -u -p -r1.38 panel-addto.c
+--- panel-addto.c	22 Jul 2005 07:36:55 -0000	1.38
++++ gnome-panel/panel-addto.c	28 Sep 2005 20:49:56 -0000
+@@ -203,6 +203,15 @@ panel_addto_prepend_internal_applets (GS
+ 			internal_addto_items [i].description = _(internal_addto_items [i].description);
+ 		}
+ 
++		if (internal_addto_items [i].type == PANEL_ADDTO_MENU ||
++		    internal_addto_items [i].type == PANEL_ADDTO_MENUBAR) {
++			const char *logo;
++
++			logo = panel_get_distributor_logo ();
++			if (logo != NULL)
++				internal_addto_items [i].icon = logo;
++		}
++
+                 list = g_slist_prepend (list, &internal_addto_items [i]);
+         }
+ 
+Index: panel-menu-bar.c
+===================================================================
+RCS file: /cvs/gnome/gnome-panel/gnome-panel/panel-menu-bar.c,v
+retrieving revision 1.65
+diff -u -p -r1.65 panel-menu-bar.c
+--- panel-menu-bar.c	4 Aug 2005 07:08:24 -0000	1.65
++++ gnome-panel/panel-menu-bar.c	28 Sep 2005 20:49:56 -0000
+@@ -69,6 +69,7 @@ panel_menu_bar_instance_init (PanelMenuB
+ 			      PanelMenuBarClass *klass)
+ {
+ 	GtkWidget *image;
++	const char *logo;
+ 
+ 	menubar->priv = PANEL_MENU_BAR_GET_PRIVATE (menubar);
+ 
+@@ -77,8 +78,15 @@ panel_menu_bar_instance_init (PanelMenuB
+ 	menubar->priv->applications_menu = create_applications_menu ("applications.menu", NULL);
+ 
+ 	menubar->priv->applications_item = gtk_image_menu_item_new_with_label (_("Applications"));
+-	image = gtk_image_new_from_icon_name (PANEL_GNOME_LOGO_ICON,
+-					      panel_menu_bar_icon_get_size ());
++
++	logo = panel_get_distributor_logo ();
++	if (logo != NULL)
++		image = gtk_image_new_from_icon_name (logo,
++						      panel_menu_bar_icon_get_size ());
++	else
++		image = gtk_image_new_from_icon_name (PANEL_GNOME_LOGO_ICON,
++						      panel_menu_bar_icon_get_size ());
++
+ 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menubar->priv->applications_item),
+ 				       image);
+ 
+Index: panel-menu-button.c
+===================================================================
+RCS file: /cvs/gnome/gnome-panel/gnome-panel/panel-menu-button.c,v
+retrieving revision 1.45
+diff -u -p -r1.45 panel-menu-button.c
+--- panel-menu-button.c	18 Sep 2005 07:29:05 -0000	1.45
++++ gnome-panel/panel-menu-button.c	28 Sep 2005 20:49:57 -0000
+@@ -736,8 +736,15 @@ panel_menu_button_get_icon (PanelMenuBut
+ 			retval = g_strdup (gmenu_tree_directory_get_icon (directory));
+ 	}
+ 
+-	if (!retval)
+-		retval = g_strdup (PANEL_MAIN_MENU_ICON);
++	if (!retval) {
++		const char *logo;
++
++		logo = panel_get_distributor_logo ();
++		if (logo != NULL)
++			retval = g_strdup (logo);
++		else
++			retval = g_strdup (PANEL_MAIN_MENU_ICON);
++	}
+ 
+ 	return retval;
+ }
+Index: panel-util.c
+===================================================================
+RCS file: /cvs/gnome/gnome-panel/gnome-panel/panel-util.c,v
+retrieving revision 1.159
+diff -u -p -r1.159 panel-util.c
+--- panel-util.c	2 Aug 2005 10:10:49 -0000	1.159
++++ gnome-panel/panel-util.c	28 Sep 2005 20:49:57 -0000
+@@ -872,3 +872,19 @@ panel_lookup_in_data_dirs (const char *b
+ 
+ 	return NULL;
+ }
++
++#define PANEL_DISTRIBUTOR_LOGO_ICON "distributor-logo"
++const char *
++panel_get_distributor_logo (void)
++{
++	int desired_width, desired_height;
++
++	if (gtk_icon_size_lookup (GTK_ICON_SIZE_DIALOG,
++				  &desired_width, &desired_height) &&
++	    panel_find_icon (gtk_icon_theme_get_default (),
++			     PANEL_DISTRIBUTOR_LOGO_ICON,
++			     desired_height))
++		return PANEL_DISTRIBUTOR_LOGO_ICON;
++	else
++		return NULL;
++}
+Index: panel-util.h
+===================================================================
+RCS file: /cvs/gnome/gnome-panel/gnome-panel/panel-util.h,v
+retrieving revision 1.89
+diff -u -p -r1.89 panel-util.h
+--- panel-util.h	2 Aug 2005 10:10:49 -0000	1.89
++++ gnome-panel/panel-util.h	28 Sep 2005 20:49:57 -0000
+@@ -84,6 +84,8 @@ char *panel_make_unique_uri (const char 
+ 			     const char *suffix);
+ char *panel_lookup_in_data_dirs (const char *basename);
+ 
++const char *panel_get_distributor_logo (void);
++
+ G_END_DECLS
+ 
+ #endif /* PANEL_UTIL_H */

@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appletversion "2.7.92">
+<!ENTITY manrevision "2.8">
+<!ENTITY date "August 2004">
+<!ENTITY applet "Window List">
+]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 12, 2002
+  
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="zh_CN">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+	 <title>窗口列表手册</title> 
+	 <copyright> 
+		<year>2002</year>
+		<year>2003</year> 
+		<year>2004</year> 
+		<holder>Sun Microsystems</holder> 
+	 </copyright> 
+	 <copyright> 
+		<year>2001</year> 
+		<holder>John Fleck</holder> 
+	 </copyright><copyright><year>2006.</year><holder>Funda Wang (fundawang@linux.net.cn)</holder></copyright>
+<!-- translators: uncomment this:
+
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+
+   -->
+	 <publisher> 
+		<publishername>GNOME 文档项目</publishername> 
+	 </publisher> 
+
+   <legalnotice id="legalnotice">
+         <para>对于本文档的复制、分发和/或修改必须遵循自由软件基金会 (Free Software Foundation) 发布的 GNU 自由文档许可证 (GFDL) 版本 1.1 或更高版本，该许可证没有固定的部分、没有封面和背页文本。您可以在此<ulink type="help" url="ghelp:fdl">链接</ulink>上或在随本手册一起分发的 COPYING-DOCS 文件中找到 GFDL 的副本。</para>
+          <para>本手册是在 GFDL 许可之下分发的 GNOME 手册集合的一部分。如果想要单独分发此手册，可以在手册中添加该许可证的一份副本然后分发，如该许可证的第 6 部分所述。</para>
+ 
+         <para>各个公司使用的许多用于区别它们产品和服务的名称都声明为商标。在所有的 GNOME 文档以及 GNOME 文档项目的成员中，这些名称都是以全大写字母或首字母大写显示，从而表明它们是商标。</para>
+ 
+         <para>本文档以及文档的修改版本都是在遵循 GNU 自由文档许可证的条款下提供，这表示具有以下含义：<orderedlist>
+                 <listitem>
+                   <para>文档按“原样”提供，不提供任何明示或暗示的保证，包括但不限于：文档或文档的修改版本没有适销性方面的缺陷、适合特定目的的适用性，以及没有侵权行为。您将自行承担本文档以及文档修改版本的质量、准确性以及性能方面的风险。如果任何文档或文档修改版本存在缺陷，您（而不是最初的编写者、作者或撰写人）将承担所有必需的服务、维修或更正的费用。此免责声明是本许可证的重要组成部分。如果不接受此免责声明，那么您就没有权利使用任何文档或文档的修改版本；并且</para>
+                 </listitem>
+                 <listitem>
+                   <para>无论在任何情况以及在任何法律理论下，本文档或文档修改版本的作者、最初的编写者、任何撰写人或任何分发者，或者任意这些方的任何提供者都不对任何人由于使用本文档或文档修改版本引起或带来的任何直接的、间接的、特殊的、偶然的或继发的损失承担任何民事（包括疏忽）、合同或其它方面的责任，这些损失包括但不限于信誉损失、工作停止、计算机失败或故障，或任何以及所有其它损失或由此引发的或与之相关的损失，即使这些方已被告知存在出现此类损失的可能性时也是如此。</para>
+                 </listitem>
+           </orderedlist></para>
+   </legalnotice>
+ 
+<!-- This file  contains link to license for the documentation (GNU FDL), and 
+     other legal stuff such as "NO WARRANTY" statement. Please do not change 
+     any of this. -->
+
+	 <authorgroup> 
+		<author> 
+		  <firstname>Sun</firstname> 
+		  <surname>GNOME 文档团队</surname> 
+		  <affiliation> 
+			 <orgname>Sun Microsystems</orgname> 
+			 <!-- <address> <email>gdocteam@sun.com</email> </address> -->
+		  </affiliation> 
+		</author> 
+		<author> 
+		  <firstname>John</firstname> 
+		  <surname>Fleck</surname> 
+		  <affiliation> 
+			 <orgname>GNOME 文档项目</orgname> 
+			 <address> <email>jfleck@inkstain.net</email> </address> 
+		  </affiliation> 
+		</author> 
+      <!-- This is appropriate place for other contributors: translators,
+           maintainers,  etc. Commented out by default.
+           <othercredit role="translator">
+	     <firstname>Latin</firstname> 
+	     <surname>Translator 1</surname> 
+	     <affiliation> 
+	       <orgname>Latin Translation Team</orgname> 
+	       <address> <email>translator@gnome.org</email> </address> 
+	     </affiliation>
+	     <contrib>Latin translation</contrib>
+           </othercredit>
+-->
+	 </authorgroup>
+	 <revhistory>
+		<revision> 
+		  <revnumber>窗口列表小程序手册 V2.8</revnumber> 
+		  <date>2004年8月</date> 
+		  <revdescription> 
+			 <para role="author">Sun Java 桌面系统文档团队</para> 
+			 <para role="publisher">GNOME 文档项目</para> 
+		  </revdescription> 
+		</revision>
+		<revision> 
+		  <revnumber>窗口列表小程序手册 V2.7</revnumber> 
+		  <date>2004年2月</date> 
+		  <revdescription> 
+			 <para role="author">Sun GNOME 文档团队</para> 
+			 <para role="publisher">GNOME 文档项目</para> 
+		  </revdescription> 
+		</revision>
+		<revision> 
+		  <revnumber>窗口列表小程序手册 V2.6</revnumber> 
+		  <date>2003年9月</date> 
+		  <revdescription> 
+			 <para role="author">Sun GNOME 文档团队</para> 
+			 <para role="publisher">GNOME 文档项目</para> 
+		  </revdescription> 
+		</revision>
+		<revision> 
+		  <revnumber>窗口列表小程序手册 V2.5</revnumber> 
+		  <date>2003年8月</date> 
+		  <revdescription> 
+			 <para role="author">Sun GNOME 文档团队</para> 
+			 <para role="publisher">GNOME 文档项目</para> 
+		  </revdescription> 
+		</revision>
+		<revision> 
+		  <revnumber>窗口列表小程序手册 V2.4</revnumber> 
+		  <date>2003年2月</date> 
+		  <revdescription> 
+			 <para role="author">Sun GNOME 文档团队</para> 
+			 <para role="publisher">GNOME 文档项目</para> 
+		  </revdescription> 
+		</revision>
+		<revision> 
+		  <revnumber>窗口列表小程序手册 V2.3</revnumber> 
+		  <date>2003年1月</date> 
+		  <revdescription> 
+			 <para role="author">Sun GNOME 文档团队</para> 
+			 <para role="publisher">GNOME 文档项目</para> 
+		  </revdescription> 
+		</revision>
+		<revision> 
+		  <revnumber>窗口列表手册小程序 V2.2</revnumber> 
+		  <date>2002年8月</date> 
+		  <revdescription> 
+			 <para role="author">Sun GNOME 文档团队</para> 
+			 <para role="publisher">GNOME 文档项目</para> 
+		  </revdescription> 
+		</revision>
+		<revision> 
+		  <revnumber>窗口列表小程序手册 V2.1</revnumber> 
+		  <date>2002年6月</date> 
+		  <revdescription> 
+			 <para role="author">Sun GNOME 文档团队</para> 
+			 <para role="publisher">GNOME 文档项目</para> 
+		  </revdescription> 
+		</revision>
+		<revision> 
+		  <revnumber>窗口列表小程序手册 V2.0</revnumber> 
+		  <date>2002年3月</date> 
+		  <revdescription> 
+			 <para role="author">Sun GNOME 文档团队</para> 
+			 <para role="publisher">GNOME 文档项目</para> 
+		  </revdescription> 
+		</revision> 
+		<revision> 
+		  <revnumber>任务列表小程序手册</revnumber> 
+		  <date>2001</date> 
+		  <revdescription> 
+			 <para role="author">John Fleck <email>jfleck@inkstain.net</email></para> 
+			 <para role="publisher">GNOME 文档项目</para> 
+		  </revdescription> 
+		</revision> 
+	 </revhistory> 
+	 <releaseinfo>此手册描述了窗口列表的 2.7.92 版本。</releaseinfo> 
+	 <legalnotice> 
+		<title>反馈</title> 
+		<para>要报告关于窗口列表小程序或本手册的错误或提出建议，请遵循 <ulink url="ghelp:gnome-feedback" type="help">GNOME 反馈页</ulink>中的指导。</para>
+		
+	 </legalnotice> 
+	 <abstract role="description">
+		<para>窗口列表允许您管理 GNOME 桌面上打开的窗口。每个窗口由此小程序所在区域中的一个按钮所表示。</para>
+	 </abstract>
+  </articleinfo> 
+  <indexterm> 
+	 <primary>窗口列表</primary> 
+  </indexterm> 
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+  <sect1 id="windowlist-introduction"> 
+	 <title>简介</title> 
+	<!-- ==== Figure ============================================= -->
+	 <figure id="windowlist-applet-fig"> 
+		<title>窗口列表小程序</title> 
+		<screenshot> 
+		  <mediaobject> 
+			 <imageobject><imagedata fileref="figures/window_list_applet.png" format="PNG"/> 
+			 </imageobject>
+			 <textobject> 
+				<phrase>显示窗口列表小程序。</phrase> 
+			 </textobject> 
+		  </mediaobject> 
+		</screenshot> 
+	 </figure> 
+    	<!-- ==== End of Figure ======================================= -->
+	 <para><application>窗口列表</application>允许您管理 GNOME 桌面中所打开的窗口。<application>窗口列表</application>使用按钮来代表所打开的每个窗口或每组窗口。小程序中按钮的状态根据该按钮所代表的窗口状态不同而有所改变。下表解释了<application>窗口列表</application>按钮可能出现的状态。</para>
+	<informaltable>
+	<tgroup cols="2">
+	<colspec colname="col1"/>
+	<colspec colname="col2"/>
+	<thead>
+	<row valign="top">
+	<entry colname="col1"><para>状态</para></entry>
+	<entry colname="col2"><para>表明...</para></entry>
+	</row>
+	</thead>
+	<tbody>
+	<row valign="top">
+	<entry colname="col1"><para>按钮已按下。</para></entry>
+	<entry colname="col2"><para>窗口获得焦点。</para></entry>
+	</row>
+	<row valign="top">
+	<entry colname="col1"><para>窗口标题周围有方形边框，按钮内容有阴影。</para></entry>
+	<entry colname="col2"><para>窗口已最小化。</para></entry>
+	</row> 
+	<row valign="top">
+	<entry colname="col1"><para>按钮未按下，标题周围也没有方形边框。</para></entry>
+	<entry colname="col2"><para>窗口显示于桌面上且未最小化。</para></entry>
+	</row>
+	<row valign="top">
+	<entry colname="col1"><para>按钮的右上角有小三角形，且标题右侧有带括号的数字。</para></entry>
+	<entry colname="col2"><para>按钮代表一组按钮。</para></entry>
+	</row>
+	</tbody>
+	</tgroup>
+	</informaltable>
+                                                                               
+    <sect2 id="windowlist-introduction-add">
+      <title>要将窗口列表添加到面板</title>
+	 <para>请执行下列步骤：</para>
+         <orderedlist>
+           <listitem>
+             <para>用鼠标右键单击面板。</para>
+           </listitem>
+           <listitem>
+             <para>选择<guimenuitem>添加到面板</guimenuitem>。</para>
+           </listitem>
+           <listitem>
+             <para>向下滚动<guilabel>添加到面板</guilabel>对话框中的项目列表，然后选择<guilabel>窗口列表</guilabel>。</para>
+           </listitem>
+           <listitem>
+             <para>单击<guibutton>添加</guibutton>。</para>
+           </listitem>
+         </orderedlist>
+         <para><application>窗口列表</application>用来显示按钮的行数取决于小程序所在面板的大小。</para> 
+    </sect2>
+	
+	<sect2 id="window-groups">
+	<title>按钮分组</title>
+	<para>如果面板上的空间十分有限，<application>窗口列表</application>将会把代表同属一个进程不同窗口的按钮分为同一个<application>窗口列表</application>按钮组。要打开一个按钮组中的按钮列表，请单击代表该按钮组的<application>窗口列表</application>按钮。<xref linkend="windowlist-applet-fig"/>中的<guibutton>终端</guibutton>按钮就是一组按钮的例子。下图显示了打开了按钮组的<application>窗口列表</application>。</para> 
+	<!-- ==== Figure ============================================= -->
+	 <figure id="windowgroup-open-fig"> 
+		<title>打开了按钮组的窗口列表小程序</title> 
+		<screenshot> 
+		  <mediaobject> 
+			 <imageobject><imagedata fileref="figures/window_list_group_applet.png" format="PNG"/> 
+			 </imageobject>
+			 <textobject> 
+				<phrase>显示了打开了按钮组的窗口列表小程序。</phrase> 
+			 </textobject> 
+		  </mediaobject> 
+		</screenshot> 
+	 </figure> 
+ 
+	</sect2>
+  </sect1>
+<!-- ================ Usage ================================ -->
+  <sect1 id="windowlist-usage"> 
+	 <title>用法</title> 
+	 <para>您可以使用<application>窗口列表</application>执行下列任务：</para>
+	<itemizedlist>
+	<listitem>
+	<para>为窗口指定焦点</para>
+	<para>如果您单击的<application>窗口列表</application>按钮代表了一个位于桌面但没有焦点的窗口，小程序将为该窗口指派焦点。</para>
+	</listitem>
+	<listitem>
+	<para>要最小化窗口</para>
+	<para>如果您单击的<application>窗口列表</application>按钮代表了一个拥有焦点的窗口，该窗口将被最小化。</para>
+	</listitem>
+	<listitem>
+	<para>要还原已最小化的窗口</para>
+	<para>如果您单击的<application>窗口列表</application>按钮代表了一个已经最小化了的窗口，该窗口将被还原。</para>
+	</listitem>
+	</itemizedlist>
+  </sect1>
+<!-- ============= Preferences ============================= -->
+  <sect1 id="windowlist-prefs"> 
+	 <title>首选项</title> 
+	 <para>要配置<application>窗口列表</application>，请用鼠标右键单击该小程序，然后选择<guimenuitem>首选项</guimenuitem>。<guilabel>窗口列表首选项</guilabel>对话框包含如下选项：</para>
+         <itemizedlist>
+           <listitem>
+             <para><xref linkend="windowlist-prefs-behavior"/></para>
+           </listitem>
+           <listitem>
+             <para><xref linkend="windowlist-prefs-size"/></para>
+           </listitem>
+         </itemizedlist>
+
+  <sect2 id="windowlist-prefs-behavior"> 
+	 <title>行为</title> 
+	 <variablelist>
+	 <varlistentry><term><guilabel>窗口列表内容</guilabel> </term>
+	 <listitem>
+	 <para>要指定要在<application>窗口列表</application>中显示哪些窗口，请选择下列选项之一：</para>
+	 	<itemizedlist>
+	 	<listitem>
+	 	<para><guilabel>显示当前工作区的窗口</guilabel></para>
+	 	<para>选择此选项可只显示在当前工作中打开的窗口。</para>
+	 	</listitem>
+	 	<listitem><para><guilabel>显示所有工作区中的窗口</guilabel></para>
+	 	<para>选择此选项可显示在所有工作区中打开的窗口。</para>
+	 	</listitem>
+	 	</itemizedlist>
+	 </listitem>
+	 </varlistentry>
+	 <varlistentry><term><guilabel>窗口分组</guilabel> </term>
+	 <listitem>
+	 <para>要指定<application>窗口列表</application>应在何时对属于同一进程的窗口分组，请选择下列选项之一：</para>
+		<itemizedlist>
+	 	<listitem>
+	 	<para><guilabel>从不对窗口分组</guilabel></para>
+	 	<para>选择此选项将永远不会将同一进程的不同窗口在<application>窗口列表</application>中分组。</para>
+		</listitem>
+	 	<listitem>
+	 	<para><guilabel>当空间有限时将窗口分组</guilabel></para>
+	 	<para>选择此选项可在面板空间受到限制时将同一进程的不同窗口在<application>窗口列表</application>中分组。</para>
+		</listitem>
+	 	<listitem>
+	 	<para><guilabel>总是对窗口分组</guilabel></para>
+	 	<para>选择此选项将总是将同一进程的不同窗口在<application>窗口列表</application>中分组。</para>
+		</listitem>
+		</itemizedlist>
+	 </listitem>
+	 </varlistentry>
+	 <varlistentry><term><guilabel>在恢复最小化的窗口时</guilabel> </term>
+	 <listitem>
+	 <para>要定义<application>窗口列表</application>应如何恢复窗口，请选择下列选项之一：</para>
+	 	<itemizedlist>
+	 	<listitem>
+	 	<para><guilabel>还原到当前工作区</guilabel></para>
+	 	<para>选择此选项将把窗口从小程序中恢复到当前工作区，即便该窗口原来并不在当前工作区中。</para>
+	 	</listitem>
+	 	<listitem><para><guilabel>还原到原本工作区</guilabel></para>
+	 	<para>选择此选项将在您把窗口从小程序中恢复时，切换到窗口原来所在的工作区。</para>
+	 	</listitem>
+	 	</itemizedlist>
+	 </listitem>
+	 </varlistentry>
+	 </variablelist>
+  </sect2>
+
+  <sect2 id="windowlist-prefs-size"> 
+	 <title>大小</title> 
+	 <variablelist>
+	 <varlistentry><term><guilabel>窗口列表大小</guilabel> </term>
+	 <listitem>
+	 <para><application>窗口列表</application>小程序的大小会根据小程序所在面板的大小自动分配。使用下列微调框可对小程序的大小进行限制：</para>
+		<itemizedlist>
+	 	<listitem>
+	 	<para><guilabel>最少占用 ... 像素</guilabel></para>
+	 	<para>使用微调框可指定小程序最少占用多少空间。如果面板比所指定的最少空间还小，则面板将会调整自身的大小，以便容纳小程序。</para>
+		</listitem>
+	 	<listitem>
+	 	<para><guilabel>最多占用 ... 像素</guilabel></para>
+	 	<para>使用微调框指定小程序最多占用多少空间。</para>
+		</listitem>
+		</itemizedlist>
+	 </listitem>
+	 </varlistentry>
+	 </variablelist>
+  </sect2>
+  </sect1>
+
+</article>

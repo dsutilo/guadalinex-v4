@@ -1,0 +1,21 @@
+diff -urN gnome-panel-2.10.1.orig/applets/clock/clock.c gnome-panel-2.10.1/applets/clock/clock.c
+--- gnome-panel-2.10.1.orig/applets/clock/clock.c	2005-03-07 07:15:15.000000000 -0700
++++ gnome-panel-2.10.1/applets/clock/clock.c	2005-06-17 13:44:44.149885607 -0600
+@@ -41,6 +41,7 @@
+ 
+ #include "config.h"
+ 
++#include <stdlib.h>
+ #include <stdio.h>
+ #include <sys/stat.h>
+ #include <unistd.h>
+diff -urN gnome-panel-2.10.1.orig/gnome-panel/panel.c gnome-panel-2.10.1/gnome-panel/panel.c
+--- gnome-panel-2.10.1.orig/gnome-panel/panel.c	2005-03-31 13:05:04.000000000 -0700
++++ gnome-panel-2.10.1/gnome-panel/panel.c	2005-06-17 13:43:21.107894436 -0600
+@@ -23,6 +23,7 @@
+ #include <libgnomevfs/gnome-vfs-ops.h>
+ #include <libgnomevfs/gnome-vfs-mime-handlers.h>
+ #include <libgnomevfs/gnome-vfs-file-info.h>
++#include <libgnomevfs/gnome-vfs-utils.h>
+ 
+ #include "panel.h"
