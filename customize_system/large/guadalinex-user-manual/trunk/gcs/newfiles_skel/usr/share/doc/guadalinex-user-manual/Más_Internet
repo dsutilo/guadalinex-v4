@@ -1,0 +1,119 @@
+<!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML XMLNSXML:LANGDIRLANG>
+  <HEAD>
+    <META / HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    <META NAME="KEYWORDS" / CONTENT="Guia v4/Más Internet">
+<META NAME="robots" / CONTENT="index,follow">
+<LINK / REL="shortcut icon" HREF="http://www.guadalinex.org/favicon.ico">
+<LINK TITLE="Creative Commons" / REL="meta" TYPE="application/rdf+xml" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php?title=Guia_v4/M%C3%A1s_Internet&amp;action=creativecommons">
+<LINK / REL="copyright" HREF="http://creativecommons.org/licenses/by-sa/2.1/es/">
+
+    <TITLE>Guia v4/Más Internet - Guadapedia</TITLE>
+    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="screen,projection" HREF="../stylesheets/main.css">
+    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="print" HREF="http://www.guadalinex.org/guadapedia-estatica/stylesheets/commonPrint.css">
+    <!-- [if IE]><STYLE TYPE="text/css" MEDIA="all">@import "/guadapedia-estatica/stylesheets/monobook/IEFixes.css";</STYLE>
+    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/IEFixes.js" TYPE="text/javascript"></SCRIPT>
+    <META / HTTP-EQUIV="imagetoolbar" CONTENT="no"><![ENDIF]-->
+    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/index.php?title=-&amp;action=raw&amp;gen=js" TYPE="text/javascript"></SCRIPT>
+    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/wikibits.js" TYPE="text/javascript"></SCRIPT>
+    <STYLE TYPE="text/css">/*<![CDATA[*/ @import "/guadapedia-estatica/index.php?title=-&action=raw&gen=css";
+ /*]]>*/</STYLE>
+    
+  </HEAD>
+  <BODY CLASS="ns-0">
+    <DIV ID="globalWrapper">
+      <DIV ID="column-content">
+	<DIV ID="content">
+	    
+	  <A ID="contentTop" NAME="top"></A>
+	  <H1 CLASS="firstHeading">Guia v4/Más Internet</H1>
+	  <DIV ID="bodyContent">
+	    <H3 ID="siteSub">De Guadapedia, la enciclopedia libre.</H3>
+	    <DIV ID="contentSub"></DIV>
+	    
+
+	    
+	    <!--  start content -->
+	    <TABLE ID="toc" BORDER="0"><TR ID="toctitle"><TD ALIGN="center">
+<B>Tabla de contenidos</B> <SCRIPT TYPE="text/javascript">showTocToggle("mostrar","esconder")</SCRIPT></TD></TR><TR ID="tocinside"><TD>
+<DIV CLASS="tocline"><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/M%C3%A1s_Internet#M.C3.A1s_Internet" HREF="M%C3%A1s_Internet#M.C3.A1s_Internet">1 Más Internet</A><BR /></DIV>
+<DIV CLASS="tocindent">
+<P><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/M%C3%A1s_Internet#Liferea" HREF="M%C3%A1s_Internet#Liferea">1.1 Liferea</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/M%C3%A1s_Internet#aMule" HREF="M%C3%A1s_Internet#aMule">1.2 aMule</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/M%C3%A1s_Internet#BitTorrent" HREF="M%C3%A1s_Internet#BitTorrent">1.3 BitTorrent</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/M%C3%A1s_Internet#Ekiga" HREF="M%C3%A1s_Internet#Ekiga">1.4 Ekiga</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/M%C3%A1s_Internet#gFTP" HREF="M%C3%A1s_Internet#gFTP">1.5 gFTP</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/M%C3%A1s_Internet#Bluefish" HREF="M%C3%A1s_Internet#Bluefish">1.6 Bluefish</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/M%C3%A1s_Internet#Downloader" HREF="M%C3%A1s_Internet#Downloader">1.7 Downloader</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/M%C3%A1s_Internet#XChat" HREF="M%C3%A1s_Internet#XChat">1.8 XChat</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/M%C3%A1s_Internet#aMSN" HREF="M%C3%A1s_Internet#aMSN">1.9 aMSN</A><BR />
+</P>
+</DIV>
+</TD></TR></TABLE>
+<A NAME="M.C3.A1s_Internet"></A><H1> Más Internet </H1>
+<P>Ya hemos visto de qué son capaces el navegador web Firefox, el gestor de correo y contactos Evolution y el programa de mensajería instantánea y chat Gaim. GNOME BitTorrent se explica en el apartado <STRONG>Poner archivos a la disposición</STRONG> del capítulo <STRONG>8. Yo también sirvo</STRONG>, tanto en su función de cliente como de servidor.
+</P><P>Repasemos el resto de aplicaciones preinstaladas que tenemos bajo la categoría de Internet. 
+</P><P><BR />
+</P>
+<A NAME="Liferea"></A><H2> Liferea </H2>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Liferea.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/images/thumb/9/91/180px-Liferea.png" SRC="images/thumb/9/91/180px-Liferea.png" HEIGHT="126" / WIDTH="180" ALT=""></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Liferea.png"><IMG SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV></DIV></DIV></DIV>
+<P>Clásico programa de lectura de <EM>feeds</EM> de noticias vía RSS para GNOME. De uso muy sencillo, cuando arrancamos por vez primera se descargan los titulares de múltiples fuentes preinstaladas que podemos editar. Podemos suscribirnos a nuevas fuentes y gestionar los contenidos recibidos. 
+</P><P>Liferea ofrece soporte para <EM>podcasting</EM>, descargando archivos de audio, vídeo o lo que se tercie. Para reproducir estos archivos debemos clicar sobre ellos y se abrirá la aplicación externa destinada a reproducirlos. 
+</P><P>Los <EM>podcasts</EM> funcionan de la misma manera que los blogs en cuanto a facilidad de publicación, distribución y suscripción mediante RSS. Hay desde programas de radio caseros, música publicada por sus autores, producción independiente de todo tipo, tutoriales y materiales de formación y, aterrizando, programas de radio de emisoras públicas y comerciales. Más sobre <EM>podcasting</EM> en el capítulo <STRONG>7. La mar de contenidos libres</STRONG>.
+</P><P>Afinando Liferea podemos acabar construyendo nuestro propio medio de comunicación a base de agregar y seleccionar nuestras fuentes informativas o lúdicas favoritas.
+</P><P><BR />
+</P>
+<A NAME="aMule"></A><H2> aMule </H2>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Amule.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/images/thumb/6/65/180px-Amule.png" SRC="images/thumb/6/65/180px-Amule.png" HEIGHT="126" / WIDTH="180" ALT=""></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Amule.png"><IMG SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV></DIV></DIV></DIV>
+<P>Popular cliente P2P de intercambio de archivos en las redes eD2k (o eDonkey2000) y su actual evolución Kademlia. Podemos realizar búsquedas de archivos a descargar y también compartir los archivos que ubiquemos en los directorios definidos como compartibles. 
+</P><P>Este cliente permite la visualización y escucha previa de archivos en proceso de descarga, así como el envío de mensajes a nuestros amigos en la red. Podemos definir el ancho de banda que queremos ceder para subidas y descargas, filtrar IPs desde las cuales recibimos conexiones agresivas, tomar medidas automáticas para evitar la descarga de ficheros corruptos o alterados... 
+</P><P>Y un sinfín de acciones más. Hay todo mundo en las redes P2P y aMule es una interesante nave para moverse en él. Explicamos más sobre aMule en el apartado <STRONG>Poner archivos a la disposición</STRONG> del capítulo <STRONG>8. Yo también sirvo</STRONG>.
+</P><P><BR />
+</P>
+<A NAME="BitTorrent"></A><H2> BitTorrent</H2>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Bittorrent.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/images/thumb/7/7a/180px-Bittorrent.png" SRC="images/thumb/7/7a/180px-Bittorrent.png" HEIGHT="102" / WIDTH="180" ALT=""></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Bittorrent.png"><IMG SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV></DIV></DIV></DIV>
+<P>Mediante la aplicación <STRONG>gnome-btdownload</STRONG> Guadalinex incorpora esta utilidad de intercambio de ficheros basada en un nuevo protocolo para clientes P2P (<EM>peer to peer</EM>), alcanzándose muy elevadas velocidades de descarga gracias a un alto grado de eficiencia, tanto mayor cuantos más usuarios estén descargando simultáneamente el mismo archivo.
+</P><P>Para operar con BitTorrent sólo hay que clicar enlaces de archivos con este tipo de protocolo en Internet. Estos enlaces son reconocibles por la extensión <STRONG>.torrent</STRONG> al final. Cuando clicamos uno de estos enlaces <STRONG>gnome-btdownload</STRONG> entra en acción preguntándonos en qué carpeta deseamos guardar el archivo. Una vez que éste empieza a descargarse ya es automáticamente disponible desde nuestro sistema a los siguientes usuarios que cliquen en el mismo enlace. Es así como el torrente va creciendo y las descargas de los archivos BitTorrent se van repartiendo entre los usuarios que los tienen guardados en sus discos duros.
+</P><P>En principio no tiene mucho sentido acceder a BitTorrent clicando a esta entrada del menú, por esa razón no se encuentra disponible.
+</P>
+<A NAME="Ekiga"></A><H2> Ekiga </H2>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Ekiga.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/images/thumb/e/e8/180px-Ekiga.png" SRC="images/thumb/e/e8/180px-Ekiga.png" HEIGHT="86" / WIDTH="180" ALT=""></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Ekiga.png"><IMG SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV></DIV></DIV></DIV>
+<P>Programa para llevar a cabo conferencias de audio y vídeo a través de Internet. También permite realizar llamadas de PC a teléfono y en general manejar lo que se conoce como VoIP (Voz sobre IP). Esta aplicación tiene desde hace años un gran potencial, la calidad de su rendimiento es alta e incluso hay un servicio comercial que nos permite comprar minutos de llamadas internacionales a cualquier teléfono corriente.
+</P><P>El principal problema de Ekiga ha sido su dificultad de configuración y uso para el gran público (incluso el gran público de GNOME). Primero, la alternativa de referencia era NetMeeting de Microsoft, pero más recientemente Skype <A CLASS="external" TITLE="http://skype.com" HREF="http://skype.com/">[1]</A><SPAN CLASS="urlexpansion"> (<I>http://skype.com</I>)</SPAN> (gratuito pero no libre) se ha convertido en la herramienta VoIP de moda.
+</P>
+<A NAME="gFTP"></A><H2> gFTP </H2>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Gftp.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/images/thumb/1/11/180px-Gftp.png" SRC="images/thumb/1/11/180px-Gftp.png" HEIGHT="131" / WIDTH="180" ALT=""></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Gftp.png"><IMG SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV></DIV></DIV></DIV>
+<P>Cliente para nuestras transmisiones de archivos no sólo en formato FTP sino también en SFTP, HTTP, HTTPS, SSH y FSP, lo que equivale a decir casi cualquier tipo de conexión entre equipos para transmitir archivos, con la excepción de WebDAV.
+</P><P>Su uso es sencillo, la pantalla nos muestra el directorio local y el directorio remoto una vez que estamos conectados al servidor. Podemos transmitir archivos entre ambos y podemos realizar determinadas acciones sobre los archivos, tales como renombrar o modificar atributos. También podemos establecer punteros o marcadores para agilizar las conexiones.
+</P><P><BR />
+</P>
+<A NAME="Bluefish"></A><H2> Bluefish </H2>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Bluefish.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/images/thumb/f/f3/180px-Bluefish.png" SRC="images/thumb/f/f3/180px-Bluefish.png" HEIGHT="126" / WIDTH="180" ALT=""></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Bluefish.png"><IMG SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV></DIV></DIV></DIV>
+<P>Completa herramienta de programación que se presenta como editor de páginas web pero, de hecho es capaz de mucho más. Eso sí, debemos tener los conocimientos informáticos necesarios para sacarle partido. Bluefish nos ayuda a producir y mantener código limpio y estructurado. 
+</P><P>No viene equipado con ningún editor gráfico del tipo WYSIWYG (<EM>What You See Is What You Get</EM>, término utilizado para los editores web que permiten componer una página como en un procesador de textos). En vez de esto tiene un asistente para ir introduciendo el código de marras, tablas, formularios, listas... Viene equipado con validadores de código y demás utilidades a las cuales sacaremos un buen partido sólo si tenemos unos conocimientos previos de programación en lenguajes pensados para la web tales como HTML, PHP, etc.
+</P><P><BR />
+</P>
+<A NAME="Downloader"></A><H2> Downloader </H2>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:D4x.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/images/thumb/5/5d/180px-D4x.png" SRC="images/thumb/5/5d/180px-D4x.png" HEIGHT="135" / WIDTH="180" ALT=""></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:D4x.png"><IMG SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV></DIV></DIV></DIV>
+<P>Este popular gestor de descargas, conocido como D4X, es especialmente útil sobre todo para bajar archivos pesados con conexiones comedidas. Permite retomar conexiones interrumpidas tanto vía FTP como HTTP, así como priorizar descargas. Empezar a utilizarlo es sencillo, tan sólo hay que introducir una nueva URL del archivo a bajar e iniciar la descarga. A partir de ahí el programa permite una gran variedad de opciones de configuración.
+</P><P><BR />
+</P>
+<A NAME="XChat"></A><H2> XChat </H2>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Xchat.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/images/thumb/6/6e/180px-Xchat.png" SRC="images/thumb/6/6e/180px-Xchat.png" HEIGHT="113" / WIDTH="180" ALT=""></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Xchat.png"><IMG SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV></DIV></DIV></DIV>
+<P>Uno de los programas especializado en chats IRC más utilizado por los iniciados en este gremio. No obstante, la creciente demanda de mensajería instantánea está decantando este tipo de usuarios a programas como Gaim, que también incluyen el soporte a IRC.
+</P>
+<A NAME="aMSN"></A><H2> aMSN </H2>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Amsn.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/images/thumb/a/ae/180px-Amsn.png" SRC="images/thumb/a/ae/180px-Amsn.png" HEIGHT="284" / WIDTH="180" ALT=""></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Amsn.png"><IMG SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV></DIV></DIV></DIV>
+<P>Réplica libre del MSN Messenger de Microsoft. Permite conectarnos a esta red y contactar con todas nuestras amistades que usan ese protocolo de conexión, sin importar que nosotros no estemos chateando desde MS Windows. Interesante sólo en el caso de que todos nuestros contactos estén en MSN y no nos interese abrir horizontes a otras redes de mensajería instantánea como Jabber, o a los canales chat de IRC de toda la vida. En caso contrario es más recomendable Gaim.
+</P><DIV CLASS="printfooter">
+Obtenido de "<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/M%C3%A1s_Internet" HREF="M%C3%A1s_Internet">http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/M%C3%A1s_Internet</A>"</DIV>
+
+	    
+	    <!--  end content -->
+	    <DIV CLASS="visualClear"></DIV>
+	  </DIV>
+	</DIV>
+      </DIV>
+      <DIV CLASS="visualClear"></DIV>
+    </DIV>
+  </BODY>
+</HTML>
