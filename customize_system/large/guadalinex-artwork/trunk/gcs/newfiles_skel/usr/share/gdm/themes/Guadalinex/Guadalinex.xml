@@ -72,6 +72,20 @@
     </box>
   </item> -->
    
+  <!-- timer warning -->
+  <item type="rect">
+    <pos x="50%" y="50%" width="box" height="box" anchor="c"/>
+    <box xpadding="20" ypadding="0" spacing="10" orientation="horizontal">
+    <item type="label" id="timed-label">
+      <pos x="0" y="-400%" anchor="nw"/>
+      <show type="timed"/>
+      <normal font="FrancophilSans Bold 11" color="#dc292b"/>
+      <stock type="timed-label"/>
+    </item>
+    </box>
+  </item>
+
+
   <!-- password box -->
   <item type="rect">
     <pos x="53%" y="53%" width="box" height="box" anchor="c"/>
@@ -91,12 +105,6 @@
                 <pos y="100%" x="0" width="-2" height="-2" anchor="nw"/>
               </item>
             </fixed>
-          </item>
-          <!-- timer warning -->
-          <item type="label" id="timed-label">
-            <show type="timed"/>
-            <normal font="FrancophilSans Bold 11" color="#523921"/>
-            <stock type="timed-label"/>
           </item>
         </box>
       </item>
