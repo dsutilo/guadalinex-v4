@@ -1,3 +1,9 @@
+hermeshardware (0.3.11) unstable; urgency=low
+
+  * Fixed some problems with 3g actors (the pkg name was wrong)
+
+ --  <rmartin@emergya.es>  Fri,  2 Mar 2007 04:39:18 +0100
+
 hermeshardware (0.3.10) unstable; urgency=low
 
   * Modifying TDT URL
