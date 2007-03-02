@@ -1,6 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Asistente para la conexión a Internet
+Name=Asistente para conexión a Internet
 Comment=Utilidad para configurar la conexión a Internet a través de los dispositivos habituales
 Exec=guadalinex-network-assistant
 Icon=guadalinex-network-assistant.png
