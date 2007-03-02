@@ -81,6 +81,7 @@ aparecían en inglés, heredado de Ubuntu (BTS 1222)
 - Actualizados los contenidos de la guía de Guadalinex v3 para generar la guía
 de Guadalinex v4 (pendiente de repasar contenidos y completar la
 actualización)
+- Añadido soporte para webcam Logitech Quickcam express (BTS 1286)
 - Corregido problema con "orígenes de software", que no arranca (BTS 1047)
 - Traducidos textos del comprobador del CD (BTS 1171)
 - Añadido paquete "guadalinex-user-manual" con la guía de usuario de
