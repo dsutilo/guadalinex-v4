@@ -1,0 +1,224 @@
+<!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML XMLNSXML:LANGDIRLANG>
+  <HEAD>
+    <META / HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    <META NAME="KEYWORDS" / CONTENT="Guia v4/La red doméstica,Guia v4/Mil y un programas libres y gratuitos,Guia v4/Yo también sirvo">
+<META NAME="robots" / CONTENT="index,follow">
+<LINK / REL="shortcut icon" HREF="http://www.guadalinex.org/favicon.ico">
+<LINK TITLE="Creative Commons" / REL="meta" TYPE="application/rdf+xml" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php?title=Guia_v4/La_red_dom%C3%A9stica&amp;action=creativecommons">
+<LINK / REL="copyright" HREF="http://creativecommons.org/licenses/by-sa/2.1/es/">
+
+    <TITLE>Guia v4/La red doméstica - Guadapedia</TITLE>
+    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="screen,projection" HREF="stylesheets/main.css">
+    <LINK / REL="stylesheet" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/stylesheets/commonPrint.css" TYPE="text/css" MEDIA="print" HREF="stylesheets/commonPrint.css">
+    <!-- [if IE]><STYLE TYPE="text/css" MEDIA="all">@import "/guadapedia-estatica/stylesheets/monobook/IEFixes.css";</STYLE>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/IEFixes.js" SRC="stylesheets/IEFixes.js" TYPE="text/javascript"></SCRIPT>
+    <META / HTTP-EQUIV="imagetoolbar" CONTENT="no"><![ENDIF]-->
+    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/index.php?title=-&amp;action=raw&amp;gen=js" TYPE="text/javascript"></SCRIPT>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/wikibits.js" SRC="stylesheets/wikibits.js" TYPE="text/javascript"></SCRIPT>
+    <STYLE TYPE="text/css">/*<![CDATA[*/ @import "/guadapedia-estatica/index.php?title=-&action=raw&gen=css";
+ /*]]>*/</STYLE>
+    
+  </HEAD>
+  <BODY CLASS="ns-0">
+    <DIV ID="globalWrapper">
+      <DIV ID="column-content">
+	<DIV ID="content">
+	    
+	  <A ID="contentTop" NAME="top"></A>
+	  <H1 CLASS="firstHeading"><a href=Indice>Guia v4/La red doméstica</a></H1>
+	  <DIV ID="bodyContent">
+	    <H3 ID="siteSub">De Guadapedia, la enciclopedia libre.</H3>
+	    <DIV ID="contentSub"></DIV>
+	    
+
+	    
+	    <!--  start content -->
+	    <TABLE ID="toc" BORDER="0"><TR ID="toctitle"><TD ALIGN="center">
+<B>Tabla de contenidos</B> <SCRIPT TYPE="text/javascript">showTocToggle("mostrar","esconder")</SCRIPT></TD></TR><TR ID="tocinside"><TD>
+<DIV CLASS="tocline"><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/La_red_dom%C3%A9stica#La_red_dom.C3.A9stica" HREF="La_red_dom%C3%A9stica#La_red_dom.C3.A9stica">1 La red doméstica</A><BR /></DIV>
+<DIV CLASS="tocindent">
+<P><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/La_red_dom%C3%A9stica#Principios_b.C3.A1sicos" HREF="La_red_dom%C3%A9stica#Principios_b.C3.A1sicos">1.1 Principios básicos</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/La_red_dom%C3%A9stica#Convivencia_con_MS_Windows_o_Mac" HREF="La_red_dom%C3%A9stica#Convivencia_con_MS_Windows_o_Mac">1.2 Convivencia con MS Windows o Mac</A><BR />
+</P>
+<DIV CLASS="tocindent">
+<P><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/La_red_dom%C3%A9stica#Compartir_carpetas" HREF="La_red_dom%C3%A9stica#Compartir_carpetas">1.2.1 Compartir carpetas</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/La_red_dom%C3%A9stica#Compartir_un_grupo_de_trabajo" HREF="La_red_dom%C3%A9stica#Compartir_un_grupo_de_trabajo">1.2.2 Compartir un grupo de trabajo</A><BR />
+</P>
+</DIV>
+<P><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/La_red_dom%C3%A9stica#Compartir_impresora" HREF="La_red_dom%C3%A9stica#Compartir_impresora">1.3 Compartir impresora</A><BR />
+</P>
+<DIV CLASS="tocindent">
+<P><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/La_red_dom%C3%A9stica#Instalar_una_impresora_de_red" HREF="La_red_dom%C3%A9stica#Instalar_una_impresora_de_red">1.3.1 Instalar una impresora de red</A><BR />
+</P>
+</DIV>
+<P><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/La_red_dom%C3%A9stica#Conexiones_directas_a_otros_servidores" HREF="La_red_dom%C3%A9stica#Conexiones_directas_a_otros_servidores">1.4 Conexiones directas a otros servidores</A><BR />
+</P>
+<DIV CLASS="tocindent">
+<P><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/La_red_dom%C3%A9stica#Extender_nuestro_escritorio_a_otros_sistemas" HREF="La_red_dom%C3%A9stica#Extender_nuestro_escritorio_a_otros_sistemas">1.4.1 Extender nuestro escritorio a otros sistemas</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/La_red_dom%C3%A9stica#Establecer_una_conexi.C3.B3n" HREF="La_red_dom%C3%A9stica#Establecer_una_conexi.C3.B3n">1.4.2 Establecer una conexión</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/La_red_dom%C3%A9stica#Recibir_conexiones" HREF="La_red_dom%C3%A9stica#Recibir_conexiones">1.4.3 Recibir conexiones</A><BR />
+</P>
+</DIV>
+</DIV>
+</TD></TR></TABLE>
+<A NAME="La_red_dom.C3.A9stica"></A><H1> La red doméstica </H1>
+<P>Decíamos en el anterior apartado que GNU/Linux es un sistema operativo nacido por y para la red. En las siguientes páginas vamos a partir de este principio teórico para aplicarlo en la práctica a partir de nuestro escritorio y el de nuestros sistemas vecinos. Y ojo porque en las redes telemáticas la vecindad es un concepto que no necesariamente está relacionado con la proximidad física.
+</P><P>Este capítulo interesa tanto a quienes tienen varios ordenadores en casa o la oficina como a los usuarios de una sola máquina bajo un mismo techo... pero con otros vecinos emocionalmente cercanos en algún lugar de Internet.
+</P><P><BR />
+</P>
+<A NAME="Principios_b.C3.A1sicos"></A><H2> Principios básicos </H2>
+<P>Si la informática es una ciencia, administrar redes ocupa un porcentaje apreciable de dicho conocimiento. Aquí vamos a explicar una parte ínfima de todo lo que se puede escribir sobre la conexión, diálogo y cooperación entre ordenadores. Es posible que muchos de nosotros nos conformemos con muy poco más.
+</P><P>De hecho, lo básico que debemos entender/recordar es lo siguiente: 
+</P>
+<UL><LI> <STRONG>La red se ve pero no se toca</STRONG>. Aunque nuestros ojos vean objetos tangibles tales como ordenadores y cables, las redes están formadas por sistemas, carpetas, usuarios y permisos. Nuestro ordenador puede ser inaccesible para el que tenemos al lado aunque ambos estén conectados al mismo enrutador. O puede ser inaccesible para el usuario Pepito pero no para la usuaria Juanita. Por contra, podemos tener en nuestro escritorio carpetas accesibles que, de hecho, están ubicadas en ordenadores al otro lado del océano; no existe conexión física directa y la gestión se realiza a través de Internet.
+</LI><LI> <STRONG>Los protocolos comunican, los sistemas operativos no incomunican</STRONG>. Ordenadores con diferentes sistemas operativos pueden compartir recursos entre ellos si comparten un mismo protocolo. Ordenadores con un mismo sistema operativo no se comunicarán entre ellos si usan protocolos diferentes. Hay varios protocolos que cubren varias funciones. El protocolo SMB es utilizado en las comunicaciones con/entre sistemas MS Windows, el SSH nos permite operar en otros ordenadores GNU/Linux como en el propio... 
+</LI><LI> <STRONG>Hay conexiones en red y conexiones directas</STRONG>. A efectos prácticos, tenemos sistemas conectados en red formando dominios o grupos de trabajo al estilo MS Windows, y tenemos conexiones directas al estilo GNU/Linux. También se pueden crear redes de ordenadores con estilo genuinamente GNU/Linux, pero esto escapa de las pretensiones de esta Guía.
+</LI></UL>
+<P>Entendidos estos tres puntos, el resto es sólo cuestión de metodología.
+</P><P>Para poner en práctica alguna de las propuestas detalladas a continuación, nuestro equipo debe disponer de una conexión debidamente configurada y activada, ya sea a través de cable o tarjeta inalámbrica.
+</P><P><BR />
+</P>
+<A NAME="Convivencia_con_MS_Windows_o_Mac"></A><H2> Convivencia con MS Windows o Mac </H2>
+<P>Vamos a empezar con la que posiblemente sea la situación más frecuente entre los usuarios noveles en el software libre: la red doméstica o laboral con presencia de ordenador(es) con MS Windows. O Mac, que para el caso es lo mismo.
+</P><P>La situación más habitual es que ya exista una red local con un dominio de grupo, y allí aterrizamos nosotros con nuestro ordenador (fijo o portátil) convertido a GNU/Linux. Queremos acceder a carpetas de otros usuarios en esos ordenadores y quizás también a impresoras, si las hay. Posiblemente también queramos compartir carpetas nuestras con otros usuarios. 
+</P><P>Ningún problema, tenemos todo lo necesario para trabajar en esta red casi sin que el resto de usuarios se den cuenta que trabajamos con un sistema operativo diferente.
+</P><P><BR />
+</P>
+<A NAME="Compartir_carpetas"></A><H3> Compartir carpetas </H3>
+<P>Para acceder a carpetas de otros ordenadores bajo la red local, lo único que necesitamos es que los usuarios o administradores con los permisos adecuados hagan esas carpetas compartibles a nivel de toda la red. Una vez hecho esto sólo nos queda llegar hasta la carpeta:
+</P><P><STRONG>Lugares</STRONG> > <STRONG>Servidores de red</STRONG>
+</P>
+<DIV CLASS="thumb tnone"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Tras ese icono están nuestros compañeros." W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Red_de_windows.png" HREF="imagenes/Red_de_windows.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/c/cb/180px-Red_de_windows.png" SRC="mini/c/cb/180px-Red_de_windows.png" HEIGHT="128" / WIDTH="180" ALT="Tras ese icono están nuestros compañeros."></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Red_de_windows.png" HREF="extra/Imagen:Red_de_windows.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Tras ese icono están nuestros compañeros.</DIV></DIV></DIV>
+<OL><LI> Se nos abrirá el <STRONG>Administrador de archivos</STRONG> y veremos como mínimo una <STRONG>Red de Windows</STRONG>. La clicamos.
+</LI><LI> Aparecerán los ordenadores conectados a esa red. Debemos identificar el ordenador en el que se encuentra la carpeta compartida a la que deseamos acceder. Lo clicamos.
+</LI><LI> Esto nos llevará a ver los recursos compartidos por dicho ordenador. La carpeta compartida nos debería aparecer a la vista.
+</LI><LI> Dependiendo de los permisos que se le hayan asignado a esa carpeta, podremos acceder a sus contenidos y modificarlos o añadir nuevos archivos si estamos autorizados para ello.
+</LI></OL>
+<P>Si no podemos acceder a la carpeta o a los archivos que hay en ella, deberemos consultar con el administrador de la red o el usuario de ese ordenador.
+</P><P>El proceso a la inversa es casi idéntico. Si queremos compartir carpetas nuestras con otros usuarios debemos marcar dichas carpetas como compartibles y definir  los permisos de acceso que queramos aplicarles. Se ha de proceder de la siguiente manera:
+</P>
+<DIV CLASS="thumb tnone"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Carpetas compartidas, en el manú." W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Carpeta_compartida_menu.png" HREF="imagenes/Carpeta_compartida_menu.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/b/b0/180px-Carpeta_compartida_menu.png" SRC="mini/b/b0/180px-Carpeta_compartida_menu.png" HEIGHT="105" / WIDTH="180" ALT="Carpetas compartidas, en el manú."></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Carpeta_compartida_menu.png" HREF="extra/Imagen:Carpeta_compartida_menu.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Carpetas compartidas, en el manú.</DIV></DIV></DIV>
+<P>Nos aparecerán las carpetas disponibles en nuestro sistema para ser compartidas.
+</P>
+<DIV CLASS="thumb tnone"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Ventana principal." W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Carpeta_compartida_main.png" HREF="imagenes/Carpeta_compartida_main.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/9/90/180px-Carpeta_compartida_main.png" SRC="mini/9/90/180px-Carpeta_compartida_main.png" HEIGHT="131" / WIDTH="180" ALT="Ventana principal."></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Carpeta_compartida_main.png" HREF="extra/Imagen:Carpeta_compartida_main.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Ventana principal.</DIV></DIV></DIV>
+<P>Para añadir una carpeta debemos realizar estos pasos:
+</P>
+<DIV CLASS="thumb tnone"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Añadiendo una nueva carpeta compartida." W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Carpeta_compartida_new.png" HREF="imagenes/Carpeta_compartida_new.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/b/b2/180px-Carpeta_compartida_new.png" SRC="mini/b/b2/180px-Carpeta_compartida_new.png" HEIGHT="130" / WIDTH="180" ALT="Añadiendo una nueva carpeta compartida."></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Carpeta_compartida_new.png" HREF="extra/Imagen:Carpeta_compartida_new.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Añadiendo una nueva carpeta compartida.</DIV></DIV></DIV>
+<OL><LI> Clicar <STRONG>Añadir</STRONG>.
+</LI><LI> <STRONG>Ruta</STRONG> es la ubicación de la carpeta a compartir y que debemos buscar y seleccionar.
+</LI><LI> <STRONG>Comparte con</STRONG> se refiere al protocolo a utilizar. <STRONG>SMB</STRONG> aparece como opción seleccionada que debemos usar. 
+</LI><LI> <STRONG>Nombre</STRONG> es la identificación que le damos a la carpeta a compartir, tal cual la verán los usuarios que accedan desde fuera a ella. Puede ser el mismo nombre actual de la carpeta u otro.
+</LI><LI> <STRONG>Comentario</STRONG> es un campo adicional, para ofrecer información sobre la carpeta.
+</LI><LI> <STRONG>Sólo lectura</STRONG> indica que los usuarios que accedan a la carpeta podrán visualizar y copiar los archivos que hay en ella, pero no modificarlos o borrarlos, ni añadir nuevos archivos.
+</LI><LI> <STRONG>Permitir examinar la carpeta</STRONG> implica que las subcarpetas que haya en la carpeta compartible también serán accesibles, junto con sus contenidos.
+</LI><LI> Opcionalmente podemos modificar desde aquí los <STRONG>Parámetros de configuración general para la compartición con Windows</STRONG>, que abordamos a continuación y que nos interesan sólo en el caso de compartir un mismo dominio o grupo de trabajo.
+</LI></OL>
+<DIV CLASS="thumb tnone"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Propiedades generales." W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Carpeta_compartida_propiedades.png" HREF="imagenes/Carpeta_compartida_propiedades.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/c/cb/180px-Carpeta_compartida_propiedades.png" SRC="mini/c/cb/180px-Carpeta_compartida_propiedades.png" HEIGHT="131" / WIDTH="180" ALT="Propiedades generales."></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Carpeta_compartida_propiedades.png" HREF="extra/Imagen:Carpeta_compartida_propiedades.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Propiedades generales.</DIV></DIV></DIV>
+<P>Aceptamos los cambios y con ello permitimos que nuestra carpeta sea accesible para los usuarios de la red local. Ya estamos en condiciones de compartir nuestros tesoros más preciados.
+</P>
+<DIV CLASS="thumb tnone"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Nueva carpeta del &quot;usuario&quot; compartida." W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Carpeta_compartida_usuario.png" HREF="imagenes/Carpeta_compartida_usuario.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/d/d5/180px-Carpeta_compartida_usuario.png" SRC="mini/d/d5/180px-Carpeta_compartida_usuario.png" HEIGHT="131" / WIDTH="180" ALT="Nueva carpeta del &quot;usuario&quot; compartida."></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Carpeta_compartida_usuario.png" HREF="extra/Imagen:Carpeta_compartida_usuario.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Nueva carpeta del "usuario" compartida.</DIV></DIV></DIV>
+<A NAME="Compartir_un_grupo_de_trabajo"></A><H3> Compartir un grupo de trabajo </H3>
+<P>Las redes de MS Windows agrupan a diversos sistemas bajo un mismo dominio o grupo de trabajo. Si queremos compartir recursos perteneciendo al mismo dominio que el resto, debemos realizar los siguientes pasos.
+</P><P><STRONG>Sistema</STRONG> > <STRONG>Administración</STRONG> > <STRONG>Red</STRONG>
+</P>
+<OL><LI> Seleccionamos la pestaña <STRONG>General</STRONG>.
+</LI><LI> En <STRONG>Nombre del anfitrión</STRONG> nos aparecerá el nombre que le pusimos a nuestro ordenador cuando instalamos el sistema operativo. Ese nombre es el que van a ver el resto de usuarios conectados a la red.
+</LI><LI> En <STRONG>Nombre del dominio</STRONG> debemos introducir el dominio o grupo de trabajo al que nos sumaremos. Si no lo sabemos podemos preguntar al administrador de la red o consultarlo en cualquiera de los ordenadores pertenecientes a ese dominio.
+</LI></OL>
+<DIV CLASS="thumb tnone"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Identificándonos en el grupo de trabajo." W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Configuracion_red.png" HREF="imagenes/Configuracion_red.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/d/dd/180px-Configuracion_red.png" SRC="mini/d/dd/180px-Configuracion_red.png" HEIGHT="139" / WIDTH="180" ALT="Identificándonos en el grupo de trabajo."></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Configuracion_red.png" HREF="extra/Imagen:Configuracion_red.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Identificándonos en el grupo de trabajo.</DIV></DIV></DIV>
+<P>Clicando <STRONG>Aceptar</STRONG> empezamos nuestra introducción en ese dominio. Para comprobar si estamos dentro, vamos a:
+</P><P><STRONG>Lugares</STRONG> > <STRONG>Servidores de Red</STRONG>
+</P><P>Y clicamos en <STRONG>Red de Windows</STRONG>.
+</P><P>Hay algunas variables por el camino que pueden dificultar la integración, tales como la configuración de la red, el tipo de conexión (mediante cable o tarjeta inalámbrica), etc. Si no nos vemos dentro de la red y nuestros colegas de red no ven nuestro ordenador en el dominio, probemos a reiniciar nuestro sistema.
+</P>
+<A NAME="Compartir_impresora"></A><H2> Compartir impresora </H2>
+<P>Compartir impresoras en red ha sido uno de los mayores obstáculos en la integración GNU/Linux - MS Windows. En el momento de redactar estas líneas el escollo está casi salvado para un usuario avanzado y sólo en parte para un usuario poco experimentado. Utilizar desde GNU/Linux impresoras conectadas a ordenadores con MS Windows es relativamente sencillo. Pero a la inversa es más complicado. 
+</P><P>Si tenemos una impresora conectada a nuestro ordenador con GNU/Linux y queremos que usuarios de MS Windows impriman a través de ella deberemos editar a mano la configuración de <STRONG>CUPS</STRONG>, la aplicación que se encarga de gestionar la impresora. Podemos encontrar las instrucciones en Ubuntu-es <A CLASS="external" TITLE="http://www.ubuntu-es.org/node/298" HREF="http://www.ubuntu-es.org/node/298">[1]</A><SPAN CLASS="urlexpansion"> (<I>http://www.ubuntu-es.org/node/298</I>)</SPAN>.
+</P><P><BR />
+</P>
+<A NAME="Instalar_una_impresora_de_red"></A><H3> Instalar una impresora de red </H3>
+<P>Hay tres diferencias básicas entre operar con una impresora local o una de red y debemos tenerlas muy presentes para instalar con éxito aquellas impresoras que no están directamente conectadas a nuestro ordenador:
+</P>
+<OL><LI> En vez de conectarmos directamente a la impresora, lo hacemos a través de una red local que nos dé acceso al ordenador o servidor donde aquélla esté enchufada. Si no tenemos acceso a la red, ésta no está bien configurada o el ordenador de destino no está encendido y accesible desde la red, tendremos problemas.
+</LI><LI> En vez de mandar órdenes de impresión en local, donde se supone que nuestro usuario tiene permisos para imprimir, debemos mandar esas órdenes a través de un ordenador o servidor que debe estar abierto a compartir su impresora y a atender nuestras peticiones. Si la impresora no está compartida o no tenemos permisos de impresión en ella, tendremos problemas. 
+</LI><LI> En vez de establecer una comunicación directa entre nuestro sistema y la impresora mediante un controlador o <EM>driver</EM>, nuestro sistema deberá entenderse con el que está gestionando la impresora. Para que esta acción sea posible ambos sistemas necesitan compartir un mismo protocolo, o de lo contrario tendremos problemas.
+</LI></OL>
+<P>Sabido esto, sigamos.
+</P>
+<DIV CLASS="thumb tnone"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Menú Sistema &gt; Administración &gt; Impresoras" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Menu_impresoras.png" HREF="imagenes/Menu_impresoras.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/3/33/180px-Menu_impresoras.png" SRC="mini/3/33/180px-Menu_impresoras.png" HEIGHT="138" / WIDTH="180" ALT="Menú Sistema &gt; Administración &gt; Impresoras"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Menu_impresoras.png" HREF="extra/Imagen:Menu_impresoras.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Menú Sistema > Administración > Impresoras</DIV></DIV></DIV>
+<P>Partimos de la base de que tenemos una impresora conectada a un ordenador o servidor encendido y que ambos se encuentran en una red local debidamente configurada. 
+</P>
+<OL><LI> Clicamos en el icono de <STRONG>Impresora nueva</STRONG>.<DIV CLASS="thumb tnone"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="¿Qué tenemos por aquí...?" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Impresoras_antes.png" HREF="imagenes/Impresoras_antes.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/0/00/180px-Impresoras_antes.png" SRC="mini/0/00/180px-Impresoras_antes.png" HEIGHT="119" / WIDTH="180" ALT="¿Qué tenemos por aquí...?"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Impresoras_antes.png" HREF="extra/Imagen:Impresoras_antes.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>¿Qué tenemos por aquí...?</DIV></DIV></DIV><DIV CLASS="thumb tnone"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Buscando nuevas impresoras..." W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Impresoras-gnome-cups-add.png" HREF="extra/Imagen:Impresoras-gnome-cups-add.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/2/2d/180px-Impresoras-gnome-cups-add.png" SRC="mini/2/2d/180px-Impresoras-gnome-cups-add.png" HEIGHT="30" / WIDTH="180" ALT="Buscando nuevas impresoras..."></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Impresoras-gnome-cups-add.png" HREF="extra/Imagen:Impresoras-gnome-cups-add.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Buscando nuevas impresoras...</DIV></DIV></DIV>
+</LI><LI> Seleccionamos <STRONG>Impresora de red</STRONG>.
+</LI><LI> La aplicación nos solicitará el protocolo del ordenador o servidor que tiene la impresora conectada. Si se trata de un PC con MS Windows o un Mac debemos seleccionar <STRONG>Impresora Windows (SMB)</STRONG>.<DIV CLASS="thumb tnone"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Opciones para impresoras compartidas desde Windows (Samba)" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Impresoras_smb.png" HREF="imagenes/Impresoras_smb.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/9/9b/180px-Impresoras_smb.png" SRC="mini/9/9b/180px-Impresoras_smb.png" HEIGHT="152" / WIDTH="180" ALT="Opciones para impresoras compartidas desde Windows (Samba)"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Impresoras_smb.png" HREF="extra/Imagen:Impresoras_smb.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Opciones para impresoras compartidas desde Windows (Samba)</DIV></DIV></DIV>
+</LI><LI> Seleccionamos en el menú desplegable el <STRONG>Host</STRONG> o anfitrión en la lista de ordenadores disponibles, el que tenga conectada la impresora que debemos instalar.
+</LI><LI> Seleccionamos en el siguiente menú desplegable la <STRONG>Impresora</STRONG>. En el caso de que haya más de una debemos elegir la que más nos convenga.<DIV CLASS="thumb tnone"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Selecionando una impresora conectada al equipo GANDALF..." W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Impresoras_smb_host.png" HREF="imagenes/Impresoras_smb_host.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/1/15/180px-Impresoras_smb_host.png" SRC="mini/1/15/180px-Impresoras_smb_host.png" HEIGHT="152" / WIDTH="180" ALT="Selecionando una impresora conectada al equipo GANDALF..."></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Impresoras_smb_host.png" HREF="extra/Imagen:Impresoras_smb_host.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Selecionando una impresora conectada al equipo GANDALF...</DIV></DIV></DIV>
+</LI><LI> Introducimos nuestro <STRONG>Usuario</STRONG> y <STRONG>Contraseña</STRONG> en el caso de que sean necesarios.
+</LI><LI> A continuación seleccionamos la marca y modelo de la impresora.
+</LI></OL>
+<P>Al final del proceso tendremos la impresora listada como si fuera una impresora local y podremos enviarle documentos como si la tuviéramos conectada a nuestro propio ordenador.
+</P>
+<DIV CLASS="thumb tnone"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Aquí está nuestra impresora lista para ser usada." W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Impresoras_despues.png" HREF="imagenes/Impresoras_despues.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/4/46/180px-Impresoras_despues.png" SRC="mini/4/46/180px-Impresoras_despues.png" HEIGHT="119" / WIDTH="180" ALT="Aquí está nuestra impresora lista para ser usada."></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Impresoras_despues.png" HREF="extra/Imagen:Impresoras_despues.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Aquí está nuestra impresora lista para ser usada.</DIV></DIV></DIV>
+<A NAME="Conexiones_directas_a_otros_servidores"></A><H2> Conexiones directas a otros servidores </H2>
+<P>Como hemos comentado anteriormente, podemos establecer conexiones de red con otros ordenadores y servidores aun estando fuera de nuestra casa u oficina, incluso a miles de kilómetros. 
+</P><P>Desde nuestro punto de vista, las carpetas a las que tengamos acceso en esos servidores pueden ser un elemento más de nuestro escritorio, como si estuvieran en nuestro disco duro. Las únicas diferencias que notaremos son, a veces, la solicitud de una contraseña de acceso, o un lapso variable de tiempo hasta que se abre la carpeta. Ello dependerá de la potencia del servidor y del tráfico en las denominadas por algunos <EM>autopistas de la información</EM> y que otros identifican como <EM>ciberdespacio</EM>.
+</P><P><BR />
+</P>
+<A NAME="Extender_nuestro_escritorio_a_otros_sistemas"></A><H3> Extender nuestro escritorio a otros sistemas </H3>
+<P>Velocidades aparte, lo interesante aquí es asimilar el concepto de que nuestro escritorio no está limitado a nuestro propio ordenador. Podemos acceder a carpetas remotas desde elementos de nuestro escritorio clicándolos igual que para acceder a una carpeta local. Podemos operar con los archivos de una carpeta remota igual que con los archivos de una carpeta local, mediante el mismo <STRONG>Administrador de archivos</STRONG>. Se trata de una simple cuestión de permisos: dónde puede acceder nuestro usuario y dónde no.
+</P><P>Todo lo anterior vale igualmente para ordenadores ubicados en nuestra red local. A nuestro sistema le da igual, con tal que le facilitemos identificación de la máquina a enlazar, ya sea una IP numérica local o un nombre de dominio en Internet. Al otro lado del cable, al sistema de destino también le da igual si quien llama a su puerta es un PC contiguo o un vecino en las antípodas. Si tiene los permisos necesarios, pasará.
+</P><P><BR />
+</P>
+<A NAME="Establecer_una_conexi.C3.B3n"></A><H3> Establecer una conexión </H3>
+<P>Por supuesto, para establecer una de estas conexiones debemos antes saber dónde conectar y para qué. Tenemos ejemplos comunes como mantener una página web, mover ficheros pesados entre ordenadores, administrar un servidor remoto... Estas acciones pueden realizarse también mediante aplicaciones especializadas que, a veces, disponen de más posibilidades que el <STRONG>Administrador de archivos</STRONG>. También hay quien domina el tema y se va directamente a la linea de comandos. 
+</P><P>Para empezar, este <STRONG>tres en uno</STRONG> nos basta y sobra:
+</P>
+<DIV CLASS="thumb tnone"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Menú Lugares &gt; &quot;Conectar con el servidor...&quot;" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Menu_conectar_con_el_servidor.png" HREF="imagenes/Menu_conectar_con_el_servidor.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/b/b0/180px-Menu_conectar_con_el_servidor.png" SRC="mini/b/b0/180px-Menu_conectar_con_el_servidor.png" HEIGHT="150" / WIDTH="180" ALT="Menú Lugares &gt; &quot;Conectar con el servidor...&quot;"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Menu_conectar_con_el_servidor.png" HREF="extra/Imagen:Menu_conectar_con_el_servidor.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Menú Lugares > "Conectar con el servidor..."</DIV></DIV></DIV>
+<P>Aparece una ventana de configuración, cuyos campos variarán dependiendo del <STRONG>Tipo de servicio</STRONG> que seleccionemos.
+</P>
+<DIV CLASS="thumb tnone"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Formulario a rellenar para establecer una conexión." W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Conectar_con_el_servidor.png" HREF="imagenes/Conectar_con_el_servidor.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/a/a1/180px-Conectar_con_el_servidor.png" SRC="mini/a/a1/180px-Conectar_con_el_servidor.png" HEIGHT="98" / WIDTH="180" ALT="Formulario a rellenar para establecer una conexión."></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Conectar_con_el_servidor.png" HREF="extra/Imagen:Conectar_con_el_servidor.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Formulario a rellenar para establecer una conexión.</DIV></DIV></DIV>
+<DIV CLASS="thumb tnone"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Lista de &quot;Tipos de servicio&quot;" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Conectar_con_el_servidor_protocolos.png" HREF="imagenes/Conectar_con_el_servidor_protocolos.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/e/e4/180px-Conectar_con_el_servidor_protocolos.png" SRC="mini/e/e4/180px-Conectar_con_el_servidor_protocolos.png" HEIGHT="107" / WIDTH="180" ALT="Lista de &quot;Tipos de servicio&quot;"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Conectar_con_el_servidor_protocolos.png" HREF="extra/Imagen:Conectar_con_el_servidor_protocolos.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Lista de "Tipos de servicio"</DIV></DIV></DIV>
+<P>Hay múltiples combinaciones y vamos a repasar conceptos para entender todas ellas.
+</P>
+<UL><LI> <STRONG>Tipo de servicio</STRONG> se refiere al protocolo que vamos a utilizar para la conexión. Esto está directamente relacionado con el servidor al que vamos a conectar. Es un dato que si no sabemos nos lo aclarará el administrador del servidor remoto. Veamos rápidamente algunas posibilidades:
+<UL><LI> <STRONG>FTP público</STRONG> sirve para transmitir archivos a través de un servidor que no nos requiere ninguna contraseña para subir o bajar materiales. Imaginemos que tenemos un archivo que queremos enviar a alguien (o a nosotros mismos, por ejemplo del trabajo a casa) pero es demasiado grande para un disquete y no nos la queremos jugar adjuntándolo a un correo electrónico. Un FTP público nos puede solucionar el problema, con un buscador cualquiera los podemos encontrar.
+</LI><LI> <STRONG>FTP (con login)</STRONG> es lo mismo, pero privado. Es un servicio habitual de muchos proveedores de Internet para acceder a nuestro espacio web.
+</LI><LI> <STRONG>SSH</STRONG> es un protocolo más seguro y completo, utilizado generalmente por usuarios más avanzados. Debemos seleccionar esta opción para conexiones mediante SFTP, que es una combinación de SSH con FTP (la <EM>S</EM> es de <EM>secure</EM>, en español <EM>seguro</EM>).
+</LI><LI> <STRONG>Compartido por Windows</STRONG> utiliza el protocolo SMB, nativo de MS Windows, y nos sirve para conectar directamente con carpetas compartidas con usuarios de este sistema operativo (o Mac, si tienen habilitados los servicios SMB).
+</LI><LI> <STRONG>WebDAV (HTTP)</STRONG> es un protocolo más reciente que los anteriores y, por tanto, menos implantado. Su función es precisamente la de tratar carpetas y archivos en servidores web de la misma forma que en servidores locales, facilitando que varios usuarios trabajen sobre los mismos archivos y carpetas. Se utiliza para gestionar contenidos en páginas web o simplemente para almacenar documentos en linea.
+</LI><LI> <STRONG>WebDAV seguro (HTTPS)</STRONG> es lo mismo pero aplicado a servidores seguros con capacidad para manejar la transmisión de datos de forma encriptada.
+</LI><LI> <STRONG>Dirección personalizada</STRONG> es simplemente un enlace directo a un recurso en Internet, generalmente una página web.
+</LI></UL>
+</LI><LI> <STRONG>Servidor</STRONG> es el nombre de dominio o IP numérica del servidor a conectar. Si se trata de un servidor remoto lo más probable es que utilicemos su nombre de dominio, que tendrá el mismo aspecto que el dominio de una web. Si se trata de un servidor local lo habitual es utilizar la IP numérica, que el administrador o usuario de dicho ordenador nos facilitará.
+</LI><LI> <STRONG>Puerto</STRONG> es el punto de entrada por el que accedemos al servidor. En caso de duda es mejor dejarlo en blanco.
+</LI><LI> <STRONG>Carpeta</STRONG> se refiere a la ubicación en el sistema que tiene la carpeta a la que queremos acceder, partiendo de la raíz del directorio. En caso de duda lo podemos dejar en blanco, ya que de acuerdo con nuestros permisos el servidor nos ubicará donde por defecto nos corresponda.
+</LI><LI> <STRONG>Nombre de usuario</STRONG> es el usuario con permisos de acceso al servidor. Puede ser el mismo que el usuario que utilizamos en nuestro sistema o no, dependiendo del servicio y de cómo se haya configurado nuestro acceso.
+</LI><LI> <STRONG>Nombre para usar en la conexión</STRONG> es simplemente la denominación que esta conexión va a tener en nuestro sistema y que vamos a ver junto al icono de acceso. Podemos denominar la conexión como queramos, esto no influye en la comunicación con el servidor.
+</LI></UL>
+<P>Una vez rellenados los campos tendremos el nuevo enlace correspondiente a la conexión tanto en el menú de <STRONG>Lugares</STRONG> como en la carpeta de <STRONG>Servidores de red</STRONG> también bajo <STRONG>Lugares</STRONG>. Si lo deseamos, podemos disponer de un lanzador o acceso directo simplemente arrastrando el icono desde cualquiera de estas ubicaciones hasta el fondo del escritorio.
+</P>
+<A NAME="Recibir_conexiones"></A><H3> Recibir conexiones </H3>
+<P>Hemos visto cómo conectarnos a otros sistemas que hagan las funciones de servidor. También podemos jugar a la inversa y recibir conexiones actuando como servidores. Para recibir conexiones dentro de una red local y montar algunos tipos de servicios es realmente sencillo y sólo deberemos instalar algún paquete adicional. Por ejemplo, activando el servidor SSH que nos permite aceptar conexiones vía SSH. 
+</P><P>Aparte del tipo de servicio, el dato que tendremos que facilitar a quienes conecten directamente a nuestro sistema es nuestra IP. Para saber la IP actual de nuestro ordenador debemos ir a:
+</P>
+<DIV CLASS="thumb tnone"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Menú Aplicaciones &gt; Herramientas del sistema &gt; Herramientas de red" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Menu_herramientas_de_red.png" HREF="imagenes/Menu_herramientas_de_red.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/0/03/180px-Menu_herramientas_de_red.png" SRC="mini/0/03/180px-Menu_herramientas_de_red.png" HEIGHT="119" / WIDTH="180" ALT="Menú Aplicaciones &gt; Herramientas del sistema &gt; Herramientas de red"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Menu_herramientas_de_red.png" HREF="extra/Imagen:Menu_herramientas_de_red.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Menú Aplicaciones > Herramientas del sistema > Herramientas de red</DIV></DIV></DIV>
+<P>En <STRONG>Dispositivos</STRONG> seleccionamos el <STRONG>Dispositivo de red</STRONG> a través del cual nos estemos conectando actualmente (<STRONG>eth0</STRONG> se refiere al cable de red, <STRONG>ath0</STRONG> o <STRONG>wlan0</STRONG> a una conexión inalámbrica) y veremos nuestra <STRONG>Dirección IP</STRONG> bajo el protocolo IPv4. Sí, de entrada es algo un poco complejo, y esto es sólo el principio.
+</P>
+<DIV CLASS="thumb tnone"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Mirando la dirección IP de nuestro dispositivo." W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Herramientas_de_red.png" HREF="imagenes/Herramientas_de_red.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/2/24/180px-Herramientas_de_red.png" SRC="mini/2/24/180px-Herramientas_de_red.png" HEIGHT="171" / WIDTH="180" ALT="Mirando la dirección IP de nuestro dispositivo."></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Herramientas_de_red.png" HREF="extra/Imagen:Herramientas_de_red.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Mirando la dirección IP de nuestro dispositivo.</DIV></DIV></DIV>
+<P>A partir de aquí, los niveles de complejidad de administración de redes son casi infinitos. Introducimos algunas nociones en el capítulo <STRONG><A TITLE="Guia v4/Yo también sirvo" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Yo_tambi%C3%A9n_sirvo" HREF="Yo_tambi%C3%A9n_sirvo">8 (Yo también sirvo)</A></STRONG>.
+</P><P>Si nuestra preocupación es simplemente la transmisión de ficheros podemos optar por herramientas de Internet de sencillo uso preparadas para realizar estas acciones P2P, de par a par, como <STRONG>aMule</STRONG> o <STRONG>Gaim</STRONG>. Más sobre todo esto en el siguiente capítulo, donde repasamos los programas que lleva preinstalados nuestra distribución GNU/Linux.
+</P>
+<PRE>Sigue: <A TITLE="Guia v4/Mil y un programas libres y gratuitos" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Mil_y_un_programas_libres_y_gratuitos" HREF="Mil_y_un_programas_libres_y_gratuitos">Mil y un programas libres y gratuitos</A>
+</PRE><DIV CLASS="printfooter">
+Obtenido de "<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/La_red_dom%C3%A9stica" HREF="La_red_dom%C3%A9stica">http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/La_red_dom%C3%A9stica</A>"</DIV>
+
+	    
+	    <!--  end content -->
+	    <DIV CLASS="visualClear"></DIV>
+	  </DIV>
+	</DIV>
+      </DIV>
+      <DIV CLASS="visualClear"></DIV>
+    </DIV>
+  </BODY>
+</HTML>

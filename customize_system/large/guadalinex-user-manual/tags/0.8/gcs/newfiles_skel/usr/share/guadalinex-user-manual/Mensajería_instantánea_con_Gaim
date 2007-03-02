@@ -1,0 +1,138 @@
+<!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML XMLNSXML:LANGDIRLANG>
+  <HEAD>
+    <META / HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    <META NAME="KEYWORDS" / CONTENT="Guia v4/Mensajería instantánea con Gaim">
+<META NAME="robots" / CONTENT="index,follow">
+<LINK / REL="shortcut icon" HREF="http://www.guadalinex.org/favicon.ico">
+<LINK TITLE="Creative Commons" / REL="meta" TYPE="application/rdf+xml" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php?title=Guia_v4/Mensajer%C3%ADa_instant%C3%A1nea_con_Gaim&amp;action=creativecommons">
+<LINK / REL="copyright" HREF="http://creativecommons.org/licenses/by-sa/2.1/es/">
+
+    <TITLE>Guia v4/Mensajería instantánea con Gaim - Guadapedia</TITLE>
+    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="screen,projection" HREF="stylesheets/main.css">
+    <LINK / REL="stylesheet" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/stylesheets/commonPrint.css" TYPE="text/css" MEDIA="print" HREF="stylesheets/commonPrint.css">
+    <!-- [if IE]><STYLE TYPE="text/css" MEDIA="all">@import "/guadapedia-estatica/stylesheets/monobook/IEFixes.css";</STYLE>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/IEFixes.js" SRC="stylesheets/IEFixes.js" TYPE="text/javascript"></SCRIPT>
+    <META / HTTP-EQUIV="imagetoolbar" CONTENT="no"><![ENDIF]-->
+    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/index.php?title=-&amp;action=raw&amp;gen=js" TYPE="text/javascript"></SCRIPT>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/wikibits.js" SRC="stylesheets/wikibits.js" TYPE="text/javascript"></SCRIPT>
+    <STYLE TYPE="text/css">/*<![CDATA[*/ @import "/guadapedia-estatica/index.php?title=-&action=raw&gen=css";
+ /*]]>*/</STYLE>
+    
+  </HEAD>
+  <BODY CLASS="ns-0">
+    <DIV ID="globalWrapper">
+      <DIV ID="column-content">
+	<DIV ID="content">
+	    
+	  <A ID="contentTop" NAME="top"></A>
+	  <H1 CLASS="firstHeading"><a href=Indice>Guia v4/Mensajería instantánea con Gaim</a></H1>
+	  <DIV ID="bodyContent">
+	    <H3 ID="siteSub">De Guadapedia, la enciclopedia libre.</H3>
+	    <DIV ID="contentSub"></DIV>
+	    
+
+	    
+	    <!--  start content -->
+	    <TABLE ID="toc" BORDER="0"><TR ID="toctitle"><TD ALIGN="center">
+<B>Tabla de contenidos</B> <SCRIPT TYPE="text/javascript">showTocToggle("mostrar","esconder")</SCRIPT></TD></TR><TR ID="tocinside"><TD>
+<DIV CLASS="tocline"><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Mensajer%C3%ADa_instant%C3%A1nea_con_Gaim#Mensajer.C3.ADa_instant.C3.A1nea_con_Gaim" HREF="Mensajer%C3%ADa_instant%C3%A1nea_con_Gaim#Mensajer.C3.ADa_instant.C3.A1nea_con_Gaim">1 Mensajería instantánea con Gaim</A><BR /></DIV>
+<DIV CLASS="tocindent">
+<P><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Mensajer%C3%ADa_instant%C3%A1nea_con_Gaim#Mensajero_todo_terreno" HREF="Mensajer%C3%ADa_instant%C3%A1nea_con_Gaim#Mensajero_todo_terreno">1.1 Mensajero todo terreno</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Mensajer%C3%ADa_instant%C3%A1nea_con_Gaim#Lo_que_hay_que_saber" HREF="Mensajer%C3%ADa_instant%C3%A1nea_con_Gaim#Lo_que_hay_que_saber">1.2 Lo que hay que saber</A><BR />
+</P>
+<DIV CLASS="tocindent">
+<P><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Mensajer%C3%ADa_instant%C3%A1nea_con_Gaim#Crear_y_gestionar_m.C3.BAltiples_cuentas" HREF="Mensajer%C3%ADa_instant%C3%A1nea_con_Gaim#Crear_y_gestionar_m.C3.BAltiples_cuentas">1.2.1 Crear y gestionar múltiples cuentas</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Mensajer%C3%ADa_instant%C3%A1nea_con_Gaim#Contactos_en_cada_red" HREF="Mensajer%C3%ADa_instant%C3%A1nea_con_Gaim#Contactos_en_cada_red">1.2.2 Contactos en cada red</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Mensajer%C3%ADa_instant%C3%A1nea_con_Gaim#Transmisi.C3.B3n_de_archivos" HREF="Mensajer%C3%ADa_instant%C3%A1nea_con_Gaim#Transmisi.C3.B3n_de_archivos">1.2.3 Transmisión de archivos</A><BR />
+<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Mensajer%C3%ADa_instant%C3%A1nea_con_Gaim#Registro_de_conversaciones" HREF="Mensajer%C3%ADa_instant%C3%A1nea_con_Gaim#Registro_de_conversaciones">1.2.4 Registro de conversaciones</A><BR />
+</P>
+</DIV>
+<P><A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Mensajer%C3%ADa_instant%C3%A1nea_con_Gaim#Preferencias" HREF="Mensajer%C3%ADa_instant%C3%A1nea_con_Gaim#Preferencias">1.3 Preferencias</A><BR />
+</P>
+</DIV>
+</TD></TR></TABLE>
+<A NAME="Mensajer.C3.ADa_instant.C3.A1nea_con_Gaim"></A><H1> Mensajería instantánea con Gaim </H1>
+<P>Chatear es una actividad humana reciente: se conversa sin verse la cara y sin oírse la voz, gesticulando con emoticonos (<EM>smileys</EM>) y tomándose por lo general un relajo y unas confianzas que en vivo y en directo pocos se permiten. Los canales de chats, y más recientemente los mensajeros instantáneos vis a vis, nunca han gozado de muy buena fama. 
+</P><P>Y sin embargo han jugado y juegan un papel fundamental en el crecimiento y adopción de Internet, han cambiado la vida de muchos, permitiéndoles ampliar su círculo de amistades (incluso algunos se enamoraron y se casaron gracias a los chats). A pesar de todo, los programas de mensajería instantánea se han convertido en una herramienta de trabajo cada vez más habitual en actividades profesionales. Y sin embargo...
+</P><P>Tanto quien quiera dar sus primeros pasos en este terreno como quien lleve años haciéndolo ya, encontrará en Gaim <A CLASS="external" TITLE="http://gaim.sourceforge.net" HREF="http://gaim.sourceforge.net/">[1]</A><SPAN CLASS="urlexpansion"> (<I>http://gaim.sourceforge.net</I>)</SPAN> una herramienta versátil que le servirá casi para todo. Gaim es el cliente libre de mensajería instantánea más popular, en los siguientes puntos vamos a ver por qué.
+</P><P>Aunque Gaim no es un programa complejo tampoco es el más simple, debido a esta versatilidad. A diferencia de otros programas que sólo son aptos para trabajar con un tipo de red o protocolo, como por ejemplo <STRONG>Chatzilla</STRONG> para manejar conversaciones en IRC o <STRONG>aMSN</STRONG> para (sí, lo adivinaron) la red MSN de Messenger, Gaim puede ser usado para cualquiera de ellos y algunos otros como <STRONG>Jabber</STRONG>, <STRONG>ICQ</STRONG>, <STRONG>Yahoo Messenger</STRONG>... Y puede ser usado simultáneamente con todos ellos y con diferentes cuentas. ¿Alguien da más?
+</P><P><BR />
+</P>
+<A NAME="Mensajero_todo_terreno"></A><H2> Mensajero todo terreno </H2>
+<P>La principal aportación hecha por Gaim al software libre es ofrecer un solo programa capaz de comunicarse con múltiples protocolos de chat y mensajería instantánea. Es decir, normalmente usaríamos un programa para chats de IRC, otro para comunicarnos en la red MSN de Microsoft, otro para nuestras comunicaciones con ICQ... y así con el resto. Gaim los reúne a todos:
+</P>
+<UL><LI> <STRONG>Jabber</STRONG> es el protocolo de mensajería en voga en la comunidad del software libre. Su popularidad va <EM>in crescendo</EM> y esta tendencia se está acrecentando más con Google Talk, el servicio de mensajería y voz sobre IP del popular buscador.
+</LI><LI> <STRONG>MSN</STRONG> es la red del conocido Messenger de Microsoft y posiblemente no requiera más presentaciones.
+</LI><LI> <STRONG>Yahoo!</STRONG> es otra red que compite con algunas de las aquí mencionadas y cuenta con una gran base de usuarios.
+</LI><LI> <STRONG>IRC</STRONG> es el clásico protocolo de chat y aunque ya no está tan de moda como antaño sigue siendo ampliamente utilizado. Especialmente en la comunidad del software libre, donde las salas de chat constituyen un canal de ayuda y colaboración instantánea.
+</LI><LI> <STRONG>AIM</STRONG>, el protocolo de mensajería utilizado por el enorme proveedor de Internet AOL. El nombre Gaim tuvo esta referencia inicialmente, aunque AOL no tiene nada que ver con el desarrollo de esta aplicación.
+</LI><LI> <STRONG>ICQ</STRONG>, el primer protocolo de mensajería abierto a todo Internet, muy popular en los años 90 y bastante en declive en la actualidad.
+</LI><LI> ... y más: SILC para comunicaciones seguras, GroupWise de Novell, Zephyr (muy veterano aún utilizado en algunas universidades) y Gadu-Gadu (tremendamente popular en... Polonia).
+</LI></UL>
+<P>Con Gaim podemos mantener conversaciones de forma simultánea en todas estas redes, sin importar el cliente que estén utilizando nuestros contactos.
+</P><P>Gaim es también todo terreno en otro sentido: su compatibilidad. Siendo nativo de GNU/Linux, tiene versiones disponibles para MS Windows, Mac OS X y *BSD.
+</P><P><BR />
+</P>
+<A NAME="Lo_que_hay_que_saber"></A><H2> Lo que hay que saber </H2>
+<P>Como hemos comentado anteriormente, Gaim es un programa relativamente pequeño y con poco misterios. Si ya tenemos cierta práctica en las artes de la conversación <EM>online</EM> seguramente nos moveremos con él a nuestras anchas rápidamente. En caso contrario con una horita de aprendizaje o menos ya empezaremos a dar nuestros primeros pasos.
+</P><P>Vista la posibilidad de simultanear en varias redes, repasemos los otros puntos clave de esta simpática aplicación.
+</P><P><BR />
+</P>
+<A NAME="Crear_y_gestionar_m.C3.BAltiples_cuentas"></A><H3> Crear y gestionar múltiples cuentas </H3>
+La primera vez que utilicemos Gaim deberemos añadir como mínimo una primera cuenta para poder operar con el programa.  La red IRC no requiere disponer de una cuenta para conectarse, pero el resto de redes de mensajería instantánea sí. Esto se debe a que dichas redes disponen de servidores que notifican si nuestros contactos están conectados en ese preciso momento y, a la inversa, comunican a nuestros contactos nuestro estado actual en la red. <DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Añadir y crear cuentas con Gaim" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Gaim_crear_cuenta.png" HREF="imagenes/Gaim_crear_cuenta.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/c/c9/180px-Gaim_crear_cuenta.png" SRC="mini/c/c9/180px-Gaim_crear_cuenta.png" HEIGHT="161" / WIDTH="180" ALT="Añadir y crear cuentas con Gaim"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Gaim_crear_cuenta.png" HREF="extra/Imagen:Gaim_crear_cuenta.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Añadir y crear cuentas con Gaim</DIV></DIV></DIV>
+<P>Gaim ofrece la posibilidad de registrarnos en la red de Jabber, puesto que es abierta. Simplemente debemos añadir una nueva cuenta seleccionando el protocolo Jabber y la opción de registrarla en un servidor. 
+</P><P>Pero Gaim no puede facilitarnos el registro en la redes privadas, por ser cerradas. Por tanto, deberemos disponer en primer lugar de una cuenta en la red que nos interese y luego darla de alta en Gaim para poder operar con ella. La web de Gaim ofrece enlaces a las páginas de registro de las principales redes de mensajería instantánea <A CLASS="external" TITLE="http://gaim.sourceforge.net/faq.php#q15" HREF="http://gaim.sourceforge.net/faq.php#q15">[2]</A><SPAN CLASS="urlexpansion"> (<I>http://gaim.sourceforge.net/faq.php#q15</I>)</SPAN>.
+</P><P>Una vez que tengamos las cuentas creadas podemos decidir si queremos activarlas todas cuando arranquemos Gaim o sólo algunas, mediante el diálogo de configuración <STRONG>Añadir/Editar</STRONG> que encontraremos bajo <STRONG>Cuentas</STRONG>. En este mismo menú encontraremos las entradas por cada una de las cuentas, donde podemos configurar los parámetros que nos permita cada red. Por ejemplo, en las cuentas de Jabber podemos cambiar la contraseña, en las de MSN podemos definir nuestros números de teléfono, en las cuentas de IRC podemos establecer la frase del día...
+</P>
+<A NAME="Contactos_en_cada_red"></A><H3> Contactos en cada red </H3>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Sumar amigos nunca fue tan fácil" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Gaim_a%C3%B1adir_amigo.png" HREF="imagenes/Gaim_a%C3%B1adir_amigo.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/9/96/180px-Gaim_a%C3%B1adir_amigo.png" SRC="mini/9/96/180px-Gaim_a%C3%B1adir_amigo.png" HEIGHT="96" / WIDTH="180" ALT="Sumar amigos nunca fue tan fácil"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Gaim_a%C3%B1adir_amigo.png" HREF="extra/Imagen:Gaim_a%C3%B1adir_amigo.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Sumar amigos nunca fue tan fácil</DIV></DIV></DIV>
+<P>En la ventana <STRONG>Lista de amigos</STRONG> tenemos a la vista nuestros contactos, organizados por grupos si así lo preferimos. También podemos tenerlos todos a la vista o dejar que el programa nos muestra sólo aquellos contactos conectados.
+</P><P>A través del menú <STRONG>Amigos</STRONG> podemos añadir nuevas personas y salas de conferencia (chat):
+</P><P><STRONG>Amigos</STRONG> > <STRONG>Añadir un amigo...</STRONG>
+</P><P>Para añadir un nuevo amigo debemos saber:
+</P>
+<UL><LI> <STRONG>Nombre del usuario</STRONG> - Nos lo tiene que facilitar él/ella, tiene el aspecto de una cuenta de correo electrónico pero no necesariamente será su correo.
+</LI><LI> <STRONG>Apodo</STRONG> - El nombre que le queramos dar en nuestra lista de contactos.
+</LI><LI> <STRONG>Grupo</STRONG> - En qué grupo le queremos añadir, de los que hemos creado para organizar nuestros contactos.
+</LI><LI> <STRONG>Cuenta</STRONG> - Desde qué cuenta nuestra deseamos enlazar con el nuev contacto. Esto define la red en la cual se efectúa el nuevo contacto. Si queremos añadir a un amigo en MSN debemos tener cuenta en MSN, lo mismo en Jabber, etc.
+</LI></UL>
+<P>Por tanto, cuando añadimos un nuevo amigo debemos definir en qué red se ubica. Aunque para nosotros Paula sea la misma tanto si le contactamos por Jabber o por MSN, los procesos que se inician cuando damos de alta a Paula en nuestros contactos son totalmente diferentes en protocolos de red diferentes.
+</P><P>Cuando damos de alta un contacto, Gaim lo notifica al servidor de la correspondiente red, quien a su vez envía una notificación al usuario que deseamos añadir, avisándole de nuestra acción y preguntando si confirma este contacto y lo corresponde. Es decir, si Miguel da de alta a Paula en sus contactos de Jabber, Paula recibe una notificación de que el usuario Miguel le ha añadido a sus contactos, y si desea ella dar de alta a Miguel en su lista de contactos. Una vez confirmadas ambas partes el contacto bilateral se establece y no hace falta tocarlo más.
+</P><P>La cosa no queda aquí. Si tanto Miguel como Paula tienen cuenta en Yahoo!, ambos pueden repetir la acción de invitarse y así tener dos canales de posible contacto por si uno falla (sí, hay quien toma estas medidas). Por defecto Paula tendrá dos Migueles en su lista de contactos, ya que Gaim no tiene por qué saber que el Miguel de Jabber y el de Yahoo! son la misma persona. No obstante, podemos establecer estas asociaciones manualmente, de forma que Paula sólo tenga a la vista un Miguel en sus contactos, y clicándolo pueda ver las diferentes cuentas asociadas a él. 
+</P><P>Hay que tener en cuenta que cada red guarda nuestras listas de contactos en sus servidores. Esto implica que no necesitamos exportar/importar contactos si cambiamos de programa, ordenador, sistema operativo, ubicación... Simplemente conectamos con nuestras cuentas allí donde nos encontremos y nuestros contactos aparecerán automáticamente.
+</P>
+<A NAME="Transmisi.C3.B3n_de_archivos"></A><H3> Transmisión de archivos </H3>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Transmitir archivos es fácil, pero si hay una proxy por medio la cosa se complica." W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Gaim-archivo2.png" HREF="imagenes/Gaim-archivo2.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/c/c1/180px-Gaim-archivo2.png" SRC="mini/c/c1/180px-Gaim-archivo2.png" HEIGHT="144" / WIDTH="180" ALT="Transmitir archivos es fácil, pero si hay una proxy por medio la cosa se complica."></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Gaim-archivo2.png" HREF="extra/Imagen:Gaim-archivo2.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Transmitir archivos es fácil, pero si hay una <EM>proxy</EM> por medio la cosa se complica.</DIV></DIV></DIV>
+<P>De la misma forma que mediante la mensajería instantánea intercambiamos palabras, también podemos intercambiar archivos. Esta utilidad es muy práctica por ejemplo en situaciones de trabajo, aunque para determinadas redes y en determinadas circunstancias nos puede dar problemas de transmisión. Podemos transmitir y recibir archivos a través de los protocolos de Jabber, MSN, Yahoo! (siempre y cuando no estemos detrás de un servidor <EM>proxy</EM>), AIM, IRC y SILC.
+</P><P>La transmisión de archivos es una acción bien sencilla, tan sólo precisamos tener una conversación abierta con el destinatario y clicar a la opción <STRONG>Enviar archivo</STRONG> dentro del menú <STRONG>Conversación</STRONG>. A través de IRC no podemos hacer el envío a la sala de chat, sólo a usuarios concretos abriendo las respectivas ventanas de diálogo.
+</P><P>Cuando nuestro interlocutor nos quiere enviar un archivo Gaim abre una ventana de confirmación. En caso de aceptar el envío, se inicia la transmisión. De esta forma evitamos recibir material indeseado.
+</P>
+<A NAME="Registro_de_conversaciones"></A><H3> Registro de conversaciones </H3>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Por intrascendental que sea una conversación, nunca está de más tenerla archivada." W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Conversaciones.png" HREF="imagenes/Conversaciones.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/9/98/180px-Conversaciones.png" SRC="mini/9/98/180px-Conversaciones.png" HEIGHT="144" / WIDTH="180" ALT="Por intrascendental que sea una conversación, nunca está de más tenerla archivada."></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Conversaciones.png" HREF="extra/Imagen:Conversaciones.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Por intrascendental que sea una conversación, nunca está de más tenerla archivada.</DIV></DIV></DIV>
+<P>Cuanto más frecuente y serio sea el uso que hagamos de la mensajería instantánea y los canales de chat, más útil y recomendable es guardar los registros de las conversaciones. Hay empresas que tienen a sus trabajadores repartidos y que utilizan la mensajería por cuestiones de trabajo. Hay organizaciones descentralizadas que se reunen periódicamente en saladas de chat. Hay empresas y proyectos que tienen abiertos canales de chat para atención de clientes y usuarios. En fin, existen múltiples usos serios de chats y mensajería instantánea donde se maneja información que nos puede resultar tan útil guardar como los correos o archivos. 
+</P><P>Por defecto Gaim no registra las conversaciones. Para activar esta opción debemos ir a <STRONG>Herramientas</STRONG> > <STRONG>Preferencias</STRONG> > <STRONG>Registro</STRONG> y seleccionar los datos que deseamos registrar.
+</P><P>Para consultar el registro de conversaciones de un usuario vamos a <STRONG>Amigos</STRONG> > <STRONG>Ver registro del usuario...</STRONG>.  Podemos consultar el registro por dechar de conversación o utiliar directamente el buscador pr palabras que incorpora la ventana de registro.
+</P><P>El texto ocupa poca memoria y algún dia vamos a necesitar recordar algo que se dijo en una de estas conversaciones. Gaim tiene la capacidad de recoger registros y archivarlos por defecto. Y también incorporar un motor de búsqueda para encontrar palabras clave en nuestras conversaciones registradas.
+</P><P>Mientras que nuestra lista de contactos se guarda en el servidor, los registros de nuestras conversaciones se guardan en el equipo local. Es decir, si un día mantenemos una conversación vía Jabber con un compañero del trabajo desde un cibercafé, esa conversación no la tendremos disponible en los registros de Gaim en nuestra casa. Eso sí, podemos guardar una conversación como fichero de texto simple que luego podemos grabar en un disco o enviarnos por correo.
+</P>
+<A NAME="Preferencias"></A><H2> Preferencias </H2>
+<P>La relativa simplicidad de los puntos que acabamos de comentar contrasta con la multitud de opciones que nos permite configurar Gaim en sus <STRONG>Preferencias</STRONG> bajo <STRONG>Herramientas</STRONG>. Si sólo vamos a hacer un uso esporádico de Gaim, o si cuando lo utilizamos vamos a hacerlo de forma exclusiva, posiblemente no vale la pena que nos entretengamos mucho en esto. No obstante, si vamos a utilizar Gaim con frecuencia y además decidimos trabajar con otras aplicaciones de forma simultánea, vale realmente la pena encontrar la configuración que nos haga sentir más a gusto cuando decidimos operar con él.
+</P>
+No vamos a repasar toda la lista de preferencias, sólo vamos a destacar tres funcionalidades que son las que los usuarios acostumbran a definir: <DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Múltiples opciones de configuración con Gaim" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Gaim_preferencias.png" HREF="imagenes/Gaim_preferencias.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/e/e5/180px-Gaim_preferencias.png" SRC="mini/e/e5/180px-Gaim_preferencias.png" HEIGHT="149" / WIDTH="180" ALT="Múltiples opciones de configuración con Gaim"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Gaim_preferencias.png" HREF="extra/Imagen:Gaim_preferencias.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Múltiples opciones de configuración con Gaim</DIV></DIV></DIV>
+<UL><LI> En <STRONG>Sonidos</STRONG> > <STRONG>Opciones de sonido</STRONG> tenemos <STRONG>Suena cuando la conversación obtiene el foco</STRONG>. El foco se refiere a que la ventana de Gaim esté seleccionada, en el primer plano de la pantalla. Si seleccionamos esta opción oiremos los sonidos de eventos siempre, si la deseleccionamos sólo oiremos los sonidos cuando la ventana del Gaim esté sin foco, posiblemente escondida tras otras pantallas. Más abajo podemos modificar el sonido a emitir (Gaim tiene por defecto un sonido de campanas estilo "magia potagia" nada discreto) y podemos decidir los eventos en los que queremos que se reproduzca el sonido. Si nos conectamos a salas de chat una opción interesante de tener activada es <STRONG>Alguien dice tu nombre en el chat</STRONG>.
+</LI><LI> En <STRONG>Ausencia/Inactividad</STRONG> se pueden gestionar las opciones para el caso de permanecer inactivos. Si deseamos crear nuevos mensajes de inactividad podemos hacerlo desde la ventana con la lista de amigos en el botón situado en la parte inferior de dicha ventana, seleccionando la opción de <STRONG>Nuevo...</STRONG>
+</LI></UL>
+<P>Explorar el conjunto de <STRONG>Preferencias</STRONG> nos llevará muy poco tiempo y nos ayudará a configurar las opciones más interesantes de acuerdo con nuestras necesidades.
+</P><DIV CLASS="printfooter">
+Obtenido de "<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Mensajer%C3%ADa_instant%C3%A1nea_con_Gaim" HREF="Mensajer%C3%ADa_instant%C3%A1nea_con_Gaim">http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Mensajer%C3%ADa_instant%C3%A1nea_con_Gaim</A>"</DIV>
+
+	    
+	    <!--  end content -->
+	    <DIV CLASS="visualClear"></DIV>
+	  </DIV>
+	</DIV>
+      </DIV>
+      <DIV CLASS="visualClear"></DIV>
+    </DIV>
+  </BODY>
+</HTML>

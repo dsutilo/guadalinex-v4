@@ -1,0 +1,62 @@
+<!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML XMLNSXML:LANGDIRLANG>
+  <HEAD>
+    <META / HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    <META NAME="KEYWORDS" / CONTENT="Guia v4/Nuevos amigos llaman a tu puerta,Guia v4/Software libre, el principio,Guia v4/GNU Linux, el sistema operativo,Guia v4/Debian, la distribución madre,Guia v4/Ubuntu, la hija aventajada,Guia v4/GNOME, el compañero diario,Guia v4/Guadalinex, la distribución andaluza">
+<META NAME="robots" / CONTENT="index,follow">
+<LINK / REL="shortcut icon" HREF="http://www.guadalinex.org/favicon.ico">
+<LINK TITLE="Creative Commons" / REL="meta" TYPE="application/rdf+xml" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php?title=Guia_v4/Nuevos_amigos_llaman_a_tu_puerta&amp;action=creativecommons">
+<LINK / REL="copyright" HREF="http://creativecommons.org/licenses/by-sa/2.1/es/">
+
+    <TITLE>Guia v4/Nuevos amigos llaman a tu puerta - Guadapedia</TITLE>
+    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="screen,projection" HREF="stylesheets/main.css">
+    <LINK / REL="stylesheet" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/stylesheets/commonPrint.css" TYPE="text/css" MEDIA="print" HREF="stylesheets/commonPrint.css">
+    <!-- [if IE]><STYLE TYPE="text/css" MEDIA="all">@import "/guadapedia-estatica/stylesheets/monobook/IEFixes.css";</STYLE>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/IEFixes.js" SRC="stylesheets/IEFixes.js" TYPE="text/javascript"></SCRIPT>
+    <META / HTTP-EQUIV="imagetoolbar" CONTENT="no"><![ENDIF]-->
+    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/index.php?title=-&amp;action=raw&amp;gen=js" TYPE="text/javascript"></SCRIPT>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/wikibits.js" SRC="stylesheets/wikibits.js" TYPE="text/javascript"></SCRIPT>
+    <STYLE TYPE="text/css">/*<![CDATA[*/ @import "/guadapedia-estatica/index.php?title=-&action=raw&gen=css";
+ /*]]>*/</STYLE>
+    
+  </HEAD>
+  <BODY CLASS="ns-0">
+    <DIV ID="globalWrapper">
+      <DIV ID="column-content">
+	<DIV ID="content">
+	    
+	  <A ID="contentTop" NAME="top"></A>
+	  <H1 CLASS="firstHeading"><a href=Indice>Guia v4/Nuevos amigos llaman a tu puerta</a></H1>
+	  <DIV ID="bodyContent">
+	    <H3 ID="siteSub">De Guadapedia, la enciclopedia libre.</H3>
+	    <DIV ID="contentSub"></DIV>
+	    
+
+	    
+	    <!--  start content -->
+	    <A NAME="Nuevos_amigos_llaman_a_tu_puerta"></A><H1>Nuevos amigos llaman a tu puerta</H1>
+<P>El software libre se puede disfrutar sin saber casi nada de él, de la misma forma que se puede disfrutar un gazpacho sin conocer sus ingredientes, su receta, sus orígenes o sus variantes regionales. Quien tenga mucha prisa o poca curiosidad puede pasar tranquilamente al capítulo siguiente. 
+</P><P>El resto, por favor, sígannos.
+</P><P>En las páginas siguientes presentamos a algunos personajes clave de la trama de la informática libre. La dosis teórica no es banal: vamos a confiar buena parte del funcionamiento de nuestro ordenador y de los resultados de nuestro trabajo a estos nuevos amigos con poco o nada que ocultar. Cada uno tiene un origen y una misión, una historia y una afición detrás que comparte -en diversa medida- retos, pasiones y orgullo.
+</P><P>Conociendo a estos sospechosos habituales conoceremos mejor la realidad y posibilidades de este mecanismo de silicio, plásticos y metales que se calienta bajo nuestras yemas y se ilumina ante nuestra mirada. Añadiendo un poco de sensibilidad apreciaremos mejor a nuestro ordenador, como aprecia mejor el buen gazpacho quien entiende de gazpachos.
+</P><P><BR />
+</P>
+<OL><LI> <A TITLE="Guia v4/Software libre, el principio" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Software_libre%2C_el_principio" HREF="Software_libre%2C_el_principio"> Software libre, el principio</A>
+</LI><LI> <A TITLE="Guia v4/GNU Linux, el sistema operativo" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/GNU_Linux%2C_el_sistema_operativo" HREF="GNU_Linux%2C_el_sistema_operativo"> GNU Linux, el sistema operativo</A>
+</LI><LI> <A TITLE="Guia v4/Debian, la distribución madre" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Debian%2C_la_distribuci%C3%B3n_madre" HREF="Debian%2C_la_distribuci%C3%B3n_madre"> Debian, la distribución madre</A>
+</LI><LI> <A TITLE="Guia v4/Ubuntu, la hija aventajada" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Ubuntu%2C_la_hija_aventajada" HREF="Ubuntu%2C_la_hija_aventajada"> Ubuntu, la hija aventajada</A>
+</LI><LI> <A TITLE="Guia v4/GNOME, el compañero diario" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/GNOME%2C_el_compa%C3%B1ero_diario" HREF="GNOME%2C_el_compa%C3%B1ero_diario"> GNOME, el compañero diario</A>
+</LI><LI> <A TITLE="Guia v4/Guadalinex, la distribución andaluza" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Guadalinex%2C_la_distribuci%C3%B3n_andaluza" HREF="Guadalinex%2C_la_distribuci%C3%B3n_andaluza">Guadalinex, la distribución andaluza</A>
+</LI></OL>
+<DIV CLASS="printfooter">
+Obtenido de "<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Nuevos_amigos_llaman_a_tu_puerta" HREF="Nuevos_amigos_llaman_a_tu_puerta">http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Nuevos_amigos_llaman_a_tu_puerta</A>"</DIV>
+
+	    
+	    <!--  end content -->
+	    <DIV CLASS="visualClear"></DIV>
+	  </DIV>
+	</DIV>
+      </DIV>
+      <DIV CLASS="visualClear"></DIV>
+    </DIV>
+  </BODY>
+</HTML>

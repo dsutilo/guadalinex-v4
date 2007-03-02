@@ -1,0 +1,62 @@
+<!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML XMLNSXML:LANGDIRLANG>
+  <HEAD>
+    <META / HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    <META NAME="KEYWORDS" / CONTENT="Guia v4/Coloniza tu sistema,Guia v4/Creación y gestión de archivos,Guia v4/Personalizar el escritorio,Guia v4/Gestión de usuarios,Guia v4/Viaje a las entrañas del sistema,Guia v4/Accesibilidad para usuarios especiales">
+<META NAME="robots" / CONTENT="index,follow">
+<LINK / REL="shortcut icon" HREF="http://www.guadalinex.org/favicon.ico">
+<LINK TITLE="Creative Commons" / REL="meta" TYPE="application/rdf+xml" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php?title=Guia_v4/Coloniza_tu_sistema&amp;action=creativecommons">
+<LINK / REL="copyright" HREF="http://creativecommons.org/licenses/by-sa/2.1/es/">
+
+    <TITLE>Guia v4/Coloniza tu sistema - Guadapedia</TITLE>
+    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="screen,projection" HREF="../stylesheets/main.css">
+    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="print" HREF="http://www.guadalinex.org/guadapedia-estatica/stylesheets/commonPrint.css">
+    <!-- [if IE]><STYLE TYPE="text/css" MEDIA="all">@import "/guadapedia-estatica/stylesheets/monobook/IEFixes.css";</STYLE>
+    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/IEFixes.js" TYPE="text/javascript"></SCRIPT>
+    <META / HTTP-EQUIV="imagetoolbar" CONTENT="no"><![ENDIF]-->
+    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/index.php?title=-&amp;action=raw&amp;gen=js" TYPE="text/javascript"></SCRIPT>
+    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/wikibits.js" TYPE="text/javascript"></SCRIPT>
+    <STYLE TYPE="text/css">/*<![CDATA[*/ @import "/guadapedia-estatica/index.php?title=-&action=raw&gen=css";
+ /*]]>*/</STYLE>
+    
+  </HEAD>
+  <BODY CLASS="ns-0">
+    <DIV ID="globalWrapper">
+      <DIV ID="column-content">
+	<DIV ID="content">
+	    
+	  <A ID="contentTop" NAME="top"></A>
+	  <H1 CLASS="firstHeading">Guia v4/Coloniza tu sistema</H1>
+	  <DIV ID="bodyContent">
+	    <H3 ID="siteSub">De Guadapedia, la enciclopedia libre.</H3>
+	    <DIV ID="contentSub"></DIV>
+	    
+
+	    
+	    <!--  start content -->
+	    <A NAME="Coloniza_tu_sistema"></A><H1> Coloniza tu sistema </H1>
+<P>Por primera vez nos sentamos ante un ordenador cargado de software libre a punto para recibirnos. Pregunta nuestro usuario y contraseña. Lo introducimos y nos lanzamos hacia lo que ya es nuestro escritorio, un espacio personal donde organizar nuestras cosas, un rincón de cierta intimidad digital. Como si se tratara de una nueva casa que acabamos de comprar, al principio casi no sabemos qué hacer con tanto vacío. A diferencia de cuando entramos en una casa nueva, en nuestro primer paseo posiblemente no sepamos del todo bien qué se supone que podemos y debemos hacer.
+</P><P>En este capítulo ofrecemos una visita guiada por las principales estancias de lo que será nuestro nuevo hogar: el escritorio, los parajes del disco duro y alrededores, las opciones básicas de configuración... En cada lugar explicaremos lo básico que hay que saber, o va bien saber: cómo decorarlo todo a nuestro gusto, cómo organizar los espacios, dónde colocar el mobiliario, cuál es el funcionamiento básico de puertas, cerraduras, ventanas, calefacción central y demás mecanismos preinstalados...
+</P><P>Tras este paseo de familiarización, la próxima vez que introduzcamos nuestro santo y seña ya deberíamos empezar a sentir esa emoción expectante de quien tiene ganas de llegar a su casita tras un largo día por ahí fuera.
+</P><P>Home, sweet home
+</P><P><BR />
+</P>
+<OL><LI> <A TITLE="Guia v4/Creación y gestión de archivos" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Creaci%C3%B3n_y_gesti%C3%B3n_de_archivos" HREF="Creaci%C3%B3n_y_gesti%C3%B3n_de_archivos">Creación y gestión de archivos</A>
+</LI><LI> <A TITLE="Guia v4/Personalizar el escritorio" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Personalizar_el_escritorio" HREF="Personalizar_el_escritorio">Personalizar el escritorio</A>
+</LI><LI> <A TITLE="Guia v4/Gestión de usuarios" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Gesti%C3%B3n_de_usuarios" HREF="Gesti%C3%B3n_de_usuarios">Gestión de usuarios</A>
+</LI><LI> <A TITLE="Guia v4/Viaje a las entrañas del sistema" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Viaje_a_las_entra%C3%B1as_del_sistema" HREF="Viaje_a_las_entra%C3%B1as_del_sistema">Viaje a las entrañas del sistema</A>
+</LI><LI> <A TITLE="Guia v4/Accesibilidad para usuarios especiales" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Accesibilidad_para_usuarios_especiales" HREF="Accesibilidad_para_usuarios_especiales">Accesibilidad para usuarios especiales</A>
+</LI></OL>
+<PRE>Sigue: <A TITLE="Guia v4/Creación y gestión de archivos" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Creaci%C3%B3n_y_gesti%C3%B3n_de_archivos" HREF="Creaci%C3%B3n_y_gesti%C3%B3n_de_archivos">Creación y gestión de archivos</A>
+</PRE><DIV CLASS="printfooter">
+Obtenido de "<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Coloniza_tu_sistema" HREF="Coloniza_tu_sistema">http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Coloniza_tu_sistema</A>"</DIV>
+
+	    
+	    <!--  end content -->
+	    <DIV CLASS="visualClear"></DIV>
+	  </DIV>
+	</DIV>
+      </DIV>
+      <DIV CLASS="visualClear"></DIV>
+    </DIV>
+  </BODY>
+</HTML>
