@@ -73,6 +73,7 @@ gparted
 - Mejorado soporte de tarjetas wifis: instalado paquete "linux-wlang-ng" (BTS
 1280)
 - Añadido soporte tray icon para lemuRAE
+- Añadido paquete con firmwares (guadalinex-firmwares)
 - Recompilado paquete "gnome-panel" para hacer los ajustes necesarios para
 Guadalinex ("Acerca de Guadalinex", aplicaciones de ayuda en Sistema ->
 Ayuda,...)
