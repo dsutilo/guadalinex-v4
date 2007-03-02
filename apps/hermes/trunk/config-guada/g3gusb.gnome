@@ -1,6 +1,6 @@
 packages:
-    - vmc
+    - g3g
 
 conn_commands:
-    - vmc &
+    - /usr/share/g3g/g3g &
 
