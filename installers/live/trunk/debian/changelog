@@ -1,3 +1,9 @@
+ubiquity (1.2.5guada9) edgy; urgency=low
+
+  * Several bug fixing.
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Fri,  2 Mar 2007 13:57:35 +0100
+
 ubiquity (1.2.5guada7) edgy; urgency=low
 
   * Fixed hal bug in DiskPreview (rmajadas)
