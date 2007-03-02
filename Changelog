@@ -1,3 +1,127 @@
+RC1 (20070302)
+==============
+
+INSTALADOR LIVE (LIVE-INSTALLER)
+--------------------------------
+
+- Incluido nuevo icono para la aplicación
+- Corregido error en DiskPreview con texto de pruebas
+- Corregido error de "Pantalla de preparar el espacio del disco demasiado
+grande" (BTS 1283)
+- Corregido error de no reutilización de "home" cuando se reaprovechan
+particiones (BTS 1231)
+- Corregido error de no reutilización de "home" con opción de usar todo el
+disco (BTS 1100)
+- Corregido problema de actualización de información de DiskPreview
+- Corregido problema de montaje de unidades de DiskPreview
+- Corregido mensaje de comienzo de particionado en instalador (BTS 1165)
+- Corregido error de traducción en instalador live: "A partition is assigned
+to more than one mount point" (BTS 1188)
+- Incluidas imágenes definitivas para el instalador live
+- Corrección de diversos errores de traducción (BTS 1130)
+- Modificaciones en instalador para que Hermes no informe del montaje y
+desmontaje de unidades durante la instalación (BTS 1107)
+- Correción de diversos errores en la "navegación" hacia adelante y atrás en
+instalador live (BTS 1106)
+- Corrección errores con pantalla demasiado grande con DiskPreview (BTS 1108)
+- "Instalar Guadalinex" no debe aparecer en el sistema instalado (BTS 997)
+
+PERSONALIZACIÓN Y CONFIGURACIÓN DEL SISTEMA (BRANDING)
+------------------------------------------------------
+
+- Creación de un nuevo tema de escritorio incluyendo la nueva imagen
+corporativa
+- Creación de un nuevo tema para GDM incluyendo la nueva imagen corporativa
+- Creación de un nuevo tema para GFXBOOT:
+  - Nueva imagen de fondo
+  - Adaptada toda la ayuda a Guadalinex
+  - Reubicados ciertos elementos del tema
+- Generación del paquete "guadalinex-language-pack", incluyendo traducciones
+de:
+  - Avidemux
+  - Downloader 4 X
+  - Gnome-chm (BTS 1011)
+  - Gnome-sudoku (BTS 1021)
+  - Streamtuner
+- Incluidas actualizaciones de "language-pack-es":
+  - Serpentine
+  - Dasher (BTS 1233)
+  - Diálogo de impresión de gnome (BTS 1013)
+- Configuración del protocolo APT en Firefox
+- Incluida personalización para Firefox: página de inicio y favoritos
+- Añadido nuevo icono de aplicaciones
+- Corregidas entradas de menú que empiezan por "Programa..." (BTS 1228)
+- Añadido "onboard" como teclado en pantalla (BTS 1227)
+- Añadidas entradas de accesibilidad de dasher y orca en el menú
+- Corregida entrada de GRUB de memtest (BTS 1232)
+- Incluida nueva imagen para GRUB
+- Incluida nuevas imágenes para usplash + recompilación
+- Incluida imagen nueva para isolinux
+- Personalizado sonido de inicio de sesión para GDM
+- Traducido "MOTD" (Message Of The Day)
+- Incluido sistema de instalación de extras
+- Corregidas opciones de accesibilidad de arranque
+- Eliminado "acroread", "instalador de plugins" y "instalador de codecs" ->
+extras
+- Configurados 2 escritorios virtuales en lugar de 4
+- Incluidas "ntfsprogs" para gestión de sistemas de ficheros NTFS a través de
+gparted
+- Corregido problema de synaptic al cambiar los repositorios (BTS 1116)
+- Soporte para navegación por DVDs: instalado paquete "libdvdnav4" (BTS 1309)
+- Corregida entrada de menú para el "asistente de conexión a internet"
+- Mejorado soporte de tarjetas wifis: instalado paquete "linux-wlang-ng" (BTS
+1280)
+- Añadido soporte tray icon para lemuRAE
+- Recompilado paquete "gnome-panel" para hacer los ajustes necesarios para
+Guadalinex ("Acerca de Guadalinex", aplicaciones de ayuda en Sistema ->
+Ayuda,...)
+- Soporte para gestión de menús de arranque: incluido grubaker (BTS 1159)
+- Solucionado error con las categorías de "Añadir / Quitar programas" que
+aparecían en inglés, heredado de Ubuntu (BTS 1222)
+- Actualizados los contenidos de la guía de Guadalinex v3 para generar la guía
+de Guadalinex v4 (pendiente de repasar contenidos y completar la
+actualización)
+- Corregido problema con "orígenes de software", que no arranca (BTS 1047)
+- Traducidos textos del comprobador del CD (BTS 1171)
+- Añadido paquete "guadalinex-user-manual" con la guía de usuario de
+Guadalinex v4
+- Añadido icono en el escritorio con enlace a la guía de usuario
+- Corregida entrada de menú para "mplayer" -> eliminada
+- Corregida entrada de menú para "devede" -> traducida y adaptada a Guadalinex
+- Corregido problema de ventana de "Preferencias de la Ventana de Entrada"
+(BTS 1150)
+- Corregido problema con el título en inglés de F-Spot (BTS 1015)
+- Solucionado problema de instalación de "openoffice.org-officebean" (BTS
+1212) -> actualización de repositorios de guadalinex necesaria tras liberación
+
+HERMES
+------
+
+- Incluida nuevo interfaz para gestión de dispositivos soportados/no
+soportados
+- Añadido soporte para gestión de dispositivos TDT (BTS 966)
+- Añadido soporte para tarjeta TDT Freecom (BTS 951)
+- Añadido a actor de dispositivos TDT la instalación de "kaffeine"
+- Corregido problema con URL incorrecta para los dispositivos TDT
+- Arreglado un problema con las traducciones que provocaba que algunos
+mensajes salieran en inglés.
+- Depuración de textos en aplicación "coldassistant"
+- Corregido problema de instalación de paquetes
+
+E-ADMIN
+-------
+
+- Incluido paquete "opensc-ceres" de C3PO
+- Configuración adecuada de "opensc" para utilizar el módulo "pcsc"
+- Mejoras en la gestión de certificados con certmanager.py
+
+
+SISTEMA DE GENERACIÓN (GENERATION-SYSTEM)
+-----------------------------------------
+
+- Actualización de paquetería a partir de los "updates" de Ubuntu
+
+
 BETA3 (n/a)
 ===========
 
