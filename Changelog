@@ -54,6 +54,7 @@ de:
 - Añadido "onboard" como teclado en pantalla (BTS 1227)
 - Añadidas entradas de accesibilidad de dasher y orca en el menú
 - Corregida entrada de GRUB de memtest (BTS 1232)
+- Incluido asistente de conexión a Internet para dispositivos 3G
 - Incluida nueva imagen para GRUB
 - Incluida nuevas imágenes para usplash + recompilación
 - Incluida imagen nueva para isolinux
