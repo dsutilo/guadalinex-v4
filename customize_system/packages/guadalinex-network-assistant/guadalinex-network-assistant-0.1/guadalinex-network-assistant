@@ -10,7 +10,7 @@ OP2="Tarjeta de red cableada"
 OP3="Módem analógico"
 OP4="Módem ADSL"
 
-select=$(zenity --list --height 200 --title="Asiste de conexión a internet" \
+select=$(zenity --list --height 200 --title="Asistente para conexión a Internet" \
 	--text="Seleccione el tipo de conexión que desea configurar."           \
 	--radiolist  --column="Selección" --column="Opción" 1 "$OP1" 2      \
 	"$OP2" 3 "$OP3" 4 "$OP4")
