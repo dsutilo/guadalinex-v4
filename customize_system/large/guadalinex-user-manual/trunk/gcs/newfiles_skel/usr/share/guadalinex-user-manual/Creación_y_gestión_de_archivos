@@ -8,13 +8,13 @@
 <LINK / REL="copyright" HREF="http://creativecommons.org/licenses/by-sa/2.1/es/">
 
     <TITLE>Guia v4/Creación y gestión de archivos - Guadapedia</TITLE>
-    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="screen,projection" HREF="../stylesheets/main.css">
-    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="print" HREF="http://www.guadalinex.org/guadapedia-estatica/stylesheets/commonPrint.css">
+    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="screen,projection" HREF="stylesheets/main.css">
+    <LINK / REL="stylesheet" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/stylesheets/commonPrint.css" TYPE="text/css" MEDIA="print" HREF="stylesheets/commonPrint.css">
     <!-- [if IE]><STYLE TYPE="text/css" MEDIA="all">@import "/guadapedia-estatica/stylesheets/monobook/IEFixes.css";</STYLE>
-    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/IEFixes.js" TYPE="text/javascript"></SCRIPT>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/IEFixes.js" SRC="stylesheets/IEFixes.js" TYPE="text/javascript"></SCRIPT>
     <META / HTTP-EQUIV="imagetoolbar" CONTENT="no"><![ENDIF]-->
     <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/index.php?title=-&amp;action=raw&amp;gen=js" TYPE="text/javascript"></SCRIPT>
-    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/wikibits.js" TYPE="text/javascript"></SCRIPT>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/wikibits.js" SRC="stylesheets/wikibits.js" TYPE="text/javascript"></SCRIPT>
     <STYLE TYPE="text/css">/*<![CDATA[*/ @import "/guadapedia-estatica/index.php?title=-&action=raw&gen=css";
  /*]]>*/</STYLE>
     
@@ -25,7 +25,7 @@
 	<DIV ID="content">
 	    
 	  <A ID="contentTop" NAME="top"></A>
-	  <H1 CLASS="firstHeading">Guia v4/Creación y gestión de archivos</H1>
+	  <H1 CLASS="firstHeading"><a href=Indice>Guia v4/Creación y gestión de archivos</a></H1>
 	  <DIV ID="bodyContent">
 	    <H3 ID="siteSub">De Guadapedia, la enciclopedia libre.</H3>
 	    <DIV ID="contentSub"></DIV>
@@ -49,14 +49,19 @@
 <A NAME="Creaci.C3.B3n_y_gesti.C3.B3n_de_archivos"></A><H1> Creación y gestión de archivos </H1>
 <P>En el anterior apartado hemos visto cómo movernos por nuestro ordenador clic a clic. El objetivo de dicho movimiento es ponerse a trabajar con las aplicaciones y archivos con los que queremos obtener algún provecho o simplemente pasar un buen rato.
 El acceso a las aplicaciones se realiza mediante su propio menú.
-</P><P>Por lo que respecta a las aplicaciones, una vez encontradas (generalmente en el menú de Aplicaciones) sólo nos queda clicarlas y ponernos a trabajar con ellas. Por defecto estas aplicaciones residen fuera de las carpetas personales de los usuarios (fuera del directorio /home) y a menos que sepamos lo que nos llevamos entre manos es mejor no tocarlas ni moverlas de sus directorios residentes. Algunas de estas aplicaciones manejan datos que generamos con ellas en archivos ocultos que sí se encuentran en nuestra Carpeta personal pero que, igualmente, es preferible no tocar si no es con sabiduría en nuestros dedos.
+</P><P><BR />
+</P>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="El acceso a las aplicaciones se realiza mediante su propio menú" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Menu_apps.png" HREF="imagenes/Menu_apps.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/a/ab/180px-Menu_apps.png" SRC="mini/a/ab/180px-Menu_apps.png" HEIGHT="47" / WIDTH="180" ALT="El acceso a las aplicaciones se realiza mediante su propio menú"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Menu_apps.png" HREF="extra/Imagen:Menu_apps.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>El acceso a las aplicaciones se realiza mediante su propio menú</DIV></DIV></DIV>
+<P>Por lo que respecta a las aplicaciones, una vez encontradas (generalmente en el menú de Aplicaciones) sólo nos queda clicarlas y ponernos a trabajar con ellas. Por defecto estas aplicaciones residen fuera de las carpetas personales de los usuarios (fuera del directorio /home) y a menos que sepamos lo que nos llevamos entre manos es mejor no tocarlas ni moverlas de sus directorios residentes. Algunas de estas aplicaciones manejan datos que generamos con ellas en archivos ocultos que sí se encuentran en nuestra Carpeta personal pero que, igualmente, es preferible no tocar si no es con sabiduría en nuestros dedos.
 </P><P>Por tanto, vamos a centrarnos aquí en el manejo de archivos, tarea que sí está completamente en nuestras manos y sí conviene saber manejar aunque sea a nivel elemental.
 </P><P><BR />
 </P>
 <A NAME="La_maravillosa_tecla_derecha_del_rat.C3.B3n"></A><H3>La maravillosa tecla derecha del ratón</H3>
 <P>Antes de proseguir es necesario dejar clara una cosa: con GNOME la tecla derecha del ratón es tan útil como la izquierda (y viceversa para los zurdos). Si la tecla izquierda nos sirve para seleccionar elementos y activarlos, la derecha nos despliega un Menú contextual que ofrece las posibles acciones que podemos iniciar a partir del elemento que estemos señalando con el puntero del ratón: un archivo, una aplicación, una carpeta, el fondo del escritorio, un elemento del panel...
 </P><P>La mayoría de aplicaciones incluyen la funcionalidad de menú contextual, por lo que incluso trabajando con un navegador de Internet, un editor de imágenes, un maquetador de documentos, etc, las vías más rápidas y cómodas para desarrollar acciones pasan generalmente por pulsar la tecla derecha del ratón.
-</P><P>Con el puntero encima de un archivo las opciones por defecto que podemos realizar son:
+</P>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="El menú contextual asociado al archivo ejemplo_de_pdf.pdf" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Boton_derecho.png" HREF="imagenes/Boton_derecho.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/f/f8/180px-Boton_derecho.png" SRC="mini/f/f8/180px-Boton_derecho.png" HEIGHT="143" / WIDTH="180" ALT="El menú contextual asociado al archivo ejemplo_de_pdf.pdf"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Boton_derecho.png" HREF="extra/Imagen:Boton_derecho.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>El menú contextual asociado al archivo <EM>ejemplo_de_pdf.pdf</EM></DIV></DIV></DIV>
+<P>Con el puntero encima de un archivo las opciones por defecto que podemos realizar son:
 </P>
 <UL><LI><STRONG>Abrir con &lt;nombre de aplicación&gt;</STRONG>, abre la aplicación por defecto que tengamos asignada para ese tipo de archivo, y además con las otras aplicaciones que el sistema sepa que pueden trabajar con él. Por ejemplo, una imagen con formato PNG puede ser abierta con el visor de imágenes gThumb, pero opcionalmente nos puede interesar abrirla con el navegador Mozilla Firefox o el editor de imagen The Gimp. El menú contextual ofrece todas estas opciones, y también nos permite añadir más aplicaciones relacionadas con archivos de esta extensión (en este caso .png) y decidir cuál es la que deseamos tener por defecto.
 </LI><LI><STRONG>Cortar</STRONG>, permite seleccionar el archivo para ser borrado de ese directorio y movido a otro lugar, manteniéndolo en el portapapeles (clipboard en inglés).
@@ -90,17 +95,17 @@ El acceso a las aplicaciones se realiza mediante su propio menú.
 <P>Los tres sistemas funcionan igualmente con múltiples archivos seleccionados, permitiendo cortar. copiar, arrastrar y soltar/pegar varios elementos de una sola vez.
 </P>
 <A NAME="El_Administrador_de_archivos"></A><H3>El Administrador de archivos</H3>
-<PRE>   ATENCIÓN: este subapartado está redactado en base a las preferencias de Nautilus que Guadalinex ofrece por defecto
-</PRE>
 <P>Casi todas las acciones que hemos estado describiendo se desarrollan encima del Administrador de archivos (originalmente denominado Nautilus y a veces traducido como Navegador de archivos). Si clicamos al icono de <STRONG>Carpeta personal</STRONG> ubicado en el escritorio, aparece el Administrador de archivos. Si seleccionamos cualquier ubicación en el menú de <STRONG>Lugares</STRONG>, aparece también. De hecho el fondo del escritorio está gestionado también desde el veterano compañero Nautilus.
-</P><P>Veamos qué información y funcionalidades nos aporta esta recurrida aplicación. Aquí tenemos:
+</P>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Componentes del Administrador de archivos" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Nautilus.png" HREF="imagenes/Nautilus.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/8/85/180px-Nautilus.png" SRC="mini/8/85/180px-Nautilus.png" HEIGHT="128" / WIDTH="180" ALT="Componentes del Administrador de archivos"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Nautilus.png" HREF="extra/Imagen:Nautilus.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Componentes del Administrador de archivos</DIV></DIV></DIV>
+<P>Veamos qué información y funcionalidades nos aporta esta recurrida aplicación. Aquí tenemos:
 </P>
 <OL><LI>Los <STRONG>contenidos de la carpeta</STRONG> ocupan la parte central de la ventana. Los elementos seleccionados están marcados con un color diferente. Recordemos que podemos acceder a ellos clicándolos con la tecla izquierda del ratón, abrir su menú contextual con la tecla derecha, copiar o moverlos arrastrándolos con el ratón, etc.
 </LI><LI>La <STRONG>barra principal</STRONG> nos ofrece las opciones básicas de navegación por las carpetas.
 </LI><LI>El <STRONG>panel lateral</STRONG> nos muestra una lista de accesos directos a los Lugares básicos del sistema más los que hayamos añadido con Marcadores.
 </LI><LI>La <STRONG>barra de dirección</STRONG> nos muestra cada nivel de profundidad en el árbol, para movernos entre niveles de forma cómoda. Toma como referencia inicial nuestra Carpeta personal, ofreciendo la posibilidad de ascender hasta el directorio raíz clicando a la flechita de la izquierda. Esta barra nos permite también visualizar los elementos de la carpeta como iconos o lista, incrementando o disminuyendo su tamaño, lo que resulta útil a la hora de visualizar elementos en carpetas repletas.
 </LI><LI>La <STRONG>barra de estado</STRONG> nos muestra información adicional sobre el elemento seleccionado.
-</LI><LI>La <STRONG>barra de menú</STRONG> nos permite acceder a más funcionalidades. Entre otras, conviene citar las siguientes ejemplos: 
+</LI><LI>La <STRONG>barra de menú</STRONG> nos permite acceder a más funcionalidades. Entre otras, conviene citar las siguientes ejemplos:
 </LI></OL>
 <UL><LI><UL><LI><UL><LI>En <STRONG>Archivo</STRONG> podemos conectar a servidores remotos vía FTP, SSH, WebDAV... Más sobre este tema en el siguiente capítulo <A TITLE="Guia v4/Conecta (a) tu ordenador" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Conecta_(a)_tu_ordenador" HREF="Conecta_(a)_tu_ordenador">Conecta (a) tu ordenador</A>.
 </LI><LI>En <STRONG>Editar</STRONG> tenemos las <STRONG>Preferencias</STRONG> donde podemos poner a punto la forma en que queremos que se comporte el Administrador, permitiéndonos múltiples opciones de organización y presentación de la información.
@@ -113,7 +118,9 @@ El acceso a las aplicaciones se realiza mediante su propio menú.
 </LI></UL>
 <A NAME="Administraci.C3.B3n_de_propiedades"></A><H3>Administración de propiedades</H3>
 <P>Clicando con la tecla derecha del ratón el icono de cualquier elemento del escritorio o de una carpeta se desplegará su correspondiente menú de contexto. Al final de este menú encontramos la opción <STRONG>Propiedades</STRONG>, que nos permite saber casi todo lo que se puede saber sobre el elemento seleccionado, así como realizar diversas tareas de administración relativas a dicho elemento.
-</P><P>Las opciones disponibles bajo las pestañas de Propiedades dependen del tipo de elemento y de los permisos de administración que dispongamos. Vamos a repasar las opciones que tiene el usuario único de un ordenador, y por tanto administrador de ese sistema:
+</P>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Despliegue de algunas pestañas de Propiedades" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Propiedades.png" HREF="imagenes/Propiedades.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/c/c9/180px-Propiedades.png" SRC="mini/c/c9/180px-Propiedades.png" HEIGHT="143" / WIDTH="180" ALT="Despliegue de algunas pestañas de Propiedades"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Propiedades.png" HREF="extra/Imagen:Propiedades.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Despliegue de algunas pestañas de Propiedades</DIV></DIV></DIV>
+<P>Las opciones disponibles bajo las pestañas de Propiedades dependen del tipo de elemento y de los permisos de administración que dispongamos. Vamos a repasar las opciones que tiene el usuario único de un ordenador, y por tanto administrador de ese sistema:
 </P>
 <UL><LI><STRONG>Básico</STRONG> nos ofrece la información básica relativa al elemnto seleccionado: tipo de archivo, tamaño, ubicación, fecha de modificación, etc. En esta pestaña podemos renombrar el elemento y asignarle un nuevo icono (hay multitud a escoger).
 </LI><LI><STRONG>Emblemas</STRONG> nos permite escoger pequeños gráficos que se superponen al icono y que nos sirven para tener a primera vista más información sobre el elemento seleccionado, o simplemente para decorarlo. Hay corazones, billetes, bombas, paquetes, estrellas, globos terráqueos...

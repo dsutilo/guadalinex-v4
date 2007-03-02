@@ -1,20 +1,20 @@
 <!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML XMLNSXML:LANGDIRLANG>
   <HEAD>
     <META / HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
-    <META NAME="KEYWORDS" / CONTENT="Guia v4/Guadalinex, la distribución andaluza,Guía Base/Saboreo e instalación en 3 clics">
+    <META NAME="KEYWORDS" / CONTENT="Guia v4/Guadalinex, la distribución andaluza">
 <META NAME="robots" / CONTENT="index,follow">
 <LINK / REL="shortcut icon" HREF="http://www.guadalinex.org/favicon.ico">
 <LINK TITLE="Creative Commons" / REL="meta" TYPE="application/rdf+xml" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php?title=Guia_v4/Guadalinex%2C_la_distribuci%C3%B3n_andaluza&amp;action=creativecommons">
 <LINK / REL="copyright" HREF="http://creativecommons.org/licenses/by-sa/2.1/es/">
 
     <TITLE>Guia v4/Guadalinex, la distribución andaluza - Guadapedia</TITLE>
-    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="screen,projection" HREF="../stylesheets/main.css">
-    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="print" HREF="http://www.guadalinex.org/guadapedia-estatica/stylesheets/commonPrint.css">
+    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="screen,projection" HREF="stylesheets/main.css">
+    <LINK / REL="stylesheet" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/stylesheets/commonPrint.css" TYPE="text/css" MEDIA="print" HREF="stylesheets/commonPrint.css">
     <!-- [if IE]><STYLE TYPE="text/css" MEDIA="all">@import "/guadapedia-estatica/stylesheets/monobook/IEFixes.css";</STYLE>
-    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/IEFixes.js" TYPE="text/javascript"></SCRIPT>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/IEFixes.js" SRC="stylesheets/IEFixes.js" TYPE="text/javascript"></SCRIPT>
     <META / HTTP-EQUIV="imagetoolbar" CONTENT="no"><![ENDIF]-->
     <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/index.php?title=-&amp;action=raw&amp;gen=js" TYPE="text/javascript"></SCRIPT>
-    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/wikibits.js" TYPE="text/javascript"></SCRIPT>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/wikibits.js" SRC="stylesheets/wikibits.js" TYPE="text/javascript"></SCRIPT>
     <STYLE TYPE="text/css">/*<![CDATA[*/ @import "/guadapedia-estatica/index.php?title=-&action=raw&gen=css";
  /*]]>*/</STYLE>
     
@@ -25,7 +25,7 @@
 	<DIV ID="content">
 	    
 	  <A ID="contentTop" NAME="top"></A>
-	  <H1 CLASS="firstHeading">Guia v4/Guadalinex, la distribución andaluza</H1>
+	  <H1 CLASS="firstHeading"><a href=Indice>Guia v4/Guadalinex, la distribución andaluza</a></H1>
 	  <DIV ID="bodyContent">
 	    <H3 ID="siteSub">De Guadapedia, la enciclopedia libre.</H3>
 	    <DIV ID="contentSub"></DIV>
@@ -115,16 +115,10 @@
 </P><P>Al mismo tiempo que cocinaba la aproximación a Ubuntu, la CICE hizo público un plan de liberación progresiva de todo el software propietario encargado por la Junta de Andalucía y del cual tuviera plenos derechos <A CLASS="external" TITLE="http://www.guadalinex.org/modules/news/article.php?storyid=122" HREF="http://www.guadalinex.org/modules/news/article.php?storyid=122">[14]</A><SPAN CLASS="urlexpansion"> (<I>http://www.guadalinex.org/modules/news/article.php?storyid=122</I>)</SPAN>. Este plan se iniciaba con un inventariado del software propiedad de la Junta para su posterior análisis: programas en uso o caducados, programas con plena propiedad de la Junta o restricciones de licencia, etc.
 </P><P>Este paso de la Junta de Andalucía es tan innovador y atrevido como el que dio en su día apostando por una distribución GNU/Linux propia. Dependiendo de la velocidad, decisión y presupuesto destinado, este programa de liberación de programas podría convertirse en otra referencia internacional. La diferencia está en que esta vez la aportación andaluza a la creciente comunidad de software libre sería mucho mayor.
 </P><P>Veremos cómo se concretan estos pasos a corto plazo.
-</P><P><BR />
-</P>
-<PRE>Siguiente apartado: <A CLASS="new" TITLE="Guía Base/Saboreo e instalación en 3 clics" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php?title=Gu%C3%ADa_Base/Saboreo_e_instalaci%C3%B3n_en_3_clics&amp;action=edit">Guía Base/Saboreo e instalación en 3 clics</A>
-</PRE>
-<P><BR />
-</P><P><BR />
 </P><DIV CLASS="printfooter">
 Obtenido de "<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Guadalinex%2C_la_distribuci%C3%B3n_andaluza" HREF="Guadalinex%2C_la_distribuci%C3%B3n_andaluza">http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Guadalinex%2C_la_distribuci%C3%B3n_andaluza</A>"</DIV>
 
-	    <DIV ID="catlinks"><P CLASS="catlinks"><A TITLE="Especial:Categories" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php?title=Especial:Categories&amp;article=Guia_v4%2FGuadalinex%2C_la_distribuci%C3%B3n_andaluza">Categories</A>: <A CLASS="new" TITLE="Categoría:Guadalinex" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php?title=Categor%C3%ADa:Guadalinex&amp;action=edit">Guadalinex</A> | <A CLASS="new" TITLE="Categoría:Desarrollo:Congelación" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php?title=Categor%C3%ADa:Desarrollo:Congelaci%C3%B3n&amp;action=edit">Desarrollo:Congelación</A> | <A CLASS="new" TITLE="Categoría:Derivación:Añadido" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php?title=Categor%C3%ADa:Derivaci%C3%B3n:A%C3%B1adido&amp;action=edit">Derivación:Añadido</A></P></DIV>
+	    
 	    <!--  end content -->
 	    <DIV CLASS="visualClear"></DIV>
 	  </DIV>

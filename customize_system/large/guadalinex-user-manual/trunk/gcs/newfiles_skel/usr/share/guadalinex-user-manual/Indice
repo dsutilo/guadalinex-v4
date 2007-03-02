@@ -1,20 +1,20 @@
 <!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML XMLNSXML:LANGDIRLANG>
   <HEAD>
     <META / HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
-    <META NAME="KEYWORDS" / CONTENT="Guia v4/Indice,Guia v4/Guadalinex, la distribución andaluza,Guia v4/Guadalinex.org,Guia v4/Saboreo e instalación en 3 clics,Guia v4/Preparativos y una prueba live,Guia v4/La instalación paso a paso,Guia v4/Coloniza tu sistema,Guia v4/Creación y gestión de archivos,Guia v4/Personalizar el escritorio,Guia v4/Gestión de usuarios">
+    <META NAME="KEYWORDS" / CONTENT="Guia v4/Indice,Guia v4/Nuevos amigos llaman a tu puerta,Guia v4/Software libre, el principio,Guia v4/GNU Linux, el sistema operativo,Guia v4/Debian, la distribución madre,Guia v4/Ubuntu, la hija aventajada,Guia v4/GNOME, el compañero diario,Guia v4/Guadalinex, la distribución andaluza,Guia v4/Saboreo e instalación en 3 clics,Guia v4/Preparativos y una prueba live">
 <META NAME="robots" / CONTENT="index,follow">
 <LINK / REL="shortcut icon" HREF="http://www.guadalinex.org/favicon.ico">
 <LINK TITLE="Creative Commons" / REL="meta" TYPE="application/rdf+xml" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php?title=Guia_v4/Indice&amp;action=creativecommons">
 <LINK / REL="copyright" HREF="http://creativecommons.org/licenses/by-sa/2.1/es/">
 
     <TITLE>Guia v4/Indice - Guadapedia</TITLE>
-    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="screen,projection" HREF="../stylesheets/main.css">
-    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="print" HREF="http://www.guadalinex.org/guadapedia-estatica/stylesheets/commonPrint.css">
+    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="screen,projection" HREF="stylesheets/main.css">
+    <LINK / REL="stylesheet" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/stylesheets/commonPrint.css" TYPE="text/css" MEDIA="print" HREF="stylesheets/commonPrint.css">
     <!-- [if IE]><STYLE TYPE="text/css" MEDIA="all">@import "/guadapedia-estatica/stylesheets/monobook/IEFixes.css";</STYLE>
-    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/IEFixes.js" TYPE="text/javascript"></SCRIPT>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/IEFixes.js" SRC="stylesheets/IEFixes.js" TYPE="text/javascript"></SCRIPT>
     <META / HTTP-EQUIV="imagetoolbar" CONTENT="no"><![ENDIF]-->
     <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/index.php?title=-&amp;action=raw&amp;gen=js" TYPE="text/javascript"></SCRIPT>
-    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/wikibits.js" TYPE="text/javascript"></SCRIPT>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/wikibits.js" SRC="stylesheets/wikibits.js" TYPE="text/javascript"></SCRIPT>
     <STYLE TYPE="text/css">/*<![CDATA[*/ @import "/guadapedia-estatica/index.php?title=-&action=raw&gen=css";
  /*]]>*/</STYLE>
     
@@ -25,7 +25,7 @@
 	<DIV ID="content">
 	    
 	  <A ID="contentTop" NAME="top"></A>
-	  <H1 CLASS="firstHeading">Guia v4/Indice</H1>
+	  <H1 CLASS="firstHeading"><a href=Indice>Guia v4/Indice</a></H1>
 	  <DIV ID="bodyContent">
 	    <H3 ID="siteSub">De Guadapedia, la enciclopedia libre.</H3>
 	    <DIV ID="contentSub"></DIV>
@@ -35,17 +35,17 @@
 	    <!--  start content -->
 	    <P><A CLASS="external" TITLE="http://guias-ubuntu.ourproject.org/index.php?title=Guía Base/Gratitud" HREF="http://guias-ubuntu.ourproject.org/index.php?title=Gu%C3%ADa_Base/Gratitud">Gratitud</A><SPAN CLASS="urlexpansion"> (<I>http://guias-ubuntu.ourproject.org/index.php?title=Gu%C3%ADa_Base/Gratitud</I>)</SPAN>
 </P>
-<OL><LI> <A CLASS="external" TITLE="http://guias-ubuntu.ourproject.org/index.php?title=Guía Base/Presentación" HREF="http://guias-ubuntu.ourproject.org/index.php?title=Gu%C3%ADa_Base/Presentaci%C3%B3n">Presentación</A><SPAN CLASS="urlexpansion"> (<I>http://guias-ubuntu.ourproject.org/index.php?title=Gu%C3%ADa_Base/Presentaci%C3%B3n</I>)</SPAN>
-<OL><LI> <A CLASS="external" TITLE="http://guias-ubuntu.ourproject.org/index.php?title=Guía Base/Presentación/Qué ofrece esta guía" HREF="http://guias-ubuntu.ourproject.org/index.php?title=Gu%C3%ADa_Base/Presentaci%C3%B3n/Qu%C3%A9_ofrece_esta_gu%C3%ADa">Qué ofrece esta guía</A><SPAN CLASS="urlexpansion"> (<I>http://guias-ubuntu.ourproject.org/index.php?title=Gu%C3%ADa_Base/Presentaci%C3%B3n/Qu%C3%A9_ofrece_esta_gu%C3%ADa</I>)</SPAN>
-</LI><LI> <A CLASS="external" TITLE="http://guias-ubuntu.ourproject.org/index.php?title=Guía Guadalinex/Presentación/Cómo obtener el software" HREF="http://guias-ubuntu.ourproject.org/index.php?title=Gu%C3%ADa_Guadalinex/Presentaci%C3%B3n/C%C3%B3mo_obtener_el_software">| Cómo obtener el software</A><SPAN CLASS="urlexpansion"> (<I>http://guias-ubuntu.ourproject.org/index.php?title=Gu%C3%ADa_Guadalinex/Presentaci%C3%B3n/C%C3%B3mo_obtener_el_software</I>)</SPAN>
-</LI><LI> <A CLASS="external" TITLE="http://guias-ubuntu.ourproject.org/index.php?title=Guía Base/Presentación/La comunidad en Internet" HREF="http://guias-ubuntu.ourproject.org/index.php?title=Gu%C3%ADa_Base/Presentaci%C3%B3n/La_comunidad_en_Internet">La comunidad en Internet</A><SPAN CLASS="urlexpansion"> (<I>http://guias-ubuntu.ourproject.org/index.php?title=Gu%C3%ADa_Base/Presentaci%C3%B3n/La_comunidad_en_Internet</I>)</SPAN> + <A TITLE="Guia v4/Guadalinex.org" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Guadalinex.org" HREF="Guadalinex.org">guadalinex.org</A>
+<OL><LI> <A TITLE="Guia v4/Presentacion" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Presentacion" HREF="Presentacion"> Presentación</A>
+<OL><LI> <A TITLE="Guia v4/Presentación/Qué ofrece esta guía" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Presentaci%C3%B3n/Qu%C3%A9_ofrece_esta_gu%C3%ADa" HREF="Presentaci%C3%B3n/Qu%C3%A9_ofrece_esta_gu%C3%ADa">Qué ofrece esta guía</A>
+</LI><LI> <A TITLE="Guía v4/Presentación/Cómo obtener el software" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Gu%C3%ADa_v4/Presentaci%C3%B3n/C%C3%B3mo_obtener_el_software" HREF="extra/Gu%C3%ADa_v4/Presentaci%C3%B3n/C%C3%B3mo_obtener_el_software">Cómo obtener el software</A>
+</LI><LI> <A TITLE="Guía v4/Presentación/La comunidad en Internet" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Gu%C3%ADa_v4/Presentaci%C3%B3n/La_comunidad_en_Internet" HREF="extra/Gu%C3%ADa_v4/Presentaci%C3%B3n/La_comunidad_en_Internet">La comunidad en Internet</A>
 </LI></OL>
-</LI><LI> <A CLASS="external" TITLE="http://guias-ubuntu.ourproject.org/index.php?title=Guía Base/Nuevos amigos llaman a tu puerta" HREF="http://guias-ubuntu.ourproject.org/index.php?title=Gu%C3%ADa_Base/Nuevos_amigos_llaman_a_tu_puerta">Nuevos amigos llaman a tu puerta</A><SPAN CLASS="urlexpansion"> (<I>http://guias-ubuntu.ourproject.org/index.php?title=Gu%C3%ADa_Base/Nuevos_amigos_llaman_a_tu_puerta</I>)</SPAN>
-<OL><LI> <A CLASS="external" TITLE="http://guias-ubuntu.ourproject.org/index.php?title=Guía Base/Nuevos amigos llaman a tu puerta/Software libre, el principio" HREF="http://guias-ubuntu.ourproject.org/index.php?title=Gu%C3%ADa_Base/Nuevos_amigos_llaman_a_tu_puerta/Software_libre%2C_el_principio">Software libre, el principio</A><SPAN CLASS="urlexpansion"> (<I>http://guias-ubuntu.ourproject.org/index.php?title=Gu%C3%ADa_Base/Nuevos_amigos_llaman_a_tu_puerta/Software_libre%2C_el_principio</I>)</SPAN>
-</LI><LI> <A CLASS="external" TITLE="http://guias-ubuntu.ourproject.org/index.php?title=Guía Base/Nuevos amigos llaman a tu puerta/GNU Linux, el sistema operativo" HREF="http://guias-ubuntu.ourproject.org/index.php?title=Gu%C3%ADa_Base/Nuevos_amigos_llaman_a_tu_puerta/GNU_Linux%2C_el_sistema_operativo">GNU Linux, el sistema operativo</A><SPAN CLASS="urlexpansion"> (<I>http://guias-ubuntu.ourproject.org/index.php?title=Gu%C3%ADa_Base/Nuevos_amigos_llaman_a_tu_puerta/GNU_Linux%2C_el_sistema_operativo</I>)</SPAN>
-</LI><LI> <A CLASS="external" TITLE="http://guias-ubuntu.ourproject.org/index.php?title=Guía Base/Nuevos amigos llaman a tu puerta/Debian, la distribución madre" HREF="http://guias-ubuntu.ourproject.org/index.php?title=Gu%C3%ADa_Base/Nuevos_amigos_llaman_a_tu_puerta/Debian%2C_la_distribuci%C3%B3n_madre">Debian, la distribución madre</A><SPAN CLASS="urlexpansion"> (<I>http://guias-ubuntu.ourproject.org/index.php?title=Gu%C3%ADa_Base/Nuevos_amigos_llaman_a_tu_puerta/Debian%2C_la_distribuci%C3%B3n_madre</I>)</SPAN>
-</LI><LI> <A CLASS="external" TITLE="http://guias-ubuntu.ourproject.org/index.php?title=Guía Base/Nuevos amigos llaman a tu puerta/Ubuntu, la hija aventajada" HREF="http://guias-ubuntu.ourproject.org/index.php?title=Gu%C3%ADa_Base/Nuevos_amigos_llaman_a_tu_puerta/Ubuntu%2C_la_hija_aventajada">Ubuntu, la hija aventajada</A><SPAN CLASS="urlexpansion"> (<I>http://guias-ubuntu.ourproject.org/index.php?title=Gu%C3%ADa_Base/Nuevos_amigos_llaman_a_tu_puerta/Ubuntu%2C_la_hija_aventajada</I>)</SPAN>
-</LI><LI> <A CLASS="external" TITLE="http://guias-ubuntu.ourproject.org/index.php?title=Guía Base/Nuevos amigos llaman a tu puerta/GNOME, el compañero diario" HREF="http://guias-ubuntu.ourproject.org/index.php?title=Gu%C3%ADa_Base/Nuevos_amigos_llaman_a_tu_puerta/GNOME%2C_el_compa%C3%B1ero_diario">GNOME, el compañero diario</A><SPAN CLASS="urlexpansion"> (<I>http://guias-ubuntu.ourproject.org/index.php?title=Gu%C3%ADa_Base/Nuevos_amigos_llaman_a_tu_puerta/GNOME%2C_el_compa%C3%B1ero_diario</I>)</SPAN>
+</LI><LI> <A TITLE="Guia v4/Nuevos amigos llaman a tu puerta" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Nuevos_amigos_llaman_a_tu_puerta" HREF="Nuevos_amigos_llaman_a_tu_puerta"> Nuevos amigos llaman a tu puerta</A>
+<OL><LI> <A TITLE="Guia v4/Software libre, el principio" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Software_libre%2C_el_principio" HREF="Software_libre%2C_el_principio"> Software libre, el principio</A>
+</LI><LI> <A TITLE="Guia v4/GNU Linux, el sistema operativo" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/GNU_Linux%2C_el_sistema_operativo" HREF="GNU_Linux%2C_el_sistema_operativo"> GNU Linux, el sistema operativo</A>
+</LI><LI> <A TITLE="Guia v4/Debian, la distribución madre" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Debian%2C_la_distribuci%C3%B3n_madre" HREF="Debian%2C_la_distribuci%C3%B3n_madre"> Debian, la distribución madre</A>
+</LI><LI> <A TITLE="Guia v4/Ubuntu, la hija aventajada" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Ubuntu%2C_la_hija_aventajada" HREF="Ubuntu%2C_la_hija_aventajada"> Ubuntu, la hija aventajada</A>
+</LI><LI> <A TITLE="Guia v4/GNOME, el compañero diario" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/GNOME%2C_el_compa%C3%B1ero_diario" HREF="GNOME%2C_el_compa%C3%B1ero_diario"> GNOME, el compañero diario</A>
 </LI><LI> <A TITLE="Guia v4/Guadalinex, la distribución andaluza" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Guadalinex%2C_la_distribuci%C3%B3n_andaluza" HREF="Guadalinex%2C_la_distribuci%C3%B3n_andaluza">Guadalinex, la distribución andaluza</A>
 </LI></OL>
 </LI><LI> <A TITLE="Guia v4/Saboreo e instalación en 3 clics" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Saboreo_e_instalaci%C3%B3n_en_3_clics" HREF="Saboreo_e_instalaci%C3%B3n_en_3_clics">Saboreo e instalación en 3 clics</A>
@@ -76,6 +76,7 @@
 </LI><LI> <A TITLE="Guia v4/Sonido y vídeo" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Sonido_y_v%C3%ADdeo" HREF="Sonido_y_v%C3%ADdeo">Sonido y vídeo</A>
 </LI><LI> <A TITLE="Guia v4/Accesorios" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Accesorios" HREF="Accesorios">Accesorios</A>
 </LI><LI> <A TITLE="Guia v4/e-Administración" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/e-Administraci%C3%B3n" HREF="e-Administraci%C3%B3n">e-Administración</A>
+</LI><LI> <A TITLE="Guia v4/Sincronización de dispositivos móviles" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles" HREF="Sincronizaci%C3%B3n_de_dispositivos_m%C3%B3viles">Sincronización de dispositivos móviles</A>
 </LI></OL>
 </LI><LI> <A TITLE="Guia v4/La mar de contenidos libres" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/La_mar_de_contenidos_libres" HREF="La_mar_de_contenidos_libres">La mar de contenidos libres</A>
 <OL><LI> <A TITLE="Guia v4/La cultura de compartir cultura" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/La_cultura_de_compartir_cultura" HREF="La_cultura_de_compartir_cultura">La cultura de compartir cultura</A>

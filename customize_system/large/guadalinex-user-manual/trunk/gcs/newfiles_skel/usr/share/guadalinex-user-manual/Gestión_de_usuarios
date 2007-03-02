@@ -8,13 +8,13 @@
 <LINK / REL="copyright" HREF="http://creativecommons.org/licenses/by-sa/2.1/es/">
 
     <TITLE>Guia v4/Gestión de usuarios - Guadapedia</TITLE>
-    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="screen,projection" HREF="../stylesheets/main.css">
-    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="print" HREF="http://www.guadalinex.org/guadapedia-estatica/stylesheets/commonPrint.css">
+    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="screen,projection" HREF="stylesheets/main.css">
+    <LINK / REL="stylesheet" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/stylesheets/commonPrint.css" TYPE="text/css" MEDIA="print" HREF="stylesheets/commonPrint.css">
     <!-- [if IE]><STYLE TYPE="text/css" MEDIA="all">@import "/guadapedia-estatica/stylesheets/monobook/IEFixes.css";</STYLE>
-    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/IEFixes.js" TYPE="text/javascript"></SCRIPT>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/IEFixes.js" SRC="stylesheets/IEFixes.js" TYPE="text/javascript"></SCRIPT>
     <META / HTTP-EQUIV="imagetoolbar" CONTENT="no"><![ENDIF]-->
     <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/index.php?title=-&amp;action=raw&amp;gen=js" TYPE="text/javascript"></SCRIPT>
-    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/wikibits.js" TYPE="text/javascript"></SCRIPT>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/wikibits.js" SRC="stylesheets/wikibits.js" TYPE="text/javascript"></SCRIPT>
     <STYLE TYPE="text/css">/*<![CDATA[*/ @import "/guadapedia-estatica/index.php?title=-&action=raw&gen=css";
  /*]]>*/</STYLE>
     
@@ -25,7 +25,7 @@
 	<DIV ID="content">
 	    
 	  <A ID="contentTop" NAME="top"></A>
-	  <H1 CLASS="firstHeading">Guia v4/Gestión de usuarios</H1>
+	  <H1 CLASS="firstHeading"><a href=Indice>Guia v4/Gestión de usuarios</a></H1>
 	  <DIV ID="bodyContent">
 	    <H3 ID="siteSub">De Guadapedia, la enciclopedia libre.</H3>
 	    <DIV ID="contentSub"></DIV>
@@ -60,8 +60,10 @@
 </LI><LI>La carpeta desaparece.
 </LI></OL>
 <P>De hecho no ha desaparecido del todo, está en la <STRONG>Papelera</STRONG>. Pero la podemos borrar definitivamente, sin remedio. También podemos cargarnos elementos y datos de nuestra carpeta personal, editando textos o gráficos, limpiando el buzón de correo, reubicando ciertas carpetas sin ton ni son... La buena noticia es que aunque nosotros pagemos el pato, nada de esto afecta al funcionamiento del sistema en sí. Es decir, el sistema nos deja hacer lo que queramos en nuestra parcela, fuera de sus zonas sensibles.
-</P><P><BR />
-En cambio:
+</P>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Vaya, no podemos borrar a la primera..." W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Borrar_inmediatamente.png" HREF="imagenes/Borrar_inmediatamente.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/7/77/180px-Borrar_inmediatamente.png" SRC="mini/7/77/180px-Borrar_inmediatamente.png" HEIGHT="72" / WIDTH="180" ALT="Vaya, no podemos borrar a la primera..."></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Borrar_inmediatamente.png" HREF="extra/Imagen:Borrar_inmediatamente.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Vaya, no podemos borrar a la primera...</DIV></DIV></DIV> 
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="... ni a la segunda ni de ninguna manera" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Error_borrando.png" HREF="imagenes/Error_borrando.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/3/37/180px-Error_borrando.png" SRC="mini/3/37/180px-Error_borrando.png" HEIGHT="69" / WIDTH="180" ALT="... ni a la segunda ni de ninguna manera"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Error_borrando.png" HREF="extra/Imagen:Error_borrando.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>... ni a la segunda ni de ninguna manera</DIV></DIV></DIV>
+<P>En cambio:
 </P>
 <OL><LI>Vamos al menú de <STRONG>Lugares</STRONG> del panel superior.
 </LI><LI>Seleccionamos <STRONG>Carpeta personal</STRONG>. Se abre el Administrador de archivos y nos muestra los elementos que, como hemos dicho, podemos manipular y borrar.
@@ -82,6 +84,7 @@ En cambio:
 </P><P><BR />
 </P>
 <A NAME="Crear_nuevos_usuarios"></A><H2>Crear nuevos usuarios</H2>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Creando un usuario para huéspedes" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Editor_de_cuentas_de_usuario.png" HREF="imagenes/Editor_de_cuentas_de_usuario.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/b/b1/180px-Editor_de_cuentas_de_usuario.png" SRC="mini/b/b1/180px-Editor_de_cuentas_de_usuario.png" HEIGHT="207" / WIDTH="180" ALT="Creando un usuario para huéspedes"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Editor_de_cuentas_de_usuario.png" HREF="extra/Imagen:Editor_de_cuentas_de_usuario.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Creando un usuario para huéspedes</DIV></DIV></DIV>
 <P>Podemos crear nuevos usuarios si somos el único habitante de nuestro sistema o tenemos los permisos de acceso a las tareas de administración del sistema.
 </P><P>Vamos a crear un usuario para quienes, de tanto en cuanto, nos visitan y nos piden el ordenador para chequear correo, grabar un CD, jugar un rato...
 </P>
@@ -98,22 +101,23 @@ En cambio:
 <P>Ya se ha creado el nuevo usuario. Si clicamos en sus <STRONG>Propiedades</STRONG> y luego en la pestaña <STRONG>Privilegios del usuario</STRONG> veremos que la opción <STRONG>Ejecutar tareas de administración del sistema</STRONG> no está activada. Esto implica que el nuevo usuario no podrá <EM>hacer sudo</EM>. Si seleccionamos está opción le daremos la opción de ejectutar tareas como <EM>root</EM>.
 </P>
 <A NAME="Grupos_de_usuarios"></A><H2> Grupos de usuarios </H2>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Cómo marginar digitalmente a los hijos" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Crear_grupo_nuevo.png" HREF="imagenes/Crear_grupo_nuevo.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/1/1c/180px-Crear_grupo_nuevo.png" SRC="mini/1/1c/180px-Crear_grupo_nuevo.png" HEIGHT="139" / WIDTH="180" ALT="Cómo marginar digitalmente a los hijos"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Crear_grupo_nuevo.png" HREF="extra/Imagen:Crear_grupo_nuevo.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Cómo marginar digitalmente a los hijos</DIV></DIV></DIV>
 <P>Si clicamos la pestaña <STRONG>Grupos</STRONG> en la ventana de opciones de <STRONG>Usuarios y grupos</STRONG> veremos una lista bastante críptica a los ojos de un no iniciado. Cada usuario es asignado a varios grupos, y cada grupo obtiene permisos para realizar tareas determinadas. El sistema crea automáticamente grupos para regular el acceso de los usuarios a acciones como utilizar un disquete, la unidad de CD-Rom, tener acceso al audio, etc.
 </P><P>El primer usuario, creado durante el proceso de instalación, es asignado automáticamente al grupo <STRONG>users</STRONG>. Los nuevos usuarios que vamos creando son asignados automáticamente a un grupo con el mismo nombre que su identificador de usuario. Como veremos, esto tiene como consecuencia que por defecto los usuarios no pueden acceder a las carpetas de otros usuarios, garantizando así su privacidad.
 </P><P>Podemos crear nuevos grupos manualmente. Esto nos sirve para dar los mismos permisos a todos los integrantes de un grupo. Por ejemplo, una familia compartiendo un ordenador puede tener una carpeta sólo accesible al grupo <EM>mamaypapa</EM> (integrado por dos obvios usuarios) donde almacenar todo lo que no se quiera dejar a la vista de los hijos. Con esta carpeta bien protegida, podrían dejar el resto de sus carpetas personales accesibles. 
 </P><P>La forma de crear grupos es bastante similar que la que hemos visto para crear usuarios. A la hora de crear un grupo podemos añadir los usuarios que los integran. Siempre podemos editar los grupos y sumar o extraer usuarios.
 </P><P><BR />
 </P>
-<A NAME="Repartir_accesos"></A><H2>Repartir accesos</H2>
+<A NAME="Repartir_accesos"></A><H2>Repartir accesos</H2> 
 <P>Como hemos comentado, por defecto los usuarios no pueden acceder a las carpetas de los demás por una cuestión de privacidad. Aunque acabemos de crear a esos usuarios, no podremos acceder a sus carpetas personales. Recordemos que hemos accedido a la herramienta de <STRONG>Usuarios y grupos</STRONG> tras introducir nuestra contraseña, con privilegios temporales de <EM>root</EM>. Por tanto sólo podremos acceder a sus carpetas como usuario <EM>root</EM>, o iniciando una nueva sesión e introduciendo su identificador y contraseña, claro.
 </P><P>La principal manera de acceder a las carpetas de otros es añadir los usuarios que desean compartir acceso a un mismo grupo (ej: <EM>users</EM>) y modificar las propiedades de cada carpeta de usuario para que se sean accesibles a los integramtes de ese grupo. 
 </P><P>El primer paso es sumar usuarios al grupo. Para ello es recomendable utilizar el grupo <EM>users</EM>, aunque también podemos crear uno nuevo. En la ventana de opciones de <STRONG>Usuarios y grupos</STRONG> seleccionamos la pestaña <STRONG>Grupos</STRONG> y el grupo a modificar. Clicamos en <STRONG>Propiedades</STRONG> y buscamos en la lista de usuarios de la izquierda los que vayamos a añadir al listado del grupo, en la derecha. Al final clicamos <STRONG>Aceptar</STRONG> para guardar los cambios.
-</P><P>Vamos al segundo paso: cambiar los permisos de las carpetas personales.
 </P>
-<OL><LI>Clicamos <STRONG>Aplicaciones</STRONG> en el panel superior.
-</LI><LI>Seleccionamos <STRONG>Herramientas del sistema</STRONG>.
-</LI><LI>Seleccionamos <STRONG>Ejecutar como otro usuario</STRONG>.
-</LI><LI>En el campo <STRONG>Ejecutar</STRONG> escribimos <STRONG>Nautilus</STRONG> (el nombre del programa <STRONG>Administrador de archivos</STRONG>) y en <STRONG>Como usuario</STRONG> dejamos seleccionado <STRONG>root</STRONG>.
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="A punto de tomar la pócima" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Ejecutar_programa.png" HREF="imagenes/Ejecutar_programa.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/b/bf/180px-Ejecutar_programa.png" SRC="mini/b/bf/180px-Ejecutar_programa.png" HEIGHT="75" / WIDTH="180" ALT="A punto de tomar la pócima"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Ejecutar_programa.png" HREF="extra/Imagen:Ejecutar_programa.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>A punto de tomar la pócima</DIV></DIV></DIV> <DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Muy delicado: el reparto de permisos" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Propiedades_de_katja.png" HREF="extra/Imagen:Propiedades_de_katja.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/b/bb/180px-Propiedades_de_katja.png" SRC="mini/b/bb/180px-Propiedades_de_katja.png" HEIGHT="204" / WIDTH="180" ALT="Muy delicado: el reparto de permisos"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Propiedades_de_katja.png" HREF="extra/Imagen:Propiedades_de_katja.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Muy delicado: el reparto de permisos</DIV></DIV></DIV>
+<P>Vamos al segundo paso: cambiar los permisos de las carpetas personales.
+</P>
+<OL><LI>Pulsamos &lt;Alt&gt; + F2, lo que nos abrirá un diálogo para ejecutar programas.
+</LI><LI>En el campo <STRONG>Ejecutar</STRONG> escribimos <STRONG>gksudo nautilus</STRONG> (el nombre del programa <STRONG>Administrador de archivos</STRONG>, ejecutado como root).
 </LI><LI>Se nos abrirá el conocido Administrador de archivos pero, ojo, teniendo nosotros permisos de <EM>root</EM>: somos un riesgo para el sistema. Sin entretenernos por el camino, buscamos la carpeta personal del usuario bajo el directorio <EM>/home</EM>.
 </LI><LI>Clicamos la carpeta personal del usuario con la tecla derecha del ratón.
 </LI><LI>En el menú contextual selecionamos <STRONG>Propiedades</STRONG>.

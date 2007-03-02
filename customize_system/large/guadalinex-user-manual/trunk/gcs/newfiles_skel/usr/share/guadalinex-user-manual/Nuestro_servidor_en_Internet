@@ -8,13 +8,13 @@
 <LINK / REL="copyright" HREF="http://creativecommons.org/licenses/by-sa/2.1/es/">
 
     <TITLE>Guia v4/Nuestro servidor en Internet - Guadapedia</TITLE>
-    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="screen,projection" HREF="../stylesheets/main.css">
-    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="print" HREF="http://www.guadalinex.org/guadapedia-estatica/stylesheets/commonPrint.css">
+    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="screen,projection" HREF="stylesheets/main.css">
+    <LINK / REL="stylesheet" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/stylesheets/commonPrint.css" TYPE="text/css" MEDIA="print" HREF="stylesheets/commonPrint.css">
     <!-- [if IE]><STYLE TYPE="text/css" MEDIA="all">@import "/guadapedia-estatica/stylesheets/monobook/IEFixes.css";</STYLE>
-    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/IEFixes.js" TYPE="text/javascript"></SCRIPT>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/IEFixes.js" SRC="stylesheets/IEFixes.js" TYPE="text/javascript"></SCRIPT>
     <META / HTTP-EQUIV="imagetoolbar" CONTENT="no"><![ENDIF]-->
     <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/index.php?title=-&amp;action=raw&amp;gen=js" TYPE="text/javascript"></SCRIPT>
-    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/wikibits.js" TYPE="text/javascript"></SCRIPT>
+    <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/wikibits.js" SRC="stylesheets/wikibits.js" TYPE="text/javascript"></SCRIPT>
     <STYLE TYPE="text/css">/*<![CDATA[*/ @import "/guadapedia-estatica/index.php?title=-&action=raw&gen=css";
  /*]]>*/</STYLE>
     
@@ -25,7 +25,7 @@
 	<DIV ID="content">
 	    
 	  <A ID="contentTop" NAME="top"></A>
-	  <H1 CLASS="firstHeading">Guia v4/Nuestro servidor en Internet</H1>
+	  <H1 CLASS="firstHeading"><a href=Indice>Guia v4/Nuestro servidor en Internet</a></H1>
 	  <DIV ID="bodyContent">
 	    <H3 ID="siteSub">De Guadapedia, la enciclopedia libre.</H3>
 	    <DIV ID="contentSub"></DIV>
@@ -104,17 +104,17 @@ Le antecede un subdominio ('fulanito' en nuestros ejemplos) y un nombre de máqu
 </P><P><BR />
 </P>
 <A NAME="Un_ejemplo_pr.C3.A1ctico"></A><H2> Un ejemplo práctico </H2>
-<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Reservando un dominio gratuito" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Dns-dinamico-1.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/images/thumb/8/8d/180px-180px-Dns-dinamico-1.png" SRC="images/thumb/8/8d/180px-180px-Dns-dinamico-1.png" HEIGHT="107" / WIDTH="180" ALT="Reservando un dominio gratuito"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Dns-dinamico-1.png"><IMG SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Reservando un dominio gratuito</DIV></DIV></DIV>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Reservando un dominio gratuito" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Dns-dinamico-1.png" HREF="imagenes/180px-Dns-dinamico-1.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/8/8d/180px-180px-Dns-dinamico-1.png" SRC="mini/8/8d/180px-180px-Dns-dinamico-1.png" HEIGHT="107" / WIDTH="180" ALT="Reservando un dominio gratuito"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Dns-dinamico-1.png" HREF="extra/Imagen:180px-Dns-dinamico-1.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Reservando un dominio gratuito</DIV></DIV></DIV>
 <P>Vamos a detallar un poco cómo reservaríamos un dominio gratuito y como configuraríamos el servicio de DNS con una dirección IP dinámica.
 </P><P>Para este ejemplo elegimos a dyndns.com <A CLASS="external" TITLE="http://www.dyndns.com" HREF="http://www.dyndns.com/">[7]</A><SPAN CLASS="urlexpansion"> (<I>http://www.dyndns.com</I>)</SPAN> pero hay otras empresas e iniciativas que proporcionan dominios gratuitos, como hemos comentado. Durante el registro indicamos el nombre que queremos usar y el dominio del que dependerá (en nuestro ejemplo 'guias-ubuntu.dyndns.org'), así como nuestra dirección IP pública.
 </P><P>Como nuestra IP es dinámica, tenemos que encontrar la forma de actualizar nuestro nombre con nuestra dirección IP pública sin mucho esfuerzo.
 </P>
-<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Configurando la actualización de la IP dinámica del dominio (I)" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Dns-dinamico-2.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/images/thumb/2/21/180px-180px-Dns-dinamico-2.png" SRC="images/thumb/2/21/180px-180px-Dns-dinamico-2.png" HEIGHT="108" / WIDTH="180" ALT="Configurando la actualización de la IP dinámica del dominio (I)"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Dns-dinamico-2.png"><IMG SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Configurando la actualización de la IP dinámica del dominio (I)</DIV></DIV></DIV>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Configurando la actualización de la IP dinámica del dominio (I)" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Dns-dinamico-2.png" HREF="imagenes/180px-Dns-dinamico-2.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/2/21/180px-180px-Dns-dinamico-2.png" SRC="mini/2/21/180px-180px-Dns-dinamico-2.png" HEIGHT="108" / WIDTH="180" ALT="Configurando la actualización de la IP dinámica del dominio (I)"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Dns-dinamico-2.png" HREF="extra/Imagen:180px-Dns-dinamico-2.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Configurando la actualización de la IP dinámica del dominio (I)</DIV></DIV></DIV>
 <P>Para eso nos ayudamos del paquete <STRONG>ddclient</STRONG>, que instalamos desde línea de comandos:
 </P><P><STRONG>sudo apt-get install ddclient</STRONG>
 </P><P>Durante la instalación, la aplicación nos pregunta el proveedor de nuestro dominio. Elegimos Dyndns, siguiendo con el ejemplo. 
 </P>
-<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Configurando la actualización de la IP dinámica del dominio (II)" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Dns-dinamico-3.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/images/thumb/6/6b/180px-180px-Dns-dinamico-3.png" SRC="images/thumb/6/6b/180px-180px-Dns-dinamico-3.png" HEIGHT="108" / WIDTH="180" ALT="Configurando la actualización de la IP dinámica del dominio (II)"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Dns-dinamico-3.png"><IMG SRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Configurando la actualización de la IP dinámica del dominio (II)</DIV></DIV></DIV>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Configurando la actualización de la IP dinámica del dominio (II)" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Dns-dinamico-3.png" HREF="imagenes/180px-Dns-dinamico-3.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/6/6b/180px-180px-Dns-dinamico-3.png" SRC="mini/6/6b/180px-180px-Dns-dinamico-3.png" HEIGHT="108" / WIDTH="180" ALT="Configurando la actualización de la IP dinámica del dominio (II)"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Dns-dinamico-3.png" HREF="extra/Imagen:180px-Dns-dinamico-3.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Configurando la actualización de la IP dinámica del dominio (II)</DIV></DIV></DIV>
 <P>Luego introducimos otra serie de datos, tales como nuestro dominio (en el ejemplo 'guias-ubuntu.dyndns.org'), nuestro usuario en Dyndns, contraseña y, en el último paso, el interfaz de nuestro servidor que se conecta a Internet, es decir, el que en principio tiene la dirección IP pública.
 </P><P>El paquete 'ddclient' arrancará:
 </P><P><STRONG> * Starting dynamic DNS service update utility...</STRONG>
