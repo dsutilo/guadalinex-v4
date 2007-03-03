@@ -1,0 +1,30 @@
+#!/bin/sh
+
+PREREQ=""
+DESCRIPTION="Fixing dbus bug in GNOME..."
+
+. /scripts/casper-functions
+
+prereqs()
+{
+       echo "$PREREQ"
+}
+
+case $1 in
+# get pre-requisites
+prereqs)
+       prereqs
+       exit 0
+       ;;
+esac
+
+log_begin_msg "$DESCRIPTION"
+
+# Cleaning up the english stuff at the user's home
+
+cat <<EOF >> /root/etc/gdm/PostLogin/Default
+pkill dbus-daemon
+/usr/bin/dbus-daemon --system
+EOF
+
+log_end_msg
