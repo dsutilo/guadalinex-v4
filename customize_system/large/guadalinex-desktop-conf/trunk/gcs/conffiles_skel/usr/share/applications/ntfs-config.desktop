@@ -38,4 +38,4 @@ Exec=gksu ntfs-config
 Terminal=false
 Type=Application
 Icon=gnome-dev-harddisk
-Categories=System;
+Categories=GNOME;Application;System;Settings;
