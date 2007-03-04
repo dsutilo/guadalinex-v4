@@ -1,0 +1,5 @@
+#!/bin/sh 
+
+if [ ! -e /etc/skel/Escritorio ]; then
+	ln -s Desktop /etc/skel/Escritorio
+fi
