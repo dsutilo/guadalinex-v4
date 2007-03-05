@@ -164,6 +164,7 @@ ndisgtk
 ndiswrapper-utils-1.8
 network-manager-gnome
 notification-daemon
+oem-config-gtk
 onboard
 openoffice.org
 openoffice.org-evolution
