@@ -1,0 +1,73 @@
+EXTRAHOOKS
+
+Introducción
+============
+
+"extrahooks" es un sistema para solventar problemas o añadir funcionalidades "on the fly" a un sistema Live de Ubuntu Edgy/Guadalinex v4.
+
+Este sistema puede tanto añadir y cargar módulos, como instalar paquetes o ejecutar scripts. Pudiendo esos scripts ejecutarse antes o después de iniciar el sistema Live.
+
+Dichos módulos, paquetes y/o scripts pueden ir en cualquier dispositivo de disco, incluso en alguna partición del disco duro. Si un sistema basado en Ubuntu Edgy dispone, en su versión live de los corrspondientes paquetes de "extrahooks-casper" y "extrahooks-ubiquity" será capaz de detectar dispositivos (particiones de discos duros, memorias USB, CDs, DVDs, etc) que contengan drivers (módulos para el kernel), paquetes o scripts, en el formato adecuado para ser instalados según un protocolo definido para ello.
+
+Descripción
+===========
+
+Para la creación de estos "extrahooks" será necesario utilizar las plantillas y herramientas que se proporcionan en el paquete "extrahooks-dev". Esto es así para facilitar y simplificar la generación de dichos hooks, así como para poder disponer de un sistema más estandarizado y homogeneo. Esto proporciona mayor potencia y sencilles al sistema.
+
+Existen 3 partes en este sistema:
+
+ Sistema Live:
+ ------------
+   * Contiene los paquetes "extrahooks-casper" y "extrahooks-ubiquity" instalados.
+   * Es capaz de detectar particiones en cualquier dispositivo conectado (discos duros, memorias SUB, CDs, DVDs, etc) que contengan el archivo "[DISPOSITIVO]/extrahooks/.version", con la versión correcta.
+   * Se encarga de realizar las operaciones necesarias (instalar, cargar módulos, ejecutar scripts, etc) con el contenido de "[DISPOSITIVO]/extrahooks/"
+   * Hay 4 puntos en dónde actúa "extrahooks" dentro del sistema live:
+     1- mkinitramfs: Aunque esto se hará desde el sistema de generación, es algo que estará instalado en el sistema live mediante el paquete "extrahooks-casper" y que afectará al Casper/initramfs.
+        * Insertar hooks en los scripts de "casper" de la imagen "initrd" para poder realizar las funciones que se describen en el siguiente punto. Esto se hará mediante hook de generación de las "initramfs-tools": /usr/share/initramfs-tools/hooks/*
+     2- Casper/initramfs:
+        * Cargar módulos ("[DISPOSITIVO]/extrahooks/modules/*") antes de arrancar el sistema Live.
+        * Ejecutar scripts durante el arranque ("[DISPOSITIVO]/extrahooks/scripts/initramfs/*").
+        * Copiar los script que deben ejecutarse durante el inicio del sistema live ("[DISPOSITIVO]/extrahooks/scripts/init.d/*") al corresponiente nivel de arranque: /etc/rcS.d/, /etc/rc2.d/, /etc/rc0.d/ o /etc/rc6.d/
+     3- Init del sistema:
+        * Instalar paquetes de "[DISPOSITIVO]/extrahooks/debs/*" (menos los "extrahooks-*.deb"). Se instalarán desde un script de inicio en el nivel "S" ("/etc/rcS.d") una vez se hayan montado todos los sistemas básicos y antes de que se empiecen a arrancar servicios.
+        Nota: Es muy importante que estén las dependencias resueltas.
+     4- Ubiquity:
+        * Instalar mediante "chroot" los paquetes "[DISPOSITIVO]/extrahooks/debs/*" en el sistema que se está instalando ("/target/").
+
+
+ Dispositivo:
+ -----------
+    * Contiene los módulos, paquetes y/o scripts que usarán los hooks del sistema live. Es el contenido o funcionalidad que se quiere añadir.
+    * El contenido debe estar en un directorio llamado "/extrahooks/" que contenga un archivo ".version", para asegurar que está generado para ser usado por este sistema.
+    * La estructura de dicho directorio seria algo así como:
+
+      /extrahooks/
+                  |-.version
+                  |
+                  |-/debs/          <- (directorio con los paquetes)
+                  |       |-extrahooks-modules-X.deb
+                  |       |-extrahooks-scripts-X.deb
+                  |       \-*.deb
+                  |
+                  |-/modules/       <- (directorio con los módulos)
+                  |          |-modules.conf
+                  |          |-01-module.ko
+                  |          |-02-module.ko
+                  |          |-...
+                  |          \-??-module.ko
+                  |
+                  \-/scritps/       <- (directorio con los scripts)
+                             |-/initramfs/
+                             |            |-01-nombre_script
+                             |            |-02-nombre_script
+                             |            |-...
+                             |            \-0?-nombre_script
+                             \-/init.d/
+                                       |-S-01-nombre-script
+                                       |-2-01-nombre-script
+                                       |-0-01-nombre-script
+                                       |-6-01-nombre-script
+                                       |-...
+                                       \-?-??-nombre-script
+
+      

@@ -1,0 +1,55 @@
+.TH "extrahooks" "1" "0.1" "Juan Jesús Ojeda Croissier" ""
+.SH "NAME"
+.LP 
+EXTRAHOOKS \- Extra functionality added by hooks
+.SH "SYNTAX"
+.LP 
+extrahooks [\-h] [\-c|\-\-create] [\-q|\-\-quiet] [\-v|\-\-verbose]
+.br 
+.SH "DESCRIPTION"
+.LP 
+This program generate a chroot system from a debian repository in order
+to create a squashfs compressed image of that system for being able to run
+as a live GNU/Linux system.
+
+.SH "OPTIONS"
+.LP 
+.TP 
+\fB\-h, \-\-help\fR
+Show this help
+.TP 
+\fB\-c, \-\-create\fR
+Keep the sources directory after finish
+.TP 
+\fB\-q, \-\-quiet\fR
+Don't show any messages
+.TP 
+\fB\-v, \-\-verbose\fR
+Show more information about the execution
+.br 
+.SH "FILES"
+.LP 
+\fI/etc/glig/conf\fP 
+.br 
+.SH "EXAMPLES"
+.LP 
+To run this program the standard way type:
+.LP 
+glig
+.LP 
+Alternativly you might like run it as:
+.LP 
+glig \-k
+.LP
+This keep the sources directory so you could run it as:
+.LP
+glig \-d
+.LP
+Or some other configuration which need the sources directory, but you don't want to wait for debootstrap process.
+.LP
+.SH "AUTHORS"
+.br 
+Juan Jesús Ojeda Croissier <jojeda@emergya.es>
+.SH "SEE ALSO"
+.LP 
+mkisofs(8) mksquashfs(8)

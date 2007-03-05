@@ -1,0 +1,36 @@
+Source: extrahooks
+Section: misc
+Priority: optional
+Maintainer: Juan Jesús Ojeda Croissier <jojeda@emergya.es>
+Build-Depends: debhelper (>> 4.2.0)
+Standards-Version: 3.7.2
+
+Package: extrahooks-casper
+Architecture: any
+Section: misc
+Priority: extra
+Depends: casper (>= 1.78)
+Description: Scripts extra for add functionality to casper 
+ This package add some hooks to the casper at the initramfs generation
+ time for supporting the extrahooks system.
+
+Package: extrahooks-ubiquity
+Architecture: all
+Depends: ubiquity
+Conflicts: espresso-casper
+Enhances: ubiquity
+Description: Extra hooks for live installer
+ This package add some hooks to the live installer for supporting
+ the extrahooks system.
+
+Package: extrahooks-dev
+Architecture: any
+Section: devel
+Priority: extra
+Depends: debhelper, devscripts, make
+Description: Utilities for creating extrahooks packages 
+ extrahooks is a program for creating your owns extrahooks packages.
+ .
+ There are also a templates for those packages. And documentation
+ about how to create and use them.
+

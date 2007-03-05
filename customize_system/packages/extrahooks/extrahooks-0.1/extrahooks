@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# Variables
+WORK_DIR="/tmp/extrahooks-$(date +%y%m%H%M%S)"
+CONF="/etc/extrahooks-dev/config"
+TEMPLATE_DIR="/usr/share/extrahooks-dev/templates/"
+
+# Functions
+function load_conf () {
+  if [ -f ${CONF} ]; then
+    . $CONF
+    PACKAGE_DIR="${WORK_DIR}/extrahooks-${PACKAGE}-${VERSION}"
+    DEVICE_DIR="${WORK_DIR}/device-${PACKAGE}/extrahooks"
+  else
+    echo "Error: $CONF config file is missing"
+    exit 1
+  fi
+
+}
+
+function make_skel () {
+
+  # Create the debs skel
+  mkdir -p $PACKAGE_DIR
+  cp -a ${TEMPLATE_DIR}/debian ${PACKAGE_DIR}/
+
+  # Create the device skel
+  mkdir -p ${DEVICE_DIR}/{debs,modules,scripts/{initramfs,init.d}} 
+  echo "${EH_VERSION}" > ${DEVICE_DIR}/.version
+
+  # Seting up the rights values to the debian conffiles
+  sed -i "s|@@MAINTAINER@@|${MAINTAINER}|g" ${PACKAGE_DIR}/debian/changelog
+  sed -i "s|@@MAINTAINER@@|${MAINTAINER}|g" ${PACKAGE_DIR}/debian/control
+  sed -i "s|@@MAINTAINER@@|${MAINTAINER}|g" ${PACKAGE_DIR}/debian/copyright
+  sed -i "s|@@DATE@@|$(LANG=C date +"%a, %d %b %Y %T %z")|g" ${PACKAGE_DIR}/debian/changelog
+  sed -i "s|extrahooks-name|extrahooks-${PACKAGE}|g" ${PACKAGE_DIR}/debian/changelog
+  sed -i "s|extrahooks-name|extrahooks-${PACKAGE}|g" ${PACKAGE_DIR}/debian/control
+  sed -i "s|extrahooks-modules-name|extrahooks-modules-${PACKAGE}|g" ${PACKAGE_DIR}/debian/control
+  sed -i "s|extrahooks-scripts-name|extrahooks-scripts-${PACKAGE}|g" ${PACKAGE_DIR}/debian/control
+
+  # Create the debs, module and scripts stuff
+  mkdir -p ${WORK_DIR}/{debs,modules,scripts/{initramfs,init.d}} 
+  cp ${TEMPLATE_DIR}/modules.conf ${WORK_DIR}/modules/
+
+  echo "Skel created on ${WORK_DIR}"
+  echo "Enter into the directory and add your content"
+
+}
+
+
+load_conf
+
+make_skel
+
+

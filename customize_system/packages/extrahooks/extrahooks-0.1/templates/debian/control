@@ -1,0 +1,23 @@
+Source: extrahooks-name
+Section: misc
+Priority: optional
+Maintainer: @@MAINTAINER@@
+Build-Depends: debhelper (>> 4.2.0)
+Standards-Version: 3.7.2
+
+Package: extrahooks-modules-name
+Architecture: i386
+Section: misc
+Priority: extra
+Depends: initramfs-tools
+Description: Install modules "on the fly" 
+ Install modules with the extrahooks system from the live installer
+ to the target system.
+
+Package: extrahooks-scripts-name
+Architecture: any
+Depends: initramfs-tools, upstart-compat-sysv, sysv-rc
+Description: Install scripts "on the fly"
+ This package install scripts to the initramfs and initscripts for 
+ adding functionalities by using the extrahooks system.
+
