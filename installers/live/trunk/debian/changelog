@@ -1,17 +1,11 @@
 ubiquity (1.2.5guada9) edgy; urgency=low
 
-  * Several bug fixing.
-
- -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Fri,  2 Mar 2007 13:57:35 +0100
-
-ubiquity (1.2.5guada7) edgy; urgency=low
-
   * Fixed hal bug in DiskPreview (rmajadas)
   * Set definitive logo and photo Guadalinex images
   * Set definitive desktop Guadalinex icon
   * Several bug fixing. 
 
- --  <rmartin@emergya.es>  Mon, 19 Feb 2007 18:38:15 +0100
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Mon, 19 Feb 2007 18:38:15 +0100
 
 ubiquity (1.2.5guada6) edgy; urgency=low
 
