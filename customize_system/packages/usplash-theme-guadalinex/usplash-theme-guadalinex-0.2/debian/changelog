@@ -1,10 +1,10 @@
-usplash-theme-guadalinex (0.2) toro; urgency=low
+usplash-theme-guadalinex (0.2) stable; urgency=low
 
   * New theme.
 
  -- Juan Jesus Ojeda Croissier <jojeda@emergya.es>  Fri, 23 Feb 2007 15:37:00 +0100
 
-usplash-theme-guadalinex (0.1) toro; urgency=low
+usplash-theme-guadalinex (0.1) stable; urgency=low
 
   * Initial release.
 

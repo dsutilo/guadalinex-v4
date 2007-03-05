@@ -2,11 +2,11 @@ Source: usplash-theme-guadalinex
 Priority: optional
 Section: misc
 Maintainer: Gabriel Rodriguez Alberich <grodriguez@yaco.es>
-Standards-Version: 3.6.2.1
+Standards-Version: 3.7.2
 Build-Depends: debhelper (>= 5.0.0), usplash-dev, libc6-dev
 
 Package: usplash-theme-guadalinex
 Architecture: i386 powerpc amd64
 Depends: ${shlibs:Depends}, initramfs-tools (>= 0.40ubuntu30), usplash (>= 0.4-21)
 Description: Usplash theme for Guadalinex
- Usplash theme for Guadalinex
+ Usplash theme based on the Ubuntu one and adapted for Guadalinex.
