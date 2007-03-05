@@ -50,11 +50,11 @@ Existen 3 partes en este sistema:
                   |       \-*.deb
                   |
                   |-/modules/       <- (directorio con los módulos)
-                  |          |-modules.conf
-                  |          |-01-module.ko
-                  |          |-02-module.ko
+                  |          |-modules.conf   <- (indica el orden de carga de los módulos y sus parámetros)
+                  |          |-module-X.ko
+                  |          |-module-Y.ko
                   |          |-...
-                  |          \-??-module.ko
+                  |          \-module-Z.ko
                   |
                   \-/scritps/       <- (directorio con los scripts)
                              |-/initramfs/

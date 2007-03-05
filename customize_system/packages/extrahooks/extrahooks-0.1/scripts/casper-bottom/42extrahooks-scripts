@@ -1,0 +1,52 @@
+#!/bin/sh
+
+PREREQ=""
+DESCRIPTION="Checking for scripts..."
+
+. /scripts/functions
+. /scripts/casper-functions
+
+prereqs()
+{
+       echo "$PREREQ"
+}
+
+case $1 in
+# get pre-requisites
+prereqs)
+       prereqs
+       exit 0
+       ;;
+esac
+
+log_begin_msg "$DESCRIPTION"
+
+# Checking for scripts to run
+run_ex_scripts () {
+  scripts_dir="/mnt/extrahooks/scripts/initramfs/"
+  run_scripts $scripts_dir
+}
+
+copy_ex_scripts () {
+  scripts_dir="/mnt/extrahooks/scripts/init.d"
+  etc_dir="/root/etc"
+  for level in S 0 2 6
+    do
+    path="${scripts_dir}/${level}-"
+    for script in ${path}*
+      do
+      cp ${script} ${etc_dir}/rc${level}.d/S${script#${path}}
+    done
+  done
+}
+
+do_it () {
+    run_ex_scripts
+    copy_ex_scripts
+}
+
+. /scripts/extrahooks-functions
+
+extra_main
+
+log_end_msg

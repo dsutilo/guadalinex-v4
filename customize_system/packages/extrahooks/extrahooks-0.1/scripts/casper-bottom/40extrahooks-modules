@@ -1,0 +1,47 @@
+#!/bin/sh
+
+PREREQ=""
+DESCRIPTION="Checking for modules to load..."
+
+. /scripts/functions
+. /scripts/casper-functions
+
+prereqs()
+{
+       echo "$PREREQ"
+}
+
+case $1 in
+# get pre-requisites
+prereqs)
+       prereqs
+       exit 0
+       ;;
+esac
+
+log_begin_msg "$DESCRIPTION"
+
+
+do_it () {
+  MODULES_DIR="/mnt/extrahooks/modules"
+  MODULES_FILE="${MODULES_DIR}/modules.conf"
+  
+  if [ -e "$MODULES_FILE" ]; then
+     cat $MODULES_FILE | while read m args; do
+       # Skip empty lines
+       if [ -z "$m" ];  then
+         continue
+       fi
+       # Skip comments - d?ash removes whitespace prefix
+       com=$(printf "%.1s" "${m}")
+       if [ "$com" = "#" ]; then
+         continue
+       fi
+       modprobe -q $m $args
+     done
+  fi
+}
+
+extra_main
+
+log_end_msg
