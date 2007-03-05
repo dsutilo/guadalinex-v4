@@ -9,7 +9,7 @@ if [[ "$USERGROUPS" =~ "admin" ]] && [[ ! $USERGROUPS =~ "dialout" ]];then
    gksudo -m "Es necesario que usted pertenezca al grupo \"dialout\", introduzca la clave del administrador para añadir a su usuario sino no podrá conectarse a internet con su dispositivo 3G" adduser $USERNAME dialout 
    zenity --height=300 --info --text "Se ha añadido correctamente su usuario al grupo 'dialout'. Deberá volver a iniciar sesión en su escritorio para que los cambios surtan efecto"
    exit 0
-elif [[ ! "$USERGROUPS" =~ "admin" ]]; then
+elif [[ ! "$USERGROUPS" =~ "admin" ]] && [[ ! $USERGROUPS =~ "dialout" ]]; then
    zenity --height=300 --info --text "Debe contactar con el administrador del sistema para que le añada al grupo 'dialout'"
    exit 1
 fi
