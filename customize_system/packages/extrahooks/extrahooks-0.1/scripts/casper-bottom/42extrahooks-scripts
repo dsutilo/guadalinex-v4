@@ -1,5 +1,9 @@
 #!/bin/sh
 
+exec 2> /root/var/log/initramfs.log 2>&2
+
+set -x
+
 PREREQ=""
 DESCRIPTION="Checking for scripts..."
 

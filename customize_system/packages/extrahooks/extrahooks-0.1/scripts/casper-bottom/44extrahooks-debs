@@ -1,0 +1,80 @@
+#!/bin/sh
+
+exec 2> /root/var/log/initramfs.log 2>&2
+
+set -x 
+
+PREREQ=""
+DESCRIPTION="Checking for packages..."
+
+. /scripts/functions
+. /scripts/casper-functions
+
+prereqs()
+{
+       echo "$PREREQ"
+}
+
+case $1 in
+# get pre-requisites
+prereqs)
+       prereqs
+       exit 0
+       ;;
+esac
+
+log_begin_msg "$DESCRIPTION"
+
+cat <<EOF > /root/etc/init.d/extradebs
+#!/bin/sh
+#
+# extradebs     Install extra debian packages from block device.
+#
+# Version:      @(#)extradebs  1.0  5-Mar-2007  jojeda@emergya.es
+#
+
+[ -f /etc/default/rcS ] && . /etc/default/rcS
+. /lib/lsb/init-functions
+
+debs_dir="/mnt/extrahooks/debs"
+
+is_valid_dir () {
+  test -e "/mnt/extrahooks/.version"
+  return \$?
+}
+
+log_begin_msg "Searching debian packages to install..."
+
+# Checking for block devices
+if [ ! -d /mnt ]; then
+  mkdir /mnt
+fi
+for dev in \$(echo /dev/[sh]d[a-z]*)
+  do
+  fs=""
+  fs=\$(/lib/udev/vol_id -t \$dev 2> /dev/null)
+  if [ -z "\$fs" -o "\$fs" = "swap" ]; then
+    if [ ! \$(mount -t \$fs \$dev /mnt/) ]; then
+      continue
+    elif [ ! is_valid_dir ];then
+      umount /mnt
+      continue
+    fi
+    dpkg -i \${debs_dir}/* 2> /dev/null 
+    umount /mnt
+  fi
+done
+
+log_end_msg 
+
+exit 0
+
+EOF
+
+/root/bin/chmod +x /root/etc/init.d/extradebs
+
+# creating symbolic links in /etc/rc?.d/ to /etc/init.d/extradebs
+chroot /root update-rc.d extradebs start 37 S .
+
+
+log_end_msg
