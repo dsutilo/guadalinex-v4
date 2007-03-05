@@ -1,3 +1,9 @@
+guadalinex-supplement-installer (0.2.1) unstable; urgency=low
+
+  * Fixed some issues.
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Mon,  5 Mar 2007 16:42:26 +0100
+
 guadalinex-supplement-installer (0.2) unstable; urgency=low
 
   * Initial release for gv4.
