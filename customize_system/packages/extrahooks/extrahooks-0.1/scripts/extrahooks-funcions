@@ -7,6 +7,10 @@ is_valid_dir () {
   return $?
 }
 
+get_fstype () {
+/lib/udev/vol_id -t $1 || true
+}
+
 extra_main () {
   # Checking for block devices
   if [ ! -d /mnt ]; then
@@ -15,17 +19,19 @@ extra_main () {
   for dev in $(echo /dev/[sh]d[a-z]*)
     do
     fs=""
-    fs=$(sudo /lib/udev/vol_id -t $dev 2> /dev/null)
-    if [ -z "$fs" -o "$fs" = "swap" ]; then
-      if [ ! $(mount -t $fs $dev /mnt/) ]; then
-        continue
-      elif [ ! is_valid_dir ];then
-        umount /mnt
-        continue
-      fi
-      do_it
+    fs=$(get_fstype $dev)
+    case $fs in
+      ""|swap|unknown)
+            continue ;;
+    esac
+    if ( ! $(mount -r -t $fs $dev /mnt/) ); then
+      continue
+    elif ( ! is_valid_dir );then
       umount /mnt
+      continue
     fi
+    do_it
+    umount /mnt
   done
 
 }
