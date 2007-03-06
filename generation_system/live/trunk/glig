@@ -188,6 +188,9 @@ echo \"Warning: Fake start-stop-daemon called, doing nothing\"" > ${sources}/sbi
     apt_get install guadalinex-artwork guadalinex-doc casper casper-guada ubiquity-casper-guada ubiquity-frontend-gtk ubiquity-ubuntu-artwork ubiquity-guadalinex-lang xfsprogs jfsutils ntfsprogs discover1 xresprobe laptop-detect libgl1-mesa-glx
     apt_get install
 
+    apt_get install extrahooks-casper extrahooks-ubiquity
+    apt_get install
+
     apt_get install guadalinex-desktop
     apt_get install
     
