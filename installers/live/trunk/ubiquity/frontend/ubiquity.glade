@@ -86,7 +86,8 @@
 	      <child>
 		<widget class="GtkNotebook" id="steps">
 		  <property name="visible">True</property>
-		  <property name="show_tabs">False</property>
+		  <property name="can_focus">True</property>
+		  <property name="show_tabs">True</property>
 		  <property name="show_border">False</property>
 		  <property name="tab_pos">GTK_POS_TOP</property>
 		  <property name="scrollable">False</property>
@@ -2776,16 +2777,16 @@ You must mount one partition on the root file system (&quot;/&quot;), and you mu
 			      <child>
 				<widget class="GtkLabel" id="label7">
 				  <property name="visible">True</property>
-				  <property name="label" translatable="yes">Bla Bla Bla .... Texto informativo sobre el DiskPreview ... Bla Bla Bla</property>
+				  <property name="label" translatable="yes">A continuación se presenta una previsualización del &lt;b&gt;contenido de todas las particiones&lt;/b&gt; detectadas en su ordenador.</property>
 				  <property name="use_underline">False</property>
-				  <property name="use_markup">False</property>
+				  <property name="use_markup">True</property>
 				  <property name="justify">GTK_JUSTIFY_LEFT</property>
-				  <property name="wrap">False</property>
+				  <property name="wrap">True</property>
 				  <property name="selectable">False</property>
 				  <property name="xalign">0</property>
 				  <property name="yalign">0.5</property>
 				  <property name="xpad">6</property>
-				  <property name="ypad">10</property>
+				  <property name="ypad">12</property>
 				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
 				  <property name="width_chars">-1</property>
 				  <property name="single_line_mode">False</property>
