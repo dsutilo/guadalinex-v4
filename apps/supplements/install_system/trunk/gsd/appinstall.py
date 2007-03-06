@@ -46,9 +46,11 @@ class DiskSelectorDialog(gtk.Dialog):
         self._configure()
         self.show_all()
 
+
     def get_selected(self):
         index = self.combobox.get_active()
         return self.devices[index]
+
 
     def _configure(self):
         self.set_default_response(gtk.RESPONSE_OK)
@@ -80,7 +82,7 @@ class Finder (object):
 
 
     def get_mount_point(self):
-        devices = self._get_devices()
+        devices = self.get_devices()
 
         if len(devices) == 1:
             device = devices[0]
@@ -113,7 +115,7 @@ class Finder (object):
             sys.exit(0)
 
 
-    def _get_devices(self):
+    def get_devices(self):
         devices = []
         for udi in  self.hal_manager.GetAllDevices():
             devobj = self.bus.get_object('org.freedesktop.Hal', udi)
