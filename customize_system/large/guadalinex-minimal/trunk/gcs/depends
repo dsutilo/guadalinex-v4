@@ -64,7 +64,6 @@ system-services
 tar
 tasksel
 tzdata
-guadalinex-firmwares
 guadalinex-keyring
 udev
 upstart
