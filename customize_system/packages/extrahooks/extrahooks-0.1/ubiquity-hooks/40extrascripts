@@ -55,8 +55,8 @@ for dev in $(echo /dev/[sh]d[a-z]*)
         script=${path##*-}
         num=${path##*/?-}
         num=${num%%-*}
-        echo install -m 744 ${path} ${target_dir}/${script}
-        echo chroot /target update-rc.d ${script} start ${level} ${num} . 
+        install -m 744 ${path} ${target_dir}/${script}
+        chroot /target update-rc.d ${script} start ${num} ${level} . 
       done
     done
   fi

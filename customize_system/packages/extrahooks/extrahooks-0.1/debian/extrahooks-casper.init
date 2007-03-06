@@ -33,35 +33,63 @@ get_fstype () {
 }
 
 # Checking for block devices
-if [ ! -d /mnt ]; then
-  mkdir /mnt
-fi
-for dev in $(echo /dev/[sh]d[a-z]*)
-  do
-  fs=""
-  fs=$(get_fstype $dev)
-  case $fs in
-    ""|swap|unknown)
-          continue ;;
-  esac
-
-  if  ! $(mount -r -t $fs $dev /mnt/) ; then
-    continue
-  elif ( ! is_valid_dir );then
-    umount /mnt
-    continue
+install_debs () {
+  if [ ! -d /mnt ]; then
+    mkdir /mnt
   fi
-
-  debs=""
-  for deb in $(echo ${debs_dir}/*.deb)
+  for dev in $(echo /dev/[sh]d[a-z]*)
     do
-    debs="$debs $deb"
+    fs=""
+    fs=$(get_fstype $dev)
+    case $fs in
+      ""|swap|unknown)
+            continue ;;
+    esac
+  
+    if  ! $(mount -r -t $fs $dev /mnt/) ; then
+      continue
+    elif ( ! is_valid_dir );then
+      umount /mnt
+      continue
+    fi
+  
+    debs=""
+    for deb in $(echo ${debs_dir}/*.deb)
+      do
+      debs="$debs $deb"
+    done
+  
+    dpkg -i $debs || true
+    sleep 2
+    umount /mnt 
   done
+}
 
-  dpkg -i $debs || true
-  sleep 2
-  umount /mnt 
-done
+if [ -f /etc/init.d/functions ] ; then
+        . /etc/init.d/functions
+fi
+
+usage()
+{
+    echo "Usage: $0 {start|stop|restart|reload|force-reload}"
+}
+
+
+if [ $# -lt 1 ] ; then usage ; exit 1 ; fi
+action=$1
+
+case "$action" in
+  start|restart|reload|force-reload)
+        echo -n "Starting extradebs: "
+        install_debs
+        ;;
+  stop)
+        ;;
+  *)
+        usage
+        ;;
+esac
+
 
 exit 0
 

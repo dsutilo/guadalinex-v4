@@ -39,6 +39,7 @@ binary-arch: build install
 	dh_installdocs -a
 	dh_installman -i
 	dh_installchangelogs -a
+	dh_installinit --no-start -r -- start 37 S .
 	#dh_link -a
 	dh_compress -a
 	dh_fixperms -a
