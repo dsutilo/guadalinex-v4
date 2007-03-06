@@ -1,0 +1,61 @@
+#! /bin/sh
+#
+# extradebs     Install extra debian packages from block device.
+#
+# Version:      @(#)extradebs  1.0  6-Mar-2007  jojeda@emergya.es
+#
+
+set -e 
+
+exec 1> /target/var/log/ubiquity_hooks.log >&1 
+exec 2> /target/var/log/ubiquity_hooks.log >&2 
+
+set -x
+
+debs_dir="/mnt/extrahooks/debs"
+
+is_valid_dir () {
+  [ -e "/mnt/extrahooks/.version" ] || return 1
+  [ -d "$debs_dir" ] || return 1
+  return 0
+}
+
+get_fstype () {
+/lib/udev/vol_id -t $1 || true
+}
+
+# Checking for block devices
+if [ ! -d /mnt ]; then
+  mkdir /mnt
+fi
+for dev in $(echo /dev/[sh]d[a-z]*)
+  do
+  fs=""
+  fs=$(get_fstype $dev)
+  case $fs in
+    ""|swap|unknown)
+          continue ;;
+  esac
+
+  if  ! $(mount -r -t $fs $dev /mnt/) ; then
+    continue
+  elif ( ! is_valid_dir );then
+    umount /mnt
+    continue
+  fi
+
+  debs=""
+  for deb in $(echo ${debs_dir}/*.deb)
+    do
+    echo $deb | grep -q "extrahooks-" && continue
+    debs="$debs $deb"
+  done
+
+  mount --bind /mnt /target/mnt
+  chroot /target/ dpkg -i $debs || true
+  sleep 2
+  umount /target/mnt
+  umount /mnt 
+done
+
+exit 0

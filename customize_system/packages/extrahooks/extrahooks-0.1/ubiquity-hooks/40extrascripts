@@ -1,0 +1,71 @@
+#! /bin/sh
+#
+# extramodules  Install extra kernel modules from block device.
+#
+# Version:      @(#)extradebs  1.0  6-Mar-2007  jojeda@emergya.es
+#
+
+set -e 
+
+exec 1> /target/var/log/ubiquity_hooks.log >&1 
+exec 2> /target/var/log/ubiquity_hooks.log >&2 
+
+set -x
+
+initramfs_dir="/mnt/extrahooks/scripts/initramfs"
+init_dir="/mnt/extrahooks/scripts/init.d"
+target_dir="/target/etc/init.d"
+
+is_valid_dir () {
+  [ -e "/mnt/extrahooks/.version" ] || return 1
+  return 0
+}
+
+get_fstype () {
+/lib/udev/vol_id -t $1 || true
+}
+
+# Checking for block devices
+if [ ! -d /mnt ]; then
+  mkdir /mnt
+fi
+for dev in $(echo /dev/[sh]d[a-z]*)
+  do
+  fs=""
+  fs=$(get_fstype $dev)
+  case $fs in
+    ""|swap|unknown)
+          continue ;;
+  esac
+
+  if  ! $(mount -r -t $fs $dev /mnt/) ; then
+    continue
+  elif ( ! is_valid_dir );then
+    umount /mnt
+    continue
+  fi
+
+  # Install initscripts to the target system
+  if [ -d "$init_dir" ]; then
+    for level in S 0 2 6
+      do
+      scripts_path="${init_dir}/${level}-"
+      for path in ${scripts_path}*
+        do
+        script=${path##*-}
+        num=${path##*/?-}
+        num=${num%%-*}
+        echo install -m 744 ${path} ${target_dir}/${script}
+        echo chroot /target update-rc.d ${script} start ${level} ${num} . 
+      done
+    done
+  fi
+
+  if [ -d "$initramfs_dir" ]; then
+    install -m 744 $initramfs_dir/* /taget/usr/share/initramfs-tools/scripts/casper-bottom/
+  fi
+
+  umount /mnt 
+done
+
+exit 0
