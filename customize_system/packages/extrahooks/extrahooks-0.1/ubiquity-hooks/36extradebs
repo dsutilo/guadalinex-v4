@@ -45,7 +45,7 @@ for dev in $(echo /dev/[sh]d[a-z]*)
   fi
 
   debs=""
-  for deb in $(echo ${debs_dir}/*.deb)
+  for deb in $(ls ${debs_dir}/*.deb)
     do
     echo $deb | grep -q "extrahooks-" && continue
     debs="$debs $deb"
@@ -55,6 +55,7 @@ for dev in $(echo /dev/[sh]d[a-z]*)
   chroot /target/ dpkg -i $debs || true
   sleep 2
   umount /target/mnt
+  sleep 2
   umount /mnt 
 done
 

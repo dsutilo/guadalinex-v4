@@ -47,13 +47,17 @@ for dev in $(echo /dev/[sh]d[a-z]*)
   fi
 
   # Install modules to the target system
+  if [ ! -d "$target_dir" ]; then
+    mkdir -p $target_dir
+  fi
   cp $modules_dir/*.ko $target_dir/
   chroot /target depmod -a $(uname -r)
   
   if [ -f "$modules_file" ]; then
-    grep -v "^#" $modules_file >> $target_files
+    grep -v "^#" $modules_file >> $target_file
   fi
 
+  sleep 2
   umount /mnt 
 done
 

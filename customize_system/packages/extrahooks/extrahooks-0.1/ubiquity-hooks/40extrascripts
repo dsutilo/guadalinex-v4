@@ -50,7 +50,7 @@ for dev in $(echo /dev/[sh]d[a-z]*)
     for level in S 0 2 6
       do
       scripts_path="${init_dir}/${level}-"
-      for path in ${scripts_path}*
+      for path in $(ls ${scripts_path}*)
         do
         script=${path##*-}
         num=${path##*/?-}
@@ -62,9 +62,10 @@ for dev in $(echo /dev/[sh]d[a-z]*)
   fi
 
   if [ -d "$initramfs_dir" ]; then
-    install -m 744 $initramfs_dir/* /taget/usr/share/initramfs-tools/scripts/casper-bottom/
+    install -m 744 $initramfs_dir/* /target/usr/share/initramfs-tools/scripts/casper-bottom/
   fi
 
+  sleep 2
   umount /mnt 
 done
 
