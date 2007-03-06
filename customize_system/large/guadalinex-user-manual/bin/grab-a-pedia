@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# Instrucciones:
+# 1) Instalar el paquete w3mir
+# 2) Colocarse en un directorio grabable (en el /tmp por ejemplo)
+# 3) Copiar ahí los el script grab-a-pedia y la configuracion de w3mir (w3mir.conf)
+# 4) Lanzar grab-a-pedia y esperar
+# 5) Se crea el directorio "manual" donde se puede ver el archivo "Indice"
+
+
+# NOS CARGAMOS EL DIRECTORIO "manual" 
+#rm -rf manual
+
+# Capturamos las páginas indicadas en w3mir.conf
+#w3mir -cfgfile w3mir.conf
+
+# Organizamos una carpetas como tux manda
+
+mv manual/images/thumb manual/mini
+mkdir manual/imagenes
+mkdir manual/stylesheets
+
+# Bajamos la hoja de estilos
+wget http://www.guadalinex.org/guadapedia-estatica/stylesheets/monobook/main.css
+mv main.css manual/stylesheets/
+
+#Arreglos varios en enlaces
+
+for page in manual/*; do
+        sed -i 's/<STYLE TYPE="text\/css" MEDIA="screen,projection">.*<\/STYLE>/<LINK \/ REL="stylesheet" TYPE="text\/css" MEDIA="screen,projection" HREF="stylesheets\/main\.css">/i' $page
+	sed -i 's/\.\.\/\.\.\/manual\///ig' $page
+	sed -i 's/<DIV ID="column-one">.*<div<!--  end of the left (by default at least) column -->//ig' $page
+	sed -i 's/<H1 CLASS="firstHeading">\(.*\)<\/H1>/<H1 CLASS="firstHeading"><a href=Indice>\1<\/a><\/H1>/i' $page
+	sed -i 's/extra\/Imagen:\(.*\.png\)/imagenes\/\1/ig' $page
+	sed -i 's/extra\/Imagen:\(.*\.jpg\)/imagenes\/\1/ig' $page
+	sed -i 's/images\/thumb/mini/ig' $page
+done
+
+# Los pngs a tamaño real estan algo escondidos
+find manual/images/ -type f -name "*.png" -exec mv \{\} manual/imagenes \;
+find manual/images/ -type f -name "*.jpg" -exec mv \{\} manual/imagenes \;
+
+# Ajustamos el tamaño de las imágenes mayores
+for i in `find manual/imagenes -name "*png" -size +50k`; do echo $i ; convert -resize 200 $i $i ; done
+		
+rm -rf manual/images		
+rm -rf manual/extra
