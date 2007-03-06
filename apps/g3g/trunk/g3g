@@ -40,7 +40,7 @@ if [ -e "$SELECTED" ]; then
    done
 fi
 
-SELECTION=`zenity --height=300 --window-icon=/usr/share/pixmaps/g3g.png --list --radiolist --title="Asistente para conexión 3G" --text="Actualmente existe soporte en Guadalinex para los siguientes operadores.\n Seleccione el suyo para lanzar el programa apropiado" --column="" --column="OPERATORS" ${OPERATORS[@]}`
+SELECTION=`zenity --height=300 --window-icon=/usr/share/pixmaps/g3g.png --list --radiolist --title="Asistente para conexión 3G" --text="Actualmente existe soporte en Guadalinex para los siguientes operadores.\n Seleccione el suyo para lanzar el programa apropiado" --column="" --column="OPERADORES" ${OPERATORS[@]}`
 
 if [ -z "$SELECTION" ];then
     exit 1
