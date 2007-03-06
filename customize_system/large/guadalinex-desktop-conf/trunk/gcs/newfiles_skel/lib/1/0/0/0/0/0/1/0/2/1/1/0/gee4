@@ -1,0 +1,169 @@
+#!/usr/bin/python
+
+# G u a d a l i n e x  E a s t e r  E g g  4v4
+# by Alfonso E.M.
+# Free (GPL) but a bit obfuscated code :-)
+
+from __future__ import division
+from visual import *
+from visual.text import *
+import random
+import base64
+
+
+PI=3.14
+
+def stuff():
+        return '''
+R1VBREFMSU5FWCBWNApDT0RFTkFNRTogVE9STwpAMC43LDAuMSwwLjEsMSwxLGZvcndhcmQKREVE
+SUNBREEgQQpKT1NFIE1BUklBIFJPRFJJR1VFWgpQT1IgU1UgQ09ORklBTlpBCkVOIE5PU09UUk9T
+ClkgRU4gRUwgClNPRlRXQVJFIExJQlJFCkAwLjEsMC4xLDAuOSwwLjgsMC44LGZvdgpDUkVBREEg
+UE9SCkAwLjIsMC4yLDEsMSwxLGZvdgpMQSBKVU5UQSBERSBBTkRBTFVDSUE6ClBFUEUgWSBKVUFO
+CkAwLjEsMC4xLDAuOSwxLDEsZm92ClNBREVTSToKQUxGT05TTy1USVZJLUxVSVMtRlJBTiAKQDAu
+MSwwLjEsMC45LDEsMSxmb3YKRU1FUkdZQToKUkFGQS1DQVJMT1MtR1VNRVIKREFWSUQtSlVBTkpF
+LUpFU1VTCkAwLjEsMC4xLDAuOSwxLDEsZm92CllBQ08tQ09OU1VMVE9SSUE6ClZJR1UtRVJOWS1H
+SEUKR0FCUklFTC1MT1JFTlpPOgpAMC4xLDAuMSwwLjksMSwxLGZvdgpPUEVOU0hJTkU6ClJPQkVS
+VE8tSkFWSUVSLUFMVkFSTwpAMC4xLDAuMSwwLjksMSwxLGZvdgpDQU5PTklDQUwKVEVMRUZPTklD
+QQpWT0RBRk9ORQpAMC4xLDAuMSwwLjksMSwxLGZvdgpHUkFDSUFTCkEgTEFTIEVNUFJFU0FTClFV
+RSBIQU4gQ09MQUJPUkFETwpAMC4xLDAuMSwwLjksMC44LDAuOCxmb3YKSU5URUwgLSBIUCAtIEMz
+UE8KR1JBRUYgLSBFRE0KQ0VQRVMtQU5EQUxVQ0lBCkVESVRMSU4gLSBTTUFSVApAMC4xLDAuMSww
+LjksMSwxLGZvdgpZIEE6CkRKIENBUkxPUyBKSU1FTkVaCkRKIFNVUFUKWSBESiBST0QgU0FMVkFE
+T1IKUE9SIEVMIFNPTklETyBERSBJTklDSU8KQDAuMSwwLjEsMC45LDEsMSxmb3YKVU4gQUJSQVpP
+IEEgTE9TClFVRSBWSU5JRVJPTiBBTCAKRU5DVUVOVFJPIApERSBDT0xBQk9SQURPUkVTCkRFIEdV
+QURBTElORVgKQDAuMSwwLjEsMC45LDAuOCwwLjgsZm92ClkgQSBMT1MgUVVFIEFZVURBUk9OCkEg
+UFJPQkFSIExBUyBCRVRBUwpAMC4xLDAuMSwwLjksMSwxLGZvdgpHVUFEQUxJTkVYIFY0CldXVy5H
+VUFEQUxJTkVYLk9SRwpAMC45LDAuMSwwLjEsMSwxLGZvcndhcmQKUVVFIE1BUyBQT0RFTU9TIERF
+Q0lSCkAwLjEsMC4xLDAuOSwxLDEsZm92ClNPUlBSRU5ERSBWRVIKQSBUQU5UT1MgVVNVQVJJT1MK
+WUEgQUNPU1RVTUJSQURPUyBBIApNT1ZFUlNFIENPTiBTT0xUVVJBIEVOIAotTEEgR1VBREFMSU5F
+WC0KQDEsMC41LDAuNiwuOCwuOCxmb3J3YXJkClVOIFNBTFVETyBBIApHTlUtTElORVggLSBMSU5L
+QVQKTExJVVJFWCAtIE1BWApNRURVWEEgLSBNRUxJTlVYCk1PTElOVVggLSBUSVJXQUwgCkVUQyBF
+VEMKQDAuMSwwLjEsMC45LDEsMSxmb3YK
+
+'''
+
+
+
+
+scene.fullscreen=0
+size=width,height=800,600
+scene.width=width
+scene.height=height
+scene.title="Guadalinex V4 Credits"
+scene.background = (0.1,0.1,0.1)
+scene.cursor.visible = 0
+scene.autoscale=0
+scene.autocenter=0
+
+def showblock(block,r,g,b,textheight,textwidth,effect):
+  
+  textheight=textheight/10
+  textwidth=textwidth/10
+  
+  y=textheight*(len(block)+1)
+  
+  for line in block:
+    x=-(textwidth*len(line)/2)
+    x=0
+    y=y-textheight*2
+    text(justify='center',pos =(x,y,0), string =line, height=textheight, depth=0.4,width=textwidth,color = (r,g,b))
+
+  for n in range(1,10):
+    sc=n/10
+    scene.scale=(sc,sc,sc)
+    rate(20)
+
+    
+  if effect == 'fov':
+    x=PI/2
+    while x < PI:
+      scene.fov=x
+      x = x + (PI/90)
+      rate(20)
+  elif effect == 'forward':
+     f=0
+     while f<4*PI:
+       f=f+0.02
+       scene.forward=(sin(f),-sin(f/2),-1)
+       rate(20)
+
+  for obj in scene.objects: 
+    obj.visible=0
+    
+  scene.fov=PI/2
+  scene.forward=(0,0,-1)
+  scene.scale=(.1,.1,.1)
+ 
+ 
+#  
+# The simple "main" (Objects not required for this thingy) :-)
+#
+
+block=[]
+
+k=''
+while k != "x":
+  for l in base64.decodestring(stuff()).split("\n"):
+    l=l.rstrip("\n")
+    if l.startswith("@"):
+      r,g,b,height,width,effect=l[1:].split(",")
+      showblock(block,float(r),float(g),float(b),float(height),float(width),effect)
+      block=[]
+    else:
+      block.append(l)
+
+    if scene.kb.keys:
+      k = scene.kb.getkey()
+      if k == 'x':
+         break
+
+
+# Lets add one hidden feature ;-)
+        
+disc=[]
+idisc=0
+for loads in range(120):
+  if loads < 80:
+    x=(random.random()*30)-15
+    y=(random.random()*10)-5
+    z=-150
+    onedisc=cylinder(pos=(x,y,z), axis=(0,.1,0), radius=2,color=(.1,.1,.8))
+    if len(disc) > idisc:
+      disc[idisc].visible=0
+      disc[idisc]=onedisc
+    else:
+      disc.append(onedisc)
+  idisc=idisc+1
+
+  if idisc == 20:
+    idisc = 0
+  for iter in range(2):
+    for onedisc in disc:
+      onedisc.z=onedisc.z+5
+      rate(1000)
+  
+monolith=box(pos=(0,0,-259), length=2, height=3, width=.1,color=(0.01,0.01,0.01))
+for iter in range(133):
+  monolith.z=monolith.z+2
+  rate(25)
+print monolith.z
+rate(1)
+l1=text(justify='center',pos =(0,+.4,8), string ='DIOS MIO', height=.20, depth=0.1,width=.14,color = (1,1,1))
+rate(1)
+l2=text(justify='center',pos =(0,-.4,8), string ='ESTA LLENO DE GUADALINEX', height=.25, depth=0.1,width=.18,color = (1,1,1))
+
+for a in range(160):
+  monolith.rotate(angle=0.01)
+  rate(20)
+
+for a in range(50):
+  scene.fov=scene.fov+0.03
+  c=a/50.
+  scene.background=(c,c,c)
+  rate(20)
+
+l1.visible=0
+l2.visible=0
+monolith.visible=0
+scene.fov=PI/2
+text(justify='center',pos =(0,0,0), string ='THE END', height=2,depth=0.1,width=2,color = (0,0,0))
+# That's all !
