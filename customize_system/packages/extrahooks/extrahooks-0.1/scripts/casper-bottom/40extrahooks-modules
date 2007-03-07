@@ -41,7 +41,7 @@ do_it () {
        if [ "$com" = "#" ]; then
          continue
        fi
-       modprobe -q $m $args
+       insmod $m $args
      done
   fi
 }
