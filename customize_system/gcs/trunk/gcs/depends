@@ -10,3 +10,4 @@ debhelper
 devscripts
 make
 fakeroot
+gcc
