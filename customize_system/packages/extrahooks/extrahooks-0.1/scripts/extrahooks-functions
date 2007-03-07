@@ -30,7 +30,7 @@ extra_main () {
       umount /mnt
       continue
     fi
-    do_it
+    do_it || true
     umount /mnt
   done
 

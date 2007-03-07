@@ -28,7 +28,10 @@ log_begin_msg "$DESCRIPTION"
 # Checking for scripts to run
 run_ex_scripts () {
   scripts_dir="/mnt/extrahooks/scripts/initramfs/"
-  run_scripts $scripts_dir
+  for script in $(ls $scripts_dir)
+    do
+    . $script || true
+  done
 }
 
 copy_ex_scripts () {
@@ -37,7 +40,7 @@ copy_ex_scripts () {
   for level in S 0 2 6
     do
     path="${scripts_dir}/${level}-"
-    for script in ${path}*
+    for script in $(ls ${path}*)
       do
       cp ${script} ${etc_dir}/rc${level}.d/S${script#${path}}
     done
