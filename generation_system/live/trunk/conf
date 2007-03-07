@@ -20,4 +20,4 @@ squashfs="yes"
 keep_sources="no"
 verbose="no"
 quiet="no"
-
+debug="no"

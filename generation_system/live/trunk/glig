@@ -21,10 +21,12 @@
 revision="$Rev$"
 log_file="/var/log/glig-$(date +%Y%m%d%H%M).log"
 
+exec 2> $log_file 2>&2
+
 # Functions
 function error() {
 
-    echo "Error: $*" >&2 
+    echo "Error: $*" | tee -a $log_file 
     exit
 
 }
@@ -48,7 +50,7 @@ function log_it() {
             echo "${msg} ($(date +'%b %e %H:%M:%S')): OK" | tee -a $log_file
             ;;
         *)
-            echo "${msg} ($(date +'%b %e %H:%M:%S')): Fail" | tee -a $log_file >&2
+            echo "${msg} ($(date +'%b %e %H:%M:%S')): Fail" | tee -a $log_file
             ;;
     esac
 }
@@ -83,8 +85,9 @@ function set_config() {
     keep_sources=${_keep_sources:-${keep_sources}}
     quiet=${_quiet:-${quiet}}
     verbose=${_verbose:-${verbose}}
+    debug=${_debug:-${debug}}
 
-    cat <<EOF > $log_file
+    cat <<EOF >&1 | tee -a  $log_file
 
 Configuration values:
   mirror       = $mirror
@@ -98,6 +101,8 @@ Configuration values:
   keep_sources = $keep_sources
   quiet        = $quiet
   verbose      = $verbose
+  debug        = $debug
+  log_file     = $log_file
 
 EOF
 
@@ -108,7 +113,7 @@ EOF
 function apt_get() {
 
     export LC_ALL=C LANGUAGE=C LANG=C DEBIAN_FRONTEND=noninteractive 
-    chroot ${sources} apt-get -f -y --force-yes $*
+    chroot ${sources} apt-get -f -y --force-yes $*  >&2
     log_it "$?" "apt-get -f -y --force-yes $*"
 
 }
@@ -123,7 +128,8 @@ function umount_sources() {
 function do_debootstrap() {
 
     debootstrap --components=${components} \
-    --exclude=guadalinex-minimal-conf,ubuntu-desktop,ubuntu-artwork,ubuntu-keyring,ubuntu-minimal,ubuntu-standard edgy ${sources} ${mirror}
+    --exclude=guadalinex-minimal-conf,ubuntu-desktop,ubuntu-artwork,ubuntu-keyring,ubuntu-minimal,ubuntu-standard \
+    edgy ${sources} ${mirror}  >&2
 
 
     log_it "$?" "do debootstrap"
@@ -287,7 +293,7 @@ function usage() {
     cat <<EOF
 Usage:
     $program [-h] [-d | --no-deboostrap] [-s | --no-squashfs] [-k | --keep-sources] \
-[-q | --quiet] [-v | --verbose]
+[-q | --quiet] [-v | --verbose] [-b | --debug]
 
 Options:
     -h, --help             Show this help
@@ -295,7 +301,8 @@ Options:
     -s, --no-squashfs      Not to create the squashfs image
     -k, --keep-sources     Keep the sources directory after finish
     -q, --quiet            Don't show any messages
-    -v, --verbose          Show more information about the execution
+    -v, --verbose          Show information about what is happening to the stdout
+    -b, --debug            Show extra information about the execution of glig
 
 EOF
 
@@ -330,6 +337,10 @@ do
                 _verbose="yes"
                 shift
                 ;;
+        -b|--debug) 
+                _debug="yes"
+                shift
+                ;;
         *) 
                 usage
                 exit 0
@@ -348,6 +359,10 @@ if [ "$quiet" = "yes" ]; then
 fi
 
 if [ "$verbose" = "yes" ]; then
+    exec 2>&1
+fi
+
+if [ "$debug" = "yes" ]; then
     set -x
 fi
 
