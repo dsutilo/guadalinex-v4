@@ -20,5 +20,5 @@ esac
 
 cp -a /usr/share/extrahooks-casper/scripts/casper-bottom/* $DESTDIR/scripts/casper-bottom/
 
-cp -a /usr/share/extrahooks-casper/scripts/extrahooks-funcions $DESTDIR/scripts/
+cp -a /usr/share/extrahooks-casper/scripts/extrahooks-functions $DESTDIR/scripts/
 
