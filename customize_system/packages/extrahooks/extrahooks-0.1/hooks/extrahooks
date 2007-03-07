@@ -16,9 +16,11 @@ case "$1" in
        ;;
 esac
 
-. /usr/share/initramfs-tools/hook-functions
+# FIXME: We comment out this lines while testing stability of these scripts
 
-cp -a /usr/share/extrahooks-casper/scripts/casper-bottom/* $DESTDIR/scripts/casper-bottom/
-
-cp -a /usr/share/extrahooks-casper/scripts/extrahooks-functions $DESTDIR/scripts/
+#. /usr/share/initramfs-tools/hook-functions
+#
+#cp -a /usr/share/extrahooks-casper/scripts/casper-bottom/* $DESTDIR/scripts/casper-bottom/
+#
+#cp -a /usr/share/extrahooks-casper/scripts/extrahooks-functions $DESTDIR/scripts/
 
