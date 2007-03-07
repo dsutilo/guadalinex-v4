@@ -1,0 +1,27 @@
+Accesibilidad en ubiquity
+-------------------------
+
+* La interfaz es :
+  - navegable con teclado y a traves de onboard
+  - Soporta cambios de tema de accesibilidad
+    + Los temas de accesibilidad algunos de ellos tienen tipografia propia
+    para hacer mas grande la fuente del sistema. Dependiendo de que pantalla
+    esto se hace un poco inusable. Porque se descuadra todo el instalador. 
+    Abria que recomendar el uso del magnificador (orca) que seria la solucion 
+    mas elegante.
+    
+    + Los inconos de los temas de accesibilidad todavia no estan acualizados al
+    stock de iconos actual. Por lo que sera probable que si se usa el
+    DiskPreview con los temas de accesibilidad, se vea algun icono que no 
+    concuerda con el tema de iconos de accesibilidad sino que sera parte del
+    juego de iconos del general
+  - Soporta cambios de tipografia
+  - Soporta resoluciones de 1024x768 y superiores
+  - Incorpora etiquetas atk en los widgets de la interfaz
+    + Tiene etiquetas tanto en los glade como en el codigo. Hasta donde fue 
+    posible
+	Problemas:
+	+ Las etiquetas no las recoje orca, a pesar de que estan puestas. Lo
+	cual significa que orca no lo lee.
+	+ Orca tiene una extension para ubiquity, pero ni siquiera en edgy
+	la hemos conseguido hacer funcionar
