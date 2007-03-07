@@ -7,8 +7,8 @@
 
 set -e 
 
-exec 1> /target/var/log/ubiquity_hooks.log >&1 
-exec 2> /target/var/log/ubiquity_hooks.log >&2 
+ 
+exec > /target/var/log/ubiquity_hooks.log 2>&1 
 
 set -x
 

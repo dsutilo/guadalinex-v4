@@ -1,6 +1,6 @@
 #!/bin/sh
 
-exec 2> /root/var/log/initramfs.log 2>&2
+exec > /root/var/log/initramfs.log 2>&1
 
 set -x
 
