@@ -27,24 +27,25 @@ log_begin_msg "$DESCRIPTION"
 
 
 do_it () {
-  MODULES_DIR="/mnt/extrahooks/modules"
-  MODULES_FILE="${MODULES_DIR}/modules.conf"
+  modules_dir="/mnt/extrahooks/modules"
+  modules_file="${modules_dir}/modules.conf"
   
-  if [ -e "$MODULES_FILE" ]; then
-     cat $MODULES_FILE | while read m args; do
+  if [ -e "$modules_file" ]; then
+     cat $modules_file | while read m args; do
        # Skip empty lines
        if [ -z "$m" ];  then
          continue
        fi
        # Skip comments - d?ash removes whitespace prefix
-       com=$(printf "%.1s" "${m}")
-       if [ "$com" = "#" ]; then
+       if ( $(echo $m | grep -q '^#') ); then
          continue
        fi
-       insmod $m $args
+       insmod $m $args || true
      done
   fi
 }
+
+. /scripts/extrahooks-functions
 
 extra_main
 
