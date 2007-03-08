@@ -1,0 +1,21 @@
+Template: guadalinex-mini-first-message/title
+Type: title
+_Description: Bienvenido
+
+Template: guadalinex-mini-first-message/first-message
+Type: note
+_Description: Bienvenido a Guadalinex Mini V4
+ A continuación dará comienzo la instalación de Guadalinex Mini. 
+ .
+ Le recordamos la importancia de realizar una copia de seguridad de sus datos 
+ y aplicaciones más importantes antes de continuar.
+
+Template: guadalinex-mini-first-message/requirements
+Type: note
+_Description: Requisitos para la instalación
+ Para instalar y utilizar esta versión de Guadalinex en su 
+ ordenador necesitará al menos:
+ .
+ - 1 GB de espacio libre
+ .
+ - 32 MB de memoria RAM

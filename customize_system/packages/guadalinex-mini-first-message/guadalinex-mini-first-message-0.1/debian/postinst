@@ -1,0 +1,6 @@
+#!/bin/sh -e
+#DEBHELPER#
+
+guadalinex-mini-first-message
+
+exit 0
