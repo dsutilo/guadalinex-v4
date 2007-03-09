@@ -1,4 +1,4 @@
-RC1 (20070302)
+RC1 (20070309)
 ==============
 
 INSTALADOR LIVE (LIVE-INSTALLER)
@@ -26,9 +26,27 @@ instalador live (BTS 1106)
 - Corrección errores con pantalla demasiado grande con DiskPreview (BTS 1108)
 - "Instalar Guadalinex" no debe aparecer en el sistema instalado (BTS 997)
 
+INSTALADOR NO LIVE (DI-INSTALLER)
+---------------------------------
+
+- Corregido problema con la instalación OEM: ya sí se puede instalar en este
+modo.
+
+
+SISTEMA "LIVE" 
+--------------
+
+- Implementada funcionalidad de instalación dinámica de "add-ons" durante el
+arranque del sistema "live": extrahooks.
+
 PERSONALIZACIÓN Y CONFIGURACIÓN DEL SISTEMA (BRANDING)
 ------------------------------------------------------
 
+- Añadida aplicación "informe-hardware"
+- Creado enlace "Escritorio" a "Desktop" en home de los usuarios, para
+facilitar en lo posible el acceso al escritorio desde el navegador de
+ficheros.
+- Incluido soporte de escritura para NTFS (incluido paquete ntfs-config)
 - Creación de un nuevo tema de escritorio incluyendo la nueva imagen
 corporativa
 - Creación de un nuevo tema para GDM incluyendo la nueva imagen corporativa
@@ -58,7 +76,7 @@ de:
 - Incluida nueva imagen para GRUB
 - Incluida nuevas imágenes para usplash + recompilación
 - Incluida imagen nueva para isolinux
-- Personalizado sonido de inicio de sesión para GDM
+- Personalizado sonido de inicio de sesión 
 - Traducido "MOTD" (Message Of The Day)
 - Incluido sistema de instalación de extras
 - Corregidas opciones de accesibilidad de arranque
@@ -80,9 +98,9 @@ Ayuda,...)
 - Soporte para gestión de menús de arranque: incluido grubaker (BTS 1159)
 - Solucionado error con las categorías de "Añadir / Quitar programas" que
 aparecían en inglés, heredado de Ubuntu (BTS 1222)
-- Actualizados los contenidos de la guía de Guadalinex v3 para generar la guía
-de Guadalinex v4 (pendiente de repasar contenidos y completar la
-actualización)
+- Incluida "guía de usuario": Actualizados los contenidos de la guía de Guadalinex
+v3 para generar la guía de Guadalinex v4 (pendiente de repasar contenidos y 
+completar la actualización)
 - Añadido soporte para webcam Logitech Quickcam express (BTS 1286)
 - Corregido problema con "orígenes de software", que no arranca (BTS 1047)
 - Traducidos textos del comprobador del CD (BTS 1171)
@@ -96,6 +114,12 @@ Guadalinex v4
 - Corregido problema con el título en inglés de F-Spot (BTS 1015)
 - Solucionado problema de instalación de "openoffice.org-officebean" (BTS
 1212) -> actualización de repositorios de guadalinex necesaria tras liberación
+- Solucionado problema del doble icono para gestión de conexiones de red en
+portátiles: se mantiene "network-manager" y se elimina "netapplet".
+- Generado e incluido paquete "guadalinex-linux-modules", para incluir módulos
+adicionales para el núcleo. Se ha incluido soporte para Attansic L1 Gigabit
+Ethernet (BTS 1299)
+- Corregido problema con el contraste en los combo. 
 
 HERMES
 ------
