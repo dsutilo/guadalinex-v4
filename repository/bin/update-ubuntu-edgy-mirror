@@ -8,10 +8,14 @@
 
 debmirror --ignore-release-gpg -v --host=$HOST_REPOSITORY --root=ubuntu/ --method=http --dist=edgy --section=main,main/debian-installer,restricted,universe,multiverse --arch=i386 $MIRROR_UBUNTU 
 
-if [ ! -L /var/mirror/ubuntu/dists/edgy/main/installer-i386 ]; then
+if [ ! -L $DIST_EDGY_INSTALLER ]; then
   ln -s $DERIVATIVE_INSTALLER/ $DIST_EDGY_INSTALLER 
 fi
 
-if [ ! -L /var/mirror/ubuntu/indices ]; then
+if [ ! -L $DIST_EDGY_INSTALLER_MINI ]; then
+  ln -s $DERIVATIVE_INSTALLER_MINI/ $DIST_EDGY_INSTALLER_MINI
+fi
+
+if [ ! -L $UBUNTU_INDICES ]; then
   ln -s $DERIVATIVE_INDICES $UBUNTU_INDICES 
 fi

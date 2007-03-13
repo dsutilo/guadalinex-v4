@@ -43,3 +43,4 @@ done
 apt-ftparchive -c apt.$CODENAME.conf generate $CODENAME.conf 
 apt-ftparchive -c apt.$CODENAME.conf generate $CODENAME-di.conf 
 apt-ftparchive -c apt.$CODENAME.conf release $DIST_EDGY > $DIST_EDGY/Release
+rm -rf $DIST_EDGY/Release.gpg
