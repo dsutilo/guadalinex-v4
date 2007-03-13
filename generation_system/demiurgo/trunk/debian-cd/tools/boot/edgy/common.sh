@@ -19,7 +19,11 @@ install_languages() {
 default_preseed() {
     case $PROJECT in
 	ubuntu)
-	    DEFAULT_PRESEED='file=/cdrom/preseed/ubuntu.seed'
+	    if [ "$CDIMAGE_MINI" = 1 ]; then
+	    	DEFAULT_PRESEED='file=/cdrom/preseed/mini.seed'
+	    else
+	    	DEFAULT_PRESEED='file=/cdrom/preseed/ubuntu.seed'
+	    fi
 	    ;;
 	kubuntu)
 	    DEFAULT_PRESEED='file=/cdrom/preseed/kubuntu.seed'

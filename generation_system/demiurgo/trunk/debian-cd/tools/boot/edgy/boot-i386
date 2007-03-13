@@ -22,7 +22,6 @@ fi
 if [ -z "$DI_PATH" ]; then
    DI_PATH="$($BASEDIR/tools/find-newest-installer)"
 fi
-
 default_preseed
 
 cd $CDDIR/..
@@ -87,7 +86,7 @@ if [ "$NN" = "1" ]; then
     fi
 
     rm -rf usr
-    if [ "$CDIMAGE_INSTALL_BASE" = 1 ]; then
+    if [ "$CDIMAGE_INSTALL_BASE" = 1 ] || [ "$CDIMAGE_MINI" = 1 ]; then
 	cp -lf cdrom/vmlinuz $CDDIR/install/
 	cp -lf cdrom/initrd.gz $CDDIR/install/
     fi
@@ -125,7 +124,7 @@ for disk in $DISK_IMAGES; do
 	cp -lf $disk $CDDIR/install/$dir
 done
 
-if [ "$CDIMAGE_INSTALL" = 1 ]; then
+if [ "$CDIMAGE_INSTALL" = 1 ] || [ "$CDIMAGE_MINI" = 1 ] ; then
 	for tar in $TAR_IMAGES; do
 		dir=$(dirname $tar)
 		mkdir -p $CDDIR/install/$dir
@@ -159,7 +158,7 @@ fi
 # Remove elilo configuration; only for Macs.
 rm -f boot$N/isolinux/elilo*
 rm -f boot$N/isolinux/*.msg*
-if [ "$CDIMAGE_INSTALL" = 1 ]; then
+if [ "$CDIMAGE_INSTALL" = 1 ] || [ "$CDIMAGE_MINI" = 1 ] ; then
     rm -f boot$N/isolinux/*.txt.live
     rm -f boot$N/isolinux/*.hlp.live
 else
@@ -252,7 +251,7 @@ LABEL xforcevesa
   append $KERNEL_PARAMS $DEFAULT_PRESEED boot=casper xforcevesa initrd=/casper/initrd.gz ramdisk_size=1048576 root=/dev/ram rw quiet splash --
 EOF
 fi
-if [ "$CDIMAGE_INSTALL" = 1 ]; then
+if [ "$CDIMAGE_INSTALL" = 1 ] || [ "$CDIMAGE_MINI" = 1 ] ; then
     if [ "$CDIMAGE_LIVE" != 1 ]; then
 	cat >> boot$N/isolinux/isolinux.cfg <<EOF
 APPEND $KERNEL_PARAMS $DEFAULT_PRESEED initrd=/install/initrd.gz ramdisk_size=16384 root=/dev/ram rw quiet --
@@ -295,7 +294,7 @@ LABEL workstation
   append $KERNEL_PARAMS file=/cdrom/preseed/workstation.seed initrd=/install/initrd.gz ramdisk_size=16384 root=/dev/ram rw quiet --
 EOF
     fi
-    if [ "$PROJECT" != edubuntu ] && [ "$PROJECT" != ubuntu-server ]; then
+    if [ "$PROJECT" != edubuntu ] && [ "$PROJECT" != ubuntu-server ] && [ "$CDIMAGE_MINI" != 1 ]; then
 	cat >> boot$N/isolinux/isolinux.cfg <<EOF
 LABEL oem
   menu label Install in ^OEM mode
