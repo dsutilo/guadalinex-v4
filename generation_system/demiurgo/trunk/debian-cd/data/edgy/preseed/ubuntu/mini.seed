@@ -1,0 +1,13 @@
+# Install the Ubuntu desktop.
+tasksel			tasksel/first			multiselect guadalinex-mini-desktop
+pkgsel			pkgsel/include			string meta-guadalinex-v4-mini
+countrychooser		countrychooser/country-name	string Spain
+countrychooser		countrychooser/shortlist	string ES
+debconf			debconf/language		string es
+debian-installer	debian-installer/country	string ES
+debian-installer	debian-installer/language	string es
+languagechooser		languagechooser/language-name	string Spanish
+tvtime 			tvtime/normtvtime/norm		string PAL
+tvtime 			tvtime/frequencies-pal		string Europe
+clock-setup		clock-setup/utc			boolean false
+choose-mirror		mirror/http/proxy		string ""

@@ -152,7 +152,11 @@ else
 ifneq (,$(findstring $(CODENAME),warty hoary breezy))
 CDBASE = $(CODENAME)-live-$(FULLARCH)
 else
+ifeq ($(CDIMAGE_MINI),1)
+CDBASE = $(CODENAME)-mini-$(FULLARCH)
+else
 CDBASE = $(CODENAME)-desktop-$(FULLARCH)
+endif
 endif
 endif
 endif
