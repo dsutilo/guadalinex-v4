@@ -34,7 +34,7 @@ menu "Oficina" "folder" {
     prog "Abs (Hojas de cálculo)" "abs" abs
 }
 menu "Gráficos" "folder" {
-    prog "mtPaint (Dibujo)" "mtpaint" mtpaint
+    prog "gPaint (Dibujo)" "gpaint" gpaint
     prog "XSane (Escáner)" "xsane" xsane
     prog "XZgv (Visor de imágenes)" "xzgv" xzgv
 }
@@ -48,5 +48,4 @@ menu "Multimedia" "folder" {
 menu "Juegos" "folder" {
     prog "XGalaga (Naves espaciales)" "xgalaga" xgalaga
     prog "Xtris (Tipo Tetris)" "xtris" xtris
-    prog "XPacman (Comecocos)" "xpacman" xpacman
 }
