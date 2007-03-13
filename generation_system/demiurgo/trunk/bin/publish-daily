@@ -59,6 +59,9 @@ case $IMAGE_TYPE in
 ####		TYPE=livedvd
 		TYPE=dvd
 		;;
+	*-mini)
+		TYPE=mini
+		;;
 	*)
 ####		TYPE=di
 		case $PROJECT in

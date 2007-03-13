@@ -85,7 +85,7 @@ case $MODE in
 			warty|hoary|breezy)
 				;;
 			*)
-				echo 'boot minimal standard mini desktop-mini ship-mini'
+				echo 'boot minimal standard mini desktop-mini ship-mini installer'
 				;;
 		esac
 		;;

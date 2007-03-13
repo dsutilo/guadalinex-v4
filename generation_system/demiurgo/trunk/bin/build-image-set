@@ -58,7 +58,7 @@ case $PROJECT in
 		;;
 esac
 
-if [ "$CDIMAGE_INSTALL" ]; then
+if [ "$CDIMAGE_INSTALL" ] || [ "$CDIMAGE_MINI" ]; then
 	export CDIMAGE_INSTALL_BASE=1
 fi
 
