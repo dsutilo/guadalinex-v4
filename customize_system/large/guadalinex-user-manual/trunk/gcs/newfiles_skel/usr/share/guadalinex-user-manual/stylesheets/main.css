@@ -194,7 +194,7 @@ abbr, acronym, .explain {
     cursor: help;
 }
 q {
-    font-family: Times, "Times New Roman", serif;
+    font-family: sans , serif;
     font-style: italic;
 }
 /* disabled for now
@@ -378,7 +378,7 @@ div.tleft {
     display: none;
 }
 img.tex { vertical-align: middle; }
-span.texhtml { font-family: serif; }
+span.texhtml { font-family: sans , serif; }
 
 /*
 ** classes for special content elements like town boxes
