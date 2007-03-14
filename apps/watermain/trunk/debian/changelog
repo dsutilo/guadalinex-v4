@@ -1,3 +1,9 @@
+watermain (1.0-3guada2) unstable; urgency=low
+
+  * Removing toro-test from watermain.list
+
+ -- Junta de Andalucía <packmaster@guadalinex.org>  Wed, 14 Mar 2007 10:13:53 +0100
+
 watermain (1.0-3guada1) unstable; urgency=low
 
   * URL fixed
