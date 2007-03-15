@@ -1,3 +1,9 @@
+grubaker (0.1.2) unstable; urgency=low
+
+  * New version. It fixes a problem about the partition order. 
+
+ -- Carlos Parra Camargo <cparra@emergya.es>  Thu, 15 Mar 2007 18:26:52 +0100
+
 grubaker (0.1.1) unstable; urgency=low
 
   * Improving error messages (just in case menu.lst doesn't exist)
