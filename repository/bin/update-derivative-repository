@@ -22,9 +22,18 @@ do
 
 	DEST_PKG_DIR=$DERIVATIVE_POOL/$(echo $SRC_NAME | cut -c 1)/$SRC_NAME
 	[ ! -d $DEST_PKG_DIR ] && mkdir -p $DEST_PKG_DIR
-	
-	# Create the link if already doesn't exist.
-	[ ! -f $DEST_PKG_DIR/$pkg ] && ln $DERIVATIVE_PACKAGES/$pkg $DEST_PKG_DIR/$pkg
+
+	PKG_NAME=$(dpkg --field $DERIVATIVE_PACKAGES/$pkg Package)
+	PKG_VERSION=$(dpkg --field $DERIVATIVE_PACKAGES/$pkg Version | sed -e 's/.*\://g')
+	PKG_ARCH=$(dpkg --field $DERIVATIVE_PACKAGES/$pkg Architecture)
+	if [[ "$pkg" =~ ".*udeb" ]]; then
+		PKG_TYPE="udeb"
+	else
+		PKG_TYPE="deb"
+	fi
+	PKG_DEST=${PKG_NAME}_${PKG_VERSION}_${PKG_ARCH}.${PKG_TYPE}
+	# Create the link if doesn't exist yet.
+	[ ! -f $DEST_PKG_DIR/$PKG_DEST ] && ln $DERIVATIVE_PACKAGES/$pkg $DEST_PKG_DIR/$PKG_DEST
 
 	# Look for a tar.gz
 	TARGZ=$(echo $pkg | sed -e 's/_\(all\|i386\)\.u\?deb/\.tar\.gz/g')
