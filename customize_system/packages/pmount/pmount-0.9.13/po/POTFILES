@@ -1,0 +1,5 @@
+	../src/pmount.c \
+	../src/pmount-hal.c \
+	../src/policy.c \
+	../src/pumount.c \
+	../src/utils.c
