@@ -1,10 +1,10 @@
 #!/usr/bin/python
 # -*- coding: iso-8859-1 -*-
 
-# grubaker 1.0.0
+# grubaker 1.0.2
 # author: Alfonso E.M. alfonso@el-magnifico.org
 # date: 15/Apr/2006
-# last update: 18/Apr/2006 by
+# last update: 15/Mar/2006 by Alfonso E.M.
 # Patches by JuanJe Ojeda
 
 import re
@@ -95,6 +95,11 @@ class Menu:
 	
 			file.close
 
+	def write_key(self,i,k,wfile):
+		 if self.item[i].has_key(k):
+		   wfile.write(k+" \t"+self.item[i][k]+"\n")
+	   	   del self.item[i][k]			
+
 	def write(self):
 
 		tmpfilename=self.filename+".tmp"
@@ -129,8 +134,23 @@ class Menu:
 		      title=self.liststore.get_value(iter,1)
                       id=self.liststore.get_value(iter,2)
 		      newfile.write("title \t"+title+"\n")
+# Order is important !
+# First we'll write Linux options (ordered)
+		      self.write_key(id,'root',newfile)
+		      self.write_key(id,'kernel',newfile)
+		      self.write_key(id,'module',newfile)
+		      self.write_key(id,'initrd',newfile)
+# Second, Windows options (ordered)
+		      self.write_key(id,'rootnoverify',newfile)
+		      self.write_key(id,'kernel',newfile)
+		      self.write_key(id,'chainloader',newfile)
+# Then, whatever left (but "boot")
 		      for key in self.item[id].keys():
-		          newfile.write(key+" \t"+self.item[id][key]+"\n")
+			  if key != 'boot':
+       		            newfile.write(key+" \t"+self.item[id][key]+"\n")
+# "Boot", if exists, must be the latest (not needed, indeed!)
+		      self.write_key(id,'boot',newfile)
+
                       newfile.write("\n")
 		      iter=self.liststore.iter_next(iter)
 
