@@ -260,7 +260,7 @@ int main(int argc, char **argv) {
     free(checkfile);
   }
   /* usplash_urgent(pipe_fd, "Check finished, %d checksums failed", failed); */
-  usplash_urgent(pipe_fd, "Comprobacion terminada. La comprobacion %d ha fallado.", failed);
+  usplash_urgent(pipe_fd, "Comprobacion terminada. La comprobacion encontro %d errores.", failed);
   /* usplash_urgent(pipe_fd, "Press any key to reboot your system"); */
   usplash_urgent(pipe_fd, "Presione cualquier tecla para reiniciar su sistema.");
   usplash_timeout(pipe_fd, 86400);
