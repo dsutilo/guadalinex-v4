@@ -185,6 +185,7 @@ scrollkeeper
 serpentine
 slocate
 smbclient
+smbfs
 sound-juicer
 soundtracker
 ssh
