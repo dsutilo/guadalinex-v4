@@ -15,6 +15,7 @@ def get_sudo():
 
     # Errno 768: Bad password
     while res == 768 and attemps < 3:
+	# FIXME: i18n
         res = os.system('gksudo -m Teclee_contraseña /bin/true')
         # Errno 512: User press cancel
         if res == 512:
