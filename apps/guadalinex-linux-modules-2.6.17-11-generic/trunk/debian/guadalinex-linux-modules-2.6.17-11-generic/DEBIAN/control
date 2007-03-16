@@ -1,0 +1,10 @@
+Package: guadalinex-linux-modules-2.6.17-11-generic
+Version: 0.1
+Section: main
+Priority: optional
+Architecture: i386
+Depends: linux-image-2.6.17-11-generic
+Installed-Size: 488
+Maintainer: Junta de Andalucía <packmaster@guadalinex.org>
+Description: Módulos para el núcleo de Guadalinex
+ Módulos para Guadalinex

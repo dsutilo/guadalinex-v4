@@ -1,0 +1,12 @@
+Source: guadalinex-linux-modules-2.6.17-11-generic
+Section: main
+Priority: optional
+Maintainer: Junta de Andalucía <packmaster@guadalinex.org>
+Build-Depends: debhelper (>> 3.0.0)
+Standards-Version: 3.7.2
+
+Package: guadalinex-linux-modules-2.6.17-11-generic
+Architecture: i386
+Depends: linux-image-2.6.17-11-generic
+Description: Módulos para el núcleo de Guadalinex
+ Módulos para Guadalinex

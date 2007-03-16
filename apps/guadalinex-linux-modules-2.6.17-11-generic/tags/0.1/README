@@ -1,0 +1,12 @@
+Este paquete incluye módulos adicionales para el núcleo de Guadalinex, 
+con idea de aumentar el soporte de dispositivos.
+
+A continuación tenemos una lista con los módulos actualmente incluidos,
+los dispositivos a los que se da soporte y las URLs de donde descargar 
+las fuentes.
+
+MÓDULO		DISPOSITIVO					URL
+======		===========					===
+
+atl1		Attansic(R) L1 Gigabit Ethernet Adapter		http://dlsvr02.asus.com/pub/ASUS/mb/socketAM2/M2V/Linux_LAN.zip
+gspca		Logitech Quickcam Express			http://mxhaard.free.fr/spca50x/Download/gspcav1-20070110.tar.gz
