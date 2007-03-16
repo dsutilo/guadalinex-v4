@@ -1,3 +1,9 @@
+watermain (1.0-3guada3) unstable; urgency=low
+
+  * Added toro restricted, universe and multiverse components
+
+ -- Junta de Andalucía <packmaster@guadalinex.org>  Fri, 16 Mar 2007 13:25:50 +0100
+
 watermain (1.0-3guada2) unstable; urgency=low
 
   * Removing toro-test from watermain.list
