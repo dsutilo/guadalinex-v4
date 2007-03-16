@@ -13,7 +13,7 @@ Pasos para crear un suplemento
 2) Desde el directorio recién creado ejecutamos sdg_new:
 
     $> cd ~/suple1
-    $> sdg_new
+    $> gs_new
 
     Esto crea la estructura básica de configuración para un suplemento.
 
@@ -31,6 +31,6 @@ Pasos para crear un suplemento
 
 4) Generamos la imagen del suplemento simplemente ejecutando sdg_build:
 
-    $> sdg_build
+    $> gs_build
 
 5) Grabamos la imagen en un CD.
