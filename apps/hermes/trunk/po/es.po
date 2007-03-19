@@ -7,13 +7,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-01 15:40+0100\n"
-"PO-Revision-Date: 2007-02-26 14:17+0100\n"
+"POT-Creation-Date: 2007-03-19 12:31+0100\n"
+"PO-Revision-Date: 2007-03-19 12:32+0100\n"
 "Last-Translator:  <(null)>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit"
 
 #: ../actors/deviceactor.py:264
 msgid "Use device"
@@ -24,11 +24,11 @@ msgstr "Utilizar dispositivo"
 msgid "Install required packages"
 msgstr "Instalar paquetes requeridos"
 
-#: ../actors/bluetooth.py:63
+#: ../actors/bluetooth.py:65
 msgid "Bluetooth device connected"
 msgstr "Interfaz Bluetooth conectado"
 
-#: ../actors/bluetooth.py:64
+#: ../actors/bluetooth.py:66
 msgid "Bluetooth device disconnected"
 msgstr "Interfaz Bluetooth desconectado"
 
@@ -298,7 +298,7 @@ msgstr "Mensaje de prueba"
 msgid "Information"
 msgstr "Información"
 
-#: ../tests/test_notify.py:62 ../hermes_hardware.py:186
+#: ../tests/test_notify.py:62 ../hermes_hardware.py:187
 msgid "Warning"
 msgstr "Advertencia"
 
@@ -403,7 +403,12 @@ msgstr "Instalando paquetes"
 msgid "Installed packages"
 msgstr "Paquetes instalados"
 
-#: ../hermes_hardware.py:187
+#. FIXME: i18n
+#: ../utils/sudo.py:19
+msgid "Type password"
+msgstr "Introduzca contraseña"
+
+#: ../hermes_hardware.py:188
 msgid "Device REMOVED."
 msgstr "Dispositivo DESCONECTADO."
 

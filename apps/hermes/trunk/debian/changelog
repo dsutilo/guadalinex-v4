@@ -1,3 +1,9 @@
+hermeshardware (0.3.12) unstable; urgency=low
+
+  * Fixed problem with i18n support. 
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Mon, 19 Mar 2007 12:44:21 +0100
+
 hermeshardware (0.3.11) unstable; urgency=low
 
   * Fixed some problems with 3g actors (the pkg name was wrong)

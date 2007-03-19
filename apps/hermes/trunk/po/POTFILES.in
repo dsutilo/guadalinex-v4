@@ -24,6 +24,7 @@ tests/test_notify.py
 utils/captureloggui.glade
 utils/hermes_notifier.py
 utils/synaptic.py
+utils/sudo.py
 hermes_hardware.py
 # files added by intltool-prepare
 hermesdruid.desktop.in
