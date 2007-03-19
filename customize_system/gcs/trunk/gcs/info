@@ -18,9 +18,10 @@ shortdesc: "Sistema de configuración de Guadalinex v4"
 longdesc: "Consiste en un conjunto de herramientas que facilitan\n la creacion de metapaquetes y paquetes de configuración."
 
 # Versión del paquete
-version: 0.3.9
+version: 0.3.12
 
 # Cambios en esta versión
 changes:
-    - 0.4 rc1.
+    - Added support for pre-depends.
+    - Added support for conflict fields.
 

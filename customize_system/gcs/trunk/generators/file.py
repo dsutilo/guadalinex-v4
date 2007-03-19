@@ -62,7 +62,9 @@ class ControlGenerator(FileGenerator):
 
         self.__set_name()
         self.__set_author()
+        self.__set_predepends()
         self.__set_depends()
+        self.__set_conflicts()
         self.__set_section()
         self.__set_priority()
         self.__set_descriptions()
@@ -81,10 +83,23 @@ class ControlGenerator(FileGenerator):
         self.template_content = newcontent
 
 
+    def __set_predepends(self):
+        predepends = self.__parse_deps('/gcs/predepends')
+        newcontent = self.template_content.replace('<PREDEPENDS>', predepends)
+        self.template_content = newcontent
+
+
     def __set_depends(self):
         depends = self.__parse_deps('/gcs/depends')
         newcontent = self.template_content.replace('<DEPENDS>', depends)
         self.template_content = newcontent
+
+
+    def __set_conflicts(self):
+        conflicts = self.__parse_deps('/gcs/conflicts')
+        newcontent = self.template_content.replace('<CONFLICTS>', conflicts)
+        self.template_content = newcontent
+
 
     def __set_section(self):
         section = config['info']['section']
@@ -104,7 +119,11 @@ class ControlGenerator(FileGenerator):
         self.template_content = newcontent
 
     def __parse_deps(self, file):
-        depends_list = open(config['source_path'] + file).readlines()
+        try:
+            depends_list = open(config['source_path'] + file).readlines()
+        except IOError:
+            #print "No existe el fichero gcs/predepends"
+            return ''
     
         new_depends = []
         for depend in depends_list:

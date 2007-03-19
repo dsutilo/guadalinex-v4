@@ -1,3 +1,11 @@
+gcs (0.3.12) edgy; urgency=low
+
+  * Added support for pre-depends.
+  * Added support for conflict fields.
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.info>  Mon, 19 Mar 2007 09:00:14 -0000
+
+
 gcs (0.3.9) edgy; urgency=low
 
   * 0.4 rc1.

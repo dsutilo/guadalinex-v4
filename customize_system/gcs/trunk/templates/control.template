@@ -7,6 +7,8 @@ Standards-Version: 3.7.2
 
 Package: <NAME>
 Architecture: i386
+Pre-Depends: <PREDEPENDS>
 Depends: <DEPENDS>
+Conflicts: <CONFLICTS>
 Description: <SHORTDESC> 
  <LONGDESC>
