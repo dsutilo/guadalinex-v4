@@ -347,7 +347,8 @@ msgstr "Instalar una ^estación de trabajo"
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_oem
 msgid "Install in ^OEM mode"
-msgstr "Instalación en modo ^OEM"
+#msgstr "Instalación en modo ^OEM"
+msgstr "Preinstalación para equipos nuevos (^OEM)"
 
 #. Boot menu item; a ^ prefix indicates a unique accelerator key.
 #. txt_menuitem_lamp
