@@ -37,6 +37,7 @@ class ConfigParser(dict):
         #Fill obligatory fields.
         self['NAME'] = 'Default Name'
         self['DESC'] = 'Default Description'
+        self['URIS'] = []
         self.configure()
 
     def configure(self):
@@ -45,17 +46,18 @@ class ConfigParser(dict):
             if not line.strip().startswith('#'):
                 try:
                     key, value = line.split(None, 1)
-                    self[key] = value.strip()
+                    if key == 'URI':
+                        self['URIS'].append(value.strip())
+                    else:
+                        self[key] = value.strip()
                 except:
                     key = line.strip()
+                    if key.startswith('URI'):
+                        self['URIS'].append(' ')
                     self[key] = ''
         
     def get_uris(self):
-        result = []
-        for key, value in self.items():
-            if key.startswith('URI'):
-                result.append(value)
-        return result
+        return self['URIS']
 
 
 def generate_pool():

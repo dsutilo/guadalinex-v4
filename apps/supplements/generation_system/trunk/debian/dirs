@@ -1,4 +1,5 @@
 usr/bin
 usr/sbin
-usr/share/gsg/var/lib/apt/lists/partial
-usr/share/gsg/var/cache/apt/archives/partial
+usr/share/guadalinex-supplement-generator/var/lib/apt/lists/partial
+usr/share/guadalinex-supplement-generator/var/cache/apt/archives/partial
+usr/share/guadalinex-supplement-generator/skel/debs
