@@ -1,3 +1,9 @@
+guadalinex-sources-setup (0.4) unstable; urgency=low
+
+  * watermain flavour for sources.list 
+
+ -- Carlos Parra Camargo <cparra@emergya.es>  Mon, 19 Mar 2007 18:42:56 +0100
+
 guadalinex-sources-setup (0.3) unstable; urgency=low
 
   * Final guadalinex repositories added 
