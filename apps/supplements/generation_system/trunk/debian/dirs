@@ -1,2 +1,4 @@
 usr/bin
 usr/sbin
+usr/share/gsg/var/lib/apt/lists/partial
+usr/share/gsg/var/cache/apt/archives/partial
