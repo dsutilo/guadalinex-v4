@@ -22,9 +22,18 @@ log_begin_msg "$DESCRIPTION"
 
 # Cleaning up the english stuff at the user's home
 
-cat <<EOF >> /root/etc/gdm/PostLogin/Default
-pkill dbus-daemon
-/usr/bin/dbus-daemon --system
+sed -i 's|nautilus --no-default-window|dbus-fix|g' /root/usr/share/gnome/default.session.gv4
+
+
+cat <<EOF >> /root/usr/bin/dbus-fix
+
+sudo /etc/init.d/dbus restart
+
+nautilus --no-default-window
+
 EOF
+
+chmod +x /root/usr/bin/dbus-fix
+
 
 log_end_msg
