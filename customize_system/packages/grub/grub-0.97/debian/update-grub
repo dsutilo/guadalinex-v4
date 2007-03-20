@@ -351,7 +351,7 @@ fi
 	lockold="false"
 
 # options to use with the alternative boot options
-	altoptions="(recovery mode) single"
+	altoptions="(Modo de recuperacion) single"
 
 # controls howmany kernels are listed in the menu.lst,
 # this does not include the alternative kernels
