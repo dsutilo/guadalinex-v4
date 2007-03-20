@@ -75,7 +75,7 @@ for x in $(cat /proc/cmdline); do
                         ;;
                         # Minor Motor Difficulties
                         access=m1)
-			chroot /root sudo /usr/bin/adp-admin.sh "$USERNAME" Motriz -f
+			chroot /root sudo /usr/bin/adp-admin.sh "$USERNAME" Motriz_Leve -f
                         #gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
                         #gct -s -t bool /desktop/gnome/accessibility/keyboard/mousekeys_enable true
                         #gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_enable true
@@ -90,7 +90,7 @@ for x in $(cat /proc/cmdline); do
                         # Motor Difficulties - pointing devices
                         access=m2)
 			# FIXME: We are applying the same to both "m1" & "m2"; we have to distinguish both cases
-			chroot /root sudo /usr/bin/adp-admin.sh "$USERNAME" Motriz -f
+			chroot /root sudo /usr/bin/adp-admin.sh "$USERNAME" Motriz_Moderado -f
                         #gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
 			#gct -s -t bool /desktop/gnome/interface/accessibility true
                         #gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_enable true
