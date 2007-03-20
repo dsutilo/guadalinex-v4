@@ -1,3 +1,9 @@
+grub (0.97-11ubuntu14guada3) edgy; urgency=low
+
+  * recovery mode -> Modo de recuperacion
+
+ -- Carlos Parra Camargo <cparra@emergya.es>  Tue, 20 Mar 2007 16:51:59 +0100
+
 grub (0.97-11ubuntu14guada2) edgy; urgency=low
 
   * more friendly entry for memtest 
