@@ -1,0 +1,12 @@
+diff -Nur libgksu-1.9.4/gksu.schemas.in libgksu-1.9.4.new/gksu.schemas.in
+--- libgksu-1.9.4/gksu.schemas.in	2006-04-30 23:09:12.000000000 +0200
++++ libgksu-1.9.4.new/gksu.schemas.in	2006-07-04 15:49:13.000000000 +0200
+@@ -38,7 +38,7 @@
+       <applyto>/apps/gksu/sudo-mode</applyto>
+       <owner>gksu</owner>
+       <type>bool</type>
+-      <default>false</default>
++      <default>true</default>
+       <locale name="C">
+ 	<short>Sudo mode</short>
+ 	<long>

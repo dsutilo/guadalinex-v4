@@ -1,0 +1,22 @@
+diff -Nur libgksu-1.9.8/libgksu/libgksu.c libgksu-1.9.8.new/libgksu/libgksu.c
+--- libgksu-1.9.8/libgksu/libgksu.c	2006-08-08 17:56:30.000000000 +0200
++++ libgksu-1.9.8.new/libgksu/libgksu.c	2006-08-08 17:58:51.000000000 +0200
+@@ -2445,11 +2445,15 @@
+ 
+ 	  nullify_password (password);
+ 
+-	  /* ignore the newline that comes right after sudo receives
+-	     the password
+-	  */
++	  /* turn NONBLOCK off */
++	  fcntl(parent_pipe[0], F_SETFL, fcntl(parent_pipe[0], F_GETFL) & ~O_NONBLOCK);
++	  /* ignore the first newline that comes right after sudo receives
++	     the password */
+ 	  fgets (buffer, 255, infile);
++	  /* this is the status we are interessted in */
+ 	  fgets (buffer, 255, infile);
++	  /* turn it ON again */
++	  fcntl(parent_pipe[0], F_SETFL, fcntl(parent_pipe[0], F_GETFL) | O_NONBLOCK);
+ 	}
+       else
+ 	{

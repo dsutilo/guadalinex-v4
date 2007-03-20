@@ -1,0 +1,43 @@
+diff -Nur libgksu-1.9.4/libgksu/libgksu.c libgksu-1.9.4.new/libgksu/libgksu.c
+--- libgksu-1.9.4/libgksu/libgksu.c	2006-06-26 05:22:39.000000000 +0200
++++ libgksu-1.9.4.new/libgksu/libgksu.c	2006-07-04 15:56:38.000000000 +0200
+@@ -215,6 +215,30 @@
+ 	return geometry.y;
+ }
+ 
++typedef void (*GsmScreenForeachFunc) (GdkScreen *screen,
++                                     int        monitor);
++
++void
++gsm_foreach_screen (GsmScreenForeachFunc callback)
++{
++       GdkDisplay *display;
++       int         n_screens, i;
++
++       display = gdk_display_get_default ();
++
++       n_screens = gdk_display_get_n_screens (display);
++       for (i = 0; i < n_screens; i++) {
++               GdkScreen *screen;
++               int        n_monitors, j;
++
++               screen = gdk_display_get_screen (display, i);
++
++               n_monitors = gdk_screen_get_n_monitors (screen);
++               for (j = 0; j < n_monitors; j++)
++                       callback (screen, j);
++       }
++}
++
+ static void
+ get_current_frame (FadeoutData *fadeout,
+ 		   double    sat)
+@@ -541,7 +565,7 @@
+     g_warning ("Unable to create lock file.");
+   g_free (fname);
+ 
+-  fadeout_screen (gdk_screen_get_default (), 0);
++  gsm_foreach_screen (fadeout_screen);
+   gtk_widget_show_all (dialog);
+ 
+   /* reset cursor */

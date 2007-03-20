@@ -1,0 +1,690 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libgksu1.2-1.3.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-04-03 23:53-0300\n"
+"PO-Revision-Date: 2005-07-20 15:00+0200\n"
+"Last-Translator: Thomas Huriaux <thomas.huriaux@gmail.com>\n"
+"Language-Team: French <debian-l10n-french@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../gksu/gksu.c:397
+#, c-format
+msgid ""
+"GKsu version %s\n"
+"\n"
+msgstr ""
+
+#: ../gksu/gksu.c:398
+#, c-format
+msgid ""
+"Usage: %s [-u <user>] [-k] [-l] <command>\n"
+"\n"
+msgstr ""
+
+#: ../gksu/gksu.c:399
+msgid ""
+"  --always-ask-password, -a\n"
+"    Do not try to check if a password is really\n"
+"    needed for running the command, or if there\n"
+"    are other means of obtaining it: simply ask for it.\n"
+msgstr ""
+
+#: ../gksu/gksu.c:403
+msgid ""
+"  --debug, -d\n"
+"    Print information on the screen that might be\n"
+"    useful for diagnosing and/or solving problems.\n"
+msgstr ""
+
+#: ../gksu/gksu.c:406
+msgid ""
+"  --disable-grab, -g\n"
+"    Disable the \"locking\" of the keyboard, mouse,\n"
+"    and focus done by the program when asking for\n"
+"    password.\n"
+msgstr ""
+
+#: ../gksu/gksu.c:410
+msgid ""
+"  --icon <icon>, -i <icon>\n"
+"    Replace the default window icon with the argument.\n"
+msgstr ""
+
+#: ../gksu/gksu.c:412
+msgid ""
+"  --message <message>, -m <message>\n"
+"    Replace the standard message shown to ask for\n"
+"    password for the argument passed to the option.\n"
+msgstr ""
+
+#: ../gksu/gksu.c:415
+msgid ""
+"  --print-pass, -p\n"
+"    Ask gksu to print the password to stdout, just\n"
+"    like ssh-askpass. Useful to use in scripts with\n"
+"    programs that accept receiving the password on\n"
+"    stdin.\n"
+msgstr ""
+
+#: ../gksu/gksu.c:420
+msgid ""
+"  --prompt, -P\n"
+"    Ask the user if they want to have their keyboard\n"
+"    and mouse grabbed before doing so.\n"
+msgstr ""
+
+#: ../gksu/gksu.c:423
+msgid ""
+"  --ssh-fwd, -s\n"
+"    Strip the host part of the $DISPLAY variable, so that\n"
+"    GKSu will work on SSH X11 Forwarding.\n"
+msgstr ""
+
+#: ../gksu/gksu.c:426
+msgid ""
+"  --sudo-mode, -S\n"
+"    Make GKSu use sudo instead of su, as if it had been\n"
+"    run as \"gksudo\".\n"
+msgstr ""
+
+#: ../gksu/gksu.c:429
+msgid ""
+"  --title <title>, -t <title>\n"
+"    Replace the default title with the argument.\n"
+msgstr ""
+
+#: ../gksu/gksu.c:431
+msgid ""
+"  --user <user>, -u <user>\n"
+"    Call <command> as the specified user.\n"
+msgstr ""
+
+#: ../gksu/gksu.c:433
+msgid ""
+"  --desktop <file>, -D <file>\n"
+"    Use a .desktop file to get the name of the application\n"
+"    and the icon from.\n"
+"\n"
+msgstr ""
+
+#: ../gksu/gksu.c:437
+msgid ""
+"  --preserve-env, -k\n"
+"    Preserve the current environments, does not set $HOME\n"
+"    nor $PATH, for example.\n"
+msgstr ""
+
+#: ../gksu/gksu.c:440
+msgid ""
+"  --login, -l\n"
+"    Make this a login shell. Beware this may cause\n"
+"    problems with the Xauthority magic. Run xhost\n"
+"    to allow the target user to open windows on your\n"
+"    display!\n"
+"\n"
+"\n"
+msgstr ""
+
+#: ../gksu/gksu.c:486
+#, fuzzy
+msgid ""
+"<b>Could not grab your mouse.</b>\n"
+"\n"
+"A malicious client may be eavesdropping\n"
+"on your session or you may have just clicked\n"
+"a menu or some application just decided to get\n"
+"focus.\n"
+"\n"
+"Try again."
+msgstr ""
+"Impossible de verrouiller la souris.\n"
+"Il se peut qu'un client malicieux écoute votre session."
+
+#: ../gksu/gksu.c:496
+#, fuzzy
+msgid ""
+"Could not grab your keyboard.\n"
+"A malicious client may be eavesdropping\n"
+"on your session or you may have just clicked\n"
+"a menu or some application just decided to get\n"
+"focus.\n"
+"\n"
+"Try again."
+msgstr ""
+"Impossible de verrouiller le clavier.\n"
+"Il se peut qu'un client malicieux écoute votre session."
+
+#: ../gksu/gksu.c:552
+#, c-format
+msgid "Not using locking for read only lock file %s"
+msgstr "Pas de verrouillage pour le fichier verrou %s en lecture seule"
+
+#: ../gksu/gksu.c:572
+#, c-format
+msgid "Not using locking for nfs mounted lock file %s"
+msgstr "Pas de verrouillage pour le fichier verrou %s monté par nfs"
+
+#: ../gksu/gksu.c:785
+#, c-format
+msgid ""
+"<b>Please enter your password\n"
+"to run %s as user %s</b>"
+msgstr ""
+"<b>Veuillez entrer votre mot de passe pour lancer %s en tant\n"
+"qu'utilisateur %s</b>"
+
+#: ../gksu/gksu.c:790
+#, c-format
+msgid "<b>To run the program \"%s\" you need to enter the %s password</b>"
+msgstr ""
+"<b>Pour lancer le programme « %s », vous devez entrer le mot de passe de %s</"
+"b>"
+
+#: ../gksu/gksu.c:886
+#, c-format
+msgid ""
+"<b>The \"%s\" program was started with the privileges of the %s user without "
+"the need to ask for a password, due to your system's authentication "
+"mechanism setup.</b>\n"
+"\n"
+"It is possible that you are being allowed to run specific programs as user %"
+"s without the need for a password, or that the password is cached.\n"
+"This is not a problem report; it's simply a notification to make sure you "
+"are aware of this."
+msgstr ""
+"<b>Le programme « %s » a été lancé avec les privilèges de l'utilisateur %s "
+"sans avoir eu à demander de mot de passe, en raison de la configuration du "
+"mécanisme d'authentification de votre système.</b>\n"
+"\n"
+"Il est possible que vous soyiez autorisé à lancer des programmes spécifiques "
+"en tant qu'utilisateur %s sans avoir besoin de mot de passe, ou que le mot "
+"de passe soit en cache.\n"
+"Il ne s'agit pas d'un signalement de problème ; il s'agit juste d'un "
+"avertissement pour être sûr que vous en êtes conscient."
+
+#: ../gksu/gksu.c:907
+msgid "Do _not display this message again"
+msgstr "_Ne plus afficher ce message"
+
+#: ../gksu/gksu.c:950
+#, c-format
+msgid ""
+"<b>Authentication required</b>\n"
+"\n"
+"You need your password to run:\n"
+"\"%s\"."
+msgstr ""
+
+#: ../gksu/gksu.c:954
+#, c-format
+msgid ""
+"<b>Authentication required</b>\n"
+"\n"
+"You need to type %s's password to run:\n"
+"\"%s\"."
+msgstr ""
+
+#: ../gksu/gksu.c:1116
+#, c-format
+msgid "Option not accepted for --disable-grab: %s\n"
+msgstr "Option incompatible avec --disable-grab : %s\n"
+
+#: ../gksu/gksu.c:1139
+#, c-format
+msgid "Option not accepted for --sudo-mode: %s\n"
+msgstr "Option incompatible avec --sudo-mode : %s\n"
+
+#: ../gksu/gksu.c:1156
+#, c-format
+msgid "Option not accepted for --prompt: %s\n"
+msgstr "Option incompatible avec  --prompt : %s\n"
+
+#: ../gksu/gksu.c:1188
+msgid ""
+"<b>Would you like your screen to be \"grabbed\"\n"
+"while you enter the password?</b>\n"
+"\n"
+"This means all applications will be paused to avoid\n"
+"the eavesdropping of your password by a a malicious\n"
+"application while you type it."
+msgstr ""
+"<b>Voulez-vous que votre écran soit contrôlé pour la saisie de\n"
+"votre mot de passe ?</b>\n"
+"\n"
+"Ceci signifie que toutes les applications vont être mises en pause afin\n"
+"d'éviter qu'une application malveillante ne récupère votre mot de passe\n"
+"pendant que vous le saisissez."
+
+#: ../gksu/gksu.c:1226
+#, c-format
+msgid "<b>Please enter %s's password</b>"
+msgstr "<b>Veuillez entrer le mot de passe de %s</b>"
+
+#: ../gksu/gksu.c:1263 ../gksu/gksu.c:1278 ../gksu/gksuexec.c:319
+msgid "Missing command to run."
+msgstr "Absence de la commande à lancer."
+
+#: ../gksu/gksu.c:1303
+#, c-format
+msgid "User %s does not exist."
+msgstr ""
+
+#: ../gksu/gksu.c:1321
+#, fuzzy, c-format
+msgid ""
+"<b>Failed to run %s as user %s.</b>\n"
+"\n"
+"%s"
+msgstr ""
+"Échec lors du lancement de %s en tant qu'utilisateur %s :\n"
+"%s"
+
+#: ../gksu/gksu.c:1344
+#, fuzzy
+msgid "Remember password"
+msgstr "Mot de passe incorrect."
+
+#: ../gksu/gksu.c:1361
+#, fuzzy
+msgid "Save for this session"
+msgstr "Se rappeler le mot de passe pour cette session"
+
+#: ../gksu/gksu.c:1366
+#, fuzzy
+msgid "Save in the keyring"
+msgstr "Sauvegarder le mot de passe dans le trousseau"
+
+#: ../gksu/gksu.c:1387
+#, fuzzy, c-format
+msgid ""
+"Failed to run %s as user %s:\n"
+" %s"
+msgstr "Échec lors de l'obtention de la clé xauth : %s"
+
+#: ../gksu/gksuexec.c:68
+#, fuzzy, c-format
+msgid "Unable to run %s: %s"
+msgstr "Incapable de lancer /bin/su : %s"
+
+#: ../gksu/gksuexec.c:104
+msgid "Advanced options"
+msgstr "Options avancées"
+
+#: ../gksu/gksuexec.c:120
+msgid "<b>Options to use when changing user</b>"
+msgstr "<b>Options à utiliser lors d'un changement d'utilisateur</b>"
+
+#. login shell? (--login)
+#: ../gksu/gksuexec.c:125
+msgid "_login shell"
+msgstr "_interpréteur de commandes interactif"
+
+#: ../gksu/gksuexec.c:133
+msgid "_preserve environment"
+msgstr "_préserver l'environnement"
+
+#: ../gksu/gksuexec.c:246
+msgid "Run program"
+msgstr "Lancer le programme"
+
+#. command
+#: ../gksu/gksuexec.c:265
+msgid "Run:"
+msgstr "Lancer :"
+
+#. user name
+#: ../gksu/gksuexec.c:276
+msgid "As user:"
+msgstr "En tant qu'utilisateur :"
+
+#. advanced button
+#: ../gksu/gksuexec.c:294
+msgid "_Advanced"
+msgstr "_Avancées"
+
+#: ../gksu/gksu.schemas.in.h:1
+msgid "Always request a password"
+msgstr "Toujours exiger un mot de passe"
+
+#: ../gksu/gksu.schemas.in.h:2
+msgid "Disable keyboard and mouse grab"
+msgstr "Désactiver la prise de contrôle du clavier et de la souris"
+
+#: ../gksu/gksu.schemas.in.h:3
+msgid "Display information message when no password is needed"
+msgstr ""
+"Afficher un message d'information lorsqu'aucun mot de passe n'est nécessaire"
+
+#: ../gksu/gksu.schemas.in.h:4
+msgid "Force keyboard and mouse grab"
+msgstr "Forcer la prise de contrôle du clavier et de la souris"
+
+#: ../gksu/gksu.schemas.in.h:5
+msgid ""
+"Grab keyboard and mouse even if -g has been passed as argument on the "
+"command line."
+msgstr ""
+"Prendre le contrôle du clavier et de la souris même si l'option -g a été "
+"fournie en tant qu'argument en ligne de commande."
+
+#: ../gksu/gksu.schemas.in.h:6
+msgid "Keyring to which passwords will be saved"
+msgstr "Trousseau dans lequel les mots de passe seront enregistrés"
+
+#: ../gksu/gksu.schemas.in.h:7
+msgid "Prompt for grabbing"
+msgstr "Demander pour la prise de contrôle"
+
+#: ../gksu/gksu.schemas.in.h:8
+msgid "Save password to gnome-keyring"
+msgstr "Enregistrer le mot de passe dans le trousseau gnome-keyring"
+
+#: ../gksu/gksu.schemas.in.h:9
+msgid "Sudo mode"
+msgstr "Mode sudo"
+
+#: ../gksu/gksu.schemas.in.h:10
+msgid ""
+"The name of the keyring gksu should use. Usual values are \"session\", which "
+"saves the password for the session, and \"default\", which saves the "
+"password with no timeout."
+msgstr ""
+"Le nom du trousseau que gksu doit utiliser. Les valeurs habituelles sont "
+"« session », qui enregistre le mot de passe pour la session, et « default », "
+"qui enregistre le mot de passe perpétuellement."
+
+#: ../gksu/gksu.schemas.in.h:11
+msgid ""
+"This option determines whether a message dialog will be displayed informing "
+"the user that the program is being run without the need of a password being "
+"asked for some reason."
+msgstr ""
+"Cette option détermine si un dialogue doit être affiché pour informer "
+"l'utilisateur que le programme est lancé sans avoir à demander un mot de "
+"passe pour une raison quelconque."
+
+#: ../gksu/gksu.schemas.in.h:12
+msgid ""
+"This option will make gksu prompt the user if he wants to have the screen "
+"grabbed before entering the password. Notice that this only has an effect if "
+"force-grab is disabled."
+msgstr ""
+"Avec cette option, gksu demandera à l'utilisateur s'il désire une prise de "
+"contrôle de son écran avant de saisir le mot de passe. Veuillez noter que "
+"cela n'aura d'effet que si force-grab est désactivé."
+
+#: ../gksu/gksu.schemas.in.h:13
+msgid ""
+"This option will prevent gksu from trying to figure out if a password is "
+"needed to run the command, or if it can be obtained through other ways, such "
+"as gnome-keyring, making it simply ask for the password every time."
+msgstr ""
+"Cette option évitera que gksu essaie de déterminer si un mot de passe est "
+"nécessaire pour lancer la commande ou si celui-ci peut être obtenu "
+"différemment, comme avec le trousseau gnome-keyring. Le mot de passe sera "
+"simplement demandé à chaque fois."
+
+#: ../gksu/gksu.schemas.in.h:14
+msgid ""
+"Whether sudo should be the default backend method. This method is otherwise "
+"accessed though the -S switch or by running 'gksudo' instead of 'gksu'."
+msgstr ""
+"Définit si sudo doit être la méthode d'arrière-plan par défaut. Cette "
+"méthode est, dans le cas contraire, accessible avec l'option -S ou en "
+"lançant « gksudo » au lieu de « gksu »."
+
+#: ../gksu/gksu.schemas.in.h:15
+msgid ""
+"Whether the keyboard and mouse grabbing should be turned off. This will make "
+"it possible for other X applications to listen to keyboard input events, "
+"thus making it not possible to shield from malicious applications which may "
+"be running."
+msgstr ""
+"Définit si la prise de contrôle du clavier et de la souris doit être "
+"désactivée. Il sera alors possible pour les autres applications X d'écouter "
+"les entrées au clavier, rendant donc impossible la défense contre des "
+"applications malveillantes qui pourraient éventuellement être lancées."
+
+#: ../gksu/gksu.schemas.in.h:16
+msgid ""
+"gksu can save the password you type to the gnome-keyring so you'll not be "
+"asked everytime"
+msgstr ""
+"gksu peut enregistrer dans le trousseau gnome-keyring le mot de passe que "
+"vous tapez, de manière à ce qu'il ne soit pas demandé à chaque fois"
+
+#: ../gksu.desktop.in.h:1
+msgid "Opens a terminal as the root user, using gksu to ask for the password"
+msgstr ""
+"Ouvrir un terminal en tant que superutilisateur, en utilisant gksu pour "
+"demander le mot de passe"
+
+#: ../gksu.desktop.in.h:2
+msgid "Root Terminal"
+msgstr "Terminal superutilisateur"
+
+#: ../gksuexec.desktop.in.h:1
+msgid "Opens a dialog where you can type a command to be run as a given user"
+msgstr ""
+"Ouvrir une fenêtre de dialogue où vous pourrez entrer une commande à lancer "
+"avec une identité différente"
+
+#: ../gksuexec.desktop.in.h:2
+msgid "Run as different user"
+msgstr "Lancer en prenant une identité différente"
+
+#, fuzzy
+msgid ""
+"GKsu version %s\n"
+"\n"
+"Usage: %s [-u <user>] [-k] [-l] <command>\n"
+"\n"
+"  --always-ask-password, -a\n"
+"    Do not try to check if a password is really\n"
+"    needed for running the command, or if there\n"
+"    are other means of obtaining it: simply ask for it.\n"
+"  --debug, -d\n"
+"    Print information on the screen that might be\n"
+"    useful for diagnosing and/or solving problems.\n"
+"  --disable-grab, -g\n"
+"    Disable the \"locking\" of the keyboard, mouse,\n"
+"    and focus done by the program when asking for\n"
+"    password.\n"
+"  --icon <icon>, -i <icon>\n"
+"    Replace the default window icon with the argument.\n"
+"  --message <message>, -m <message>\n"
+"    Replace the standard message shown to ask for\n"
+"    password for the argument passed to the option.\n"
+"  --print-pass, -p\n"
+"    Ask gksu to print the password to stdout, just\n"
+"    like ssh-askpass. Useful to use in scripts with\n"
+"    programs that accept receiving the password on\n"
+"    stdin.\n"
+"  --prompt, -P\n"
+"    Ask the user if they want to have their keyboard\n"
+"    and mouse grabbed before doing so.\n"
+"  --ssh-fwd, -s\n"
+"    Strip the host part of the $DISPLAY variable, so that\n"
+"    GKSu will work on SSH X11 Forwarding.\n"
+"  --sudo-mode, -S\n"
+"    Make GKSu use sudo instead of su, as if it had been\n"
+"    run as \"gksudo\".\n"
+"  --title <title>, -t <title>\n"
+"    Replace the default title with the argument.\n"
+"  --user <user>, -u <user>\n"
+"    Call <command> as the specified user.\n"
+"  --desktop <file>, -D <file>\n"
+"    Use a .desktop file to get the name of the application    and the icon "
+"from.\n"
+"\n"
+"  --preserve-env, -k\n"
+"    Preserve the current environments, does not set $HOME\n"
+"    nor $PATH, for example.\n"
+"  --login, -l\n"
+"    Make this a login shell. Beware this may cause\n"
+"    problems with the Xauthority magic. Run xhost\n"
+"    to allow the target user to open windows on your\n"
+"    display!\n"
+"\n"
+"\n"
+msgstr ""
+"Version %s de GKsu\n"
+"\n"
+"Usage : %s [-u <utilisateur>] [-k] [-l] <commande>\n"
+"\n"
+"  --always-ask-password, -a\n"
+"    ne pas essayer de vérifier si un mot de passe est absolument\n"
+"    nécessaire pour lancer la commmande, ni même s'il y a d'autres moyens\n"
+"    de l'obtenir : le demander dans tous les cas.\n"
+"  --debug, -d\n"
+"    afficher à l'écran des informations pouvant être utiles pour analyser\n"
+"    et résoudre des problèmes.\n"
+"  --disable-grab, -g\n"
+"    désactiver le contrôle du clavier, de la souris et de la clarté\n"
+"    effectué par le programme lors de la demande d'un mot de passe.\n"
+"  --icon <icône>, -i <icône>\n"
+"    remplacer l'icône par défaut par celle fournie en argument.\n"
+"  --message <message>, -m <message>\n"
+"    remplacer le message standard affiché pour demander un mot de passe par\n"
+"    celui fourni en argument.\n"
+"  --print-pass, -p\n"
+"    demander à gksu d'imprimer le mot de passe sur la sortie standard, de\n"
+"    la même manière que ssh-askpass. Pratique à utiliser dans des scripts\n"
+"    qui récupèrent le mot de passe sur l'entrée standard.\n"
+"  --prompt, -P\n"
+"    demander au préalable à l'utilisateur s'il veut que le clavier et la\n"
+"    souris soient bloqués avant de le faire.\n"
+"  --ssh-fwd, -s\n"
+"    enlever la partie concernant l'hôte de la variable $DISPLAY, afin que\n"
+"    le transfert graphique sous ssh fonctionne avec GKSu.\n"
+"  --sudo-mode, -S\n"
+"    faire en sorte que GKSu utilise sudo plutôt que su, comme si gksudo\n"
+"    avait été lancé.\n"
+"  --title <titre>, -t <titre>\n"
+"    remplacer le titre par défaut par celui fourni en argument.\n"
+"  --user <utilisateur>, -u <utilisateur>\n"
+"    lancer la commande <commande> en tant qu'utilisateur <utilisateur>.\n"
+"\n"
+"  --preserve-env, -k\n"
+"    préserver l'environnement actuel, ne définir ni $HOME ni $PATH par\n"
+"    exemple.\n"
+"  --login, -l\n"
+"    en faire un interpréteur de commandes interactif. Attention, ceci peut\n"
+"    créer des problèmes avec la magie de Xauthority. Vous pouvez lancer\n"
+"    lancer xhost pour autoriser l'utilisateur cible à ouvrir des fenêtres\n"
+"    sur votre écran !\n"
+"\n"
+"\n"
+
+msgid "WARNING: Could not stat %s: %s.\n"
+msgstr "ATTENTION : Impossible d'effectuer un stat sur %s : %s.\n"
+
+msgid "FATAL: File %s is not owned by root.\n"
+msgstr "ERREUR : le fichier %s n'appartient pas à l'utilisateur root.\n"
+
+msgid "FATAL: File %s is not owned by group root.\n"
+msgstr "ERREUR : le fichier %s n'appartient pas au groupe root.\n"
+
+msgid "FATAL: File %s has wrong permissions, should be 0644.\n"
+msgstr ""
+"ERREUR : le fichier %s a des permissions incorrectes, celles-ci devant être "
+"définies à 0644.\n"
+
+msgid "FATAL: Could not open %s: %s.\n"
+msgstr "ERREUR : impossible d'ouvrir %s : %s.\n"
+
+msgid ""
+"<b>Please enter %s's password\n"
+"to run %s.</b>"
+msgstr "<b>Veuillez entrer le mot de passe de %s afin de lancer %s.</b>"
+
+#~ msgid "Continue"
+#~ msgstr "Continuer"
+
+#~ msgid ""
+#~ "<span weight=\"bold\" size=\"larger\">Type the root password.</span>\n"
+#~ msgstr ""
+#~ "<span weight=\"bold\" size=\"larger\">Entrez le mot de passe du "
+#~ "superutilisateur.</span>\n"
+
+#~ msgid "Password:"
+#~ msgstr "Mot de passe :"
+
+#~ msgid ""
+#~ "libgksu: Failed to init the Gtk+ library, GKSu is not able to continue.\n"
+#~ msgstr ""
+#~ "libgksu : échec lors de l'initialisation de la bibliothèque Gtk+, Gksu ne "
+#~ "peut pas continuer.\n"
+
+#~ msgid "Changing user..."
+#~ msgstr "Changement d'utilisateur..."
+
+#~ msgid ""
+#~ "Impossible to create the .Xauthority file: a file already exists. This "
+#~ "might be a security issue; please investigate or warn your system "
+#~ "administrator."
+#~ msgstr ""
+#~ "Impossible de créer le fichier .Xauthority : un fichier existe déjà. Il "
+#~ "s'agit peut être d'un problème de sécurité ; veuillez analyser la "
+#~ "situation ou avertir votre administrateur système."
+
+#~ msgid "Error copying '%s' to '%s': %s"
+#~ msgstr "Erreur lors de la copie de « %s » vers « %s » : %s"
+
+#~ msgid "gksu_run needs a command to be run, none was provided."
+#~ msgstr "gksu_run demande une commande à lancer mais aucune n'a été fournie."
+
+#~ msgid "The gksu-run-helper command was not found or is not executable."
+#~ msgstr ""
+#~ "La commande gksu-run-helper n'a pas été trouvée ou n'est pas exécutable."
+
+#~ msgid "Failed to fork new process: %s"
+#~ msgstr "Échec lors du clonage d'un nouveau processus : %s"
+
+#~ msgid ""
+#~ "Failed to communicate with gksu-run-helper.\n"
+#~ "\n"
+#~ "Received:\n"
+#~ " %s\n"
+#~ "While expecting:\n"
+#~ " %s"
+#~ msgstr ""
+#~ "Échec lors de la communication avec gksu-run-helper.\n"
+#~ "\n"
+#~ "Reçu :\n"
+#~ " %s\n"
+#~ "Ce qui était attendu :\n"
+#~ " %s"
+
+#~ msgid "Could not read from the pipe with the child: %s"
+#~ msgstr "Ne peut pas lire à partir du tube avec le processus enfant : %s"
+
+#~ msgid "Child terminated with %d status"
+#~ msgstr "Processus enfant terminé avec l'état %d"
+
+#~ msgid "gksu_sudo_run needs a command to be run, none was provided."
+#~ msgstr ""
+#~ "gksu_sudo_run demande une commande à lancer mais aucune n'a été fournie."
+
+#~ msgid "Unable to copy the user's Xauthorization file."
+#~ msgstr "Incapable de copier le fichier Xauthorization de l'utilisateur."
+
+#~ msgid "Error creating pipe: %s"
+#~ msgstr "Erreur lors de la création du tube : %s"
+
+#~ msgid "Failed to exec new process: %s"
+#~ msgstr "Échec lors de l'exécution du nouveau processus : %s"
+
+#~ msgid "Error opening pipe: %s"
+#~ msgstr "Erreur lors de l'ouverture du tube : %s"
+
+#~ msgid "No password was supplied and sudo needs it."
+#~ msgstr "Aucun mot de passe n'a été fourni alors que sudo en a besoin."

@@ -1,0 +1,1213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>API Reference</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.68.1">
+<link rel="start" href="index.html" title="LibGKSu Reference Manual">
+<link rel="up" href="index.html" title="LibGKSu Reference Manual">
+<link rel="prev" href="index.html" title="LibGKSu Reference Manual">
+<meta name="generator" content="GTK-Doc V1.7 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="index.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td>&#160;</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">LibGKSu Reference Manual</th>
+<td>&#160;</td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#id2550629" class="shortcut">Top</a>
+                  &#160;|&#160;
+                  <a href="#id2477404" class="shortcut">Description</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="libgksu-API-Reference"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2>
+<a name="id2550629"></a><span class="refentrytitle">API Reference</span>
+</h2>
+<p>API Reference &#8212; This API provides functions to provide su and sudo functionality to
+its users.</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<h2>Synopsis</h2>
+<pre class="synopsis">
+
+
+
+enum        <a href="libgksu-API-Reference.html#GksuError">GksuError</a>;
+<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a>* <a href="libgksu-API-Reference.html#gksu-context-new">gksu_context_new</a>               ();
+void        <a href="libgksu-API-Reference.html#gksu-context-set-user">gksu_context_set_user</a>           (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             gchar *username);
+const gchar* <a href="libgksu-API-Reference.html#gksu-context-get-user">gksu_context_get_user</a>          (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context);
+void        <a href="libgksu-API-Reference.html#gksu-context-set-command">gksu_context_set_command</a>        (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             gchar *command);
+const gchar* <a href="libgksu-API-Reference.html#gksu-context-get-command">gksu_context_get_command</a>       (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context);
+void        <a href="libgksu-API-Reference.html#gksu-context-set-keep-env">gksu_context_set_keep_env</a>       (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             gboolean value);
+gboolean    <a href="libgksu-API-Reference.html#gksu-context-get-keep-env">gksu_context_get_keep_env</a>       (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context);
+gchar*      <a href="libgksu-API-Reference.html#gksu-context-get-description">gksu_context_get_description</a>    (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context);
+void        <a href="libgksu-API-Reference.html#gksu-context-set-description">gksu_context_set_description</a>    (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             gchar *description);
+void        <a href="libgksu-API-Reference.html#gksu-context-set-message">gksu_context_set_message</a>        (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             gchar *message);
+gchar*      <a href="libgksu-API-Reference.html#gksu-context-get-message">gksu_context_get_message</a>        (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context);
+void        <a href="libgksu-API-Reference.html#gksu-context-set-login-shell">gksu_context_set_login_shell</a>    (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             gboolean value);
+gboolean    <a href="libgksu-API-Reference.html#gksu-context-get-login-shell">gksu_context_get_login_shell</a>    (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context);
+void        <a href="libgksu-API-Reference.html#gksu-context-set-grab">gksu_context_set_grab</a>           (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             gboolean value);
+gboolean    <a href="libgksu-API-Reference.html#gksu-context-get-grab">gksu_context_get_grab</a>           (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context);
+void        <a href="libgksu-API-Reference.html#gksu-context-set-debug">gksu_context_set_debug</a>          (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             gboolean value);
+gboolean    <a href="libgksu-API-Reference.html#gksu-context-get-debug">gksu_context_get_debug</a>          (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context);
+void        <a href="libgksu-API-Reference.html#gksu-context-free">gksu_context_free</a>               (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context);
+gboolean    <a href="libgksu-API-Reference.html#gksu-run">gksu_run</a>                        (gchar *command_line,
+                                             GError **error);
+gboolean    <a href="libgksu-API-Reference.html#gksu-run-full">gksu_run_full</a>                   (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             GksuAskPassFunc ask_pass,
+                                             gpointer ask_pass_data,
+                                             GksuPassNotNeededFunc pass_not_needed,
+                                             gpointer pass_not_needed_data,
+                                             GError **error);
+gboolean    <a href="libgksu-API-Reference.html#gksu-su">gksu_su</a>                         (gchar *command_line,
+                                             GError **error);
+gboolean    <a href="libgksu-API-Reference.html#gksu-su-full">gksu_su_full</a>                    (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             GksuAskPassFunc ask_pass,
+                                             gpointer ask_pass_data,
+                                             GksuPassNotNeededFunc pass_not_needed,
+                                             gpointer pass_not_needed_data,
+                                             GError **error);
+gboolean    <a href="libgksu-API-Reference.html#gksu-sudo">gksu_sudo</a>                       (gchar *command_line,
+                                             GError **error);
+gboolean    <a href="libgksu-API-Reference.html#gksu-sudo-full">gksu_sudo_full</a>                  (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             GksuAskPassFunc ask_pass,
+                                             gpointer ask_pass_data,
+                                             GksuPassNotNeededFunc pass_not_needed,
+                                             gpointer pass_not_needed_data,
+                                             GError **error);
+gchar*      <a href="libgksu-API-Reference.html#gksu-ask-password">gksu_ask_password</a>               (GError **error);
+gchar*      <a href="libgksu-API-Reference.html#gksu-ask-password-full">gksu_ask_password_full</a>          (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             gchar *prompt,
+                                             GError **error);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2477404"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2477420"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2477431"></a><h3>
+<a name="GksuError"></a>enum GksuError</h3>
+<a class="indexterm" name="id2477443"></a><pre class="programlisting">typedef enum
+{
+  GKSU_ERROR_XAUTH,
+  GKSU_ERROR_HELPER,
+  GKSU_ERROR_NOCOMMAND,
+  GKSU_ERROR_NOPASSWORD,
+  GKSU_ERROR_FORK,
+  GKSU_ERROR_EXEC,
+  GKSU_ERROR_PIPE,
+  GKSU_ERROR_PIPEREAD,
+  GKSU_ERROR_WRONGPASS,
+  GKSU_ERROR_CHILDFAILED,
+  GKSU_ERROR_NOT_ALLOWED,
+  GKSU_ERROR_CANCELED
+} GksuError;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2477463"></a><h3>
+<a name="gksu-context-new"></a>gksu_context_new ()</h3>
+<a class="indexterm" name="id2477476"></a><pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a>* gksu_context_new               ();</pre>
+<p>
+This function should be used when creating a new <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a> to
+pass to gksu_su_full or gksu_sudo_full. The <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a> must be
+freed with gksu_context_free.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td>
+<span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a newly allocated <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2477537"></a><h3>
+<a name="gksu-context-set-user"></a>gksu_context_set_user ()</h3>
+<a class="indexterm" name="id2477548"></a><pre class="programlisting">void        gksu_context_set_user           (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             gchar *username);</pre>
+<p>
+Sets up what user the command will be run as. The default
+is root, but you can run the command as any user.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>context</code></em>&#160;:</span></td>
+<td> the <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a> you want to modify
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>username</code></em>&#160;:</span></td>
+<td> the target username
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2540621"></a><h3>
+<a name="gksu-context-get-user"></a>gksu_context_get_user ()</h3>
+<a class="indexterm" name="id2551051"></a><pre class="programlisting">const gchar* gksu_context_get_user          (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context);</pre>
+<p>
+Gets the user the command will be run as, as set
+by gksu_context_set_user.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>context</code></em>&#160;:</span></td>
+<td> the <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a> from which to grab the information
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a string with the user or NULL if not set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2567223"></a><h3>
+<a name="gksu-context-set-command"></a>gksu_context_set_command ()</h3>
+<a class="indexterm" name="id2567233"></a><pre class="programlisting">void        gksu_context_set_command        (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             gchar *command);</pre>
+<p>
+Sets up what command will run with the target user.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>context</code></em>&#160;:</span></td>
+<td> the <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a> you want to modify
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>command</code></em>&#160;:</span></td>
+<td> the command that shall be ran
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2567303"></a><h3>
+<a name="gksu-context-get-command"></a>gksu_context_get_command ()</h3>
+<a class="indexterm" name="id2567313"></a><pre class="programlisting">const gchar* gksu_context_get_command       (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context);</pre>
+<p>
+Gets the command that will be run, as set by
+gksu_context_set_command.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>context</code></em>&#160;:</span></td>
+<td> the <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a> from which to grab the information
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a string with the command or NULL if not set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2567376"></a><h3>
+<a name="gksu-context-set-keep-env"></a>gksu_context_set_keep_env ()</h3>
+<a class="indexterm" name="id2567387"></a><pre class="programlisting">void        gksu_context_set_keep_env       (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             gboolean value);</pre>
+<p>
+Should the environment be kept as it is? Defaults to
+TRUE. Notice that setting this to FALSE may cause the
+X authorization stuff to fail.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>context</code></em>&#160;:</span></td>
+<td> the <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a> you want to modify
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>value</code></em>&#160;:</span></td>
+<td> TRUE or FALSE
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2567458"></a><h3>
+<a name="gksu-context-get-keep-env"></a>gksu_context_get_keep_env ()</h3>
+<a class="indexterm" name="id2567468"></a><pre class="programlisting">gboolean    gksu_context_get_keep_env       (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context);</pre>
+<p>
+Finds out if the environment in which the program will be
+run will be reset.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>context</code></em>&#160;:</span></td>
+<td> the <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a> from which to grab the information
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> TRUE if the environment is going to be kept,
+FALSE otherwise.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2567532"></a><h3>
+<a name="gksu-context-get-description"></a>gksu_context_get_description ()</h3>
+<a class="indexterm" name="id2567543"></a><pre class="programlisting">gchar*      gksu_context_get_description    (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context);</pre>
+<p>
+Get the description that the window will have when the
+default function for requesting the password is
+called.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>context</code></em>&#160;:</span></td>
+<td> the <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a> you want to get the description from.
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a string with the description or NULL if not set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2567607"></a><h3>
+<a name="gksu-context-set-description"></a>gksu_context_set_description ()</h3>
+<a class="indexterm" name="id2567620"></a><pre class="programlisting">void        gksu_context_set_description    (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             gchar *description);</pre>
+<p>
+Set the nice name for the action that is being run that the window
+that asks for the password will have.  This is only meant to be
+used if the default window is used, of course.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>context</code></em>&#160;:</span></td>
+<td> the <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a> you want to modify
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>description</code></em>&#160;:</span></td>
+<td> a string to set the description for
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2567693"></a><h3>
+<a name="gksu-context-set-message"></a>gksu_context_set_message ()</h3>
+<a class="indexterm" name="id2567704"></a><pre class="programlisting">void        gksu_context_set_message        (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             gchar *message);</pre>
+<p>
+Set the message that the window that asks for the password will have.
+This is only meant to be used if the default window is used, of course.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>context</code></em>&#160;:</span></td>
+<td> the <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a> you want to modify
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>message</code></em>&#160;:</span></td>
+<td> a string to set the message for
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2567776"></a><h3>
+<a name="gksu-context-get-message"></a>gksu_context_get_message ()</h3>
+<a class="indexterm" name="id2567786"></a><pre class="programlisting">gchar*      gksu_context_get_message        (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context);</pre>
+<p>
+Get the message that the window will have when the
+default function for requesting the password is
+called.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>context</code></em>&#160;:</span></td>
+<td> the <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a> you want to get the message from.
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a string with the message or NULL if not set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2567849"></a><h3>
+<a name="gksu-context-set-login-shell"></a>gksu_context_set_login_shell ()</h3>
+<a class="indexterm" name="id2567862"></a><pre class="programlisting">void        gksu_context_set_login_shell    (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             gboolean value);</pre>
+<p>
+Should the shell in which the command will be run be
+a login shell?</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>context</code></em>&#160;:</span></td>
+<td> the <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a> you want to modify
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>value</code></em>&#160;:</span></td>
+<td> TRUE or FALSE
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2567932"></a><h3>
+<a name="gksu-context-get-login-shell"></a>gksu_context_get_login_shell ()</h3>
+<a class="indexterm" name="id2567945"></a><pre class="programlisting">gboolean    gksu_context_get_login_shell    (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context);</pre>
+<p>
+Finds out if the shell created by the underlying su process
+will be a login shell.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>context</code></em>&#160;:</span></td>
+<td> the <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a> from which to grab the information
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> TRUE if the shell will be a login shell, FALSE otherwise.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2568008"></a><h3>
+<a name="gksu-context-set-grab"></a>gksu_context_set_grab ()</h3>
+<a class="indexterm" name="id2568019"></a><pre class="programlisting">void        gksu_context_set_grab           (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             gboolean value);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>context</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>value</code></em>&#160;:</span></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2568078"></a><h3>
+<a name="gksu-context-get-grab"></a>gksu_context_get_grab ()</h3>
+<a class="indexterm" name="id2568089"></a><pre class="programlisting">gboolean    gksu_context_get_grab           (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context);</pre>
+<p>
+Returns TRUE if gksu has been asked to do a grab on keyboard and mouse
+when asking for the password.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>context</code></em>&#160;:</span></td>
+<td> the <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a> you want to ask whether a grab will be done.
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> TRUE if yes, FALSE otherwise.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2568152"></a><h3>
+<a name="gksu-context-set-debug"></a>gksu_context_set_debug ()</h3>
+<a class="indexterm" name="id2568162"></a><pre class="programlisting">void        gksu_context_set_debug          (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             gboolean value);</pre>
+<p>
+Set up if debuging information should be printed.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>context</code></em>&#160;:</span></td>
+<td> the <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a> you want to modify
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>value</code></em>&#160;:</span></td>
+<td> TRUE or FALSE
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2568232"></a><h3>
+<a name="gksu-context-get-debug"></a>gksu_context_get_debug ()</h3>
+<a class="indexterm" name="id2568242"></a><pre class="programlisting">gboolean    gksu_context_get_debug          (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context);</pre>
+<p>
+Finds out if the library is configured to print debuging
+information.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>context</code></em>&#160;:</span></td>
+<td> the <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a> from which to grab the information
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> TRUE if it is, FALSE otherwise.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2568305"></a><h3>
+<a name="gksu-context-free"></a>gksu_context_free ()</h3>
+<a class="indexterm" name="id2568315"></a><pre class="programlisting">void        gksu_context_free               (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context);</pre>
+<p>
+Frees the given <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td>
+<span class="term"><em class="parameter"><code>context</code></em>&#160;:</span></td>
+<td> the <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a> to be freed.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2568372"></a><h3>
+<a name="gksu-run"></a>gksu_run ()</h3>
+<a class="indexterm" name="id2568382"></a><pre class="programlisting">gboolean    gksu_run                        (gchar *command_line,
+                                             GError **error);</pre>
+<p>
+This function is a wrapper for gksu_sudo/gksu_su. It will call one
+of them, depending on the GConf key that defines whether the default
+behavior for gksu is su or sudo mode. This is the recommended way of
+using the library functionality.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>command_line</code></em>&#160;:</span></td>
+<td> the command line that will be executed as other user
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>error</code></em>&#160;:</span></td>
+<td> a <span class="type">GError</span> to be set with the error condition, if an error
+happens
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> FALSE if all went well, TRUE if an error happend.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2568468"></a><h3>
+<a name="gksu-run-full"></a>gksu_run_full ()</h3>
+<a class="indexterm" name="id2568478"></a><pre class="programlisting">gboolean    gksu_run_full                   (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             GksuAskPassFunc ask_pass,
+                                             gpointer ask_pass_data,
+                                             GksuPassNotNeededFunc pass_not_needed,
+                                             gpointer pass_not_needed_data,
+                                             GError **error);</pre>
+<p>
+This function is a wrapper for gksu_sudo_full/gksu_su_full. It will
+call one of them, depending on the GConf key that defines whether
+the default behavior for gksu is su or sudo mode. This is the
+recommended way of using the library functionality.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>context</code></em>&#160;:</span></td>
+<td> a <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a>
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>ask_pass</code></em>&#160;:</span></td>
+<td> a <span class="type">GksuAskPassFunc</span> to be called when the lib determines
+requesting a password is necessary; it may be NULL, in which case
+the standard password request dialog will be used
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>ask_pass_data</code></em>&#160;:</span></td>
+<td> a <span class="type">gpointer</span> with user data to be passed to the
+<span class="type">GksuAskPasswordFunc</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>pass_not_needed</code></em>&#160;:</span></td>
+<td> a <span class="type">GksuPassNotNeededFunc</span> that will be called
+when the command is being run without the need for requesting
+a password; it will only be called if the display-no-pass-info
+gconf key is enabled; NULL will have the standard dialog be shown
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>pass_not_needed_data</code></em>&#160;:</span></td>
+<td> a <span class="type">gpointer</span> with the user data to be passed to the
+<span class="type">GksuPasswordNotNeededFunc</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>error</code></em>&#160;:</span></td>
+<td> a <span class="type">GError</span> object to be filled with the error code or NULL
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> TRUE if all went fine, FALSE if failed
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2568691"></a><h3>
+<a name="gksu-su"></a>gksu_su ()</h3>
+<a class="indexterm" name="id2568701"></a><pre class="programlisting">gboolean    gksu_su                         (gchar *command_line,
+                                             GError **error);</pre>
+<p>
+This function is a wrapper for gksu_su_run_full. It will call it
+without giving the callback functions, which leads to the standard
+ones being called. A simple <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a> is created to hold the
+user name and the command.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>command_line</code></em>&#160;:</span></td>
+<td> the command line that will be executed as other user
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>error</code></em>&#160;:</span></td>
+<td> a <span class="type">GError</span> to be set with the error condition, if an error
+happens
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> TRUE if all went well, FALSE if an error happend.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2568793"></a><h3>
+<a name="gksu-su-full"></a>gksu_su_full ()</h3>
+<a class="indexterm" name="id2568803"></a><pre class="programlisting">gboolean    gksu_su_full                    (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             GksuAskPassFunc ask_pass,
+                                             gpointer ask_pass_data,
+                                             GksuPassNotNeededFunc pass_not_needed,
+                                             gpointer pass_not_needed_data,
+                                             GError **error);</pre>
+<p>
+This could be considered one of the main functions in GKSu.
+it is responsible for doing the 'user changing' magic calling
+the <span class="type">GksuAskPassFunc</span> function to request a password if needed.
+and the <span class="type">GksuPassNotNeededFunc</span> function if a password won't be
+needed, so the application has the oportunity of warning the user
+what it's doing.
+</p>
+<p>
+This function uses su as backend.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>context</code></em>&#160;:</span></td>
+<td> a <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a>
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>ask_pass</code></em>&#160;:</span></td>
+<td> a <span class="type">GksuAskPassFunc</span> to be called when the lib determines
+requesting a password is necessary; it may be NULL, in which case
+the standard password request dialog will be used
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>ask_pass_data</code></em>&#160;:</span></td>
+<td> a <span class="type">gpointer</span> with user data to be passed to the
+<span class="type">GksuAskPasswordFunc</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>pass_not_needed</code></em>&#160;:</span></td>
+<td> a <span class="type">GksuPassNotNeededFunc</span> that will be called
+when the command is being run without the need for requesting
+a password; it will only be called if the display-no-pass-info
+gconf key is enabled; NULL will have the standard dialog be shown
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>pass_not_needed_data</code></em>&#160;:</span></td>
+<td> a <span class="type">gpointer</span> with the user data to be passed to the
+<span class="type">GksuPasswordNotNeededFunc</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>error</code></em>&#160;:</span></td>
+<td> a <span class="type">GError</span> object to be filled with the error code or NULL
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> TRUE if all went fine, FALSE if failed
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2569034"></a><h3>
+<a name="gksu-sudo"></a>gksu_sudo ()</h3>
+<a class="indexterm" name="id2569044"></a><pre class="programlisting">gboolean    gksu_sudo                       (gchar *command_line,
+                                             GError **error);</pre>
+<p>
+This function is a wrapper for gksu_sudo_run_full. It will call it
+without giving the callback functions, which leads to the standard
+ones being called. A simple <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a> is created to hold the
+user name and the command.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>command_line</code></em>&#160;:</span></td>
+<td> the command line that will be executed as other user
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>error</code></em>&#160;:</span></td>
+<td> a <span class="type">GError</span> to be set with the error condition, if an error
+happens
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> TRUE if all went well, FALSE if an error happend.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2569136"></a><h3>
+<a name="gksu-sudo-full"></a>gksu_sudo_full ()</h3>
+<a class="indexterm" name="id2569146"></a><pre class="programlisting">gboolean    gksu_sudo_full                  (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             GksuAskPassFunc ask_pass,
+                                             gpointer ask_pass_data,
+                                             GksuPassNotNeededFunc pass_not_needed,
+                                             gpointer pass_not_needed_data,
+                                             GError **error);</pre>
+<p>
+This could be considered one of the main functions in GKSu.
+it is responsible for doing the 'user changing' magic calling
+the <span class="type">GksuAskPassFunc</span> function to request a password if needed.
+and the <span class="type">GksuPassNotNeededFunc</span> function if a password won't be
+needed, so the application has the oportunity of warning the user
+what it's doing.
+</p>
+<p>
+This function uses the sudo backend.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>context</code></em>&#160;:</span></td>
+<td> a <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a>
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>ask_pass</code></em>&#160;:</span></td>
+<td> a <span class="type">GksuAskPassFunc</span> to be called when the lib determines
+requesting a password is necessary; it may be NULL, in which case
+the standard password request dialog will be used
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>ask_pass_data</code></em>&#160;:</span></td>
+<td> a <span class="type">gpointer</span> with user data to be passed to the
+<span class="type">GksuAskPasswordFunc</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>pass_not_needed</code></em>&#160;:</span></td>
+<td> a <span class="type">GksuPassNotNeededFunc</span> that will be called
+when the command is being run without the need for requesting
+a password; it will only be called if the display-no-pass-info
+gconf key is enabled; NULL will have the standard dialog be shown
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>pass_not_needed_data</code></em>&#160;:</span></td>
+<td> a <span class="type">gpointer</span> with the user data to be passed to the
+<span class="type">GksuPasswordNotNeededFunc</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>error</code></em>&#160;:</span></td>
+<td> a <span class="type">GError</span> object to be filled with the error code or NULL
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> TRUE if all went fine, FALSE if failed
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2569376"></a><h3>
+<a name="gksu-ask-password"></a>gksu_ask_password ()</h3>
+<a class="indexterm" name="id2569387"></a><pre class="programlisting">gchar*      gksu_ask_password               (GError **error);</pre>
+<p>
+This function uses the gksu infra-structure to request for a
+password, but instead of passing it to su or sudo to run a command
+it simply returns the password. This is just a convenience wrapper
+for gksu_ask_password_full.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>error</code></em>&#160;:</span></td>
+<td> a <span class="type">GError</span> to be set with the error condition, if an error
+happens
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a newly allocated string with the password;
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2569452"></a><h3>
+<a name="gksu-ask-password-full"></a>gksu_ask_password_full ()</h3>
+<a class="indexterm" name="id2569463"></a><pre class="programlisting">gchar*      gksu_ask_password_full          (<a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+>GksuContext</a> *context,
+                                             gchar *prompt,
+                                             GError **error);</pre>
+<p>
+This function uses the gksu infra-structure to request for a
+password, but instead of passing it to su or sudo to run a command
+it simply returns the password.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>context</code></em>&#160;:</span></td>
+<td> a <a
+href="/usr/share/gtk-doc/html/libgksu1.2/libgksu12-GksuContext.html#GksuContext"
+><span class="type">GksuContext</span></a>
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>prompt</code></em>&#160;:</span></td>
+<td> a prompt different from Password:
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><em class="parameter"><code>error</code></em>&#160;:</span></td>
+<td> a <span class="type">GError</span> object to be filled with the error code or NULL
+</td>
+</tr>
+<tr>
+<td>
+<span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> a newly allocated string with the password;
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</body>
+</html>

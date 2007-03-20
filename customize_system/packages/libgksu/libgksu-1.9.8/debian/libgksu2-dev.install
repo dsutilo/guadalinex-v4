@@ -1,0 +1,5 @@
+debian/tmp/usr/lib/libgksu2.so usr/lib/
+debian/tmp/usr/lib/libgksu2.a usr/lib/
+docs/html/* usr/share/doc/libgksu2-dev/html/
+debian/tmp/usr/include/libgksu/* usr/include/libgksu/
+debian/tmp/usr/lib/pkgconfig/* usr/lib/pkgconfig/

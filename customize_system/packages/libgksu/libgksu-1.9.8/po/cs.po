@@ -1,0 +1,252 @@
+# Czech translation of libgksu
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# This file is distributed under the same license as the libgksu package.
+# Miroslav Kure <kurem@debian.cz>, 2005, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libgksu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-05-01 08:13-0300\n"
+"PO-Revision-Date: 2006-05-02 21:22+0200\n"
+"Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
+"Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../libgksu/libgksu.c:111
+#, c-format
+msgid "Not using locking for read only lock file %s"
+msgstr "Nepoužívám zámek pro zámkový soubor %s, který je jen pro čtení"
+
+#: ../libgksu/libgksu.c:131
+#, c-format
+msgid "Not using locking for nfs mounted lock file %s"
+msgstr "Nepoužívám zámek pro zámkový soubor %s připojený přes nfs"
+
+#: ../libgksu/libgksu.c:487
+msgid ""
+"<b><big>Could not grab your mouse.</big></b>\n"
+"\n"
+"A malicious client may be eavesdropping on your session or you may have just "
+"clicked a menu or some application just decided to get focus.\n"
+"\n"
+"Try again."
+msgstr ""
+"<b>Nemohu zachytit myš.</b>\n"
+"\n"
+"Zlomyslný klient může odposlouchávat vaše sezení, nebo jste právě klepli na "
+"menu, nebo se některá aplikace prostě rozhodla získat pozornost.\n"
+"\n"
+"Zkuste to prosím znovu."
+
+#: ../libgksu/libgksu.c:499
+msgid ""
+"<b><big>Could not grab your keyboard.</big></b>\n"
+"\n"
+"A malicious client may be eavesdropping on your session or you may have just "
+"clicked a menu or some application just decided to get focus.\n"
+"\n"
+"Try again."
+msgstr ""
+"<b>Nemohu zachytit klávesnici.</b>\n"
+"\n"
+"Zlomyslný klient může odposlouchávat vaše sezení, nebo jste právě klepli na "
+"menu, nebo se některá aplikace prostě rozhodla získat pozornost.\n"
+"\n"
+"Zkuste to prosím znovu."
+
+#: ../libgksu/libgksu.c:841
+#, c-format
+msgid ""
+"<b><big>Enter your password to perform administrative tasks</big></b>\n"
+"\n"
+"The application '%s' lets you modify essential parts of your system."
+msgstr ""
+"<b><big>Zadejte své heslo pro vykonávání správcovských úloh</big></b>\n"
+"\n"
+"Aplikace '%s' vás nechá měnit nezbytné části systému."
+
+#: ../libgksu/libgksu.c:848
+#, c-format
+msgid ""
+"<b><big>Enter your password to run the application '%s' as user %s</big></b>"
+msgstr ""
+"<b><big>Zadejte své heslo pro spuštění aplikace '%s' pod uživatelem %s</big></b>"
+
+#: ../libgksu/libgksu.c:856
+#, c-format
+msgid ""
+"<b><big>Enter the administrative password</big></b>\n"
+"\n"
+"The application '%s' lets you modify essential parts of your system."
+msgstr ""
+"<b><big>Zadejte správcovské heslo</big></b>\n"
+"\n"
+"Aplikace '%s' vás nechá měnit nezbytné části systému."
+
+#: ../libgksu/libgksu.c:863
+#, c-format
+msgid "<b><big>Enter the password of %s to run the application '%s'</big></b>"
+msgstr ""
+"<b><big>Zadejte heslo uživatele %s pro spuštění aplikace '%s'</big></b>"
+
+#: ../libgksu/libgksu.c:942
+#, c-format
+msgid ""
+"<b><big>Granted permissions without asking for password</big></b>\n"
+"\n"
+"The '%s' program was started with the privileges of the %s user without the "
+"need to ask for a password, due to your system's authentication mechanism "
+"setup.\n"
+"\n"
+"It is possible that you are being allowed to run specific programs as user %"
+"s without the need for a password, or that the password is cached.\n"
+"\n"
+"This is not a problem report; it's simply a notification to make sure you "
+"are aware of this."
+msgstr ""
+"<b><big>Oprávnění udělena bez dotazu na heslo</big></b>\n"
+"\n"
+"Díky autentizačnímu mechanismu vašeho systému byl spuštěn program '%s' "
+"s oprávněními uživatele %s bez nutnosti zadání hesla.\n"
+"\n"
+"Je možné, že máte oprávnění ke spouštění některých programů pod uživatelem %"
+"s, aniž byste museli zadávat heslo (třeba z důvodu uložení hesla ve "
+"vyrovnávací paměti).\n"
+"\n"
+"Toto není chybové hlášení, ale pouze konstatování, abyste si danou "
+"skutečnost uvědomili."
+
+#: ../libgksu/libgksu.c:966
+msgid "Do _not display this message again"
+msgstr "Tuto hlášku již příště _nezobrazovat"
+
+#: ../libgksu/libgksu.c:986
+msgid ""
+"<b>Would you like your screen to be \"grabbed\"\n"
+"while you enter the password?</b>\n"
+"\n"
+"This means all applications will be paused to avoid\n"
+"the eavesdropping of your password by a a malicious\n"
+"application while you type it."
+msgstr ""
+"<b>Chcete svou obrazovku při zadávání\n"
+"hesla \"zachytit\"?</b>\n"
+"\n"
+"To znamená, že se všechny aplikace pozastaví,\n"
+"abychom tak při zadávání hesla předešli jeho\n"
+"odposlechnutí zlomyslnou aplikací."
+
+#: ../libgksu/libgksu.c:1602
+msgid "gksu_run needs a command to be run, none was provided."
+msgstr "gksu_run vyžaduje příkaz, který má spustit; žádný nebyl zadán."
+
+#: ../libgksu/libgksu.c:1613
+msgid "The gksu-run-helper command was not found or is not executable."
+msgstr "Příkaz gksu-run-helper nebyl nalezen, nebo nemá práva pro spouštění."
+
+#: ../libgksu/libgksu.c:1670 ../libgksu/libgksu.c:2175
+#, c-format
+msgid "Failed to fork new process: %s"
+msgstr "Selhalo oddělení nového procesu: %s"
+
+#: ../libgksu/libgksu.c:1776 ../libgksu/libgksu.c:2289
+msgid "Wrong password."
+msgstr "Chybné heslo."
+
+#: ../libgksu/libgksu.c:1808
+#, c-format
+msgid ""
+"Failed to communicate with gksu-run-helper.\n"
+"\n"
+"Received:\n"
+" %s\n"
+"While expecting:\n"
+" %s"
+msgstr ""
+"Selhala komunikace s gksu-run-helper.\n"
+"\n"
+"Obdrženo:\n"
+" %s\n"
+"Očekáváno:\n"
+" %s"
+
+#: ../libgksu/libgksu.c:1865
+#, c-format
+msgid "Could not read from the pipe with the child: %s"
+msgstr "Nemohu číst z roury s potomkem: %s"
+
+#: ../libgksu/libgksu.c:1909
+#, c-format
+msgid "su terminated with %d status"
+msgstr "su skončil se stavem %d"
+
+#: ../libgksu/libgksu.c:2009
+msgid "gksu_sudo_run needs a command to be run, none was provided."
+msgstr "gksu_sudo_run vyžaduje příkaz, který má spustit; žádný nebyl zadán."
+
+#: ../libgksu/libgksu.c:2035
+msgid "Unable to copy the user's Xauthorization file."
+msgstr "Nemohu zkopírovat uživatelův soubor Xauthorization."
+
+#: ../libgksu/libgksu.c:2156 ../libgksu/libgksu.c:2165
+#, c-format
+msgid "Error creating pipe: %s"
+msgstr "Chyba při vytváření roury: %s"
+
+#: ../libgksu/libgksu.c:2191
+#, c-format
+msgid "Failed to exec new process: %s"
+msgstr "Selhalo spuštění nového procesu: %s"
+
+#: ../libgksu/libgksu.c:2207 ../libgksu/libgksu.c:2217
+#, c-format
+msgid "Error opening pipe: %s"
+msgstr "Chyba při otevírání roury: %s"
+
+#: ../libgksu/libgksu.c:2247
+msgid "Password: "
+msgstr "Heslo: "
+
+#: ../libgksu/libgksu.c:2292 ../libgksu/libgksu.c:2306
+msgid ""
+"The underlying authorization mechanism (sudo) does not allow you to run this "
+"program. Contact the system administrator."
+msgstr ""
+"Níže ležící autentizační mechanismus (sudo) nepovoluje spuštění tohoto "
+"programu. Kontaktujte prosím svého systémového správce."
+
+#: ../libgksu/libgksu.c:2363
+#, c-format
+msgid "sudo terminated with %d status"
+msgstr "sudo skončilo se stavem %d"
+
+#. label
+#: ../libgksuui/gksuui-dialog.c:223
+msgid "<span weight=\"bold\" size=\"larger\">Type the root password.</span>\n"
+msgstr ""
+"<span weight=\"bold\" size=\"larger\">Zadejte heslo uživatele root.</span>\n"
+
+#. entry label
+#: ../libgksuui/gksuui-dialog.c:239
+msgid "Password:"
+msgstr "Heslo:"
+
+#. label capslock warning
+#: ../libgksuui/gksuui-dialog.c:259
+msgid "<b>You have capslock on</b>"
+msgstr "<b>Máte zapnutý CapsLock</b>"
+
+#: ../libgksuui/gksuui-dialog.c:273
+msgid "Remember password"
+msgstr "Zapamatovat heslo"
+
+#: ../libgksuui/gksuui-dialog.c:290
+msgid "Save for this session"
+msgstr "Uložit pro toto sezení"
+
+#: ../libgksuui/gksuui-dialog.c:295
+msgid "Save in the keyring"
+msgstr "Uložit na klíčenku"

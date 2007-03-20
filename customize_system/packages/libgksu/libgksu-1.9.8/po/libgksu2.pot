@@ -1,0 +1,227 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: kov@debian.org\n"
+"POT-Creation-Date: 2007-03-20 12:55+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../libgksu/libgksu.c:118
+#, c-format
+msgid "Not using locking for read only lock file %s"
+msgstr ""
+
+#: ../libgksu/libgksu.c:138
+#, c-format
+msgid "Not using locking for nfs mounted lock file %s"
+msgstr ""
+
+#: ../libgksu/libgksu.c:518
+msgid ""
+"<b><big>Could not grab your mouse.</big></b>\n"
+"\n"
+"A malicious client may be eavesdropping on your session or you may have just "
+"clicked a menu or some application just decided to get focus.\n"
+"\n"
+"Try again."
+msgstr ""
+
+#: ../libgksu/libgksu.c:530
+msgid ""
+"<b><big>Could not grab your keyboard.</big></b>\n"
+"\n"
+"A malicious client may be eavesdropping on your session or you may have just "
+"clicked a menu or some application just decided to get focus.\n"
+"\n"
+"Try again."
+msgstr ""
+
+#: ../libgksu/libgksu.c:884
+#, c-format
+msgid ""
+"<b><big>Enter your password to perform administrative tasks</big></b>\n"
+"\n"
+"The application '%s' lets you modify essential parts of your system."
+msgstr ""
+
+#: ../libgksu/libgksu.c:891
+#, c-format
+msgid ""
+"<b><big>Enter your password to run the application '%s' as user %s</big></b>"
+msgstr ""
+
+#: ../libgksu/libgksu.c:899
+#, c-format
+msgid ""
+"<b><big>Enter the administrative password</big></b>\n"
+"\n"
+"The application '%s' lets you modify essential parts of your system."
+msgstr ""
+
+#: ../libgksu/libgksu.c:906
+#, c-format
+msgid "<b><big>Enter the password of %s to run the application '%s'</big></b>"
+msgstr ""
+
+#: ../libgksu/libgksu.c:937
+msgid "Password prompt canceled."
+msgstr ""
+
+#: ../libgksu/libgksu.c:998
+#, c-format
+msgid ""
+"<b><big>Granted permissions without asking for password</big></b>\n"
+"\n"
+"The '%s' program was started with the privileges of the %s user without the "
+"need to ask for a password, due to your system's authentication mechanism "
+"setup.\n"
+"\n"
+"It is possible that you are being allowed to run specific programs as user %"
+"s without the need for a password, or that the password is cached.\n"
+"\n"
+"This is not a problem report; it's simply a notification to make sure you "
+"are aware of this."
+msgstr ""
+
+#: ../libgksu/libgksu.c:1022
+msgid "Do _not display this message again"
+msgstr ""
+
+#: ../libgksu/libgksu.c:1042
+msgid ""
+"<b>Would you like your screen to be \"grabbed\"\n"
+"while you enter the password?</b>\n"
+"\n"
+"This means all applications will be paused to avoid\n"
+"the eavesdropping of your password by a a malicious\n"
+"application while you type it."
+msgstr ""
+
+#: ../libgksu/libgksu.c:1281
+msgid "Granting Rights"
+msgstr ""
+
+#: ../libgksu/libgksu.c:1285
+msgid "Starting Administrative Application"
+msgstr ""
+
+#: ../libgksu/libgksu.c:1780
+msgid "gksu_run needs a command to be run, none was provided."
+msgstr ""
+
+#: ../libgksu/libgksu.c:1791
+msgid "The gksu-run-helper command was not found or is not executable."
+msgstr ""
+
+#: ../libgksu/libgksu.c:1799 ../libgksu/libgksu.c:2251
+msgid "Unable to copy the user's Xauthorization file."
+msgstr ""
+
+#: ../libgksu/libgksu.c:1844 ../libgksu/libgksu.c:2385
+#, c-format
+msgid "Failed to fork new process: %s"
+msgstr ""
+
+#: ../libgksu/libgksu.c:1964 ../libgksu/libgksu.c:2522
+msgid "Wrong password."
+msgstr ""
+
+#: ../libgksu/libgksu.c:2008 ../libgksu/libgksu.c:2022
+#, c-format
+msgid ""
+"Failed to communicate with gksu-run-helper.\n"
+"\n"
+"Received:\n"
+" %s\n"
+"While expecting:\n"
+" %s"
+msgstr ""
+
+#: ../libgksu/libgksu.c:2014
+#, c-format
+msgid ""
+"Failed to communicate with gksu-run-helper.\n"
+"\n"
+"Received bad string while expecting:\n"
+" %s"
+msgstr ""
+
+#: ../libgksu/libgksu.c:2078
+#, c-format
+msgid "Could not read from the pipe with the child: %s"
+msgstr ""
+
+#: ../libgksu/libgksu.c:2125
+#, c-format
+msgid "su terminated with %d status"
+msgstr ""
+
+#: ../libgksu/libgksu.c:2225
+msgid "gksu_sudo_run needs a command to be run, none was provided."
+msgstr ""
+
+#: ../libgksu/libgksu.c:2366 ../libgksu/libgksu.c:2375
+#, c-format
+msgid "Error creating pipe: %s"
+msgstr ""
+
+#: ../libgksu/libgksu.c:2401
+#, c-format
+msgid "Failed to exec new process: %s"
+msgstr ""
+
+#: ../libgksu/libgksu.c:2417 ../libgksu/libgksu.c:2427
+#, c-format
+msgid "Error opening pipe: %s"
+msgstr ""
+
+#: ../libgksu/libgksu.c:2472
+msgid "Password: "
+msgstr ""
+
+#: ../libgksu/libgksu.c:2525 ../libgksu/libgksu.c:2539
+msgid ""
+"The underlying authorization mechanism (sudo) does not allow you to run this "
+"program. Contact the system administrator."
+msgstr ""
+
+#: ../libgksu/libgksu.c:2592
+#, c-format
+msgid "sudo terminated with %d status"
+msgstr ""
+
+#: ../libgksuui/gksuui-dialog.c:149
+msgid "<b>You have capslock on</b>"
+msgstr ""
+
+#: ../libgksuui/gksuui-dialog.c:219
+msgid "Remember password"
+msgstr ""
+
+#: ../libgksuui/gksuui-dialog.c:236
+msgid "Save for this session"
+msgstr ""
+
+#: ../libgksuui/gksuui-dialog.c:241
+msgid "Save in the keyring"
+msgstr ""
+
+#. label
+#: ../libgksuui/gksuui-dialog.c:324
+msgid "<span weight=\"bold\" size=\"larger\">Type the root password.</span>\n"
+msgstr ""
+
+#. entry label
+#: ../libgksuui/gksuui-dialog.c:345
+msgid "Password:"
+msgstr ""

@@ -1,0 +1,32 @@
+Source: libgksu
+Section: admin
+Priority: optional
+Maintainer: Gustavo Noronha Silva <kov@debian.org>
+Uploaders: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>, Andrew Lau <netsnipe@users.sourceforge.net>, Clément Stenac <zorglub@debian.org>, Dafydd Harries <daf@debian.org>, Guilherme de S. Pastore <gpastore@debian.org>, Gustavo Franco <stratus@debian.org>, J.H.M. Dassen (Ray) <jdassen@debian.org>, Jordi Mallach <jordi@debian.org>, Jose Carlos Garcia Sogo <jsogo@debian.org>, Josselin Mouette <joss@debian.org>, Loic Minier <lool@dooz.org>, Marc 'HE' Brockschmidt <he@debian.org>, Marco Cabizza <marco87@gmail.com>, Oystein Gisnas <oystein@gisnas.net>, Ondřej Surý <ondrej@debian.org>, Ross Burton <ross@debian.org>, Sebastien Bacher <seb128@debian.org>, Sjoerd Simons <sjoerd@debian.org>
+Build-Depends: cdbs, debhelper (>= 4.1.0), libgtk2.0-dev (>= 2.4.0), libglade2-dev, libgconf2-dev, libstartup-notification0-dev, libgnome-keyring-dev, gettext, autotools-dev, gtk-doc-tools, gnome-pkg-tools, libgtop2-dev
+Standards-Version: 3.7.2
+
+Package: libgksu2-0
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, xbase-clients
+Replaces: gksu (<< 1.9.0), libgksu0
+Conflicts: libgksu0
+Recommends: sudo
+Description: library providing su and sudo functionality
+ This library comes from the gksu program. It provides a simple
+ API to use su and sudo in programs that need to execute tasks
+ as other user. It provides X authentication facilities for running
+ programs in an X session.
+
+Package: libgksu2-dev
+Section: libdevel
+Architecture: any
+Depends: libglib2.0-dev, libgksu2-0 (= ${Source-Version}), libgnome-keyring-dev, libgconf2-dev, libstartup-notification0-dev
+Description: library providing su and sudo functionality (development files)
+ This library comes from the gksu program. It provides a simple
+ API to use su and sudo in programs that need to execute tasks
+ as other user. It provides X authentication facilities for running
+ programs in an X session.
+ .
+ This package contains the development files.

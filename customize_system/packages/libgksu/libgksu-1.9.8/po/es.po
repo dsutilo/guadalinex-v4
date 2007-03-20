@@ -1,0 +1,580 @@
+# translation of es.po to Spanish
+# Spanish traduction for gksu.
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gksu package.
+# Enrique Rodriguez <krm@futurnet.es>, 2003.
+# Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2004.
+# Javier Fernández-Sanguino <jfs@debian.org>, 2005
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: es\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-05-01 08:13-0300\n"
+"PO-Revision-Date: 2005-05-16 03:17+0200\n"
+"Last-Translator: Javier Fernández-Sanguino <jfs@debian.org>\n"
+"Language-Team: Debian l10n Spanish <debian-l10n-spanish@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3.1\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: ../libgksu/libgksu.c:111
+#, c-format
+msgid "Not using locking for read only lock file %s"
+msgstr ""
+
+#: ../libgksu/libgksu.c:131
+#, c-format
+msgid "Not using locking for nfs mounted lock file %s"
+msgstr ""
+
+#: ../libgksu/libgksu.c:487
+#, fuzzy
+msgid ""
+"<b><big>Could not grab your mouse.</big></b>\n"
+"\n"
+"A malicious client may be eavesdropping on your session or you may have just "
+"clicked a menu or some application just decided to get focus.\n"
+"\n"
+"Try again."
+msgstr ""
+"No puedo bloquear su teclado o raton.\n"
+"Hay algun cliente malicioso que esta escuchando\n"
+"en su sesion."
+
+#: ../libgksu/libgksu.c:499
+#, fuzzy
+msgid ""
+"<b><big>Could not grab your keyboard.</big></b>\n"
+"\n"
+"A malicious client may be eavesdropping on your session or you may have just "
+"clicked a menu or some application just decided to get focus.\n"
+"\n"
+"Try again."
+msgstr ""
+"No puedo bloquear su teclado o raton.\n"
+"Hay algun cliente malicioso que esta escuchando\n"
+"en su sesion."
+
+#: ../libgksu/libgksu.c:841
+#, c-format
+msgid ""
+"<b><big>Enter your password to perform administrative tasks</big></b>\n"
+"\n"
+"The application '%s' lets you modify essential parts of your system."
+msgstr ""
+
+#: ../libgksu/libgksu.c:848
+#, fuzzy, c-format
+msgid ""
+"<b><big>Enter your password to run the application '%s' as user %s</big></b>"
+msgstr ""
+"Necesito su contraseña para ejecutar:\n"
+"%s como %s"
+
+#: ../libgksu/libgksu.c:856
+#, c-format
+msgid ""
+"<b><big>Enter the administrative password</big></b>\n"
+"\n"
+"The application '%s' lets you modify essential parts of your system."
+msgstr ""
+
+#: ../libgksu/libgksu.c:863
+#, fuzzy, c-format
+msgid "<b><big>Enter the password of %s to run the application '%s'</big></b>"
+msgstr ""
+"Necesito su contraseña para ejecutar:\n"
+"%s como %s"
+
+#: ../libgksu/libgksu.c:942
+#, c-format
+msgid ""
+"<b><big>Granted permissions without asking for password</big></b>\n"
+"\n"
+"The '%s' program was started with the privileges of the %s user without the "
+"need to ask for a password, due to your system's authentication mechanism "
+"setup.\n"
+"\n"
+"It is possible that you are being allowed to run specific programs as user %"
+"s without the need for a password, or that the password is cached.\n"
+"\n"
+"This is not a problem report; it's simply a notification to make sure you "
+"are aware of this."
+msgstr ""
+
+#: ../libgksu/libgksu.c:966
+msgid "Do _not display this message again"
+msgstr ""
+
+#: ../libgksu/libgksu.c:986
+msgid ""
+"<b>Would you like your screen to be \"grabbed\"\n"
+"while you enter the password?</b>\n"
+"\n"
+"This means all applications will be paused to avoid\n"
+"the eavesdropping of your password by a a malicious\n"
+"application while you type it."
+msgstr ""
+
+#: ../libgksu/libgksu.c:1285
+msgid "Starting Administrative Application"
+msgstr "Iniciando Aplicación de Administración"
+
+#: ../libgksu/libgksu.c:1602
+msgid "gksu_run needs a command to be run, none was provided."
+msgstr ""
+"gksu__run necesita una orden para ejecutar, pero no se proporcionó ninguna."
+
+#: ../libgksu/libgksu.c:1613
+msgid "The gksu-run-helper command was not found or is not executable."
+msgstr "No se encontró la orden gksu-run-helper o no es ejecutable."
+
+#: ../libgksu/libgksu.c:1670 ../libgksu/libgksu.c:2175
+#, c-format
+msgid "Failed to fork new process: %s"
+msgstr "Falló al bifurcar el proceso nuevo: %s"
+
+#: ../libgksu/libgksu.c:1776 ../libgksu/libgksu.c:2289
+msgid "Wrong password."
+msgstr "Contraseña errónea."
+
+#: ../libgksu/libgksu.c:1808
+#, c-format
+msgid ""
+"Failed to communicate with gksu-run-helper.\n"
+"\n"
+"Received:\n"
+" %s\n"
+"While expecting:\n"
+" %s"
+msgstr ""
+
+#: ../libgksu/libgksu.c:1865
+#, c-format
+msgid "Could not read from the pipe with the child: %s"
+msgstr "No se pudo leer desde el pipe con el hijo: %s"
+
+#: ../libgksu/libgksu.c:1909
+#, fuzzy, c-format
+msgid "su terminated with %d status"
+msgstr "Proceso hijo termino con el estado %d"
+
+#: ../libgksu/libgksu.c:2009
+msgid "gksu_sudo_run needs a command to be run, none was provided."
+msgstr ""
+"gksu_sudo_run necesita una orden para ejecutar, no se proporcionó ninguna."
+
+#: ../libgksu/libgksu.c:2035
+msgid "Unable to copy the user's Xauthorization file."
+msgstr "No es posible copiar el archivo Xautorization del usuario."
+
+#: ../libgksu/libgksu.c:2156 ../libgksu/libgksu.c:2165
+#, c-format
+msgid "Error creating pipe: %s"
+msgstr "Error al crear pipe: %s"
+
+#: ../libgksu/libgksu.c:2191
+#, c-format
+msgid "Failed to exec new process: %s"
+msgstr "Falló al efectuar exec del proceso nuevo: %s"
+
+#: ../libgksu/libgksu.c:2207 ../libgksu/libgksu.c:2217
+#, c-format
+msgid "Error opening pipe: %s"
+msgstr "Error al abrir pipe: %s"
+
+#: ../libgksu/libgksu.c:2247
+#, fuzzy
+msgid "Password: "
+msgstr "Contraseña:"
+
+#: ../libgksu/libgksu.c:2292 ../libgksu/libgksu.c:2306
+msgid ""
+"The underlying authorization mechanism (sudo) does not allow you to run this "
+"program. Contact the system administrator."
+msgstr ""
+
+#: ../libgksu/libgksu.c:2363
+#, fuzzy, c-format
+msgid "sudo terminated with %d status"
+msgstr "Proceso hijo termino con el estado %d"
+
+#. label
+#: ../libgksuui/gksuui-dialog.c:223
+#, fuzzy
+msgid "<span weight=\"bold\" size=\"larger\">Type the root password.</span>\n"
+msgstr "<b>Escriba la contraseña de root.</b>\n"
+
+#. entry label
+#: ../libgksuui/gksuui-dialog.c:239
+msgid "Password:"
+msgstr "Contraseña:"
+
+#. label capslock warning
+#: ../libgksuui/gksuui-dialog.c:259
+msgid "<b>You have capslock on</b>"
+msgstr ""
+
+#: ../libgksuui/gksuui-dialog.c:273
+#, fuzzy
+msgid "Remember password"
+msgstr "Contraseña errónea."
+
+#: ../libgksuui/gksuui-dialog.c:290
+msgid "Save for this session"
+msgstr ""
+
+#: ../libgksuui/gksuui-dialog.c:295
+msgid "Save in the keyring"
+msgstr ""
+
+#~ msgid "Failed to obtain xauth key: %s"
+#~ msgstr "Falló al obtener la clave xauth: %s"
+
+#~ msgid "Error copying '%s' to '%s': %s"
+#~ msgstr "Ocurrió un error copiando '%s' a '%s': %s"
+
+#, fuzzy
+#~ msgid "Unable to run /bin/su: %s"
+#~ msgstr "No se pudo ejecutar %s/bin/gksu: %s"
+
+#~ msgid "Option not accepted for --disable-grab: %s\n"
+#~ msgstr "No se acepta la opción para --disable-grab: %s\n"
+
+#~ msgid "Option not accepted for --sudo-mode: %s\n"
+#~ msgstr "No se acepta la opción para --sudo-mode: %s\n"
+
+#~ msgid "Option not accepted for --prompt: %s\n"
+#~ msgstr "No se acepta la opción para --prompt: %s\n"
+
+#, fuzzy
+#~ msgid "<b>Please enter %s's password</b>"
+#~ msgstr "Por favor introduzca la contraseña para %s"
+
+#~ msgid "Missing command to run."
+#~ msgstr "No se ha encontrado el comando a ejecutar"
+
+#, fuzzy
+#~ msgid ""
+#~ "<b>Failed to run %s as user %s.</b>\n"
+#~ "\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Necesito su contraseña para ejecutar:\n"
+#~ "%s como %s"
+
+#, fuzzy
+#~ msgid ""
+#~ "Failed to run %s as user %s:\n"
+#~ " %s"
+#~ msgstr "No se pudo ejecutar %s/bin/gksu: %s"
+
+#, fuzzy
+#~ msgid "Unable to run %s: %s"
+#~ msgstr "No se pudo ejecutar /bin/su: %s"
+
+#~ msgid "Advanced options"
+#~ msgstr "opciones avanzadas"
+
+#~ msgid "<b>Options to use when changing user</b>"
+#~ msgstr "<b>Opciones a usar cuando se cambia un usuario</b>"
+
+#~ msgid "_login shell"
+#~ msgstr "_login shell"
+
+#, fuzzy
+#~ msgid "_preserve environment"
+#~ msgstr "_Conservar entorno"
+
+#~ msgid "Run program"
+#~ msgstr "Programa a ejecutar"
+
+#~ msgid "Run:"
+#~ msgstr "Ejecutar:"
+
+#~ msgid "As user:"
+#~ msgstr "Como usuario:"
+
+#~ msgid "_Advanced"
+#~ msgstr "_Avanzadas"
+
+#, fuzzy
+#~ msgid "Always request a password"
+#~ msgstr "Por favor introduzca la contraseña para %s"
+
+#~ msgid "Run as different user"
+#~ msgstr "Ejecutar como otro usuario"
+
+#, fuzzy
+#~ msgid ""
+#~ "GKsu version %s\n"
+#~ "\n"
+#~ "Usage: %s [-u <user>] [-k] [-l] <command>\n"
+#~ "\n"
+#~ "  --always-ask-password, -a\n"
+#~ "    Do not try to check if a password is really\n"
+#~ "    needed for running the command, or if there\n"
+#~ "    are other means of obtaining it: simply ask for it.\n"
+#~ "  --debug, -d\n"
+#~ "    Print information on the screen that might be\n"
+#~ "    useful for diagnosing and/or solving problems.\n"
+#~ "  --disable-grab, -g\n"
+#~ "    Disable the \"locking\" of the keyboard, mouse,\n"
+#~ "    and focus done by the program when asking for\n"
+#~ "    password.\n"
+#~ "  --icon <icon>, -i <icon>\n"
+#~ "    Replace the default window icon with the argument.\n"
+#~ "  --message <message>, -m <message>\n"
+#~ "    Replace the standard message shown to ask for\n"
+#~ "    password for the argument passed to the option.\n"
+#~ "  --print-pass, -p\n"
+#~ "    Ask gksu to print the password to stdout, just\n"
+#~ "    like ssh-askpass. Useful to use in scripts with\n"
+#~ "    programs that accept receiving the password on\n"
+#~ "    stdin.\n"
+#~ "  --prompt, -P\n"
+#~ "    Ask the user if they want to have their keyboard\n"
+#~ "    and mouse grabbed before doing so.\n"
+#~ "  --ssh-fwd, -s\n"
+#~ "    Strip the host part of the $DISPLAY variable, so that\n"
+#~ "    GKSu will work on SSH X11 Forwarding.\n"
+#~ "  --sudo-mode, -S\n"
+#~ "    Make GKSu use sudo instead of su, as if it had been\n"
+#~ "    run as \"gksudo\".\n"
+#~ "  --title <title>, -t <title>\n"
+#~ "    Replace the default title with the argument.\n"
+#~ "  --user <user>, -u <user>\n"
+#~ "    Call <command> as the specified user.\n"
+#~ "  --desktop <file>, -D <file>\n"
+#~ "    Use a .desktop file to get the name of the application    and the "
+#~ "icon from.\n"
+#~ "\n"
+#~ "  --preserve-env, -k\n"
+#~ "    Preserve the current environments, does not set $HOME\n"
+#~ "    nor $PATH, for example.\n"
+#~ "  --login, -l\n"
+#~ "    Make this a login shell. Beware this may cause\n"
+#~ "    problems with the Xauthority magic. Run xhost\n"
+#~ "    to allow the target user to open windows on your\n"
+#~ "    display!\n"
+#~ "\n"
+#~ "\n"
+#~ msgstr ""
+#~ "GKsu versión %s\n"
+#~ "\n"
+#~ "Modo de uso: %s [-u usuario] [-k] [-l] orden\n"
+#~ "\n"
+#~ "  --debug, -d\n"
+#~ "    Muestra información en pantalla que puede ser \n"
+#~ "    útil para diagnosticar o resolver problemas.\n"
+#~ "  --disable-grab, -g\n"
+#~ "    Desactiva el «bloqueo» del teclado, ratón,\n"
+#~ "    y el foco mientras el programa esta preguntando por la\n"
+#~ "    contraseña\n"
+#~ "  --icon <icono>, -i <icono>\n"
+#~ "    Reemplaza el icono por omisión de la ventana por el \n"
+#~ "    argumento.\n"
+#~ "  --message <mensaje>, -m <mensaje>\n"
+#~ "    Reemplaza el mensaje estándar que pregunta por la\n"
+#~ "    contraseña por el argumento indicado a la opción.\n"
+#~ "  --print-pass, -p\n"
+#~ "    Dice a gksu que pregunte la contraseña en la salida\n"
+#~ "    estándar como ssh-askpass. Útil cuando se usan guiones \n"
+#~ "    con programas que pueden recibir la contraseña por la \n"
+#~ "    entrada estándar.\n"
+#~ "  --prompt, -P\n"
+#~ "    Pregunta al usuario si quiere que se bloquee su teclado\n"
+#~ "    y ratón antes de hacerlo.\n"
+#~ "  --ssh-fwd, -s\n"
+#~ "    Elimina la parte del host de la variable $DISPLAY, para que\n"
+#~ "    GKSu funcione con reenvío de X11 en SSH.\n"
+#~ "  --sudo-mode, S\n"
+#~ "    Hace que GKSu utilice sudo en lugar de su, como si se le\n"
+#~ "    hubiera llamado como «gksudo».\n"
+#~ "  --title <título>, -t <título>\n"
+#~ "    Reemplaza el título predeterminado con el argumento.\n"
+#~ "  --user <usuario>, -u <usuario>\n"
+#~ "    Ejecuta <orden> como el usuario especificado.\n"
+#~ "  --preserv-env, -k\n"
+#~ "    Mantiene las variables de entorno, no establece $HOME\n"
+#~ "    ni $PATH, por ejemplo.\n"
+#~ "  --login, -l\n"
+#~ "    Actúa como un intérprete de órdenes de acceso. Esto puede\n"
+#~ "    causar problemas con Xauthority. ¡Debe ejecutar xhost\n"
+#~ "    para permitir que el usuario objetivo pueda abrir ventanas\n"
+#~ "    en su pantalla!\n"
+#~ "\n"
+#~ "\n"
+
+#~ msgid "WARNING: Could not stat %s: %s.\n"
+#~ msgstr "AVISO: No se pudo analizar %s: %s.\n"
+
+#~ msgid "FATAL: File %s is not owned by root.\n"
+#~ msgstr "FATAL: El fichero %s no pertenece a root.\n"
+
+#~ msgid "FATAL: File %s is not owned by group root.\n"
+#~ msgstr "FATAL: El fichero %s no pertenece al grupo de root.\n"
+
+#~ msgid "FATAL: File %s has wrong permissions, should be 0644.\n"
+#~ msgstr ""
+#~ "FATAL: El fichero %s no tiene los permisos adecuados, deberían ser 0644.\n"
+
+#~ msgid "FATAL: Could not open %s: %s.\n"
+#~ msgstr "FATAL: No se pudo abrir %s: %s.\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "<b>Please enter %s's password\n"
+#~ "to run %s.</b>"
+#~ msgstr ""
+#~ "Necesito su contraseña para ejecutar:\n"
+#~ "%s como %s"
+
+#, fuzzy
+#~ msgid ""
+#~ "GKsu version %s\n"
+#~ "\n"
+#~ "Usage: %s [-u <user>] [-k] [-l] <command>\n"
+#~ "\n"
+#~ "  --user <user>, -u <user>\n"
+#~ "    Calls <command> as the specified user\n"
+#~ "  --message <message>, -m <message>\n"
+#~ "    Replaces the standard message shown to ask for\n"
+#~ "    password for the argument passed to the option\n"
+#~ "  --title <title>, -t <title>\n"
+#~ "    Replaces the default title with the argument\n"
+#~ "  --icon <icon>, -i <icon>\n"
+#~ "    Replaces the default window icon with the argument\n"
+#~ "  --print-pass, -p\n"
+#~ "    Asks gksu to print the password to stdout, just\n"
+#~ "    like ssh-askpass. Useful to use in scripts with\n"
+#~ "    programs that accept receiving the password on\n"
+#~ "    stdin.\n"
+#~ "  --disable-grab, -g\n"
+#~ "    Disables the \"locking\" of the keyboard, mouse,\n"
+#~ "    and focus done by the program when asking for\n"
+#~ "    password\n"
+#~ "  --ssh-fwd, -s\n"
+#~ "    Strip the host part of the $DISPLAY variable, so that\n"
+#~ "    GKSu will work on SSH X11 Forwarding.\n"
+#~ "\n"
+#~ "  --login, -l\n"
+#~ "    Makes this a login shell. Beware this may cause\n"
+#~ "    problems with the Xauthority magic. Run xhost\n"
+#~ "    to allow the target user to open windows on your\n"
+#~ "    display!\n"
+#~ "  --preserve-env, -k\n"
+#~ "    Preserve the current environments, does not set $HOME\n"
+#~ "    nor $PATH, for example.\n"
+#~ "\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Version de GKsu %s\n"
+#~ "\n"
+#~ "Uso: %s [-u <usuario>] [-k] [-l] <comando>\n"
+#~ "\n"
+#~ "Opciones comunes:\n"
+#~ "\t--user <usuario>, -u <usuario>\n"
+#~ "\t\tEjecuta <comando> como el usuario especificado\n"
+#~ "\t--message <mensaje>, -m <mensaje>\n"
+#~ "\t\tReemplaza el mensaje estandard que pregunta por la \n"
+#~ "\t\tpassword como opcion pasada en el argumento\n"
+#~ "\t--title <titulo>, -t <titulo>\n"
+#~ "\t\tReemplaza el titulo por defecto con el argumento\n"
+#~ "\t--icon <icono>, -i <icono>\n"
+#~ "\t\tReemplaza el icono por defecto de la ventana por el argumento\n"
+#~ "\t--print-pass, -p\n"
+#~ "\t\tDice a gksu que pregunta la password en la salida estandard\n"
+#~ "\t\tcomo ssh-askpass. Comodo cuando se usan scripts con\n"
+#~ "\t\tprogramas que se ejecutan cuando se recibe la password\n"
+#~ "\t\tpor la entrada estandard (stdin).\n"
+#~ "\t--disable-grab, -g\n"
+#~ "\t\tDesactiva el \"bloqueo\" del teclado, raton,\n"
+#~ "\t\ty el foco mientras el programa esta preguntando la\n"
+#~ "\t\tpassword\n"
+#~ "\n"
+#~ "Opciones GKsu:\n"
+#~ "\t--login, -l\n"
+#~ "\t\tActua como un \"Login shell\". Esto puede causar\n"
+#~ "\t\tproblemas con Xauthority. Ejecute xhost\n"
+#~ "\t\tpara permitir al usuario abrir ventanas en su\n"
+#~ "\t\tpantalla!\n"
+#~ "\t--preserv-env, -k\n"
+#~ "\t\tMantener las variables de entorno, estas no son $HOME\n"
+#~ "\t\tni $PATH, por ejemplo.\n"
+#~ "\n"
+#~ "Opciones GKsudo:\n"
+#~ "\t--use-sudo, -S\n"
+#~ "\t\tSe usa sudo en vez de su (o use gksudo)\n"
+#~ "\t--set-home, -H\n"
+#~ "\t\tEstablece la variable $HOME para el usuario que lo ejecuta. La\n"
+#~ "\t\taccion por defecto es mantener ls variable $HOME de su usuario\n"
+#~ "\n"
+
+#~ msgid "Using %s as username...\n"
+#~ msgstr "Usando %s como nombre de usuario...\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "GKSu: Failed to initialize the Gtk+ library. GKSu will not be able to "
+#~ "continue!\n"
+#~ msgstr ""
+#~ "libgksu: Falló al inicializar la biblioteca Gtk+, GKSu no puede "
+#~ "continuar.\n"
+
+#~ msgid "Changing user..."
+#~ msgstr "Cambiando usuario..."
+
+#, fuzzy
+#~ msgid ""
+#~ "<b>I need %s's password to run:</b>\n"
+#~ "<i>%s</i>"
+#~ msgstr ""
+#~ "Necesito la contraseña de %s para ejecutar:\n"
+#~ "%s."
+
+#, fuzzy
+#~ msgid "Child terminated with %d status"
+#~ msgstr "Proceso hijo termino con el estado %d"
+
+#, fuzzy
+#~ msgid ""
+#~ "<b>I need your password to run:</b>\n"
+#~ "<i>%s</i>"
+#~ msgstr ""
+#~ "Necesito la contraseña de %s para ejecutar:\n"
+#~ "%s."
+
+#~ msgid "Unable to run /usr/bin/sudo: %s"
+#~ msgstr "No se pudo ejecutar /usr/bin/sudo: %s"
+
+#~ msgid ""
+#~ "An error happened, your program\n"
+#~ "may be blocked:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Ocurrio un error, su programa\n"
+#~ "esta bloqueado:\n"
+#~ "%s"
+
+#, fuzzy
+#~ msgid ""
+#~ "The X authority file i am trying to create for root already exists! This "
+#~ "is highly suspicious!"
+#~ msgstr ""
+#~ "El fichero de autorización X que se está intentando crear para root ya "
+#~ "existe! Esto es muy sospechoso!"
+
+#, fuzzy
+#~ msgid ""
+#~ "I need your password to run:\n"
+#~ "%s as %s"
+#~ msgstr ""
+#~ "Necesito la contraseña de %s para ejecutar:\n"
+#~ "%s."
+
+#~ msgid "No password was supplied and sudo needs it."
+#~ msgstr "No se proporcionó ninguna contraseña y sudo la necesita."

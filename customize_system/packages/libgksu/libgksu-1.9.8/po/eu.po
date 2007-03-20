@@ -1,0 +1,421 @@
+# translation of libgksu1.2.po to Euskara
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Piarres Beobide <pi@beobide.net>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libgksu1.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-05-01 08:13-0300\n"
+"PO-Revision-Date: 2006-01-30 13:22+0200\n"
+"Last-Translator: Piarres Beobide <pi@beobide.net>\n"
+"Language-Team: librezale <librezale@librezale.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+
+#: ../libgksu/libgksu.c:111
+#, c-format
+msgid "Not using locking for read only lock file %s"
+msgstr ""
+
+#: ../libgksu/libgksu.c:131
+#, c-format
+msgid "Not using locking for nfs mounted lock file %s"
+msgstr ""
+
+#: ../libgksu/libgksu.c:487
+#, fuzzy
+msgid ""
+"<b><big>Could not grab your mouse.</big></b>\n"
+"\n"
+"A malicious client may be eavesdropping on your session or you may have just "
+"clicked a menu or some application just decided to get focus.\n"
+"\n"
+"Try again."
+msgstr ""
+"Ezin izan da zure sagua blokeatu.\n"
+"Bezero maltzur bat zure saioa zelatan\n"
+"egon liteke."
+
+#: ../libgksu/libgksu.c:499
+#, fuzzy
+msgid ""
+"<b><big>Could not grab your keyboard.</big></b>\n"
+"\n"
+"A malicious client may be eavesdropping on your session or you may have just "
+"clicked a menu or some application just decided to get focus.\n"
+"\n"
+"Try again."
+msgstr ""
+"Ezin izan da zure teklatua blokeatu.\n"
+"Bezero maltzur bat zure saioa zelatan\n"
+"egon liteke."
+
+#: ../libgksu/libgksu.c:841
+#, c-format
+msgid ""
+"<b><big>Enter your password to perform administrative tasks</big></b>\n"
+"\n"
+"The application '%s' lets you modify essential parts of your system."
+msgstr ""
+
+#: ../libgksu/libgksu.c:848
+#, c-format
+msgid ""
+"<b><big>Enter your password to run the application '%s' as user %s</big></b>"
+msgstr ""
+
+#: ../libgksu/libgksu.c:856
+#, c-format
+msgid ""
+"<b><big>Enter the administrative password</big></b>\n"
+"\n"
+"The application '%s' lets you modify essential parts of your system."
+msgstr ""
+
+#: ../libgksu/libgksu.c:863
+#, c-format
+msgid "<b><big>Enter the password of %s to run the application '%s'</big></b>"
+msgstr ""
+
+#: ../libgksu/libgksu.c:942
+#, c-format
+msgid ""
+"<b><big>Granted permissions without asking for password</big></b>\n"
+"\n"
+"The '%s' program was started with the privileges of the %s user without the "
+"need to ask for a password, due to your system's authentication mechanism "
+"setup.\n"
+"\n"
+"It is possible that you are being allowed to run specific programs as user %"
+"s without the need for a password, or that the password is cached.\n"
+"\n"
+"This is not a problem report; it's simply a notification to make sure you "
+"are aware of this."
+msgstr ""
+
+#: ../libgksu/libgksu.c:966
+msgid "Do _not display this message again"
+msgstr ""
+
+#: ../libgksu/libgksu.c:986
+msgid ""
+"<b>Would you like your screen to be \"grabbed\"\n"
+"while you enter the password?</b>\n"
+"\n"
+"This means all applications will be paused to avoid\n"
+"the eavesdropping of your password by a a malicious\n"
+"application while you type it."
+msgstr ""
+
+#: ../libgksu/libgksu.c:1602
+msgid "gksu_run needs a command to be run, none was provided."
+msgstr ""
+"gksu_run-el abiarazteko komando bat behar du, baina ez da komandorik ezarri."
+
+#: ../libgksu/libgksu.c:1613
+msgid "The gksu-run-helper command was not found or is not executable."
+msgstr "gksu-run-helper komandoa ez da aurkitzen edo ez da abiarazgarria. "
+
+#: ../libgksu/libgksu.c:1670 ../libgksu/libgksu.c:2175
+#, c-format
+msgid "Failed to fork new process: %s"
+msgstr "Huts prozesu berria banatzerakoan: %s"
+
+#: ../libgksu/libgksu.c:1776 ../libgksu/libgksu.c:2289
+msgid "Wrong password."
+msgstr "Okerreko pasahitza."
+
+#: ../libgksu/libgksu.c:1808
+#, c-format
+msgid ""
+"Failed to communicate with gksu-run-helper.\n"
+"\n"
+"Received:\n"
+" %s\n"
+"While expecting:\n"
+" %s"
+msgstr ""
+"Huts gksu-run-helper-ekin harremanetan jartzean.\n"
+"\n"
+"Jasoa:\n"
+" %s\n"
+"Hau espero zen:\n"
+" %s"
+
+#: ../libgksu/libgksu.c:1865
+#, c-format
+msgid "Could not read from the pipe with the child: %s"
+msgstr "Ezin da tutu-tik semearekin irakurri: %s"
+
+#: ../libgksu/libgksu.c:1909
+#, c-format
+msgid "su terminated with %d status"
+msgstr "su %d egoeraz amaitu da"
+
+#: ../libgksu/libgksu.c:2009
+msgid "gksu_sudo_run needs a command to be run, none was provided."
+msgstr ""
+"gksu_sudo_run-ek abiarazteko komando bat behar du, baina ez da komandorik "
+"ezarri."
+
+#: ../libgksu/libgksu.c:2035
+msgid "Unable to copy the user's Xauthorization file."
+msgstr "Ezind a erabiltzailera X baimen fitxategia kopiatu."
+
+#: ../libgksu/libgksu.c:2156 ../libgksu/libgksu.c:2165
+#, c-format
+msgid "Error creating pipe: %s"
+msgstr "Errorea tutua sortzerakoan: %s"
+
+#: ../libgksu/libgksu.c:2191
+#, c-format
+msgid "Failed to exec new process: %s"
+msgstr "Huts prozesu berria axekutatzerakoan: %s"
+
+#: ../libgksu/libgksu.c:2207 ../libgksu/libgksu.c:2217
+#, c-format
+msgid "Error opening pipe: %s"
+msgstr "Huts tutua irekitzerakoan: %s"
+
+#: ../libgksu/libgksu.c:2247
+msgid "Password: "
+msgstr "Pasahitza: "
+
+#: ../libgksu/libgksu.c:2292 ../libgksu/libgksu.c:2306
+msgid ""
+"The underlying authorization mechanism (sudo) does not allow you to run this "
+"program. Contact the system administrator."
+msgstr ""
+"Azpialdeko egiaztapen mekanismoak (sudo) ez zaitu programa hau abiaraztea "
+"onartzen. Sistema kudeatzailearekin harremanetan ipini."
+
+#: ../libgksu/libgksu.c:2363
+#, c-format
+msgid "sudo terminated with %d status"
+msgstr "sufo %d egoeraz amaitu da"
+
+#. label
+#: ../libgksuui/gksuui-dialog.c:223
+#, fuzzy
+msgid "<span weight=\"bold\" size=\"larger\">Type the root password.</span>\n"
+msgstr "<b>Idatzi root pasahitza.</b>\n"
+
+#. entry label
+#: ../libgksuui/gksuui-dialog.c:239
+#, fuzzy
+msgid "Password:"
+msgstr "Pasahitza: "
+
+#. label capslock warning
+#: ../libgksuui/gksuui-dialog.c:259
+msgid "<b>You have capslock on</b>"
+msgstr ""
+
+#: ../libgksuui/gksuui-dialog.c:273
+#, fuzzy
+msgid "Remember password"
+msgstr "Okerreko pasahitza."
+
+#: ../libgksuui/gksuui-dialog.c:290
+msgid "Save for this session"
+msgstr ""
+
+#: ../libgksuui/gksuui-dialog.c:295
+msgid "Save in the keyring"
+msgstr ""
+
+msgid "Failed to obtain xauth key: %s"
+msgstr "Huts xauth gakoa eskuratzerakoan: %s"
+
+msgid "Error copying '%s' to '%s': %s"
+msgstr "Huts '%s' '%s'-ra kopiatzerakoan: %s"
+
+msgid "Unable to run /bin/su: %s"
+msgstr "Ezin da /bin/su abiarazi: %s"
+
+msgid ""
+"GKsu version %s\n"
+"\n"
+"Usage: %s [-u <user>] [-k] [-l] <command>\n"
+"\n"
+"  --debug, -d\n"
+"    Print information on the screen that might be\n"
+"    useful for diagnosing and/or solving problems.\n"
+"  --disable-grab, -g\n"
+"    Disable the \"locking\" of the keyboard, mouse,\n"
+"    and focus done by the program when asking for\n"
+"    password.\n"
+"  --icon <icon>, -i <icon>\n"
+"    Replace the default window icon with the argument.\n"
+"  --message <message>, -m <message>\n"
+"    Replace the standard message shown to ask for\n"
+"    password for the argument passed to the option.\n"
+"  --print-pass, -p\n"
+"    Ask gksu to print the password to stdout, just\n"
+"    like ssh-askpass. Useful to use in scripts with\n"
+"    programs that accept receiving the password on\n"
+"    stdin.\n"
+"  --prompt, -P\n"
+"    Ask the user if they want to have their keyboard\n"
+"    and mouse grabbed before doing so.\n"
+"  --ssh-fwd, -s\n"
+"    Strip the host part of the $DISPLAY variable, so that\n"
+"    GKSu will work on SSH X11 Forwarding.\n"
+"  --sudo-mode, -S\n"
+"    Make GKSu use sudo instead of su, as if it had been\n"
+"    run as \"gksudo\".\n"
+"  --title <title>, -t <title>\n"
+"    Replace the default title with the argument.\n"
+"  --user <user>, -u <user>\n"
+"    Call <command> as the specified user.\n"
+"\n"
+"  --preserve-env, -k\n"
+"    Preserve the current environments, does not set $HOME\n"
+"    nor $PATH, for example.\n"
+"  --login, -l\n"
+"    Make this a login shell. Beware this may cause\n"
+"    problems with the Xauthority magic. Run xhost\n"
+"    to allow the target user to open windows on your\n"
+"    display!\n"
+"\n"
+"\n"
+msgstr ""
+"GKsu %s bertsioa\n"
+"\n"
+"Erabilera: %s [-u <erabiltzailea>] [-k] [-l] <komandoa>\n"
+"\n"
+"  --debug, -d\n"
+"    Arazoak aurkitu eta konpontzeko baliagarriak\n"
+"    diren argibideak panatailan bistarazi.\n"
+"  --disable-grab, -g\n"
+"    Teklatu, foko edo saguaren programak\n"
+"    ezarritako \"blokeoak\" ezgaitu pasahitza\n"
+"    eskatzen duenean.\n"
+"  --icon <icon>, -i <icon>\n"
+"    Lehenetsiriko leiho ikonoa argumentuagatik aldatu.\n"
+"  --message <mezua>, -m <mezua>\n"
+"    Aldatu pasahitza eskatzerako mezu estandarra\n"
+"    aukeran argumentu bezala emandakora.\n"
+"  --print-pass, -p\n"
+"    Ezarri gksu-k pasahitza irteera estandarrean\n"
+"    eskatzea, ssh-askpass-ek egiten duen antzera.\n"
+"    Sarrera estandarretik pasahitzak onartzen dituzten\n"
+"    Script-entzat oso erabilgarria.\n"
+"  --prompt, -P\n"
+"    Teklatu eta arratoria blokeatu aurretik\n"
+"     erabiltzaileari galdetu.\n"
+"  --ssh-fwd, -s\n"
+"    $DISPLAY aldagaiaren ostalari izen zatia ezabatu\n"
+"    gksu-k X11 birbidelketa moduan funtzionatzeko.\n"
+"  --sudo-mode, -S\n"
+"    GKSu-k sudo erabiltzea ezartzen du\"gksudo\" bidez\n"
+"    abiarazia izan balitz bezala.\n"
+"  --title <izenburua>, -t <izenburua>\n"
+"    Aldatu lehenetsiriko izenburua argumentuaz\n"
+"  --user <erabiltzailea>, -u <erabiltzailea>\n"
+"    Abiarazi <komandoa> ezarritako erabiltzailea bezala.\n"
+"\n"
+"  --preserve-env, -k\n"
+"    Mantendu ingurunea, adibidez ez du $HOME\n"
+"    ez $PATH ezarriko.\n"
+"  --login, -l\n"
+"    Saio shell bat bihurtu. Honek Xauthority-rekin\n"
+"    arazoak zor ditzake.. xhost abiarazi hurruneko\n"
+"    erabiltzaileari zure pantailan leihoak irekitzen\n"
+"    baimentzeko.\n"
+"\n"
+"\n"
+
+msgid "WARNING: Could not stat %s: %s.\n"
+msgstr "KONTUZ: Ezin da %s analizatu: %s.\n"
+
+msgid "FATAL: File %s is not owned by root.\n"
+msgstr "KONPONEZINA: %s fitxategia ez da root jabetzakoa.\n"
+
+msgid "FATAL: File %s is not owned by group root.\n"
+msgstr "KONPONEZINA: %s fitxategia ez da root taldearen jabetzakoa.\n"
+
+msgid "FATAL: File %s has wrong permissions, should be 0644.\n"
+msgstr ""
+"KONPONEZINA: %s fitxategiak okerreko baimenak ditu 0644 izan behar dira.\n"
+
+msgid "FATAL: Could not open %s: %s.\n"
+msgstr "KONPONEZINA: Ezin da %s ireki: %s.\n"
+
+msgid "Option not accepted for --disable-grab: %s\n"
+msgstr "Ez da aukera onartzen --disable-grab-rekin: %s\n"
+
+msgid "Option not accepted for --sudo-mode: %s\n"
+msgstr "Ez da aukera onartzen --sudo-mode-rekin: %s\n"
+
+msgid "Option not accepted for --prompt: %s\n"
+msgstr "Ez da aukera onartzen --prompt-rekin: %s\n"
+
+msgid "<b>Please enter %s's password</b>"
+msgstr "<b>Mesedez idatzi %s-ren pasahitza</b>"
+
+msgid "Missing command to run."
+msgstr "Abiarazteko komandoa falta da."
+
+msgid ""
+"<b>Please enter %s's password\n"
+"to run %s.</b>"
+msgstr ""
+"<b>Mesedez idatzi %s-ren pasahitza\n"
+"%s abiarazteko.</b>"
+
+msgid "Advanced options"
+msgstr "Aukera aurreratuak"
+
+msgid "<b>Options to use when changing user</b>"
+msgstr "<b>Erabiltzailea adatzean erabiliko diren aukerak</b>"
+
+msgid "_login shell"
+msgstr "_Saio shell-a"
+
+msgid "_preserve environment"
+msgstr "_mantendu ingurunea"
+
+msgid "Run program"
+msgstr "Programa abiarazi"
+
+msgid "Run:"
+msgstr "Abiarazi:"
+
+msgid "As user:"
+msgstr "Hau bezala:"
+
+msgid "_Advanced"
+msgstr "_Aurretua"
+
+msgid "Changing user..."
+msgstr "Erabiltzailea aldatzen..."
+
+msgid ""
+"libgksu: Failed to init the Gtk+ library, GKSu is not able to continue.\n"
+msgstr ""
+"libgksu: Huts Gtk+ liburutegia abiarazterakoan, GKSu-k ezin du aurrera "
+"jarraitu.\n"
+
+msgid "No password was supplied and sudo needs it."
+msgstr "Ez da pasahitzik eman eta sudo-k berau behar du."
+
+msgid ""
+"The X authority file i am trying to create for the target user already "
+"exists! This is highly suspicous!"
+msgstr ""
+"Sortzen saiatzen ari zaren root-erabiltzailearen X baimen fitxategia badago "
+"dagoeneko! Hau oso susmagarria da!"
+
+#~ msgid ""
+#~ "Impossible to create the .Xauthority file: a file already exists. This "
+#~ "might be a security issue; please investigate or warn your system "
+#~ "administrator."
+#~ msgstr ""
+#~ "Ezinezkoa .Xauthority fitxategia sortzea dagoeneko fitxategi badago eta. "
+#~ "Hau segurtasun zulo bat izan daiteke; mesedez araka ezazu edo sistema "
+#~ "kudeatzaileariberri eman."

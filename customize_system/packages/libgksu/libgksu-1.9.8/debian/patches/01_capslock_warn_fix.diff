@@ -1,0 +1,27 @@
+only in patch2:
+unchanged:
+--- libgksu-1.9.4.orig/libgksuui/gksuui-dialog.c
++++ libgksu-1.9.4/libgksuui/gksuui-dialog.c
+@@ -91,9 +91,10 @@
+    GksuuiDialog *dialog = user_data;
+ 
+    if (is_capslock_on ())
+-      gtk_widget_show (dialog->label_warn_capslock);
++      gtk_label_set_markup(GTK_LABEL(dialog->label_warn_capslock),
++			   _("<b>You have capslock on</b>"));
+    else
+-      gtk_widget_hide (dialog->label_warn_capslock);
++      gtk_label_set_text(GTK_LABEL(dialog->label_warn_capslock),"");
+ 
+    return FALSE;
+ }
+@@ -256,7 +257,8 @@
+   gtk_widget_grab_focus(gksuui_dialog->entry);
+ 
+   /* label capslock warning */
+-  gksuui_dialog->label_warn_capslock = gtk_label_new (_("<b>You have capslock on</b>"));
++  gksuui_dialog->label_warn_capslock = gtk_label_new ("");
++  gtk_widget_show (gksuui_dialog->label_warn_capslock);
+   gtk_label_set_justify (GTK_LABEL(gksuui_dialog->label_warn_capslock),
+ 			 GTK_JUSTIFY_CENTER);
+   gtk_label_set_use_markup (GTK_LABEL(gksuui_dialog->label_warn_capslock), TRUE);
