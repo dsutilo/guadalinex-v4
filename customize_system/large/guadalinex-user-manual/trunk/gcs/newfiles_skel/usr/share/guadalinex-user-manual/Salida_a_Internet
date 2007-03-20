@@ -146,8 +146,6 @@
 </P><P>Si la conexión de red está configurada, sólo tendremos que enchufar el cable de red en frío o incluso en caliente para tener acceso a Internet. Si tenemos el cable enchufado y todo el hardware en orden pero aun así no conseguimos bajar páginas de Internet con el navegador, deberemos seguir casi las mismas <STRONG>Configuraciones adicionales</STRONG> detalladas anteriormente con las redes sin hilos. La única diferencia es que, obviamente, no vamos a tener que definir redes ESSID ni contraseñas WEP, ya que nuestro acceso al <EM>hub</EM> o <EM>punto de acceso</EM> es directo vía cable. Pero a partir del punto octavo, <STRONG>Configuración</STRONG>, procedemos a activar nuestra conexión exactamente igual que hicimos para los dispositivos inalámbricos.
 </P>
 <A NAME="M.C3.B3dem"></A><H2> Módem </H2>
-<PRE>La mención y apartado a los módems ADSL sólo tiene sentido en Guadalinex y distros que tengan el Asistente de Banda Ancha
-</PRE>
 <P>La conexión a través de módem fue la habitual y casi única para la primera generación de usuarios particulares de la Internet con World Wide Web. Hoy día sigue siendo la opción básica allí donde no llega la banda ancha o el presupuesto para acceder a ella la hace inviable. También hay usuarios de módem de alta velocidad conectados a líneas ADSL o incluso RDSI. 
 </P><P>Vamos a tratar los dos tipos de conexión con módem más habituales, el de linea telefónica convencional y el de ADSL. 
 </P><P><BR />

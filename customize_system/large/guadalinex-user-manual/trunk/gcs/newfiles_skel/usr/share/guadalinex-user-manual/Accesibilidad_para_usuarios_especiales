@@ -46,8 +46,6 @@
 </DIV>
 </TD></TR></TABLE>
 <A NAME="Accesibilidad_para_usuarios_especiales"></A><H1>Accesibilidad para usuarios especiales</H1>
-<PRE>    Este apartado describe la situación tal cual está en Guadalinex V4
-</PRE>
 <P>El proyecto GNOME lleva años invirtiendo esfuerzos para ser una alternativa libre viable para aquellos usuarios con necesidades de accesibilidad especiales, como por ejemplo personas con deficiencia visual o problemas motrices. El Grupo de Accesiblidad de GNOME reúne a programadores discapacitados, especialistas en esta disciplina y empresas con interés en el desarrollo de aplicaciones accesibles.
 </P><P>Los esfuerzos de este equipo de trabajo se centran en tres aspectos:
 </P>
@@ -73,15 +71,13 @@
 <P><STRONG>Sistema</STRONG> > <STRONG>Administración</STRONG> > <STRONG>Ventana de entrada</STRONG>
 </P>
 <DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Preferencias de accesibilidad de la ventana de entrada." W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Ventana_entrada.png" HREF="imagenes/Ventana_entrada.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/e/e4/180px-Ventana_entrada.png" SRC="mini/e/e4/180px-Ventana_entrada.png" HEIGHT="135" / WIDTH="180" ALT="Preferencias de accesibilidad de la ventana de entrada."></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Ventana_entrada.png" HREF="extra/Imagen:Ventana_entrada.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Preferencias de accesibilidad de la ventana de entrada.</DIV></DIV></DIV>
-<P>La pantalla de entrada, donde introducimos usuario y contraseña, puede ya ser un obstáculo insalvable. Si hay un único usuario en el ordenador podemos desactivar la contraseña, aterrizando directamente en el escritorio sin pregunta alguna. Ahora bien, el GDM, la aplicación que gestiona la entrada al escritorio, debe poner en marcha los módulos de accesibilidad para que todo esté a punto una vez que entremos en el escritorio.
+<P>La pantalla de entrada, donde introducimos usuario y contraseña, puede ser un obstáculo insalvable. Si hay un único usuario en el ordenador podemos desactivar la contraseña, aterrizando directamente en el escritorio sin pregunta alguna. Ahora bien, el GDM, la aplicación que gestiona la entrada al escritorio, debe poner en marcha los módulos de accesibilidad para que todo esté a punto una vez que entremos en el escritorio.
 </P><P>Para ello tenemos que activar la <STRONG>Configuración de la pantalla de entrada</STRONG> e ir a su pestaña de <STRONG>Accesibilidad</STRONG>. Allí nos encontramos con las siguientes opciones:
 </P>
 <UL><LI><STRONG>Activar entrada accesible</STRONG> es la opción básica para que el teclado y el ratón se adapten al comportamiento de un entorno accesible. Por ejemplo, las acciones que requieren una combinación simultánea de dos teclas pasan a poder ser activadas con una combinación secuencial.
 </LI><LI><STRONG>Permitir que los usuarios cambien las tipografías y colores del interfaz plano</STRONG> nos permite disponer pantallas de entrada más flexibles y sencillas.
 </LI><LI>Las siguientes opciones son relativas a la emisión de <STRONG>sonidos</STRONG>, muy útiles para que los usuarios invidentes sepamos cuándo la pantalla de entrada está preparada (ese repique de timbal), cuándo hemos entrado con éxito en el escritorio o cuándo ha sucedido algún error.
 </LI></UL>
-<P><BR />
-</P>
 <A NAME="Preferencias_de_tecnolog.C3.ADa_de_asistencia"></A><H2>Preferencias de tecnología de asistencia</H2>
 <P><STRONG>Sistema</STRONG> > <STRONG>Preferencias</STRONG> > <STRONG>Preferencias de tecnología de asistencia</STRONG>
 </P>
@@ -93,7 +89,7 @@
 <P><STRONG>Sistema</STRONG> > <STRONG>Administración</STRONG> > <STRONG>Usuarios y grupos</STRONG>
 </P>
 <DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Creación de un usuario nuevo. Opciones de accesibilidad" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Creacion_usuario_accesibilidad.png" HREF="imagenes/Creacion_usuario_accesibilidad.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/a/a6/180px-Creacion_usuario_accesibilidad.png" SRC="mini/a/a6/180px-Creacion_usuario_accesibilidad.png" HEIGHT="135" / WIDTH="180" ALT="Creación de un usuario nuevo. Opciones de accesibilidad"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Creacion_usuario_accesibilidad.png" HREF="extra/Imagen:Creacion_usuario_accesibilidad.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Creación de un usuario nuevo. Opciones de accesibilidad</DIV></DIV></DIV>
-<P>Otra de las novedades de Gudalinex V4 es la posibilidad de crear usuarios con perfíles de accesibilidad. Si vamos a <STRONG>Usuarios y grupos</STRONG> y pulsamos en <STRONG>Añadir Usuario" nos aparecerá una ventana en la que hay una pestaña </STRONG>Accesibilidad<STRONG> que permite seleccionar entre:</STRONG>
+<P>Otra de las novedades de Guadalinex V4 es la posibilidad de crear usuarios con perfíles de accesibilidad. Si vamos a <STRONG>Usuarios y grupos</STRONG> y pulsamos en <STRONG>Añadir Usuario" nos aparecerá una ventana en la que hay una pestaña </STRONG>Accesibilidad<STRONG> que permite seleccionar entre:</STRONG>
 </P>
 <UL><LI> <STRONG>Motriz_Leve</STRONG>: activa modificador de teclado.
 </LI><LI> <STRONG>Motriz_Moderado</STRONG>: activa teclado en pantalla.
@@ -102,14 +98,16 @@
 </LI><LI> <STRONG>Visual_Total</STRONG>: activa lector de pantalla
 </LI></UL>
 <P>Seleccionando una de ellas, el usuario se creará teniendo en cuenta este perfil y cuando inicie sesión encontrará que tiene habilitadas las capacidades de accesibilidad del perfil que se seleccionó.
-</P><P><BR />
 </P>
 <A NAME="Dasher"></A><H2>Dasher</H2>
 <P><STRONG>Aplicaciones</STRONG> > <STRONG>Accesibilidad</STRONG> > <STRONG>Sistema predictivo de entrada (Dasher)</STRONG>
 </P><P><BR />
 Dasher <A CLASS="external" TITLE="http://www.inference.phy.cam.ac.uk/dasher/" HREF="http://www.inference.phy.cam.ac.uk/dasher/">[1]</A><SPAN CLASS="urlexpansion"> (<I>http://www.inference.phy.cam.ac.uk/dasher/</I>)</SPAN> es un juego de letras, una máquina de poesía, un pasaje hacia nuestro subconsciente, un pasatiempos mucho más inteligente que el Buscaminas y al nivel de un Tetris o un ajedrez. También es, por supuesto, una aplicación que permite escribir en situaciones en las que no se puede acceder a un teclado completo.
 </P><P>Esta aplicación permite elaborar textos con el movimiento del ratón, de un <EM>joystick</EM>, de un mando articulado con la cabeza... También es operativo con otros dispositivos elementales como por ejemplo un teclado compuesto por tres teclas grandes y hasta se puede controlar con la mirada o... ¡con la respiración! Un usuario entrenado escribe con un sensor visual (dispositivo que capta hacia dónde apuntamos la mirada) a una media de 29 palabras por minuto, equivalente a una velocidad de escritura a mano. 
-</P><P>Los estudios confirman que con <STRONG>Dasher</STRONG> y un ratón se puede llegar a escribir 39 palabras de media por minuto. Esta estadística es una esperanza para los usuarios discapacitados que no pueden utilizar un teclado completo con las dos manos, pero si esta aplicación fuera tan popular entre la comunidad en general como lo es en el entorno de la accesibilidad, seguramente sería útil para quienes utilizan PDAs y demás pantallas táctiles reducidas. Y en la sección de <STRONG>Juegos</STRONG> sería la delicia de muchos, pequeños y mayores.
+</P>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Dasher en acción" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Dasher.png" HREF="imagenes/Dasher.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/1/11/180px-Dasher.png" SRC="mini/1/11/180px-Dasher.png" HEIGHT="232" / WIDTH="180" ALT="Dasher en acción"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Dasher.png" HREF="extra/Imagen:Dasher.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Dasher en acción</DIV></DIV></DIV>
+<P><BR />
+Los estudios confirman que con <STRONG>Dasher</STRONG> y un ratón se puede llegar a escribir 39 palabras de media por minuto. Esta estadística es una esperanza para los usuarios discapacitados que no pueden utilizar un teclado completo con las dos manos, pero si esta aplicación fuera tan popular entre la comunidad en general como lo es en el entorno de la accesibilidad, seguramente sería útil para quienes utilizan PDAs y demás pantallas táctiles reducidas. Y en la sección de <STRONG>Juegos</STRONG> sería la delicia de muchos, pequeños y mayores.
 </P><P>Si alguien cree que estamos exagerando le invitamos a que pruebe esta aplicación durante 15 minutos de reloj, y a ver si a partir de allí le entra o no más curiosidad. <STRONG>Dasher</STRONG> aprende a predecirnos mientras nosotros aprendemos a utilizarlo, por lo que cuanto más lo utilizamos mejor se adapta a lo que queremos escribir.
 </P><P>Su uso es bien sencillo. El juego consiste en llevar de la derecha a la izquierda las letras que componen nuestro mensaje, asegurándonos de que pasan por el medio. Tras un minuto de juego ya se ve por donde van los tiros y en poco más se empieza acumular fluidez. En las <STRONG>Preferencias</STRONG> es posible seleccionar multitud de idiomas con vocabularios predictivos preinstalados. Acentos, eñes y signos de puntuación están incluidos.
 </P>

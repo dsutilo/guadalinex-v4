@@ -206,8 +206,10 @@ $ sudo apt-get install slbackup webmin-slbackup
 </PRE>
 <DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Una de las pantallas de administración de slbackup desde webmin" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Slbackup1.png" HREF="imagenes/180px-Slbackup1.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/1/11/180px-180px-Slbackup1.png" SRC="mini/1/11/180px-180px-Slbackup1.png" HEIGHT="116" / WIDTH="180" ALT="Una de las pantallas de administración de slbackup desde webmin"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Slbackup1.png" HREF="extra/Imagen:180px-Slbackup1.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Una de las pantallas de administración de slbackup desde webmin</DIV></DIV></DIV>
 <P>Ya desde el interfaz web de webmin podremos gestionar de una forma sencilla que directorios se salvan, de qué máquinas, con qué periodicidad, cómo acceder de una forma segura a las máquinas remotas, así como la restauración de copias de seguridad.
-</P><P>Sigue: <A TITLE="Guia v4/Quiero más" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Quiero_m%C3%A1s" HREF="Quiero_m%C3%A1s">Quiero más</A>
-</P><DIV CLASS="printfooter">
+</P><P><BR />
+</P>
+<PRE>   Sigue: <A TITLE="Guia v4/Quiero más" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Quiero_m%C3%A1s" HREF="Quiero_m%C3%A1s">Quiero más</A>
+</PRE><DIV CLASS="printfooter">
 Obtenido de "<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Rutinas_del_sysadmin_amateur" HREF="Rutinas_del_sysadmin_amateur">http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Rutinas_del_sysadmin_amateur</A>"</DIV>
 
 	    

@@ -1,7 +1,7 @@
 <!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML XMLNSXML:LANGDIRLANG>
   <HEAD>
     <META / HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
-    <META NAME="KEYWORDS" / CONTENT="Guia v4/Debian, la distribución madre,Guia v4/Saboreo e instalación en 3 clics,Guia v4/Mil y un programas libres y gratuitos">
+    <META NAME="KEYWORDS" / CONTENT="Guia v4/Debian, la distribución madre,Guia v4/Ubuntu, la hija aventajada,Guia v4/Saboreo e instalación en 3 clics,Guia v4/Mil y un programas libres y gratuitos">
 <META NAME="robots" / CONTENT="index,follow">
 <LINK / REL="shortcut icon" HREF="http://www.guadalinex.org/favicon.ico">
 <LINK TITLE="Creative Commons" / REL="meta" TYPE="application/rdf+xml" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php?title=Guia_v4/Debian%2C_la_distribuci%C3%B3n_madre&amp;action=creativecommons">
@@ -196,7 +196,10 @@ En la familia Debian:
 </LI><LI> <STRONG>Linspire</STRONG> <A CLASS="external" TITLE="http://www.linspire.com/" HREF="http://www.linspire.com/">[29]</A><SPAN CLASS="urlexpansion"> (<I>http://www.linspire.com/</I>)</SPAN> es una distribución comercial y de pago desarrollada por la empresa del mismo nombre y enfocada también a la facilidad de uso. Anteriormente denominada Lindows, ganó dos demandas presentadas por Microsoft, quien acabó pagando una bonita suma por la marca, hecho que le reportó además una buena publicidad.
 </LI><LI> <STRONG>Xandros</STRONG> <A CLASS="external" TITLE="http://www.xandros.com/index.html.en" HREF="http://www.xandros.com/index.html.en">[30]</A><SPAN CLASS="urlexpansion"> (<I>http://www.xandros.com/index.html.en</I>)</SPAN> es una marca de la empresa del mismo nombre bajo la cual conviven varias distribuciones no libres y de pago, cuya estrategia es asemejarse lo máximo posible a MS Windows en cuanto a estética y funcionamiento para facilitar la migración de los usuarios a Linux.
 </LI></UL>
-<DIV CLASS="printfooter">
+<P><BR />
+</P>
+<PRE>    Sigue: <A TITLE="Guia v4/Ubuntu, la hija aventajada" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Ubuntu%2C_la_hija_aventajada" HREF="Ubuntu%2C_la_hija_aventajada">Ubuntu, la hija aventajada</A>
+</PRE><DIV CLASS="printfooter">
 Obtenido de "<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Debian%2C_la_distribuci%C3%B3n_madre" HREF="Debian%2C_la_distribuci%C3%B3n_madre">http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Debian%2C_la_distribuci%C3%B3n_madre</A>"</DIV>
 
 	    

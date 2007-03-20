@@ -137,7 +137,7 @@ Alias /webdav /home/miusuario/compartida
 $ mkdir /home/miusuario/compartida
 $ sudo chown www-data /home/miusuario/compartida
 </PRE>
-<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Conectando a nuestro servidor por WebDAV" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Pantallazo-Conectar_con_el_servidor.png" HREF="imagenes/180px-Pantallazo-Conectar_con_el_servidor.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/2/25/180px-180px-Pantallazo-Conectar_con_el_servidor.png" SRC="mini/2/25/180px-180px-Pantallazo-Conectar_con_el_servidor.png" HEIGHT="125" / WIDTH="180" ALT="Conectando a nuestro servidor por WebDAV"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Pantallazo-Conectar_con_el_servidor.png" HREF="extra/Imagen:180px-Pantallazo-Conectar_con_el_servidor.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Conectando a nuestro servidor por WebDAV</DIV></DIV></DIV>
+<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="Conectando a nuestro servidor por WebDAV" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Pantallazo-Conectar_con_el_servidor.png" HREF="imagenes/180px-Pantallazo-Conectar_con_el_servidor.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/2/25/180px-180px-Pantallazo-Conectar_con_el_servidor.png" SRC="mini/2/25/180px-180px-Pantallazo-Conectar_con_el_servidor.png" HEIGHT="109" / WIDTH="180" ALT="Conectando a nuestro servidor por WebDAV"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:180px-Pantallazo-Conectar_con_el_servidor.png" HREF="extra/Imagen:180px-Pantallazo-Conectar_con_el_servidor.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>Conectando a nuestro servidor por WebDAV</DIV></DIV></DIV>
 <P>Habilitamos nuestro nuevo espacio web:
 </P>
 <PRE>
@@ -290,8 +290,11 @@ $ sudo /etc/init.d/jabber restart
 <P>Ahora podemos usar nuestro cliente de mensajería instantánea preferido, por ejemplo 'gaim', para crearnos una cuenta en nuestro nuevo servidor jabber. 
 </P><P>Si usamos un cortafuegos debemos asegurarnos que dejamos pasar el tráfico tcp/udp a los puertos 5222, 5223, 5269 que usa nuestro servidor Jabber.
 </P><P>Para más información sobre como mejorar nuestra instalación de jabber, podemos profundizar en la Guía de Administración de Jabber 1.4 <A CLASS="external" TITLE="http://jabberd.jabberstudio.org/1.4/doc/adminguide" HREF="http://jabberd.jabberstudio.org/1.4/doc/adminguide">[3]</A><SPAN CLASS="urlexpansion"> (<I>http://jabberd.jabberstudio.org/1.4/doc/adminguide</I>)</SPAN>. Entre las cosas interesantes que podemos hacer con nuestro servidor, están la de crear salas para hablar simultáneamente con varias personas (habría que instalar el paquete <STRONG>jabber-muc</STRONG>) o hacer que las comunicaciones con nuestro servidor sean seguras a través de SSL. También se pueden tender puentes con otros servicios de mensajería instantánea de forma que podamos hablar con usuarios que no usan Jabber.
-</P><P>Sigue: <A TITLE="Guia v4/Rutinas del sysadmin amateur" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Rutinas_del_sysadmin_amateur" HREF="Rutinas_del_sysadmin_amateur">Rutinas del <EM>sysadmin</EM> amateur</A>
-</P><DIV CLASS="printfooter">
+</P><P><BR />
+</P><P><BR />
+</P>
+<PRE>   Sigue: <A TITLE="Guia v4/Rutinas del sysadmin amateur" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Rutinas_del_sysadmin_amateur" HREF="Rutinas_del_sysadmin_amateur">Rutinas del <EM>sysadmin</EM> amateur</A>
+</PRE><DIV CLASS="printfooter">
 Obtenido de "<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Poner_archivos_a_la_disposici%C3%B3n" HREF="Poner_archivos_a_la_disposici%C3%B3n">http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Poner_archivos_a_la_disposici%C3%B3n</A>"</DIV>
 
 	    

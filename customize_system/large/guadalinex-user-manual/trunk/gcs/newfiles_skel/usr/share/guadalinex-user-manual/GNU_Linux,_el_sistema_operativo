@@ -1,7 +1,7 @@
 <!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML XMLNSXML:LANGDIRLANG>
   <HEAD>
     <META / HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
-    <META NAME="KEYWORDS" / CONTENT="Guia v4/GNU Linux, el sistema operativo">
+    <META NAME="KEYWORDS" / CONTENT="Guia v4/GNU Linux, el sistema operativo,Guia v4/Debian, la distribución madre">
 <META NAME="robots" / CONTENT="index,follow">
 <LINK / REL="shortcut icon" HREF="http://www.guadalinex.org/favicon.ico">
 <LINK TITLE="Creative Commons" / REL="meta" TYPE="application/rdf+xml" HREF="http://www.guadalinex.org/guadapedia-estatica/index.php?title=Guia_v4/GNU_Linux%2C_el_sistema_operativo&amp;action=creativecommons">
@@ -95,7 +95,10 @@
 </P><P>Su desarrollo no forma parte del proyecto GNU, pero la colaboración entre ambas iniciativas es estrecha y ambos complementos han llevado el software libre a ser una alternativa real al software propietario, materializándose así una parte de las aspiraciones y objetivos que dieron lugar a este movimiento.
 </P>
 <DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><A CLASS="internal" TITLE="&amp;quot;A 3D baby GNU and baby Tux&amp;quot;, de Nicolas Rougier" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Babygnutux.png" HREF="imagenes/Babygnutux.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/mini/4/46/180px-Babygnutux.png" SRC="mini/4/46/180px-Babygnutux.png" HEIGHT="90" / WIDTH="180" ALT="&amp;quot;A 3D baby GNU and baby Tux&amp;quot;, de Nicolas Rougier"></A>  <DIV CLASS="thumbcaption"><DIV CLASS="magnify" STYLE="float:right"><A CLASS="internal" TITLE="Enlarge" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Imagen:Babygnutux.png" HREF="extra/Imagen:Babygnutux.png"><IMG W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/images/magnify-clip.png" SRC="stylesheets/images/magnify-clip.png" HEIGHT="11" / WIDTH="15" ALT="Enlarge"></A></DIV>&quot;A 3D baby GNU and baby Tux&quot;, de Nicolas Rougier</DIV></DIV></DIV>
-<DIV CLASS="printfooter">
+<P><BR />
+</P>
+<PRE>     Sigue: <A TITLE="Guia v4/Debian, la distribución madre" W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/Debian%2C_la_distribuci%C3%B3n_madre" HREF="Debian%2C_la_distribuci%C3%B3n_madre">Debian, la distribución madre</A>
+</PRE><DIV CLASS="printfooter">
 Obtenido de "<A W3MIRHREF="http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/GNU_Linux%2C_el_sistema_operativo" HREF="GNU_Linux%2C_el_sistema_operativo">http://www.guadalinex.org/guadapedia-estatica/index.php/Guia_v4/GNU_Linux%2C_el_sistema_operativo</A>"</DIV>
 
 	    
