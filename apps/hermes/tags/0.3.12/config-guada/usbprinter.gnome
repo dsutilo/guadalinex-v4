@@ -1,0 +1,6 @@
+packages:
+    - gnome-cups-manager
+
+conn_commands:
+    - sudo /etc/init.d/cupsys
+    - sudo gnome-cups-add &
