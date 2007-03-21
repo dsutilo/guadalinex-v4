@@ -22,13 +22,13 @@ log_begin_msg "$DESCRIPTION"
 
 # Cleaning up the english stuff at the user's home
 
-sed -i 's|num_client=7|num_client=8|g' /root/usr/share/gnome/default.session.gv4
+sed -i 's|num_client=8|num_client=9|g' /root/usr/share/gnome/default.session.gv4
 
 
 cat <<EOF >> /root/usr/share/gnome/default.session.gv4
+8,id=default8
 8,Priority=35
 8,Program=/etc/init.d/dbus restart
-
 EOF
 
 
