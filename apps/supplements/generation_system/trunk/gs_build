@@ -108,6 +108,8 @@ def check_pool(config):
     sources_f.write(open(GSGTEMP + '/sources.list.gv4').read())
     sources_f.close()
 
+    sc.apt_get_update()
+
     # Simulate supplement installation
     print "\n\n#########################################"
     print "Simulation of metapackage installation..."
