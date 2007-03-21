@@ -1,0 +1,15 @@
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=(Audacity)
+Name[es]=Editor de sonido (Audacity)
+GenericName=Audacity Sound Editor
+Comment=Record and edit audio files
+Comment[es]=Grabe y edite sus propios ficheros de sonido
+Icon=audacity
+Type=Application
+Categories=AudioVideo;Audio;Recorder;
+Exec=audacity
+Terminal=false
+MimeType=application/x-aup;
+NoDisplay=true
