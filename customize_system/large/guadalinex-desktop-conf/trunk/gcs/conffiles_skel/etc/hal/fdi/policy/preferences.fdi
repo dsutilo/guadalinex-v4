@@ -11,16 +11,14 @@
   that honor the storage.automount_enabled_hint to not mount non-removable
   media.
 -->
-<!--
-  <device>
-    <match key="storage.hotpluggable" bool="false">
-      <match key="storage.removable" bool="false">
-        <merge key="storage.automount_enabled_hint" type="bool">true</merge>
-      </match>
-    </match>
-  </device>
--->
 
+<device>
+  <match key="storage.hotpluggable" bool="false">
+    <match key="storage.removable" bool="false">
+      <merge key="storage.automount_enabled_hint" type="bool">true</merge>
+    </match>
+  </match>
+</device>
 
 <!-- 
   The following shows how to put sync and noatime on for devices smaller then
