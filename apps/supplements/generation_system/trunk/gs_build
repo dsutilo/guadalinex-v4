@@ -103,6 +103,11 @@ def check_pool(config):
     sc = gsdutils.SupplementCustomizer(MASTERDIR, as_user = True)
     sc.customize()
 
+    # Add gv4 repos to sources
+    sources_f = open(gsdutils.SOURCESFILE, 'a')
+    sources_f.write(open(GSGTEMP + '/sources.list.gv4').read())
+    sources_f.close()
+
     # Simulate supplement installation
     print "\n\n#########################################"
     print "Simulation of metapackage installation..."
@@ -115,8 +120,7 @@ def check_pool(config):
         print "It's impossible to install " + config['METAPACKAGE']
         sys.exit(1)
 
-
-    # Copy extra packages to pool
+    # Add extra packages to pool
     add_extra_packages()
     generate_pool()
     

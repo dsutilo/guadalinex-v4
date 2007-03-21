@@ -1,3 +1,14 @@
+NAME    Nombre del Suplemento
+SHORTNAME Supl1
+DESC    Descripción del suplemento. 1 línea.
+METAPACKAGE nombre-del-metapaquete
+PACKAGES 
+
+# Repositorios ===================================
+# En blanco para autogenerarse el del cdrom
+URI
+
+
 # Este es el fichero de configuración del suplemento. Aquí se indica todo lo
 # necesario para crear un suplemento.
 
@@ -46,10 +57,3 @@
 #       URI   http://archive.ubuntu.com/breezy main universe
 #
 #       Se pueden añadir tantas URIs como se quiera. 
-
-NAME    Nombre del Suplemento
-SHORTNAME Supl1
-DESC    Descripción del suplemento. 1 línea.
-METAPACKAGE nombre-del-metapaquete
-PACKAGES 
-URI
