@@ -1,3 +1,5 @@
 #!/bin/bash
 
-rm ${HOME}/.g3g
+if [ -e ${HOME}/.g3g ];then
+   rm ${HOME}/.g3g
+fi
