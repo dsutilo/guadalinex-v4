@@ -1,0 +1,39 @@
+#!/bin/sh
+
+PREREQ=""
+DESCRIPTION="Fixing dbus bug in GNOME..."
+
+. /scripts/casper-functions
+
+prereqs()
+{
+       echo "$PREREQ"
+}
+
+case $1 in
+# get pre-requisites
+prereqs)
+       prereqs
+       exit 0
+       ;;
+esac
+
+log_begin_msg "$DESCRIPTION"
+
+# Cleaning up the english stuff at the user's home
+
+sed -i 's|nautilus --no-default-window|dbus-fix|g' /root/usr/share/gnome/default.session.gv4
+
+
+cat <<EOF >> /root/usr/bin/dbus-fix
+
+sudo /etc/init.d/dbus restart
+
+nautilus --no-default-window
+
+EOF
+
+chmod +x /root/usr/bin/dbus-fix
+
+
+log_end_msg
