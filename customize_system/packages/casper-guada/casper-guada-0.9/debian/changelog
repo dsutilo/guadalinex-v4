@@ -1,3 +1,9 @@
+casper-guada (0.9) unstable; urgency=low
+
+  * Fixed problem default.session and dbus restart. 
+  
+ -- Juanje Ojeda <jojeda@emergya.es>  Wed, 21 Mar 2007 17:53:00 +0100
+
 casper-guada (0.8) unstable; urgency=low
 
   * Problems with Motriz_* profiles fixed. 
