@@ -22,18 +22,14 @@ log_begin_msg "$DESCRIPTION"
 
 # Cleaning up the english stuff at the user's home
 
-sed -i 's|nautilus --no-default-window|dbus-fix|g' /root/usr/share/gnome/default.session.gv4
+sed -i 's|num_client=7|num_client=8|g' /root/usr/share/gnome/default.session.gv4
 
 
-cat <<EOF >> /root/usr/bin/dbus-fix
-
-sudo /etc/init.d/dbus restart
-
-nautilus --no-default-window
+cat <<EOF >> /root/usr/share/gnome/default.session.gv4
+8,Priority=35
+8,Program=/etc/init.d/dbus restart
 
 EOF
-
-chmod +x /root/usr/bin/dbus-fix
 
 
 log_end_msg
