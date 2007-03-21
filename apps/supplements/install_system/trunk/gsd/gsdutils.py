@@ -23,7 +23,10 @@ class SupplementCustomizer(object):
         This method install suppletory.
         """
         self.__prepare_system() 
+        self.apt_get_update()
 
+
+    def apt_get_update(self):
         #Update apt system
         cmd = 'APT_CONFIG=%s ' % APTCONFPATH  
         if not self.as_user:
