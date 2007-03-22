@@ -31,6 +31,7 @@ class DivertPart(Part):
         self.diverts = []
         self.removes = []
 
+
     def get_postinst_content(self):
         self.__add_divert_content(self.__add_divert)
         return ''.join(self.diverts)
@@ -47,16 +48,28 @@ class DivertPart(Part):
 
 
         def set_divert(arg, dirname, filesnames):
+            extension = config['config_extension']
             for fname in filesnames:
                 base_path = dirname + os.sep + fname
                 orig_path = base_path[orig_stuff_len:]
                 dest_path = '/' + base_path[dest_stuff_len:]
 
-                abs_path = dirname + '/' +fname
+                abs_path = dirname + '/' + fname
                 if (not '/.svn' in orig_path) and\
                         os.path.isfile(abs_path) and\
-                        abs_path.endswith(config['config_extension']):
+                        abs_path.endswith(extension):
                     divert_method(dest_path)
+
+                desktop_extension = 'desktop' + extension
+                if fname.endswith(desktop_extension):
+                    if divert_method == self.__add_divert:
+                        real_conf_path = dest_path[: -len(extension)]
+                        command = "rm %s\n" % real_conf_path
+                        command += "cp %s %s\n\n" % (dest_path, real_conf_path)
+                        self.diverts.append(command)
+
+                    elif divert_method == self.__rm_divert:
+                        pass
 
         os.path.walk(config['source_path'] + '/gcs/conffiles_skel', 
                 set_divert, None)
