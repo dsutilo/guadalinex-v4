@@ -3,7 +3,7 @@
 #
 # DO NOT MODIFY IT DIRECTLY : SUCH CHANGES WILL BE LOST
 # 
-# Georgian messages for debian-installer.
+# Georgian messages for ubuntu-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 #
@@ -11,36 +11,35 @@
 #
 # This file is maintained by Aiet Kolkhi <aietkolkhi@gmail.com>
 #
+# Includes contributions by Malkhaz Barkalaza <malxaz@gmail.com>, 
+# Alexander Didebulidze <didebuli@in.tum.de>, Vladimer Sichinava <vlsichinava@gmail.com>
+# Taya Kharitonashvili <taya13@gmail.com>
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer\n"
+"Project-Id-Version: debian-installer.2006071\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2006-06-08 18:29-0600\n"
-"PO-Revision-Date: 2006-06-01 02:28+0400\n"
+"PO-Revision-Date: 2006-10-26 11:58+0400\n"
 "Last-Translator: Aiet Kolkhi <aietkolkhi@gmail.com>\n"
-"Language-Team: Debian Georgian <ka@aiet.qartuli.net>\n"
+"Language-Team: Georgian <www.gia.ge>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Bookmarks: 96,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Poedit-Country: GEORGIA\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-Language: Georgian\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Type: note
 #. Description
 #: ../di-utils-shell.templates:3
-#, fuzzy
 msgid "Interactive shell"
-msgstr "გარსის გაშვება"
+msgstr "ინტერაქტიული გარსი, შელი"
 
 #. Type: note
 #. Description
 #: ../di-utils-shell.templates:3
 msgid "After this message, you will be running \"ash\", a Bourne-shell clone."
 msgstr ""
-"ამ შეტყობინების შემდეგ თქვენ იხილავთ „ash”0ს, რომელიც Bourne შელის კლონია."
+"ამ შეტყობინების შემდეგ თქვენ იხილავთ „ash”-ს, რომელიც Bourne შელის კლონია."
 
 #. Type: note
 #. Description
@@ -68,9 +67,8 @@ msgstr "გამოიყენეთ „exit„ ბრძანება ი�
 #. The translation should not exceed 55 columns except for languages
 #. that are only supported in the graphical version of the installer
 #: ../di-utils-shell.templates:18
-#, fuzzy
 msgid "Execute a shell"
-msgstr "გარსის გაშვება"
+msgstr "შელის გაშვება"
 
 #. Type: text
 #. Description
@@ -78,16 +76,14 @@ msgstr "გარსის გაშვება"
 #. The translation should not exceed 55 columns except for languages
 #. that are only supported in the graphical version of the installer
 #: ../di-utils-exit-installer.templates:6
-#, fuzzy
 msgid "Exit installer demo"
-msgstr "Opera-დან გასვლა"
+msgstr "ინსტალაციის სადემონსტრაციო რეჟიმდან გამოსვლა"
 
 #. Type: boolean
 #. Description
 #: ../di-utils-reboot.templates:4
-#, fuzzy
 msgid "Are you sure you want to exit now?"
-msgstr "დარწმუნებული ხართ, რომ გსურთ „%s“-ის წაშლა?"
+msgstr "ნამდვილად გნებავთ გამოსვლა?"
 
 #. Type: boolean
 #. Description
@@ -105,9 +101,8 @@ msgstr ""
 #. The translation should not exceed 55 columns except for languages
 #. that are only supported in the graphical version of the installer
 #: ../di-utils-reboot.templates:13
-#, fuzzy
 msgid "Abort the installation"
-msgstr "საინსტალაციო ფოლდერი"
+msgstr "ინსტალაციის შეწყვეტა"
 
 #. Type: text
 #. Description
