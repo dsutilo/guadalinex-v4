@@ -54,7 +54,7 @@ panel_session_request_logout (void)
 				   GNOME_SAVE_GLOBAL,
 				   TRUE,
 				   GNOME_INTERACT_ANY,
-				   TRUE, /* do not use the gnome-session gui */
+				   gconf_client_get_bool (panel_gconf_get_client (), "/apps/panel/global/upstream_session", NULL), /* use the gnome-session gui */
 				   TRUE);
 
 	recursion_guard--;

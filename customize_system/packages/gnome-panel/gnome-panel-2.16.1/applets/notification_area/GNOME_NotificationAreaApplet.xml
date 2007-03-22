@@ -3,6 +3,9 @@
       <popup name="button3">
          <menuitem name="Notification Area Help Item" verb="SystemTrayHelp" _label="_Help"
                    pixtype="stock" pixname="gtk-help"/>
+          <separator/>
+             <placeholder name="LaunchpadItems"/>
+          <separator/>
          <menuitem name="Notification Area About Item" verb="SystemTrayAbout" _label="_About"
                    pixtype="stock" pixname="gnome-stock-about"/>
       </popup>

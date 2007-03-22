@@ -43,6 +43,7 @@
 #include <string.h>
 
 #define TIMEOUT_ACTIVATE 1000
+#include <lpint-bonobo.h>
 
 
 typedef struct {
@@ -410,6 +411,7 @@ show_desktop_applet_fill (PanelApplet *applet)
 {
         ShowDesktopData *sdd;
 	AtkObject       *atk_obj;
+        BonoboUIComponent* popup_component;
 
 	panel_applet_set_flags (applet, PANEL_APPLET_EXPAND_MINOR);
 
@@ -499,6 +501,10 @@ show_desktop_applet_fill (PanelApplet *applet)
 			  G_CALLBACK (button_drag_leave),
 			  sdd);
 
+        popup_component = panel_applet_get_popup_component (sdd->applet);
+
+        launchpad_integration_add_bonobo_ui(popup_component, "/popups/button3/LaunchpadItems");
+        
   	gtk_widget_show_all (sdd->applet);
 
         return TRUE;

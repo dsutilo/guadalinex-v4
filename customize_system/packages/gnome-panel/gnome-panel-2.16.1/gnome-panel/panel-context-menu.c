@@ -44,6 +44,7 @@
 #include "panel-properties-dialog.h"
 #include "panel-lockdown.h"
 #include "panel-addto.h"
+#include <launchpad-integration.h>
 
 static void
 panel_context_menu_show_help (GtkWidget *w,
@@ -257,6 +258,9 @@ panel_context_menu_build_edition (PanelWidget *panel_widget,
 				  panel_profile_id_lists_are_writable ());
 
 	add_menu_separator (menu);
+
+       launchpad_integration_add_items (menu,-1,TRUE,FALSE);
+
 }
 
 GtkWidget *

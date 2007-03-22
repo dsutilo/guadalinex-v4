@@ -153,9 +153,15 @@ panel_action_lock_invoke_menu (PanelActionButton *button,
 static void
 panel_action_logout (GtkWidget *widget)
 {
-	panel_logout_new (PANEL_LOGOUT_DIALOG_LOGOUT,
-			  gtk_widget_get_screen (widget),
-			  gtk_get_current_event_time ());
+	const char  *key;
+
+	if (!gconf_client_get_bool (panel_gconf_get_client (), "/apps/panel/global/upstream_session", NULL))
+		panel_session_request_logout ();
+	else {
+		panel_logout_new (PANEL_LOGOUT_DIALOG_LOGOUT,
+				  gtk_widget_get_screen (widget),
+				  gtk_get_current_event_time ());
+	}
 }
 
 static void
@@ -169,7 +175,8 @@ panel_action_shutdown (GtkWidget *widget)
 static gboolean
 panel_action_shutdown_is_disabled (void)
 {
-	return (panel_lockdown_get_disable_log_out() ||
+	return (!gconf_client_get_bool (panel_gconf_get_client (), "/apps/panel/global/upstream_session", NULL) || 
+		panel_lockdown_get_disable_log_out() ||
 		!gdm_supports_logout_action (GDM_LOGOUT_ACTION_SHUTDOWN));
 }
 
@@ -245,6 +252,8 @@ typedef struct {
 	PanelActionButtonType   type;
 	char                   *icon_name;
 	char                   *text;
+	char                   *category;
+	char                   *english_category;
 	char                   *tooltip;
 	char                   *help_index;
 	char                   *drag_id;
@@ -267,6 +276,8 @@ static PanelAction actions [] = {
 		PANEL_ACTION_LOCK,
 		"gnome-lockscreen",
 		N_("Lock Screen"),
+		N_("Desktop &amp; Windows"),
+		"Desktop &amp; Windows",
 		N_("Protect your computer from unauthorized use"),
 		"gospanel-21",
 		"ACTION:lock:NEW",
@@ -281,8 +292,10 @@ static PanelAction actions [] = {
 		/* when changing one of those two strings, don't forget to
 		 * update the ones in panel-menu-items.c (look for
 		 * panel:showusername|1) */
-		N_("Log Out..."),
-		N_("Log out of this session to log in as a different user"),
+		N_("Quit..."),
+		N_("Desktop &amp; Windows"),
+		"Desktop &amp; Windows",
+		N_("Log off, switch user, lock screen or power down the computer"),
 		"gospanel-20",
 		"ACTION:logout:NEW",
 		panel_action_logout, NULL, NULL,
@@ -292,6 +305,8 @@ static PanelAction actions [] = {
 		PANEL_ACTION_RUN,
 		PANEL_RUN_ICON,
 		N_("Run Application..."),
+		N_("Utilities"),
+		"Utilities",
 		N_("Run an Application by entering a command"),
 		"gospanel-555",
 		"ACTION:run:NEW",
@@ -302,6 +317,8 @@ static PanelAction actions [] = {
 		PANEL_ACTION_SEARCH,
 		"gnome-searchtool",
 		N_("Search for Files..."),
+		N_("Utilities"),
+		"Utilities",
 		N_("Find files, folders, and documents on your computer"),
 		"gospanel-554",
 		"ACTION:search:NEW",
@@ -311,6 +328,8 @@ static PanelAction actions [] = {
 		PANEL_ACTION_FORCE_QUIT,
 		PANEL_FORCE_QUIT_ICON,
 		N_("Force Quit"),
+		N_("Desktop &amp; Windows"),
+		"Desktop &amp; Windows",
 		N_("Force a misbehaving application to quit"),
 		"gospanel-563",
 		"ACTION:force-quit:NEW",
@@ -321,6 +340,8 @@ static PanelAction actions [] = {
 		PANEL_ACTION_CONNECT_SERVER,
 		"gnome-globe", //FIXME icon
 		N_("Connect to Server..."),
+		N_("Utilities"),
+		"Utilities",
 		N_("Connect to a remote server"), //FIXME
 		"gospanel-563", //FIXME
 		"ACTION:connect-server:NEW",
@@ -330,6 +351,8 @@ static PanelAction actions [] = {
 		PANEL_ACTION_SHUTDOWN,
 		"gnome-shutdown",
 		N_("Shut Down..."),
+                N_("Utilities"),
+                "Utilities",
 		N_("Shut down the computer"),
 		"gospanel-20",
 		"ACTION:shutdown:NEW",
@@ -390,6 +413,22 @@ panel_action_get_text (PanelActionButtonType type)
 	g_return_val_if_fail (type > PANEL_ACTION_NONE && type < PANEL_ACTION_LAST, NULL);
 
 	return _(actions[type].text);
+}
+
+G_CONST_RETURN char*
+panel_action_get_category (PanelActionButtonType type)
+{
+	g_return_val_if_fail (type > PANEL_ACTION_NONE && type < PANEL_ACTION_LAST, NULL);
+
+	return _(actions[type].category);
+}
+
+G_CONST_RETURN char*
+panel_action_get_english_category (PanelActionButtonType type)
+{
+	g_return_val_if_fail (type > PANEL_ACTION_NONE && type < PANEL_ACTION_LAST, NULL);
+
+	return actions[type].english_category;
 }
 
 G_CONST_RETURN char*

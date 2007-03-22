@@ -1438,7 +1438,7 @@ create_submenu_entry (GtkWidget          *menu,
 	return menuitem;
 }
 
-static void
+void
 create_submenu (GtkWidget          *menu,
 		GMenuTreeDirectory *directory,
 		GMenuTreeDirectory *alias_directory)
@@ -1503,7 +1503,7 @@ create_menuitem (GtkWidget          *menu,
 					NULL,
 					alias_directory ? gmenu_tree_directory_get_icon (alias_directory) :
 							  gmenu_tree_entry_get_icon (entry),
-					NULL);
+					PANEL_STOCK_DEFAULT_ICON);
 
 	setup_menuitem (menuitem,
 			panel_menu_icon_get_size (),

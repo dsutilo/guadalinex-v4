@@ -195,6 +195,19 @@ Panel Global Config Schema File -  work in progress
       </schema>
 
       <schema>
+        <key>/schemas/apps/panel/global/upstream_session</key>
+        <applyto>/apps/panel/global/upstream_session</applyto>
+        <owner>panel</owner>
+        <type>bool</type>
+        <default>false</default>
+        <locale name="C">
+          <short>Use the upstream session dialogs instead of the Ubuntu one</short>
+          <long>If true, the panel will use the upstream dialogs instead of the Ubuntu one. The panel must be restarted for this to take effect.
+          </long>
+        </locale>
+      </schema>
+
+      <schema>
         <key>/schemas/apps/panel/global/locked_down</key>
         <applyto>/apps/panel/global/locked_down</applyto>
         <owner>panel</owner>

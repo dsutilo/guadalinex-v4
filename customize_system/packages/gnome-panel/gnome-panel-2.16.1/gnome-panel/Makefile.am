@@ -95,6 +95,9 @@ panel_sources =			\
 	panel-force-quit.c	\
 	panel-lockdown.c	\
 	panel-addto.c		\
+	panel-addto-canvas.c    \
+	panel-addto-rounded-rect.c \
+	panel-addto-event-box.c \
 	panel-logout.c		\
 	panel-gdm.c		\
 	panel-power-manager.c   \
@@ -144,6 +147,10 @@ panel_headers =			\
 	panel-force-quit.h	\
 	panel-lockdown.h	\
 	panel-addto.h		\
+	panel-addto-canvas.h    \
+	panel-addto-rounded-rect.h \
+	panel-addto-rounded-rect-pixbuf.h \
+	panel-addto-event-box.h \
 	panel-logout.h		\
 	panel-gdm.h		\
 	panel-power-manager.h	\

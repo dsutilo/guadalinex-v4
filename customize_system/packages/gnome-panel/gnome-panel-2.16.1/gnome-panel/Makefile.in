@@ -87,7 +87,9 @@ am__objects_3 = panel-typebuiltins.$(OBJEXT) panel-marshal.$(OBJEXT) \
 	panel-multiscreen.$(OBJEXT) panel-a11y.$(OBJEXT) \
 	panel-bindings.$(OBJEXT) panel-profile.$(OBJEXT) \
 	panel-force-quit.$(OBJEXT) panel-lockdown.$(OBJEXT) \
-	panel-addto.$(OBJEXT) panel-logout.$(OBJEXT) \
+	panel-addto.$(OBJEXT) panel-addto-canvas.$(OBJEXT) \
+	panel-addto-rounded-rect.$(OBJEXT) \
+	panel-addto-event-box.$(OBJEXT) panel-logout.$(OBJEXT) \
 	panel-gdm.$(OBJEXT) panel-power-manager.$(OBJEXT) \
 	panel-ditem-editor.$(OBJEXT) $(am__objects_1)
 am__objects_4 = $(am__objects_1)
@@ -190,6 +192,7 @@ GETTEXT_PACKAGE = @GETTEXT_PACKAGE@
 GLIB_GENMARSHAL = @GLIB_GENMARSHAL@
 GMOFILES = @GMOFILES@
 GMSGFMT = @GMSGFMT@
+GREP = @GREP@
 GTK_DOC_USE_LIBTOOL_FALSE = @GTK_DOC_USE_LIBTOOL_FALSE@
 GTK_DOC_USE_LIBTOOL_TRUE = @GTK_DOC_USE_LIBTOOL_TRUE@
 HAVE_LIBECAL_FALSE = @HAVE_LIBECAL_FALSE@
@@ -278,20 +281,14 @@ WNCKLET_INPROCESS_FALSE = @WNCKLET_INPROCESS_FALSE@
 WNCKLET_INPROCESS_TRUE = @WNCKLET_INPROCESS_TRUE@
 WNCKLET_LIBS = @WNCKLET_LIBS@
 XGETTEXT = @XGETTEXT@
+XMKMF = @XMKMF@
 X_CFLAGS = @X_CFLAGS@
 X_EXTRA_LIBS = @X_EXTRA_LIBS@
 X_LIBS = @X_LIBS@
 X_PRE_LIBS = @X_PRE_LIBS@
-ac_ct_AR = @ac_ct_AR@
-ac_ct_AS = @ac_ct_AS@
 ac_ct_CC = @ac_ct_CC@
 ac_ct_CXX = @ac_ct_CXX@
-ac_ct_DLLTOOL = @ac_ct_DLLTOOL@
 ac_ct_F77 = @ac_ct_F77@
-ac_ct_OBJDUMP = @ac_ct_OBJDUMP@
-ac_ct_RANLIB = @ac_ct_RANLIB@
-ac_ct_STRIP = @ac_ct_STRIP@
-ac_pt_PKG_CONFIG = @ac_pt_PKG_CONFIG@
 am__fastdepCC_FALSE = @am__fastdepCC_FALSE@
 am__fastdepCC_TRUE = @am__fastdepCC_TRUE@
 am__fastdepCXX_FALSE = @am__fastdepCXX_FALSE@
@@ -308,23 +305,30 @@ build_cpu = @build_cpu@
 build_os = @build_os@
 build_vendor = @build_vendor@
 datadir = @datadir@
+datarootdir = @datarootdir@
+docdir = @docdir@
+dvidir = @dvidir@
 exec_prefix = @exec_prefix@
 host = @host@
 host_alias = @host_alias@
 host_cpu = @host_cpu@
 host_os = @host_os@
 host_vendor = @host_vendor@
+htmldir = @htmldir@
 includedir = @includedir@
 infodir = @infodir@
 install_sh = @install_sh@
 libdir = @libdir@
 libexecdir = @libexecdir@
+localedir = @localedir@
 localstatedir = @localstatedir@
 mandir = @mandir@
 mkdir_p = @mkdir_p@
 oldincludedir = @oldincludedir@
+pdfdir = @pdfdir@
 prefix = @prefix@
 program_transform_name = @program_transform_name@
+psdir = @psdir@
 sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 sysconfdir = @sysconfdir@
@@ -415,6 +419,9 @@ panel_sources = \
 	panel-force-quit.c	\
 	panel-lockdown.c	\
 	panel-addto.c		\
+	panel-addto-canvas.c    \
+	panel-addto-rounded-rect.c \
+	panel-addto-event-box.c \
 	panel-logout.c		\
 	panel-gdm.c		\
 	panel-power-manager.c   \
@@ -464,6 +471,10 @@ panel_headers = \
 	panel-force-quit.h	\
 	panel-lockdown.h	\
 	panel-addto.h		\
+	panel-addto-canvas.h    \
+	panel-addto-rounded-rect.h \
+	panel-addto-rounded-rect-pixbuf.h \
+	panel-addto-event-box.h \
 	panel-logout.h		\
 	panel-gdm.h		\
 	panel-power-manager.h	\
@@ -627,6 +638,9 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/panel-a11y.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/panel-action-button.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/panel-action-protocol.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/panel-addto-canvas.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/panel-addto-event-box.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/panel-addto-rounded-rect.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/panel-addto.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/panel-applet-frame.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/panel-background-monitor.Po@am__quote@

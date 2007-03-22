@@ -1,0 +1,21 @@
+Format: 1.7
+Date: Thu, 22 Mar 2007 18:23:35 +0100
+Source: guadalinex-detect-extra-partitions
+Binary: guadalinex-detect-extra-partitions
+Architecture: source i386
+Version: 0.1
+Distribution: unstable
+Urgency: low
+Maintainer: Carlos Parra Camargo <cparra@emergya.es>
+Changed-By: Carlos Parra Camargo <cparra@emergya.es>
+Description: 
+ guadalinex-detect-extra-partitions - add extra partitions (udeb)
+Changes: 
+ guadalinex-detect-extra-partitions (0.1) unstable; urgency=low
+ .
+   * First revision
+Files: 
+ 1d2fc73fb9a7bf18ccf0a1c3078b2314 334 debian-installer extra guadalinex-detect-extra-partitions_0.1.dsc
+ 1e6801c4288f1fee442e25ae60796eff 3037 debian-installer extra guadalinex-detect-extra-partitions_0.1.tar.gz
+ e2a84a703715524d7faf856b32d7e3c5 2514 debian-installer standard guadalinex-detect-extra-partitions_0.1_i386.udeb
+Package-Type: udeb

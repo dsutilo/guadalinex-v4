@@ -1,0 +1,8 @@
+#!/bin/sh -e
+#DEBHELPER#
+
+cp /usr/share/guadalinex-detect-extra-partition/detect-additional-partitions.py /target/tmp/detect-additional-partitions.py
+chroot /target/ /tmp/detect-additional-partitions.py
+rm /target/tmp/detect-additional-partitions.py
+
+exit 0
