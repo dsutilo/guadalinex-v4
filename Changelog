@@ -1,3 +1,44 @@
+RC2 (20070323)
+=============
+
+- Añadido soporte en Firefox para enlaces ed2k (BTS 1351)
+- Guía de usuario de Guadalinex:
+  - Completada
+  - Corregidos algunos problemas con imágenes
+- Corregidos algunos problemas con sources.list que lo hacían incompatible con
+watermain
+- Corregidos algunos problemas de reconocimiento de particiones en el sistema
+instalado
+- Integrada nueva versión de Grubaker que corrige algunos problemas (BTS 1347,
+1380, 1409)
+- Añadido paquete "eciadsl" para facilitar soporte de módems Globespam (BTS
+1361)
+- Añadido paquete "smbfs" (BTS 1392)
+- Añadido paquete ""sun-java5-plugin" necesario para muchas aplicaciones
+administrativas (BTS 1386) 
+- Añadida nueva versión del asistente de conexión a Internet 3G
+- Empaquetado e incluido "GRU" (Guadalinex Recovery Utility)
+- Corregido /etc/issue para mostrar correctamente mensaje de Guadalinex
+- Corregido problema con enlaces de aplicaciones en el escritorio (BTS 1438)
+- Corregido problema con generación de entrada de disquetera en sistema
+instalado a partir de no live (BTS 1262)
+- Añadida ayuda informativa sobre arranque OEM 
+- Corregidos hojas de estilo (CSS) de:
+  - "Acerca de"
+  - Página de inicio de navegador.
+  - Página inicial de la guía de usuario.
+- Corregido problema con algunos mensajes en inglés de Hermes (BTS 1366)
+- Corregidas traducciones en sistema de comprobación de CD del sistema live
+(BTS 1334)
+- Corregido problema de traducción de cadena "type password" (BTS 1322)
+- Cambiada entrada "confusa" de instalación OEM en sistema no live
+- Añadido soporte para webcam Logitech Quickcam Express (BTS 1286)
+- Corregido problema de traducción con cadena "Starting Administrative
+Application" (BTS 1314)
+- Revisado y corregidos problema con los repositorios del sistema de suplementos
+que provocaba descargas de los paquetes de Internet en lugar del suplemento
+- Traducida entrada "recovery mode" de GRUB (BTS 1291)
+
 RC1 (20070309)
 ==============
 
