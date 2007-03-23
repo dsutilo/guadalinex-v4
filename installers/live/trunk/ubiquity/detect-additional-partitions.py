@@ -124,7 +124,7 @@ for new_device, fs in get_filesystems().items():
       path = '/media/Windows%d' % win_counter
       target_path = '/target' + path
       if not os.path.exists(target_path) and not DEBUG:
-        os.mkdir(target_path)
+        os.makedirs(target_path)
       win_counter += 1
       if DEBUG:
         print '%s\t%s\t%s\t%s\t%d\t%d' % (new_device, path, fs, options, 0, passno)
@@ -148,7 +148,7 @@ for new_device, fs in get_filesystems().items():
       path = '/media/%s%d' % (new_device[5:8],int(new_device[8:]))
       target_path = '/target' + path
       if not os.path.exists(target_path) and not DEBUG:
-        os.mkdir(target_path)
+        os.makedirs(target_path)
       if DEBUG:
         print '%s\t%s\t%s\t%s\t%d\t%d' % (new_device, path, fs, options, 0, passno)
       else:
@@ -161,7 +161,7 @@ for new_device, fs in get_filesystems().items():
       path = '/media/%s%d' % (new_device[5:8],int(new_device[8:]))
       target_path = '/target' + path
       if not os.path.exists(target_path) and not DEBUG:
-        os.mkdir(target_path)
+        os.makedirs(target_path)
       if DEBUG:
         print '%s\t%s\t%s\t%s\t%d\t%d' % (new_device, path, 'auto', options, 0, passno)
       else:
