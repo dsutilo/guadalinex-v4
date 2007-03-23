@@ -1,6 +1,0 @@
-desktop/ubiquity-gtkui.desktop usr/share/applications
-ubiquity/frontend/gtkui.py usr/lib/ubiquity/ubiquity/frontend
-ubiquity/frontend/*.glade* usr/share/ubiquity/glade
-ubiquity/DiskPreview/*.py usr/lib/ubiquity/DiskPreview
-ubiquity/DiskPreview/*.glade usr/lib/ubiquity/glade
-pixmaps/guadalinex /usr/share/ubiquity/pixmaps
