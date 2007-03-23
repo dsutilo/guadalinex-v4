@@ -1,3 +1,10 @@
+ubiquity (1.2.5guada12) edgy; urgency=low
+
+  * Including intelligent fstab creation system in installed system
+  * NOTE: There is no guada11 version (uh, uh)
+
+ --  <rmartin@emergya.es>  Thu, 22 Mar 2007 23:37:17 +0100
+
 ubiquity (1.2.5guada10) edgy; urgency=low
 
   * Minor bug fixing.
