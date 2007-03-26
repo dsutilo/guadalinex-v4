@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MIDIF="bin boot etc lib sbin usr var"
+MODIF="bin boot etc lib sbin usr var"
 NOMODIF="dev sys proc"
 CONTINUE=0
    
@@ -20,7 +20,7 @@ function simulate(){
    cat > /sbin/start-stop-daemon <<EOF
    #!/bin/bash
    echo "Estas usando un fake de este script, el original es start-stop-daemon.REAL"
-   EOF
+EOF
 
    for a in $MODIF;do
       mkdir "/tmp/rw/$a"
@@ -115,7 +115,7 @@ function prepare_system(){
    deb http://v4.guadalinex.org/guadalinex-toro toro-updates main restricted universe multiverse
    deb http://v4.guadalinex.org/guadalinex-toro toro-security main restricted universe multiverse
    deb http://v4.guadalinex.org/guadalinex-toro toro-backports main restricted universe multiverse
-   EOF
+EOF
    
    # Actualizamos la lista de paquetes
    apt-get update
@@ -133,17 +133,17 @@ if [ "$CONTINUE" = 1 ];then
    fi
    
    # Ajustes antes de actualizar
-   prepare_system|zenity --progress --text "Preparando el sistema para la actualización..." --pulsate
+   prepare_system|zenity --progress --text "Preparando el sistema para la actualización..." --pulsate --auto-close
 
    # Previa simulación para comprobar si se puede o no actualizar#
-   simulate|zenity --progress --text "Comprobando si es posible la actualización..." --pulsate
+   simulate|zenity --progress --text "Comprobando si es posible la actualización..." --pulsate --auto-close
    ################################## FIN SIMULACION
    
    # Empieza la actualización
-   upgradenow|zenity --progress --text "Actualizando..." --pulsate
+   upgradenow|zenity --progress --text "Actualizando..." --pulsate --auto-close
 
    # Arreglamos problemas derivados
-   fix_upgrade|zenity --progress --text "Ajustando configuraciones..." --pulsate   
+   fix_upgrade|zenity --progress --text "Ajustando configuraciones..." --pulsate  --auto-close 
 
    zenity --info --text "Se ha realizado la actualización y se va a reiniciar. Si tiene algún problema visite los foros de guadalinex.org"
    
