@@ -12,7 +12,7 @@ install: build
 	dh_testroot
 	dh_clean -k
 	dh_installdirs
-	dh_install detect-additional-partitions.py usr/share/guadalinex-detect-extra-partitions
+	dh_install detect-additional-partitions.py usr/share/guadalinex-fstab
 
 binary-indep: build install
 
