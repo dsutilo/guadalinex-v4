@@ -1,3 +1,9 @@
+watermain (1.0-3guada4) unstable; urgency=low
+
+  * Fixed some menu entry stuff
+
+ --  <rmartin@emergya.es>  Mon, 26 Mar 2007 08:57:05 +0200
+
 watermain (1.0-3guada3) unstable; urgency=low
 
   * Added toro restricted, universe and multiverse components
