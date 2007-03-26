@@ -22,17 +22,17 @@ function simulate(){
    echo "Estas usando un fake de este script, el original es start-stop-daemon.REAL"
 EOF
 
-   for a in $MODIF;do
+   for a in ${MODIF};do
       mkdir "/tmp/rw/$a"
       mkdir "/tmp/simulate/$a"
    done
 
-   for b in $NOMODIF;do
+   for b in ${NOMODIF};do
       mkdir "/tmp/simulate/$b"
       mount --bind "/$b" "/tmp/simulate/$b"
    done
 
-   for c in $MODIF;do
+   for c in ${MODIF};do
       mount -t unionfs -o "dirs=/tmp/rw/$c=rw:/$c=ro unionfs /tmp/simulate/$c"
    done
 
@@ -121,7 +121,7 @@ EOF
    apt-get update
 }
 
-zenity --question --text "Se va a proceder a la actualización del sistema. Por favor, cierre todas las aplicaciones y no realice otras tareas mientras lleva a cabo este proceso. \nAlgunas de las aplicaciones que tiene actualmente instaladas podrían dejar de funcionar y podría corromperse el sistema, le recomendamos que haga copia de sus datos antes de proceder.\n ¿Desea continuar?" && zenity --info --text "Una vez concluído el proceso se reiniciará el sistema por lo que insistimos en que cierre todas las aplicaciones y no realice otras tareas" && CONTINUE=1
+zenity --question --text "Se va a proceder a la actualización del sistema. Por favor, cierre todas las aplicaciones y no realice otras tareas mientras lleva a cabo este proceso. \n Algunas de las aplicaciones que tiene actualmente instaladas podrían dejar de funcionar y podría corromperse el sistema, le recomendamos que haga copia de sus datos antes de proceder. \n ¿Desea continuar?" && zenity --info --text "Una vez concluído el proceso se reiniciará el sistema por lo que insistimos en que cierre todas las aplicaciones y no realice otras tareas" && CONTINUE=1
 
 if [ "$CONTINUE" = 1 ];then
 
