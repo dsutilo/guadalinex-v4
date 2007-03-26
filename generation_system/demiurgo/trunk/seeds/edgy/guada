@@ -18,4 +18,4 @@ This packages makes the Guadalinex flavour.
  * guadalinex-sources-setup
 # * meta-guadalinex-v4
  * hermeshardware-actors
- * guadalinex-detect-extra-partitions
+ * guadalinex-fstab
