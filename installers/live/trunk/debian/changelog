@@ -1,3 +1,9 @@
+ubiquity (1.2.5guada14) edgy; urgency=low
+
+  * Fixed some fstab ubuntu problems: removed UUIDs and added users option
+
+ --  <rmartin@emergya.es>  Mon, 26 Mar 2007 21:29:12 +0200
+
 ubiquity (1.2.5guada13) edgy; urgency=low
 
   * fixing fstab NTFS & VFAT partitions creation during live installation
