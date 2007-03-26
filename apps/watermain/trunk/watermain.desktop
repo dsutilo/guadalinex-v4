@@ -3,7 +3,7 @@ Encoding=UTF-8
 Name=Download sites
 Name[en_CA]=Download sites
 Name[en_GB]=Download sites
-Name[es]=Sitios de descarga
+Name[es]=Sitios de descarga (Watermain)
 Comment=Download site selector
 Comment[en_CA]=Download site selector
 Comment[en_GB]=Download site selector
@@ -13,5 +13,5 @@ Terminal=false
 Type=Application
 Icon=/usr/share/icons/watermain/watermain.svg
 StartupNotify=true
-Categories=GNOME;Application;System;
+Categories=GNOME;Application;System;Settings;
 
