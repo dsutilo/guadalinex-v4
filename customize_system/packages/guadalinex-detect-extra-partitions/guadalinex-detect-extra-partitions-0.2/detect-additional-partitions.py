@@ -96,6 +96,26 @@ def get_partitions_already_used():
 
   return blacklist
 
+def remove_uuid():
+  """ remove UUID from fstab. Use /dev/[hs]d[ab...] replace. """
+
+  import re
+
+  uuid_re = re.compile('^# (/dev/\w{4,5}).(^UUID=[\w-]+)', re.S | re.M)
+
+  f = open('/etc/fstab', 'r')
+  fstab = f.read()
+  f.close()
+
+  mountpoint_uuid = uuid_re.findall(fstab)
+
+  for mu in mountpoint_uuid:
+    fstab = fstab.replace(mu[1], mu[0])
+
+  f = open('ffff', 'w')
+  f.write(fstab)
+  f.close()
+
 ########
 # MAIN #
 ########
@@ -103,6 +123,7 @@ def get_partitions_already_used():
 if DEBUG:
   print "DEBUG MODE ENABLED"
 
+remove_uuid()
 blacklist = get_partitions_already_used()
 
 if DEBUG:
