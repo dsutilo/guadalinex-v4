@@ -140,10 +140,10 @@ for new_device, fs in get_filesystems().items():
     if not (new_device in blacklist):
       if fs == 'vfat' :
         #options = 'rw,gid=100,users,umask=0002,fmask=0113,sync,noauto,defaults'
-        options = 'defaults,utf8,umask=007,gid=46'
+        options = 'users,defaults,utf8,umask=007,gid=46'
       else:
         #options = 'gid=100,users,umask=0222,fmask=0333,sync,nls=utf8,noauto,defaults'
-        options = 'defaults,nls=utf8,umask=007,gid=46'
+        options = 'users,defaults,nls=utf8,umask=007,gid=46'
       path = '/media/Windows%d' % win_counter
       target_path = '/target' + path
       if not os.path.exists(target_path) and not DEBUG:
@@ -167,7 +167,7 @@ for new_device, fs in get_filesystems().items():
   elif fs in ['ext3', 'ext2', 'reiserfs', 'xfs']:
     passno = 2
     if not (new_device in blacklist):
-      options = 'defaults'
+      options = 'users,defaults'
       path = '/media/%s%d' % (new_device[5:8],int(new_device[8:]))
       target_path = '/target' + path
       if not os.path.exists(target_path) and not DEBUG:
@@ -180,7 +180,7 @@ for new_device, fs in get_filesystems().items():
   else:
     passno = 2
     if not (new_device in blacklist):
-      options = 'defaults'
+      options = 'users,defaults'
       path = '/media/%s%d' % (new_device[5:8],int(new_device[8:]))
       target_path = '/target' + path
       if not os.path.exists(target_path) and not DEBUG:
