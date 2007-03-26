@@ -1,0 +1,152 @@
+#!/bin/bash
+
+MODIF="bin boot etc lib sbin usr var"
+NOMODIF="dev sys proc"
+CONTINUE=0
+   
+# Establecemos la prioridad debconf para que no pregunte en el proceso de actualización
+export DEBCONF_PRIORITY=critical 
+export DEBIAN_FRONTEND=noninteractive
+
+function simulate(){
+
+   # Cargamos el módulo unionfs
+   insmod /usr/share/guadalinex-upgrader/unionfs.ko
+
+   mkdir /tmp/rw /tmp/simulate
+   mkdir /tmp/simulate/tmp
+   
+   mv /sbin/start-stop-daemon /sbin/start-stop-daemon.REAL
+   cat > /sbin/start-stop-daemon <<EOF
+   #!/bin/bash
+   echo "Estas usando un fake de este script, el original es start-stop-daemon.REAL"
+EOF
+
+   for a in $MODIF;do
+      mkdir "/tmp/rw/$a"
+      mkdir "/tmp/simulate/$a"
+   done
+
+   for b in $NOMODIF;do
+      mkdir "/tmp/simulate/$b"
+      mount --bind "/$b" "/tmp/simulate/$b"
+   done
+
+   for c in $MODIF;do
+      mount -t unionfs -o "dirs=/tmp/rw/$c=rw:/$c=ro unionfs /tmp/simulate/$c"
+   done
+
+
+   chroot /tmp/simulate apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf dist-upgrade 2> /tmp/errors
+
+   if [ "$?" != 0 ];then
+      zenity --error --text "Lo sentimos, no es posible llevar a cabo la actualización, se ha encontrado el siguiente problema:\n $(cat /tmp/errors)"
+      exit 1
+   else
+      mv /tmp/rw/var/cache/apt/archives/*.deb /var/cache/apt/archives/
+   fi
+awk "/\/tmp\/simulate/ {print \$2}" /proc/mounts | sort -r|xargs umount
+}
+
+function upgradenow(){
+
+   # Creamos directorio temporal para almacenar algunos ficheros que se deben mantener
+   mkdir /var/tmp
+   
+   if [ -e "/usr/share/applications/ipodder.desktop" ];then
+      mv /usr/share/applications/ipodder.desktop /var/tmp/
+   fi
+
+
+
+   # Eliminamos los esquemas de gconf y el paquete xscreensaver que dan problemas al actualizar
+   rm -rf /etc/gconf/gconf.xml.defaults/* /etc/gconf/schemas
+   
+   apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove xscreensaver
+   apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf dist-upgrade
+   dpkg --configure -a
+
+   # Eliminamos los metapaquetes de v3
+   apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove guadalinex-v3*
+
+   # Instalamos paquetes necesarios y los metapaquetes de v4
+   apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install openoffice.org openoffice.org-evolution openoffice.org-gnome
+   apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install meta-guadalinex-v4
+   dpkg --configure -a
+}
+   
+function fix_upgrade(){
+
+   # Eliminamos entradas de evolution que ya no son válidas y arreglamos algunos problemas originados tras la actualización
+   rm /usr/share/applications/evolution*
+   rm /usr/share/applications/evolution*
+   sed -i 's|Icon=/usr/share/pixmaps/firefox_logo.png|Icon=/usr/share/pixmaps/firefox-guadalinex.png|g' ~/Desktop/firefox.desktop
+   
+   if [ -e /var/tmp/ipodder.desktop ];then
+      mv /var/tmp/ipodder.desktop /usr/share/applications/
+   fi
+   
+   if [ -e /usr/share/icons/crystalsvg/64x64/apps/smb4k.png ];then
+      cp /usr/share/icons/crystalsvg/64x64/apps/smb4k.png /usr/share/pixmaps/
+   fi
+
+   # Eliminamos el kernel 2.6.17-10-386 que tambien se instala y no debería y actualizamos grub
+   sudo apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove linux-image-2.6.17-10-386
+   update-grub
+}
+
+function prepare_system(){
+
+   # Comprobar conexión a internet
+   wget -T 30 http://v4.guadalinex.org/guadalinex-toro/dists/toro/main/binary-i386/Packages
+
+   if [ $? = 1 ];then
+      zenity --info --text "No tiene conexión a internet"
+      exit 1
+   fi  
+
+   # Guardamos una copia del fichero sources.list
+   mv /etc/apt/sources.list /etc/apt/sources.list.v3
+
+   # Creamos el sources.list nuevo con los repositorios de V4
+   cat > /etc/apt/sources.list <<EOF
+   deb http://v4.guadalinex.org/ubuntu edgy main restricted universe multiverse
+   deb http://v4.guadalinex.org/guadalinex-toro toro main restricted universe multiverse
+   deb http://v4.guadalinex.org/guadalinex-toro toro-updates main restricted universe multiverse
+   deb http://v4.guadalinex.org/guadalinex-toro toro-security main restricted universe multiverse
+   deb http://v4.guadalinex.org/guadalinex-toro toro-backports main restricted universe multiverse
+EOF
+   
+   # Actualizamos la lista de paquetes
+   apt-get update
+}
+
+zenity --question --text "Se va a proceder a la actualización del sistema. Por favor, cierre todas las aplicaciones y no realice otras tareas mientras lleva a cabo este proceso. \nAlgunas de las aplicaciones que tiene actualmente instaladas podrían dejar de funcionar y podría corromperse el sistema, le recomendamos que haga copia de sus datos antes de proceder.\n ¿Desea continuar?" && zenity --info --text "Una vez concluído el proceso se reiniciará el sistema por lo que insistimos en que cierre todas las aplicaciones y no realice otras tareas" && CONTINUE=1
+
+if [ "$CONTINUE" = 1 ];then
+
+   # Controlar el espacio disponible para permitir o no la actualización
+   LIBRE=`df|head -2|tail -1|awk '{print $4}'`
+   if [ $LIBRE -lt 3000000 ];then
+      zenity --error --text "Lo sentimos pero no hay espacio suficiente para llevar a cabo la actualización, se necesitan al menos 3GB libres.\n Libere espacio y vuelva a abrir guadalinex-upgrader"
+      exit 1
+   fi
+   
+   # Ajustes antes de actualizar
+   prepare_system|zenity --progress --text "Preparando el sistema para la actualización..." --pulsate --auto-close
+
+   # Previa simulación para comprobar si se puede o no actualizar#
+   simulate|zenity --progress --text "Comprobando si es posible la actualización..." --pulsate --auto-close
+   ################################## FIN SIMULACION
+   
+   # Empieza la actualización
+   upgradenow|zenity --progress --text "Actualizando..." --pulsate --auto-close
+
+   # Arreglamos problemas derivados
+   fix_upgrade|zenity --progress --text "Ajustando configuraciones..." --pulsate  --auto-close 
+
+   zenity --info --text "Se ha realizado la actualización y se va a reiniciar. Si tiene algún problema visite los foros de guadalinex.org"
+   
+   # Reiniciamos
+   reboot
+fi
