@@ -112,7 +112,7 @@ def remove_uuid():
   for mu in mountpoint_uuid:
     fstab = fstab.replace(mu[1], mu[0])
 
-  f = open('ffff', 'w')
+  f = open('/etc/fstab', 'w')
   f.write(fstab)
   f.close()
 
