@@ -2,6 +2,7 @@
 #DEBHELPER#
 
 cp /usr/share/guadalinex-detect-extra-partitions/detect-additional-partitions.py /target/tmp/detect-additional-partitions.py
+cp /proc/partitions /target/proc/
 chroot /target/ python /tmp/detect-additional-partitions.py
 rm /target/tmp/detect-additional-partitions.py
 

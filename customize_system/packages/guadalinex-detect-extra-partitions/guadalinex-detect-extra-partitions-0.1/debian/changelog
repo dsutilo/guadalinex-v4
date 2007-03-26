@@ -1,3 +1,11 @@
+guadalinex-detect-extra-partitions (0.2) unstable; urgency=low
+
+  * Added extra options to ext* partitions
+  * Copy /proc/partitions into /target/proc/partitions before executing
+  * New order to execute the udeb
+
+ -- Carlos Parra Camargo <gensys@gensys-machine>  Mon, 26 Mar 2007 10:48:59 +0200
+
 guadalinex-detect-extra-partitions (0.1) unstable; urgency=low
 
   * First revision

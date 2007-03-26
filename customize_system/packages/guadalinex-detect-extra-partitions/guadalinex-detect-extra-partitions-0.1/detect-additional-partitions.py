@@ -143,7 +143,7 @@ for new_device, fs in get_filesystems().items():
   elif fs in ['ext3', 'ext2', 'reiserfs', 'xfs']:
     passno = 2
     if not (new_device in blacklist):
-      options = 'defaults'
+      options = 'user,noauto,defaults'
       path = '/media/%s%d' % (new_device[5:8],int(new_device[8:]))
       if not os.path.exists(path):
         os.mkdir(path)

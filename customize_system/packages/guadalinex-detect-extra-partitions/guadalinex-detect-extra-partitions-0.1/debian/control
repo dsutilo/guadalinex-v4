@@ -7,7 +7,7 @@ Standards-Version: 3.7.2
 
 Package: guadalinex-detect-extra-partitions
 XC-Package-Type: udeb
-XB-Installer-Menu-Item: 66 
+XB-Installer-Menu-Item: 71
 Architecture: any
 Priority: standard
 Depends: debconf
