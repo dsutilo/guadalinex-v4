@@ -1,3 +1,9 @@
+ubiquity (1.2.5guada15) edgy; urgency=low
+
+  * improved fstab generation 
+
+ -- Carlos Parra Camargo <gensys@gensys-machine>  Tue, 27 Mar 2007 12:18:34 +0200
+
 ubiquity (1.2.5guada14) edgy; urgency=low
 
   * Fixed some fstab ubuntu problems: removed UUIDs and added users option
