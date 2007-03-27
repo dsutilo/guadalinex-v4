@@ -3,6 +3,7 @@
 MODIF="bin boot etc lib sbin usr var"
 NOMODIF="dev sys proc"
 CONTINUE=0
+EXIT=0
    
 # Establecemos la prioridad debconf para que no pregunte en el proceso de actualización
 export DEBCONF_PRIORITY=critical 
@@ -41,11 +42,12 @@ EOF
 
    if [ "$?" != 0 ];then
       zenity --error --text "Lo sentimos, no es posible llevar a cabo la actualización, se ha encontrado el siguiente problema:\n $(cat /tmp/errors)"
-      exit 1
+      EXIT=1
    else
       mv /tmp/rw/var/cache/apt/archives/*.deb /var/cache/apt/archives/
    fi
 awk "/\/tmp\/simulate/ {print \$2}" /proc/mounts | sort -r|xargs umount
+mv /sbin/start-stop-daemon.REAL /sbin/start-stop-daemon
 }
 
 function upgradenow(){
@@ -102,7 +104,7 @@ function prepare_system(){
 
    if [ $? = 1 ];then
       zenity --info --text "No tiene conexión a internet"
-      exit 1
+      EXIT=1
    fi  
 
    # Guardamos una copia del fichero sources.list
@@ -119,9 +121,12 @@ EOF
    
    # Actualizamos la lista de paquetes
    apt-get update
+   rm -rf Packages*
 }
 
-zenity --question --text "Se va a proceder a la actualización del sistema. Por favor, cierre todas las aplicaciones y no realice otras tareas mientras lleva a cabo este proceso. \n Algunas de las aplicaciones que tiene actualmente instaladas podrían dejar de funcionar y podría corromperse el sistema, le recomendamos que haga copia de sus datos antes de proceder. \n ¿Desea continuar?" && zenity --info --text "Una vez concluído el proceso se reiniciará el sistema por lo que insistimos en que cierre todas las aplicaciones y no realice otras tareas" && CONTINUE=1
+zenity --question --text "Se va a proceder a la actualización del sistema. Por favor, cierre todas las aplicaciones y no realice otras tareas mientras lleva a cabo este proceso.
+Algunas de las aplicaciones que tiene actualmente instaladas podrían dejar de funcionar y podría corromperse el sistema, le recomendamos que haga copia de sus datos antes de proceder.
+¿Desea continuar?" && zenity --info --text "Una vez concluído el proceso se reiniciará el sistema por lo que insistimos en que cierre todas las aplicaciones y no realice otras tareas" && CONTINUE=1
 
 if [ "$CONTINUE" = 1 ];then
 
@@ -134,9 +139,15 @@ if [ "$CONTINUE" = 1 ];then
    
    # Ajustes antes de actualizar
    prepare_system|zenity --progress --text "Preparando el sistema para la actualización..." --pulsate --auto-close
+   if [ EXIT = 1 ];then
+      exit 1
+   fi
 
    # Previa simulación para comprobar si se puede o no actualizar#
    simulate|zenity --progress --text "Comprobando si es posible la actualización..." --pulsate --auto-close
+   if [ EXIT = 1 ];then
+      exit 1
+   fi
    ################################## FIN SIMULACION
    
    # Empieza la actualización
