@@ -8,9 +8,9 @@ Guia de Usuario
 body{
    	heigth:100%;
 	margin: 0;
-    padding: 0;
+    	padding: 0;
 	font-size: 0.7em; 
-   	font-family: sans, serif; 
+   	font-family: freesans; 
    	font-weight: normal; 
 	color: #fff;
    	text-align:center;

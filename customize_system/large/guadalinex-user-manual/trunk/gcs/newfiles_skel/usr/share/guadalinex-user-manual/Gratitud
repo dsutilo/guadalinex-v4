@@ -9,7 +9,7 @@
 <link rel="copyright" href="http://creativecommons.org/licenses/by-sa/2.1/es/" />
 
     <title>Guia v4/Gratitud - Guadapedia</title>
-    <style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/guadapedia-estatica/stylesheets/monobook/main.css"; /*]]>*/</style>
+    <LINK / REL="stylesheet" TYPE="text/css" MEDIA="screen,projection" HREF="stylesheets/main.css">
     <link rel="stylesheet" type="text/css" media="print" href="/guadapedia-estatica/stylesheets/commonPrint.css"/>
     <!--[if IE]><style type="text/css" media="all">@import "/guadapedia-estatica/stylesheets/monobook/IEFixes.css";</style>
     <script type="text/javascript" src="/guadapedia-estatica/stylesheets/IEFixes.js"></script>
@@ -27,7 +27,7 @@
 	<div id="content">
 	    
 	  <a name="top" id="contentTop"></a>
-	  <h1 class="firstHeading">Guia v4/Gratitud</h1>
+	  <h1 class="firstHeading"><a href=Indice>Guia v4/Gratitud</a></h1>
 	  <div id="bodyContent">
 	    <h3 id="siteSub">De Guadapedia, la enciclopedia libre.</h3>
 	    <div id="contentSub"></div>
