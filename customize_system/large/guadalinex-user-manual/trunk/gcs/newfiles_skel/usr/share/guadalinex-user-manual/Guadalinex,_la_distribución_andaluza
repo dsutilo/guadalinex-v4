@@ -86,7 +86,6 @@
 </LI><LI> A lo largo del 2006 está previsto que se sumen las dependencias administrativas de la propia Junta para iniciar el largo camino de migración de las infraestructuras informáticas del gobierno andaluz a software libre, por supuesto basado en Guadalinex.
 </LI><LI> Y además cabe contabilizar los ¿miles? de ciudadanos que por propia iniciativa han instalado la distribución andaluza en sus ordenadores. 
 </LI></UL>
-<DIV CLASS="thumb tright"><DIV STYLE="width:182px;"><B>Missing image</B><BR /><I>CartelFiestaGuadalinex2004.jpg</I>   <DIV CLASS="thumbcaption">El proyecto Guadalinex es una combinación de empuje institucional y actividad social</DIV></DIV></DIV>
 <P>Todo esto nos da una cierta idea de las múltiples versiones, caras y facetas del proyecto Guadalinex, y de su impacto en la sociedad andaluza. Es complicado calcular estadísticas sobre esta base y no hay estimaciones oficiales sobre el grado de penetración de Guadalinex, aunque las cifras vienen marcadas sobretodo por la presencia escolar.
 </P><P>En cualquier caso estamos hablando de uno de los mayores y más poblados territorios del mundo cubiertos por un único proyecto de software libre. Hecho que es tan conocido en términos generales por la comunidad internacional GNU/Linux como desconocido en términos generales por los propios ciudadanos andaluces, que se pierden la oportunidad de presumir de un precedente mundial que muchos otros quisieran para sí.
 </P><P>El Observatorio de Software Educativo Libre <A CLASS="external" TITLE="http://observatorio.ofset.org/guadalinex.html" HREF="http://observatorio.ofset.org/guadalinex.html">[7]</A><SPAN CLASS="urlexpansion"> (<I>http://observatorio.ofset.org/guadalinex.html</I>)</SPAN> ofrece una interesante cronología de proyecto Guadalinex e información añadida sobre las múltiples versiones resumidas aquí.
@@ -106,7 +105,7 @@
 </LI><LI> Actualizaciones de seguridad desarrolladas por Ubuntu, de las que Guadalinex se podría beneficiar automáticamente.
 </LI><LI> Lobby de presión común ante fabricantes de hardware para la liberación de drivers y especificaciones.
 </LI></UL>
-<P>El resultado de esta colaboración es Guadalinex 3, un producto sólido y preparado para ser masivamente utilizado en Andalucía.
+<P>El resultado de esta colaboración han sido las versiones v3 de Guadalinex y, actualmente, la versión v4, productos sólidos y preparados para ser masivamente utilizados en Andalucía.
 </P><P>La CICE ha promovido el contacto de Guadalinex con otros proyectos similares, especialmente con otras Comunidades Autónomas del Estado Español. Uno de los acercamientos más claros ha sido el realizado con la comunidad vecina de Castilla-La Mancha, la cual tiene en marcha otro decidido proyecto institucional de apoyo e implantación de software libre bajo la bandera de la distribución MoLinux <A CLASS="external" TITLE="http://www.molinux.info/" HREF="http://www.molinux.info/">[13]</A><SPAN CLASS="urlexpansion"> (<I>http://www.molinux.info/</I>)</SPAN>. Dicha distribución empezó basándose en la misma tecnología Progeny Componentized Linux que GNULinEx pero en sus últimas versiones también ha dado el salto a Ubuntu como distribución base.
 </P>
 <A NAME="Apoyar_el_medio_sin_olvidar_el_fin"></A><H2>Apoyar el medio sin olvidar el fin</H2>
