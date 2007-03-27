@@ -96,6 +96,7 @@ EOF
       #!/bin/bash
       echo "Estas usando un fake de este script, el original es start-stop-daemon.REAL"
 EOF
+   chmod +x /sbin/start-stop-daemon
    fi
 
    # Creamos la estructura completa del chroot
