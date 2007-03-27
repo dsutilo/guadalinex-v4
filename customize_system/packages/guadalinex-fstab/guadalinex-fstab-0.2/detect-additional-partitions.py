@@ -116,6 +116,26 @@ def remove_uuid():
   f.write(fstab)
   f.close()
 
+def add_users_to_media_partitions():
+
+  import re
+
+  f = open('/etc/fstab', 'r')
+  fstab = f.read()
+  f.close()
+
+  media_re = re.compile('((UUID=[\w-]+)\s+(/media/\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+))')
+  media_lines = media_re.findall(fstab)
+
+  for media_line in media_lines:
+    if not media_line[4].count('users'):
+      line_with_users =  media_line[0].replace(media_line[4], 'users,' + media_line[4])
+      fstab = fstab.replace(media_line[0], line_with_users)
+
+  f = open('/etc/fstab','w')
+  f.write(fstab)
+  f.close()
+
 ########
 # MAIN #
 ########
@@ -123,6 +143,7 @@ def remove_uuid():
 if DEBUG:
   print "DEBUG MODE ENABLED"
 
+add_users_to_media_partitions()
 remove_uuid()
 blacklist = get_partitions_already_used()
 
