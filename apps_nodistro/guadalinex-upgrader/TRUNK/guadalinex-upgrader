@@ -138,10 +138,10 @@ if [ "$CONTINUE" = 1 ];then
 
    # Previa simulación para comprobar si se puede o no actualizar#
    ###############################################################
-   ./simulate &
+   simulate &
    (while true
       do
-      echo.
+      echo .
       test -f /tmp/gout && break
       done)|zenity --progress --text "Comprobando si es posible la actualización..." --pulsate --auto-close
 
