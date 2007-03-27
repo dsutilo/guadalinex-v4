@@ -34,7 +34,7 @@ EOF
    done
 
    for c in ${MODIF};do
-      mount -t unionfs -o "dirs=/tmp/rw/$c=rw:/$c=ro unionfs /tmp/simulate/$c"
+      mount -t unionfs -o dirs=/tmp/rw/$c=rw:/$c=ro unionfs /tmp/simulate/$c
    done
 
 
