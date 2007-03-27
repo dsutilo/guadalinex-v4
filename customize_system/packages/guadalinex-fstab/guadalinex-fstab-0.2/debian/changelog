@@ -1,3 +1,9 @@
+guadalinex-fstab (0.3) unstable; urgency=low
+
+  * improved detect-additional-partitions.py 
+
+ -- Carlos Parra Camargo <gensys@gensys-machine>  Tue, 27 Mar 2007 12:15:24 +0200
+
 guadalinex-fstab (0.2) unstable; urgency=low
 
   * Added extra options to ext* partitions
