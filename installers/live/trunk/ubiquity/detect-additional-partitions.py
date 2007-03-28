@@ -124,7 +124,7 @@ def add_users_to_media_partitions():
   fstab = f.read()
   f.close()
   
-  media_re = re.compile('((UUID=[\w-]+)\s+(/media/\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+))')
+  media_re = re.compile('((/dev/\S+)\s+(/media/\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+))')
   media_lines = media_re.findall(fstab)
   
   for media_line in media_lines:
@@ -143,8 +143,8 @@ def add_users_to_media_partitions():
 if DEBUG:
   print "DEBUG MODE ENABLED"
 
-add_users_to_media_partitions()
 remove_uuid()
+add_users_to_media_partitions()
 blacklist = get_partitions_already_used()
 
 if DEBUG:
