@@ -1,3 +1,9 @@
+guadalinex-fstab (0.4) unstable; urgency=low
+
+  * improved logic
+
+ -- Carlos Parra Camargo <gensys@gensys-machine>  Wed, 28 Mar 2007 10:46:25 +0200
+
 guadalinex-fstab (0.3) unstable; urgency=low
 
   * improved detect-additional-partitions.py 
