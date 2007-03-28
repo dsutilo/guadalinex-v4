@@ -1,14 +1,22 @@
-RC2 (20070323)
+RC2 (20070328)
 =============
 
+- Sistema de reconocimiento de particiones tras instalación (generación de
+fstab):
+  - Se reconocen y añaden aquellas particiones que no genera automáticamente
+  debian-installer tanto en live como en no live
+  - Se regeneran algunas entradas generadas automáticamente por
+  debian-installer para permitir a los usuarios montar/desmontar dichas
+  unidades correctamente
+  - Se eliminan los identificadores UUID para evitar los problemas
+  anteriormente citados
 - Añadido soporte en Firefox para enlaces ed2k (BTS 1351)
 - Guía de usuario de Guadalinex:
   - Completada
   - Corregidos algunos problemas con imágenes
+  - Mejorada la imagen a partir de mejoras en las hojas de estilo
 - Corregidos algunos problemas con sources.list que lo hacían incompatible con
 watermain
-- Corregidos algunos problemas de reconocimiento de particiones en el sistema
-instalado
 - Integrada nueva versión de Grubaker que corrige algunos problemas (BTS 1347,
 1380, 1409)
 - Añadido paquete "eciadsl" para facilitar soporte de módems Globespam (BTS
@@ -17,7 +25,9 @@ instalado
 - Añadido paquete ""sun-java5-plugin" necesario para muchas aplicaciones
 administrativas (BTS 1386) 
 - Añadida nueva versión del asistente de conexión a Internet 3G
-- Empaquetado e incluido "GRU" (Guadalinex Recovery Utility)
+- Empaquetado e incluido "GRU" (Guadalinex Recovery Utility):
+  - Sólo está disponible en live, no en el sistema instalado
+- Corregidas erretas en página de guadalinex-about
 - Corregido /etc/issue para mostrar correctamente mensaje de Guadalinex
 - Corregido problema con enlaces de aplicaciones en el escritorio (BTS 1438)
 - Corregido problema con generación de entrada de disquetera en sistema
