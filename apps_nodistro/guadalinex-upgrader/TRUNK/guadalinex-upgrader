@@ -86,8 +86,10 @@ EOF
    insmod /usr/share/guadalinex-upgrader/unionfs.ko
 
    # Creamos los directorios para el chroot
-   mkdir /tmp/rw /tmp/simulate
-   mkdir /tmp/simulate/tmp
+   if [ ! -d /tmp/rw -a ! -d /tmp/simulate ];then
+      mkdir /tmp/rw /tmp/simulate
+      mkdir /tmp/simulate/tmp
+   fi
    
 
    # Creamos la estructura completa del chroot
@@ -112,8 +114,9 @@ EOF
    if [ ! -e /tmp/simulate/sbin/start-stop-daemon.REAL ];then
       mv /tmp/simulate/sbin/start-stop-daemon /tmp/simulate/sbin/start-stop-daemon.REAL
       cat > /tmp/simulate/sbin/start-stop-daemon <<EOF
-      #!/bin/bash
-      echo "Estas usando un fake de este script, el original es start-stop-daemon.REAL"
+#!/bin/bash
+echo "Estas usando un fake de este script, el original es start-stop-daemon.REAL"
+exit 0
 EOF
    chmod +x /tmp/simulate/sbin/start-stop-daemon
    fi
@@ -132,6 +135,14 @@ if [ "$CONTINUE" = 1 ];then
       zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --error --text "Lo sentimos pero no hay espacio suficiente para llevar a cabo la actualización, se necesitan al menos 3GB libres.\n Libere espacio y vuelva a abrir guadalinex-upgrader"
       exit 1
    fi
+
+   if [ -e /tmp/guadalinex-upgrader.exit ];then
+      rm /tmp/guadalinex-upgrader.exit
+   fi
+
+   if [ -e /tmp/gout ];then
+      rm /tmp/gout
+   fi
    
    # Ajustes antes de actualizar
    prepare_system|zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --progress --text "Preparando el sistema para la actualización..." --pulsate --auto-close
@@ -147,7 +158,8 @@ Esta operación puede tardar entre 1 y 2 horas, dependiendo de su conexión a in
       do
       echo .
       test -f /tmp/gout && break
-      done)|zenity --progress --text "Comprobando si es posible la actualización..." --pulsate --auto-close
+      done)|zenity --progress --text "Comprobando si es posible la actualización...
+Este proceso puede tardar entre 1 y 2 horas." --pulsate --auto-close
 
    if [ "$(cat /tmp/guadalinex-upgrader.exit)" == "1" ];then
       exit 1
