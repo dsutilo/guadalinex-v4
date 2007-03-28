@@ -22,6 +22,19 @@ function upgradenow(){
    # Eliminamos los esquemas de gconf y el paquete xscreensaver que dan problemas al actualizar
    rm -rf /etc/gconf/gconf.xml.defaults/* /etc/gconf/schemas
    
+   apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install dpkg
+
+   # Fake para que no levante servicios en la simulacion
+   if [ ! -e /sbin/start-stop-daemon.REAL ];then
+      mv /sbin/start-stop-daemon /sbin/start-stop-daemon.REAL
+      cat > /sbin/start-stop-daemon <<EOF
+#!/bin/bash
+echo "Estas usando un fake de este script, el original es start-stop-daemon.REAL"
+exit 0
+EOF
+   chmod +x /tmp/simulate/sbin/start-stop-daemon
+   fi
+
    apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove xscreensaver
    apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf dist-upgrade
    dpkg --configure -a
@@ -49,6 +62,9 @@ function fix_upgrade(){
    if [ -e /usr/share/icons/crystalsvg/64x64/apps/smb4k.png ];then
       cp /usr/share/icons/crystalsvg/64x64/apps/smb4k.png /usr/share/pixmaps/
    fi
+
+   # Restauramos el start-stop-daemon
+   mv /sbin/start-stop-daemon.REAL /sbin/start-stop-daemon
 
    # Eliminamos el kernel 2.6.17-10-386 que tambien se instala y no debería y actualizamos grub
    sudo apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove linux-image-2.6.17-10-386
@@ -110,16 +126,6 @@ EOF
       mount -t unionfs -o dirs=/tmp/rw/$c=rw:/$c=ro unionfs /tmp/simulate/$c
    done
    
-   # Fake para que no levante servicios en la simulacion
-   if [ ! -e /tmp/simulate/sbin/start-stop-daemon.REAL ];then
-      mv /tmp/simulate/sbin/start-stop-daemon /tmp/simulate/sbin/start-stop-daemon.REAL
-      cat > /tmp/simulate/sbin/start-stop-daemon <<EOF
-#!/bin/bash
-echo "Estas usando un fake de este script, el original es start-stop-daemon.REAL"
-exit 0
-EOF
-   chmod +x /tmp/simulate/sbin/start-stop-daemon
-   fi
 
 }
 
