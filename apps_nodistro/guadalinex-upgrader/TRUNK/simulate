@@ -7,7 +7,7 @@ DEBIAN_FRONTEND=noninteractive chroot /tmp/simulate apt-get --config-file /usr/s
 if [ "$?" != "0" ];then
    echo "1" > /tmp/guadalinex-upgrader.exit
    zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --error --text "Lo sentimos, no es posible llevar a cabo la actualización, se ha encontrado el siguiente problema:
-$(cat /tmp/errors)"
+$(cat /tmp/errors|grep error)"
    killall apt-get
 else
    mv /tmp/rw/var/cache/apt/archives/*.deb /var/cache/apt/archives/

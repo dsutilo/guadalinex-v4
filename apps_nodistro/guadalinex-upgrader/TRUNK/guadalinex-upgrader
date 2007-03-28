@@ -89,15 +89,6 @@ EOF
    mkdir /tmp/rw /tmp/simulate
    mkdir /tmp/simulate/tmp
    
-   # Fake para que no levante servicios en la simulacion
-   if [ ! -e /sbin/start-stop-daemon.REAL ];then
-      mv /sbin/start-stop-daemon /sbin/start-stop-daemon.REAL
-      cat > /sbin/start-stop-daemon <<EOF
-      #!/bin/bash
-      echo "Estas usando un fake de este script, el original es start-stop-daemon.REAL"
-EOF
-   chmod +x /sbin/start-stop-daemon
-   fi
 
    # Creamos la estructura completa del chroot
    for a in ${MODIF};do
@@ -116,6 +107,17 @@ EOF
    for c in ${MODIF};do
       mount -t unionfs -o dirs=/tmp/rw/$c=rw:/$c=ro unionfs /tmp/simulate/$c
    done
+   
+   # Fake para que no levante servicios en la simulacion
+   if [ ! -e /tmp/simulate/sbin/start-stop-daemon.REAL ];then
+      mv /tmp/simulate/sbin/start-stop-daemon /tmp/simulate/sbin/start-stop-daemon.REAL
+      cat > /tmp/simulate/sbin/start-stop-daemon <<EOF
+      #!/bin/bash
+      echo "Estas usando un fake de este script, el original es start-stop-daemon.REAL"
+EOF
+   chmod +x /tmp/simulate/sbin/start-stop-daemon
+   fi
+
 }
 
 zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --question --text "Se va a proceder a la actualización del sistema. Por favor, cierre todas las aplicaciones y no realice otras tareas mientras lleva a cabo este proceso.
@@ -138,7 +140,8 @@ if [ "$CONTINUE" = 1 ];then
    fi
 
    # Previa simulación para comprobar si se puede o no actualizar#
-   ###############################################################
+   zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --info --text "A continuación se descargarán los paquetes necesarios y se hará una simulación para comprobar que su sistema puede actualizarse.
+Esta operación puede tardar entre 1 y 2 horas, dependiendo de su conexión a internet, por favor, sea paciente."
    simulate &
    (while true
       do
