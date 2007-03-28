@@ -1,4 +1,0 @@
-* Implementacion del widget de previsializacion de particiones DiskPreview
-* Integracion del widget DiskPreview dentro del frontend gtk de Ubiquity
-* Adaptacion de etiquetas de accesibilidad dentro de los glade de Ubiquity (en español) HACK!
-* Adapatacion del frontend gtk para que incluya la informacion de los widget como descripcion atk
