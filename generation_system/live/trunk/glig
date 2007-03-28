@@ -203,6 +203,9 @@ echo \"Warning: Fake start-stop-daemon called, doing nothing\"" > ${sources}/sbi
     apt_get install guadalinex-desktop-conf
     apt_get install
 
+    apt_get install gru
+    apt_get install
+    
     apt_get install meta-guadalinex-v4
     apt_get install
 

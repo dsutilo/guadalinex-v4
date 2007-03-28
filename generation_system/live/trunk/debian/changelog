@@ -1,3 +1,9 @@
+glig (0.16) unstable; urgency=low
+
+  * Added package gru 
+
+ -- Carlos Parra Camargo <gensys@gensys-machine>  Wed, 28 Mar 2007 10:07:59 +0200
+
 glig (0.15) unstable; urgency=low
 
   * updated sources.list to work properly with watermain 
