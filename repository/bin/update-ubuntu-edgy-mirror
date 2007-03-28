@@ -6,7 +6,7 @@
 #rsync -rvl es.archive.ubuntu.com::ubuntu/dists/edgy/main/installer-i386/ /var/mirror/installer-i386/
 #rsync -rvl archive.ubuntu.com::ubuntu/indices /var/mirror/indices
 
-debmirror --ignore-release-gpg -v --host=$HOST_REPOSITORY --root=ubuntu/ --method=http --dist=edgy --section=main,main/debian-installer,restricted,universe,multiverse --arch=i386 $MIRROR_UBUNTU 
+debmirror --nosource --ignore-release-gpg -v --host=$HOST_REPOSITORY --root=ubuntu/ --method=http --dist=edgy --section=main,main/debian-installer,restricted,universe,multiverse --arch=i386 $MIRROR_UBUNTU 
 
 if [ ! -L $DIST_EDGY_INSTALLER ]; then
   ln -s $DERIVATIVE_INSTALLER/ $DIST_EDGY_INSTALLER 
