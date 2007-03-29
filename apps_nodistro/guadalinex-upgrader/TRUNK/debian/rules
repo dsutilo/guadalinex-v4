@@ -13,10 +13,12 @@ install: build
 	dh_clean -k
 	dh_install guadalinex-upgrader usr/sbin
 	dh_install simulate usr/sbin
+	dh_install upgradenow usr/sbin
 	dh_install guadalinex-upgrader.png usr/share/pixmaps
 	dh_install gu.apt.conf usr/share/guadalinex-upgrader
 	dh_install guadalinex-upgrader.desktop usr/share/applications
 	dh_install unionfs.ko usr/share/guadalinex-upgrader
+	dh_install README usr/share/doc/guadalinex-upgrader
 
 
 

@@ -2,7 +2,7 @@
 
 function fchroot(){
 
-DEBIAN_FRONTEND=noninteractive chroot /tmp/simulate "$*"
+DEBIAN_FRONTEND=noninteractive chroot /tmp/simulate $* 2>> /tmp/errors
 }
 
 
@@ -20,8 +20,8 @@ EOF
    chmod +x /tmp/simulate/sbin/start-stop-daemon
    fi
 
-fchroot "apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf dist-upgrade 2> /tmp/errors"
-fchroot "/tmp/simulate dpkg --configure -a"
+fchroot "apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf dist-upgrade"
+fchroot "dpkg --configure -a"
 fchroot "apt-get -f install"
 
 # Comprobamos si todo ha salido bien
@@ -41,4 +41,6 @@ awk "/\/tmp\/simulate/ {print \$2}" /proc/mounts | sort -r|xargs umount
 #Borramos los puntos de montaje
 rm -rf /tmp/simulate
 rm -rf /tmp/rw
-
+if [ ! -e /tmp/gout ];then
+   touch /tmp/gout
+fi

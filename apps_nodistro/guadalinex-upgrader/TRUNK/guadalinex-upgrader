@@ -8,46 +8,6 @@ CONTINUE=0
 export DEBCONF_PRIORITY=critical 
 export DEBIAN_FRONTEND=noninteractive
 
-function upgradenow(){
-
-   # Creamos directorio temporal para almacenar algunos ficheros que se deben mantener
-   mkdir /var/tmp
-   
-   if [ -e "/usr/share/applications/ipodder.desktop" ];then
-      mv /usr/share/applications/ipodder.desktop /var/tmp/
-   fi
-
-
-
-   # Eliminamos los esquemas de gconf y el paquete xscreensaver que dan problemas al actualizar
-   rm -rf /etc/gconf/gconf.xml.defaults/* /etc/gconf/schemas
-   
-   apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install dpkg
-
-   # Fake para que no levante servicios en la simulacion
-   if [ ! -e /sbin/start-stop-daemon.REAL ];then
-      mv /sbin/start-stop-daemon /sbin/start-stop-daemon.REAL
-      cat > /sbin/start-stop-daemon <<EOF
-#!/bin/bash
-echo "Estas usando un fake de este script, el original es start-stop-daemon.REAL"
-exit 0
-EOF
-   chmod +x /tmp/simulate/sbin/start-stop-daemon
-   fi
-
-   apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove xscreensaver
-   apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf dist-upgrade
-   dpkg --configure -a
-
-   # Eliminamos los metapaquetes de v3
-   apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove guadalinex-v3*
-
-   # Instalamos paquetes necesarios y los metapaquetes de v4
-   apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install openoffice.org openoffice.org-evolution openoffice.org-gnome
-   apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install meta-guadalinex-v4
-   dpkg --configure -a
-}
-   
 function fix_upgrade(){
 
    # Eliminamos entradas de evolution que ya no son válidas y arreglamos algunos problemas originados tras la actualización
@@ -150,6 +110,10 @@ if [ "$CONTINUE" = 1 ];then
       rm /tmp/gout
    fi
    
+   if [ -e /tmp/goutupgrade ];then
+      rm /tmp/goutupgrade
+   fi
+
    # Ajustes antes de actualizar
    prepare_system|zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --progress --text "Preparando el sistema para la actualización..." --pulsate --auto-close
    if [ "$(cat /tmp/guadalinex-upgrader.exit)" == "1" ];then
@@ -173,7 +137,12 @@ Este proceso puede tardar entre 1 y 2 horas." --pulsate --auto-close
    ################################################ FIN SIMULACION
    
    # Empieza la actualización
-   upgradenow|zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --progress --text "Actualizando..." --pulsate --auto-close
+   upgradenow &
+   (while true
+      do
+      echo .
+      test -f /tmp/goutupgrade && break
+      done)|zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --progress --text "Actualizando..." --pulsate --auto-close
 
    # Arreglamos problemas derivados
    fix_upgrade|zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --progress --text "Ajustando configuraciones..." --pulsate  --auto-close 
