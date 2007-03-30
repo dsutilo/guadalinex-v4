@@ -1,0 +1,6 @@
+#!/bin/sh
+#DEBHELPER#
+
+<DIVERT_SLOT>
+
+<SCRIPTS_SLOT>
