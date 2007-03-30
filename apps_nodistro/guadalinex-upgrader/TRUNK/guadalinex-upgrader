@@ -13,8 +13,11 @@ function fix_upgrade(){
    # Eliminamos entradas de evolution que ya no son válidas y arreglamos algunos problemas originados tras la actualización
    rm /usr/share/applications/evolution*
    rm /usr/share/applications/evolution*
-   sed -i 's|Icon=/usr/share/pixmaps/firefox_logo.png|Icon=/usr/share/pixmaps/firefox-guadalinex.png|g' $HOME/Desktop/firefox.desktop
    
+   for h in `ls /home`;do
+      sed -i 's|Icon=/usr/share/pixmaps/firefox_logo.png|Icon=/usr/share/pixmaps/firefox-guadalinex.png|g' /home/$h/Desktop/firefox.desktop
+   done
+
    if [ -e /var/tmp/ipodder.desktop ];then
       mv /var/tmp/ipodder.desktop /usr/share/applications/
    fi
@@ -28,7 +31,7 @@ function fix_upgrade(){
 
    dpkg --configure -a
    # Eliminamos el kernel 2.6.17-10-386 que tambien se instala y no debería y actualizamos grub
-   sudo apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove linux-image-2.6.17-10-386
+   apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove linux-image-2.6.17-10-386
    update-grub
 }
 
