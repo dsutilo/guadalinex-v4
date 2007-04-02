@@ -1,0 +1,732 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+ "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+
+<reference>
+<title>Installer Boot Help Screens</title>
+
+<refentry id="F1">
+ <refnamediv>
+  <refdescriptor><keycap>F1</keycap></refdescriptor>
+  <refname>Welcome to ${DISTRIBUTION_NAME}!</refname>
+ </refnamediv>
+
+ <refsection>
+  <title />
+
+  <para condition="install">
+   This is an installation ${MEDIA_TYPE} for ${DISTRIBUTION_NAME}
+   ${DISTRIBUTION_VERSION}, built on ${BUILD_DATE}.
+  </para>
+
+  <para condition="live">
+   This is a live ${MEDIA_TYPE} for ${DISTRIBUTION_NAME}
+   ${DISTRIBUTION_VERSION}, built on ${BUILD_DATE}.
+  </para>
+
+  <segmentedlist class="helpindex">
+   <title>HELP INDEX</title>
+   <segtitle>KEY</segtitle>
+   <segtitle>TOPIC</segtitle>
+
+   <seglistitem>
+    <seg><link linkend="F1"><keycap>F1</keycap></link></seg>
+    <seg>This page, the help index.</seg>
+   </seglistitem>
+
+   <seglistitem condition="install">
+    <seg><link linkend="F2"><keycap>F2</keycap></link></seg>
+    <seg>Prerequisites for installing ${DISTRIBUTION_NAME}.</seg>
+   </seglistitem>
+
+   <seglistitem condition="live">
+    <seg><link linkend="F2"><keycap>F2</keycap></link></seg>
+    <seg>Prerequisites for running ${DISTRIBUTION_NAME}.</seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg><link linkend="F3"><keycap>F3</keycap></link></seg>
+    <seg>Boot methods for special ways of using this ${MEDIA_TYPE}.</seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg><link linkend="F4"><keycap>F4</keycap></link></seg>
+    <seg>Additional boot methods; rescuing a broken system.</seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg><link linkend="F5"><keycap>F5</keycap></link></seg>
+    <seg>Special boot parameters, overview.</seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg><link linkend="F6"><keycap>F6</keycap></link></seg>
+    <seg>Special boot parameters for special machines.</seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg><link linkend="F7"><keycap>F7</keycap></link></seg>
+    <seg>Special boot parameters for selected disk controllers.</seg>
+   </seglistitem>
+
+   <seglistitem condition="install">
+    <seg><link linkend="F8"><keycap>F8</keycap></link></seg>
+    <seg>Special boot parameters for the install system.</seg>
+   </seglistitem>
+
+   <seglistitem condition="live">
+    <seg><link linkend="F8"><keycap>F8</keycap></link></seg>
+    <seg>Special boot parameters for the bootstrap system.</seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg><link linkend="F9"><keycap>F9</keycap></link></seg>
+    <seg>How to get help.</seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg><link linkend="F10"><keycap>F10</keycap></link></seg>
+    <seg>Copyrights and warranties.</seg>
+   </seglistitem>
+  </segmentedlist>
+
+<!-- deliberately unindented -->
+<literallayout condition="syslinux" class="serial">
+For F1-F19 type control and F then the digit 1-9
+For F10 type control and F then the digit 0
+</literallayout>
+
+  <para condition="syslinux">
+   Press F2 through F10 for details, or ENTER to ${BOOTPROMPT}
+  </para>
+
+  <para condition="gfxboot">
+   Press F2 through F10 for details, or Escape to exit help.
+  </para>
+ </refsection>
+</refentry>
+
+<refentry id="F2">
+ <refnamediv>
+  <refdescriptor><keycap>F2</keycap></refdescriptor>
+  <refname>PREREQUISITES FOR INSTALLING UBUNTU</refname>
+ </refnamediv>
+
+ <refsection>
+  <title />
+
+  <para condition="install">
+   You must have at least 32 megabytes of RAM to use this Ubuntu installer.
+  </para>
+
+  <para condition="install">
+   You should have space on your hard disk to create a new disk partition of
+   at least 2 gigabytes to install a standard Ubuntu desktop system or at
+   least 400 megabytes for a minimal server installation. You'll need more
+   disk space to install additional packages, depending on what you wish to
+   do with your new Ubuntu system.
+  </para>
+
+  <para condition="install">
+   See the Installation Manual or the FAQ for more information; both
+   documents are available at the Ubuntu web site,
+   <ulink url="http://www.ubuntu.com/" />
+  </para>
+
+  <para condition="live">
+   You must have at least 128 megabytes of RAM to use this Ubuntu live
+   system.
+  </para>
+
+  <para condition="live">
+   The live system does not require any space on your hard disk. However,
+   existing swap partitions on the disk will be used if available.
+  </para>
+
+  <para condition="live">
+   See the FAQ for more information; this document is available at the
+   Ubuntu web site, <ulink url="http://www.ubuntu.com/" />
+  </para>
+
+  <para>
+   Thank you for choosing Ubuntu!
+  </para>
+
+  <para condition="syslinux">
+   Press <phrase class="not-serial">F1</phrase><phrase class="serial">control and F then 1</phrase>
+   for the help index, or ENTER to ${BOOTPROMPT}
+  </para>
+
+  <para condition="gfxboot">
+   Press F1 for the help index, or Escape to exit help.
+  </para>
+ </refsection>
+</refentry>
+
+<refentry>
+ <refnamediv>
+  <refdescriptor><keycap>F3</keycap></refdescriptor>
+  <refname>BOOT METHODS</refname>
+ </refnamediv>
+
+ <refsection>
+  <title>Available boot methods:</title>
+
+  <variablelist>
+   <varlistentry condition="install">
+    <term>install</term>
+    <listitem><para>
+     Start the installation -- this is the default ${MEDIA_TYPE} install.
+    </para></listitem>
+   </varlistentry>
+
+   <varlistentry condition="install">
+    <term>expert</term>
+    <listitem><para>
+     Start the installation in expert mode, for maximum control.
+    </para></listitem>
+   </varlistentry>
+
+   <varlistentry condition="install">
+    <term>server</term>
+    <term>server-expert</term>
+    <listitem><para>
+     Minimal system install. Recommended for servers, where a complete
+     graphical desktop environment is not desired.
+    </para></listitem>
+   </varlistentry>
+
+   <varlistentry condition="live">
+    <term>live</term>
+    <listitem><para>
+     Start the live system.
+    </para></listitem>
+   </varlistentry>
+
+   <varlistentry>
+    <term>memtest</term>
+    <listitem><para>
+     Perform a memory test.
+    </para></listitem>
+   </varlistentry>
+  </variablelist>
+
+  <para>
+   To use one of these boot methods, type it at the prompt, optionally
+   followed by any boot parameters. For example:
+  </para>
+
+  <informalexample>
+   <screen condition="install">boot: install acpi=off</screen>
+   <screen condition="live">boot: live acpi=off</screen>
+  </informalexample>
+
+  <para>
+   If unsure, you should use the default boot method, with no special
+   parameters, by simply pressing enter at the boot prompt.
+  </para>
+
+  <para condition="syslinux">
+   Press <phrase class="not-serial">F1</phrase><phrase class="serial">control and F then 1</phrase>
+   for the help index, or ENTER to ${BOOTPROMPT}
+  </para>
+
+  <para condition="gfxboot">
+   Press F1 for the help index, or Escape to exit help.
+  </para>
+ </refsection>
+</refentry>
+
+<refentry condition="install">
+ <refnamediv>
+  <refdescriptor><keycap>F4</keycap></refdescriptor>
+  <refname>RESCUING A BROKEN SYSTEM</refname>
+ </refnamediv>
+
+ <refsection>
+  <title>Use one of these boot methods to rescue an existing install</title>
+
+  <variablelist>
+   <varlistentry>
+    <term>rescue</term>
+    <listitem><para>
+     Boot into rescue mode.
+    </para></listitem>
+   </varlistentry>
+  </variablelist>
+
+  <para>
+   To use one of these boot methods, type it at the prompt, optionally
+   followed by any boot parameters. For example:
+  </para>
+
+  <informalexample><screen>boot: rescue acpi=off</screen></informalexample>
+
+  <para condition="syslinux">
+   Press <phrase class="not-serial">F1</phrase><phrase class="serial">control and F then 1</phrase>
+   for the help index, or ENTER to ${BOOTPROMPT}
+  </para>
+
+  <para condition="gfxboot">
+   Press F1 for the help index, or Escape to exit help.
+  </para>
+ </refsection>
+</refentry>
+
+<refentry condition="live">
+ <refnamediv>
+  <refdescriptor><keycap>F4</keycap></refdescriptor>
+  <refname>RESCUING A BROKEN SYSTEM</refname>
+ </refnamediv>
+
+ <refsection>
+  <title />
+
+  <para>
+   There is no dedicated rescue mode on this CD. However, since the entire
+   system runs from the CD, it is possible to use the command-line and/or
+   graphical tools provided to rescue a broken system, and to use a web
+   browser to search for help. Extensive advice is available online for most
+   kinds of problems that might cause your normal system to fail to boot
+   correctly.
+  </para>
+
+  <para condition="syslinux">
+   Press <phrase class="not-serial">F1</phrase><phrase class="serial">control and F then 1</phrase>
+   for the help index, or ENTER to ${BOOTPROMPT}
+  </para>
+
+  <para condition="gfxboot">
+   Press F1 for the help index, or Escape to exit help.
+  </para>
+ </refsection>
+</refentry>
+
+<refentry>
+ <refnamediv>
+  <refdescriptor><keycap>F5</keycap></refdescriptor>
+  <refname>SPECIAL BOOT PARAMETERS - OVERVIEW</refname>
+ </refnamediv>
+
+ <refsection>
+  <title />
+
+  <para>
+   On a few systems, you may need to specify a parameter at the
+   <screen>boot:</screen> prompt in order to boot the system. For example,
+   Linux may not be able to autodetect your hardware, and you may need to
+   explicitly specify its location or type for it to be recognized.
+  </para>
+
+  <para>
+   For more information about what boot parameters you can use, press:
+  </para>
+
+  <segmentedlist class="helpindex">
+   <title />
+
+   <seglistitem>
+    <seg><link linkend="F6"><keycap>F6</keycap></link></seg>
+    <seg>boot parameters for special machines</seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg><link linkend="F7"><keycap>F7</keycap></link></seg>
+    <seg>boot parameters for various disk controllers</seg>
+   </seglistitem>
+
+   <seglistitem condition="install">
+    <seg><link linkend="F8"><keycap>F8</keycap></link></seg>
+    <seg>boot parameters understood by the install system</seg>
+   </seglistitem>
+
+   <seglistitem condition="live">
+    <seg><link linkend="F8"><keycap>F8</keycap></link></seg>
+    <seg>boot parameters understood by the bootstrap system</seg>
+   </seglistitem>
+  </segmentedlist>
+
+  <para>
+   Many kernel modules are loaded dynamically by the installer, and
+   parameters for those modules cannot be given on the command line. To be
+   prompted for parameters when modules are loaded, boot in expert mode (see
+   <link linkend="F3"><keycap>F3</keycap></link>).
+  </para>
+
+  <para condition="live">
+   Many kernel modules are loaded dynamically by the bootstrap system, and
+   parameters for those modules cannot be given on the command line.
+  </para>
+
+  <para condition="syslinux">
+   Press <phrase class="not-serial">F1</phrase><phrase class="serial">control and F then 1</phrase>
+   for the help index, or ENTER to ${BOOTPROMPT}
+  </para>
+
+  <para condition="gfxboot">
+   Press F1 for the help index, or Escape to exit help.
+  </para>
+ </refsection>
+</refentry>
+
+<refentry>
+ <refnamediv>
+  <refdescriptor><keycap>F6</keycap></refdescriptor>
+  <refname>SPECIAL BOOT PARAMETERS - VARIOUS HARDWARE</refname>
+ </refnamediv>
+
+ <refsection>
+  <title />
+
+  <para>
+   You can use the following boot parameters at the <screen>boot:</screen>
+   prompt, in combination with the boot method (see
+   <link linkend="F3"><keycap>F3</keycap></link>>). If you use hex numbers
+   you have to use the 0x prefix (e.g., 0x300).
+  </para>
+
+  <segmentedlist class="bootparams-hardware">
+   <title />
+   <segtitle>HARDWARE</segtitle>
+   <segtitle>PARAMETER TO SPECIFY</segtitle>
+
+   <seglistitem>
+    <seg>IBM PS/1 or ValuePoint (IDE disk)</seg>
+    <seg><userinput>hd=<replaceable>cylinders</replaceable>,<replaceable>heads</replaceable>,<replaceable>sectors</replaceable></userinput></seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg>Some IBM ThinkPads</seg>
+    <seg><userinput>floppy.floppy=thinkpad</userinput></seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg>IBM Pentium Microchannel</seg>
+    <seg><userinput>mca-pentium no-hlt</userinput></seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg>Protect I/O port regions</seg>
+    <seg><userinput>reserve=<replaceable>iobase</replaceable>,<replaceable>extent</replaceable></userinput><optional><userinput>,<replaceable>...</replaceable></userinput></optional></seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg>Workaround faulty FPU (old machines)</seg>
+    <seg><userinput>no387</userinput></seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg>Laptops with screen display problems</seg>
+    <seg><userinput>vga=771</userinput></seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg>
+     If your system hangs when booting, and the last message you see is
+     "aec671x-detect..", try
+    </seg>
+    <seg><userinput>gdth=disable:y</userinput></seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg>
+     If you experience lockups or other hardware failures, disable buggy
+     APIC interrupt routing
+    </seg>
+    <seg><userinput>noapic nolapic</userinput></seg>
+   </seglistitem>
+  </segmentedlist>
+
+  <para>For example:</para>
+
+  <informalexample>
+   <screen condition="install">boot: install vga=771 noapic nolapic</screen>
+   <screen condition="live">boot: live vga=771 noapic nolapic</screen>
+  </informalexample>
+
+  <para condition="syslinux">
+   Press <phrase class="not-serial">F1</phrase><phrase class="serial">control and F then 1</phrase>
+   for the help index, or ENTER to ${BOOTPROMPT}
+  </para>
+
+  <para condition="gfxboot">
+   Press F1 for the help index, or Escape to exit help.
+  </para>
+ </refsection>
+</refentry>
+
+<refentry id="F7">
+ <refnamediv>
+  <refdescriptor><keycap>F7</keycap></refdescriptor>
+  <refname>SPECIAL BOOT PARAMETERS - VARIOUS DISK DRIVES</refname>
+ </refnamediv>
+
+ <refsection>
+  <title />
+
+  <para>
+   You can use the following boot parameters at the <screen>boot:</screen>
+   prompt, in combination with the boot method (see
+   <link linkend="F3"><keycap>F3</keycap></link>).
+  </para>
+
+  <segmentedlist class="bootparams-disk">
+   <title />
+   <segtitle>HARDWARE</segtitle>
+   <segtitle>PARAMETER TO SPECIFY</segtitle>
+
+   <seglistitem>
+    <seg>Adaptec 151x, 152x</seg>
+    <seg><userinput>aha152x.aha152x=<replaceable>iobase</replaceable></userinput><optional><userinput>,<replaceable>irq</replaceable></userinput><optional><userinput>,<replaceable>scsi-id</replaceable></userinput><optional><userinput>,<replaceable>reconnect</replaceable></userinput></optional></optional></optional></seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg>Adaptec 1542</seg>
+    <seg><userinput>aha1542.aha1542=<replaceable>iobase</replaceable></userinput><optional><userinput>,<replaceable>buson</replaceable>,<replaceable>busoff</replaceable></userinput><optional><userinput>,<replaceable>dmaspeed</replaceable></userinput></optional></optional></seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg>Adaptec 274x, 284x</seg>
+    <seg><userinput>aic7xxx.aic7xxx=no_reset</userinput> (enabled if non-zero)</seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg>BusLogic SCSI Hosts</seg>
+    <seg><userinput>BusLogic.BusLogic=<replaceable>iobase</replaceable></userinput></seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg>Certain DELL machines</seg>
+    <seg><userinput>aic7xxx.aic7xxx=no_probe</userinput></seg>
+   </seglistitem>
+  </segmentedlist>
+
+  <para>
+   This list is incomplete, see the kernel's kernel-parameters.txt file
+   for more.
+  </para>
+
+  <para>For example:</para>
+
+  <informalexample>
+   <screen condition="install">boot: install aic7xxx.aic7xxx=no_probe</screen>
+   <screen condition="live">boot: live aic7xxx.aic7xxx=no_probe</screen>
+  </informalexample>
+
+  <para condition="syslinux">
+   Press <phrase class="not-serial">F1</phrase><phrase class="serial">control and F then 1</phrase>
+   for the help index, or ENTER to ${BOOTPROMPT}
+  </para>
+
+  <para condition="gfxboot">
+   Press F1 for the help index, or Escape to exit help.
+  </para>
+ </refsection>
+</refentry>
+
+<refentry id="F8">
+ <refnamediv>
+  <refdescriptor><keycap>F8</keycap></refdescriptor>
+  <refname>SPECIAL BOOT PARAMETERS - INSTALLATION SYSTEM</refname>
+ </refnamediv>
+
+ <refsection>
+  <para class="nobreak">
+   You can use the following boot parameters at the <screen>boot:</screen>
+   prompt, in combination with the boot method (see
+   <link linkend="F3"><keycap>F3</keycap></link>).
+  </para>
+  <para condition="install">
+   These parameters control how the installer works.
+  </para>
+  <para condition="live">
+   These parameters control how the bootstrap system works.
+  </para>
+
+  <segmentedlist class="bootparams-installer">
+   <title />
+   <segtitle>RESULT</segtitle>
+   <segtitle>PARAMETER</segtitle>
+
+   <seglistitem>
+    <seg>Verbose debugging</seg>
+    <seg><userinput>DEBCONF_DEBUG=5</userinput></seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg>Debug boot sequence</seg>
+    <seg><userinput>BOOT_DEBUG=2|3</userinput></seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg>Disable framebuffer</seg>
+    <seg><userinput>fb=false</userinput></seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg>Don't probe for USB</seg>
+    <seg><userinput>debian-installer/probe/usb=false</userinput></seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg>Don't start PCMCIA</seg>
+    <seg><userinput>hw-detect/start_pcmcia=false</userinput></seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg>Force static network config</seg>
+    <seg><userinput>netcfg/disable_dhcp=true</userinput></seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg>Set keyboard map</seg>
+    <seg><userinput>bootkbd=es</userinput></seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg>Use Braille tty</seg>
+    <seg><userinput>brltty=<replaceable>driver</replaceable>,<replaceable>device</replaceable>,<replaceable>texttable</replaceable></userinput></seg>
+   </seglistitem>
+
+   <seglistitem>
+    <seg>
+     Disable ACPI for PCI maps (handy for some HP servers and Via-based
+     machines)
+    </seg>
+    <seg><userinput>pci=noacpi</userinput></seg>
+   </seglistitem>
+  </segmentedlist>
+
+  <para>For example:</para>
+
+  <informalexample>
+   <screen condition="install">boot: install fb=false</screen>
+   <screen condition="live">boot: live fb=false</screen>
+  </informalexample>
+
+  <para condition="syslinux">
+   Press <phrase class="not-serial">F1</phrase><phrase class="serial">control and F then 1</phrase>
+   for the help index, or ENTER to ${BOOTPROMPT}
+  </para>
+
+  <para condition="gfxboot">
+   Press F1 for the help index, or Escape to exit help.
+  </para>
+ </refsection>
+</refentry>
+
+<refentry id="F9">
+ <refnamediv>
+  <refdescriptor><keycap>F9</keycap></refdescriptor>
+  <refname>GETTING HELP</refname>
+ </refnamediv>
+
+ <refsection>
+  <title />
+
+  <para condition="install" class="nobreak">
+   If you can't install Ubuntu, don't despair!
+  </para>
+  <para condition="live" class="nobreak">
+   If you can't start Ubuntu, don't despair!
+  </para>
+  <para class="nobreak">
+   The Ubuntu team is ready to help you!
+  </para>
+  <para condition="install" class="nobreak">
+   We are especially interested in hearing about installation problems,
+   because in general they don't happen to only <emphasis>one</emphasis>
+   person.
+  </para>
+  <para condition="live" class="nobreak">
+   We are especially interested in hearing about startup problems, because
+   in general they don't happen to only <emphasis>one</emphasis> person.
+  </para>
+  <para>
+   We've either already heard about your particular problem and can dispense
+   a quick fix, or we would like to hear about it and work through it with
+   you, and the next user who comes up with the same problem will profit
+   from your experience!
+  </para>
+
+  <para condition="install">
+   See the Installation Manual or the FAQ for more information; both
+   documents are available at the Ubuntu web site,
+   <ulink url="http://www.ubuntu.com/" />
+  </para>
+
+  <para condition="live">
+   See the FAQ for more information; this document is available at the
+   Ubuntu web site, <ulink url="http://www.ubuntu.com/" />
+  </para>
+
+  <para condition="syslinux">
+   Press <phrase class="not-serial">F1</phrase><phrase class="serial">control and F then 1</phrase>
+   for the help index, or ENTER to ${BOOTPROMPT}
+  </para>
+
+  <para condition="gfxboot">
+   Press F1 for the help index, or Escape to exit help.
+  </para>
+ </refsection>
+</refentry>
+
+<refentry id="F10">
+ <refnamediv>
+  <refdescriptor><keycap>F10</keycap></refdescriptor>
+  <refname>COPYRIGHTS AND WARRANTIES</refname>
+ </refnamediv>
+
+ <refsection>
+  <title />
+
+  <para>
+   Ubuntu is Copyright (C) 2004-2006 Canonical Ltd., and incorporates the
+   work of many other original authors and contributors.
+  </para>
+
+  <para class="nobreak">
+   The Ubuntu system is freely redistributable.
+  </para>
+  <para condition="install">
+   After installation, the exact distribution terms for each package are
+   described in the corresponding file
+   /usr/share/doc/<replaceable>packagename</replaceable>/copyright.
+  </para>
+  <para condition="live">
+   After startup, the exact distribution terms for each package are
+   described in the corresponding file
+   /usr/share/doc/<replaceable>packagename</replaceable>/copyright.
+  </para>
+
+  <para>
+   Ubuntu comes with <emphasis>ABSOLUTELY NO WARRANTY</emphasis>, to the
+   extent permitted by applicable law.
+  </para>
+
+  <para condition="install">
+   This installation system is based on the Debian installer. See
+   <ulink url="http://www.debian.org/" /> for more details and information
+   on the Debian project.
+  </para>
+
+  <para condition="live">
+   This system is based on Debian. See
+   <ulink url="http://www.debian.org/" /> for more details and information
+   on the Debian project.
+  </para>
+
+  <para condition="syslinux">
+   Press <phrase class="not-serial">F1</phrase><phrase class="serial">control and F then 1</phrase>
+   for the help index, or ENTER to ${BOOTPROMPT}
+  </para>
+
+  <para condition="gfxboot">
+   Press F1 for the help index, or Escape to exit help.
+  </para>
+ </refsection>
+</refentry>
+
+</reference>
+
+<!-- vim: set sts=1 sw=1 et: -->

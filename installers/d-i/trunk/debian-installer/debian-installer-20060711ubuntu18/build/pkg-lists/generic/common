@@ -1,0 +1,24 @@
+#include "base"
+#include "kernel"
+
+# Other udebs that are needed for netboot install
+choose-mirror
+net-retriever
+download-installer
+cdebconf-newt-udeb
+installation-locale
+di-utils-terminfo
+
+nano-udeb
+
+preseed-common
+initrd-preseed
+network-preseed
+kickseed-common
+initrd-kickseed
+
+save-logs
+
+# verify what we download
+gpgv-udeb
+ubuntu-keyring-udeb

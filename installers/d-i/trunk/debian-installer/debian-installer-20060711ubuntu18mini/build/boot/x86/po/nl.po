@@ -1,0 +1,800 @@
+# Dutch translation for debian-installer
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the debian-installer package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: debian-installer\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2006-09-23  1:26+0100\n"
+"PO-Revision-Date: 2006-10-10 13:24+0000\n"
+"Last-Translator: Jan Claeys <ubuntu@janc.be>\n"
+"Language-Team: Dutch <nl@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: help.xml:6
+msgid "Installer Boot Help Screens"
+msgstr "Hulpschermen voor opstarten van de installatie"
+
+#: help.xml:11
+msgid "Welcome to ${DISTRIBUTION_NAME}!"
+msgstr "Welkome bij ${DISTRIBUTION_NAME}!"
+
+#: help.xml:18
+msgid ""
+"This is an installation ${MEDIA_TYPE} for ${DISTRIBUTION_NAME} "
+"${DISTRIBUTION_VERSION}, built on ${BUILD_DATE}."
+msgstr ""
+"Dit is een installatie-${MEDIA_TYPE} voor ${DISTRIBUTION_NAME} "
+"${DISTRIBUTION_VERSION}, gemaakt op ${BUILD_DATE}."
+
+#: help.xml:23
+msgid ""
+"This is a live ${MEDIA_TYPE} for ${DISTRIBUTION_NAME} "
+"${DISTRIBUTION_VERSION}, built on ${BUILD_DATE}."
+msgstr ""
+"This is een live-${MEDIA_TYPE} voor ${DISTRIBUTION_NAME} "
+"${DISTRIBUTION_VERSION}, gemaakt op ${BUILD_DATE}."
+
+#: help.xml:28
+msgid "HELP INDEX"
+msgstr "HULPINDEX"
+
+#: help.xml:29
+msgid "KEY"
+msgstr "SLEUTEL"
+
+#: help.xml:30
+msgid "TOPIC"
+msgstr "ONDERWERP"
+
+#: help.xml:34
+msgid "This page, the help index."
+msgstr "Deze pagina, de hulpindex"
+
+#: help.xml:39
+msgid "Prerequisites for installing ${DISTRIBUTION_NAME}."
+msgstr "Vereisten voor het installeren van ${DISTRIBUTION_NAME}."
+
+#: help.xml:44
+msgid "Prerequisites for running ${DISTRIBUTION_NAME}."
+msgstr "Vereisten voor het draaien van ${DISTRIBUTION_NAME}."
+
+#: help.xml:49
+msgid "Boot methods for special ways of using this ${MEDIA_TYPE}."
+msgstr ""
+"Opstartmethoden voor speciale manieren om deze ${MEDIA_TYPE} te gebruiken."
+
+#: help.xml:54
+msgid "Additional boot methods; rescuing a broken system."
+msgstr "Bijkomende opstartmethoden; reddingsmodus."
+
+#: help.xml:59
+msgid "Special boot parameters, overview."
+msgstr "Speciale opstartparameters, overzicht."
+
+#: help.xml:64
+msgid "Special boot parameters for special machines."
+msgstr "Speciale opstartparameters voor speciale toestellen."
+
+#: help.xml:69
+msgid "Special boot parameters for selected disk controllers."
+msgstr "Speciale opstartparameters voor bepaalde disk controllers."
+
+#: help.xml:74
+msgid "Special boot parameters for the install system."
+msgstr "Speciale opstartparameters voor het installatiesysteem."
+
+#: help.xml:79
+msgid "Special boot parameters for the bootstrap system."
+msgstr "Speciale opstartparameters voor het opstartsysteem."
+
+#: help.xml:84
+msgid "How to get help."
+msgstr "Hoe hulp te verkrijgen."
+
+#: help.xml:89
+msgid "Copyrights and warranties."
+msgstr "Auteursrechten en garanties."
+
+#: help.xml:100
+msgid "Press F2 through F10 for details, or ENTER to ${BOOTPROMPT}"
+msgstr "Druk F2 tot F10 voor details, of ENTER voor ${BOOTPROMPT}"
+
+#: help.xml:104
+msgid "Press F2 through F10 for details, or Escape to exit help."
+msgstr "Druk F2 tot F10 voor details, of Escape om de hulp te verlaten."
+
+#: help.xml:112
+msgid "PREREQUISITES FOR INSTALLING UBUNTU"
+msgstr "VEREISTEN OM UBUNTU TE INSTALLEREN"
+
+#: help.xml:119
+msgid ""
+"You must have at least 32 megabytes of RAM to use this Ubuntu installer."
+msgstr ""
+"U hebt minstens 32 MiB RAM nodig om dit Ubuntu-installatieprogramma te "
+"gebruiken."
+
+#: help.xml:123
+msgid ""
+"You should have space on your hard disk to create a new disk partition of at "
+"least 2 gigabytes to install a standard Ubuntu desktop system or at least "
+"400 megabytes for a minimal server installation. You'll need more disk space "
+"to install additional packages, depending on what you wish to do with your "
+"new Ubuntu system."
+msgstr ""
+"U zou minstens 2 GiB vrije ruimte moeten hebben op uw harde schijf om een "
+"nieuwe partitie te maken voor een standaard Ubuntu desktop-systeem, of "
+"minstens 400 MiB voor een minimale server-installatie.  U zal ook meer "
+"schijfruimte nodig hebben om bijkomende pakketten te installeren, "
+"afhankelijk van wat u met uw nieuwe Ubuntu-systeem wil doen."
+
+#: help.xml:131 help.xml:653
+msgid ""
+"See the Installation Manual or the FAQ for more information; both documents "
+"are available at the Ubuntu web site, <ulink url=\"http://www.ubuntu.com/\" /"
+">"
+msgstr ""
+"Zie de Installatiehandleiding of the FAQ voor meer informatie; beide "
+"documenten zijn beschikbaar op de Ubuntu website, <ulink url=\"http://www."
+"ubuntu.com/\" />"
+
+#: help.xml:137
+msgid ""
+"You must have at least 128 megabytes of RAM to use this Ubuntu live system."
+msgstr ""
+"U hebt minstens 128 MiB RAM nodig om dit Ubuntu live-systeem te gebruiken."
+
+#: help.xml:142
+msgid ""
+"The live system does not require any space on your hard disk. However, "
+"existing swap partitions on the disk will be used if available."
+msgstr ""
+"Het live-systeem heeft geen schijfruimte op uw harde schijf nodig, maar "
+"bestaande swap-partities zullen wel gebruikt worden indien beschikbaar."
+
+#: help.xml:147 help.xml:659
+msgid ""
+"See the FAQ for more information; this document is available at the Ubuntu "
+"web site, <ulink url=\"http://www.ubuntu.com/\" />"
+msgstr ""
+"Zie de FAQ voor meer informatie; dit document is beschikbaar op de Ubuntu "
+"website, <ulink url=\"http://www.ubuntu.com/\" />"
+
+#: help.xml:152
+msgid "Thank you for choosing Ubuntu!"
+msgstr "Bedankt om Ubuntu te kiezen!"
+
+#: help.xml:156 help.xml:230 help.xml:266 help.xml:295 help.xml:362
+#: help.xml:448 help.xml:517 help.xml:608 help.xml:664 help.xml:720
+msgid ""
+"Press <phrase class=\"not-serial\">F1</phrase><phrase class=\"serial"
+"\">control and F then 1</phrase> for the help index, or ENTER to "
+"${BOOTPROMPT}"
+msgstr ""
+"Druk <phrase class=\"not-serial\">F1</phrase><phrase class=\"serial"
+"\">control en F, dan 1</phrase> voor de hulpindex, of ENTER voor "
+"${BOOTPROMPT}"
+
+#: help.xml:161 help.xml:235 help.xml:271 help.xml:300 help.xml:367
+#: help.xml:453 help.xml:522 help.xml:613 help.xml:669 help.xml:725
+msgid "Press F1 for the help index, or Escape to exit help."
+msgstr "Druk F1 voor de hulpindex of Escape om de hulp te verlaten."
+
+#: help.xml:169
+msgid "BOOT METHODS"
+msgstr "OPSTARTMETHODEN"
+
+#: help.xml:173
+msgid "Available boot methods:"
+msgstr "Beschikbare opstartmethoden:"
+
+#: help.xml:177
+msgid "install"
+msgstr "install"
+
+#: help.xml:179
+msgid "Start the installation -- this is the default ${MEDIA_TYPE} install."
+msgstr "Start de installatie -- dit is de standaard ${MEDIA_TYPE} installatie."
+
+#: help.xml:184
+msgid "expert"
+msgstr "expert"
+
+#: help.xml:186
+msgid "Start the installation in expert mode, for maximum control."
+msgstr "Start de installatie in expert modus, voor maximale controle."
+
+#: help.xml:191
+msgid "server"
+msgstr "server"
+
+#: help.xml:192
+msgid "server-expert"
+msgstr "server-expert"
+
+#: help.xml:194
+msgid ""
+"Minimal system install. Recommended for servers, where a complete graphical "
+"desktop environment is not desired."
+msgstr ""
+"Minimale systeeminstallatie.  Aangeraden voor servers, waarop geen volledige "
+"grafische desktop-omgeving gewenst is."
+
+#: help.xml:200
+msgid "live"
+msgstr "live"
+
+#: help.xml:202
+msgid "Start the live system."
+msgstr "Start het live-systeem."
+
+#: help.xml:207
+msgid "memtest"
+msgstr "memtest"
+
+#: help.xml:209
+msgid "Perform a memory test."
+msgstr "Voer een geheugentest uit."
+
+#: help.xml:215 help.xml:259
+msgid ""
+"To use one of these boot methods, type it at the prompt, optionally followed "
+"by any boot parameters. For example:"
+msgstr ""
+"Om één van deze opstartmethoden te gebruiken tikt u deze aan de prompt, "
+"eventueel gevolgd door de gewenste opstartparameters.  Bijvoorbeeld:"
+
+#: help.xml:220
+#, no-wrap
+msgid "boot: install acpi=off"
+msgstr "boot: install acpi=off"
+
+#: help.xml:221
+#, no-wrap
+msgid "boot: live acpi=off"
+msgstr "boot: live acpi=off"
+
+#: help.xml:225
+msgid ""
+"If unsure, you should use the default boot method, with no special "
+"parameters, by simply pressing enter at the boot prompt."
+msgstr ""
+"Indien u onzeker bent, gebruik dan de standaard opstartmethode zonder "
+"speciale parameters, door simpelweg Enter te drukken aan de opstart-prompt."
+
+#: help.xml:243 help.xml:279
+msgid "RESCUING A BROKEN SYSTEM"
+msgstr "EEN KAPOT SYSTEEM REDDEN"
+
+#: help.xml:247
+msgid "Use one of these boot methods to rescue an existing install"
+msgstr ""
+"Gebruik één deze opstartmethoden om een bestaande installatie te repareren"
+
+#: help.xml:251
+msgid "rescue"
+msgstr "rescue"
+
+#: help.xml:253
+msgid "Boot into rescue mode."
+msgstr "Opstarten in reddingsmodus."
+
+#: help.xml:263
+#, no-wrap
+msgid "boot: rescue acpi=off"
+msgstr "boot: rescue acpi=off"
+
+#: help.xml:286
+msgid ""
+"There is no dedicated rescue mode on this CD. However, since the entire "
+"system runs from the CD, it is possible to use the command-line and/or "
+"graphical tools provided to rescue a broken system, and to use a web browser "
+"to search for help. Extensive advice is available online for most kinds of "
+"problems that might cause your normal system to fail to boot correctly."
+msgstr ""
+"Er is geen specifieke reddingsmodus op deze CD.  Echter, aangezien het hele "
+"systeem vanaf de CD draait, is het mogelijk om de opdrachtregel en/of "
+"bepaalde meegeleverde grafische tools te gebruiken om het kapotte systeem te "
+"redden, en kan u ook de webbrowser gebruiken om hulp te zoeken.  Uitgebreid "
+"advies voor de meeste soorten problemen die het opstarten van uw systeem "
+"kunnen doen falen is online beschikbaar."
+
+#: help.xml:308
+msgid "SPECIAL BOOT PARAMETERS - OVERVIEW"
+msgstr "SPECIALE OPSTARTPARAMETERS - OVERZICHT"
+
+#: help.xml:315
+msgid "On a few systems, you may need to specify a parameter at the"
+msgstr "Op sommige systemen moet u misschien parameters opgeven aan de"
+
+#: help.xml:316 help.xml:382 help.xml:468 help.xml:535
+#, no-wrap
+msgid "boot:"
+msgstr "boot:"
+
+#: help.xml:316
+msgid ""
+"prompt in order to boot the system. For example, Linux may not be able to "
+"autodetect your hardware, and you may need to explicitly specify its "
+"location or type for it to be recognized."
+msgstr ""
+"prompt om het systeem op te starten.  Bijvoorbeeld, mogelijk kan Linux uw "
+"hardware niet automatisch detecteren, en dan kan het nodig zijn om de "
+"locatie ervan specifiek door te geven opdat die herkend wordt."
+
+#: help.xml:322
+msgid "For more information about what boot parameters you can use, press:"
+msgstr ""
+"Voor meer informatie over welke opstartparameters u kan gebruiken, druk:"
+
+#: help.xml:330
+msgid "boot parameters for special machines"
+msgstr "opstartparameters voor speciale toestellen"
+
+#: help.xml:335
+msgid "boot parameters for various disk controllers"
+msgstr "opstartparameters voor diverse disk controllers"
+
+#: help.xml:340
+msgid "boot parameters understood by the install system"
+msgstr "opstartparameters begrepen door het installatiesysteem"
+
+#: help.xml:345
+msgid "boot parameters understood by the bootstrap system"
+msgstr "opstartparameters begrepen door het opstartsysteem"
+
+#: help.xml:350
+msgid ""
+"Many kernel modules are loaded dynamically by the installer, and parameters "
+"for those modules cannot be given on the command line. To be prompted for "
+"parameters when modules are loaded, boot in expert mode (see <link linkend="
+"\"F3\"><keycap>F3</keycap></link>)."
+msgstr ""
+"Veel kernelmodules worden dynamisch geladen door het installatieprogramma, "
+"en parameters voor deze modules kunnen niet op de opdrachtregel gegeven "
+"worden.  Als u om parameters gevraagd wil worden bij het laden van modules, "
+"start dan op in expert-modus (zie <link linkend=\"F3\"><keycap>F3</keycap></"
+"link>)."
+
+#: help.xml:357
+msgid ""
+"Many kernel modules are loaded dynamically by the bootstrap system, and "
+"parameters for those modules cannot be given on the command line."
+msgstr ""
+"Veel kernelmodules worden dynamisch geladen door het opstartsysteem, en "
+"parameters voor deze modules kunnen niet op de opdrachtregel gegeven worden."
+
+#: help.xml:375
+msgid "SPECIAL BOOT PARAMETERS - VARIOUS HARDWARE"
+msgstr "SPECIALE OPSTARTPARAMETERS - DIVERSE HARDWARE"
+
+#: help.xml:382 help.xml:468 help.xml:535
+msgid "You can use the following boot parameters at the"
+msgstr "U kan de volgende opstartparameters gebruiken aan de"
+
+#: help.xml:383
+msgid ""
+"prompt, in combination with the boot method (see <link linkend=\"F3"
+"\"><keycap>F3</keycap></link>>). If you use hex numbers you have to use the "
+"0x prefix (e.g., 0x300)."
+msgstr ""
+"prompt, in combinatie met de opstartmethode (zie <link linkend=\"F3"
+"\"><keycap>F3</keycap></link>>). Als u hexadeciamle nummers gebruikt, dient "
+"u een 0x te gebruiken (vb., 0x300)."
+
+#: help.xml:390 help.xml:475
+msgid "HARDWARE"
+msgstr "HARDWARE"
+
+#: help.xml:391 help.xml:476
+msgid "PARAMETER TO SPECIFY"
+msgstr "TE GEBRUIKEN PARAMETER"
+
+#: help.xml:394
+msgid "IBM PS/1 or ValuePoint (IDE disk)"
+msgstr "IBM PS/1 of ValuePoint (IDE schijf)"
+
+#: help.xml:395
+msgid ""
+"<userinput>hd=<replaceable>cylinders</replaceable>,<replaceable>heads</"
+"replaceable>,<replaceable>sectors</replaceable></userinput>"
+msgstr ""
+"<userinput>hd=<replaceable>cylinders</replaceable>,<replaceable>koppen</"
+"replaceable>,<replaceable>sectoren</replaceable></userinput>"
+
+#: help.xml:399
+msgid "Some IBM ThinkPads"
+msgstr "Sommige ThinkPads"
+
+#: help.xml:400
+msgid "<userinput>floppy.floppy=thinkpad</userinput>"
+msgstr "<userinput>floppy.floppy=thinkpad</userinput>"
+
+#: help.xml:404
+msgid "IBM Pentium Microchannel"
+msgstr "IBM Pentium Microchannel"
+
+#: help.xml:405
+msgid "<userinput>mca-pentium no-hlt</userinput>"
+msgstr "<userinput>mca-pentium no-hlt</userinput>"
+
+#: help.xml:409
+msgid "Protect I/O port regions"
+msgstr "Bescherm \"I/O port regions\""
+
+#: help.xml:410
+msgid ""
+"<userinput>reserve=<replaceable>iobase</replaceable>,<replaceable>extent</"
+"replaceable></userinput><optional><userinput>,<replaceable>...</"
+"replaceable></userinput></optional>"
+msgstr ""
+"<userinput>reserve=<replaceable>iobase</replaceable>,<replaceable>extent</"
+"replaceable></userinput><optional><userinput>,<replaceable>...</"
+"replaceable></userinput></optional>"
+
+#: help.xml:414
+msgid "Workaround faulty FPU (old machines)"
+msgstr "Omzeil problemen met foute FPU (oude toestellen)"
+
+#: help.xml:415
+msgid "<userinput>no387</userinput>"
+msgstr "<userinput>no387</userinput>"
+
+#: help.xml:419
+msgid "Laptops with screen display problems"
+msgstr "Schootcomputers met schermproblemen"
+
+#: help.xml:420
+msgid "<userinput>vga=771</userinput>"
+msgstr "<userinput>vga=771</userinput>"
+
+#: help.xml:425
+msgid ""
+"If your system hangs when booting, and the last message you see is \"aec671x-"
+"detect..\", try"
+msgstr ""
+"Als uw systeem hangt bij het opstarten, en het laatste zichtbare bericht is "
+"\"aec671x-detect..\", probeer"
+
+#: help.xml:428
+msgid "<userinput>gdth=disable:y</userinput>"
+msgstr "<userinput>gdth=disable:y</userinput>"
+
+#: help.xml:433
+msgid ""
+"If you experience lockups or other hardware failures, disable buggy APIC "
+"interrupt routing"
+msgstr ""
+"Indien uw systeem regelmatig hangt of andere hardwarefouten vertoont, zet "
+"dan foute 'APIC interrupt routing' uit"
+
+#: help.xml:436
+msgid "<userinput>noapic nolapic</userinput>"
+msgstr "<userinput>noapic nolapic</userinput>"
+
+#: help.xml:440 help.xml:509 help.xml:600
+msgid "For example:"
+msgstr "Bijvoorbeeld:"
+
+#: help.xml:443
+#, no-wrap
+msgid "boot: install vga=771 noapic nolapic"
+msgstr "boot: install vga=771 noapic nolapic"
+
+#: help.xml:444
+#, no-wrap
+msgid "boot: live vga=771 noapic nolapic"
+msgstr "boot: live vga=771 noapic nolapic"
+
+#: help.xml:461
+msgid "SPECIAL BOOT PARAMETERS - VARIOUS DISK DRIVES"
+msgstr "SPECIALE OPSTARTPARAMETERS - DIVERSE SCHIJVEN"
+
+#: help.xml:469 help.xml:536
+msgid ""
+"prompt, in combination with the boot method (see <link linkend=\"F3"
+"\"><keycap>F3</keycap></link>)."
+msgstr ""
+"prompt, in combinatie met de opstartmethode (zie <link linkend=\"F3"
+"\"><keycap>F3</keycap></link>)."
+
+#: help.xml:479
+msgid "Adaptec 151x, 152x"
+msgstr "Adaptec 151x, 152x"
+
+#: help.xml:480
+msgid ""
+"<userinput>aha152x.aha152x=<replaceable>iobase</replaceable></"
+"userinput><optional><userinput>,<replaceable>irq</replaceable></"
+"userinput><optional><userinput>,<replaceable>scsi-id</replaceable></"
+"userinput><optional><userinput>,<replaceable>reconnect</replaceable></"
+"userinput></optional></optional></optional>"
+msgstr ""
+"<userinput>aha152x.aha152x=<replaceable>iobase</replaceable></"
+"userinput><optional><userinput>,<replaceable>irq</replaceable></"
+"userinput><optional><userinput>,<replaceable>scsi-id</replaceable></"
+"userinput><optional><userinput>,<replaceable>reconnect</replaceable></"
+"userinput></optional></optional></optional>"
+
+#: help.xml:484
+msgid "Adaptec 1542"
+msgstr "Adaptec 1542"
+
+#: help.xml:485
+msgid ""
+"<userinput>aha1542.aha1542=<replaceable>iobase</replaceable></"
+"userinput><optional><userinput>,<replaceable>buson</replaceable>,"
+"<replaceable>busoff</replaceable></userinput><optional><userinput>,"
+"<replaceable>dmaspeed</replaceable></userinput></optional></optional>"
+msgstr ""
+"<userinput>aha1542.aha1542=<replaceable>iobase</replaceable></"
+"userinput><optional><userinput>,<replaceable>buson</replaceable>,"
+"<replaceable>busoff</replaceable></userinput><optional><userinput>,"
+"<replaceable>dmaspeed</replaceable></userinput></optional></optional>"
+
+#: help.xml:489
+msgid "Adaptec 274x, 284x"
+msgstr "Adaptec 274x, 284x"
+
+#: help.xml:490
+msgid "<userinput>aic7xxx.aic7xxx=no_reset</userinput> (enabled if non-zero)"
+msgstr ""
+"<userinput>aic7xxx.aic7xxx=no_reset</userinput> (ingeschakeld indien niet-"
+"nul)"
+
+#: help.xml:494
+msgid "BusLogic SCSI Hosts"
+msgstr "BusLogic SCSI Hosts"
+
+#: help.xml:495
+msgid ""
+"<userinput>BusLogic.BusLogic=<replaceable>iobase</replaceable></userinput>"
+msgstr ""
+"<userinput>BusLogic.BusLogic=<replaceable>iobase</replaceable></userinput>"
+
+#: help.xml:499
+msgid "Certain DELL machines"
+msgstr "Sommige Dell toestellen"
+
+#: help.xml:500
+msgid "<userinput>aic7xxx.aic7xxx=no_probe</userinput>"
+msgstr "<userinput>aic7xxx.aic7xxx=no_probe</userinput>"
+
+#: help.xml:505
+msgid ""
+"This list is incomplete, see the kernel's kernel-parameters.txt file for "
+"more."
+msgstr ""
+"Deze lijst is onvolledig, zie de kernel-parameters.txt die bij de gebruikte "
+"kernel hoort voor meer."
+
+#: help.xml:512
+#, no-wrap
+msgid "boot: install aic7xxx.aic7xxx=no_probe"
+msgstr "boot: install aic7xxx.aic7xxx=no_probe"
+
+#: help.xml:513
+#, no-wrap
+msgid "boot: live aic7xxx.aic7xxx=no_probe"
+msgstr "boot: live aic7xxx.aic7xxx=no_probe"
+
+#: help.xml:530
+msgid "SPECIAL BOOT PARAMETERS - INSTALLATION SYSTEM"
+msgstr "SPECIALE OPSTARTPARAMETERS - INSTALLATIESYSTEEM"
+
+#: help.xml:540
+msgid "These parameters control how the installer works."
+msgstr "Deze parameters bepalen hoe het installatieprogramma werkt."
+
+#: help.xml:543
+msgid "These parameters control how the bootstrap system works."
+msgstr "Deze parameters bepalen hoe het opstartsysteem werkt."
+
+#: help.xml:548
+msgid "RESULT"
+msgstr "RESULTAAT"
+
+#: help.xml:549
+msgid "PARAMETER"
+msgstr "PARAMETER"
+
+#: help.xml:552
+msgid "Verbose debugging"
+msgstr "Meer debug-informatie"
+
+#: help.xml:553
+msgid "<userinput>DEBCONF_DEBUG=5</userinput>"
+msgstr "<userinput>DEBCONF_DEBUG=5</userinput>"
+
+#: help.xml:557
+msgid "Debug boot sequence"
+msgstr "Debuggen van het opstarten"
+
+#: help.xml:558
+msgid "<userinput>BOOT_DEBUG=2|3</userinput>"
+msgstr "<userinput>BOOT_DEBUG=2|3</userinput>"
+
+#: help.xml:562
+msgid "Disable framebuffer"
+msgstr "Framebuffer uitschakelen"
+
+#: help.xml:563
+msgid "<userinput>fb=false</userinput>"
+msgstr "<userinput>fb=false</userinput>"
+
+#: help.xml:567
+msgid "Don't probe for USB"
+msgstr "Zoek niet naar USB"
+
+#: help.xml:568
+msgid "<userinput>debian-installer/probe/usb=false</userinput>"
+msgstr "<userinput>debian-installer/probe/usb=false</userinput>"
+
+#: help.xml:572
+msgid "Don't start PCMCIA"
+msgstr "PCMCIA niet opstarten"
+
+#: help.xml:573
+msgid "<userinput>hw-detect/start_pcmcia=false</userinput>"
+msgstr "<userinput>hw-detect/start_pcmcia=false</userinput>"
+
+#: help.xml:577
+msgid "Force static network config"
+msgstr "Forceer statische netwerkconfiguratie"
+
+#: help.xml:578
+msgid "<userinput>netcfg/disable_dhcp=true</userinput>"
+msgstr "<userinput>netcfg/disable_dhcp=true</userinput>"
+
+#: help.xml:582
+msgid "Set keyboard map"
+msgstr "Toetsenbordindeling instellen"
+
+#: help.xml:583
+msgid "<userinput>bootkbd=es</userinput>"
+msgstr "<userinput>bootkbd=be</userinput>"
+
+#: help.xml:587
+msgid "Use Braille tty"
+msgstr "Een braille-tty gebruiken"
+
+#: help.xml:588
+msgid ""
+"<userinput>brltty=<replaceable>driver</replaceable>,<replaceable>device</"
+"replaceable>,<replaceable>texttable</replaceable></userinput>"
+msgstr ""
+"<userinput>brltty=<replaceable>stuurprogramma</replaceable>,"
+"<replaceable>apparaat</replaceable>,<replaceable>teksttabel</replaceable></"
+"userinput>"
+
+#: help.xml:593
+msgid ""
+"Disable ACPI for PCI maps (handy for some HP servers and Via-based machines)"
+msgstr ""
+"ACPI uitzetten voor 'PCI maps' (handig voor sommige HP servers en Via-"
+"gebaseerde toestellen)"
+
+#: help.xml:596
+msgid "<userinput>pci=noacpi</userinput>"
+msgstr "<userinput>pci=noacpi</userinput>"
+
+#: help.xml:603
+#, no-wrap
+msgid "boot: install fb=false"
+msgstr "boot: install fb=false"
+
+#: help.xml:604
+#, no-wrap
+msgid "boot: live fb=false"
+msgstr "boot: live fb=false"
+
+#: help.xml:621
+msgid "GETTING HELP"
+msgstr "HULP KRIJGEN"
+
+#: help.xml:628
+msgid "If you can't install Ubuntu, don't despair!"
+msgstr "Indien u Ubuntu niet kan installeren, wanhoop dan niet!"
+
+#: help.xml:631
+msgid "If you can't start Ubuntu, don't despair!"
+msgstr "Indien u Ubuntu niet kan starten, wanhoop dan niet!"
+
+#: help.xml:634
+msgid "The Ubuntu team is ready to help you!"
+msgstr "Het Ubuntu-team staat klaar om u te helpen!"
+
+#: help.xml:637
+msgid ""
+"We are especially interested in hearing about installation problems, because "
+"in general they don't happen to only <emphasis>one</emphasis> person."
+msgstr ""
+"We zijn bijzonder geïnteresseerd in installatieproblemen, want over het "
+"algemeen treden ze niet enkel bij <emphasis>één</emphasis> persoon op."
+
+#: help.xml:642
+msgid ""
+"We are especially interested in hearing about startup problems, because in "
+"general they don't happen to only <emphasis>one</emphasis> person."
+msgstr ""
+"We zijn bijzonder geïnteresseerd in opstartproblemen, want over het algemeen "
+"treden ze niet enkel bij <emphasis>één</emphasis> persoon op."
+
+#: help.xml:646
+msgid ""
+"We've either already heard about your particular problem and can dispense a "
+"quick fix, or we would like to hear about it and work through it with you, "
+"and the next user who comes up with the same problem will profit from your "
+"experience!"
+msgstr ""
+"Ofwel hebben we al over uw probleem gehoord, en dan kunnen we u snel een "
+"oplossing bezorgen, ofwel willen we u helpen het op te lossen, en dan kan de "
+"volgende met hetzelfde probleem van de zo opgedane kennis genieten!"
+
+#: help.xml:677
+msgid "COPYRIGHTS AND WARRANTIES"
+msgstr "AUTEURSRECHTEN EN GARANTIES"
+
+#: help.xml:684
+msgid ""
+"Ubuntu is Copyright (C) 2004-2006 Canonical Ltd., and incorporates the work "
+"of many other original authors and contributors."
+msgstr ""
+"Ubuntu is Copyright (C) 2004-2006 Canonical Ltd., en bevat het werk van vele "
+"andere auteurs en medewerkers."
+
+#: help.xml:689
+msgid "The Ubuntu system is freely redistributable."
+msgstr "Het Ubuntu-systeem kan vrijelijk verder verspreid worden."
+
+#: help.xml:692
+msgid ""
+"After installation, the exact distribution terms for each package are "
+"described in the corresponding file /usr/share/doc/<replaceable>packagename</"
+"replaceable>/copyright."
+msgstr ""
+"Na de installatie vindt u de precieze distributievoorwaarden voor elk pakket "
+"beschreven in het bijhorende /usr/share/doc/<replaceable>pakketnaam</"
+"replaceable>/copyright bestand."
+
+#: help.xml:697
+msgid ""
+"After startup, the exact distribution terms for each package are described "
+"in the corresponding file /usr/share/doc/<replaceable>packagename</"
+"replaceable>/copyright."
+msgstr ""
+"Na het opstarten vindt u de precieze verspreidingsvoorwaarden voor elk "
+"pakket beschreven in het bijhorende /usr/share/doc/<replaceable>pakketnaam</"
+"replaceable>/copyright bestand."
+
+#: help.xml:703
+msgid ""
+"Ubuntu comes with <emphasis>ABSOLUTELY NO WARRANTY</emphasis>, to the extent "
+"permitted by applicable law."
+msgstr ""
+"Ubuntu komt <emphasis>ZONDER ENIGE GARANTIE</emphasis>, voor zover de wet "
+"dat toelaat."
+
+#: help.xml:708
+msgid ""
+"This installation system is based on the Debian installer. See <ulink url="
+"\"http://www.debian.org/\" /> for more details and information on the Debian "
+"project."
+msgstr ""
+"Dit installatiesysteem is gebaseerd op het Debian-installatiesysteem.  Zie "
+"<ulink url=\"http://www.debian.org/\" /> voor meer details en informatie "
+"over het Debian project."
+
+#: help.xml:714
+msgid ""
+"This system is based on Debian. See <ulink url=\"http://www.debian.org/\" /> "
+"for more details and information on the Debian project."
+msgstr ""
+"Dit systeem is gebaseerd op Debian.  Zie <ulink url=\"http://www.debian.org/"
+"\" /> voor meer details en informatie over het Debian project."

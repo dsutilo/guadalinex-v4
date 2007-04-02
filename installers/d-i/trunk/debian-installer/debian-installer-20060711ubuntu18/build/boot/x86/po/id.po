@@ -1,0 +1,802 @@
+# Indonesian translation for debian-installer
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the debian-installer package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: debian-installer\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2006-09-23  1:26+0100\n"
+"PO-Revision-Date: 2006-10-12 06:07+0000\n"
+"Last-Translator: Andy Apdhani <imtheface@gmail.com>\n"
+"Language-Team: Indonesian <id@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: help.xml:6
+msgid "Installer Boot Help Screens"
+msgstr "Layar Bantuan Boot Installer"
+
+#: help.xml:11
+msgid "Welcome to ${DISTRIBUTION_NAME}!"
+msgstr "Selamat datang di ${DISTRIBUTION_NAME}!"
+
+#: help.xml:18
+msgid ""
+"This is an installation ${MEDIA_TYPE} for ${DISTRIBUTION_NAME} "
+"${DISTRIBUTION_VERSION}, built on ${BUILD_DATE}."
+msgstr ""
+"Ini adalah ${MEDIA_TYPE} instalasi untuk ${DISTRIBUTION_NAME} "
+"${DISTRIBUTION_VERSION}, dibuat pada tanggal ${BUILD_DATE}."
+
+#: help.xml:23
+msgid ""
+"This is a live ${MEDIA_TYPE} for ${DISTRIBUTION_NAME} "
+"${DISTRIBUTION_VERSION}, built on ${BUILD_DATE}."
+msgstr ""
+"Ini adalah ${MEDIA_TYPE} live untuk ${DISTRIBUTION_NAME} "
+"${DISTRIBUTION_VERSION}, dibuat pada tanggal ${BUILD_DATE}."
+
+#: help.xml:28
+msgid "HELP INDEX"
+msgstr "INDEX BANTUAN"
+
+#: help.xml:29
+msgid "KEY"
+msgstr "TOMBOL"
+
+#: help.xml:30
+msgid "TOPIC"
+msgstr "TOPIK"
+
+#: help.xml:34
+msgid "This page, the help index."
+msgstr "Halaman ini, index bantuan."
+
+#: help.xml:39
+msgid "Prerequisites for installing ${DISTRIBUTION_NAME}."
+msgstr "Prasyarat untuk melakukan instalasi ${DISTRIBUTION_NAME}."
+
+#: help.xml:44
+msgid "Prerequisites for running ${DISTRIBUTION_NAME}."
+msgstr "Prasyarat untuk menjalankan ${DISTRIBUTION_NAME}."
+
+#: help.xml:49
+msgid "Boot methods for special ways of using this ${MEDIA_TYPE}."
+msgstr "Metode boot untuk cara khusus penggunaan ${MEDIA_TYPE} ini."
+
+#: help.xml:54
+msgid "Additional boot methods; rescuing a broken system."
+msgstr "Metode boot tambahan; menyelematkan sistem yang rusak."
+
+#: help.xml:59
+msgid "Special boot parameters, overview."
+msgstr "Parameter boot khusus, penjelasan umum."
+
+#: help.xml:64
+msgid "Special boot parameters for special machines."
+msgstr "Parameter boot khusus untuk mesin-mesin khusus."
+
+#: help.xml:69
+msgid "Special boot parameters for selected disk controllers."
+msgstr "Parameter boot khusus untuk kontroler disk yang dipilih."
+
+#: help.xml:74
+msgid "Special boot parameters for the install system."
+msgstr "Parameter boot khusus untuk system yang diinstall."
+
+#: help.xml:79
+msgid "Special boot parameters for the bootstrap system."
+msgstr "Parameter boot khusus untuk sistem bootstrap."
+
+#: help.xml:84
+msgid "How to get help."
+msgstr "Cara mendapatkan bantuan."
+
+#: help.xml:89
+msgid "Copyrights and warranties."
+msgstr "Hakcipta dan jaminan."
+
+#: help.xml:100
+msgid "Press F2 through F10 for details, or ENTER to ${BOOTPROMPT}"
+msgstr "Tekan F2 sampai F10 untuk detilnya, atau ENTER untuk ${BOOTPROMPT}"
+
+#: help.xml:104
+msgid "Press F2 through F10 for details, or Escape to exit help."
+msgstr ""
+"Tekan F2 sampai F10 untuk detilnya, atau Escape untuk keluar dari bantuan."
+
+#: help.xml:112
+msgid "PREREQUISITES FOR INSTALLING UBUNTU"
+msgstr "PRASYARAT UNTUK INSTALASI UBUNTU"
+
+#: help.xml:119
+msgid ""
+"You must have at least 32 megabytes of RAM to use this Ubuntu installer."
+msgstr ""
+"Anda mesti memiliki paling sedikit 32 megabyte RAM untuk menggunakan "
+"installer Ubuntu ini."
+
+#: help.xml:123
+msgid ""
+"You should have space on your hard disk to create a new disk partition of at "
+"least 2 gigabytes to install a standard Ubuntu desktop system or at least "
+"400 megabytes for a minimal server installation. You'll need more disk space "
+"to install additional packages, depending on what you wish to do with your "
+"new Ubuntu system."
+msgstr ""
+"Anda mesti memiliki ruang dalam hard disk anda untuk membuat sebuah partisi "
+"disk baru paling sedikit 2 gigabyte untuk melakukan instalasi sistem desktop "
+"Ubuntu standar atau paling sedikit 400 megabyte untuk instalasi server "
+"minimal. Anda akan memerlukan ruang disk lebih banyak lagi untuk melakukan "
+"instalasi paket-paket tambahan, tergantung pada apa yang anda ingin lakukan "
+"dengan sistem Ubuntu baru anda."
+
+#: help.xml:131 help.xml:653
+msgid ""
+"See the Installation Manual or the FAQ for more information; both documents "
+"are available at the Ubuntu web site, <ulink url=\"http://www.ubuntu.com/\" /"
+">"
+msgstr ""
+"Lihatlah Manual Instalasi atau FAQ untuk informasi lebih lanjut; kedua "
+"dokumen tersebut tersedia di situs web Ubuntu, <ulink url=\"http://www."
+"ubuntu.com/\" />"
+
+#: help.xml:137
+msgid ""
+"You must have at least 128 megabytes of RAM to use this Ubuntu live system."
+msgstr ""
+"Anda mesti memiliki paling sedikit 128 megabyte RAM untuk menggunakan sistem "
+"live Ubuntu ini."
+
+#: help.xml:142
+msgid ""
+"The live system does not require any space on your hard disk. However, "
+"existing swap partitions on the disk will be used if available."
+msgstr ""
+"Sistem live ini tidak memerlukan ruang apapun dalam hard disk anda. Namun, "
+"partisi swap yang sudah ada pada disk tersebut akan digunakan jika tersedia."
+
+#: help.xml:147 help.xml:659
+msgid ""
+"See the FAQ for more information; this document is available at the Ubuntu "
+"web site, <ulink url=\"http://www.ubuntu.com/\" />"
+msgstr ""
+"Lihatlah FAQ untuk keterangan lebih lanjut; dokumen ini tersedia di situs "
+"web Ubuntu, <ulink url=\"http://www.ubuntu.com/\" />"
+
+#: help.xml:152
+msgid "Thank you for choosing Ubuntu!"
+msgstr "Terima kasih telah memilih Ubuntu!"
+
+#: help.xml:156 help.xml:230 help.xml:266 help.xml:295 help.xml:362
+#: help.xml:448 help.xml:517 help.xml:608 help.xml:664 help.xml:720
+msgid ""
+"Press <phrase class=\"not-serial\">F1</phrase><phrase class=\"serial"
+"\">control and F then 1</phrase> for the help index, or ENTER to "
+"${BOOTPROMPT}"
+msgstr ""
+"Tekan <phrase class=\"not-serial\">F1</phrase><phrase class=\"serial"
+"\">control dan F lalu 1</phrase> untuk index bantuan, atau ENTER untuk "
+"${BOOTPROMPT}"
+
+#: help.xml:161 help.xml:235 help.xml:271 help.xml:300 help.xml:367
+#: help.xml:453 help.xml:522 help.xml:613 help.xml:669 help.xml:725
+msgid "Press F1 for the help index, or Escape to exit help."
+msgstr "Tekan F1 untuk index bantuan, atau Escape untuk keluar dari bantuan."
+
+#: help.xml:169
+msgid "BOOT METHODS"
+msgstr "METODE BOOT"
+
+#: help.xml:173
+msgid "Available boot methods:"
+msgstr "Metode boot yang tersedia:"
+
+#: help.xml:177
+msgid "install"
+msgstr "install"
+
+#: help.xml:179
+msgid "Start the installation -- this is the default ${MEDIA_TYPE} install."
+msgstr "Memulai instalasi -- ini adalah instalasi ${MEDIA_TYPE} default."
+
+#: help.xml:184
+msgid "expert"
+msgstr "expert"
+
+#: help.xml:186
+msgid "Start the installation in expert mode, for maximum control."
+msgstr "Memulai instalasi dalam mode ahli, untuk kontrol yang maksimum."
+
+#: help.xml:191
+msgid "server"
+msgstr "server"
+
+#: help.xml:192
+msgid "server-expert"
+msgstr "server-expert"
+
+#: help.xml:194
+msgid ""
+"Minimal system install. Recommended for servers, where a complete graphical "
+"desktop environment is not desired."
+msgstr ""
+"Install sistem minimal. Disarankan untuk server, di mana tidak diinginkan "
+"graphical desktop environment yang lengkap."
+
+#: help.xml:200
+msgid "live"
+msgstr "live"
+
+#: help.xml:202
+msgid "Start the live system."
+msgstr "Memulai sistem live."
+
+#: help.xml:207
+msgid "memtest"
+msgstr "memtest"
+
+#: help.xml:209
+msgid "Perform a memory test."
+msgstr "Melakukan uji memori."
+
+#: help.xml:215 help.xml:259
+msgid ""
+"To use one of these boot methods, type it at the prompt, optionally followed "
+"by any boot parameters. For example:"
+msgstr ""
+"Untuk menggunakan salah satu dari metode boot ini, ketikkanlah pada prompt, "
+"bila perlu tambahkan parameter boot lainnya. Sebagai contoh:"
+
+#: help.xml:220
+#, no-wrap
+msgid "boot: install acpi=off"
+msgstr "boot: install acpi=off"
+
+#: help.xml:221
+#, no-wrap
+msgid "boot: live acpi=off"
+msgstr "boot: live acpi=off"
+
+#: help.xml:225
+msgid ""
+"If unsure, you should use the default boot method, with no special "
+"parameters, by simply pressing enter at the boot prompt."
+msgstr ""
+"Jika tidak pasti, anda semestinya menggunakan metode boot default, tanpa "
+"parameter khusus, dengan cara menekan enter pada prompt boot."
+
+#: help.xml:243 help.xml:279
+msgid "RESCUING A BROKEN SYSTEM"
+msgstr "MEMPERBAIKI SISTEM YANG RUSAK"
+
+#: help.xml:247
+msgid "Use one of these boot methods to rescue an existing install"
+msgstr ""
+"Gunakan salah satu dari metode boot ini untuk melakukan perbaikan pada "
+"instalasi yang sudah ada"
+
+#: help.xml:251
+msgid "rescue"
+msgstr "rescue"
+
+#: help.xml:253
+msgid "Boot into rescue mode."
+msgstr "Boot ke mode pertolongan."
+
+#: help.xml:263
+#, no-wrap
+msgid "boot: rescue acpi=off"
+msgstr "boot: rescue acpi=off"
+
+#: help.xml:286
+msgid ""
+"There is no dedicated rescue mode on this CD. However, since the entire "
+"system runs from the CD, it is possible to use the command-line and/or "
+"graphical tools provided to rescue a broken system, and to use a web browser "
+"to search for help. Extensive advice is available online for most kinds of "
+"problems that might cause your normal system to fail to boot correctly."
+msgstr ""
+"Tidak ada mode penyelamatan pada CD ini. Akan tetapi, karena seluruh sistem "
+"berjalan dari CD, sangat memungkinkan untuk menggunakan baris perintah dan/"
+"atau perkakas berbasis grafik untuk digunakan sebagai penyelamat sistem yang "
+"rusak, dan menggunakan browser web untuk mencari bantuan. Banyak bantuan "
+"tersedia online untuk setiap jenis masalah yang dapat menyebabkan sistem "
+"normal ANda gagal boot dengan benar."
+
+#: help.xml:308
+msgid "SPECIAL BOOT PARAMETERS - OVERVIEW"
+msgstr "PARAMETER BOOT KHUSUS - PENJELASAN UMUM"
+
+#: help.xml:315
+msgid "On a few systems, you may need to specify a parameter at the"
+msgstr ""
+"Pada beberapa sistem, anda mungkin mesti menentukan suatu parameter pada"
+
+#: help.xml:316 help.xml:382 help.xml:468 help.xml:535
+#, no-wrap
+msgid "boot:"
+msgstr "boot:"
+
+#: help.xml:316
+msgid ""
+"prompt in order to boot the system. For example, Linux may not be able to "
+"autodetect your hardware, and you may need to explicitly specify its "
+"location or type for it to be recognized."
+msgstr ""
+"prompt untuk melakukan boot sistem tersebut. Contohnya, Linux mungkin tidak "
+"bisa melakukan autodeteksi hardware anda, dan anda mungkin perlu secara "
+"eksplisit menentukan lokasinya atau jenisnya agar bisa dikenali."
+
+#: help.xml:322
+msgid "For more information about what boot parameters you can use, press:"
+msgstr ""
+"Untuk keterangan lebih lanjut tentang parameter boot apa saja yang bisa anda "
+"gunakan, tekan:"
+
+#: help.xml:330
+msgid "boot parameters for special machines"
+msgstr "parameter boot untuk mesin-mesin khusus"
+
+#: help.xml:335
+msgid "boot parameters for various disk controllers"
+msgstr "parameter boot untuk berbagai kontroler disk"
+
+#: help.xml:340
+msgid "boot parameters understood by the install system"
+msgstr "parameter boot yang dimengerti oleh sistem install"
+
+#: help.xml:345
+msgid "boot parameters understood by the bootstrap system"
+msgstr "parameter boot yang dimengerti oleh sistem bootstrap"
+
+#: help.xml:350
+msgid ""
+"Many kernel modules are loaded dynamically by the installer, and parameters "
+"for those modules cannot be given on the command line. To be prompted for "
+"parameters when modules are loaded, boot in expert mode (see <link linkend="
+"\"F3\"><keycap>F3</keycap></link>)."
+msgstr ""
+"Banyak modul kernel yang dimuat secara dinamis oleh installer, dan parameter "
+"untuk modul tersebut tidak bisa diberikan pada baris perintah ini. Agar "
+"dapat mengisi parameter ketika modul tersebut dimuat, boot dalam mode ahli "
+"(lihat <link linkend=\"F3\"><keycap>F3</keycap></link>)."
+
+#: help.xml:357
+msgid ""
+"Many kernel modules are loaded dynamically by the bootstrap system, and "
+"parameters for those modules cannot be given on the command line."
+msgstr ""
+"Banyak kernel modul yang dimuat secara dinamis oleh sistem bootstrap, dan "
+"parameter untuk modul ini tidak dapat diberikan pada baris perintah ini."
+
+#: help.xml:375
+msgid "SPECIAL BOOT PARAMETERS - VARIOUS HARDWARE"
+msgstr "PARAMETER BOOT KHUSUS - BERBAGAI HARDWARE"
+
+#: help.xml:382 help.xml:468 help.xml:535
+msgid "You can use the following boot parameters at the"
+msgstr "Anda dapat menggunakan parameter boot berikut pada"
+
+#: help.xml:383
+msgid ""
+"prompt, in combination with the boot method (see <link linkend=\"F3"
+"\"><keycap>F3</keycap></link>>). If you use hex numbers you have to use the "
+"0x prefix (e.g., 0x300)."
+msgstr ""
+"prompt, dikombinasikan dengan metode boot (lihat <link linkend=\"F3"
+"\"><keycap>F3</keycap></link>>). Jika anda menggunakan angka heksa anda "
+"mesti menggunakan awalan 0x (misal 0x300)."
+
+#: help.xml:390 help.xml:475
+msgid "HARDWARE"
+msgstr "HARDWARE"
+
+#: help.xml:391 help.xml:476
+msgid "PARAMETER TO SPECIFY"
+msgstr "PARAMETER YANG DITENTUKAN"
+
+#: help.xml:394
+msgid "IBM PS/1 or ValuePoint (IDE disk)"
+msgstr "IBM PS/1 atau ValuePoint (IDE disk)"
+
+#: help.xml:395
+msgid ""
+"<userinput>hd=<replaceable>cylinders</replaceable>,<replaceable>heads</"
+"replaceable>,<replaceable>sectors</replaceable></userinput>"
+msgstr ""
+"<userinput>hd=<replaceable>cylinders</replaceable>,<replaceable>heads</"
+"replaceable>,<replaceable>sectors</replaceable></userinput>"
+
+#: help.xml:399
+msgid "Some IBM ThinkPads"
+msgstr "Beberapa IBM ThinkPads"
+
+#: help.xml:400
+msgid "<userinput>floppy.floppy=thinkpad</userinput>"
+msgstr "<userinput>floppy.floppy=thinkpad</userinput>"
+
+#: help.xml:404
+msgid "IBM Pentium Microchannel"
+msgstr "IBM Pentium Microchannel"
+
+#: help.xml:405
+msgid "<userinput>mca-pentium no-hlt</userinput>"
+msgstr "<userinput>mca-pentium no-hlt</userinput>"
+
+#: help.xml:409
+msgid "Protect I/O port regions"
+msgstr "Proteksi bagian I/O port"
+
+#: help.xml:410
+msgid ""
+"<userinput>reserve=<replaceable>iobase</replaceable>,<replaceable>extent</"
+"replaceable></userinput><optional><userinput>,<replaceable>...</"
+"replaceable></userinput></optional>"
+msgstr ""
+"<userinput>reserve=<replaceable>iobase</replaceable>,<replaceable>extent</"
+"replaceable></userinput><optional><userinput>,<replaceable>...</"
+"replaceable></userinput></optional>"
+
+#: help.xml:414
+msgid "Workaround faulty FPU (old machines)"
+msgstr "Workaround faulty FPU (mesin lama)"
+
+#: help.xml:415
+msgid "<userinput>no387</userinput>"
+msgstr "<userinput>no387</userinput>"
+
+#: help.xml:419
+msgid "Laptops with screen display problems"
+msgstr "Laptop dengan masalah tampilan layar"
+
+#: help.xml:420
+msgid "<userinput>vga=771</userinput>"
+msgstr "<userinput>vga=771</userinput>"
+
+#: help.xml:425
+msgid ""
+"If your system hangs when booting, and the last message you see is \"aec671x-"
+"detect..\", try"
+msgstr ""
+"Jika sistem anda hang ketika booting, dan pesan terakhir yang anda lihat "
+"adalah \"aec671x-detect..\", cobalah"
+
+#: help.xml:428
+msgid "<userinput>gdth=disable:y</userinput>"
+msgstr "<userinput>gdth=disable:y</userinput>"
+
+#: help.xml:433
+msgid ""
+"If you experience lockups or other hardware failures, disable buggy APIC "
+"interrupt routing"
+msgstr ""
+"Jika anda mengalami kemacetan atau kegagalan hardware lainnya, non-aktifkan "
+"routing interrupt APIC yang bermasalah"
+
+#: help.xml:436
+msgid "<userinput>noapic nolapic</userinput>"
+msgstr "<userinput>noapic nolapic</userinput>"
+
+#: help.xml:440 help.xml:509 help.xml:600
+msgid "For example:"
+msgstr "Contohnya:"
+
+#: help.xml:443
+#, no-wrap
+msgid "boot: install vga=771 noapic nolapic"
+msgstr "boot: install vga=771 noapic nolapic"
+
+#: help.xml:444
+#, no-wrap
+msgid "boot: live vga=771 noapic nolapic"
+msgstr "boot: live vga=771 noapic nolapic"
+
+#: help.xml:461
+msgid "SPECIAL BOOT PARAMETERS - VARIOUS DISK DRIVES"
+msgstr "PARAMETER BOOT KHUSUS - BERBAGAI DISK DRIVE"
+
+#: help.xml:469 help.xml:536
+msgid ""
+"prompt, in combination with the boot method (see <link linkend=\"F3"
+"\"><keycap>F3</keycap></link>)."
+msgstr ""
+"prompt, dikombinasi dengan metode boot (lihat <link linkend=\"F3"
+"\"><keycap>F3</keycap></link>)."
+
+#: help.xml:479
+msgid "Adaptec 151x, 152x"
+msgstr "Adaptec 151x, 152x"
+
+#: help.xml:480
+msgid ""
+"<userinput>aha152x.aha152x=<replaceable>iobase</replaceable></"
+"userinput><optional><userinput>,<replaceable>irq</replaceable></"
+"userinput><optional><userinput>,<replaceable>scsi-id</replaceable></"
+"userinput><optional><userinput>,<replaceable>reconnect</replaceable></"
+"userinput></optional></optional></optional>"
+msgstr ""
+"<userinput>aha152x.aha152x=<replaceable>iobase</replaceable></"
+"userinput><optional><userinput>,<replaceable>irq</replaceable></"
+"userinput><optional><userinput>,<replaceable>scsi-id</replaceable></"
+"userinput><optional><userinput>,<replaceable>reconnect</replaceable></"
+"userinput></optional></optional></optional>"
+
+#: help.xml:484
+msgid "Adaptec 1542"
+msgstr "Adaptec 1542"
+
+#: help.xml:485
+msgid ""
+"<userinput>aha1542.aha1542=<replaceable>iobase</replaceable></"
+"userinput><optional><userinput>,<replaceable>buson</replaceable>,"
+"<replaceable>busoff</replaceable></userinput><optional><userinput>,"
+"<replaceable>dmaspeed</replaceable></userinput></optional></optional>"
+msgstr ""
+"<userinput>aha1542.aha1542=<replaceable>iobase</replaceable></"
+"userinput><optional><userinput>,<replaceable>buson</replaceable>,"
+"<replaceable>busoff</replaceable></userinput><optional><userinput>,"
+"<replaceable>dmaspeed</replaceable></userinput></optional></optional>"
+
+#: help.xml:489
+msgid "Adaptec 274x, 284x"
+msgstr "Adaptec 274x, 284x"
+
+#: help.xml:490
+msgid "<userinput>aic7xxx.aic7xxx=no_reset</userinput> (enabled if non-zero)"
+msgstr "<userinput>aic7xxx.aic7xxx=no_reset</userinput> (aktif jika bukan nol)"
+
+#: help.xml:494
+msgid "BusLogic SCSI Hosts"
+msgstr "BusLogic SCSI Hosts"
+
+#: help.xml:495
+msgid ""
+"<userinput>BusLogic.BusLogic=<replaceable>iobase</replaceable></userinput>"
+msgstr ""
+"<userinput>BusLogic.BusLogic=<replaceable>iobase</replaceable></userinput>"
+
+#: help.xml:499
+msgid "Certain DELL machines"
+msgstr "Beberapa mesin DELL"
+
+#: help.xml:500
+msgid "<userinput>aic7xxx.aic7xxx=no_probe</userinput>"
+msgstr "<userinput>aic7xxx.aic7xxx=no_probe</userinput>"
+
+#: help.xml:505
+msgid ""
+"This list is incomplete, see the kernel's kernel-parameters.txt file for "
+"more."
+msgstr ""
+"Daftar ini tidak komplit, lihat berkas kernel kernel-parameters.txt untuk "
+"informasi"
+
+#: help.xml:512
+#, no-wrap
+msgid "boot: install aic7xxx.aic7xxx=no_probe"
+msgstr "boot: install aic7xxx.aic7xxx=no_probe"
+
+#: help.xml:513
+#, no-wrap
+msgid "boot: live aic7xxx.aic7xxx=no_probe"
+msgstr "boot: live aic7xxx.aic7xxx=no_probe"
+
+#: help.xml:530
+msgid "SPECIAL BOOT PARAMETERS - INSTALLATION SYSTEM"
+msgstr "PARAMETER BOOT KHUSUS - SISTEM INSTALASI"
+
+#: help.xml:540
+msgid "These parameters control how the installer works."
+msgstr "Parameter ini mengendalikan cara kerja installer"
+
+#: help.xml:543
+msgid "These parameters control how the bootstrap system works."
+msgstr "Parameter ini mengendalikan cara kerja sistem bootstrap."
+
+#: help.xml:548
+msgid "RESULT"
+msgstr "HASIL"
+
+#: help.xml:549
+msgid "PARAMETER"
+msgstr "PARAMETER"
+
+#: help.xml:552
+msgid "Verbose debugging"
+msgstr "Verbose debugging"
+
+#: help.xml:553
+msgid "<userinput>DEBCONF_DEBUG=5</userinput>"
+msgstr "<userinput>DEBCONF_DEBUG=5</userinput>"
+
+#: help.xml:557
+msgid "Debug boot sequence"
+msgstr "Debut urutan boot"
+
+#: help.xml:558
+msgid "<userinput>BOOT_DEBUG=2|3</userinput>"
+msgstr "<userinput>BOOT_DEBUG=2|3</userinput>"
+
+#: help.xml:562
+msgid "Disable framebuffer"
+msgstr "Non-aktifkan framebuffer"
+
+#: help.xml:563
+msgid "<userinput>fb=false</userinput>"
+msgstr "<userinput>fb=false</userinput>"
+
+#: help.xml:567
+msgid "Don't probe for USB"
+msgstr "Tidak melakukan deteksi untuk USB"
+
+#: help.xml:568
+msgid "<userinput>debian-installer/probe/usb=false</userinput>"
+msgstr "<userinput>debian-installer/probe/usb=false</userinput>"
+
+#: help.xml:572
+msgid "Don't start PCMCIA"
+msgstr "Tidak mengaktifkan PCMCIA"
+
+#: help.xml:573
+msgid "<userinput>hw-detect/start_pcmcia=false</userinput>"
+msgstr "<userinput>hw-detect/start_pcmcia=false</userinput>"
+
+#: help.xml:577
+msgid "Force static network config"
+msgstr "Memaksakan konfigurasi jaringan statis"
+
+#: help.xml:578
+msgid "<userinput>netcfg/disable_dhcp=true</userinput>"
+msgstr "<userinput>netcfg/disable_dhcp=true</userinput>"
+
+#: help.xml:582
+msgid "Set keyboard map"
+msgstr "Set keyboard map"
+
+#: help.xml:583
+msgid "<userinput>bootkbd=es</userinput>"
+msgstr "<userinput>bootkbd=es</userinput>"
+
+#: help.xml:587
+msgid "Use Braille tty"
+msgstr "Menggunakan Braille tty"
+
+#: help.xml:588
+msgid ""
+"<userinput>brltty=<replaceable>driver</replaceable>,<replaceable>device</"
+"replaceable>,<replaceable>texttable</replaceable></userinput>"
+msgstr ""
+"<userinput>brltty=<replaceable>driver</replaceable>,<replaceable>device</"
+"replaceable>,<replaceable>texttable</replaceable></userinput>"
+
+#: help.xml:593
+msgid ""
+"Disable ACPI for PCI maps (handy for some HP servers and Via-based machines)"
+msgstr ""
+"Non-aktifkan ACPI untuk map PCI (berguna untuk beberapa server HP dan mesin "
+"berbasis Via)"
+
+#: help.xml:596
+msgid "<userinput>pci=noacpi</userinput>"
+msgstr "<userinput>pci=noacpi</userinput>"
+
+#: help.xml:603
+#, no-wrap
+msgid "boot: install fb=false"
+msgstr "boot: install fb=false"
+
+#: help.xml:604
+#, no-wrap
+msgid "boot: live fb=false"
+msgstr "boot: live fb=false"
+
+#: help.xml:621
+msgid "GETTING HELP"
+msgstr "MENDAPATKAN BANTUAN"
+
+#: help.xml:628
+msgid "If you can't install Ubuntu, don't despair!"
+msgstr "Jika anda tidak bisa melakukan instalasi Ubuntu, jangan menyerah!"
+
+#: help.xml:631
+msgid "If you can't start Ubuntu, don't despair!"
+msgstr "Jika anda tidak bisa menjalankan Ubuntu, jangan menyerah!"
+
+#: help.xml:634
+msgid "The Ubuntu team is ready to help you!"
+msgstr "Tim Ubuntu siap membantu anda!"
+
+#: help.xml:637
+msgid ""
+"We are especially interested in hearing about installation problems, because "
+"in general they don't happen to only <emphasis>one</emphasis> person."
+msgstr ""
+"Kami secara khusus ingin mendengarkan masalah-masalah instalasi, karena "
+"umumnya hal tersebut tidak terjadi pada <emphasis>satu</emphasis> orang saja."
+
+#: help.xml:642
+msgid ""
+"We are especially interested in hearing about startup problems, because in "
+"general they don't happen to only <emphasis>one</emphasis> person."
+msgstr ""
+"Kami secara khusus ingin mendengarkan masalah-masalah startup, karena "
+"umumnya hal tersebut tidak terjadi pada <emphasis>satu</emphasis> orang saja."
+
+#: help.xml:646
+msgid ""
+"We've either already heard about your particular problem and can dispense a "
+"quick fix, or we would like to hear about it and work through it with you, "
+"and the next user who comes up with the same problem will profit from your "
+"experience!"
+msgstr ""
+"Kami mungkin telah mendengar tentang masalah anda tersebut dan telah "
+"mendapatkan cara penyelesaiannya, atau jika belum, kami ingin mengetahuinya "
+"dan menelusurinya bersama anda, sehingga pengguna berikutnya yang mengalami "
+"masalah yang sama dapat mengambil manfaat dari pengalaman anda!"
+
+#: help.xml:677
+msgid "COPYRIGHTS AND WARRANTIES"
+msgstr "HAKCIPTA DAN JAMINAN"
+
+#: help.xml:684
+msgid ""
+"Ubuntu is Copyright (C) 2004-2006 Canonical Ltd., and incorporates the work "
+"of many other original authors and contributors."
+msgstr ""
+"Ubuntu adalah Hakcipta (C) 2004-2006 Canonical Ltd., dan berisi hasil kerja "
+"dari banyak pengarang asli lain dan para kontributor."
+
+#: help.xml:689
+msgid "The Ubuntu system is freely redistributable."
+msgstr "Sistem Ubuntu ini dapat disebarkan kembali dengan bebas."
+
+#: help.xml:692
+msgid ""
+"After installation, the exact distribution terms for each package are "
+"described in the corresponding file /usr/share/doc/<replaceable>packagename</"
+"replaceable>/copyright."
+msgstr ""
+"Setelah instalasi, persyaratan distribusi yang pasti bagi tiap paket "
+"dijelaskan dalam file yang berkaitan /usr/share/doc/<replaceable>nama paket</"
+"replaceable>/copyright."
+
+#: help.xml:697
+msgid ""
+"After startup, the exact distribution terms for each package are described "
+"in the corresponding file /usr/share/doc/<replaceable>packagename</"
+"replaceable>/copyright."
+msgstr ""
+"Setelah startup, persyaratan distribusi yang pasti bagi tiap paket "
+"dijelaskan dalam file yang berkaitan /usr/share/doc/<replaceable>nama paket</"
+"replaceable>/copyright."
+
+#: help.xml:703
+msgid ""
+"Ubuntu comes with <emphasis>ABSOLUTELY NO WARRANTY</emphasis>, to the extent "
+"permitted by applicable law."
+msgstr ""
+"Ubuntu <emphasis>TIDAK BERISI JAMINAN APAPUN</emphasis>, sampai batas-batas "
+"yang dibolehkan oleh hukum yang berlaku."
+
+#: help.xml:708
+msgid ""
+"This installation system is based on the Debian installer. See <ulink url="
+"\"http://www.debian.org/\" /> for more details and information on the Debian "
+"project."
+msgstr ""
+"Sistem instalasi ini didasarkan atas installer Debian. Lihatlah <ulink url="
+"\"http://www.debian.org/\" /> untuk keterangan lebih detil dan lanjut "
+"tentang proyek Debian."
+
+#: help.xml:714
+msgid ""
+"This system is based on Debian. See <ulink url=\"http://www.debian.org/\" /> "
+"for more details and information on the Debian project."
+msgstr ""
+"Sistem ini didasarkan atas Debian. Lihatlah <ulink url=\"http://www.debian."
+"org/\" /> untuk keterangan lebih detil dan lanjut tentang proyek Debian."

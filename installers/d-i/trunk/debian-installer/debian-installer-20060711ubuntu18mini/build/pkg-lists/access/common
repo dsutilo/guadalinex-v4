@@ -1,0 +1,27 @@
+#include "base"
+#include "kernel"
+
+localechooser
+load-floppy
+floppy-retriever
+di-utils-terminfo
+cdebconf-text-udeb
+brltty-udeb
+
+# net installation support
+net-retriever
+download-installer
+netcfg
+choose-mirror
+console-setup-udeb
+hw-detect
+ethdetect
+
+preseed-common
+initrd-preseed
+kickseed-common
+initrd-kickseed
+
+save-logs
+mountfloppy
+nano-udeb
