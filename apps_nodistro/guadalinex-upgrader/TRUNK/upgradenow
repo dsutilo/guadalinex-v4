@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Creamos directorio temporal para almacenar algunos ficheros que se deben mantener
+mkdir /var/tmp
+
+if [ -e "/usr/share/applications/ipodder.desktop" ];then
+   mv /usr/share/applications/ipodder.desktop /var/tmp/
+fi
+
+# Eliminamos los esquemas de gconf y el paquete xscreensaver que dan problemas al actualizar
+rm -rf /etc/gconf/gconf.xml.defaults/* /etc/gconf/schemas
+
+apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install dpkg 2>> /tmp/errorsupgrade
+dpkg --configure -a
+
+# Fake para que no levante servicios en la simulacion
+if [ ! -e /sbin/start-stop-daemon.REAL ];then
+   mv /sbin/start-stop-daemon /sbin/start-stop-daemon.REAL
+   cat > /sbin/start-stop-daemon <<EOF
+#!/bin/bash
+echo "Estas usando un fake de este script, el original es start-stop-daemon.REAL"
+exit 0
+EOF
+   chmod +x /sbin/start-stop-daemon
+fi
+
+apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove xscreensaver 2>> /tmp/errorsupgrade
+apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf dist-upgrade 2>> /tmp/errorsupgrade
+dpkg --configure -a
+
+# Eliminamos los metapaquetes de v3
+apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove guadalinex-v3* 2>> /tmp/errorsupgrade
+
+# Instalamos paquetes necesarios y los metapaquetes de v4
+apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install openoffice.org openoffice.org-evolution openoffice.org-gnome 2>> /tmp/errorsupgrade
+apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install meta-guadalinex-v4 2>> /tmp/errorsupgrade
+dpkg --configure -a
+touch /tmp/goutupgrade
