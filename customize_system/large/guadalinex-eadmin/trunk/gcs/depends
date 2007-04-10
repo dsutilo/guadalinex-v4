@@ -6,6 +6,7 @@
 libnss3-0d
 libnss3-tools
 opensc-dnie
+opensc-ceres
 mozilla-opensc
 opensc
 libopensc2-dev
