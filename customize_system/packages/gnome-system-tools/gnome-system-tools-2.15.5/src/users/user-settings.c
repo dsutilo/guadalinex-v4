@@ -630,7 +630,8 @@ user_settings_dialog_get_data (OobsUser *user)
 
 	privileges_table_save (user);
 
-	accessibility_table_save (oobs_user_get_login_name (user));
+	// user doesn't exist yet so it couldn't be here
+	//accessibility_table_save (oobs_user_get_login_name (user));
 }
 
 void

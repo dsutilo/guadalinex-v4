@@ -33,6 +33,7 @@
 #include "users-table.h"
 #include "group-settings.h"
 #include "groups-table.h"
+#include "accesibility-table.h"
 
 extern GstTool *tool;
 
@@ -206,6 +207,8 @@ on_user_new_clicked (GtkButton *button, gpointer user_data)
 		users_table_add_user (user, &list_iter);
 		oobs_object_commit (GST_USERS_TOOL (tool)->users_config);
 		oobs_object_commit (GST_USERS_TOOL (tool)->groups_config);
+		
+		accessibility_table_save (oobs_user_get_login_name (user));
 	}
 }
 
