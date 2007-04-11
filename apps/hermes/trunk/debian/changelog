@@ -1,3 +1,9 @@
+hermeshardware (0.3.13) unstable; urgency=low
+
+  * Fixed problem with USB printers.
+
+ -- Carlos Parra Camargo <cparra@emergya.es>  Wed, 11 Apr 2007 19:22:31 +0200
+
 hermeshardware (0.3.12) unstable; urgency=low
 
   * Fixed problem with i18n support. 
