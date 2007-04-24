@@ -31,12 +31,14 @@ if [ "$?" != "0" ];then
 $(tail /tmp/errors)"
    touch /tmp/gout
 else
-   mv /tmp/rw/var/cache/apt/archives/*.deb /var/cache/apt/archives/
    echo "0" > /tmp/guadalinex-upgrader.exit
 fi
 
 # Desmontamos
 awk "/\/tmp\/simulate/ {print \$2}" /proc/mounts | sort -r|xargs umount
+
+# Aprovechamos los .deb que se han descargado para la simulación
+mv /tmp/rw/var/cache/apt/archives/*.deb /var/cache/apt/archives/
 
 #Borramos los puntos de montaje
 rm -rf /tmp/simulate
