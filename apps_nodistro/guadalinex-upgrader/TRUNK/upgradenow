@@ -10,6 +10,15 @@ fi
 # Eliminamos los esquemas de gconf y el paquete xscreensaver que dan problemas al actualizar
 rm -rf /etc/gconf/gconf.xml.defaults/* /etc/gconf/schemas
 
+# Si existe un .gconf/apps/panel lo eliminamos pues entra en conficto con el nuevo panel de gv4,
+# el usuario pierde los applets que tuviera
+
+for h in `ls /home`;do
+    if [ -d /home/$h/.gconf/apps/panel ];then
+        rm -rf /home/$h/.gconf/apps/panel
+    fi
+done
+
 apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install dpkg 2>> /tmp/errorsupgrade
 dpkg --configure -a
 
@@ -34,5 +43,6 @@ apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove guadalin
 # Instalamos paquetes necesarios y los metapaquetes de v4
 apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install openoffice.org openoffice.org-evolution openoffice.org-gnome 2>> /tmp/errorsupgrade
 apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install meta-guadalinex-v4 2>> /tmp/errorsupgrade
+apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf -f install 2>> /tmp/errorsupgrade
 dpkg --configure -a
 touch /tmp/goutupgrade
