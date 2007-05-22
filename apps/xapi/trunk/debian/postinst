@@ -1,0 +1,7 @@
+#!/bin/sh
+
+dpkg-divert --package xapi --rename --quiet --add /usr/lib/firefox/firefox.cfg
+ln -fs /usr/lib/firefox/firefox.cfg.xapi /usr/lib/firefox/firefox.cfg
+
+
+#DEBHELPER#

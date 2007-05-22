@@ -59,7 +59,7 @@ install: build
 	#$(MAKE) install DESTDIR=$(CURDIR)/debian/xapi
 	install -d $(CURDIR)/debian/xapi/usr/bin/
 	install -d $(CURDIR)/debian/xapi/usr/lib/firefox/
-	install -m644 $(CURDIR)/firefox.cfg $(CURDIR)/debian/xapi/usr/lib/firefox/firefox.cfg
+	install -m644 $(CURDIR)/firefox.cfg.xapi $(CURDIR)/debian/xapi/usr/lib/firefox/firefox.cfg.xapi
 	install -m755 $(CURDIR)/xapi $(CURDIR)/debian/xapi/usr/bin/xapi
 
 
