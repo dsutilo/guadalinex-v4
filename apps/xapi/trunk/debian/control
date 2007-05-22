@@ -7,7 +7,7 @@ Standards-Version: 3.7.2
 
 Package: xapi
 Architecture: any
-Depends: perl-base (>= 4.0), libui-dialog-perl, zenity, synaptic, firefox, guadalinex-desktop-conf
+Depends: perl-base (>= 4.0), libui-dialog-perl, zenity, synaptic, firefox
 Description: Support for the so named "apt protocol" in Firefox
  Xapi is a perl script that uses synaptic to install packages from repositories.
  It can also, if called with a local route, install a single package. This
