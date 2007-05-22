@@ -1,0 +1,97 @@
+#!/usr/bin/perl
+
+# XAPI 1.7
+# By Alfonso E.M. alfonso@el-magnifico.org
+# Instalador de paquetes deb con avisos
+# 1.5 Ahora también instala por apt
+# 1.6 La salida se envia a un terminal por si es interactiva
+#     Se acompaña del script xapi-term, que hace una pausa al final
+# 1.7 Utiliza Synaptic en lugar de apt para la instalación
+
+use UI::Dialog;
+use utf8;
+
+$dialog = new UI::Dialog (order => ['zenity','xdialog']);
+
+# (Usamos un antiguo xdialog por problemas con UTF-8 en zenity)
+
+$|=1;
+$file=$ARGV[0];
+@parts=split(/\//,$file);
+$protocol=$parts[0];
+$name=$parts[$#parts];
+
+if ($name=~/(.*)\.apt\.deb$/i) { $name=$1; $use_apt=1; }
+# Preparado para usar url del tipo apt://paquete_a_instalar_desde_repositorio
+if ($protocol eq "apt:") { $use_apt=1; }
+
+$info=&get_deb_data($file,$name,$use_apt);
+
+$info.=chr(13).chr(13)."¿ Desea continuar ?";
+
+if ($dialog->yesno( 
+	title => 'Instalación de Programas en Guadalinex',
+	backtitle => $file,
+	height => 300, width=>500,
+	text => "$info") ) { 
+
+# Instalación desde el repositorio, con dependencias, usando synaptic (con oscuros parametros)
+	if ($use_apt) {
+		open(TMP,">/tmp/xapi.tmp") or die "No es posible grabar el archivo temporal";
+		print TMP "$name	install\n";
+		close TMP;
+		if ($< != 0) {
+			system ("gksudo -m 'Para instalar programas debe introducir su clave' '/usr/sbin/synaptic --hide-main-window  --non-interactive --set-selections-file /tmp/xapi.tmp'");
+		} else {
+			system ('/usr/sbin/synaptic --hide-main-window  --non-interactive --set-selections-file /tmp/xapi.tmp');
+
+		}
+		unlink "/tmp/xapi.tmp";
+# Instalación directa de un paquete .deb, con dependencias, usando gdebi
+	} else {
+		if ($< != 0) {
+			$file=~s/ /\\ /g;
+			system("gksudo -m 'Para instalar programas debe introducir su clave' '/usr/bin/gdebi $file'  ");				
+		} else {
+			system("/usr/bin/gdebi $file");		
+		}
+	}
+
+}
+
+
+
+sub get_deb_data() {
+	my ($deb,$apt,$use_apt)=@_;
+	$description="";
+
+	if ($use_apt) {
+		open(DEB,"apt-cache show '$apt' |") or return ("");
+	} else {
+		open(DEB,"dpkg --info '$deb' |") or return ("");
+	}
+
+	while (<DEB>) {
+		chop;
+		if (/Package: (.*)/) {$package=$1; }
+		if (/Version: (.*)/) {$version=$1; }
+		if (/Description: (.*)/) {$description="$1\n"; }
+		if (/Installed-Size: (.*)/) {$isize=$1; }
+		if (/Maintainer: (.*) <.*>/) {$maintainer=$1; }
+		if (/^  (.*)/ && $description ne "") { $description.=$1; }
+	}
+
+	close DEB;
+
+	if ($package) {
+		@info = ( "Va a instalar \"$package\" (versión $version) mantenido por \"$maintainer\".",
+			  chr(13)."Ocupará $isize Kbytes.",
+			  chr(13)."Esta es la descripción incluida en el paquete: ",
+			  "$description");
+		$info = join chr(13), @info;
+	} else {
+		$info = "ERROR: Esta aplicación no existe.\n\nPor favor compruebe el nombre del paquete.";
+	}
+
+	return $info;
+}
