@@ -1,3 +1,9 @@
+xapi (1.7-2) edgy; urgency=low
+
+  * Removing /usr/lib/firefox/firefox.cfg divert, since guadalinex-desktop already includes apt protocol hack in such file.
+
+ -- Junta de Andalucía <packmaster@guadalinex.org>  Tue, 22 May 2007 16:48:27 +0200
+
 xapi (1.7-1) edgy; urgency=low
 
   * Initial release.

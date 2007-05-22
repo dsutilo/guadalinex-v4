@@ -1,7 +1,0 @@
-#!/bin/sh
-
-rm -f /usr/lib/firefox/firefox.cfg
-dpkg-divert --package xapi --rename --quiet --remove /usr/lib/firefox/firefox.cfg
-
-
-#DEBHELPER#
