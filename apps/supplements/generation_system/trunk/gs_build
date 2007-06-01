@@ -98,6 +98,12 @@ def add_extra_packages():
 
 
 def check_pool(config):
+    try:
+        if sys.argv[1] == '-s':
+            return
+    except:
+        pass 
+
     # Prepare system
     os.system('cp -a /usr/share/guadalinex-supplement-generator /tmp/')
     sc = gsdutils.SupplementCustomizer(MASTERDIR, as_user = True)
