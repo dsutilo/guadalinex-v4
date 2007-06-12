@@ -1,0 +1,14 @@
+Source: guadalinex-linux-modules-generic
+Section: base
+Priority: optional
+Maintainer: Junta de Andalucía <packmaster@guadalinex.org>
+Build-Depends: debhelper (>> 3.0.0)
+Standards-Version: 3.7.2
+
+Package: guadalinex-linux-modules-generic
+Architecture: i386
+Depends: guadalinex-linux-modules-2.6.20-15-generic
+Description: Módulos para el núcleo de Guadalinex
+ Este paquete siempre depende de la última versión del paquete
+ guadalinex-linux-modules-{versión del kernel}-generic
+
