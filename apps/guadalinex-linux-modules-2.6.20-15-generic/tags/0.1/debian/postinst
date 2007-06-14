@@ -1,0 +1,3 @@
+#!/bin/sh
+
+depmod -a 2.6.20-15-generic

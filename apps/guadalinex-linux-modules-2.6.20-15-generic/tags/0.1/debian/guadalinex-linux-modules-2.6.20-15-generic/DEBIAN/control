@@ -1,0 +1,10 @@
+Package: guadalinex-linux-modules-2.6.20-15-generic
+Version: 0.1
+Section: base
+Priority: optional
+Architecture: i386
+Depends: linux-image-2.6.20-15-generic, nozomi-modules-2.6.20-15-generic
+Installed-Size: 996
+Maintainer: Junta de Andalucía <packmaster@guadalinex.org>
+Description: Módulos para el núcleo de Guadalinex
+ Módulos para Guadalinex

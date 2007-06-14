@@ -1,0 +1,16 @@
+guadalinex-linux-modules-2.6.20-15-generic (0.1) edgy; urgency=low
+
+  * Deleted gspca module thath is not necesary for this kernel version
+  * NMU
+  * Initial release
+
+ -- Juanje Ojeda Croissier <jojeda@emergya.es>  Tue, 12 Jun 2007 20:54:02 +0100
+
+guadalinex-linux-modules-2.6.20-15-generic (0.1) edgy; urgency=low
+
+  * NMU
+  * Initial release
+
+ -- Juanje Ojeda Croissier <jojeda@emergya.es>  Tue, 12 Jun 2007 20:54:02 +0100
+
+
