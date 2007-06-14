@@ -7,6 +7,6 @@ Standards-Version: 3.7.2
 
 Package: guadalinex-linux-modules-2.6.20-15-generic
 Architecture: i386
-Depends: linux-image-2.6.20-15-generic, spca5xx-modules-2.6.20-15-generic
+Depends: linux-image-2.6.20-15-generic, nozomi-modules-2.6.20-15-generic
 Description: Módulos para el núcleo de Guadalinex
  Módulos para Guadalinex

@@ -13,7 +13,6 @@ install: build
 	dh_clean -k
 
 	dh_install  atl1.ko /lib/modules/2.6.20-15-generic/kernel/drivers/net/atl1
-	dh_install  gspca.ko /lib/modules/2.6.20-15-generic/kernel/drivers/usb/media/
 
 binary-indep:  build install
 

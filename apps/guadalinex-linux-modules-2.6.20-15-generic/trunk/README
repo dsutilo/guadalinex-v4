@@ -9,4 +9,5 @@ MÓDULO		DISPOSITIVO					URL
 ======		===========					===
 
 atl1		Attansic(R) L1 Gigabit Ethernet Adapter		http://dlsvr02.asus.com/pub/ASUS/mb/socketAM2/M2V/Linux_LAN.zip
+# Este modulo se ha eliminado pues no es necesario en esta version del kernel
 gspca		Logitech Quickcam Express			http://mxhaard.free.fr/spca50x/Download/gspcav1-20070508.tar.gz
