@@ -1,3 +1,10 @@
+g3g (1.0.2) edgy; urgency=low
+
+  * NMU
+  * Added dependency with escritorio_movistar
+
+ -- Juanje Ojeda Croissier <jojeda@emergya.es>  Thu, 14 Jun 2007 15:42:30 +0100
+
 g3g (1.0.1) edgy; urgency=low
 
   * Añadido campo Conflicts en el fichero de control de debian para forzar la
