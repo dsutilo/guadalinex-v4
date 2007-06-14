@@ -1,0 +1,14 @@
+Source: nozomi-modules-generic
+Section: base
+Priority: optional
+Maintainer: Junta de Andalucía <packmaster@guadalinex.org>
+Build-Depends: debhelper (>> 3.0.0)
+Standards-Version: 3.7.2
+
+Package: nozomi-modules-generic
+Architecture: i386
+Depends: nozomi-modules-2.6.20-15-generic
+Description: GlobeTrotter HSDPA driver for Linux 
+ Este paquete siempre depende de la última versión del paquete
+ nozomi-modules-{versión del kernel}-generic
+
