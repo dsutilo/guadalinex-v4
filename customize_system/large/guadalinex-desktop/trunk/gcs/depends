@@ -152,9 +152,10 @@ libpt-plugins-v4l2
 libsasl2-modules
 libstdc++5
 libxp6
-linux-headers-generic
-linux-image-generic
-linux-restricted-modules-generic
+linux-headers-2.6.20-15-generic
+linux-image-2.6.20-15-generic
+linux-restricted-modules-2.6.20-15-generic
+linux-backports-modules-2.6.20-15-generic
 lsr
 localization-config
 make
