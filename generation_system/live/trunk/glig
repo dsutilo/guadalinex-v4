@@ -167,7 +167,7 @@ echo \"Warning: Fake start-stop-daemon called, doing nothing\"" > ${sources}/sbi
     apt_get upgrade
     
     apt_get install
-    apt_get install linux-image-generic
+    apt_get install linux-image-2.6.20-15-generic
     
     apt_get install acpi-support
 
