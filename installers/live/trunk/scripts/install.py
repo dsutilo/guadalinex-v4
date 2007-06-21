@@ -980,7 +980,6 @@ class Install:
         packages = ['linux-image-' + self.kernel_version,
                     'linux-restricted-modules-' + self.kernel_version,
                     'usplash',
-                    'tvtime',
                     'popularity-contest']
 
         try:
