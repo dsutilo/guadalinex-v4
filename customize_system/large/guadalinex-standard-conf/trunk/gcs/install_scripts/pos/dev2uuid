@@ -1,0 +1,19 @@
+
+case "$1" in
+    configure)
+        # Upgrade from Guadalinex v4.0
+        if dpkg --compare-versions "$2" lt "r1660"; then
+            [ -e /etc/fstab.pre-uuid ] && rm -f /etc/fstab.pre-uuid
+            /usr/local/sbin/dev2uuid
+        fi
+
+        ;;
+
+    abort-upgrade|abort-deconfigure|abort-remove)
+        ;;
+
+    *)
+        echo "$0 called with unknown argument \`$1'" 1>&2
+        exit 1
+        ;;
+esac
