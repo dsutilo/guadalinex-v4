@@ -2,6 +2,7 @@
 mirror="file:///var/mirror/ubuntu"
 components="toro,main,restricted,universe,multiverse"
 live_dir="/var/cdimage/live/edgy/ubuntu/current/"
+kernel_version="2.6.20-15-generic"
 
 sources="/tmp/sources/"
 
