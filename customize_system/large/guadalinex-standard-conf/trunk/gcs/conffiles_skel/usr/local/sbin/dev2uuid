@@ -10,6 +10,7 @@ menu_lst_conversion()
 	fi
 	
 	dev=$(grep -m 1 ^kernel $menu_file | awk '{print $3}')
+	echo $dev | grep -q "UUID=" && return
 	dev=${dev#root=}
 	root_uuid="UUID=$(/sbin/vol_id -u $dev)"
 	sed -i "/End/,$ s|$dev|$root_uuid|" $menu_file
@@ -20,7 +21,9 @@ menu_lst_conversion()
 fstab_conversion()
 {
     if [ -e /etc/fstab.pre-uuid ]; then
-	return
+	grep -q UNCONFIGURED /etc/fstab.pre-uuid || return
+
+	trap "rm -f /etc/fstab.pre-uuid" 0
     fi
 
     cp -a /etc/fstab /etc/fstab.pre-uuid
