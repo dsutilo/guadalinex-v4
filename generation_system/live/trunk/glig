@@ -227,6 +227,11 @@ EOF
 
     apt_get update
 
+    apt_get upgrade
+    apt_get install
+
+    apt_get clean
+
     # Umount pocfs inside sources, if any
     umount_sources
 
