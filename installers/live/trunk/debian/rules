@@ -197,6 +197,11 @@ endif
 		cp desktop/cr$${size}-app-ubiquity.png debian/ubiquity-frontend-kde/usr/share/icons/crystalsvg/$${size}x$${size}/apps/ubiquity.png; \
 	done
 
+
+	# copy hooks for ubiquity
+	install -m 755 target-config/* debian/ubiquity/usr/lib/ubiquity/target-config/
+
+
 # Build architecture-independent files here.
 ifdef UBIQUITY_NO_KDE
 binary-indep: DH_OPTIONS=-i -Nubiquity-frontend-kde
