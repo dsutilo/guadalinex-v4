@@ -240,6 +240,11 @@ EOF
     log_it "$?" "Delete ${sources}/var/mirror"
 
     mv ${sources}/sbin/start-stop-daemon.REAL ${sources}/sbin/start-stop-daemon
+
+    # Deleted fstab.pre-uuid for not to mess with the volumeid.postinst
+    preuuid_file="${sources}/etc/fstab.pre-uuid"
+    [ -e "$preuuid_file" ] && rm -f $preuuid_file
+
 }
 
 function create_manifests() {
