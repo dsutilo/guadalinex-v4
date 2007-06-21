@@ -159,6 +159,12 @@ echo
 echo \"Warning: Fake start-stop-daemon called, doing nothing\"" > ${sources}/sbin/start-stop-daemon
     chmod 755 ${sources}/sbin/start-stop-daemon
 
+
+    #HACK: activate the /etc/shadow because few package need it
+    chroot ${sources} shadowconfig on >&2
+    log_it "$?" "chroot ${sources} shadowconfig on $*"
+
+
     # Force update, install and clean
     apt_get update
 
