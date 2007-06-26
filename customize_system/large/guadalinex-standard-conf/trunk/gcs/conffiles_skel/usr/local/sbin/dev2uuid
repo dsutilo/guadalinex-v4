@@ -6,15 +6,14 @@ menu_lst_conversion()
 	menu_file="/boot/grub/menu.lst"
 	if [ ! -e "$menu_file" ]; then
 		echo "ERROR: $menu_file doesn't exist"
-		exit 1
+		#exit 1
+	else
+		dev=$(grep -m 1 ^kernel $menu_file | awk '{print $3}')
+		echo $dev | grep -q "UUID=" && return
+		dev=${dev#root=}
+		root_uuid="UUID=$(/sbin/vol_id -u $dev)"
+		sed -i "/End/,$ s|$dev|$root_uuid|" $menu_file
 	fi
-	
-	dev=$(grep -m 1 ^kernel $menu_file | awk '{print $3}')
-	echo $dev | grep -q "UUID=" && return
-	dev=${dev#root=}
-	root_uuid="UUID=$(/sbin/vol_id -u $dev)"
-	sed -i "/End/,$ s|$dev|$root_uuid|" $menu_file
-
 }
 
 # Rewrite /etc/fstab so that filesystems are mounted by UUID
