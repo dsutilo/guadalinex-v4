@@ -1,3 +1,9 @@
+glig (0.17) unstable; urgency=low
+
+  * do_initrd = yes 
+
+ -- Carlos Parra Camargo <cparra@emergya.es>  Tue, 26 Jun 2007 11:15:03 +0200
+
 glig (0.16) unstable; urgency=low
 
   * Added package gru 
