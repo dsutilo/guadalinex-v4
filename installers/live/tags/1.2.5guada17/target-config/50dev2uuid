@@ -1,0 +1,17 @@
+#! /bin/sh
+#
+# dev2uuid	Convert old dev style to uuid on fstab and menu.lst.
+#
+# Version:      @(#)extradebs  1.0  6-Mar-2007  jojeda@emergya.es
+#
+
+set -e 
+
+ 
+exec > /target/var/log/ubiquity_hooks.log 2>&1 
+
+set -x
+
+  chroot /target/ /usr/local/sbin/dev2uuid  || true
+
+exit 0
