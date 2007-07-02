@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*- coding: utf-8 -*-
+º# -*- coding: utf-8 -*-
 # Este módulo aporta rutinas para configurar los clientes de mensajería instantánea:
 #  - Gaim
 #  - Kopete
