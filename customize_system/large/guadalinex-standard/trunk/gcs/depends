@@ -16,6 +16,9 @@ inputattach
 iptables
 iputils-arping
 iputils-tracepath
+linux-image-2.6.20-15-generic
+linux-restricted-modules-2.6.20-15-generic
+linux-backports-modules-2.6.20-15-generic
 logrotate
 lshw
 lsof
