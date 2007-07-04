@@ -1,5 +1,6 @@
 mount-systray (0.1.4) edgy; urgency=low
 
+  * NMU
   * Some minor changes for the lintian better rest
 
  -- Juanje Ojeda <jojeda@emergya.es>  Tue, 3 Jul 2007 11:36:00 +0200

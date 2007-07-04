@@ -3,6 +3,7 @@
 # This file is public domain.
   
 DEB_AUTO_CLEANUP_RCS            := yes
+#DEB_DH_ALWAYS_EXCLUDE		:= .svn
 
 # Add here any variable or target overrides you need
 
