@@ -12,6 +12,19 @@ exec > /target/var/log/ubiquity_hooks.log 2>&1
 
 set -x
 
-  chroot /target/ /usr/local/sbin/dev2uuid  || true
+cat <<EOF > /target/sbin/setup.sh
+#!/bin/sh
+
+rm -f /etc/fstab.pre-uuid
+
+/usr/local/sbin/dev2uuid
+
+rm -f \$0
+
+exit 0
+
+EOF
+
+chmod +x /target/sbin/setup.sh
 
 exit 0
