@@ -4,4 +4,5 @@
 40 fstab_hd_entries
 45 fstab_add_extra_entries
 50 fstab_removable_media_entries
+55 fstab_dev2uuid
 95 reformat_after_restart
