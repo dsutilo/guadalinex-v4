@@ -59,7 +59,6 @@ file-roller
 firefox
 firefox-gnome-support
 firestarter
-mozilla-firefox-locale-es-es
 foo2zjs
 foomatic-db
 foomatic-db-engine
@@ -158,9 +157,12 @@ make
 metacity
 min12xxw
 mkisofs
+mount-systray
+mozilla-firefox-locale-es-es
 mtr-tiny
 nautilus
 nautilus-cd-burner
+nautilus-mdb2odb
 nautilus-sendto
 ndisgtk
 ndiswrapper-utils-1.8
@@ -234,7 +236,5 @@ libdvdnav4
 guadalinex-about
 guadalinex-user-manual
 guadalinex-language-pack
-guadalinex-firmwares
 ntfs-config
-guadalinex-linux-modules-generic
 informe-hardware
