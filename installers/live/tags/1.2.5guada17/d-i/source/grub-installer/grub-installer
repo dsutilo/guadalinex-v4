@@ -221,6 +221,23 @@ is_removable () {
 	echo ""
 }
 
+
+menu_lst_conversion ()
+{
+	menu_file="/target/boot/grub/menu.lst"
+	if [ ! -e "$menu_file" ]; then
+		error "$menu_file doesn't exist"
+	else
+		dev=$(grep -m 1 ^kernel $menu_file | awk '{print $3}')
+		( echo $dev | grep -q "UUID=" ) && return
+		dev=${dev#root=}
+		root_uuid="UUID=$(/sbin/vol_id -u $dev)"
+		sed -i "/End/,$ s|$dev|$root_uuid|" $menu_file
+	fi
+}
+
+
+
 bootfstype=$(findfstype /boot)
 [ -n "$bootfstype" ] || bootfstype="$(findfstype /)"
 if [ "$bootfstype" = "xfs" ]; then
@@ -640,6 +657,8 @@ if [ -z "`grep update-grub $ROOT/etc/kernel-img.conf.$$`" ]; then
 	) >> $ROOT/etc/kernel-img.conf.$$
 fi
 mv $ROOT/etc/kernel-img.conf.$$ $ROOT/etc/kernel-img.conf
+
+menu_lst_conversion
 
 db_progress STEP 1
 db_progress STOP
