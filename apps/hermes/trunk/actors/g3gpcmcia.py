@@ -56,7 +56,8 @@ import logging
 # This VP_IDS is valid for g3gusb.Actor too.
 VP_IDS = [
         (4817, 4097), 
-        (6449, 12)
+        (6449, 12),
+        (4817, 4099)
         ]
 
 product_id = None
