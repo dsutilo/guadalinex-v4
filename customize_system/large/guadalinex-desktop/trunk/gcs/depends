@@ -180,7 +180,6 @@ powermanagement-interface
 python-visual
 readahead
 rhythmbox
-rss-glx
 samba
 screen
 screensaver-default-images
@@ -220,7 +219,6 @@ xkeyboard-config
 xorg
 xsane
 xscreensaver-data
-xscreensaver-gl
 xterm
 xvncviewer
 yelp
