@@ -25,7 +25,6 @@ logrotate
 lshw
 lsof
 ltrace
-mc
 man-db
 manpages
 memtest86+
