@@ -1,0 +1,8 @@
+
+
+if [ -f /usr/share/ntfs-config/write-policy.fdi ]; then
+	rm -f /etc/hal/fdi/policy/20-ntfs-config-write-policy.fdi
+	rm -f /etc/hal/fdi/policy/20-ntfs-config-ro-policy.fdi
+	ln -s /usr/share/ntfs-config/write-policy.fdi /etc/hal/fdi/policy/20-ntfs-config-write-policy.fdi
+fi
+
