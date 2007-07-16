@@ -39,3 +39,4 @@ Terminal=false
 Type=Application
 Icon=gnome-dev-harddisk
 Categories=GNOME;Application;System;Settings;
+Hidden=true
