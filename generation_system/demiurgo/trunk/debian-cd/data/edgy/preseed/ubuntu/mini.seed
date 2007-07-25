@@ -11,3 +11,8 @@ tvtime 			tvtime/normtvtime/norm		string PAL
 tvtime 			tvtime/frequencies-pal		string Europe
 clock-setup		clock-setup/utc			boolean false
 choose-mirror		mirror/http/proxy		string ""
+console-setup		console-setup/variant		string Spain
+console-setup		console-setup/charmap		string UTF-8
+console-setup		console-setup/layout		string Spain
+console-setup		console-setup/codeset		string Lat15
+
