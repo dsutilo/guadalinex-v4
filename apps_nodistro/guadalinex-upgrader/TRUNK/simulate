@@ -1,12 +1,13 @@
 #!/bin/bash
 
 function fchroot(){
-
-DEBIAN_FRONTEND=noninteractive chroot /tmp/simulate $* 2>> /tmp/errors
+#hack
+DEBIAN_FRONTEND=noninteractive chroot /tmp/simulate $* 2>&1
 }
 
 
 # Comienza la simulacion
+
 
 fchroot "apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install dpkg"
 
@@ -21,9 +22,10 @@ EOF
    fi
 
 fchroot "apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf dist-upgrade"
+#fchroot "apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install xserver-xorg-video-all"
 fchroot "dpkg --configure -a"
 fchroot "apt-get -f install"
-
+#hack que instala el metapaquete de drivers para las X.
 # Comprobamos si todo ha salido bien
 if [ "$?" != "0" ];then
    echo "1" > /tmp/guadalinex-upgrader.exit
