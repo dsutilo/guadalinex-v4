@@ -146,19 +146,19 @@ if [ "$CONTINUE" = 1 ];then
 Esta operación puede tardar entre 1 y 2 horas, dependiendo de su conexión a internet, por favor, sea paciente."
    # Añadida la opción de debugging
 # hack debugging
-#   simulate >> /tmp/simulate.log 2>&1 &
-#   (while true
-#      do
-#      echo .
-#      test -f /tmp/gout && break
-#      sleep 10
-#      done)|zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --progress --text "Comprobando si es posible la actualización...
-#Este proceso puede tardar entre 1 y 2 horas." --pulsate --auto-close
-#
-#   if [ test -f /tmp/guadalinex-upgrader.exit && "$(cat /tmp/guadalinex-upgrader.exit)" == "1" ];then
-#      exit 1
-#   fi
-#   ################################################ FIN SIMULACION
+   simulate >> /tmp/simulate.log 2>&1 &
+   (while true
+      do
+      echo .
+      test -f /tmp/gout && break
+      sleep 10
+      done)|zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --progress --text "Comprobando si es posible la actualización...
+Este proceso puede tardar entre 1 y 2 horas." --pulsate --auto-close
+
+   if [ test -f /tmp/guadalinex-upgrader.exit && "$(cat /tmp/guadalinex-upgrader.exit)" == "1" ];then
+      exit 1
+   fi
+   ################################################ FIN SIMULACION
    
    zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --info --text "La simulación ha salido bien!
 A continuación se va a actualizar. En algún momento pueden aparecer mensajes de error, no se preocupe, esto es normal, ignórelos."
