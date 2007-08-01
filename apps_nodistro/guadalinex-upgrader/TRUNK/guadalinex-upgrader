@@ -11,41 +11,38 @@ export DEBIAN_FRONTEND=noninteractive
 function fix_upgrade(){
 
    # Eliminamos entradas de evolution que ya no son válidas y arreglamos algunos problemas originados tras la actualización
-   rm /usr/share/applications/evolution*
-   rm /usr/share/applications/evolution*
-   
-   for h in `ls /home`;do
-      sed -i 's|Icon=/usr/share/pixmaps/firefox_logo.png|Icon=/usr/share/pixmaps/firefox-guadalinex.png|g' /home/$h/Desktop/firefox.desktop
-   done
-
-   if [ -e /var/tmp/ipodder.desktop ];then
-      mv /var/tmp/ipodder.desktop /usr/share/applications/
-   fi
-   
-   if [ -e /usr/share/icons/crystalsvg/64x64/apps/smb4k.png ];then
-      cp /usr/share/icons/crystalsvg/64x64/apps/smb4k.png /usr/share/pixmaps/
-   fi
+   for desk in `ls /usr/share/applications/evolution*`;do
+   	rm -f $desk
+   done   
+   test -e /var/tmp/ipodder.desktop && mv /var/tmp/ipodder.desktop /usr/share/applications/
+   test -e /usr/share/icons/crystalsvg/64x64/apps/smb4k.png && cp /usr/share/icons/crystalsvg/64x64/apps/smb4k.png /usr/share/pixmaps/
 
    # Restauramos el start-stop-daemon
    mv /sbin/start-stop-daemon.REAL /sbin/start-stop-daemon
 
    dpkg --configure -a
-#hack instala el metapaquete de drivers para las X
-   #apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install xserver-xorg-video-all >> /tmp/simulate.org 2>&1
    # Eliminamos el kernel 2.6.17-10-386 que tambien se instala y no debería y actualizamos grub
    apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove linux-image-2.6.17-10-386 >> /tmp/simulate.org 2>&1
    apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove linux-image-2.6.12-9-386 >> /tmp/simulate.org 2>&1
    update-grub
-  # fix default boot option
+   # fix default boot option
    DEFAULT=`grep title /boot/grub/menu.lst | nl | awk '/2.6.20-15-generic$/{print $1 - 1}'`
    sed -i s/default\ .$/default\ $DEFAULT/g /boot/grub/menu.lst
-   #removing netapplet from panel
-   for i in $(ls /home);do
-        NETAPP=/home/$i/.config/autostart/netapplet.desktop
-	test -f $NETAPP && rm -f $NETAPP
+   # Fix user preferences
+   for user in $(ls /home);do
+	grep $user /etc/passwd >>/dev/null
+	if [ $? -eq 0 ];then
+	    AUTOSTART=/home/$user/.config/autostart/netapplet.desktop
+	    SESSION=/home/$user/.gnome2/session-manual
+	    PANELS=/home/$user/.gconf/apps/panel
+            FIREFOX=/home/$user/Desktop/firefox.desktop
+	    su - $user -c "gconftool-2 --type list --list-type string --set /desktop/gnome/peripherals/keyboard/kbd/layouts [es]"
+		test -f $AUTOSTART  && rm -f $AUTOSTART
+		test -f $SESSION && rm -f $SESSION
+		test -f $PANELS && rm -rf $PANELS
+                test -f $FIREFOX && sed -i 's|Icon=/usr/share/pixmaps/firefox_logo.png|Icon=/usr/share/pixmaps/firefox-guadalinex.png|g' $FIREFOX
+	    fi
    done
-   #fix keyboard language config
-   setxkbmap -layout es
 }
 
 function prepare_system(){
