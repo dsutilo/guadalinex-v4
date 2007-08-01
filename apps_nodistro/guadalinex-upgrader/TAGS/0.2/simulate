@@ -1,0 +1,49 @@
+#!/bin/bash
+
+function fchroot(){
+DEBIAN_FRONTEND=noninteractive chroot /tmp/simulate $* 2>&1
+}
+
+
+# Comienza la simulacion
+
+
+fchroot "apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install dpkg"
+
+if [ ! -e /tmp/simulate/sbin/start-stop-daemon.REAL ];then
+   mv /tmp/simulate/sbin/start-stop-daemon /tmp/simulate/sbin/start-stop-daemon.REAL
+   cat > /tmp/simulate/sbin/start-stop-daemon <<EOF
+#!/bin/bash
+echo "Estas usando un fake de este script, el original es start-stop-daemon.REAL"
+exit 0
+EOF
+   chmod +x /tmp/simulate/sbin/start-stop-daemon
+   fi
+
+fchroot "apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf dist-upgrade"
+#fchroot "apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install xserver-xorg-video-all"
+fchroot "dpkg --configure -a"
+fchroot "apt-get -f install"
+#hack que instala el metapaquete de drivers para las X.
+# Comprobamos si todo ha salido bien
+if [ "$?" != "0" ];then
+   echo "1" > /tmp/guadalinex-upgrader.exit
+   zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --error --text "Lo sentimos, no es posible llevar a cabo la actualización, se ha encontrado el siguiente problema:
+$(tail /tmp/errors)"
+   touch /tmp/gout
+else
+   echo "0" > /tmp/guadalinex-upgrader.exit
+fi
+
+# Desmontamos
+awk "/\/tmp\/simulate/ {print \$2}" /proc/mounts | sort -r|xargs umount
+
+# Aprovechamos los .deb que se han descargado para la simulación
+mv /tmp/rw/var/cache/apt/archives/*.deb /var/cache/apt/archives/
+
+#Borramos los puntos de montaje
+rm -rf /tmp/simulate
+rm -rf /tmp/rw
+if [ ! -e /tmp/gout ];then
+   touch /tmp/gout
+fi
