@@ -1,3 +1,9 @@
+guadalinex-upgrader (0.2) feisty; urgency=low
+
+  * Solucionados algunos problemas derivados de la actualización.
+
+ -- Antonio González <agonzalez@emergya.es>  Wed,  1 Aug 2007 13:50:59 +0200
+
 guadalinex-upgrader (0.1) edgy; urgency=low
 
   * Primera version de guadalinex-upgrader

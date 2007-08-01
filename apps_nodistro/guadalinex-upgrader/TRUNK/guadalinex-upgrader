@@ -9,7 +9,7 @@ export DEBCONF_PRIORITY=critical
 export DEBIAN_FRONTEND=noninteractive
 
 function fix_upgrade(){
-
+   set -x
    # Eliminamos entradas de evolution que ya no son válidas y arreglamos algunos problemas originados tras la actualización
    for desk in `ls /usr/share/applications/evolution*`;do
    	rm -f $desk
@@ -23,7 +23,7 @@ function fix_upgrade(){
    dpkg --configure -a
    # Eliminamos el kernel 2.6.17-10-386 que tambien se instala y no debería y actualizamos grub
    apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove linux-image-2.6.17-10-386 >> /tmp/simulate.org 2>&1
-   apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove linux-image-2.6.12-9-386 >> /tmp/simulate.org 2>&1
+   #apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove linux-image-2.6.12-9-386 >> /tmp/simulate.org 2>&1
    update-grub
    # fix default boot option
    DEFAULT=`grep title /boot/grub/menu.lst | nl | awk '/2.6.20-15-generic$/{print $1 - 1}'`
@@ -31,6 +31,7 @@ function fix_upgrade(){
    # Fix user preferences
    for user in $(ls /home);do
 	grep $user /etc/passwd >>/dev/null
+	# Checks if user really exists
 	if [ $? -eq 0 ];then
 	    AUTOSTART=/home/$user/.config/autostart/netapplet.desktop
 	    SESSION=/home/$user/.gnome2/session-manual
@@ -174,7 +175,7 @@ No se preocupe por los errores de gnome-panel" --pulsate --auto-close
    # Arreglamos problemas derivados
    fix_upgrade|zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --progress --text "Ajustando configuraciones..." --pulsate  --auto-close 
 
-   zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --info --text "Se ha realizado la actualización y se va a reiniciar. Si tiene algún problema visite los foros de guadalinex.org"
+   zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --info --text "Se ha realizado la actualización y se va a reiniciar. Si tiene algún problema visite www.guadalinex.org/ayuda"
    
    # Reiniciamos
    reboot

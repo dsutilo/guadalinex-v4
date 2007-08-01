@@ -1,7 +1,6 @@
 #!/bin/bash
 
 function fchroot(){
-#hack
 DEBIAN_FRONTEND=noninteractive chroot /tmp/simulate $* 2>&1
 }
 
