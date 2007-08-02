@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Creamos directorio temporal para almacenar algunos ficheros que se deben mantener
-mkdir /var/tmp
+test -d /var/tmp || mkdir /var/tmp
 
 if [ -e "/usr/share/applications/ipodder.desktop" ];then
    mv /usr/share/applications/ipodder.desktop /var/tmp/
@@ -12,15 +12,22 @@ rm -rf /etc/gconf/gconf.xml.defaults/* /etc/gconf/schemas
 
 # Si existe un .gconf/apps/panel lo eliminamos pues entra en conficto con el nuevo panel de gv4,
 # el usuario pierde los applets que tuviera
-
-for h in `ls /home`;do
-    if [ -d /home/$h/.gconf/apps/panel ];then
-        rm -rf /home/$h/.gconf/apps/panel
-    fi
+for user in $(ls /home);do
+        grep $user /etc/passwd >>/dev/null
+        # Checks if user really exists
+        if [ $? -eq 0 ];then
+            AUTOSTART=/home/$user/.config/autostart/netapplet.desktop
+            SESSION=/home/$user/.gnome2/session-manual
+            PANELS=/home/$user/.gconf/apps/panel
+            test -f $AUTOSTART  && rm -f $AUTOSTART
+            test -f $SESSION && rm -f $SESSION
+            test -f $PANELS && rm -rf $PANELS
+        fi
 done
 
-apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install dpkg >> /tmp/simulate.log 2>&1 
-dpkg --configure -a >> /tmp/simulate.log 2>&1
+
+apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install dpkg | tee -a /tmp/simulate.log
+dpkg --configure -a | tee -a /tmp/simulate.log
 
 # Fake para que no levante servicios en la simulacion
 if [ ! -e /sbin/start-stop-daemon.REAL ];then
@@ -33,16 +40,16 @@ EOF
    chmod +x /sbin/start-stop-daemon
 fi
 
-apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove xscreensaver >> /tmp/simulate.log 2>&1
-apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf dist-upgrade >> /tmp/simulate.log 2>&1
-dpkg --configure -a >> /tmp/simulate.log 2>&1
+apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove xscreensaver | tee -a /tmp/simulate.log
+apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf dist-upgrade | tee -a /tmp/simulate.log
+dpkg --configure -a | tee -a /tmp/simulate.log
 
 # Eliminamos los metapaquetes de v3
-apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove guadalinex-v3* >> /tmp/simulate.log 2>&1
+apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove guadalinex-v3* | tee -a /tmp/simulate.log
 
 # Instalamos paquetes necesarios y los metapaquetes de v4
-apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install openoffice.org openoffice.org-evolution openoffice.org-gnome >> /tmp/simulate.log 2>&1
-apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install meta-guadalinex-v4 xserver-xorg-video-all >> /tmp/simulate.log 2>&1
-apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf -f install >> /tmp/simulate.log 2>&1
-dpkg --configure -a >> /tmp/simulate.log 2>&1
+apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install openoffice.org openoffice.org-evolution openoffice.org-gnome | tee -a /tmp/simulate.log
+apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install meta-guadalinex-v4 xserver-xorg-video-all | tee -a /tmp/simulate.log
+apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf -f install | tee -a /tmp/simulate.log
+dpkg --configure -a | tee -a /tmp/simulate.log
 touch /tmp/goutupgrade

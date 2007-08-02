@@ -12,7 +12,7 @@ function fix_upgrade(){
    set -x
    # Eliminamos entradas de evolution que ya no son válidas y arreglamos algunos problemas originados tras la actualización
    for desk in `ls /usr/share/applications/evolution*`;do
-   	rm -f $desk
+   	rm -rf $desk
    done   
    test -e /var/tmp/ipodder.desktop && mv /var/tmp/ipodder.desktop /usr/share/applications/
    test -e /usr/share/icons/crystalsvg/64x64/apps/smb4k.png && cp /usr/share/icons/crystalsvg/64x64/apps/smb4k.png /usr/share/pixmaps/
@@ -33,16 +33,10 @@ function fix_upgrade(){
 	grep $user /etc/passwd >>/dev/null
 	# Checks if user really exists
 	if [ $? -eq 0 ];then
-	    AUTOSTART=/home/$user/.config/autostart/netapplet.desktop
-	    SESSION=/home/$user/.gnome2/session-manual
-	    PANELS=/home/$user/.gconf/apps/panel
             FIREFOX=/home/$user/Desktop/firefox.desktop
 	    su - $user -c "gconftool-2 --type list --list-type string --set /desktop/gnome/peripherals/keyboard/kbd/layouts [es]"
-		test -f $AUTOSTART  && rm -f $AUTOSTART
-		test -f $SESSION && rm -f $SESSION
-		test -f $PANELS && rm -rf $PANELS
-                test -f $FIREFOX && sed -i 's|Icon=/usr/share/pixmaps/firefox_logo.png|Icon=/usr/share/pixmaps/firefox-guadalinex.png|g' $FIREFOX
-	    fi
+            test -f $FIREFOX && sed -i 's|Icon=/usr/share/pixmaps/firefox_logo.png|Icon=/usr/share/pixmaps/firefox-guadalinex.png|g' $FIREFOX
+	fi
    done
 }
 
@@ -135,7 +129,7 @@ if [ "$CONTINUE" = 1 ];then
 
    # Ajustes antes de actualizar
    prepare_system|zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --progress --text "Preparando el sistema para la actualización..." --pulsate --auto-close
-   if [ "$(cat /tmp/guadalinex-upgrader.exit)" == "1" ];then
+   if [ -f /tmp/guadalinex-upgrader.exit && "$(cat /tmp/guadalinex-upgrader.exit)" == "1" ];then
       exit 1
    fi
 
@@ -144,7 +138,8 @@ if [ "$CONTINUE" = 1 ];then
 Esta operación puede tardar entre 1 y 2 horas, dependiendo de su conexión a internet, por favor, sea paciente."
    # Añadida la opción de debugging
 # hack debugging
-   simulate >> /tmp/simulate.log 2>&1 &
+   xterm -T "Simulando la actualización..." -e 'simulate | tee -a /tmp/simulate.log' &
+   #simulate >> /tmp/simulate.log 2>&1 &
    (while true
       do
       echo .
@@ -153,7 +148,7 @@ Esta operación puede tardar entre 1 y 2 horas, dependiendo de su conexión a in
       done)|zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --progress --text "Comprobando si es posible la actualización...
 Este proceso puede tardar entre 1 y 2 horas." --pulsate --auto-close
 
-   if [ test -f /tmp/guadalinex-upgrader.exit && "$(cat /tmp/guadalinex-upgrader.exit)" == "1" ];then
+   if ["$(cat /tmp/guadalinex-upgrader.exit)" == "1" ];then
       exit 1
    fi
    ################################################ FIN SIMULACION
@@ -163,7 +158,7 @@ A continuación se va a actualizar. En algún momento pueden aparecer mensajes d
    
    # Empieza la actualización
   #hack debugging
-   upgradenow >> /tmp/simulate.log 2>&1 &
+   xterm -T "Actualizando a Guadalinex V4.1..." -e 'upgradenow | tee -a /tmp/simulate.log' &
    (while true
       do
       echo .
