@@ -1,3 +1,9 @@
+hermeshardware (0.3.14) feisty; urgency=low
+
+  * Added support for omnikey card reader 
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Mon, 13 Aug 2007 11:52:31 +0200
+
 hermeshardware (0.3.13) unstable; urgency=low
 
   * Fixed problem with USB printers.

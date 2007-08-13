@@ -379,7 +379,7 @@ def main():
     global DeviceActor
     from actors.deviceactor import DeviceActor
 
-    DeviceListener(iface)
+    DeviceListener(iface, with_cold = False)
     HermesTrayIcon()
     gtk.gdk.threads_init()
     try:
