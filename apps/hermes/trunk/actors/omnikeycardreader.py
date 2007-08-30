@@ -1,14 +1,14 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-#Módulo c3pocardreader- Módulo que implementa el "actor hardware" para los
-#lectores de tarjetas ltc31 de C3PO.
+#Módulo omnikeycardreader- Módulo que implementa el "actor hardware" para los
+#lectores de tarjetas Omnikey Cardman 3121
 #
 #Copyright (C) 2005 Junta de Andalucía
 #
 #Autor/es (Author/s):
 #
-#- Gumersindo Coronel Pérez <gcoronel@emergya.info>
+#- J. Félix Ontañón <fontanon@emergya.es>
 #
 #Este fichero es parte de Detección de Hardware de Guadalinex 2005 
 #

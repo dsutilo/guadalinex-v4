@@ -1,3 +1,9 @@
+hermeshardware (0.4) feisty; urgency=low
+
+  * Included all gv4 and ggv4 concrete actors
+
+ -- Gumersindo Coronel Pérez <gcoronel@emergya.es>  Thu, 30 Aug 2007 10:34:33 +0200
+
 hermeshardware (0.3.14) feisty; urgency=low
 
   * Added support for omnikey card reader 

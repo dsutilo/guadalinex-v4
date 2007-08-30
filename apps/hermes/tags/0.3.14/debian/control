@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 4.0.0), python-gnome2-dev, python-gtk2-dev, python-
 Standards-Version: 3.7.2
 
 Package: hermeshardware
-Architecture: any
+Architecture: all
 Depends: hal, dbus, python2.4-dbus, python, python2.4, notification-daemon, libsane, grepmap, python-syck, hermeshardware-descriptors, hermeshardware-actors, python-gnome2-extras, ${shlibs:Depends}, ${misc:Depends}
 Description: detección y soporte de dispositivos
  el sistema de detección de hardware engloba tanto las tareas de detección
@@ -15,14 +15,14 @@ Description: detección y soporte de dispositivos
 
 Package: hermeshardware-actors
 Depends: hermeshardware, ${shlibs:Depends}, ${misc:Depends}
-Architecture: any
+Architecture: all
 Description: hermeshardware actors set.
  el sistema de detección de hardware engloba tanto las tareas de detección
  y soporte de dispositivos, como aquellas que tienen que ver con la 
  configuración de los mismos y la interacción con el usuario.
 
 Package: hermeshardware-guada
-Architecture: any
+Architecture: all
 Depends: hermeshardware
 Conflicts: hermeshardware-kde
 Provides: hermeshardware-descriptors
