@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>DeVeDe, a video DVD creator</title>
+</head>
+<body bgcolor="#E8E8F0">
+<p><div style="text-align: center;"><h1>DeVeDe, a video DVD creator</h1></div></p>
+<p><div style="text-align: center;"><h1>FAQ</h1></div></p>
+<p>Current version: 3.01</p>
+
+<p><a href="devede.html">Back to instructions</a></p>
+
+<h3>Generic</h3>
+
+<ol>
+
+<li>
+<b>DeVeDe is very slow compared to Mencoder alone!</b>
+<p>By default, Mencoder uses <i>fast</i> options, but DeVeDe uses <i>high quality</i> options.
+If you want speed, just go to the tab <i>Quality options</i> (in the
+<i>Advanced options</i> section) and there disable <b>Trellis</b> and choose <b>Use MBCMP</b>. Now DeVeDe
+should be as fast as Mencoder with default options.</p>
+</li>
+
+<li><b>Why can't I use a VFAT/FAT32 partition to create my DVDs?</b>
+<p>VFAT and FAT32 file systems doesn't understand uppercase/lowercase letters, and shows everything in
+lowercase. Unfortunately, the creation of a DVD tree is case sensitive.</p>
+</li>
+
+<li>
+<b>DeVeDe does not start in windows</b>
+<p>First you need python 2.5. Then you have to make sure you have gtk for windows installed. It is more easy
+to get the Gtk+/Win32 Development Environment (runtime, devel, docs, glade) version. Then you need pygtk.
+Now you need to install python 2.5 extension pywin32. Any of the needed programs such as mplayer that are
+not already installed should now be automatically installed next time you run mplayer. Or you can wait for
+a win32 installer to be made (any voluteers in the room?).</p>
+</li>
+
+<li>
+<b>I can't add more than 12 titles</b>
+<p>That's the current limit for DeVeDe, to allow to use one single menu. With more titles there should
+be need more than one page for the menus. But if people really, really need it, I'll implement it.</p>
+</li>
+
+</ol>
+
+<h3>Subtitles</h3>
+
+<ol>
+
+<li><b>I preview a video with subtitles and the text looks bad (text colors are inverted)</b>
+<p>Don't worry, it's a bug of MPlayer when showing DVD subtitles from a file instead of a true DVD.
+In the final disk they will look fine.</p>
+</li>
+
+<li><b>I preview a video with subtitles, but it doesn't show the subtitles...</b>
+<p>Some Mplayer/Mencoder versions seems to fail to show the subtitles when you watch an MPEG file from
+hard disk, but they are there. SVN versions seems to have this fixed.</p></li>
+
+<li><b>I dislike the font used to render the subtitles. How can I change it?</b>
+<p>Just choose a TrueType font you like and copy it in $HOME/.spumux directory, renaming it to
+<b>devedesans.ttf</b>.</p>
+</li>
+
+<li><b>I tried to create a DivX file with subtitles, but in the tab it says it's not possible. How can
+I add subtitles to a DivX?</b>
+<p>DivX format doesn't allow embedded subtitles, but nearly all software players (MPlayer, VLC...) and a
+lot of hardware players can render them on-demand if you put the file with the subtitles in the same
+directory than the movie, and rename the former with the same name than the later (this is, if your movie
+file is MYMOVIE.AVI and your subtitles are in .SRT format, just put the subtitles file in the same directory
+and rename it to MYMOVIE.SRT). The player should allow you to enable/disable them with the
+same button used for DVD subtitles.</p>
+</li>
+
+</ol>
+
+<h3>Menus</h3>
+
+<ol>
+
+<li><b>I created a DVD with two titles, but when I insert it in my player there's no menu, so I can watch
+only the first one. How can I watch the second?</b>
+<p>Be sure that you have checked the option <b>Add a menu with the titles</b>.</p>
+</li>
+
+<li><b>How can I add a menu to a VCD/SVCD/CVD?</b>
+<p>Currently you can't with DeVeDe.</p>
+</li>
+
+<li><b>The menus created by DeVeDe are simplistic. Will you add a menu editor to allow to create more
+complex menues?</b>
+<p>Probably not. My intention is to maintain DeVeDe as an easy-to-use tool. If you want to create complex
+menues you have excellent tools like <a href="http://dvdstyler.sourceforge.net/">DVD Styler</a>,
+<a href="http://qdvdauthor.sourceforge.net/">Q DVD Author</a> or
+<a href="http://polidori.sourceforge.net/">PoliDori</a>.</p>
+</li>
+
+</ol>
+
+<h3>Bugs</h3>
+
+<ol>
+
+<li><b>I tried to create a disk but the sound is pure noise.</b>
+<p>Version 1.0-rc1 of MPlayer/Mencoder (the one released, at least at April 20, 2007 with Ubuntu Feisty
+and other Linux distributions) is buggy and doesn't work fine. While they don't launch a fixed release,
+just download the file <b>mplayer_fixed</b> from DeVeDe's homepage and follow the instructions there. Or,
+if you are brave and experimented, you can compile MPlayer/Mencoder from SVN.
+</li>
+
+<li><b>DeVeDe fails to create watchable videos, or makes a 0-byte ISO file</b>
+<p>Be sure that you are using the last version of MPlayer/Mencoder (at least 1.0Pre8, but later is better).
+The very common version 1.0Pre7 has some bugs that can lead to problems with DeVeDe. But warning with
+version 1.0-rc1.</p>
+</li>
+
+<li><b>I receive an error when I try to create a DIVX/MPEG4 file</b>
+<p>Be sure that your MPlayer/Mencoder version is compiled with MP3lame support. The creation of DIVX files
+needs it.</p></li>
+
+<li><b>DeVeDe still fails. How can I report a bug?</b>
+<p>Open a terminal and launch DeVeDe with this command:</p>
+<p><div style="text-align: center;">devede &gt; output.txt &nbsp; 2&gt;&amp;1</div></p>
+<p>When it fails (or when it fully ends), take the files OUTPUT.TXT and XXXXXX.XML (you will find the later
+in the destination directory), and send both to <b>raster@rastersoft.com</b>.</p>
+</li>
+
+</ol>
+
+<p><a href="devede.html">Back to instructions</a></p>
+
+</body>
+</html>

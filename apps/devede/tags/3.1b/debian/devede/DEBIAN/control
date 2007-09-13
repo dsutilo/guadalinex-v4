@@ -1,0 +1,14 @@
+Package: devede
+Version: 3.1b-1
+Section: x11
+Priority: optional
+Architecture: all
+Depends: python, mencoder, dvdauthor, mplayer, mkisofs
+Installed-Size: 2480
+Maintainer: Junta de Andalucía <packmaster@guadalinex.org>
+Description: Video DVD creator
+ This program allows you to create a video DVD from an MPEG, AVI, MOV
+ video file, suitable for home DVD players. DeVeDe uses Mplayer,
+ Mencoder and DVDAuthor, so you can use any video playable with Mplayer.
+ .
+ Homepage: http://www.rastersoft.com

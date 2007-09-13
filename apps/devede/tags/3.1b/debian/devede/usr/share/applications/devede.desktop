@@ -1,0 +1,13 @@
+[Desktop Entry]
+X-MultipleArgs=false
+Type=Application
+Version=2.12
+Encoding=UTF-8
+Name=DeVeDe
+Name[es]=Creador de CD/DVD DeVeDe
+Comment=Allows to create video CDs and DVDs, suitable to be reproduced in home DVD players
+Comment[es]=Permite crear CD's y DVD's de vídeo reproducibles en lectores de DVD domésticos
+TryExec=devede
+Exec=devede
+Categories=Application;AudioVideo;Audio;
+Icon=devede

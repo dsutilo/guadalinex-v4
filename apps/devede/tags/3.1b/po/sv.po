@@ -1,0 +1,915 @@
+# Swedish translation for DeVeDe.
+# Copyright (C) 2006, 2007 Free Software Foundation, Inc.
+# This file is distributed under the same license as the devede package.
+# Daniel Nylander <po@danielnylander.se>, 2006, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: devede\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-09-08 11:26+0200\n"
+"PO-Revision-Date: 2007-08-31 00:55+0200\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../devede.glade.h:1
+msgid " Media size: "
+msgstr " Mediastorlek: "
+
+#: ../devede.glade.h:3
+#, no-c-format
+msgid "0.0%"
+msgstr "0.0%"
+
+#: ../devede.glade.h:4
+msgid "352x240"
+msgstr "352x240"
+
+#: ../devede.glade.h:5
+msgid "352x480"
+msgstr "352x480"
+
+#: ../devede.glade.h:6
+msgid "480x480"
+msgstr "480x480"
+
+#: ../devede.glade.h:7
+msgid "704x480"
+msgstr "704x480"
+
+#: ../devede.glade.h:8
+msgid "720x480"
+msgstr "720x480"
+
+#: ../devede.glade.h:9
+msgid "<b>Action to perform when this title ends</b>"
+msgstr "<b>Åtgärd att genomföra när den här titeln slutar</b>"
+
+#: ../devede.glade.h:10
+msgid "<b>Action</b>"
+msgstr "<b>Åtgärd</b>"
+
+#: ../devede.glade.h:11
+msgid "<b>Audio rate (Kbits/sec)</b>"
+msgstr "<b>Ljudhastighet (kbit/s)</b>"
+
+#: ../devede.glade.h:12
+msgid "<b>Audio</b>"
+msgstr "<b>Ljud</b>"
+
+#: ../devede.glade.h:13
+msgid "<b>Deinterlacing</b>"
+msgstr "<b>Avflätning</b>"
+
+#: ../devede.glade.h:14
+msgid "<b>Disk usage</b>"
+msgstr "<b>Skivanvändning</b>"
+
+#: ../devede.glade.h:15
+msgid "<b>Division in chapters</b>"
+msgstr "<b>Indelning i kapitel</b>"
+
+#: ../devede.glade.h:16
+msgid "<b>Extra parameters for Mencoder</b>"
+msgstr "<b>Extra parametrar för Mencoder</b>"
+
+#: ../devede.glade.h:17
+msgid "<b>File info</b>"
+msgstr "<b>Filinformation</b>"
+
+#: ../devede.glade.h:18
+msgid "<b>File split</b>"
+msgstr "<b>Filuppdelning</b>"
+
+#: ../devede.glade.h:19
+msgid "<b>File with subtitles</b>"
+msgstr "<b>Fil med undertexter</b>"
+
+#: ../devede.glade.h:20
+msgid "<b>File</b>"
+msgstr "<b>Fil</b>"
+
+#: ../devede.glade.h:21
+msgid "<b>Files</b>"
+msgstr "<b>Filer</b>"
+
+#: ../devede.glade.h:22
+msgid "<b>Final size</b>"
+msgstr "<b>Slutgiltig storlek</b>"
+
+#: ../devede.glade.h:23
+msgid "<b>MacroBlock decision algorithm</b>"
+msgstr "<b>MacroBlock Decision-algoritm</b>"
+
+#: ../devede.glade.h:24
+msgid "<b>Menu background (only PNG)</b>"
+msgstr "<b>Menybakgrund (endast PNG)</b>"
+
+#: ../devede.glade.h:25
+msgid "<b>Menu font</b>"
+msgstr "<b>Menytypsnitt</b>"
+
+#: ../devede.glade.h:26
+msgid "<b>Menu format</b>"
+msgstr "<b>Menyformat</b>"
+
+#: ../devede.glade.h:27
+msgid "<b>Options</b>"
+msgstr "<b>Alternativ</b>"
+
+#: ../devede.glade.h:28
+msgid ""
+"<b>Preview video</b>\n"
+"\n"
+"DeVeDe will create a preview with the selected parameters, so you will be "
+"able to check video quality, audio sync and so on.\n"
+"\n"
+"Choose how many seconds of film you want to convert to create the preview, "
+"and the directory where you want to store the temporary file (default is /"
+"var/tmp)."
+msgstr ""
+"<b>Förhandsvisa video</b>\n"
+"\n"
+"DeVeDe kommer att skapa en förhandsvisning med de valda parametrarna, så att "
+"du kan kontrollera videokvaliteten, ljudsynkronisering och så vidare.\n"
+"\n"
+"Välj hur många sekunders film du vill konvertera för att skapa "
+"förhandsvisningen, och den katalog där du vill lagra den temporära filen "
+"(standard är /var/tmp)."
+
+#: ../devede.glade.h:33
+msgid "<b>Scaling mode</b>"
+msgstr "<b>Skalningsläge</b>"
+
+#: ../devede.glade.h:34
+msgid "<b>Special</b>"
+msgstr "<b>Special</b>"
+
+#: ../devede.glade.h:35
+msgid "<b>Title's name</b>"
+msgstr "<b>Titelns namn</b>"
+
+#: ../devede.glade.h:36
+msgid "<b>Titles</b>"
+msgstr "<b>Titlar</b>"
+
+#: ../devede.glade.h:37
+msgid "<b>Trellis searched quantization</b>"
+msgstr "<b>Trellis searched quantization</b>"
+
+#: ../devede.glade.h:38
+msgid "<b>Video rate (Kbits/sec)</b>"
+msgstr "<b>Videohastighet (kbit/s)</b>"
+
+#: ../devede.glade.h:39
+msgid "<b>Video</b>"
+msgstr "<b>Video</b>"
+
+#: ../devede.glade.h:40
+msgid ""
+"A CD with video in MPEG-1 format, with quality equivalent to VHS. Stores up "
+"to 80 minutes in a 80-minutes CD-R. Playable in all DVD players."
+msgstr ""
+"En CD med video i formatet MPEG-1, med en kvalitet jämförbar med VHS. Lagrar "
+"upp till 80 minuter på en 80-minuters CD-R. Spelbar i alla DVD-spelare."
+
+#: ../devede.glade.h:41
+msgid ""
+"A CD with video in MPEG-2 format and a resolution of 352x480 (or 352x576 in "
+"PAL). Playable in most of DVD players."
+msgstr ""
+"En CD med video i formatet MPEG-2 och en upplösning på 352x480 (eller "
+"352x576 i PAL). Spelbar i de flesta DVD-spelare."
+
+#: ../devede.glade.h:42
+msgid ""
+"A CD with video in MPEG-2 format and a resolution of 480x480 pixels (480x576 "
+"in PAL). Playable in nearly all DVD players."
+msgstr ""
+"En CD med video i formatet MPEG-2 och en upplösning på 480x480 bildpunkter "
+"(480x576 i PAL). Spelbar i nästan alla DVD-spelare."
+
+#: ../devede.glade.h:43
+msgid "A classic Video DVD, playable in all DVD players."
+msgstr "En klassisk Video DVD, spelbar i alla DVD-spelare."
+
+#: ../devede.glade.h:44
+msgid "Abort the current DVD and exit?"
+msgstr "Avbryt aktuell DVD och avsluta?"
+
+#: ../devede.glade.h:45
+msgid "Aborted. There can be temporary files at the destination directory."
+msgstr "Avbruten. Det kan finnas temporärfiler i målkatalogen."
+
+#: ../devede.glade.h:46
+msgid "Add a menu with the titles"
+msgstr "Lägg till en meny med titlarna"
+
+#: ../devede.glade.h:47
+msgid "Add black bars"
+msgstr "Lägg till sorgkanter"
+
+#: ../devede.glade.h:48
+msgid "Advanced options"
+msgstr "Avancerade inställningar"
+
+#: ../devede.glade.h:49
+msgid "Audio delay (in seconds):"
+msgstr "Ljudfördröjning (i sekunder):"
+
+#: ../devede.glade.h:50
+msgid "Audio options"
+msgstr "Ljudinställningar"
+
+#: ../devede.glade.h:51
+msgid "Audio rate (Kbits/sec): "
+msgstr "Ljudhastighet (kbit/s): "
+
+#: ../devede.glade.h:52
+msgid "Can't find the following programs:"
+msgstr "Kan inte hitta följande program:"
+
+#: ../devede.glade.h:53
+msgid "Cancel job?"
+msgstr "Avbryt jobbet?"
+
+#: ../devede.glade.h:54
+msgid "Choose a file"
+msgstr "Välj en fil"
+
+#: ../devede.glade.h:55
+msgid "Choose a file with a movie"
+msgstr "Välj en fil med en film"
+
+#: ../devede.glade.h:56
+msgid "Choose the disk to create"
+msgstr "Välj skiva att skapa"
+
+#: ../devede.glade.h:57
+msgid ""
+"Choose the folder where DeVeDe will create the DVD image and a name for it. "
+"Don't use a folder in a VFAT/FAT32 drive."
+msgstr ""
+"Välj mappen där DeVeDe ska skapa dvd-avbilden och ett namn för den. Använd "
+"inte en mapp på en VFAT/FAT32-enhet."
+
+#: ../devede.glade.h:58
+msgid "Clear"
+msgstr "Töm"
+
+#: ../devede.glade.h:59
+msgid "Create an ISO or BIN/CUE image, ready to burn to a disk"
+msgstr "Skapa en ISO eller BIN/CUE-avbild, klar att bränna till en skiva"
+
+#: ../devede.glade.h:60
+msgid "Create disk structure"
+msgstr "Skapa skivstruktur"
+
+#: ../devede.glade.h:61
+msgid "Creating..."
+msgstr "Skapar..."
+
+#: ../devede.glade.h:62
+msgid "DeVeDe"
+msgstr "DeVeDe"
+
+#: ../devede.glade.h:63
+msgid ""
+"DeVeDe needs them in order to work. If you want to use DeVeDe, you must "
+"install all of them."
+msgstr ""
+"DeVeDe behöver dem för att fungera. Om du vill använda DeVeDe måste du "
+"installera dem alla."
+
+#: ../devede.glade.h:64
+msgid "Default"
+msgstr "Standard"
+
+#: ../devede.glade.h:65
+msgid "Delete chapter"
+msgstr "Ta bort kapitel"
+
+#: ../devede.glade.h:66
+msgid "Delete current disc structure?"
+msgstr "Ta bort den aktuella skivstrukturen?"
+
+#: ../devede.glade.h:67
+msgid "Delete the current disc structure and start again?"
+msgstr "Ta bort den aktuella skivstrukturen och börja om?"
+
+#: ../devede.glade.h:68
+msgid "Delete title"
+msgstr "Ta bort titel"
+
+#: ../devede.glade.h:69
+msgid "DivX format doesn't support subtitles. Please, read the FAQ."
+msgstr ""
+"DivX-formatet saknar stöd för undertexter. Läs mer i Frågor och svar (FAQ)."
+
+#: ../devede.glade.h:70
+msgid "Don't deinterlace"
+msgstr "Avfläta inte"
+
+#: ../devede.glade.h:71
+msgid "Encoding: "
+msgstr "Kodning: "
+
+#: ../devede.glade.h:72
+msgid "Erase temporary files"
+msgstr "Radera temporärfiler"
+
+#: ../devede.glade.h:73
+msgid "Error"
+msgstr "Fel"
+
+#: ../devede.glade.h:74
+msgid "Estimated final length (MBytes): "
+msgstr "Uppskattad slutlig längd (MByte): "
+
+#: ../devede.glade.h:75
+msgid "Estimated length (MBytes): "
+msgstr "Uppskattad längd (MByte): "
+
+#: ../devede.glade.h:76
+msgid "Exit DeVeDe"
+msgstr "Avsluta DeVeDe"
+
+#: ../devede.glade.h:77
+msgid "FFMpeg deinterlacing filter"
+msgstr "FFMpeg-avflätningsfilter"
+
+#: ../devede.glade.h:78
+msgid "File properties"
+msgstr "Filegenskaper"
+
+#: ../devede.glade.h:79
+msgid "Final size (pixels):"
+msgstr "Slutgiltig storlek (bildpunkter):"
+
+#: ../devede.glade.h:80
+msgid "Folder for temporary file"
+msgstr "Mapp för temporärfil"
+
+#: ../devede.glade.h:81
+msgid "Frames per second: "
+msgstr "Bildrutor per sekund: "
+
+#: ../devede.glade.h:82
+msgid ""
+"If you load a disc structure you will loose your current structure (unless "
+"you saved it). Continue?"
+msgstr ""
+"Om du läser in en skivstruktur kommer du att förlora din aktuella struktur "
+"(såvida du inte sparar den först). Fortsätt?"
+
+#: ../devede.glade.h:83
+msgid "Job done!"
+msgstr "Jobbet är klart!"
+
+#: ../devede.glade.h:84
+msgid "Length (seconds): "
+msgstr "Längd (sekunder): "
+
+#: ../devede.glade.h:85
+msgid "Linear blend"
+msgstr "Linjär blandning"
+
+#: ../devede.glade.h:86
+msgid "Load a disc structure"
+msgstr "Läs in en skivstruktur"
+
+#: ../devede.glade.h:87
+msgid "Median deinterlacing filter"
+msgstr "Median-avflätningsfilter"
+
+#: ../devede.glade.h:88
+msgid "Menu options"
+msgstr "Menyalternativ"
+
+#: ../devede.glade.h:89
+msgid "Menu preview"
+msgstr "Förhandsvisning av meny"
+
+#: ../devede.glade.h:90
+msgid "Misc"
+msgstr "Diverse"
+
+#: ../devede.glade.h:91
+msgid "NTSC"
+msgstr "NTSC"
+
+#: ../devede.glade.h:92
+msgid "Only convert film files to compliant MPEG files"
+msgstr "Konvertera endast filmfiler till standardiserade MPEG-filer"
+
+#: ../devede.glade.h:93
+msgid "Original audio rate (Kbits/sec):"
+msgstr "Ursprunglig ljudhastighet (kbit/s):"
+
+#: ../devede.glade.h:94
+msgid "Original length (seconds): "
+msgstr "Ursprunglig längd (sekunder): "
+
+#: ../devede.glade.h:95
+msgid "Original size (pixels): "
+msgstr "Ursprunglig storlek (bildpunkter): "
+
+#: ../devede.glade.h:96
+msgid "Original video rate (Kbits/sec):"
+msgstr "Ursprunglig videohastighet (kbit/s):"
+
+#: ../devede.glade.h:97
+msgid "Output aspect ratio:"
+msgstr "Bildförhållande på utdata:"
+
+#: ../devede.glade.h:98
+msgid "Output video format:"
+msgstr "Videoformat på utdata:"
+
+#: ../devede.glade.h:99
+msgid "PAL/SECAM"
+msgstr "PAL/SECAM"
+
+#: ../devede.glade.h:100
+msgid "Play the first title"
+msgstr "Spela upp första titeln"
+
+#: ../devede.glade.h:101
+msgid "Play the last title"
+msgstr "Spela upp sista titeln"
+
+#: ../devede.glade.h:102
+msgid "Play the next title"
+msgstr "Spela upp nästa titel"
+
+#: ../devede.glade.h:103
+msgid "Play the previous title"
+msgstr "Spela upp föregående titel"
+
+#: ../devede.glade.h:104
+msgid "Play this title again (loop)"
+msgstr "Spela upp den här titeln igen (upprepa)"
+
+#: ../devede.glade.h:105
+msgid "Preview"
+msgstr "Förhandsvisa"
+
+#: ../devede.glade.h:106
+msgid "Preview menu"
+msgstr "Förhandsvisa meny"
+
+#: ../devede.glade.h:107
+msgid "Proceed?"
+msgstr "Fortsätt?"
+
+#: ../devede.glade.h:108
+msgid "Put subtitles upper"
+msgstr "Lägg undertexter i överkant"
+
+#: ../devede.glade.h:109
+msgid "Quality options"
+msgstr "Kvalitetsinställningar"
+
+#: ../devede.glade.h:110
+msgid "Replay the preview again?"
+msgstr "Spela upp förhandsvisningen igen?"
+
+#: ../devede.glade.h:111
+msgid "Save current disc structure"
+msgstr "Spara den aktuella skivstrukturen"
+
+#: ../devede.glade.h:112
+msgid "Scale picture"
+msgstr "Skala bild"
+
+#: ../devede.glade.h:113
+msgid "Select MBD mode which needs the fewest bits"
+msgstr "Välj MBD-läget som behöver minst antal bitar"
+
+#: ../devede.glade.h:114
+msgid "Select a picture to be used as background for disc's menu"
+msgstr "Välj en bild att använda som bakgrund för skivans meny"
+
+#: ../devede.glade.h:115
+msgid "Select the MBD mode which has the best rate distortion (better quality)"
+msgstr "Välj MBD-läget som har bästa distortionshastigheten (bättre kvalitet)"
+
+#: ../devede.glade.h:116
+msgid "Select the kind of disk you want to create with DeVeDe"
+msgstr "Välj den sorts skiva du vill skapa med DeVeDe"
+
+#: ../devede.glade.h:117
+msgid "Set default background"
+msgstr "Ställ in standardbakgrund"
+
+#: ../devede.glade.h:118
+msgid "Size (in minutes) for each chapter: "
+msgstr "Storlek (i minuter) för varje kapitel: "
+
+#: ../devede.glade.h:119
+msgid "Size of chapters:"
+msgstr "Storlek på kapitel:"
+
+#: ../devede.glade.h:120
+msgid "Split the file in chapters (for easy seeking)"
+msgstr "Dela upp filen i kapitel (för enklare sökning)"
+
+#: ../devede.glade.h:121
+msgid "Stop reproduction/show disc menu"
+msgstr "Stoppa reproduktion/visa skivmeny"
+
+#: ../devede.glade.h:122
+msgid "Store full length"
+msgstr "Lagra fullständig längd"
+
+#: ../devede.glade.h:123
+msgid "Store the first half"
+msgstr "Lagra första hälften"
+
+#: ../devede.glade.h:124
+msgid "Store the second half"
+msgstr "Lagra andra hälften"
+
+#: ../devede.glade.h:125
+msgid "Subtitles"
+msgstr "Undertexter"
+
+#: ../devede.glade.h:126
+msgid "Super VideoCD"
+msgstr "Super VideoCD"
+
+#: ../devede.glade.h:127
+msgid "There was an error while importing the file:"
+msgstr "Det inträffade ett fel vid importering av filen:"
+
+#: ../devede.glade.h:128
+msgid "This file is already a DVD/xCD-suitable MPEG-PS file"
+msgstr "Den här filen är redan en DVD/xCD-lämplig MPEG-PS-fil"
+
+#: ../devede.glade.h:129
+msgid "Title properties"
+msgstr "Titelegenskaper"
+
+#: ../devede.glade.h:130
+msgid "Use 16:9 aspect ratio for output"
+msgstr "Använd bildförhållandet 16:9 på utdata"
+
+#: ../devede.glade.h:131
+msgid "Use MBCMP (faster)"
+msgstr "Använd MBCMP (snabbare)"
+
+#: ../devede.glade.h:132
+msgid "Use Trellis Searched Quantization (better quality, slower conversion)"
+msgstr ""
+"Använd Trellis Searched Quantization (bättre kvalitet, långsammare "
+"konvertering)"
+
+#: ../devede.glade.h:133
+msgid "Video DVD"
+msgstr "Video DVD"
+
+#: ../devede.glade.h:134
+msgid "Video options"
+msgstr "Videoinställningar"
+
+#: ../devede.glade.h:135
+msgid "Video rate (Kbits/sec): "
+msgstr "Videohastighet (kbit/s): "
+
+#: ../devede.glade.h:136
+msgid "Warning"
+msgstr "Varning"
+
+#: ../devede.glade.h:137
+msgid "Warning: you already have a disc structure"
+msgstr "Varning: du har redan en skivstruktur"
+
+#: ../devede.glade.h:138
+msgid ""
+"You chose to delete this chapter and\n"
+"reorder the other ones:"
+msgstr ""
+"Du valde att ta bort det här kapitlet\n"
+"och numrera om de andra:"
+
+#: ../devede.glade.h:140
+msgid ""
+"You chose to delete this title and\n"
+"reorder the other ones:"
+msgstr ""
+"Du har valt att ta bort den här titeln\n"
+"och numrera om de andra:"
+
+#: ../devede.glade.h:142
+msgid ""
+"Your DVD structure contains empty titles.\n"
+"Continue anyway?"
+msgstr ""
+"Din DVD-struktur innehåller tomma titlar.\n"
+"Fortsätt ändå?"
+
+#: ../devede.glade.h:144
+msgid "_File"
+msgstr "_Arkiv"
+
+#: ../devede.glade.h:145
+msgid "_Help"
+msgstr "_Hjälp"
+
+#: ../devede.glade.h:146
+msgid "gtk-about"
+msgstr "gtk-about"
+
+#: ../devede.glade.h:147
+msgid "gtk-cancel"
+msgstr "gtk-cancel"
+
+#: ../devede.glade.h:148
+msgid "gtk-go-back"
+msgstr "gtk-go-back"
+
+#: ../devede.glade.h:149
+msgid "gtk-go-forward"
+msgstr "gtk-go-forward"
+
+#: ../devede.glade.h:150
+msgid "gtk-new"
+msgstr "gtk-new"
+
+#: ../devede.glade.h:151
+msgid "gtk-no"
+msgstr "gtk-no"
+
+#: ../devede.glade.h:152
+msgid "gtk-ok"
+msgstr "gtk-ok"
+
+#: ../devede.glade.h:153
+msgid "gtk-open"
+msgstr "gtk-open"
+
+#: ../devede.glade.h:154
+msgid "gtk-quit"
+msgstr "gtk-quit"
+
+#: ../devede.glade.h:155
+msgid "gtk-save"
+msgstr "gtk-save"
+
+#: ../devede.glade.h:156
+msgid "gtk-save-as"
+msgstr "gtk-save-as"
+
+#: ../devede.glade.h:157
+msgid "gtk-yes"
+msgstr "gtk-yes"
+
+#: ../devede_bincue.py:39
+msgid "Creating BIN/CUE files"
+msgstr "Skapar BIN/CUE-filer"
+
+#: ../devede_bincue.py:56
+msgid ""
+"Failed to create the BIN/CUE files\n"
+"Maybe you ran out of disk space"
+msgstr ""
+"Misslyckades med att skapa BIN/CUE-filer\n"
+"Kanske har du slut på diskutrymme"
+
+#: ../devede_bincue.py:77
+msgid "Creating ISO file"
+msgstr "Skapar ISO-fil"
+
+#: ../devede_bincue.py:89
+msgid ""
+"Failed to create the ISO image\n"
+"Maybe you ran out of disk space"
+msgstr ""
+"Misslyckades med att skapa ISO-avbilden\n"
+"Kanske har du slut på diskutrymme"
+
+#: ../devede_convert.py:172
+#, python-format
+msgid ""
+"Insuficient free space. To create this disk\n"
+"%(total)d MBytes are needed, but only %(free)d MBytes are available."
+msgstr ""
+"Otillräckligt med ledigt utrymme. För att skapa den här skivan\n"
+"behövs %(total)d MByte, men endast %(free)d MByte finns."
+
+#: ../devede_convert.py:208 ../devede_subtitles.py:106
+#: ../devede_xml_menu.py:39 ../devede_xml_menu.py:43
+msgid ""
+"Failed to write to the destination directory.\n"
+"Check that you have privileges and free space there."
+msgstr ""
+"Misslyckades med att skriva till målkatalogen.\n"
+"Kontrollera att du har behörighet och ledigt utrymme."
+
+#: ../devede_dvd.py:36
+msgid "Creating DVD tree structure"
+msgstr "Skapar dvd-trädstruktur"
+
+#: ../devede_dvd.py:42
+msgid ""
+"Failed to create the DVD tree\n"
+"Maybe you ran out of disk space"
+msgstr ""
+"Misslyckades med att skapa DVD-trädet\n"
+"Kanske har du slut på diskutrymme"
+
+#: ../devede.py:174
+msgid "Please, add only one file each time."
+msgstr "Lägg endast till en fil åt gången."
+
+#: ../devede.py:207
+msgid ""
+"Some files weren't video files.\n"
+"None added."
+msgstr ""
+"Några av filerna var inte videofiler.\n"
+"Inga lades till."
+
+#: ../devede.py:825
+msgid "File doesn't seem to be a video file."
+msgstr "Filen verkar inte vara en videofil."
+
+#: ../devede.py:827
+msgid "File seems to be an audio file."
+msgstr "Filen verkar vara en ljudfil."
+
+#: ../devede.py:999
+msgid "no chapters"
+msgstr "inga kapitel"
+
+#: ../devede.py:1235 ../devede.py:2038
+msgid "Title"
+msgstr "Titel"
+
+#: ../devede.py:1631 ../devede_xml_menu.py:45
+msgid ""
+"Can't find the menu background.\n"
+"Check the menu options."
+msgstr ""
+"Kan inte hitta menybakgrunden.\n"
+"Kontrollera menyalternativen."
+
+#: ../devede.py:1644
+msgid "Unsaved disc structure"
+msgstr "Osparad skivstruktur"
+
+#: ../devede.py:1659
+msgid "No filename"
+msgstr "Inget filnamn"
+
+#: ../devede.py:1689
+msgid "Can't save the file."
+msgstr "Kan inte spara filen."
+
+#: ../devede.py:1720
+msgid "Can't open the file."
+msgstr "Kan inte öppna filen."
+
+#: ../devede.py:1731 ../devede.py:1741
+msgid "That file doesn't contain a disc structure."
+msgstr "Den filen innehåller inte en skivstruktur."
+
+#: ../devede.py:1755
+msgid "That file doesn't contain a DeVeDe structure."
+msgstr "Den filen innehåller inte en DeVeDe-struktur."
+
+#: ../devede.py:1773
+msgid ""
+"Can't find the following movie files. Please, add them and try to load the "
+"disc structure again.\n"
+msgstr ""
+"Kan inte hitta följande filmfiler. Lägg till dem och prova att läsa in "
+"skivstrukturen igen.\n"
+
+#: ../devede.py:1788
+msgid ""
+"Can't find the menu background. I'll open the disc structure anyway with the "
+"default menu background, so don't forget to fix it before creating the disc."
+msgstr ""
+"Kan inte hitta menybakgrunden. Jag kommer att öppna skivstrukturen ändå med "
+"standardmenybakgrunden så glöm inte att rätta till den innan du skapar "
+"skivan."
+
+#: ../devede.py:2350
+msgid "Video files"
+msgstr "Videofiler"
+
+#: ../devede.py:2353
+msgid "All files"
+msgstr "Alla filer"
+
+#: ../devede_subtitles.py:49
+msgid "Adding subtitles to"
+msgstr "Lägger till undertexter till"
+
+#: ../devede_subtitles.py:121
+msgid ""
+"Conversion failed.\n"
+"It seems a bug of SPUMUX."
+msgstr ""
+"Konvertering misslyckades.\n"
+"Det verkar finnas ett fel i SPUMUX."
+
+#: ../devede_video_convert.py:66
+msgid ""
+"File copy failed\n"
+"Maybe you ran out of disk space?"
+msgstr ""
+"Filkopieringen misslyckades\n"
+"Du har kanske slut på diskutrymme?"
+
+#: ../devede_video_convert.py:68
+msgid "Copying the file"
+msgstr "Kopierar filen"
+
+#: ../devede_video_convert.py:70 ../devede_video_convert.py:94
+msgid "Creating preview"
+msgstr "Skapar förhandsvisning"
+
+#: ../devede_video_convert.py:91
+msgid "Converting files from title"
+msgstr "Konverterar filer från titeln"
+
+#: ../devede_video_convert.py:317
+msgid ""
+"Conversion failed.\n"
+"It seems a bug of Mencoder."
+msgstr ""
+"Konvertering misslyckades.\n"
+"Det verkar finnas ett fel i Mencoder."
+
+#: ../devede_video_convert.py:349
+msgid ""
+"Conversion failed\n"
+"Maybe you ran out of disk space?"
+msgstr ""
+"Konvertering misslyckades\n"
+"Kanske har du slut på diskutrymme?"
+
+#: ../devede_xml_menu.py:47
+msgid "Menu generation failed."
+msgstr "Menygenerering misslyckades."
+
+#: ../devede_xml_menu.py:49
+msgid ""
+"Can't add the buttons to the menus.\n"
+"It seems a bug of SPUMUX."
+msgstr ""
+"Kan inte lägga till knapparna i menyerna.\n"
+"Det verkar finnas ett fel i SPUMUX."
+
+#~ msgid "That file contains a structure for a different kind of disk"
+#~ msgstr "Den filen innehåller en struktur för en annan sorts skiva"
+
+#~ msgid "Please, open DeVeDe again with the right disk type"
+#~ msgstr "Öppna DeVeDe igen med den korrekta skivtypen"
+
+#~ msgid "Elapsed time: "
+#~ msgstr "Åtgången tid: "
+
+#~ msgid "Aborted"
+#~ msgstr "Avbruten"
+
+#~ msgid "Choose a folder"
+#~ msgstr "Välj en mapp"
+
+#~ msgid "Create a preview"
+#~ msgstr "Skapa en förhandsvisning"
+
+#~ msgid "DeVeDe: Cancel job?"
+#~ msgstr "DeVeDe: Avbryt jobbet?"
+
+#~ msgid "Destination folder"
+#~ msgstr "Målmapp"
+
+#~ msgid "Done"
+#~ msgstr "Klar"
+
+#~ msgid "Replay preview"
+#~ msgstr "Spela upp förhandsvisning"
+
+#~ msgid "Warning: empty titles"
+#~ msgstr "Varning: tomma titlar"
+
+#~ msgid "total"
+#~ msgstr "totalt"
+
+#~ msgid "2006 Raster Software Vigo"
+#~ msgstr "2006 Raster Software Vigo"
+
+#~ msgid "CVD"
+#~ msgstr "CVD"
+
+#~ msgid "VideoCD"
+#~ msgstr "VideoCD"
+
+#~ msgid "translator-credits"
+#~ msgstr "Daniel Nylander <po@danielnylander.se>"

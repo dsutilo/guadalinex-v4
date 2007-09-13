@@ -1,0 +1,926 @@
+# Slovak translation of DeVeDe.
+# Copyright (C) 2006 THE devede'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the DeVeDe package.
+# Jozef Riha <jose1711@gmail.com>, 2007.
+# 
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: devede 2.12\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-09-08 11:26+0200\n"
+"PO-Revision-Date: 2007-08-31 09:40Central Europe Daylight Time\n"
+"Last-Translator: Jozef Riha <jose1711@gmail.co>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../devede.glade.h:1
+msgid " Media size: "
+msgstr " Veľkosť média: "
+
+#: ../devede.glade.h:3
+#, no-c-format
+msgid "0.0%"
+msgstr "0.0%"
+
+#: ../devede.glade.h:4
+msgid "352x240"
+msgstr "352x240"
+
+#: ../devede.glade.h:5
+msgid "352x480"
+msgstr "352x480"
+
+#: ../devede.glade.h:6
+msgid "480x480"
+msgstr "480x480"
+
+#: ../devede.glade.h:7
+msgid "704x480"
+msgstr "704x480"
+
+#: ../devede.glade.h:8
+msgid "720x480"
+msgstr "720x480"
+
+#: ../devede.glade.h:9
+msgid "<b>Action to perform when this title ends</b>"
+msgstr "<b>Akcia, ktorá sa má vykonať, keď titul skončí</b>"
+
+#: ../devede.glade.h:10
+msgid "<b>Action</b>"
+msgstr "<b>Akcia</b>"
+
+#: ../devede.glade.h:11
+msgid "<b>Audio rate (Kbits/sec)</b>"
+msgstr "<b>Dátový tok zvuku (Kb/s)</b>"
+
+#: ../devede.glade.h:12
+msgid "<b>Audio</b>"
+msgstr "<b>Zvuk</b>"
+
+#: ../devede.glade.h:13
+msgid "<b>Deinterlacing</b>"
+msgstr "<b>Odstránenie prekladania</b>"
+
+#: ../devede.glade.h:14
+msgid "<b>Disk usage</b>"
+msgstr "<b>Obsadenie disku</b>"
+
+#: ../devede.glade.h:15
+msgid "<b>Division in chapters</b>"
+msgstr "<b>Rozdelenie na kapitoly</b>"
+
+#: ../devede.glade.h:16
+msgid "<b>Extra parameters for Mencoder</b>"
+msgstr "<b>Extra parametre pre Mencoder</b>"
+
+#: ../devede.glade.h:17
+msgid "<b>File info</b>"
+msgstr "<b>Informácie o súbore</b>"
+
+#: ../devede.glade.h:18
+msgid "<b>File split</b>"
+msgstr "<b>Rozdelenie súboru</b>"
+
+#: ../devede.glade.h:19
+msgid "<b>File with subtitles</b>"
+msgstr "<b>Súbor s titulkami</b>"
+
+#: ../devede.glade.h:20
+msgid "<b>File</b>"
+msgstr "<b>Súbor</b>"
+
+#: ../devede.glade.h:21
+msgid "<b>Files</b>"
+msgstr "<b>Súbory</b>"
+
+#: ../devede.glade.h:22
+msgid "<b>Final size</b>"
+msgstr "<b>Výsledná veľkosť</b>"
+
+#: ../devede.glade.h:23
+msgid "<b>MacroBlock decision algorithm</b>"
+msgstr "<b>Algoritmus MacroBlock</b>"
+
+#: ../devede.glade.h:24
+msgid "<b>Menu background (only PNG)</b>"
+msgstr "<b>Pozadie menu (iba PNG)</b>"
+
+#: ../devede.glade.h:25
+msgid "<b>Menu font</b>"
+msgstr "<b>Písmo menu</b>"
+
+#: ../devede.glade.h:26
+msgid "<b>Menu format</b>"
+msgstr "<b>Formát menu</b>"
+
+#: ../devede.glade.h:27
+msgid "<b>Options</b>"
+msgstr "<b>Voľby</b>"
+
+#: ../devede.glade.h:28
+msgid ""
+"<b>Preview video</b>\n"
+"\n"
+"DeVeDe will create a preview with the selected parameters, so you will be "
+"able to check video quality, audio sync and so on.\n"
+"\n"
+"Choose how many seconds of film you want to convert to create the preview, "
+"and the directory where you want to store the temporary file (default is /"
+"var/tmp)."
+msgstr ""
+"<b>Náhľad videa</b>\n"
+"\n"
+"DeVeDe vytvorí náhľad podľa zvolených parametrov, takže si budete môcť "
+"skontrolovať kvalitu videa, synchronizáciu zvuku a tak ďalej.\n"
+"\n"
+"Vyberte koľko sekúnd filmu si prajete skonvertovať pre vytvorenie náhľadu a "
+"adresár, kde tento dočasný súbor uložiť (východzí je /var/tmp)."
+
+#: ../devede.glade.h:33
+msgid "<b>Scaling mode</b>"
+msgstr "<b>Zmena mierky</b>"
+
+#: ../devede.glade.h:34
+msgid "<b>Special</b>"
+msgstr "<b>Špeciálne</b>"
+
+#: ../devede.glade.h:35
+msgid "<b>Title's name</b>"
+msgstr "<b>Názov titulu</b>"
+
+#: ../devede.glade.h:36
+msgid "<b>Titles</b>"
+msgstr "<b>Tituly</b>"
+
+#: ../devede.glade.h:37
+msgid "<b>Trellis searched quantization</b>"
+msgstr "<b>Mriežkové dávkovanie</b>"
+
+#: ../devede.glade.h:38
+msgid "<b>Video rate (Kbits/sec)</b>"
+msgstr "<b>Dátový tok obrazu (Kb/s)</b>"
+
+#: ../devede.glade.h:39
+msgid "<b>Video</b>"
+msgstr "<b>Obraz</b>"
+
+#: ../devede.glade.h:40
+msgid ""
+"A CD with video in MPEG-1 format, with quality equivalent to VHS. Stores up "
+"to 80 minutes in a 80-minutes CD-R. Playable in all DVD players."
+msgstr ""
+"CD obsahujúce video vo formáte MPEG-1, svojou kvalitou zodpovedá VHS. Na 80 "
+"minútové CD uloží 80 minút záznamu. Možné prehrať vo všetkých prehrávačoch "
+"DVD."
+
+#: ../devede.glade.h:41
+msgid ""
+"A CD with video in MPEG-2 format and a resolution of 352x480 (or 352x576 in "
+"PAL). Playable in most of DVD players."
+msgstr ""
+"CD obsahujúce video vo formáte MPEG-2 a pri rozlíšení 352x480 (alebo 352x576 "
+"PAL). Možné prehrať vo väčšine prehrávačov DVD."
+
+#: ../devede.glade.h:42
+msgid ""
+"A CD with video in MPEG-2 format and a resolution of 480x480 pixels (480x576 "
+"in PAL). Playable in nearly all DVD players."
+msgstr ""
+"CD obsahujúce video vo formáte MPEG-2 a pri rozlíšení 480x480 (480X576 PAL). "
+"Možné prehrať v takmer všetkých prehrávačoch DVD."
+
+#: ../devede.glade.h:43
+msgid "A classic Video DVD, playable in all DVD players."
+msgstr "Klasické DVD Video, možné prehrať na všetkých prehrávačoch DVD."
+
+#: ../devede.glade.h:44
+msgid "Abort the current DVD and exit?"
+msgstr "Zrušiť aktuálne DVD a ukončiť program?"
+
+#: ../devede.glade.h:45
+msgid "Aborted. There can be temporary files at the destination directory."
+msgstr "Zrušené. V cieľovom adresári sa nachádzajú dočasné súbory."
+
+#: ../devede.glade.h:46
+msgid "Add a menu with the titles"
+msgstr "Pridať menu s titulmi"
+
+#: ../devede.glade.h:47
+msgid "Add black bars"
+msgstr "Pridať čierne pruhy"
+
+#: ../devede.glade.h:48
+msgid "Advanced options"
+msgstr "Pokročilé voľby"
+
+#: ../devede.glade.h:49
+msgid "Audio delay (in seconds):"
+msgstr "Oneskorenie zvuku (v sekundách):"
+
+#: ../devede.glade.h:50
+msgid "Audio options"
+msgstr "Voľby zvuku"
+
+#: ../devede.glade.h:51
+msgid "Audio rate (Kbits/sec): "
+msgstr "Dátový tok zvuku (Kb/s): "
+
+#: ../devede.glade.h:52
+msgid "Can't find the following programs:"
+msgstr "Nemôžem nájsť nasledujúce programy:"
+
+#: ../devede.glade.h:53
+msgid "Cancel job?"
+msgstr "Zrušiť úlohu?"
+
+#: ../devede.glade.h:54
+msgid "Choose a file"
+msgstr "Vyberte súbor"
+
+#: ../devede.glade.h:55
+msgid "Choose a file with a movie"
+msgstr "Vyberte súbor s filmom"
+
+#: ../devede.glade.h:56
+msgid "Choose the disk to create"
+msgstr "Vyberte disk na vytvorenie"
+
+#: ../devede.glade.h:57
+msgid ""
+"Choose the folder where DeVeDe will create the DVD image and a name for it. "
+"Don't use a folder in a VFAT/FAT32 drive."
+msgstr ""
+"Vyberte adresár, kde DeVeDe vytvorí obraz DVD a meno súboru. Nepoužívajte "
+"adresár na disku s VFAT/FAT32."
+
+#: ../devede.glade.h:58
+msgid "Clear"
+msgstr "Vyčistiť"
+
+#: ../devede.glade.h:59
+msgid "Create an ISO or BIN/CUE image, ready to burn to a disk"
+msgstr "Vytvoriť obraz ISO alebo BIN/CUE, pripravený pre vypálenie na disk"
+
+#: ../devede.glade.h:60
+msgid "Create disk structure"
+msgstr "Vytvoriť štruktúru disku"
+
+#: ../devede.glade.h:61
+msgid "Creating..."
+msgstr "Vytváram..."
+
+#: ../devede.glade.h:62
+msgid "DeVeDe"
+msgstr "DeVeDe"
+
+#: ../devede.glade.h:63
+msgid ""
+"DeVeDe needs them in order to work. If you want to use DeVeDe, you must "
+"install all of them."
+msgstr ""
+"DeVeDe ich potrebuje pre svoju prácu. Ak chcete používať DeVeDe, musíte si "
+"ich všetky nainštalovať."
+
+#: ../devede.glade.h:64
+msgid "Default"
+msgstr "Východzí"
+
+#: ../devede.glade.h:65
+msgid "Delete chapter"
+msgstr "Vymazať kapitolu"
+
+#: ../devede.glade.h:66
+msgid "Delete current disc structure?"
+msgstr "Vymazať aktuálnu štruktúru disku?"
+
+#: ../devede.glade.h:67
+msgid "Delete the current disc structure and start again?"
+msgstr "Vymazať aktuálnu štruktúru disku a začať od začiatku?"
+
+#: ../devede.glade.h:68
+msgid "Delete title"
+msgstr "Vymazať titul"
+
+#: ../devede.glade.h:69
+msgid "DivX format doesn't support subtitles. Please, read the FAQ."
+msgstr "Formát DivX nepodporuje titulky. Prosím, prečítajte si FAQ."
+
+#: ../devede.glade.h:70
+msgid "Don't deinterlace"
+msgstr "Neodstraňovať prekladanie"
+
+#: ../devede.glade.h:71
+msgid "Encoding: "
+msgstr "Kódovánie: "
+
+#: ../devede.glade.h:72
+msgid "Erase temporary files"
+msgstr "Vymazať dočasné súbory"
+
+#: ../devede.glade.h:73
+msgid "Error"
+msgstr "Chyba"
+
+#: ../devede.glade.h:74
+msgid "Estimated final length (MBytes): "
+msgstr "Predpokladaná veľkosť výsledku (MB): "
+
+#: ../devede.glade.h:75
+msgid "Estimated length (MBytes): "
+msgstr "Predpokladaná veľkosť (MB): "
+
+#: ../devede.glade.h:76
+msgid "Exit DeVeDe"
+msgstr "Ukončiť DeVeDe"
+
+#: ../devede.glade.h:77
+msgid "FFMpeg deinterlacing filter"
+msgstr "Filter FFMpeg pre odstránenie prekladania"
+
+#: ../devede.glade.h:78
+msgid "File properties"
+msgstr "Vlastnosti súboru"
+
+#: ../devede.glade.h:79
+msgid "Final size (pixels):"
+msgstr "Výsledná veľkosť (pixelov):"
+
+#: ../devede.glade.h:80
+msgid "Folder for temporary file"
+msgstr "Adresár pre dočasné súbory"
+
+#: ../devede.glade.h:81
+msgid "Frames per second: "
+msgstr "Snímkov za sekundu: "
+
+#: ../devede.glade.h:82
+msgid ""
+"If you load a disc structure you will loose your current structure (unless "
+"you saved it). Continue?"
+msgstr ""
+"Ak načítate štruktúru disku, stratíte aktuálnu štruktúru (ak ste ju "
+"neuložili). Pokračovať?"
+
+#: ../devede.glade.h:83
+msgid "Job done!"
+msgstr "Hotovo!"
+
+#: ../devede.glade.h:84
+msgid "Length (seconds): "
+msgstr "Dĺžka (sekúnd): "
+
+#: ../devede.glade.h:85
+msgid "Linear blend"
+msgstr "Lineárne miešanie"
+
+#: ../devede.glade.h:86
+msgid "Load a disc structure"
+msgstr "Načítať štruktúru disku"
+
+#: ../devede.glade.h:87
+msgid "Median deinterlacing filter"
+msgstr "Stredový filter pre odstránenie prekladania"
+
+#: ../devede.glade.h:88
+msgid "Menu options"
+msgstr "Voľby menu"
+
+#: ../devede.glade.h:89
+msgid "Menu preview"
+msgstr "Náhľad menu"
+
+#: ../devede.glade.h:90
+msgid "Misc"
+msgstr "Rôzne"
+
+#: ../devede.glade.h:91
+msgid "NTSC"
+msgstr "NTSC"
+
+#: ../devede.glade.h:92
+msgid "Only convert film files to compliant MPEG files"
+msgstr "Konvertovať iba súbory filmu na zodpovedajúce súbory MPEG"
+
+#: ../devede.glade.h:93
+msgid "Original audio rate (Kbits/sec):"
+msgstr "Pôvodný dátový tok zvuku (Kb/s):"
+
+#: ../devede.glade.h:94
+msgid "Original length (seconds): "
+msgstr "Pôvodná dĺžka (sekúnd): "
+
+#: ../devede.glade.h:95
+msgid "Original size (pixels): "
+msgstr "Pôvodná veľkosť (pixelov): "
+
+#: ../devede.glade.h:96
+msgid "Original video rate (Kbits/sec):"
+msgstr "Pôvodný dátový tok videa (Kb/s):"
+
+#: ../devede.glade.h:97
+msgid "Output aspect ratio:"
+msgstr "Výstupný pomer videa:"
+
+#: ../devede.glade.h:98
+msgid "Output video format:"
+msgstr "Výstupný formát videa:"
+
+#: ../devede.glade.h:99
+msgid "PAL/SECAM"
+msgstr "PAL/SECAM"
+
+#: ../devede.glade.h:100
+msgid "Play the first title"
+msgstr "Prehrať prvý titul"
+
+#: ../devede.glade.h:101
+msgid "Play the last title"
+msgstr "Prehrať posledný titul"
+
+#: ../devede.glade.h:102
+msgid "Play the next title"
+msgstr "Prehrať nasledujúci titul"
+
+#: ../devede.glade.h:103
+msgid "Play the previous title"
+msgstr "Prehrať predchádzajúci titul"
+
+#: ../devede.glade.h:104
+msgid "Play this title again (loop)"
+msgstr "Prehrať tento titul ešte raz (slučka)"
+
+#: ../devede.glade.h:105
+msgid "Preview"
+msgstr "Náhľad"
+
+#: ../devede.glade.h:106
+msgid "Preview menu"
+msgstr "Náhľad menu"
+
+#: ../devede.glade.h:107
+msgid "Proceed?"
+msgstr "Pokračovať?"
+
+#: ../devede.glade.h:108
+msgid "Put subtitles upper"
+msgstr "Pridať titulky hore"
+
+#: ../devede.glade.h:109
+msgid "Quality options"
+msgstr "Nastavenie kvality"
+
+#: ../devede.glade.h:110
+msgid "Replay the preview again?"
+msgstr "Prehrať náhľad znovu?"
+
+#: ../devede.glade.h:111
+msgid "Save current disc structure"
+msgstr "Uložiť aktuálnu štruktúru disku"
+
+#: ../devede.glade.h:112
+msgid "Scale picture"
+msgstr "Mierka obrazu"
+
+#: ../devede.glade.h:113
+msgid "Select MBD mode which needs the fewest bits"
+msgstr "Použiť mód MBD, ktorý potrebuje nejmenej bitov"
+
+#: ../devede.glade.h:114
+msgid "Select a picture to be used as background for disc's menu"
+msgstr "Vyberte obrázok, ktorý bude použitý ako pozadie pre menu disku"
+
+#: ../devede.glade.h:115
+msgid "Select the MBD mode which has the best rate distortion (better quality)"
+msgstr ""
+"Použiť mód MBD, ktorý dosahuje nejlepšieho pomeru skreslenia (lepšia kvalita)"
+
+#: ../devede.glade.h:116
+msgid "Select the kind of disk you want to create with DeVeDe"
+msgstr "Vyberte disk, ktorý chcete vytvoriť pomocou DeVeDe"
+
+#: ../devede.glade.h:117
+msgid "Set default background"
+msgstr "Nastaviť východzie pozadie"
+
+#: ../devede.glade.h:118
+msgid "Size (in minutes) for each chapter: "
+msgstr "Dĺžka (v minútach) pre každú kapitolu: "
+
+#: ../devede.glade.h:119
+msgid "Size of chapters:"
+msgstr "Veľkosť kapitol:"
+
+#: ../devede.glade.h:120
+msgid "Split the file in chapters (for easy seeking)"
+msgstr "Rozdeliť súbor na kapitoly (pre uľahčenie posunu)"
+
+#: ../devede.glade.h:121
+msgid "Stop reproduction/show disc menu"
+msgstr "Zastaviť reprodukciu/zobraziť menu disku"
+
+#: ../devede.glade.h:122
+msgid "Store full length"
+msgstr "Uložiť celý záznam"
+
+#: ../devede.glade.h:123
+msgid "Store the first half"
+msgstr "Uložiť prvú polovicu"
+
+#: ../devede.glade.h:124
+msgid "Store the second half"
+msgstr "Uložiť druhú polovicu"
+
+#: ../devede.glade.h:125
+msgid "Subtitles"
+msgstr "Titulky"
+
+#: ../devede.glade.h:126
+msgid "Super VideoCD"
+msgstr "Super VideoCD"
+
+#: ../devede.glade.h:127
+msgid "There was an error while importing the file:"
+msgstr "Pri importovaní súboru došlo k chybe:"
+
+#: ../devede.glade.h:128
+msgid "This file is already a DVD/xCD-suitable MPEG-PS file"
+msgstr "Súbor je už vo formáte MPEG-PS vhodnom pre DVD/xCD"
+
+#: ../devede.glade.h:129
+msgid "Title properties"
+msgstr "Vlastnosti titulu"
+
+#: ../devede.glade.h:130
+msgid "Use 16:9 aspect ratio for output"
+msgstr "Použiť pomer strán 16:9"
+
+#: ../devede.glade.h:131
+msgid "Use MBCMP (faster)"
+msgstr "Použiť MBCMP (rýchlejšie)"
+
+#: ../devede.glade.h:132
+msgid "Use Trellis Searched Quantization (better quality, slower conversion)"
+msgstr "Použiť mriežkové dávkovanie (lepšia kvalita, pomalšia konverzia)"
+
+#: ../devede.glade.h:133
+msgid "Video DVD"
+msgstr "Video DVD"
+
+#: ../devede.glade.h:134
+msgid "Video options"
+msgstr "Voľby obrazu"
+
+#: ../devede.glade.h:135
+msgid "Video rate (Kbits/sec): "
+msgstr "Dátový tok obrazu (Kb/s): "
+
+#: ../devede.glade.h:136
+msgid "Warning"
+msgstr "Varovanie"
+
+#: ../devede.glade.h:137
+msgid "Warning: you already have a disc structure"
+msgstr "Varovanie: už máte štruktúru disku"
+
+#: ../devede.glade.h:138
+msgid ""
+"You chose to delete this chapter and\n"
+"reorder the other ones:"
+msgstr ""
+"Vybrali ste vymazanie tejto kapitoly a\n"
+"preskupenie ostatných:"
+
+#: ../devede.glade.h:140
+msgid ""
+"You chose to delete this title and\n"
+"reorder the other ones:"
+msgstr ""
+"Vybrali ste vymazanie tohto titulu a\n"
+"preskupenie ostatných:"
+
+#: ../devede.glade.h:142
+msgid ""
+"Your DVD structure contains empty titles.\n"
+"Continue anyway?"
+msgstr ""
+"Vaša štruktúra DVD obsahuje prázdne tituly.\n"
+"Pokračovať ďalej?"
+
+#: ../devede.glade.h:144
+msgid "_File"
+msgstr "_Súbor"
+
+#: ../devede.glade.h:145
+msgid "_Help"
+msgstr "_Pomoc"
+
+#: ../devede.glade.h:146
+msgid "gtk-about"
+msgstr "gtk-about"
+
+#: ../devede.glade.h:147
+msgid "gtk-cancel"
+msgstr "gtk-cancel"
+
+#: ../devede.glade.h:148
+msgid "gtk-go-back"
+msgstr "gtk-go-back"
+
+#: ../devede.glade.h:149
+msgid "gtk-go-forward"
+msgstr "gtk-go-forward"
+
+#: ../devede.glade.h:150
+msgid "gtk-new"
+msgstr "gtk-new"
+
+#: ../devede.glade.h:151
+msgid "gtk-no"
+msgstr "gtk-no"
+
+#: ../devede.glade.h:152
+msgid "gtk-ok"
+msgstr "gtk-ok"
+
+#: ../devede.glade.h:153
+msgid "gtk-open"
+msgstr "gtk-open"
+
+#: ../devede.glade.h:154
+msgid "gtk-quit"
+msgstr "gtk-quit"
+
+#: ../devede.glade.h:155
+msgid "gtk-save"
+msgstr "gtk-save"
+
+#: ../devede.glade.h:156
+msgid "gtk-save-as"
+msgstr "gtk-save-as"
+
+#: ../devede.glade.h:157
+msgid "gtk-yes"
+msgstr "gtk-yes"
+
+#: ../devede_bincue.py:39
+msgid "Creating BIN/CUE files"
+msgstr "Vytváram súbory BIN/CUE"
+
+#: ../devede_bincue.py:56
+msgid ""
+"Failed to create the BIN/CUE files\n"
+"Maybe you ran out of disk space"
+msgstr ""
+"Chyba pri vytváraní súborov BIN/CUE\n"
+"Zrejme nedostatok voľného miesta na disku"
+
+#: ../devede_bincue.py:77
+msgid "Creating ISO file"
+msgstr "Vytváram súbor ISO"
+
+#: ../devede_bincue.py:89
+msgid ""
+"Failed to create the ISO image\n"
+"Maybe you ran out of disk space"
+msgstr ""
+"Chyba pri vytváraní obrazu ISO\n"
+"Zrejme nedostatok voľného miesta na disku"
+
+#: ../devede_convert.py:172
+#, python-format
+msgid ""
+"Insuficient free space. To create this disk\n"
+"%(total)d MBytes are needed, but only %(free)d MBytes are available."
+msgstr ""
+"Nedostatek voľného miesta. Pre vytvorenie disku\n"
+"je potrebných %(total)d MBytov, ale k dispozícii je iba %(free)d MBytov."
+
+#: ../devede_convert.py:208 ../devede_subtitles.py:106
+#: ../devede_xml_menu.py:39 ../devede_xml_menu.py:43
+msgid ""
+"Failed to write to the destination directory.\n"
+"Check that you have privileges and free space there."
+msgstr ""
+"Chyba pri vytváraní cieľového adresára.\n"
+"Skontrolujte, či máte príslušné oprávnenia a či tam je dostatok voľného "
+"miesta."
+
+#: ../devede_dvd.py:36
+msgid "Creating DVD tree structure"
+msgstr "Vytváram štruktúru DVD"
+
+#: ../devede_dvd.py:42
+msgid ""
+"Failed to create the DVD tree\n"
+"Maybe you ran out of disk space"
+msgstr ""
+"Chyba pri vytváraní štruktúry DVD\n"
+"Zrejme nedostatok voľného miesta na disku"
+
+#: ../devede.py:174
+msgid "Please, add only one file each time."
+msgstr "Naraz pridajte prosím iba jeden súbor."
+
+#: ../devede.py:207
+msgid ""
+"Some files weren't video files.\n"
+"None added."
+msgstr ""
+"Niektoré zo súborov nie sú video súbory.\n"
+"Nič nebolo pridané."
+
+#: ../devede.py:825
+msgid "File doesn't seem to be a video file."
+msgstr "Zdá sa, že súbor neobsahuje video."
+
+#: ../devede.py:827
+msgid "File seems to be an audio file."
+msgstr "Zdá sa, že súbor obsahuje iba zvuk."
+
+#: ../devede.py:999
+msgid "no chapters"
+msgstr "bez kapitol"
+
+#: ../devede.py:1235 ../devede.py:2038
+msgid "Title"
+msgstr "Titul"
+
+#: ../devede.py:1631 ../devede_xml_menu.py:45
+msgid ""
+"Can't find the menu background.\n"
+"Check the menu options."
+msgstr ""
+"Nemôžem nájsť pozadie menu.\n"
+"Skontrolujte voľby menu."
+
+#: ../devede.py:1644
+msgid "Unsaved disc structure"
+msgstr "Neuložená štruktúra disku"
+
+#: ../devede.py:1659
+msgid "No filename"
+msgstr "Žiaden názov súboru"
+
+#: ../devede.py:1689
+msgid "Can't save the file."
+msgstr "Nemôžem uložiť súbor."
+
+#: ../devede.py:1720
+msgid "Can't open the file."
+msgstr "Nemôžem otvoriť súbor."
+
+#: ../devede.py:1731 ../devede.py:1741
+msgid "That file doesn't contain a disc structure."
+msgstr "Súbor neobsahuje štruktúru disku."
+
+#: ../devede.py:1755
+msgid "That file doesn't contain a DeVeDe structure."
+msgstr "Tento súbor neobsahuje štruktúru DeVeDe."
+
+#: ../devede.py:1773
+msgid ""
+"Can't find the following movie files. Please, add them and try to load the "
+"disc structure again.\n"
+msgstr ""
+"Nemôžem nájsť nasledujúce súbory videa. Prosím, pridajte ich a skúste "
+"načítať štruktúru disku ešte raz.\n"
+
+#: ../devede.py:1788
+msgid ""
+"Can't find the menu background. I'll open the disc structure anyway with the "
+"default menu background, so don't forget to fix it before creating the disc."
+msgstr ""
+"Nemôžem nájsť pozadie menu. Napriek tomu otvorím štruktúru disku s východzím "
+"pozadím pre menu, takže to nezabudnite opraviť pre vytvorením disku."
+
+#: ../devede.py:2350
+msgid "Video files"
+msgstr "Video súbory"
+
+#: ../devede.py:2353
+msgid "All files"
+msgstr "Všetky súbory"
+
+#: ../devede_subtitles.py:49
+msgid "Adding subtitles to"
+msgstr "Pridať titulky do"
+
+#: ../devede_subtitles.py:121
+msgid ""
+"Conversion failed.\n"
+"It seems a bug of SPUMUX."
+msgstr ""
+"Chyba konverzie.\n"
+"Vyzerá to na chybu SPUMUX."
+
+#: ../devede_video_convert.py:66
+msgid ""
+"File copy failed\n"
+"Maybe you ran out of disk space?"
+msgstr ""
+"Chyba kopírovania súboru.\n"
+"Nedostatok miesta na disku?"
+
+#: ../devede_video_convert.py:68
+msgid "Copying the file"
+msgstr "Kopírujem nový súbor"
+
+#: ../devede_video_convert.py:70 ../devede_video_convert.py:94
+msgid "Creating preview"
+msgstr "Vytváram náhľad"
+
+#: ../devede_video_convert.py:91
+msgid "Converting files from title"
+msgstr "Konvertujem súbory z titulu"
+
+#: ../devede_video_convert.py:317
+msgid ""
+"Conversion failed.\n"
+"It seems a bug of Mencoder."
+msgstr ""
+"Chyba konverzie.\n"
+"Vyzerá to na chybu Mencoderu."
+
+#: ../devede_video_convert.py:349
+msgid ""
+"Conversion failed\n"
+"Maybe you ran out of disk space?"
+msgstr ""
+"Chyba konverzie.\n"
+"Nedostatok miesta na disku?"
+
+#: ../devede_xml_menu.py:47
+msgid "Menu generation failed."
+msgstr "Generovanie menu skončilo s chybou."
+
+#: ../devede_xml_menu.py:49
+msgid ""
+"Can't add the buttons to the menus.\n"
+"It seems a bug of SPUMUX."
+msgstr ""
+"Nemôžem pridať tlačidlá do menu.\n"
+"Vyzerá to na chybu SPUMUX."
+
+#~ msgid "That file contains a structure for a different kind of disk"
+#~ msgstr "Tento súbor obsahuje štruktúru pre iný typ disku"
+
+#~ msgid "Please, open DeVeDe again with the right disk type"
+#~ msgstr "Prosím, spustite DeVeDe znovu, so správnym typom disku"
+
+#~ msgid "Elapsed time: "
+#~ msgstr "Predpokladaný čas:"
+
+#~ msgid "Aborted"
+#~ msgstr "Zrušené"
+
+#~ msgid "Choose a folder"
+#~ msgstr "Vyberte adresár"
+
+#~ msgid "Create a preview"
+#~ msgstr "Vytvoriť náhľad"
+
+#~ msgid "DeVeDe: Cancel job?"
+#~ msgstr "DeVeDe: Zrušiť úlohu?"
+
+#~ msgid "Destination folder"
+#~ msgstr "Cieľový adresár"
+
+#~ msgid "Done"
+#~ msgstr "Hotovo"
+
+#~ msgid "Replay preview"
+#~ msgstr "Prehrať náhľad"
+
+#~ msgid "Warning: empty titles"
+#~ msgstr "Varovanie: prázdne tituly"
+
+#~ msgid "2007 Raster Software Vigo"
+#~ msgstr "2007 Raster Software Vigo"
+
+#~ msgid "CVD"
+#~ msgstr "CVD"
+
+#~ msgid ""
+#~ "Martin Sin\n"
+#~ "Maurizio Daniele\n"
+#~ "Marco de Freitas\n"
+#~ "Lars-Erik Aunevik Labori\n"
+#~ "Hagen Hoepfner\n"
+#~ "Joel Calado\n"
+#~ "Patrick Monnerat"
+#~ msgstr ""
+#~ "Martin Sin\n"
+#~ "Maurizio Daniele\n"
+#~ "Marco de Freitas\n"
+#~ "Lars-Erik Aunevik Labori\n"
+#~ "Hagen Hoepfner\n"
+#~ "Joel Calado\n"
+#~ "Patrick Monnerat"
+
+#~ msgid "VideoCD"
+#~ msgstr "VideoCD"
