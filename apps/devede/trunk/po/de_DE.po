@@ -1,0 +1,877 @@
+# German translation of DeVeDe.
+# Copyright (C) 2007 THE devede'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the DeVeDe package.
+# Hagen Höpfner <hoepfner@acm.org>, 2007.
+# Holger Wansing <linux@wansing-online.de>, 2007.
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: DeVeDe 1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-09-08 11:25+0200\n"
+"PO-Revision-Date: 2007-09-08 11:13+0200\n"
+"Last-Translator: Holger Wansing <linux@wansing-online.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../devede.glade.h:1
+msgid " Media size: "
+msgstr "Kapazität der Disk: "
+
+#: ../devede.glade.h:3
+#, no-c-format
+msgid "0.0%"
+msgstr "0.0%"
+
+#: ../devede.glade.h:4
+msgid "352x240"
+msgstr "352x240"
+
+#: ../devede.glade.h:5
+msgid "352x480"
+msgstr "352x480"
+
+#: ../devede.glade.h:6
+msgid "480x480"
+msgstr "480x480"
+
+#: ../devede.glade.h:7
+msgid "704x480"
+msgstr "704x480"
+
+#: ../devede.glade.h:8
+msgid "720x480"
+msgstr "720x480"
+
+#: ../devede.glade.h:9
+msgid "<b>Action to perform when this title ends</b>"
+msgstr "<b>Aktion, die am Ende dieses Titels ausgeführt werden soll</b>"
+
+#: ../devede.glade.h:10
+msgid "<b>Action</b>"
+msgstr "<b>Aktion</b>"
+
+#: ../devede.glade.h:11
+msgid "<b>Audio rate (Kbits/sec)</b>"
+msgstr "<b>Audio-Rate (Kbits/s)</b>"
+
+#: ../devede.glade.h:12
+msgid "<b>Audio</b>"
+msgstr "<b>Audio</b>"
+
+#: ../devede.glade.h:13
+msgid "<b>Deinterlacing</b>"
+msgstr "<b>Deinterlacing</b>"
+
+#: ../devede.glade.h:14
+msgid "<b>Disk usage</b>"
+msgstr "<b>Speicherverbrauch</b>"
+
+#: ../devede.glade.h:15
+msgid "<b>Division in chapters</b>"
+msgstr "<b>Aufteilung in Kapitel</b>"
+
+#: ../devede.glade.h:16
+msgid "<b>Extra parameters for Mencoder</b>"
+msgstr "<b>Zusätzliche Mencoder-Parameter</b>"
+
+#: ../devede.glade.h:17
+msgid "<b>File info</b>"
+msgstr "<b>Dateiinfo</b>"
+
+#: ../devede.glade.h:18
+msgid "<b>File split</b>"
+msgstr "<b>Datei aufteilen</b>"
+
+#: ../devede.glade.h:19
+msgid "<b>File with subtitles</b>"
+msgstr "<b>Datei mit Untertiteln</b>"
+
+#: ../devede.glade.h:20
+msgid "<b>File</b>"
+msgstr "<b>Datei</b>"
+
+#: ../devede.glade.h:21
+msgid "<b>Files</b>"
+msgstr "<b>Dateien</b>"
+
+#: ../devede.glade.h:22
+msgid "<b>Final size</b>"
+msgstr "<b>Endgröße</b>"
+
+#: ../devede.glade.h:23
+msgid "<b>MacroBlock decision algorithm</b>"
+msgstr "<b>MacroBlock-Decision-Algorithmus</b>"
+
+#: ../devede.glade.h:24
+msgid "<b>Menu background (only PNG)</b>"
+msgstr "<b>Menü-Hintergrund (nur PNG)</b>"
+
+#: ../devede.glade.h:25
+msgid "<b>Menu font</b>"
+msgstr "<b>Schriftart für Menü</b>"
+
+#: ../devede.glade.h:26
+msgid "<b>Menu format</b>"
+msgstr "<b>Menüformat</b>"
+
+#: ../devede.glade.h:27
+msgid "<b>Options</b>"
+msgstr "<b>Optionen</b>"
+
+#: ../devede.glade.h:28
+msgid ""
+"<b>Preview video</b>\n"
+"\n"
+"DeVeDe will create a preview with the selected parameters, so you will be "
+"able to check video quality, audio sync and so on.\n"
+"\n"
+"Choose how many seconds of film you want to convert to create the preview, "
+"and the directory where you want to store the temporary file (default is /"
+"var/tmp)."
+msgstr ""
+"<b>Videovorschau</b>\n"
+"\n"
+"DeVeDe wird eine Vorschau basierend auf den gewählten Parametern erzeugen. "
+"Sie können also Videoqualität, Synchronität der Audiospur usw. überprüfen.\n"
+"\n"
+"Bitte geben Sie an, wieviele Sekunden des Films als Vorschau erzeugt werden "
+"sollen. Legen Sie auch das Verzeichnis für die temporäre Datei fest "
+"(Standard ist /var/tmp)."
+
+#: ../devede.glade.h:33
+msgid "<b>Scaling mode</b>"
+msgstr "<b>Skalierungsmodus</b>"
+
+#: ../devede.glade.h:34
+msgid "<b>Special</b>"
+msgstr "<b>Spezial</b>"
+
+#: ../devede.glade.h:35
+msgid "<b>Title's name</b>"
+msgstr "<b>Titelname</b>"
+
+#: ../devede.glade.h:36
+msgid "<b>Titles</b>"
+msgstr "<b>Titel</b>"
+
+#: ../devede.glade.h:37
+msgid "<b>Trellis searched quantization</b>"
+msgstr "<b>Trellis searched quantization</b>"
+
+#: ../devede.glade.h:38
+msgid "<b>Video rate (Kbits/sec)</b>"
+msgstr "<b>Video-Rate (Kbits/s</b>"
+
+#: ../devede.glade.h:39
+msgid "<b>Video</b>"
+msgstr "<b>Video</b>"
+
+#: ../devede.glade.h:40
+msgid ""
+"A CD with video in MPEG-1 format, with quality equivalent to VHS. Stores up "
+"to 80 minutes in a 80-minutes CD-R. Playable in all DVD players."
+msgstr ""
+"Eine CD mit MPEG-1-kodiertem Video. Vergleichbare Qualität wie VHS. "
+"Speichert bis zu 80 min Film auf einer CD-R für 80-Minuten. In allen DVD-"
+"Playern abspielbar. "
+
+#: ../devede.glade.h:41
+msgid ""
+"A CD with video in MPEG-2 format and a resolution of 352x480 (or 352x576 in "
+"PAL). Playable in most of DVD players."
+msgstr ""
+"Eine CD mit MPEG-2-kodiertem Video in einer Auflösung von 352x480 (oder "
+"352x576 bei PAL). In den meisten DVD-Playern abspielbar."
+
+#: ../devede.glade.h:42
+msgid ""
+"A CD with video in MPEG-2 format and a resolution of 480x480 pixels (480x576 "
+"in PAL). Playable in nearly all DVD players."
+msgstr ""
+"Eine CD mit MPEG-2-kodiertem Video in einer Auflösung von 480x480 Pixeln "
+"(480x576 bei PAL). In fast allen DVD-Playern abspielbar."
+
+#: ../devede.glade.h:43
+msgid "A classic Video DVD, playable in all DVD players."
+msgstr "Klassische Video-DVD, abspielbar in allen DVD-Playern."
+
+#: ../devede.glade.h:44
+msgid "Abort the current DVD and exit?"
+msgstr ""
+"Aktuellen Vorgang abbrechen und\n"
+" DeVeDe beenden?"
+
+#: ../devede.glade.h:45
+msgid "Aborted. There can be temporary files at the destination directory."
+msgstr ""
+"Abgebrochen. Es könnten sich temporäre Dateien im Zielverzeichnis befinden."
+
+#: ../devede.glade.h:46
+msgid "Add a menu with the titles"
+msgstr "Ein Menü mit den Titeln hinzufügen"
+
+#: ../devede.glade.h:47
+msgid "Add black bars"
+msgstr "Schwarze Balken hinzufügen"
+
+#: ../devede.glade.h:48
+msgid "Advanced options"
+msgstr "Erweiterte Optionen"
+
+#: ../devede.glade.h:49
+msgid "Audio delay (in seconds):"
+msgstr "Audio-Verzögerung (in Sekunden):"
+
+#: ../devede.glade.h:50
+msgid "Audio options"
+msgstr "Audio-Optionen"
+
+#: ../devede.glade.h:51
+msgid "Audio rate (Kbits/sec): "
+msgstr "Audio-Rate (Kbits/s): "
+
+#: ../devede.glade.h:52
+msgid "Can't find the following programs:"
+msgstr "Kann die folgenden Programme nicht finden:"
+
+#: ../devede.glade.h:53
+msgid "Cancel job?"
+msgstr "Vorgang abbrechen?"
+
+#: ../devede.glade.h:54
+msgid "Choose a file"
+msgstr "Datei auswählen"
+
+#: ../devede.glade.h:55
+msgid "Choose a file with a movie"
+msgstr "Video-Datei auswählen"
+
+#: ../devede.glade.h:56
+msgid "Choose the disk to create"
+msgstr "Zu erzeugende Disk wählen"
+
+#: ../devede.glade.h:57
+msgid ""
+"Choose the folder where DeVeDe will create the DVD image and a name for it. "
+"Don't use a folder in a VFAT/FAT32 drive."
+msgstr ""
+"Wählen Sie den Ordner, in dem DeVeDe das DVD-Abbild erzeugen wird und dessen "
+"Namen. Benutzen Sie keinen Ordner auf einem VFAT/FAT32-Laufwerk."
+
+#: ../devede.glade.h:58
+msgid "Clear"
+msgstr "Aufräumen"
+
+#: ../devede.glade.h:59
+msgid "Create an ISO or BIN/CUE image, ready to burn to a disk"
+msgstr "Erzeuge ein brennfertiges ISO- oder BIN/CUE-Abbild."
+
+#: ../devede.glade.h:60
+msgid "Create disk structure"
+msgstr "Erzeuge Struktur der Disk"
+
+#: ../devede.glade.h:61
+msgid "Creating..."
+msgstr "Erzeuge..."
+
+#: ../devede.glade.h:62
+msgid "DeVeDe"
+msgstr "DeVeDe"
+
+#: ../devede.glade.h:63
+msgid ""
+"DeVeDe needs them in order to work. If you want to use DeVeDe, you must "
+"install all of them."
+msgstr ""
+"DeVeDe benötigt diese, um korrekt zu funktionieren. Um DeVeDe benutzen zu "
+"können, müssen sie installiert sein."
+
+#: ../devede.glade.h:64
+msgid "Default"
+msgstr "Standard"
+
+#: ../devede.glade.h:65
+msgid "Delete chapter"
+msgstr "Kapitel löschen"
+
+#: ../devede.glade.h:66
+msgid "Delete current disc structure?"
+msgstr "Atuelle Disk-Struktur löschen?"
+
+#: ../devede.glade.h:67
+msgid "Delete the current disc structure and start again?"
+msgstr "Die aktuelle Disk-Struktur löschen und von vorn beginnen?"
+
+#: ../devede.glade.h:68
+msgid "Delete title"
+msgstr "Titel löschen"
+
+#: ../devede.glade.h:69
+msgid "DivX format doesn't support subtitles. Please, read the FAQ."
+msgstr "Das DivX-Format unterstützt keine Untertitel. Lesen Sie bitte die FAQ."
+
+#: ../devede.glade.h:70
+msgid "Don't deinterlace"
+msgstr "Kein deinterlace"
+
+#: ../devede.glade.h:71
+msgid "Encoding: "
+msgstr "Kodierung: "
+
+#: ../devede.glade.h:72
+msgid "Erase temporary files"
+msgstr "Temporäre Dateien löschen"
+
+#: ../devede.glade.h:73
+msgid "Error"
+msgstr "Fehler"
+
+#: ../devede.glade.h:74
+msgid "Estimated final length (MBytes): "
+msgstr "Geschätzte Gesamtlänge (MBytes): "
+
+#: ../devede.glade.h:75
+msgid "Estimated length (MBytes): "
+msgstr "Geschätzte Länge (MBytes): "
+
+#: ../devede.glade.h:76
+msgid "Exit DeVeDe"
+msgstr "DeVeDe beenden"
+
+#: ../devede.glade.h:77
+msgid "FFMpeg deinterlacing filter"
+msgstr "FFMpeg-Deinterlacing-Filter"
+
+#: ../devede.glade.h:78
+msgid "File properties"
+msgstr "Dateieigenschaften"
+
+#: ../devede.glade.h:79
+msgid "Final size (pixels):"
+msgstr "Finale Größe (Pixel):"
+
+#: ../devede.glade.h:80
+msgid "Folder for temporary file"
+msgstr "Ordner für temporäre Datei"
+
+#: ../devede.glade.h:81
+msgid "Frames per second: "
+msgstr "Frames pro Sekunde: "
+
+#: ../devede.glade.h:82
+msgid ""
+"If you load a disc structure you will loose your current structure (unless "
+"you saved it). Continue?"
+msgstr ""
+"Wenn Sie eine Disk-Struktur laden, werden Sie Ihre aktuelle Struktur "
+"verlieren (außer Sie haben sie gesichert). Fortsetzen?"
+
+#: ../devede.glade.h:83
+msgid "Job done!"
+msgstr "Erledigt!"
+
+#: ../devede.glade.h:84
+msgid "Length (seconds): "
+msgstr "Länge (Sekunden): "
+
+#: ../devede.glade.h:85
+msgid "Linear blend"
+msgstr "Lineare Blende"
+
+#: ../devede.glade.h:86
+msgid "Load a disc structure"
+msgstr "Struktur der Disk laden"
+
+#: ../devede.glade.h:87
+msgid "Median deinterlacing filter"
+msgstr "Median deinterlacing Filter"
+
+#: ../devede.glade.h:88
+msgid "Menu options"
+msgstr "Menü-Eigenschaften"
+
+#: ../devede.glade.h:89
+msgid "Menu preview"
+msgstr "Menü-Vorschau"
+
+#: ../devede.glade.h:90
+msgid "Misc"
+msgstr "Misc"
+
+#: ../devede.glade.h:91
+msgid "NTSC"
+msgstr "NTSC"
+
+#: ../devede.glade.h:92
+msgid "Only convert film files to compliant MPEG files"
+msgstr "Nur MPEG-Dateien erzeugen"
+
+#: ../devede.glade.h:93
+msgid "Original audio rate (Kbits/sec):"
+msgstr "Original-Audio-Rate (Kbits/s):"
+
+#: ../devede.glade.h:94
+msgid "Original length (seconds): "
+msgstr "Originallänge (Sekunden): "
+
+#: ../devede.glade.h:95
+msgid "Original size (pixels): "
+msgstr "Originalgröße (Pixel): "
+
+#: ../devede.glade.h:96
+msgid "Original video rate (Kbits/sec):"
+msgstr "Original-Video-Rate (Kbits/s):"
+
+#: ../devede.glade.h:97
+msgid "Output aspect ratio:"
+msgstr "Bildseitenformat der Ausgabe:"
+
+#: ../devede.glade.h:98
+msgid "Output video format:"
+msgstr "Ausgabe-Video-Format:"
+
+#: ../devede.glade.h:99
+msgid "PAL/SECAM"
+msgstr "PAL/SECAM"
+
+#: ../devede.glade.h:100
+msgid "Play the first title"
+msgstr "Den ersten Titel abspielen"
+
+#: ../devede.glade.h:101
+msgid "Play the last title"
+msgstr "Den letzten Titel abspielen"
+
+#: ../devede.glade.h:102
+msgid "Play the next title"
+msgstr "Den nächsten Titel abspielen"
+
+#: ../devede.glade.h:103
+msgid "Play the previous title"
+msgstr "Den vorherigen Titel abspielen"
+
+#: ../devede.glade.h:104
+msgid "Play this title again (loop)"
+msgstr "Diesen Titel erneut abspielen (Wiederholung)"
+
+#: ../devede.glade.h:105
+msgid "Preview"
+msgstr "Vorschau"
+
+#: ../devede.glade.h:106
+msgid "Preview menu"
+msgstr "Vorschau des Menüs"
+
+#: ../devede.glade.h:107
+msgid "Proceed?"
+msgstr "Fortfahren?"
+
+#: ../devede.glade.h:108
+msgid "Put subtitles upper"
+msgstr "Untertitel anheben"
+
+#: ../devede.glade.h:109
+msgid "Quality options"
+msgstr "Qualitätseinstellungen"
+
+#: ../devede.glade.h:110
+msgid "Replay the preview again?"
+msgstr "Vorschau erneut abspielen?"
+
+#: ../devede.glade.h:111
+msgid "Save current disc structure"
+msgstr "Struktur der Disk speichern"
+
+#: ../devede.glade.h:112
+msgid "Scale picture"
+msgstr "Bild skalieren"
+
+#: ../devede.glade.h:113
+msgid "Select MBD mode which needs the fewest bits"
+msgstr "MBD-Modus benutzen (benötigt weniger Bit)"
+
+#: ../devede.glade.h:114
+msgid "Select a picture to be used as background for disc's menu"
+msgstr "Wählen Sie ein Bild, das als Menü-Hintergrund verwendet werden soll"
+
+#: ../devede.glade.h:115
+msgid "Select the MBD mode which has the best rate distortion (better quality)"
+msgstr "MBD-Modus mit Rate-Distortion verwenden (bessere Qualität)"
+
+#: ../devede.glade.h:116
+msgid "Select the kind of disk you want to create with DeVeDe"
+msgstr "Wählen Sie den Disk-Typ, der mit DeVeDe erzeugt werden soll."
+
+#: ../devede.glade.h:117
+msgid "Set default background"
+msgstr "Standard-Hintergrund festlegen"
+
+#: ../devede.glade.h:118
+msgid "Size (in minutes) for each chapter: "
+msgstr "Länge (in Minuten) für jedes Kapitel: "
+
+#: ../devede.glade.h:119
+msgid "Size of chapters:"
+msgstr "Kapitellänge:"
+
+#: ../devede.glade.h:120
+msgid "Split the file in chapters (for easy seeking)"
+msgstr "Datei in Kapitel aufteilen (für einfachere Suche)"
+
+#: ../devede.glade.h:121
+msgid "Stop reproduction/show disc menu"
+msgstr "Reproduktion stoppen/Menü anzeigen"
+
+#: ../devede.glade.h:122
+msgid "Store full length"
+msgstr "Komplette Länge speichern"
+
+#: ../devede.glade.h:123
+msgid "Store the first half"
+msgstr "Erste Hälfte speichern"
+
+#: ../devede.glade.h:124
+msgid "Store the second half"
+msgstr "Zweite Hälfte speichern"
+
+#: ../devede.glade.h:125
+msgid "Subtitles"
+msgstr "Untertitel"
+
+#: ../devede.glade.h:126
+msgid "Super VideoCD"
+msgstr "Super VideoCD"
+
+#: ../devede.glade.h:127
+msgid "There was an error while importing the file:"
+msgstr "Es ist ein Fehler beim Importieren der Datei aufgetreten:"
+
+#: ../devede.glade.h:128
+msgid "This file is already a DVD/xCD-suitable MPEG-PS file"
+msgstr "Diese Datei ist bereits eine DVD/xCD-konforme MPEG-PS-Datei"
+
+#: ../devede.glade.h:129
+msgid "Title properties"
+msgstr "Titeleigenschaften"
+
+#: ../devede.glade.h:130
+msgid "Use 16:9 aspect ratio for output"
+msgstr "Bildformat 16:9 für Ausgabe verwenden"
+
+#: ../devede.glade.h:131
+msgid "Use MBCMP (faster)"
+msgstr "Benutze MBCMP (schneller)"
+
+#: ../devede.glade.h:132
+msgid "Use Trellis Searched Quantization (better quality, slower conversion)"
+msgstr ""
+"Benutze Trellis Searched Quantization (höhere Qualität, aber langsamer)"
+
+#: ../devede.glade.h:133
+msgid "Video DVD"
+msgstr "Video-DVD"
+
+#: ../devede.glade.h:134
+msgid "Video options"
+msgstr "Video-Optionen"
+
+#: ../devede.glade.h:135
+msgid "Video rate (Kbits/sec): "
+msgstr "Video-Rate (Kbits/s): "
+
+#: ../devede.glade.h:136
+msgid "Warning"
+msgstr "Warnung"
+
+#: ../devede.glade.h:137
+msgid "Warning: you already have a disc structure"
+msgstr "Warunung: es ist bereits eine Disk-Struktur vorhanden"
+
+#: ../devede.glade.h:138
+msgid ""
+"You chose to delete this chapter and\n"
+"reorder the other ones:"
+msgstr ""
+"Sie wollen dieses Kapitel löschen und\n"
+"die anderen neu ordnen:"
+
+#: ../devede.glade.h:140
+msgid ""
+"You chose to delete this title and\n"
+"reorder the other ones:"
+msgstr ""
+"Sie wollen diesen Titel löschen und\n"
+"die anderen neu ordnen:"
+
+#: ../devede.glade.h:142
+msgid ""
+"Your DVD structure contains empty titles.\n"
+"Continue anyway?"
+msgstr ""
+"Ihre DVD-Struktur enthält leere Titel.\n"
+"Dennoch fortsetzen?"
+
+#: ../devede.glade.h:144
+msgid "_File"
+msgstr "_Datei"
+
+#: ../devede.glade.h:145
+msgid "_Help"
+msgstr "_Hilfe"
+
+#: ../devede.glade.h:146
+msgid "gtk-about"
+msgstr "gtk-about"
+
+#: ../devede.glade.h:147
+msgid "gtk-cancel"
+msgstr "gtk-cancel"
+
+#: ../devede.glade.h:148
+msgid "gtk-go-back"
+msgstr "gtk-go-back"
+
+#: ../devede.glade.h:149
+msgid "gtk-go-forward"
+msgstr "gtk-go-forward"
+
+#: ../devede.glade.h:150
+msgid "gtk-new"
+msgstr "gtk-new"
+
+#: ../devede.glade.h:151
+msgid "gtk-no"
+msgstr "gtk-no"
+
+#: ../devede.glade.h:152
+msgid "gtk-ok"
+msgstr "gtk-ok"
+
+#: ../devede.glade.h:153
+msgid "gtk-open"
+msgstr "gtk-open"
+
+#: ../devede.glade.h:154
+msgid "gtk-quit"
+msgstr "gtk-quit"
+
+#: ../devede.glade.h:155
+msgid "gtk-save"
+msgstr "gtk-save"
+
+#: ../devede.glade.h:156
+msgid "gtk-save-as"
+msgstr "gtk-save-as"
+
+#: ../devede.glade.h:157
+msgid "gtk-yes"
+msgstr "gtk-yes"
+
+#: ../devede_bincue.py:39
+msgid "Creating BIN/CUE files"
+msgstr "Erzeuge BIN/CUE-Dateien"
+
+#: ../devede_bincue.py:56
+msgid ""
+"Failed to create the BIN/CUE files\n"
+"Maybe you ran out of disk space"
+msgstr ""
+"Erzeugen der BIN/CUE-Dateien fehlgeschlagen.\n"
+"Vielleicht ist Ihre Festplatte voll."
+
+#: ../devede_bincue.py:77
+msgid "Creating ISO file"
+msgstr "Erzeuge ISO-Datei"
+
+#: ../devede_bincue.py:89
+msgid ""
+"Failed to create the ISO image\n"
+"Maybe you ran out of disk space"
+msgstr ""
+"Erzeugen der ISO-Datei fehlgeschlagen.\n"
+"Vielleicht ist Ihre Festplatte voll."
+
+#: ../devede_convert.py:172
+#, python-format
+msgid ""
+"Insuficient free space. To create this disk\n"
+"%(total)d MBytes are needed, but only %(free)d MBytes are available."
+msgstr ""
+"Unzureichender Speicherplatz. Zum Erzeugen der DVD\n"
+"werden %(total)d MBytes benötigt, aber nur %(free)d MBytes sind verfügbar."
+
+#: ../devede_convert.py:208 ../devede_subtitles.py:106
+#: ../devede_xml_menu.py:39 ../devede_xml_menu.py:43
+msgid ""
+"Failed to write to the destination directory.\n"
+"Check that you have privileges and free space there."
+msgstr ""
+"Schreiben ins Zielverzeichnis fehlgeschlagen.\n"
+"Prüfen Sie den Speicherplatz und die Zugriffsrechte."
+
+#: ../devede_dvd.py:36
+msgid "Creating DVD tree structure"
+msgstr "Erzeuge Baumstruktur der DVD"
+
+#: ../devede_dvd.py:42
+msgid ""
+"Failed to create the DVD tree\n"
+"Maybe you ran out of disk space"
+msgstr ""
+"Erzeugen der Baumstruktur der DVD fehlgeschlagen.\n"
+"Vielleicht ist Ihre Festplatte voll."
+
+#: ../devede.py:174
+msgid "Please, add only one file each time."
+msgstr "Bitte fügen Sie Dateien einzeln ein."
+
+#: ../devede.py:207
+msgid ""
+"Some files weren't video files.\n"
+"None added."
+msgstr ""
+"Einige Dateien waren keine Videodateien.\n"
+"Sie wurden nicht hinzugefügt."
+
+#: ../devede.py:825
+msgid "File doesn't seem to be a video file."
+msgstr "Diese Datei scheint keine Videodatei zu sein."
+
+#: ../devede.py:827
+msgid "File seems to be an audio file."
+msgstr "Diese Datei scheint eine Audiodatei zu sein."
+
+#: ../devede.py:999
+msgid "no chapters"
+msgstr "keine Kapitel"
+
+#: ../devede.py:1235 ../devede.py:2038
+msgid "Title"
+msgstr "Titel"
+
+#: ../devede.py:1631 ../devede_xml_menu.py:45
+msgid ""
+"Can't find the menu background.\n"
+"Check the menu options."
+msgstr ""
+"Kann Menü-Hintergrund nicht finden.\n"
+"Überprüfen Sie die Menü-Eigenschaften."
+
+#: ../devede.py:1644
+msgid "Unsaved disc structure"
+msgstr "Struktur der Disk nicht gesichert"
+
+#: ../devede.py:1659
+msgid "No filename"
+msgstr "Kein Dateiname"
+
+#: ../devede.py:1689
+msgid "Can't save the file."
+msgstr "Kopieren der Datei nicht möglich."
+
+#: ../devede.py:1720
+msgid "Can't open the file."
+msgstr "Öffnen der Datei nicht möglich."
+
+#: ../devede.py:1731 ../devede.py:1741
+msgid "That file doesn't contain a disc structure."
+msgstr "Diese Datei enthält keine Disk-Struktur."
+
+#: ../devede.py:1755
+msgid "That file doesn't contain a DeVeDe structure."
+msgstr "Diese Datei enthält keine DeVeDe-Struktur."
+
+#: ../devede.py:1773
+msgid ""
+"Can't find the following movie files. Please, add them and try to load the "
+"disc structure again.\n"
+msgstr ""
+"Kann die folgenden Videodateien nicht finden. Fügen Sie sie bitte hinzu und "
+"versuchen Sie, die Disk-Struktur erneut zu laden.\n"
+
+#: ../devede.py:1788
+msgid ""
+"Can't find the menu background. I'll open the disc structure anyway with the "
+"default menu background, so don't forget to fix it before creating the disc."
+msgstr ""
+"Kann den Menü-Hintergrund nicht finden. Die Disk-Struktur wird mit dem "
+"Standard-Menü-Hintergrund geöffnet; vergessen Sie also nicht, dies zu "
+"korrigieren, bevor Sie die Disk erstellen."
+
+#: ../devede.py:2350
+msgid "Video files"
+msgstr "Videodateien"
+
+#: ../devede.py:2353
+msgid "All files"
+msgstr "Alle Dateien"
+
+#: ../devede_subtitles.py:49
+msgid "Adding subtitles to"
+msgstr "Füge Untertitel hinzu"
+
+#: ../devede_subtitles.py:121
+msgid ""
+"Conversion failed.\n"
+"It seems a bug of SPUMUX."
+msgstr ""
+"Konvertierung fehlgeschlagen.\n"
+"Sieht nach einem Fehler von SPUMUX aus."
+
+#: ../devede_video_convert.py:66
+msgid ""
+"File copy failed\n"
+"Maybe you ran out of disk space?"
+msgstr ""
+"Kopieren der Datei fehlgeschlagen.\n"
+"Vielleicht ist Ihre Festplatte voll?"
+
+#: ../devede_video_convert.py:68
+msgid "Copying the file"
+msgstr "Kopiere die Datei"
+
+#: ../devede_video_convert.py:70 ../devede_video_convert.py:94
+msgid "Creating preview"
+msgstr "Vorschau erzeugen"
+
+#: ../devede_video_convert.py:91
+msgid "Converting files from title"
+msgstr "Konvertiere Dateien des Titels"
+
+#: ../devede_video_convert.py:317
+msgid ""
+"Conversion failed.\n"
+"It seems a bug of Mencoder."
+msgstr ""
+"Konvertierung fehlgeschlagen.\n"
+"Sieht nach einem Fehler von Mencoder aus."
+
+#: ../devede_video_convert.py:349
+msgid ""
+"Conversion failed\n"
+"Maybe you ran out of disk space?"
+msgstr ""
+"Konvertierung fehlgeschlagen.\n"
+"Vielleicht ist Ihre Festplatte voll."
+
+#: ../devede_xml_menu.py:47
+msgid "Menu generation failed."
+msgstr ""
+
+#: ../devede_xml_menu.py:49
+msgid ""
+"Can't add the buttons to the menus.\n"
+"It seems a bug of SPUMUX."
+msgstr ""
+"Konvertierung fehlgeschlagen.\n"
+"Sieht nach einem Fehler von SPUMUX aus."
+
+#~ msgid "That file contains a structure for a different kind of disk"
+#~ msgstr "Diese Datei enthält eine Struktur für eine andere Disk-Art."
+
+#~ msgid "Please, open DeVeDe again with the right disk type"
+#~ msgstr "Öffnen Sie bitte DeVeDe mit dem richtigen Disk-Typ erneut."

@@ -1,0 +1,673 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>DeVeDe, a video DVD creator</title>
+</head>
+<body bgcolor="#E8E8F0">
+<p><div style="text-align: center;"><h1>DeVeDe, a video DVD creator</h1></div></p>
+<p>Current version: 3.1b</p>
+
+<p>Before sending a bug, please read the <a href="faq.html">FAQ</a>. (thanks).</p>
+
+<p><h2>What is it?</h2></p>
+<p>DeVeDe is a program that allows you to create a video DVD from an MPEG, AVI, MOV... video file,
+suitable for home DVD players. DeVeDe uses <b>Mplayer</b>, <b>Mencoder</b>, <b>DVDAuthor</b> and
+<b>VCDimager</b>, so you can use any video playable with Mplayer.</p>
+<p>
+<h2>DISCLAIMER</h2>
+This software is distributed as is, under the <a href="gpl.html">GPL license</a> (version 3 or later), and
+without warranty of any kind. Use it at your own risk. Press <a href="gpl.html">here</a> to read the
+GPLv3 license.
+</p>
+<p><h2>Installing DeVeDe</h2></p>
+<p>To install DeVeDe, first you must ensure you have <b>Mplayer</b>, <b>Mencoder</b>, <b>DVDAuthor</b>
+and <b>VCDimager</b> in your system. You need Python 2.4, PyGTK and PyGlade too.
+Then, just run the <b>install.sh</b> script as root:</p>
+<p><div style="text-align: center"><h3><b>sudo ./install.sh</b></h3></div></p>
+
+<p>It will copy all the files at the right place. It should even create an entry in your
+Gnome/KDE/freedesktop-compatible-windowmanager menu.</p>
+
+<p>For advanced users, there are some extra paremeters that you can pass to the install.sh script (thanks to
+Patrick Monnerat). These are the <i>--targeted=(yes/no)</i>, <i>--uninstall=(yes/no)</i>, and the more common
+ones (<i>--DESTDIR=...</i>, <i>--prefix=...</i>).</p>
+
+<p>The <i>--targeted</i> parameter means that you want to install DeVeDe in a directory different than /usr/local.
+If you put it to <b>yes</b> you must use <i>--DESTDIR=</i> and <i>--prefix=</i> at least to specify where to
+store the files.</p>
+
+<p>The <i>--uninstall</i> parameter was a ned due to a mistake in the first versions of DeVeDe. Up to version
+2.8, the <i>install.sh</i> script installed DeVeDe in /usr, but starting from version 2.9 it used /usr/local.
+To avoid problems when an user updates from a version lower than 2.9 to a higher one, by default the <i>install.sh</i>
+script first uninstall DeVeDe from all possible locations (/usr and /usr/local), and then proceed with the
+installation itself. This is a good effect until you want to create a .deb or .rpm package. In this case, just
+add the <i>--uninstall=no</i> parameter and the <i>install.sh</i> script will only do the install process,
+skipping the previous uninstall.</p>
+
+<p>So if you are a package developer, you should use a command line like:</p>
+
+<p><div style="text-align: center">./install.sh --uninstall=no --targeted=yes --DESTDIR=/var/tmp/blahblah
+--prefix=/usr</div></p>
+
+<p><h2>Description of the interface</h2></p>
+
+<h3>The selection window</h3>
+
+<p><div style="text-align: center"><img src="choose.jpg" /></div></p>
+
+<p>When you launch DeVeDe, it will show you this window, asking what kind of disk you want to create.
+You can choose between:</p>
+
+<p>
+<ul>
+<li>Video DVD: a classic video DVD, like the ones you rent in your videoclub or buy in your video shop.</li>
+<li>VideoCD: a CD with CBR MPEG-1 video at a resolution of 352x240 pixels (352x288 with PAL), a fixed bitrate
+of 1152 kbits/second for video and 224 kbits/second for audio. The quality is comparable to analog VHS,
+and a CD can contain as much compressed audio/video than uncompressed audio (this is, a 80-minutes CD
+can contain about 80 minutes of compressed video/audio). Is compatible with all DVD players, but video
+quality is medium-bad.</li>
+<li>Super VideoCD: a CD with VBR MPEG-2 video at a resolution of 480x480 pixels (480x576 with PAL) and
+video bitrates between 500 and 2600 kbits/second. The quality is comparable to LaserDisc, and a 80-minutes CD
+can contain about 60 minutes con compressed video/audio (more if you reduce the bitrate, but with less
+quality). Is compatible with a lot of DVD players, but maybe there is one very cheap which doesn't support it.
+Video quality is good.</li>
+<li>CVD (China Video Disk): identical to Super VideoCD, but with a resolution of 352x480 pixels (352x576
+with PAL). Offers less artifacts with same bitrate, but image is a bit less sharper than Super VideoCD. Is
+compatible with a lot of DVD players, but maybe there is one very cheap which doesn't support it.</li>
+<li>DIVX/MPEG4: creates one-pass DIVX files, ready to be played in DIVX-compliant players.</li>
+</ul>
+</p>
+<p>Of course you aren't limited to theses options, since you can choose, if you want, another resolution
+for your CD/DVD. This allows you to create Super VideoCDs with a resolution of 352x240 (or 352x288 for PAL),
+which is a very good compromise if you want to store a lot of video in a single CD. I don't recomend to use
+other resolutions with VideoCDs, because CBR MPEG-1 is very limited. Choose the Super VideoCD or CVD option
+(which uses VBR MPEG-2) and use there the resolution you want.</p>
+
+<h3>The main interface</h3>
+
+<p>After choosing the kind of disk you want, you will see the main interface:</p>
+
+<p><div style="text-align: center"><img src="main.jpg" /><br/><h5>Main interface for DVD discs</h5></div></p>
+
+<p>A DVD is divided in <b>Titles</b> and <b>Chapters</b>. Each title is a film on its own, and,
+when played, you have to choose the one you want to see. Into each title you can add as many files
+you want, and cut them in chapters to allow an easy search.</p>
+
+<p><div style="text-align: center"><img src="main2.jpg" /><br/><h5>Main interface for VCD/SVCD/CVD discs</h5></div></p>
+
+<p>In VideoCDs, Super VideoCDs and CVDs there's no title concept, so that frame won't be visible when you
+choose to create one of them.</p>
+
+<p>In the DVD window screenshot we can see that there are two titles, and that title two has two files.
+The files in a title will be played one after another, like a single film. So if you only want to
+create a DVD with one single film from multiple files, you have to put all of them in a single title. Your
+player will merge all in a single film.</p>
+
+<p>The <b>File info</b> box contains all the information about the selected file: desired audio an video
+rate, original size, FPS and length in seconds. It has the estimated size in Mbytes, but have in mind
+that is an estimation, so the final size can be lower.</p>
+
+<p>The <b>Disk usage</b> shows the percentage of the DVD currently used. You can occupy more than the
+100% because it's based in an estimation, so the final size can (and probably will) be lower than the
+espected, but never higher. You can choose the CD/DVD size too. Have in mind another thing: a 700MB CD can contain 80 minutes
+of compressed audio/video, which, at 1152 kbps are about 800MB. This means that, when the media is a CD,
+you MUST use the bar to know how many disc space you are using, and no the estimated size of the files,
+because you can put up to 800MB of compressed video in a 700MB CD, or about 720MB in a 650MB CD.</p>
+
+<p>Now, the <b>Action</b> block allows you to choose what do you want to create. The first option,<b>Only
+convert film files to compliant MPEG files</b> takes each file and converts it to a DVD-compliant MPEG-PS
+file, or to VCD, SVCD or CVD-compliant MPEG-PS. You can choose a generic name, being the default name "movie",
+so the files will have names like <b>movie_XX_YY.mpg</b>, being XX the title, and YY the file position
+into the title. An example: if you have two titles, and two files in the first title and three files at
+the second title, you will get five files: movie_01_01.mpg, movie_01_02.mpg, movie_02_01.mpg,
+movie_02_02.mpg and movie_02_03.mpg. This option is specially usefull when you want to create DVD menus
+with other program like <a href="http://dvdstyler.sourceforge.net/">DVD Styler</a>,
+<a href="http://qdvdauthor.sourceforge.net/">Q DVD Author</a> or
+<a href="http://polidori.sourceforge.net/">PoliDori</a>. Of course, with VCD, SVCD or CVD, the title
+number will be always "01".</p>
+
+<p>The second option, <b>Create disk structure</b>, is visible only when you create a DVD. It creates the
+MPEG files and then uses DVDAuthor to create the DVD tree structure. After that, it erases the MPEG files.
+You can use this option to create the folder and files for a DVD and use your own DVD recording program
+to create the ISO image and burn it into a DVD.</p>
+
+<p>The third option, (second if you are creating a VCD, SVCD or CVD), <b>Create an ISO or BIN/CUE image,
+ready to burn to a disk</b>, converts the files to MPEG, creates the DVD tree if needed and, using
+<b>MKISOFS</b>, creates the ISO file, erasing then the MPEG and DVD tree to free disk space. With CD media,
+it converts the files to MPEG and uses <b>VCDImager</b> to create a BIN/CUE image, ready to be burned
+to a CD. Use this option to create a disk image ready to be burned to a CD/DVD with a program like
+<a href="http://gnomebaker.sourceforge.net/">GnomeBaker</a> or <a href="http://www.k3b.org">K3b</a>.</p>
+
+<p>The next block, options, starts with <b>Erase temporary files</b>, which allows to choose if you want
+DeVeDe to erase the temporary files as soon as they are needed no more. Selecting it, DeVeDe will need
+only about twice the final disk space, but if you don't mark it, you will need about three times the final
+disk space, but you will have all the temporary files.</p>
+
+<h3>Menu options</h3>
+
+<p>Finally there is the <b>Add a menu with the titles</b> and its asociated buttons. When you check it,
+DeVeDe will create a menu in the DVD, allowing you to jump to the title you want. Here is the menu that
+DeVeDe creates from the example, with the first title highlighted:</p>
+
+<p><div style="text-align: center"><img src="menu.jpg" /></div></p>
+
+<p>If you click the <b>Menu options</b> button, you will see this window:</p>
+
+<p><div style="text-align: center"><img src="menu_opts.jpg" /></div></p>
+
+<p>The first block allows you to change the background picture. This way you can create a custom menu
+for your DVD. In the second block you can choose the format for your menu (PAL or NTSC). This determines
+the final resolution (720x576 for PAL or 720x480 for NTSC). The third block allows you to change the font style
+and size, but be carefull: you can only change the font size, not the button size, so if you make it too big,
+you will have a menu like this:</p>
+
+<p><div style="text-align: center"><img src="menu_bad.jpg" /><br/>You must be carefull with the font size, or
+you will get incorrect results like this.</div></p>
+
+<p>The optimal font size is 12 points, but maybe for some special fonts it can be different, so always
+use the <b>Preview menu</b> button to ensure that everything has the desired size.</p>
+
+<p>These options will be unavailable when creating DIVX files, because there you will create only files, not
+disk images.</p>
+
+<h3>Adding a new title</h3>
+
+<p>If you press the button <b>Add</b> in the title group, DeVeDe will add a new title with a generic name.
+Now, if you click the button <b>Properties</b>, you will see the title's properties window:</p>
+
+<p><div style="text-align: center"><img src="title_prop.jpg" /></div></p>
+
+<p>The first thing you can change here is the title's name. This is important because this name is the
+one used in the menu.</p>
+
+<p>The second thing you can choose is the action to perform when the player ends playing this title.
+These options allows to choose the new title which the player will play. This way you can do a title
+that loops forever, or you can do a disk which, after playing any title, plays the last title too and then
+jumps to the menu... the possibilites are infinite :)</p>
+
+<p>With the arrow keys you can reorder the titles.</p>
+
+<p>Currently you can create DVD discs with up to 12 titles.</p>
+
+<h3>Adding movie files to a title</h3>
+
+<p>To add a new file you have two options: first, you can drag and drop one or more files into the main
+window, so DeVeDe will give them some fine default values; or you can choose the "Add" button, so you will see
+this window:</p>
+
+<p><div style="text-align: center"><img src="movie1.jpg" /></div></p>
+
+<p>First you choose the file you want to add (you can do it by drag and drop in this window too). After
+doing it, you can see its properties at the <b>File info</b> block. You can then choose the new audio an
+video rate, unless you are creating a VCD (theses have a fixed data rate). Remember that bigger rates will
+give you more quality, but bigger file size too.</p>
+
+<p>By default, if the video will be reescaled to a width of 720 pixels, DeVeDe will put 5001Mbps; but
+if the final width is 352, DeVeDe will put 2001Mbps by default if final height is 288 (PAL) or 240 (NTSC),
+or 3001Mbps if final height is 576 (PAL) or 480 (NTSC). Of course you can change this value to the one you
+want in order to have more quality or more playing time.</p>
+
+<p>Then, you can choose if you want to put the whole file, or only the first or the second half. This is
+specially usefull when creating VCDs: you can cut a long film in two disks if it's too long to fit in
+a single disk. But if the length of the film is less than 60 seconds, you won't be able to choose them.</p>
+
+<p>Remember that this option is applied to each file, so if you put two files in a xCD and choose in
+both the first half, you will have a xCD with the first half of the first file followed by the first half
+of the second file.</p>
+
+<p>Finally, you can choose if you want to create a PAL/SECAM or a NTSC DVD. DeVeDe will remember the last
+option you used, even between sessions, so you can choose it once and forget it.</p>
+
+<p>Maybe you ask why I put this option here and not in the main window. The answer is: because this way
+you can create hybrid DVDs, with some films in PAL/SECAM format and others in NTSC. What is the utility
+of this? Simply: modern TV sets and DVD players can play both formats, so if you manually choose the one
+that fits better the original framerate of the file, you will have an smoother video. This is:
+if the original file has 24 or 25 fps, select PAL, and if it has 30 fps, select NTSC. Of course you can
+force one of them and DeVeDe will adjust the framerate to 25 or 30 fps, ensuring that the DVD will have
+the rigth framerate and will play fine in all TV sets, but maybe the motion is not as smooth as it could
+be.</p>
+
+<p>There's a <b>Preview</b> button that converts some seconds (you can choose how many), allowing you to
+check the audio/video quality and the audio sync. It will create the temporary file by default at
+<b>/var/tmp</b>, but you can choose other place if you preffer.</p>
+
+<p>Finally there's an expansor named <b>Advanced options</b>. If you expand it, you will see that there are
+four tabs with new options, not needed normally but which can give much more control to advanced users:</p>
+
+<p><div style="text-align: center"><img src="movie2.jpg" /></div></p>
+
+<p>In the <b>Video options</b> tab you have:</p>
+<ul>
+<li><b>Final size</b>: allows you to change the final resolution. A bigger resolution will give you
+sharper pictures, but will need more bitrate to avoid the horrible MPEG artifacs. If you choose <b>Default</b>,
+DeVeDe will choose automagically the best resolution, based in the original video resolution and the disk
+format you wanted. For Video DVD, DeVeDe will use resolutions of 352x288 for PAL/SECAM, or 352x240 for NTSC, if the video's
+resolution is smaller or equal than that. If not, it will jump to 352x480 (NTSC) or 352x576 (PAL) if this
+way the video fits. If not, it will use 720x576 for PAL/SECAM or 720x480 for NTSC. For VCD, SuperVCD or CVD,
+DeVeDe will use, as default, the standard resolution of each format. If the video rate is 5001, 3001 or 2001,
+it will choose a new videorate automatically too.</li>
+
+<li><b>Scaling mode</b>: here you can choose the expand method to use when the aspect ratio of the original file is not 4/3.
+The first method is the preferred, and consists in adding the classic black bars up and down. It has the
+advantage of maintain the aspect ratio, so the faces will look natural. The alternative method consists
+in expand the film, so the faces will look enlarged. Of course, if you have a 16:9 TV you can put it to
+Full Screen, and enjoy a full-resolution panoramic film.</li>
+</ul>
+
+<li><b>Use 16:9 aspect ratio for output</b>: if this option is marked, the video will be adjusted to an
+aspect ratio of 16:9 instead the classic 4:3. If you have a television with widescreen, this option will allow
+you to enjoy more your videos thanks to the extra vertical resolution. This option is marked automatically
+when the source file has an aspect ratio of 1.777777 or bigger, but you can change it in the case you
+want pure 4:3 output or if DeVeDe fails to detect a widescreen video.</li>
+
+<li>Have in mind that the DVD standard only allows to create a 16:9 DVD with a width of 720 pixels, so
+if you activate this option, DeVeDe will ensure that the final width will be 720. For the same reason, if
+you choose a different width, the 16:9 option will be deactivated.</li>
+
+<li>You can create 16:9 DVDs, but not 16:9 VCDs, SVCDs or CVDs.</li>
+
+<p><div style="text-align: center"><img src="movie3.jpg" /></div></p>
+
+<p>In the <b>Quality options</b> tab you have:</p>
+
+<ul>
+<li><b>Trellis Searched Quantization</b>: this option makes Mencoder to find the optimal encoding for each
+8x8 block, giving more video quality at the cost of a little slower conversion.</li>
+
+<li><b>MacroBlock decision algorithm</b>: allows to choose the MBD algorithm, so you can choose to
+have better quality at the cost of slower conversion.</li>
+
+<li><b>Deinterlacing</b>: allows to apply a deinterlace algorithm to the video. Useful when creating
+a DVD from a TV program or TV camera. You have three different algoritms to choose.</li>
+
+</ul>
+
+<p><div style="text-align: center"><img src="movie4.jpg" /></div></p>
+
+<p>The <b>Audio delay</b> box is used to adjust the audio/video sync, allowing to fix videos with audio out
+of sync. You can set positive or negative values.</p>
+
+<p><div style="text-align: center"><img src="movie6.jpg" /></div></p>
+
+<p>In the <b>Subtitles</b> tab you can choose a file with external subtitles, which will be added to the
+current video. These subtitles will be stored as true DVD subtitles, so you will be able to activate or
+remove them while playing. If you are using subtitle files coded with a codepage different than ISO-8859-1 (or pure
+ASCII) you will have to choose the right Codepage (UTF-8 is twice to make it easier to find).</p>
+<p>The option "Put subtitles upper" makes DeVeDe to render the subtitles a little upper that normally. This
+is fine when you have a 16:9 film in 3:4 format (with black bars up and down) and want to use the ZOOM option
+in your TV without loosing the subtitles, or when your TV is old and misses too many lines in bottom and
+cuts the ordinary subtitles.</p>
+<p>Have in mind that if you preview a video from DeVeDe with subtitles, they will be shown in order to allow
+you to ensure that the sincronization is fine (needs MPlayer 1.0rc1 or later, and not always works :( ).</p>
+
+<p>If you want to remove the file, just use the <b>Clear</b> button.</p>
+
+<p>Currently you can't add subtitles when creating DIVX files, so this tab will be unavailable in that mode.
+But if you put the subtitles in the same directory than your DIVX file, usually the player should show them.
+<a href="faq.html">Read the FAQ for details</a>.</p>
+
+<p><div style="text-align: center"><img src="movie5.jpg" /></div></p>
+
+<p>In the <b>Misc</b> tab you have:</p>
+
+<ul>
+
+<li><b>Division in chapters</b>: available only with Video DVDs, allows you to divide the file in
+chapters each X minutes, so if you choose 5 minutes, you will have a chapter each 5 minutes. You can
+choose different intervals for each file. Is a good practice to divide files in chapters, because that
+allows you to easily jump to the desired part of the DVD. I hope to add this feature to CD media soon.</li>
+
+<li><b>Special</b>: this section contains the <b>This file is already a DVD/xCD-suitable MPEG-PS file</b> option.
+When marked, nearly all options will became insensitive because DeVeDe will not recompress that file, but
+will use it directly when creating the DVD/xCD structure. This option is usefull when you have some
+already-compressed files (Eg. when you capture a TV signal and store it directly in MPEG2-PS format), because
+you will not need to wait the conversion time. Of course, you can mix MPEG-PS and non-MPEG-PS files in the
+same disc, because DeVeDe will recompress the non-MPEG-PS files, and use directly the MPEG-PS ones.</li>
+
+<li><p><b>Extra parameters for Mencoder</b>: allows you to add extra parameters to <b>Mencoder</b>, allowing
+you to add hardcoded subtitles, set picture quality, and much more. Remember to use '\ ' to put blank spaces.
+An example: <b>-sub /home/raster/holidays\ at\ galicia.sub</b> will hard render the subtitles
+in the file "holidays at galicia.sub". The blank spaces at the filename are put as '\ '.</li>
+
+</ul>
+
+<h3>Creating the disk</h3>
+
+<p><div style="text-align: center"><img src="create.jpg" /></div></p>
+
+<p>After adding all the files you want, you will be prompted for a directory where DeVeDe will create all
+the files, and a generic name for them. The directory must have sufficient free space to hold all the
+temporary files (aprox. the double of the final CD/DVD size). The generic name will be used to name all
+the temporary files, so the MPEG files will be named as GENERICNAME_XX_YY.MPG, the DVD tree directory will
+be named GENERICNAME, the ISO image will be named GENERICNAME.ISO, and the BIN/CUE files will be
+GENERICNAME.BIN and GENERICNAME.CUE. You can't use blank spaces for this name (if you put them, will be
+changed to underscores).</p>
+
+<p>Finally, the program will start to create the files. Remember that this is a very slow process, and can
+need more than two hours to be completed.</p>
+
+<h3>Storing and restoring the disc structure</h3>
+
+<p>The options <b>Load</b>, <b>Save</b> and <b>Save as</b> in the <b>File</b> menu allow you to save
+the current disk structure, in the case that you want continue your work later, or reuse it for another,
+slightly different, disk. DeVeDe stores the disk format adding the extension <b>.devede</b>.</p>
+
+<p>When you load a disk structure, DeVeDe checks that every file is still in its place. If there is a missing,
+it will show an error message listing all the missing files (the complete path) and will refuse to load the
+structure, to avoid incorrect results. There's a trick to still load it: just copy another movie to the
+right directory and rename it with the right name, and after loading the structure, remove it from DeVeDe.</p>
+
+<p>If the missing file is the menu background, DeVeDe will load the structure anyway, but showing a warning
+message and using the default background instead.</p>
+
+<p><h2>Installing DeVeDe in your Home</h2></p>
+
+<p>DeVeDe 1.1 and later can be installed in other directories, like your own home directory. This allows
+to use DeVeDe in machines where you don't have root access. To do so, just copy the files:</p>
+
+<ul>
+<li>devede.py</li>
+<li>devede.glade</li>
+<li>barras.png</li>
+<li>estira.png</li>
+<li>devedesans.ttf</li>
+<li>devede_bincue.py</li>
+<li>devede_executor.py</li>
+<li>devede_subtitles.py</li>
+<li>devede_convert.py</li>
+<li>devede_gtk_helper.py</li>
+<li>devede_video_convert.py</li>
+<li>devede_delete.py</li>
+<li>devede_other.py</li>
+<li>devede_xml_menu.py</li>
+<li>devede_dvd.py</li>
+
+</ul>
+
+<p>into a folder, and run devede.py from that directory ("barras.png" and "estira.png" are in the "pixmaps"
+directory).</p>
+
+<p><h2>History of versions</h2></p>
+
+<p><b>Version 3.1</b></p>
+
+<ul>
+<li>Fixed a little bug which prevented version 3.1 to work with Python 2.4</li>
+</ul>
+
+<p><b>Version 3.1</b></p>
+
+<ul>
+<li>Fixed some problems under windows.</li>
+<li>Now returns to the main window after creating the disk.</li>
+<li>When opening the file selector, it filters the files by type, showing only the videos.</li>
+<li>When using the NEW menu option to clean the disk structure and start again, it asks the disk type again.</li>
+<li>Now, when loading a disk structure, if the disk type is different than the current selected,
+automatically changes to the new type.</li>
+<li>Added new translations.</li>
+<li>Added new icon (thanks to Jonah Naylor).</li>
+<li>Second major code refactorization to improve maintenability.</li>
+<li>License changed to GPL version 3.</li>
+</ul>
+
+<p><b>Version 3.01</b></p>
+<ul>
+<li>Added new patches for windows version.</li>
+<li>Removed the use of lower priority, because it made the conversion slower.</li>
+<li>Fixed a little bug when the final directory contains blank spaces.</li>
+<li>Added translation to Catala, and fixed the French one.</li>
+</ul>
+
+<p><b>Version 3.0</b></p>
+<ul>
+<li>Allows to add a menu to the DVD with a list of the titles and a custom background picture.</li>
+<li>Allows to save the current disc structure, in order to reutilize it, or continue working in other moment.</li>
+<li>Allows to choose up to 448kbit/sec for audio.</li>
+<li>Now asks before canceling a job.</li>
+<li>A little bigger font size for subtitles.</li>
+<li>When creating a DivX file, now it uses .AVI extension.</li>
+<li>Fixed a bug with non-UTF8 locales.</li>
+<li>Fixed a bug in the "Insuficient free space..." message. Now is shown translated.</li>
+<li>Fixed a bug when erasing conflicting files and directories.</li>
+<li>Fixed a bug when trying to create a DivX from a file with an original size equal to the final size.</li>
+<li>Now, when the conversion fails, it doesn't show a "Success" message.</li>
+</ul>
+
+<p><b>Version 2.13d</b></p>
+<ul>
+<li>Fixed the german translation</li>
+<li>Changed the Mplayer/Mencoder version to the one from Ubuntu Edgy, due to some bugs when creating
+PAL videos.</li>
+</ul>
+
+<p><b>Version 2.13c</b></p>
+<ul>
+<li>Changed the MPlayer/Mencoder files, using version 0.99Pre8.</li>
+</ul>
+
+
+<p><b>Version 2.13b</b></p>
+<ul>
+<li>Added a MPlayer/Mencoder package for Ubuntu Feisty users.</li>
+</ul>
+
+<p><b>Version 2.13</b></p>
+
+<ul>
+<li>Added creation of MPEG4/DIVX files.</li>
+<li>Added swedish and slovak translations.</li>
+<li>Fixed some issues with translations (thanks to Marco de Freitas).</li>
+</ul>
+
+
+<p><b>Version 2.12</b></p>
+
+<ul>
+<li>New and more flexibles install and uninstall scripts (thanks to Patrick Monnerat).</li>
+<li>Added french translation.</li>
+<li>Fixed some issues with non-UTF8 systems (thanks to Marco de Freitas).</li>
+</ul>
+
+<p><b>Version 2.11</b></p>
+<ul>
+<li>Allows to specify the codepage for subtitles, allowing to use UTF-8 coded files (or with other codepages).</li>
+<li>Allows to put the subtitles a little upper, fine when using the ZOOM option in 16:9 TVs or with old CRT receivers</li>
+<li>Now can add subtitles with horizontal resolutions of 480 and 352 pixels without using too big fonts, nor crashing SPUMUX.</li>
+<li>When the original video has 24 fps and the destination is a NTSC DVD, DeVeDe will use 24000/1001 fps instead of 30000/1001.</li>
+<li>Fixed some little bugs when erasing temporary files.</li>
+<li>Fixed some bugs in the main loop that sometimes hanged up the conversion process.</li>
+<li>Now shows a kind of progress numbers during subtitle adding and while creating the DVD structure.</li>
+<li>Now translates fine all the sentences in the interface.</li>
+<li>Now detects if DeVeDe has permissions to write in the destination directory when doing a preview.</li>
+<li>Now uses MP2 instead of AC3 to ensure full compatibility.</li>
+<li>Now detects again when mencoder or spumux fails and shows an error message.</li>
+<li>Now really allows to abort the process while adding subtitles.</li>
+<li>Now supplies all the needed data to SPUMUX, so subtitles in NTSC format will be full visible.</li>
+<li>Fixed some issues in Windows code (thanks again to Peter Gill).</li>
+<li>Added new translations into German and norwegian, and completed the old ones.</li>
+</ul>
+
+<p><b>Version 2.10</b></p>
+<ul>
+<li>Added italian translation</li>
+<li>The INSTALL script didn't create the GNOME/KDE menu entry. Fixed.</li>
+</ul>
+
+<p><b>Version 2.9</b></p>
+<ul>
+<li>Now DeVeDe can work under Windows, thanks to Peter Gill (see the <a href="faq.html">FAQ</a> for details).</li>
+<li>Fixed some little bugs that prevented to use DeVeDe with some files taken from video capture cards.</li>
+<li>Fixed a bug with the Drag&amp;Drop in the main window.</li>
+<li>Fixed a bug that prevented DeVeDe to detect errors in the execution of MKISOFS.</li>
+<li>Added a warning about VFAT/FAT32 partitions.</li>
+</ul>
+
+<p><b>Version 2.8</b></p>
+<ul>
+<li>Now only allows to create 16:9 DVDs when the final width is 720 pixels, and
+don't allow to create 16:9 VCDs, SVCDs or CVDs.</li>
+</ul>
+
+<p><b>Version 2.7</b></p>
+
+<ul>
+<li>Support for true DVD subtitles</li>
+<li>Can create 16:9 DVDs from widescreen videos</li>
+<li>Default MBD changed to 2 (slower but greater quality)</li>
+<li>Now installs in /urs/local</li>
+</ul>
+
+<p><b>Version 2.6</b></p>
+
+<ul>
+<li>When the video wasn't subdivided in chapters, the XML file was incorrect and DVDAuthor complained. Fixed.</li>
+<li>Fixed a bug when the output directory was no writable.</li>
+<li>Added translation for Portugues do Brasil</li>
+<li>Added a FAQ.</li>
+</ul>
+
+<p><b>Version 2.5</b></p>
+
+<ul>
+<li>Fixed another bug with directories and/or filenames with blank spaces</li>
+<li>Added a workaround for a bug found in very old DVD Players, that can't play fast forward between the last
+chapter and the end of a file.</li>
+</ul>
+
+<p><b>Version 2.4A</b></p>
+
+<ul>
+<li>Added translation for Czech</li>
+</ul>
+
+<p><b>Version 2.4</b></p>
+
+<ul>
+<li>Allows to specify that a file is already a DVD-compliant MPEG-PS file, so it won't be recompresed, but
+stored "as is" into the disc (usefull when you capture video from a TV capturer of other sources).</li>
+<li>Alows to deinterlace the video.</li>
+<li>Allows to choose the MacroBlock algorithm and use Trellis, to enhace the final picture quality.</li>
+<li>Allows to choose the directory for the temporary file used during preview, and remembers it.</li>
+<li>Before creating a new disc it erases the files with conflicting names in the destination directory.</li>
+<li>Allows to cancel the process during the creation of the BIN/CUE image of a VCD, SVCD or CVD.</li>
+<li>Added a VRC_MINRATE parameter when creating VCDs, SVCDs and CVDs, to ensure full compatibility.</li>
+<li>Changed the video bitrate for VCDs from 1150 to 1152, and the minimum video bitrate for SVCDs and CVD
+from 500 to 600.</li>
+<li>Ensures that the progress bar while converting a file is refreshed at least each two senconds.</li>
+<li>First major code refactorization to enhace the maintenability.</li>
+</ul>
+
+<p><b>Version 2.3</b></p>
+
+<ul>
+<li>Removed the use of B-frames (which was added in version 2.1) because it produces problems with some
+DVD players.</li>
+</ul>
+
+<p><b>Version 2.2</b></p>
+
+<ul>
+<li>In some very inusual cases mencoder could trigger a bug with an undeclared variable. Fixed.</li>
+</ul>
+
+<p><b>Version 2.1</b></p>
+
+<ul>
+<li>Optimized some loops. Now DeVeDe is about 30% faster during video conversion.</li>
+<li>Now checks that you have enought free disk space.</li>
+<li>Allows to maintain the temporary files instead of deleting them.</li>
+<li>Fixed a little bug with the erasing of temporary files.</li>
+</ul>
+
+<p><b>Version 2.0</b></p>
+
+<ul>
+<li>Now can create VideoCD, SuperVideoCD and China VideoDisks.</li>
+<li>Allows the user to override the default resolution and use the one he wants.</li>
+<li>Allows to pass custom commands to Mencoder, allowing to render subtitles, cut the file in chunks, select
+an audio stream when the file has two or more...</li>
+<li>Allows to change the order of the files and titles.</li>
+<li>Changed the position of some elements, making the interface a little more intuitive.</li>
+<li>The advanced features have been grouped, so novices will see only the
+most important options while advanced users can have access to a lot of extra functions with just a single
+click.</li>
+<li>Fixed a litle bug when a video header tells that it has an aspect ratio of 0 or 1.</li>
+<li>Installation more compliant with FreeDesktop and Debian normatives.</li>
+</ul>
+
+<p><b>Version 1.6</b></p>
+
+<ul>
+<li>Added support for resolutions 352x480 (in NTSC) and 352x576 (in PAL).</li>
+<li>Fully support for movies with aspect ratios different than 4:3 (now, with 16:9 movies it adds the right black bars to ensure that a circle IS a circle).</li>
+<li>Fixed a bug with audio/video sync when converting a PAL video to NTSC or vice-versa.</li>
+</ul>
+
+<p><b>Version 1.5</b></p>
+
+<ul>
+<li>Now works with video files without audio track.</li>
+<li>Transforms blank spaces in the generic filename to underscores (in previous versions, DeVeDe failed if a blank space was inserted).</li>
+<li>Fixed the translation to Galego.</li>
+<li>Added an uninstall script.</li>
+</ul>
+
+<p><b>Version 1.4</b></p>
+
+<ul>
+<li>Added Drag&amp;Drop support.</li>
+<li>Translatable strings (currently supports english, spanish and galego).</li>
+<li>Set a default video rate based on the final resolution.</li>
+<li>Shows the elapsed time used to create de DVD.</li>
+</ul>
+
+<p><b>Version 1.3</b></p>
+
+<ul>
+<li>Added fully support for <b>PAL/SECAM</b> and <b>NTSC</b>. Now the user can choose the kind of disc to create.</li>
+<li>Added support for more resolutions (352x288/352x240), so DVDs made from low-resolution videos will have better quality.</li>
+<li>Now DeVeDe scales the video or resamples the audio if needed, so the conversion is a litle faster (not much faster, but faster anyway).</li>
+<li>Some minor bugfixes.</li>
+</ul>
+
+<p><b>Version 1.2</b></p>
+
+<ul>
+<li>Now DeVeDe REALLY creates a NTSC DVD when the framerate is 30fps (that was the original intention, but due to a litle bug it didn't work before).</li>
+</ul>
+
+<p><b>Version 1.1</b></p>
+<ul>
+<li>Allows to adjust the audio delay, to ensure perfect audio/video sync.</li>
+<li>Added a <b>Preview</b> button, to check the video quality and the audio sync without converting all the files.</li>
+<li>Now DeVeDe reduces a litle its priority when launched, allowing to continue working with the computer without speed penalties.</li>
+<li>Now checks if you have write permissions at the destination directory.</li>
+<li>Fixed the install script; now doesn't supposes that <b>install</b> is at <b>/usr/bin</b>.</li>
+<li>Interface much more compliant with the Gnome HIG.</li>
+</ul>
+
+<p><b>Version 1.02b</b></p>
+<ul><li>Due to the hurry to fix an error, I packed an incorrect version in the .tar.bz2. Fixed here.</li></ul>
+
+<p><b>Version 1.02</b></p>
+<ul><li>With some specific files DeVeDe failed. Fixed in this version.</li>
+<li>Now DeVeDe can be installed in the home directory.</li>
+</ul>
+
+<p><b>Version 1.01</b></p>
+<ul><li>Fixed a little problem with MPlayer and pipes</li>
+</ul>
+<p><b>Version 1.0</b></p>
+<ul><li>First public version</li></ul>
+
+<p><h2>Contacting the authors</h2></p>
+<p>This program has been created by Sergio Costas (Raster Software Vigo).<br />
+http://www.rastersoft.com <br />
+<b>e-mail</b>: raster@rastersoft.com</p>
+
+<p>Windows port done by Peter Gill.<br />
+<b>e-mail</b>: peter.m.gill@gmail.com
+</p>
+
+</body>
+</html>

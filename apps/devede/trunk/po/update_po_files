@@ -1,0 +1,28 @@
+#!/bin/bash
+
+echo es_ES
+intltool-update es
+echo gl_ES
+intltool-update gl
+echo cs_CZ
+intltool-update cs_CZ
+echo it
+intltool-update it
+echo pt_BR
+intltool-update pt_BR
+echo de_DE
+intltool-update de_DE
+echo nb_NO
+intltool-update nb_NO
+echo pt_PT
+intltool-update pt_PT
+echo fr
+intltool-update fr
+echo sk
+intltool-update sk
+echo sv
+intltool-update sv
+echo ca
+intltool-update ca
+echo pl
+intltool-update pl

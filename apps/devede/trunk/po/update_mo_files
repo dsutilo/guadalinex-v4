@@ -1,0 +1,28 @@
+#!/bin/bash
+
+echo es
+msgfmt es.po -o es.mo
+echo gl
+msgfmt gl.po -o gl.mo
+echo cs_CZ
+msgfmt cs_CZ.po -o cs_CZ.mo
+echo it
+msgfmt it.po -o it.mo
+echo pt_BR
+msgfmt pt_BR.po -o pt_BR.mo
+echo de_DE
+msgfmt de_DE.po -o de_DE.mo
+echo nb_NO
+msgfmt nb_NO.po -o nb_NO.mo
+echo pt_PT
+msgfmt pt_PT.po -o pt_PT.mo
+echo fr
+msgfmt fr.po -o fr.mo
+echo sk
+msgfmt sk.po -o sk.mo
+echo sv
+msgfmt sv.po -o sv.mo
+echo ca
+msgfmt ca.po -o ca.mo
+echo pl
+msgfmt pl.po -o pl.mo
