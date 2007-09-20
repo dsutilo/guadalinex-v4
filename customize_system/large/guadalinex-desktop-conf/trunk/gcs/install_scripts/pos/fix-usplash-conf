@@ -1,0 +1,33 @@
+
+# Update the initramfs
+update_initramfs()
+{
+    update-initramfs -u
+}
+
+# Write a config file
+setup_usplash_config()
+{
+    if [ -f /etc/X11/xorg.conf ]; then
+        mode=$(awk -F\" '/Modes/ {print $2}' /etc/X11/xorg.conf | tail -1)
+    	x=${mode%x*}
+    	y=${mode#*x}
+    else
+	. /usr/share/debconf/confmodule
+    	db_version 2.0
+    	if  db_get xserver-xorg/config/display/modes; then
+    	  FIRSTVAL=`echo $RET | sed 's/,.*//'`
+    	  x=`echo $FIRSTVAL | sed 's/x.*//'`
+    	  y=`echo $FIRSTVAL | sed 's/.*x//'`
+    	else
+    	  x=640;
+    	  y=480;
+        fi
+    fi
+    echo "# Usplash configuration file" >/etc/usplash.conf
+    echo "xres=$x" >>/etc/usplash.conf
+    echo "yres=$y" >>/etc/usplash.conf
+}
+
+setup_usplash_config
+update_initramfs
