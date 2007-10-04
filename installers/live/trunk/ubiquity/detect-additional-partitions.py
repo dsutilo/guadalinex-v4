@@ -165,6 +165,7 @@ for new_device, fs in get_filesystems().items():
       else:
         #options = 'gid=100,users,umask=0222,fmask=0333,sync,nls=utf8,noauto,defaults'
         options = 'users,defaults,nls=utf8,umask=007,gid=46'
+        fs='ntfs-3g'
       path = '/media/Windows%d' % win_counter
       target_path = '/target' + path
       if not os.path.exists(target_path) and not DEBUG:
