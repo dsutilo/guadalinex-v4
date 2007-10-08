@@ -15,7 +15,7 @@ function apply_profile
 		sed -i '/title/ s/$/ /' /boot/grub/menu.lst 
 	fi
 	if [ -e /etc/init.d/brltty ]; then
-		sed -i '1,25 /exit 0/#exit 0/' /etc/init.d/brltty
+		sed -i '1,25 s/exit 0/#exit 0/' /etc/init.d/brltty
 	fi
     fi
 
