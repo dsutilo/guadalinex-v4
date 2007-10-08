@@ -54,7 +54,7 @@ fi
 
 if [ $3 ]; then
     case $3 in
-	"-f" ) apply_profile ${USER_NAME} ${USER_HOME} ${PROFILE_PATH} && exit 0 ;;
+	"-f" ) apply_profile ${USER_NAME} ${USER_HOME} ${PROFILE_PATH} ${2} && exit 0 ;;
 	* ) echo "Opción $3 no reconocida" && exit -1 ;;
     esac
 else
