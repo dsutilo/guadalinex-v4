@@ -1,7 +1,7 @@
 Source: accesibility-profiles
-Section: unknown
+Section: misc
 Priority: optional
-Maintainer: Alvaro Peña <apg@unknown>
+Maintainer: Alvaro Peña <apg@openshine.com>
 Build-Depends: debhelper (>= 5)
 Standards-Version: 3.7.2
 
