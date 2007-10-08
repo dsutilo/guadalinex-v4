@@ -1,3 +1,9 @@
+accesibility-profiles (0.2-1) unstable; urgency=low
+
+  * remove orca files from Moderate and Total Visual profiles
+
+ -- Juanje Ojeda Croissier <jojeda@emergya.es>  Mon, 8 Oct 2007 01:19:03 +0100
+
 accesibility-profiles (0.1-4) unstable; urgency=low
 
   * append grub beep when selected a Visual profile
