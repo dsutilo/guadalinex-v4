@@ -13,7 +13,7 @@
     <!-- [if IE]><STYLE TYPE="text/css" MEDIA="all">@import "/guadapedia-estatica/stylesheets/monobook/IEFixes.css";</STYLE>
     <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/IEFixes.js" SRC="stylesheets/IEFixes.js" TYPE="text/javascript"></SCRIPT>
     <META / HTTP-EQUIV="imagetoolbar" CONTENT="no"><![ENDIF]-->
-    <SCRIPT SRC="http://www.guadalinex.org/guadapedia-estatica/index.php?title=-&amp;action=raw&amp;gen=js" TYPE="text/javascript"></SCRIPT>
+    <SCRIPT SRC="stylesheets/script.js" TYPE="text/javascript"></SCRIPT>
     <SCRIPT W3MIRSRC="http://www.guadalinex.org/guadapedia-estatica/stylesheets/wikibits.js" SRC="stylesheets/wikibits.js" TYPE="text/javascript"></SCRIPT>
     <STYLE TYPE="text/css">/*<![CDATA[*/ @import "/guadapedia-estatica/index.php?title=-&action=raw&gen=css";
  /*]]>*/</STYLE>
@@ -50,7 +50,7 @@
 </P>
 <A NAME="El_DNIe"></A><H2> El DNIe </H2>
 <P>Como ya habrás adivinado, el DNIe es el nuevo DNI electrónico y poco a poco irá sustituyendo al DNI tradicional a lo largo del año 2007. Este nuevo DNI es parecido al clásico por fuera (bueno, tiene otro color) pero su verdadera potencia está en su interior: contiene un chip que almacena un par de certificados digitales que nos permitirán la posibilidad de realizar trámites con el Estado y nuestra comunidad autónoma de una forma sencilla y sobre todo, segura.
-</P><P>Para poder usar el DNIe es necesario que nuestro ordenador disponga de un dispositivo lector de tarjetas criptográficas pero no nos asustemos. No es algo caro ni complejo de adquirir ni tendremos que renovar nuestro ordenador. Hay muchos modelos externos que se conectan al puerto USB del ordenador y son pequeños y fácilmente transportables por lo que podremos compartirlos con el resto de miembros de la familia y entre distintos ordenadores. Los modelos de la empresa C3PO son altamente recomendables por su fiabilidad y porque han sido minuciosamente testeados en Guadalinex v4.
+</P><P>Para poder usar el DNIe es necesario que nuestro ordenador disponga de un dispositivo lector de tarjetas criptográficas pero no nos asustemos. No es algo caro ni complejo de adquirir ni tendremos que renovar nuestro ordenador. Hay muchos modelos externos que se conectan al puerto USB del ordenador y son pequeños y fácilmente transportables por lo que podremos compartirlos con el resto de miembros de la familia y entre distintos ordenadores.
 </P><P>Una vez que disponemos de nuestro DNIe y nuestro lector de tarjetas ya podemos ponernos manos a la obra. Lo primero es enchufar el lector al puerto USB de nuestro ordenador. Tras unos segundos, Guadalinex lo detectará y nos ofrecerá la posibilidad de configurar el DNIe. Tras hacer click en dicho botón, el asistente nos pedirá que cerremos dichas aplicaciones en el caso de que las tuvieramos abiertas ya que se van a instalar componentes criptográficos que modificarán la configuración interna de las mismas y para evitar problemas es mejor que no se estén ejecutando.
 </P><P>Tras esta sencilla instalación ya podremos disfrutar de las ventajas del DNIe en nuestras aplicaciones favoritas:
 </P>
