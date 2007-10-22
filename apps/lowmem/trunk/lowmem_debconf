@@ -1,0 +1,36 @@
+#!/bin/sh
+. /usr/share/debconf/confmodule
+template="$1"
+min="$2"
+db_info lowmem/info
+db_title "Low memory"
+db_subst "$template" MIN "$min"
+db_input critical "$template" || true
+db_go || true
+
+for var in debian-installer/locale; do
+	if ! db_get $var; then
+		db_register debian-installer/dummy $var || true
+	fi
+done
+
+db_set debian-installer/framebuffer false || true
+db_set debian-installer/locale "C" || true
+db_fset debian-installer/locale seen true
+
+set_question () {
+	if ! db_fget "$1" seen; then
+		db_register debian-installer/dummy "$1"
+		db_subst "$1" ID "$1"
+		db_fget "$1" seen
+	fi
+	if [ "$RET" = false ]; then
+		db_set "$1" "$2"
+		db_fset "$1" seen true
+	fi
+}
+
+# GNOME's not going to run anyway.
+set_question archive-copier/copy false
+set_question pkgsel/install-pattern ''
+set_question pkgsel/install-language-support false

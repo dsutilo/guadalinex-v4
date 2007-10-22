@@ -1,0 +1,2 @@
+misc:Depends=cdebconf-udeb
+shlibs:Depends=libc6 (>= 2.4-1)

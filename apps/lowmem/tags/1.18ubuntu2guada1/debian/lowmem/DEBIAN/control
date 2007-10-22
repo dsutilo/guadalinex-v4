@@ -1,0 +1,9 @@
+Package: lowmem
+Version: 1.18ubuntu2guada1
+Section: debian-installer
+Priority: optional
+Architecture: all
+Installed-Size: 32
+Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
+Description: free memory for lowmem install
+Installer-Menu-Item: 25
