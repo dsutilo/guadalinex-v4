@@ -8,6 +8,9 @@ En este fichero, se configuran diferentes aspectos relacionados con el arranque 
 
 GFXBOOT-BACKGROUND: ¿Color de las fuentes de GFXBOOT? (pte comprobación)
 
+Esto se cambia, al igual que variables necesarias para la correcta generación de gfxboot, en el script CONF.sh, que contiene los pantones de los colores
+de fondo para gfxboot y variables tales como CAPPROJECT donde se define el nombre de la distro para el menú principal de gfxboot.
+
 * demiurgo/trunk/debian-cd/data/edgy/splash.pcx
 
 Imagen de fondo para GFXBOOT.
