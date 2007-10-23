@@ -7,7 +7,7 @@ kernel_version="2.6.20-15-generic"
 sources="/tmp/sources/"
 
 base=""
-live="casper ubiquity-frontend-gtk ubiquity-ubuntu-artwork xfsprogs jfsutils ntfsprogs discover1 xresprobe laptop-detect extrahooks-casper extrahooks-ubiquity gru gparted"
+live="casper ubiquity ubiquity-frontend-gtk ubiquity-ubuntu-artwork ubiquity-guadalinex-lang xfsprogs jfsutils ntfsprogs discover1 xresprobe laptop-detect extrahooks-casper extrahooks-ubiquity gru gparted casper-guada ubiquity-casper"
 
 packages="linux-image-generic guadalinex-desktop guadalinex-minimal-conf guadalinex-desktop-conf guadalinex-artwork guadalinex-doc casper ubiquity-frontend-gtk ubiquity-ubuntu-artwork xfsprogs jfsutils ntfsprogs discover1 xresprobe laptop-detect"
 exclude="guadalinex-minimal-conf,ubuntu-desktop,ubuntu-artwork,ubuntu-keyring,ubuntu-minimal,ubuntu-standard"
