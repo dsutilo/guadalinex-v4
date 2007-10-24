@@ -28,9 +28,9 @@ else
 			min=18
 		;;
 		i386)
-			level1=45
-			level2=28
-			min=22
+			level1=68
+			level2=52
+			min=28
 		;;
 		mips)
 			level1=36
