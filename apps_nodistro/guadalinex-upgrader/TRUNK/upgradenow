@@ -21,7 +21,7 @@ for user in $(ls /home);do
             PANELS=/home/$user/.gconf/apps/panel
             test -f $AUTOSTART  && rm -f $AUTOSTART
             test -f $SESSION && rm -f $SESSION
-            test -f $PANELS && rm -rf $PANELS
+            test -d $PANELS && rm -rf $PANELS
         fi
 done
 
