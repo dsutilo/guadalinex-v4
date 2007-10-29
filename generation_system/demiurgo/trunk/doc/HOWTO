@@ -84,6 +84,9 @@ Estas opciones se extraen de "isolinux.txt", buscando las entradas que comiencen
 
 Deberán tener su correspondiente cadena en los ficheros de traducciones para que aparezcan en otros idiomas.
 
+Hay que tener en cuenta que el nombre de la distro no puede estar en mayúsculas, sólo capitalizada (primera en mayúsculas). Si no se hace así no se traducen
+bin las cadenas. Estoy hay que cambiarlo en los po de idioma correspondiente y en bootloader.pot.
+
 Más info: menuconfig.inc en paquete "gfxboot"
 
 - Opciones en la parte inferior (panel):
