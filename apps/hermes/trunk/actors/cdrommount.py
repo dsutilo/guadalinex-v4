@@ -45,6 +45,7 @@
 #Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import os
+import gconf
 
 from volume import Actor as VolumeActor
 
@@ -58,10 +59,15 @@ class Actor (VolumeActor):
 
     def on_added(self):
         self.logger.debug("storage.on_add actived")
-        os.system("pmount %s %s" % (self.properties['block.device'], 
-            self.properties['linux.fstab.mountpoint'].split('/')[-1]))
+        client = gconf.client_get_default()
+        is_automount = client.get_bool("/desktop/gnome/volume_manager/automount_media")
+        self.logger.debug("gconf.key automount_media value is: %s", is_automount)
+        if is_automount:
+            self.logger.debug("gconf.key automount_media True")
+            os.system("pmount %s %s" % (self.properties['block.device'], 
+                      self.properties['linux.fstab.mountpoint'].split('/')[-1]))
 
-        super(VolumeActor, self).on_added()
+            super(VolumeActor, self).on_added()
 
 
     def on_removed(self):
