@@ -1,8 +1,14 @@
+guadalinex-upgrader (0.3) unstable; urgency=low
+
+  * Fixed some problems with the old menu.lst (from v3).
+
+ -- Juanje Ojeda Croissier <jojeda@emergya.es>  Thu, 22 Nov 2007 18:44:59 +0200
+
 guadalinex-upgrader (0.2) feisty; urgency=low
 
   * Solucionados algunos problemas derivados de la actualización.
 
- -- Antonio González <agonzalez@emergya.es>  Wed,  1 Aug 2007 13:50:59 +0200
+ -- Antonio González <agonzalez@emergya.es>  Wed, 1 Aug 2007 13:50:59 +0200
 
 guadalinex-upgrader (0.1) edgy; urgency=low
 
