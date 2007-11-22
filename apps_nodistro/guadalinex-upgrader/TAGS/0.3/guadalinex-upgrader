@@ -1,0 +1,185 @@
+#!/bin/bash
+
+MODIF="bin boot etc lib sbin usr var"
+NOMODIF="dev sys proc"
+CONTINUE=0
+   
+# Establecemos la prioridad debconf para que no pregunte en el proceso de actualización
+export DEBCONF_PRIORITY=critical 
+export DEBIAN_FRONTEND=noninteractive
+
+function fix_upgrade(){
+   set -x
+   # Eliminamos entradas de evolution que ya no son válidas y arreglamos algunos problemas originados tras la actualización
+   for desk in `ls /usr/share/applications/evolution*`;do
+   	rm -rf $desk
+   done   
+   test -e /var/tmp/ipodder.desktop && mv /var/tmp/ipodder.desktop /usr/share/applications/
+   test -e /usr/share/icons/crystalsvg/64x64/apps/smb4k.png && cp /usr/share/icons/crystalsvg/64x64/apps/smb4k.png /usr/share/pixmaps/
+
+   # Restauramos el start-stop-daemon
+   mv /sbin/start-stop-daemon.REAL /sbin/start-stop-daemon
+
+   dpkg --configure -a
+   # Eliminamos el kernel 2.6.17-10-386 que tambien se instala y no debería y actualizamos grub
+   apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove linux-image-2.6.17-10-386 >> /tmp/simulate.org 2>&1
+   #apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove linux-image-2.6.12-9-386 >> /tmp/simulate.org 2>&1
+
+   # Create a new menu.lst for the Grub
+   cat /usr/share/guadalinex-upgrader/menu.lst.tmpl > /boot/grub/menu.lst
+   update-grub
+   sed -i '/^# kopt_2_6=/ d' /boot/grub/menu.lst
+   cat /tmp/old_entries >> /boot/grub/menu.lst
+   update-grub
+
+   # Fix user preferences
+   for user in $(ls /home);do
+	grep $user /etc/passwd >>/dev/null
+	# Checks if user really exists
+	if [ $? -eq 0 ];then
+            FIREFOX=/home/$user/Desktop/firefox.desktop
+	    su - $user -c "gconftool-2 --type list --list-type string --set /desktop/gnome/peripherals/keyboard/kbd/layouts [es]"
+            test -f $FIREFOX && sed -i 's|Icon=/usr/share/pixmaps/firefox_logo.png|Icon=/usr/share/pixmaps/firefox-guadalinex.png|g' $FIREFOX
+	fi
+   done
+}
+
+function prepare_system(){
+
+   # Comprobar conexión a internet
+   wget -T 30 http://v4.guadalinex.org/guadalinex-toro/dists/toro/main/binary-i386/Packages
+
+   if [ $? = 1 ];then
+      zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --info --text "No tiene conexión a internet"
+      echo "1" > /tmp/guadalinex-upgrader.exit
+   fi  
+
+   # Guardamos una copia del fichero sources.list
+   if [ ! -e /etc/apt/sources.list.v3 ];then
+      mv /etc/apt/sources.list /etc/apt/sources.list.v3
+      # Creamos el sources.list nuevo con los repositorios de V4
+#hack:Solución temporal para ahorrar tiempo en pruebas, añadido repo de gensys.
+#      cat > /etc/apt/sources.list <<EOF
+#      deb http://192.168.1.205/ubuntu edgy toro main restricted universe multiverse
+#EOF
+     cat > /etc/apt/sources.list <<EOF
+     deb http://v4.guadalinex.org/ubuntu edgy main restricted universe multiverse
+     deb http://v4.guadalinex.org/guadalinex-toro toro main restricted universe multiverse
+     deb http://v4.guadalinex.org/guadalinex-toro toro-updates main restricted universe multiverse
+     deb http://v4.guadalinex.org/guadalinex-toro toro-security main restricted universe multiverse
+     deb http://v4.guadalinex.org/guadalinex-toro toro-backports main restricted universe multiverse
+EOF
+   fi
+
+   # Actualizamos la lista de paquetes
+   apt-get update
+   rm -rf Packages*
+   
+   # Cargamos el módulo unionfs
+   insmod /usr/share/guadalinex-upgrader/unionfs.ko
+
+   # Guardamos las entradas antiguas del Grub
+   python /usr/sbin/grub-old-entries > /tmp/old_entries
+
+   # Creamos los directorios para el chroot
+   if [ ! -d /tmp/rw -a ! -d /tmp/simulate ];then
+      mkdir /tmp/rw /tmp/simulate
+      mkdir /tmp/simulate/tmp
+   fi
+   
+
+   # Creamos la estructura completa del chroot
+   for a in ${MODIF};do
+      mkdir "/tmp/rw/$a"
+      mkdir "/tmp/simulate/$a"
+   done
+   
+   # Por si se habia ejecutado antes para desmontarlo
+   awk "/\/tmp\/simulate/ {print \$2}" /proc/mounts | sort -r|xargs umount
+
+   for b in ${NOMODIF};do
+      mkdir "/tmp/simulate/$b"
+      mount --bind /$b /tmp/simulate/$b
+   done
+
+   for c in ${MODIF};do
+      mount -t unionfs -o dirs=/tmp/rw/$c=rw:/$c=ro unionfs /tmp/simulate/$c
+   done
+   
+
+}
+
+zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --question --text "Se va a proceder a la actualización del sistema. Por favor, cierre todas las aplicaciones y no realice otras tareas mientras lleva a cabo este proceso.
+Algunas de las aplicaciones que tiene actualmente instaladas podrían dejar de funcionar y podría corromperse el sistema, le recomendamos que haga copia de sus datos antes de proceder.
+¿Desea continuar?" && zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --info --text "Una vez concluído el proceso se reiniciará el sistema por lo que insistimos en que cierre todas las aplicaciones y no realice otras tareas" && CONTINUE=1
+
+if [ "$CONTINUE" = 1 ];then
+
+   # Controlar el espacio disponible para permitir o no la actualización
+   LIBRE=`df|head -2|tail -1|awk '{print $4}'`
+   #LIBRE=`df | awk '{if ($6 == "/") {print $4}}'`
+   if [ $LIBRE -lt 3000000 ];then
+      zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --error --text "Lo sentimos pero no hay espacio suficiente para llevar a cabo la actualización, se necesitan al menos 3GB libres.\n Libere espacio y vuelva a abrir guadalinex-upgrader"
+      exit 1
+   fi
+
+   if [ -e /tmp/guadalinex-upgrader.exit ];then
+      rm /tmp/guadalinex-upgrader.exit
+   fi
+
+   if [ -e /tmp/gout ];then
+      rm /tmp/gout
+   fi
+   
+   if [ -e /tmp/goutupgrade ];then
+      rm /tmp/goutupgrade
+   fi
+
+   # Ajustes antes de actualizar
+   prepare_system|zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --progress --text "Preparando el sistema para la actualización..." --pulsate --auto-close
+   if [ -f /tmp/guadalinex-upgrader.exit -a "$(cat /tmp/guadalinex-upgrader.exit)" == "1" ];then
+      exit 1
+   fi
+
+   # Previa simulación para comprobar si se puede o no actualizar#
+   zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --info --text "A continuación se descargarán los paquetes necesarios y se hará una simulación para comprobar que su sistema puede actualizarse.
+Esta operación puede tardar entre 1 y 2 horas, dependiendo de su conexión a internet, por favor, sea paciente."
+   # Añadida la opción de debugging
+# hack debugging
+   xterm -T "Simulando la actualización..." -e 'simulate | tee -a /tmp/simulate.log' &
+   #simulate >> /tmp/simulate.log 2>&1 &
+   (while true
+      do
+      echo .
+      test -f /tmp/gout && break
+      sleep 10
+      done)|zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --progress --text "Comprobando si es posible la actualización...
+Este proceso puede tardar entre 1 y 2 horas." --pulsate --auto-close
+
+   if [ "$(cat /tmp/guadalinex-upgrader.exit)" == "1" ];then
+      exit 1
+   fi
+   ################################################ FIN SIMULACION
+   
+   zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --info --text "La simulación ha salido bien!
+A continuación se va a actualizar. En algún momento pueden aparecer mensajes de error, no se preocupe, esto es normal, ignórelos."
+   
+   # Empieza la actualización
+  #hack debugging
+   xterm -T "Actualizando a Guadalinex V4.1..." -e 'upgradenow | tee -a /tmp/simulate.log' &
+   (while true
+      do
+      echo .
+      test -f /tmp/goutupgrade && break
+      sleep 10
+      done)|zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --progress --text "Actualizando...
+No se preocupe por los errores de gnome-panel" --pulsate --auto-close
+
+   # Arreglamos problemas derivados
+   fix_upgrade|zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --progress --text "Ajustando configuraciones..." --pulsate  --auto-close 
+
+   zenity --window-icon=/usr/share/pixmaps/guadalinex-upgrader.png --info --text "Se ha realizado la actualización y se va a reiniciar. Si tiene algún problema visite www.guadalinex.org/ayuda"
+   
+   # Reiniciamos
+   reboot
+fi

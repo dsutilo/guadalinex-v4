@@ -1,0 +1,19 @@
+######################
+# GUADALINEX UPGRADER#
+######################
+
+Guadalinex upgrader no es un sistema independiente de actualización, esta hecho en bash y usa el gestor de paquetes 
+de Debian (apt y dpkg).
+
+Con g-u no se asegura una actualización exitosa 100%. Para las pruebas se ha tomado un sistema Guadalinex V3.0.1 recién
+instalado, que sí se asegura que se actualiza correctamente. Si la base de datos de paquetes de su sistema difiere de
+la original y ha mezclado paquetes de otras distribuciones puede ser que se corrompa el sistema, no obstante, si sólo ha 
+usado repositorios originales de Guadalinex la probabilidad de conseguir una actualización estable a V4 será mayor.
+
+Guadalinex-Upgrader se compone de:
+
+- Un fichero de configuración propio para el uso de apt con g-u, en el que se han establecido las opciones más idóneas
+para evitar intervenciones del usuario y autocorreción de posibles errores.
+- El script guadalinex-upgrade que es el que lanza el usuario.
+- El script simulate que, mediante unionfs, realiza una simulación de la actualización del sistema en el que se ejecuta.
+- El script upgradenow que lleva a cabo la actualización en el sistema.

@@ -1,0 +1,22 @@
+#!/usr/bin/python
+
+def grub_entries(conf_file):
+    lines = []
+    for line in conf_file:
+	for word in ['#', 'default', 'timeout', 'hidden', 'fallback', 'splashimage', '\n']:
+		start = line.startswith(word)
+		if start is True:
+			break
+        if line.startswith('title'):
+            yield lines
+            lines = [line]
+        elif not start:
+            lines.append(line)
+    yield lines
+
+grub_file = '/boot/grub/menu.lst'
+lines = open(grub_file).readlines()
+for i in grub_entries(lines):
+    print ''.join(i)
+
+

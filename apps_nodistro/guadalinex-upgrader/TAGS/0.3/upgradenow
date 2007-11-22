@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# Creamos directorio temporal para almacenar algunos ficheros que se deben mantener
+test -d /var/tmp || mkdir /var/tmp
+
+if [ -e "/usr/share/applications/ipodder.desktop" ];then
+   mv /usr/share/applications/ipodder.desktop /var/tmp/
+fi
+
+# Eliminamos los esquemas de gconf y el paquete xscreensaver que dan problemas al actualizar
+rm -rf /etc/gconf/gconf.xml.defaults/* /etc/gconf/schemas
+
+# Si existe un .gconf/apps/panel lo eliminamos pues entra en conficto con el nuevo panel de gv4,
+# el usuario pierde los applets que tuviera
+for user in $(ls /home);do
+        grep $user /etc/passwd >>/dev/null
+        # Checks if user really exists
+        if [ $? -eq 0 ];then
+            AUTOSTART=/home/$user/.config/autostart/netapplet.desktop
+            SESSION=/home/$user/.gnome2/session-manual
+            PANELS=/home/$user/.gconf/apps/panel
+            test -f $AUTOSTART  && rm -f $AUTOSTART
+            test -f $SESSION && rm -f $SESSION
+            test -d $PANELS && rm -rf $PANELS
+        fi
+done
+
+
+apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install dpkg | tee -a /tmp/simulate.log
+dpkg --configure -a | tee -a /tmp/simulate.log
+
+# Fake para que no levante servicios en la simulacion
+if [ ! -e /sbin/start-stop-daemon.REAL ];then
+   mv /sbin/start-stop-daemon /sbin/start-stop-daemon.REAL
+   cat > /sbin/start-stop-daemon <<EOF
+#!/bin/bash
+echo "Estas usando un fake de este script, el original es start-stop-daemon.REAL"
+exit 0
+EOF
+   chmod +x /sbin/start-stop-daemon
+fi
+
+apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove xscreensaver | tee -a /tmp/simulate.log
+apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf dist-upgrade | tee -a /tmp/simulate.log
+dpkg --configure -a | tee -a /tmp/simulate.log
+
+# Eliminamos los metapaquetes de v3
+apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf remove guadalinex-v3* | tee -a /tmp/simulate.log
+
+# Instalamos paquetes necesarios y los metapaquetes de v4
+apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install openoffice.org openoffice.org-evolution openoffice.org-gnome | tee -a /tmp/simulate.log
+apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf install meta-guadalinex-v4 xserver-xorg-video-all | tee -a /tmp/simulate.log
+apt-get --config-file /usr/share/guadalinex-upgrader/gu.apt.conf -f install | tee -a /tmp/simulate.log
+dpkg --configure -a | tee -a /tmp/simulate.log
+touch /tmp/goutupgrade

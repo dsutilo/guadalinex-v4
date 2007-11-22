@@ -1,0 +1,12 @@
+Source: guadalinex-upgrader
+Section: misc
+Priority: optional
+Maintainer: David Teyssiere Rubio <dteyssiere@emergya.es>
+Build-Depends: debhelper (>> 3.0.0)
+Standards-Version: 3.7.2
+
+Package: guadalinex-upgrader
+Architecture: i386
+Depends: python 
+Description: Actualizador de guadalinex 
+ Aplicacion para actualizar la version del sistema Guadalinex.
