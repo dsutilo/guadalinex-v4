@@ -11,7 +11,6 @@ file
 ftp
 gsm-utils
 guadalinex-firmwares
-guadalinex-linux-modules-generic
 hdparm
 info
 inputattach
@@ -21,7 +20,6 @@ iputils-tracepath
 linux-image-2.6.22-14-generic
 linux-ubuntu-modules-2.6.22-14-generic
 linux-restricted-modules-2.6.22-14-generic
-linux-backports-modules-2.6.20-15-generic
 logrotate
 lshw
 lsof
@@ -33,7 +31,6 @@ mime-support
 minicom
 nano
 ncftp
-ndiswrapper-modules-2.6.20-15-generic
 nmap
 parted
 popularity-contest
