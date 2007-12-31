@@ -11,6 +11,10 @@
 #
 #- Lorenzo Gil Sanchez <lgs@yaco.es>
 #
+#Contribuciones:
+#
+#- J. Félix Ontañón <fontanon@emergya.es>
+#
 #Este fichero es parte del módulo E-Admin de Guadalinex 2006
 #
 #E-Admin de Guadalinex 2006 es software libre. Puede redistribuirlo y/o modificarlo
@@ -51,6 +55,8 @@ import optparse
 import os
 import subprocess
 import tempfile
+import exceptions
+import ConfigParser
 
 import gobject
 import gtk
@@ -59,6 +65,7 @@ FIREFOX_CMD  = '/usr/bin/firefox'
 CERTUTIL_CMD = '/usr/bin/certutil'
 MODUTIL_CMD  = '/usr/bin/modutil'
 PK12UTIL_CMD = '/usr/bin/pk12util'
+SIEMENS_ATR = "3B F2 98 00 FF C1 10 31 FE 55 C8 04 12"
 
 class FireFoxSecurityUtils(object):
     def is_firefox_running(self):
@@ -76,10 +83,22 @@ class FireFoxSecurityUtils(object):
         ff_dir = os.path.join(user_dir, '.mozilla', 'firefox')
 	if not os.path.exists(ff_dir):
             return
-        for name in os.listdir(ff_dir):
-            full_name = os.path.join(ff_dir, name)
-            if os.path.isdir(full_name) and name.endswith('.default'):
-                return full_name
+
+        config = ConfigParser.ConfigParser()
+        config.readfp(file(os.path.join(ff_dir, 'profiles.ini')))
+        profiles = [section for section in config.sections() \
+                    if config.has_option(section, 'Name')]
+
+        if len(profiles) == 1:
+            default = profiles[0]
+        else:
+            for profile in profiles:
+                if (config.has_option(profile, 'Default') and
+                    config.get(profile, 'Default') == '1'):
+                    default = profile
+
+        path = config.get(default, 'Path')
+        return os.path.join(ff_dir, path)
 
     def has_security_method(self, security_method):
         profile = self.get_default_profile_dir()
@@ -154,6 +173,22 @@ class FireFoxSecurityUtils(object):
         status, output = commands.getstatusoutput(cmd)
         return status == 0
 
+    def remove_security_method(self, name):
+        profile = self.get_default_profile_dir()
+        if not profile:
+            return False
+
+        # we need to use the subprocess module since this command request
+        # interactive input
+        cmd = [MODUTIL_CMD, '-delete', "%s" % name, '-dbdir', "%s" % profile]
+        process = subprocess.Popen(cmd,
+                                   stdin=subprocess.PIPE,
+                                   stdout=subprocess.PIPE,
+                                   stderr=subprocess.PIPE)
+        process.stdin.write('\n')
+        process.wait()
+        return process.returncode == 0
+
     def list_certificates(self):
         profile = self.get_default_profile_dir()
         if not profile:
@@ -172,6 +207,7 @@ FNMT_ROOT_CERT_FILE = "/usr/share/ca-certificates/fnmt/FNMTClase2CA.crt"
 FNMT_LICENSE        = "/usr/share/ca-certificates/fnmt/condiciones_uso.txt"
 DNIE_PKCS11_LIB     = "/usr/lib/opensc-pkcs11.so"
 CERES_PKCS11_LIB    = "/usr/lib/opensc-pkcs11.so"
+SIEMENS_PKCS11_LIB  = "/usr/local/lib/libsiecap11.so"
 
 class LicenseDialog(gtk.Dialog):
     def __init__(self):
@@ -275,6 +311,7 @@ class Application(object):
 
 class FireFoxApp(Application):
 
+    
     def __init__(self, name='FireFox'):
         super(FireFoxApp, self).__init__(name)
         self._ff = FireFoxSecurityUtils()
@@ -317,12 +354,34 @@ class FireFoxApp(Application):
             abort = not self._wait_for_running_instances()
             if abort:
                 return False
+	
+	try:
+	    card_types = self.check_smartcards()
+	except FireFoxAppError, e:
+	    print e.errno, e.desc
+	    return False
 
-        if install_dnie and not self._ff.has_security_method('DNIe'):
-            self._ff.add_security_method('DNIe', DNIE_PKCS11_LIB)
+	if SIEMENS_ATR in card_types:
+	    print "Detected Siemens Smartcard"
+            if self._ff.has_security_method('Tarjeta Inteligente'):
+		self._ff.remove_security_method('Tarjeta Inteligente')
 
-        if install_ceres and not self._ff.has_security_method('Tarjeta Inteligente'):
-            self._ff.add_security_method('Tarjeta Inteligente', CERES_PKCS11_LIB)
+            if self._ff.has_security_method('DNIe'):
+		self._ff.remove_security_method('DNIe')
+
+	    if install_ceres and not self._ff.has_security_method('Tarjeta Inteligente Siemens'):
+                self._ff.add_security_method('Tarjeta Inteligente Siemens', SIEMENS_PKCS11_LIB)
+	else:
+	    print "Detected FNMT-smartcard, DNIe or other"
+	    if self._ff.has_security_method('Tarjeta Inteligente Siemens'):
+		self._ff.remove_security_method('Tarjeta Inteligente Siemens')
+
+	    if install_dnie and not self._ff.has_security_method('DNIe'):
+               self._ff.add_security_method('DNIe', DNIE_PKCS11_LIB)
+
+            if install_ceres and not self._ff.has_security_method('Tarjeta Inteligente'):
+                self._ff.add_security_method('Tarjeta Inteligente', CERES_PKCS11_LIB)
+
 
         # install the user certificates
         success = True
@@ -408,6 +467,35 @@ class FireFoxApp(Application):
     def remove_certificates(self, certs):
         for cert in certs:
             self._ff.remove_user_certificate(cert)
+
+    def check_smartcards(self):
+	status, output = commands.getstatusoutput("getatr -a")
+	if status != 0:
+	    raise FireFoxAppError(0, "No se pudo acceder al lector de tarjetas")
+	    return False
+
+	card_types = []
+	for smartcard_atr in filter(lambda x: x != "None", output.split('\n')):
+	    if SIEMENS_ATR not in card_types:
+		if smartcard_atr not in card_types:
+		    card_types.append(smartcard_atr)
+	    else:
+		if smartcard_atr != SIEMENS_ATR:
+		    raise FireFoxAppError(1, "No puede usar tarjeta Siemens y otra no Siemens simultaneamente")
+  		    return False
+
+
+	if card_types:
+	    return card_types	
+	else:
+	    raise FireFoxAppError(2, "No se detecto tarjeta insertada")
+	    return False
+
+
+class FireFoxAppError(exceptions.Exception):
+    def __init__(self, errno, desc):
+	self.errno = errno
+	self.desc = desc
 
 
 class EvolutionApp(Application):
