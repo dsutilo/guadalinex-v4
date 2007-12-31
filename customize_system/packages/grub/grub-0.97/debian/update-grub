@@ -308,7 +308,11 @@ device_map=$grub_dir/device.map
 kopt="root=$(awk '$2 == "/" {print $1}' /etc/fstab) ro"
 
 # Title
-title="Guadalinex"
+# Take actual Guadalinex version from /etc/lsb-release
+lsb_release_field_version=$(cat /etc/lsb-release|grep -i distrib_description|cut -d "=" -f2|sed -e 's/Guadalinex //g'|sed -e 's/"//g')
+
+# Set title variable. If bad formed lsb-release no versions will be included, only Guadalinex title name
+title="Guadalinex $lsb_release_field_version"
 
 # should update-grub remember the default entry
 updatedefaultentry="false"
@@ -633,12 +637,12 @@ write_kernel_entry()
 	initrd=$8
 	savedefault=$9
 
-	echo -n "title		$title, " >> $buffer
+	echo -n "title		$title" >> $buffer
 	# memtest86 is not strictly a kernel  
-	if ! echo "$kernel_version" | grep -q -e ^memtest86 -e ^test; then
-		echo -n "kernel " >> $buffer
-	fi
-	echo -n "$kernel_version" >> $buffer
+#	if ! echo "$kernel_version" | grep -q -e ^memtest86 -e ^test; then
+#		echo -n "," >> $buffer
+#	fi
+	#echo -n "$kernel_version" >> $buffer
 	if [ -n "$recovery_desc" ]; then
 		echo -n " $recovery_desc" >> $buffer
 	fi
