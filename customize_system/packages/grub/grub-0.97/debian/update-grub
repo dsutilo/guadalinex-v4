@@ -639,10 +639,10 @@ write_kernel_entry()
 
 	echo -n "title		$title" >> $buffer
 	# memtest86 is not strictly a kernel  
-#	if ! echo "$kernel_version" | grep -q -e ^memtest86 -e ^test; then
-#		echo -n "," >> $buffer
-#	fi
-	#echo -n "$kernel_version" >> $buffer
+	if ! echo "$kernel_version" | grep -q -e ^memtest86 -e ^test; then
+		echo -n ", " >> $buffer
+	fi
+	echo -n "($kernel_version)" >> $buffer
 	if [ -n "$recovery_desc" ]; then
 		echo -n " $recovery_desc" >> $buffer
 	fi
