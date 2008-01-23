@@ -309,10 +309,14 @@ kopt="root=$(awk '$2 == "/" {print $1}' /etc/fstab) ro"
 
 # Title
 # Take actual Guadalinex version from /etc/lsb-release
-lsb_release_field_version=$(cat /etc/lsb-release|grep -i distrib_description|cut -d "=" -f2|sed -e 's/Guadalinex //g'|sed -e 's/"//g')
+lsb_release_field_version="$(lsb_release -ds 2> /dev/null)"
 
 # Set title variable. If bad formed lsb-release no versions will be included, only Guadalinex title name
-title="Guadalinex $lsb_release_field_version"
+if [ -z "$lsb_release_field_version" ]; then
+  title="Guadalinex v4.2"
+else
+  title="$lsb_release_field_version"
+fi
 
 # should update-grub remember the default entry
 updatedefaultentry="false"
