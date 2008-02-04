@@ -43,6 +43,7 @@ deskbar-applet
 desktop-file-utils
 devede
 dillo
+discover
 doc-base
 dvd+rw-tools
 eciadsl
@@ -147,6 +148,7 @@ language-support-es
 lemurae
 lftp
 libbluetooth2
+libdiscover
 libdvdcss2
 libdvdnav4
 libdvdread3
