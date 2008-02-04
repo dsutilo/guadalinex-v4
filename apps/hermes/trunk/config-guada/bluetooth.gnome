@@ -8,6 +8,7 @@ packages:
 
 # Listado de aplicaciones a lanzar cuando se conecte
 conn_commands:
+    - hciconfig hci0 inqmode 0 &
     - gnome-obex-server &
     - bt-applet &
 
