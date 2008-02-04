@@ -1,0 +1,18 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 01_no_default_desktop_item.dpatch by Sebastien Bacher <seb128@canonical.com>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: No description.
+
+@DPATCH@
+diff -urNad gnome-orca-2.19.1~/orca.desktop.in gnome-orca-2.19.1/orca.desktop.in
+--- gnome-orca-2.19.1~/orca.desktop.in	2007-04-03 00:20:59.000000000 +0200
++++ gnome-orca-2.19.1/orca.desktop.in	2007-04-26 11:27:16.000000000 +0200
+@@ -6,6 +6,7 @@
+ Icon=orca
+ Terminal=false
+ Type=Application
++NoDisplay=true
+ StartupNotify=true
+ Categories=GNOME;GTK;Accessibility;
+ X-GNOME-Bugzilla-Bugzilla=GNOME

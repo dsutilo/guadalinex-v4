@@ -1,0 +1,3 @@
+gnome-orca_2.21.0-0~toro_all.deb gnome optional
+python-orca-brlapi_2.21.0-0~toro_i386.deb python optional
+python-orca-brlapi-dbg_2.21.0-0~toro_i386.deb python extra

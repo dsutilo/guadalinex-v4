@@ -1,0 +1,52 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 01_link_libbrlapi.dpatch by Matthias Klose <doko@ubuntu.com>
+
+@DPATCH@
+--- gnome-orca-2.17.91.orig/src/brl/brlmodule.c
++++ gnome-orca-2.17.91/src/brl/brlmodule.c
+@@ -19,15 +19,21 @@
+  * Boston, MA 02111-1307, USA.
+  *
+  */
++#undef _USE_DLOPEN_
++
+ #include <string.h>
+ #include <errno.h>
++#ifdef _USE_DLOPEN_
+ #include <dlfcn.h>
++#endif
+ #include <glib.h>
++#include <brltty/api.h>
+ #include <Python.h>
+ 
+ 
+ /* BrlAPI function pointers - these map directly to BrlAPI 3.6.2 methods.
+  */
++#ifdef _USE_DLOPEN_
+ static int (*brlapi_initializeConnection)(const void *clientSettings,
+                                           const void *usedSettings);
+ static void (*brlapi_closeConnection)(void);
+@@ -43,6 +49,7 @@
+ static int (*brlapi_writeDots) (const unsigned char *dots);
+ 
+ static int (*brlapi_readKey) (int block, unsigned int *code);
++#endif
+ 
+ /* A non-zero value indicates this module has been initialized and is
+  * ready for communication with BrlTTY.
+@@ -113,6 +120,7 @@
+         if (!PyArg_ParseTuple (args, "|ii:init", &tty, &how))
+                 return NULL;
+ 
++#ifdef _USE_DLOPEN_
+         /* Open the brlapi library
+          */
+         brlapi_library = dlopen("libbrlapi.so", RTLD_LAZY);
+@@ -224,6 +232,7 @@
+                         "Failed to find brlapi_readKey in BrlTTY");
+                 return NULL;
+         }
++#endif
+ 
+         /* Connect to BrlTTY
+          */

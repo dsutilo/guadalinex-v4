@@ -1,0 +1,6 @@
+patching file po/POTFILES.in
+Hunk #1 succeeded at 47 (offset 3 lines).
+patching file src/orca/scripts/Makefile.am
+patching file src/orca/scripts/Makefile.in
+Hunk #1 succeeded at 250 (offset -7 lines).
+patching file src/orca/scripts/ubiquity.py

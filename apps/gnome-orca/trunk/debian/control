@@ -1,0 +1,49 @@
+Source: gnome-orca
+Section: gnome
+Priority: optional
+Maintainer: Ubuntu Accessibility Developers <ubuntu-accessibility-devel@lists.ubuntu.com>
+XSBC-Original-Maintainer: Kartik Mistry <kartik.mistry@gmail.com> 
+Build-Depends: debhelper (>= 5.0.37.2), pkg-config, libbrlapi1-dev (>= 3.7.2), libglib2.0-dev (>= 2.10.0), python-all-dev (>= 2.4), python2.5-dbg, libbonobo2-dev (>= 2.14.0), python-pyorbit-dev (>= 2.14.0), python-glade2, python-gtk2-dev, python-gnome2-dev, libatspi-dev (>= 1.7.6), at-spi, libgnome-speech3-dev (>= 0.3.10), python-at-spi, libxml-parser-perl, python-central (>= 0.5), dpatch, intltool, python-gconf
+XS-Python-Version: all
+Standards-Version: 3.7.2
+
+Package: gnome-orca
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}, libgnome-speech7 (>= 0.3.10), libatspi1.0-0 (>= 1.7.6), python-orca-brlapi (>= ${binary:Version}), python-pyorbit (>= 2.0), python-gtk2 (>= 2.4), python-gnome2 (>= 2.6.2), python-glade2, at-spi, python-at-spi, libgail-gnome-module, python-gconf
+Recommends: gnome-mag (>= 0.11.14), brltty
+Suggests: python-gnome-orca-dbg, python-pyorbit-dbg, python-gtk2-dbg, python-gnome2-dbg, python-glade2-dbg
+XB-Python-Version: ${python:Versions}
+Description: scriptable screen reader
+ Orca defines a set of default behaviors (reactions to application events)
+ and key bindings (reaction to user key presses).  These default behaviors
+ and key bindings can be overwritten on a per-application basis.  Orca
+ creates a script object for each running application, which merges both the
+ default behaviors and key bindings, and the application specific ones.  Orca
+ provides the infrastructure to activate and deactivate scripts, as well as a
+ host of services accessible from within the scripts.
+ .
+ Note: gnome-orca works without gnome-mag, you just need it for magnification.
+
+Package: python-orca-brlapi
+Section: python
+Architecture: any
+Depends: ${python:Depends}, ${shlibs:Depends}
+Replaces: gnome-orca (<< 2.17.91-0ubuntu2)
+Suggests: python-orca-brlapi-dbg
+XB-Python-Version: ${python:Versions}
+Description: python bindings for braille display access via BRLTTY
+ This package contains the python bindings necessary to run programs which
+ need to communicate with a refreshable braille display.
+ .
+ This package contains the extension built for the python debug interpreter.
+
+Package: python-orca-brlapi-dbg
+Priority: extra
+Section: python
+Architecture: any
+Depends: python-orca-brlapi (= ${binary:Version}), python-dbg, ${shlibs:Depends}
+Description: python debug bindings for braille display access via BRLTTY
+ This package contains the python bindings necessary to run programs which
+ need to communicate with a refreshable braille display.
+ .
+ This package contains the extension built for the python debug interpreter.

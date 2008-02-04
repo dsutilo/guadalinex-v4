@@ -1,0 +1,10 @@
+Patches applied in the Debian version of :
+
+debian/patches/01_link_libbrlapi.dpatch (Matthias Klose <doko@ubuntu.com>):
+
+debian/patches/01_add_ubiquity-script.dpatch (Daniel Holbach <daniel.holbach@ubuntu.com>):
+  No description.
+
+debian/patches/01_no_default_desktop_item.dpatch (Sebastien Bacher <seb128@canonical.com>):
+  No description.
+

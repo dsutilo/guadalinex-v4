@@ -1,0 +1,2208 @@
+2.21.0 - 03-Oct-2007
+
+Things marked with a '+' indicate stuff that is not planned for a Orca
+2.20.x release.  Everything else should appear in a Orca 2.20.x
+release.
+
+General:
+
+* Work on bug 356068 - Provide a command for identifying the default
+  button within a dialog
+
+* Fix for bug 364518 - Create a GUI interface to the pronunciation
+  dictionary
+
+* Fix for bug 455308 - Output module and voice selection with Speech
+  Dispatcher backend
+
+* Fix for bug 456970 - Orca says "0 items" for tree tables that use 
+  NODE_CHILD_OF relationship
+
+* Fix for bug 457198 - Orca shouldn't exit if user-settings import
+  fails
+
+* Fix for bug 461719 - gnome-mud script failed at import 
+  (Thanks Javier!!!)
+
+* Fix for bug 462650 - Traceback when using whereAmI in Evolution New
+  Contact dialog
+
+* Fix for bug 462475 - crash due Non-ASCII characters in
+  ~/.orca/user-settings.py file
+
+* Fix for bug 464855 - orca speaks/brailles scroll bar arrows as
+  anonymous "push buttons"
+
+* Work on bug 465989 - Adding panel applets.  Manage the presentation
+  of images in tables better
+
+* Fix for bug 466500 - Speech Dispatcher backend crashes with older SD 
+  versions (Thanks Tomas Cerha!)
+
+* Fix for bug 466725 - Traceback when using SayAll in Gedit when text
+  lacks sentence punctuation
+
+* Fix for bug 467425 - Orca should default to an empty pronunciation
+  dictionary
+
+* Fix for bug 467425 - Orca causes pygtk application to generate
+  GtkWarning messages
+
+* Fix for bug 467563 - Speech Dispatcher backend crashes in text setup
+  (Thanks Tomas Cerha!)
+
+* Work on bug 468098 - The whereAmI implementation doesn't always
+  match the whereAmI spec
+
+* Fix for bug 469615 - A few lingering i18n issues
+
+* Fix for bug 469786 - Braille verbosity setting not reset
+
+* Fix for bug 471220 - Gaim's prefixChatMessage setting should have
+  option to only prefix non-focused tabs
+
+* Fix for bug 472407 - Orca doesn't always announce new messages 
+  in unfocused tabs in Pidgin
+
+* Fix for bug 472962 - Trailing space at end of message/string
+
+* Fix for bug 473420 - Orca speaking an extra "seconds" for the 
+  Preferences dialog
+
+* Fix for bug 473422 - Orca has traceback when giving focus to the 
+  pidgin application
+
+* Fix for bug 473991 - Orca doesn't announce autocompleted user names
+  in Pidgin
+
+* Fix for bug 477683 - Orca failed to bring full screen mag up
+
+* Fix for bug 480331 - tree table headers should not be repeated in
+  braille
+
+* Fix for bug 480746 - Labels for panels should not be repeated in
+  braille
+
+* Fix for bug 481101 - getClickCount() sometimes returns bogus values
+
+* Fix for bug 481343 - Initial top/left/bottom/right zoomer position
+  settings don't match screen
+
++ Much work on the test harness and many new regression tests.
+  The tests are now Macaroon-based.
+
++ Fix for bug 458150 - flat-review should present slider orientation
+
++ Fix for bug 462627 - Refactor orca_prefs.py
+
++ Fix for bug 464754 - Pronunciation dictionary checks should be
+  case insensitive
+
++ Fix for bug 469098 - Orca should indicate when a new chat window/tab
+  has appeared in Pidgin
+
++ Fix for bug 472907 - Characters "°" and "º" shouldn't have the 
+  same description
+
++ Fix for bug 472978 - Short Braille and spoken word for "dial" should
+  be different messages
+
++ Fix for bug 476639 - Remove requirement of annotating accessible
+  objects
+
+Firefox:
+
+* Fix for bug 457988 - Firefox SSL Dialogs are not read
+
+* Fix for bug 460284 - Orca should not allow the user to arrow into
+  the FF3 status bar
+
+* Fix for bug 461620 - Orca doesn't speak find results in FF3 when
+  focus is on Next/Previous buttons.
+
+* Fix for bug 466764 - Orca doesn't provide access to alerts that
+  appear when page is loading in FF3
+
+* Fix for bug 468633 - No output when tabbing to ARIA slider
+
+* Fix for bug 469686 - Sanity check needed in
+  gecko.getHeadingLevel/getNodeLevel
+
+* Fix for bug 470332 - Can no longer arrow to push buttons in FF3
+
+* Fix for bug 471537 - We need to find a way to identify truly
+  "focusable" elements in FF3
+
+* Fix for bug 471955 - Orca does not provide access to state changes
+  in HTML radio buttons in FF3
+
+* Work on bug 472029 - Cannot arrow into autocompletes in HTML forms
+  if Orca is controlling the caret
+
+* Fix for bug 472345 - Cannot arrow out of entries in FF3 if text is
+  inserted via javascript
+
+* Work on bug 472377 - Need to fix braille for radio buttons and
+  checkboxes in HTML content
+
+* Fix for bug 473585 - Caret not being set to ARIA listbox when
+  navigating to it
+
+* Fix for bug 475956 - Orca sometimes "guesses" index.htm* as the
+  base name for a link in FF3
+
+* Fix for bug 476786 - whereAmI fails in Firefox menus
+
+* Fix for bug 478204 - Orca should handle navigation around HTML
+  focusable lists better
+
+* Fix for bug 480021 - Need to handle list items in whereAmI and
+  better address XUL list items
+
+* Fix for bug 481398 - Absence of a defined speech server causes Orca
+  to fail to display its Preferences dialog
+
+* Fix for bug 481907 - Traceback in Gecko.locusOfFocusChanged()
+
++ Fix for bug 459584 - ARIA widget labels not read correctly
+
++ Fix for bug 462156 - No announcements for ARIA trees
+
++ Fix for bug 462509 - ARIA dialogs are not being announced
+
++ Fix for bug 471885 - ARIA trees should output only state change if
+  item is unchanged
+
++ Fix for bug 471878 - ARIA widgets should not echo characters during
+  traversal using arrows
+
++ Fix for bug 475177 - Support new AT-SPI event name format
+
+Thunderbird:
+
+* Fix for bug 468765 - Orca does not provide access to shortcuts for
+  FF3 or Thunderbird menu items
+
+OpenOffice/StarOffice:
+
+* Fix for bug 469367 - Orca StarOffice script not properly announcing
+  (potential) indentation in OOo Writer
+
++ Fix for bug 462256 - Orca doesn't speak/braille anything when going
+  to the 2nd screen in the OOo Presentation startup wizard
+
++ Fix for bug 465087 - Orca speaks "Available fields panel" too
+  many times with OOo sbase Tables wizard
+
+New and updated translations (THANKS EVERYONE!!!):
+
+    ar      Arabic               Djihed Afifi
+    bg      Bulgarian            Alexander Shopov
+    da      Danish               Kenneth Nielsen
+    de      German               Jochen Skulj
+    ca      Catalan              Gil Forcada and Josep Puigdemont i Casamajó
+    el      Greek                Nikos Charonitakis
+    es      Spanish              Francisco Javier Dorado Martinez and
+                                 Jorge Gonzalez
+    fi      Finnish              Ilkka Tuohela
+    fr      French               Claude Paroz and Stéphane Raimbault
+    it      Italian              Luca Ferretti
+    ja      Japanese             Takeshi Aihana
+    lt      Lithuanian           Gintautas Miliauskas and Romas Mažeika
+    lv      Latvian              Raivis Dajus
+    mk      Macedonian           Jovan Naumovski
+    nb      Norwegian Bokm�L    Espes Stefansen and Kjartan Maraas
+    pt      Portuguese           Duarte Loreto
+    pt_BR   Brazilian Portuguese Djavan Fagundes and Raphael Higino
+                                 and Tiago Melo Casal
+    ru      Russian              Anatoly Kamynin and Maxim Dziumanenko
+    si      Sinhala              Danishka Navin
+    sq      Albanian             Laurent Dhima
+    sv      Swedish              Daniel Nylander
+    th      Thai                 Theppitak Karoonboonyanan
+    uk      Ukranian             Maxim Dziumanenko
+    vi      Vietnamese           Clytie Siddall
+
+==========
+
+2.19.6 - 29-Jul-2007
+
+General:
+
+* NOTICE: the automake requirement for Orca has been moved from 
+  automake 1.7.2 to 1.9.
+
+* Work on bug 364518 - Create a GUI interface to the pronunciation
+  dictionary
+
+* Fix for bug 409731 - Orca should speak text selected by the mouse
+
+* Work on bug 415061 - regression test results should be repeatable
+
+* Fix for bug 439191 - sayAll by sentence can position the text cursor
+  in the wrong place when interrupted
+
+* Additional fix for bug 449964 - Pass the key event information to
+  the speech system to allow more advanced key echo handling (needed
+  to eliminate a stack trace)
+
+* Fix for bug 455230 - Read table cell row should insert column
+  headers for non-text cells
+
+* Fix for bug 456296 - Traceback in braille.py when doing a 
+  "Select All" in gedit.
+
+* Fix for bug 459080 - Some files missing from POTFILES.in (sorry!)
+
+* Fix for bug 460215 - Include new Tango icons.  Many thanks to
+  Stephen Brandt for his work here!  The icons look sharp.
+
+Firefox:
+
+* Fix for bug 456446 - Gecko autocompletes not always spoken
+
+* Fix for bug 459618 - ARIA widgets should not consume navigation keys
+
+Thunderbird:
+
+* Fix for bug 460774 - Orca doesn't provide access to message being
+  composed in Thunderbird
+
+Java platform:
+
+* Fix for bug 458142 - flat-review does not review Swing panels with
+  titled borders
+
+New and updated translations (THANKS EVERYONE!!!):
+
+    es      Spanish              Francisco Javier Dorado Martinez and
+                                 Jorge Gonzalez
+    fi      Finnish              Ilkka Tuohela
+    lv      Latvian              Raivis Dejus
+    pt_BR   Brazilian Portuguese Leonardo Ferreira Fontenelle
+    sv      Swedish              Daniel Nylander
+
+==========
+
+2.19.5 - 09-Jul-2007
+
+General:
+
+* More work on the regression testing framework and tests
+
+* Adjusted the uppercase pitch setting so that it is still noticable
+  but not quite so high
+
+* Fix for bug 354468 - support bookmarked objects
+
+* Fix for bug 354479 - Automatic presentation of "balloon" type
+  messages
+
+* Fix for bug 375396 - Orca failed to exit after stopping the full
+  screen mag.
+
+* Tweak for the fix for bug 376515 - Add GUI support for the new
+  customizable text-attribute feature: avoid errors when ~/.orca is
+  not present
+
+* Fix for bug 382601 and bug 400720 - Orca should indicate selected
+  text on the braille display and support accurate presentation of
+  text attributes on the braille display
+
+* Work on bug 395146 - Crash at start. Try to start an HTTP server on
+  settings.httpServerPort. If this fails, retry
+  settings.maxHttpServerRetries times, each time incrementing the
+  server port number by 1. If we are still unable to start a server,
+  just fail gracefully.
+
+* Fix for bug 436888 - Include widget status information in speech and
+  braille for flat review
+
+* Fix for bug 438333 - Need to present progress bar activity
+
+* Fix for bug 439191 - sayAll by sentence can position the text cursor
+  in the wrong place when interrupted
+
+* Fix for bug 442069 - Unneeded gnome-speech drivers not stopped when
+  GUI setup window is dismissed
+
+* Fix for bug 446881 - Orca braillegenerator code assumes that what's
+  in a table is a table cell
+
+* Fix for bug 449964 - Pass the key event information to the speech
+  system to allow more advanced key echo handling (thanks Tomas Cerha!)
+
+* Fix for bug 449978 - Punctuation keys not echoed (thanks Tomas Cerha!)
+
+* Fix for bug 450037 - Password field for gdm speaks characters you
+  type instead of "star star star star"
+
+* Fix for bug 450213 - should acc._narrow(Accessibility.Accessible) be
+  a SEVERE error?
+
+* Fix for bug 451531 - Orca failed to report the conversation message
+  of pidgin.  This was solved by simply mapping the gaim script to pidgin
+
+Firefox:
+
+* Fix for bug 409728 - Orca repeats mouse-selected text numerous times
+  in Gecko
+
+* Fix for bug 447191 - Firefox read page summary
+
+* Fix for bug 448096 - Orca does not provide access to progress bars
+  for FF3 downloads
+
+* Fix for bug 449171 - Orca gets stuck in endless loops on woot.com
+
+* Fix for bug 449232 - Firefox move to next large object additional
+  tweak
+
+* Fix for bug 453229 - Orca should honor the repeated character count
+  setting in Firefox
+
+Thunderbird:
+
+* Fix for bug 449152 - Cannot create a new message in thunderbird
+  while using Orca
+
+OpenOffice:
+
+* Fix for bug 450210 - StarOffice.py needs null-check for
+  self.getFrame(event.source)
+
+New and updated translations (THANKS EVERYONE!!!):
+
+    es      Spanish              Francisco Javier Dorado Martinez and
+                                 Jorge Gonzalez
+    ta      Tamil                I. Felix
+    vi      Vietnamese           Clytie Siddall and Nguyễn Thái Ngọc Duy
+
+==========
+
+2.19.4 - 17-Jun-2007
+
+General:
+
+* Fix for bug 376515 - Add GUI support for the new customizable
+  text-attribute feature. There is a new "Text Attributes" pane in
+  the Orca preferences dialog for this. It can also be set on an
+  individual app-specific basis.
+
+* Fix for bug 433818 - Messages on system tab of gnome-system-monitor
+  are not reported by Orca.
+
+* Fix for bug 433951 - making changes in the Orca Preferences dialog
+  causes loss of script state.
+
+* Fixes for bug 435199 - Orca is bloating the swap partition, so the
+  system is no more usable after a short time.  We did a lot of
+  analysis of Orca's memory usage and patched the leaks we were able
+  to detect.  There is still a leak in the AT-SPI infrastructure; it
+  is being worked on by the AT-SPI maintainers and is tracked via bug
+  446277.
+
+Firefox:
+
+* Fix for bug 442709 - Need to do "combo box cleanup"/refactor for
+  Firefox.
+
+* Fix for bug 443337 - Orca should not use the alt text if it is empty
+  to infer a link name.
+
+* Fix for bug 444148 - Orca doesn't speak form fields at landsend.com
+
+* Fix for bug 445578 - Link preview information would be desirable for
+  Firefox.  This is obtained when performing a "Where Am I" operation
+  (KP_Enter for desktop bindings, ORCA_MODIFIER+Return for laptop
+  bindings).  Many thanks to new community member Scott Haeger for
+  this functionality!
+
+Java platform:
+
+* Fix for bug 435553 - KeyError: 'startOffset' during Java Control
+  Panel flat-review.
+
+* Fix for bug 436658 - flat-review speaks "filler" for SwingSet2
+  demo/source tabs.
+
+* Fix for bug 436661 - flat-review speaks SwingSet2 toolbar image
+  paths instead of item names.
+
+* Fix for bug 437226 - Orca should handle Java labels and text where
+  LABEL_FOR is not set.
+
+New and updated translations (THANKS EVERYONE!!!):
+
+    dz      Dzongkha             Pema Geyleg
+    es      Spanish              Francisco Javier Dorado Martinez and
+                                 Jorge Gonzalez
+
+==========
+
+2.19.3 - 04-Jun-2007
+
+General Orca:
+
+* Make checkbox and radio button indicator strings customizable
+  (thanks Mario Lang!)
+
+* Present checkbox and radio button indicators before label/name in
+  braille (thanks Mario Lang!)
+
+* Fix for bug 345399 - Key echo missing alpha numeric and punctuation
+  keys
+
+* Fix for bug 349394 to make Speech Dispatcher Factory work better
+  with Orca GUI preferences (thanks Tomas Cerha!)
+
+* Fix for bug 376015 - [a11y] time-admin time servers table is not
+  accessible
+
+* Fix for bug 412837 - Need a single number to summarize test code
+  coverage
+
+* Fix for bug 434600 - cursor routing keys cannot be used to position
+  caret at end of line
+
+* Fix for bug 435226 - Where-am-I doesn't correctly handle multiple
+  selected paragraphs in OOo Writer and Evolution
+
+* Fix for bug 439155 - Flat review is broken in gcalctool
+
+* Fix for bug 439487 - Combobox role not shown in braille in 'brief'
+  verbosity mode
+
+* Fix for bug 439509 - Run Application Dialog prints entered text
+  twice in braille (thanks Mario Lang!)
+
+* Fix for bug 440592 - Orca doesn't speak gcalctool's status bar
+  correctly
+
+* Fix for bug 440294 - Voice Properties in Speech Dispatcher backend
+  (thanks Tomas Cerha!)
+
+* Fix for bug 441640 - Rename processCursorKey to processRoutingKey
+  (thanks Mario Lang!)
+
+* Fix for bug 441673 - Define InputEventHandler.__eq__
+  (thanks Mario Lang!)
+
+* Fix for bug 441723 - Orca should not speak "double prime" for the
+  number 3
+
+* Fix for bug 443012 - atspi.py:_onParentChanged upsets
+  atspi.py:_cache in a bad way
+
+Firefox:
+
+* Fix for bug 407941 - Infer labels for objects in HTML content
+
+* Fix for bug 414657 - Linked headings should be announced as both
+  heading and link
+
+* Fix for bug 420540 - Firefox keyboard control wish list. Q/Shift+Q
+  can now be used to navigate among blockquotes.
+
+* Fix for bug 423435 - Orca is too chatty when loading a page in
+  Firefox
+
+* Fix for Bug 433655 - Orca's structural navigation should wrap at the
+  end of a page
+
+* Fix for bug 437753 - Orca should speak and braille the current locus
+  of focus after a page is loaded in Firefox and then start reading
+  the page
+
+* Fix for bug 437986 - Orca should not first speak page and frame
+  title when opening a menu in firefox
+
+* Fix for bug 439286 - Gecko.py's find{Next,Previous}Object fails when
+  object is document_frame.
+
+* Fix for bug 440079 - Orca cannot arrow past certain combo boxes in
+  Firefox
+
+* Fix for bug 440529 - Orca bounces out of Firefox Help Contents tree
+  and into the document frame
+
+* Fix for bug 441476 Orca should attempt to detect erroneously-marked
+  list labels in Firefox
+
+* Fix for bug 441484 - Need to adjust Firefox form field navigation to
+  accommodate Firefox changes.
+
+* Fix for bug 441610 - Orca should identify bogus/redundant checkbox
+  labels in Firefox.
+
+* Fix for bug 442083 - Orca skips over empty entries with Up/Down
+  Arrow in Firefox
+
+* Fix for bug 442691 - Form field structural navigation is slow to and
+  in large lists
+
+* Fix for bug 443067 - sayAll by sentence skips content that is
+  in HTML tables in Firefox
+
+* Fix for bug 443337 - Orca should not use the alt text if it is empty
+  to infer a link name
+
+* Fix for bug 443650 - Orca "loops" on certain pages in Firefox
+
+OpenOffice:
+
+* Work on bug 435199 - Orca is bloating the swap partition, so
+  the system is no more usable after a short time (improvements
+  made to OpenOffice script)
+
+* Additional fix for bug 435201 - Orca is too chatty when navigating
+  by paragraph in OOo Writer
+
+* Fix for bug 435226 - Where-am-I doesn't correctly handle multiple
+  selected paragraphs in OOo Writer and Evolution
+
+* Fix for bug 435852 - Orca and OpenOffice Calc have a memory lovefest
+
+Java platform:
+
+* Fix for bug 435825 - Non-ORBit object typecodes ignored when
+  instantiating stubs.  NOTE: this was a pyorbit fix from Peter Parente
+  that had a major impact on a number of bugs we were running into with
+  the Java platform.  Thanks so much, Peter Parente!
+
+* Fix for bug 436674 - flat-review only visits right-most tree nodes
+  in SwingSet2 JTree demo
+
+* Fix for bug 437049 - Orca does not speak Java Control Panel spinbox
+  changes
+
+New and updated translations (THANKS EVERYONE!!!):
+
+    de      German               Jochen Skulj
+    sv      Swedish              Daniel Nylander
+    en_GB   English/British      David Lodge
+
+==========
+
+2.19.2 - 13-May-2007
+
+General Orca:
+
+* Typo fixes from Mario Lang (thanks Mario!)
+
+* Updates to the specification
+
+* Additions to the regression tests
+
+* Fix for bug 368640 - Allow user to optionally ignore or be notified
+  of tool tips
+
+* Fix for bug 372273 - Add ability to configure app-specific settings
+  via GUI. NOTE: Adjusted ORCA_MODIFIER+Control+Space to now bring
+  up the application-specific preferences dialog. The previous usage
+  (reload user settings) is now gone.
+
+* Fix for bug 400716 - sayAll should be done by sentences
+
+* Fix for bug 432674 - In password entries, Orca should respect key
+  echo settings and say "star" for the inserted characters
+
+* Fix for bug 432685 - Using brltty can consume all the CPU
+
+* Fix for bug 433146 - Add ability to configure app-unique settings
+  via GUI
+
+* Fix for bug 434394 - orca -t causes traceback
+
+* Fix for bug 434948 - KP_Insert+Shift cannot be used as modifiers in
+  an entry
+
+* Fix for bug 435223 - Where-am-I doesn't correctly identify multiple
+  selected objects in Nautilus
+
+* Fix for bug 435577 - Orca does not speak labels of embedded
+  components in gnome-panel
+
+* Fix for bug 437004 - Add in hooks for allowing
+  activation/deactivation script methods
+
+Firefox:
+
+* Fix for bug 407663 - Support the "Find" operation in Firefox
+  better.  Requires Firefox 3 from at least May 9, 2007.
+
+* Fix for bug 412677 - Navigation to links with { overflow:hidden }
+  stylesheet results in bad behavior
+
+* Partial fix for bug 420540 - Firefox keyboard control wish list.
+  ORCA_MODIFIER+Z will now toggle the structural navigation keys
+  on/off.
+
+* Fix for bug 422924 - Add more support for accessing HTML tables in
+  Firefox.  Orca now supports non-uniform
+  tables: When you navigate to a non-uniform table using T or
+  Shift+T, Orca will indicate that this is a non-uniform table.
+  When using structual navigation by cell, if the cell you navigate
+  to has multiple headers that apply to it such as "week 2" and
+  "Thursday", Orca will speak those headers if they are different from
+  the headers from your previous location.  Orca also announces cell
+  coordinates when navigating using structural navigation among cells.
+  And, finally, Orca announces cells that span more than one row or
+  column.  Of course, depending on your preferences, that's a lot
+  of verbiage.  Therefore, these are all customizable settings.
+
+* Fix for bug 423427 - Need to add form field structural navigation in
+  Firefox.  ORCA_MODIFIER+Tab should move you to the next form field
+  and ORCA_MODIFIER+Shift+Tab should move you to the previous form
+  field.
+
+* Fix for bug 423435 - Orca is too chatty when loading a page in
+  Firefox
+
+* Fix for bug 428114 - Orca should attempt to detect
+  erroneously-marked combo box labels in Firefox
+
+* Fix for bug 436718 - Navigating in focusable lists in FF 7 May build
+  hangs Orca
+
+OpenOffice:
+
+* Fix for bug 363804 - Add ability to turn off coordinate announcement
+  when navigating in Calc
+
+* Fix for bug 433398 - Orca does not provide access to the state of
+  checked menu items in OOo
+
+* Fix for bug 435201 - Orca is too chatty when navigating by
+  paragraph in OOo Writer
+
+* Fix for bug 435307 - OOo Calc output traceback for
+  UnboundLocalError: local variable 'focusRegion' referenced before
+  assignment
+
+* Fix for bug 435852 - Orca and OpenOffice Calc have a memory lovefest
+
+Java platform:
+
+* Pending fix for bug 436674 - flat-review only visits right-most tree
+  nodes in SwingSet2 JTree demo
+
+* Fix for bug 437049 - Orca does not speak Java Control Panel spinbox
+  changes
+
+New and updated translations (THANKS EVERYONE!!!):
+
+    en_GB   English/British      David Lodge
+
+==========
+
+2.19.1 - 23-Apr-2007
+
+* Turn on Orca's caret navigation mode by default for Firefox.
+  NOTE TO USERS: you can still toggle between Orca's caret navigation
+  mode and Firefox's (i.e., Gecko) navigation mode by pressing
+  Insert+F12.
+
+* Much work on bug 400716 and 426360 (Firefox) to provide "say all"
+  support by sentences.
+
+* Fix for bug 430278 to improve the "where am I" functionality.  This
+  also includes bug 427481 to fix the "where am I" feature of the
+  Evolution Mail...Tasks toggle buttons.  This also is related to
+  the fix for bug 423011 to finish the refactor of where_am_I module
+  to have knowledge of the script it is working with.
+
+* Fix for bug 426336 to refactor the find{Next,Previous}Role methods
+  in Gecko.py for Firefox.  In addition, list navigation (L and
+  Shift+L) is now restricted to ordered/unordered lists.  Before, form
+  field lists were included because they, too, have a role of
+  ROLE_LIST.
+
+* Fix for bug 426684 to speak the entry text in Firefox when the caret
+  is at the end of the line.
+
+* Fix for bug 427722 to prevent web page navigation from getting stuck
+  on separators.
+
+* Work on bug 411261 to prevent Orca from saying just "Link" when
+  arrowing up and down by line in some web content in Firefox.
+
+* Fix for bug 426687 to only speak the entry text when arrowing up and
+  down in a text entry field in Firefox.
+
+* Fix for bug 413990 to provide more smarts in Orca to detect tables
+  that are used for layout only purposes.
+
+* Fix for bug 414926 to present level of headings in Firefox.
+
+* Fix for bug 423198 to prevent Orca from speaking "text" repeatedly
+  when moving around in a text entry area on a web page in Firefox.
+
+* Fix for bug 416971 to speak and braille numbers and bullets of
+  list items.
+
+* Fix for bug 432674 to respect key echo settings and say "star" when
+  speaking characters inserted into password entry fields.
+
+* Fix for bug 398009 to present the tooltip text for an object.
+  NOTE TO USERS: the standard toolkit method for brining up a tooltip
+  is Ctrl+F1 when the object has focus.
+
+* Fix for bug 368626 to prevent gnome-panel from crashing when it
+  pops up a tooltip.
+
+* Fix for bug 423849 to reduce the chattiness of speech context.
+
+* Fix for bug 427880 to restore metacity behavior of presenting the
+  name of the window to get focus when you're doing an Alt+Tab.
+
+* Fix for bug 413109 to add combobox and slider mnemonics to the
+  Orca preferences dialog.
+
+* Fix for bug 425498 to provide option to allow user to quit Orca
+  without needing to go through the "quit" confirmation dialog.
+
+* Fix for bug 413109 to address HIG violations.  Thanks to Calum
+  Benson for his work here.
+
+* Fix bug 423738 to use gconf module methods instead of using exec.
+
+* Work on bug 422487 to move the caret the first line of a message in
+  in Evolution.  There are still issues with HTML messages, which may
+  require changes in Evolution itself.  We're tracking this with the
+  Evolution RFE: http://bugzilla.gnome.org/show_bug.cgi?id=423395.
+
+* Workaround for Evolution bug 347964 to provide better user feedback
+  when deleting messages in Evolution.
+
+* Fix for bug 418147 to make sure we treat characters in strings as
+  characters and not as bytes when spelling an item.
+
+* Fix for bug 430434 to make the key echo settings be enabled by
+  default.
+
+* Fix for bug 430726 to implement GNOME GOAL #4.
+
+* Updated orca man page.
+
+* Updated the user experience specifications.
+
+* NOTE TO TRANSLATORS: finish first major pass on bug 412200 to
+  address I18N/L10N issues.  We are now ready for you to take a
+  look and give us feedback.
+
+* New and updated translations (THANKS EVERYONE!!!):
+
+    ar      Arabic               Djihed Afifi
+    en_GB   English/British      David Lodge
+    es      Spanish              Francisco Javier Dorado Martinez and
+                                 Jorge Gonzalez
+    sv      Swedish              Daniel Nylander
+
+==========
+
+2.19.0 - 27-Mar-2007
+
+* Fix for bug 410302 to provide support for the gnome-mud application.
+  (Thanks to community member Javier for this contribution!!!).
+
+* Fix for bug 349394 to roll in experimental speech dispatcher
+  support.  NOTE: SPEECH DISPATCHER IS STILL UNSUPPORTED AT THIS TIME.
+  USE AT YOUR OWN RISK.  (Thanks to community member Tomas Cerha for
+  this contribution!!!).
+
+* Fix for bug 395548 to refactor util.py into default.py.  This allows
+  subclasses to more easily provide specialized behavior.
+
+* Fix for bug 402494 to refactor how 'for' statements are used.
+
+* Fix for bug 419089 to refactor speech and braille generators in
+  StarOffice.py script to use self._script.
+
+* Fix for bug 419006 to refactor acroread.py to remove global methods.
+  This also takes care of a side effect of the refactoring work done
+  in bug 395548.
+
+* Work on bug 423011 to refactor the where_am_I module to know about
+  the script that is using it.
+
+* Fix for bug 319778 to remove hierarchical_presenter (we'll rely on
+  an external utility, such as Accerciser, to provide this functionality).
+
+* Fix for bug 420173 to prevent the Escape key from becoming bound
+  when exiting learn mode.
+
+* Fix for bug 423009 to prevent Orca from speaking the role name
+  "list item" on web pages.
+
+* Fix for bug 418430 to handle empty sections in Firefox.
+
+* Fix for bug 423214 to use 1 through 6 and Shift+1 through Shift+6 to
+  navigate among headings by level.
+
+* Work on bug 414926 to speak heading levels in Firefox (still need
+  to add braille).
+
+* Fix for bug 422924 to add table navigation in Firefox.  T and
+  Shift+T move you among tables.  Alt+Shift+{Left,Right,Up,Down} will
+  move you among table cells. Alt+Shift+{Home,End} will move you to
+  the{top,bottom} of the current table.
+
+* Fix for bug 417001 to add link structural navigation. U moves you to
+  the next unvisited link; Shift U to the previous unvisited link; V
+  to the next visited link; Shift V to the previous visited link.
+
+* Fix for bug 416853 to prevent structural navigation keys from
+  interfering with shortcuts. Ctrl+o and Ctrl+h now work as expected.
+
+* Fix for bug 416908 to add list structural navigation.  L moves you
+  to the next list; Shift L moves you to the previous list.
+
+* Fix for bug 423537 to add list item structural navigtion.  I and
+  Shift I move you among list items.
+
+* Fix for bug 416857 to reposition caret better in HTML content after
+  leaving and returning to the content (e.g., opening a separate
+  dialog and then closing it).
+
+* Fix for bug 423531 so O and Shift O do not stop on images and now
+  say "large objects" instead of "chunks".
+
+* Fix problem with SayAll where the speech engine might not give us a
+  callback if we pass it nothing or text that is just whitespace.
+
+* Fix for bug 416964 to account for "no break space" character in word
+  delimiters.
+
+* Fix for bug 404052 to let the user know the Preferences dialog is
+  loading.
+
+* Fix for bug 402192 to speak text that is pasted in by a middle mouse
+  click.
+
+* Fix for bug 392939 so that the dash character ("-") is spoken when
+  used as a negative sign at "some" punctuation.
+
+* Fix for bug 350674 to announce when a new folder is opened and
+  announce number of items.
+
+* Work on bug 415061 to help make regression test results repeatable.
+
+* Work on bug 412837 and bug 416332 to measure and increase testing
+  coverage.
+
+* Updates to the specification.
+
+* New and updated translations (THANKS EVERYONE!!!):
+
+    ca      Catalan              Gil Forcada and Josep Puigdemont i Casamajó
+    da      Danish               Peter Bach
+    de      German               Hendrik Richter and Jochen Skulj
+    en_GB   English/British      David Lodge and Gareth Owen
+    nb      Norwegian Bokmål     Kjartan Maraas and Sigurd Gartmann
+
+==========
+
+2.18.0 - 12-Mar-2007
+
+* See http://live.gnome.org/TwoPointSeventeen/ReleaseNotes/Orca for a
+  summary of what's changed since Orca v1.0.0.  The remainder of these
+  NEWS entries cover what's changed since Orca v2.17.92.
+
+* Much more work on Gecko.py support for Firefox.  Firefox support
+  still has a ways to go, both inside Firefox itself and inside Orca.
+
+* Much more work on Gecko.py support for Thunderbird.  Thunderbird
+  support still has a ways to go, both inside Thunderbird itself and
+  inside Orca.
+
+* Implemented GNOME GOAL #3 - removed "Application" from Categories in
+  desktop file.
+
+* Work to make sure Orca still works with the latest gnome-mag release.
+
+* Updated man page.
+
+* Fix for bug 413457 to prevent Orca from speaking various names for
+  the "-" character twice in a row in German.
+
+* Adjusted StarOffice.py to prevent a traceback in face of some regressions
+  in oowriter.
+
+* Support for better filtering of events in debug logs.
+
+* New and updated translations (THANKS EVERYONE!!!):
+
+    ar      Arabic               Khaled Hosny and Djihed Afifi
+    bg      Bulgarian            Alexander Shopov, Rostislav Raykov,
+                                 Vladimir Petkov, and Iassen Pramatarov
+    ca      Catalan              Gil Forcada and Josep Puigdemont i Casamajó
+    de      German               Hendrik Richter and Jochen Skulj
+    dz      Dzongkha             Pema Geyleg
+    en_GB   English/British      David Lodge and Gareth Owen
+    fi      Finnish              Ilkka Tuohela
+    fr      French               Jonathan Ernst and Stéphane Raimbault
+    gu      Gujarati             Ankit Patel
+    hu      Hungarian            Kálmán Kéménczy and Gabor Kelemen
+    it      Italian              Luca Ferretti
+    ko      Korean               Changwoo Ryu
+    lt      Lithuanian           Žygimantas Beručka and Gintautas Miliauskas
+    mk      Macedonian           Jovan Naumovski
+    pt      Portuguese           Duarte Loreto
+    pt_BR   Brazilian Portuguese Raphael Higino, Og Maciel, Jonh Wendell and
+                                 Fábio Nogueira
+    ru      Russian              Nickolay V. Shmyrev
+    sv      Swedish              Daniel Nylander
+    uk      Ukrainian            Maxim Dziumanenko
+    zh_HK   Traditional Chinese  Chao-Hsiung Liao and Woodman Tuen
+    zh_TW   Traditional Chinese  Chao-Hsiung Liao and Woodman Tuen
+
+==========
+
+2.17.92 - 26-Feb-2007
+
+* Much more work on Gecko.py support for Firefox.  Firefox support
+  still has a ways to go, both inside Firefox itself and inside Orca.
+
+* Fix for bug 412058 to terminate the python process better when it
+  receives a TERM signal.  Note that one must send the TERM signal
+  directly to the Python process.  Sending it to the shell script
+  won't do since the shell script turns around and does a kill -9 on
+  the Python process when it gets a TERM signal.  The motivation for
+  this is to better support the code coverage analysis work that is
+  being done by Lynn Monsanto.
+
+* Work on bug 354479 to announce what we can about changes to the
+  battery status.  There are currently issues with the AT-SPI
+  support from the Galago support used by gnome-panel that prevent
+  us from doing a more effect job here.
+
+* Fix for bug 407480 to prevent "orca --help" and other informative
+  commands from killing other Orca processes that might be running.
+
+* Fix for bug 409708 to remove unnecessary code from Thunderbird
+  script now that a few Thunderbird bugs have been fixed.
+
+* Fix for bug 405541 to better handle Thunderbird message summary
+  list in braille.
+
+* Fix for but 408174 to make laptop keybindings work better
+  (Thanks to community member Juan Ramon Jimenez for this fix!!!).
+
+* Fixed for bug 405624 so Orca wille report a label even if it was
+  same as previous one.
+
+* New and updated translations (THANKS EVERYONE!!!):
+
+    ar      Arabic               Khaled Hosny and Djihed Afifi
+    bg      Bulgarian            Alexander Shopov
+    en_GB   English/British      David Lodge
+    fi      Finnish              Ilkka Tuohela
+    fr      French               Jonathan Ernst and Stéphane Raimbault
+    it      Italian              Luca Ferretti
+    ko      Korean               Changwoo Ryu
+    nb      Norwegian Bokmål     Kjartan Maraas and Sigurd Gartmann
+    pl      Polish               Artur Flints and GNOME PL Team
+    pt      Portuguese           Duarte Loreto
+    sv      Swedish              Daniel Nylander
+    zh_CN   Simplified Chinese   Funda Wang and Abel Cheung
+    zh_HK   Traditional Chinese  Chao-Hsiung Liao and Woodman Tuen
+    zh_TW   Traditional Chinese  Chao-Hsiung Liao and Woodman Tuen
+
+==========
+
+2.17.91 - 11-Feb-2007
+
+* Fix for bug 385949: Better handling of comboboxes in Firefox 3.0.
+
+* Work on bug 363830: announce when bold, underline, italics, and
+  the various alignment toggle buttons change state in OpenOffice.
+  (Thanks for the fix, Joanie!)
+
+* Fix for bug 397787: Orca now handles if OpenOffice recovery mode
+  better.
+
+* Fix for bug 405541: provide better handle brailling of message
+  summaries in Thunderbird message summary list.
+
+* Fix for bugs 403767 and 405562: provide better support for
+  autocompletion components in Thunderbird.
+
+* Fix for bug 398531: handle the speech preferences tab page better.
+
+* Fix for bug 380050: Orca windows are now focused after user
+  presses "Quit" or "Preferences" button in Orca Preferences
+  window.  (Thanks for testing, Joanie!)
+
+* Work on bug 400763: much improvement to the responsiveness after
+  starting an update from the update manager.
+
+* Fix for bugs 400766 and 348464: better handling of autocomplete
+  entries in GTK widgets as used by the "Run..." dialog and Evolution.
+
+* Continued work on Gecko.py script for Firefox 3.0.  We're getting
+  there step by step, and it requires work both inside Firefox 3.0
+  and inside Orca.
+
+* Updated to support latest BrlAPI.  Orca should now work various
+  versions of BrlTTY and BrlAPI.
+
+* New and updated translations (THANKS EVERYONE!!!):
+
+    ar      Arabic               Djihed Afifi and Khaled Hosny
+    ca      Catalan              Gil Forcada and Josep Puigdemont i Casamajó
+    en_GB   English/British      David Lodge
+    fr      French               Stéphane Raimbault, Robert-André Mauchin
+                                 and Jonathan Ernst
+    it      Italian              Luca Ferretti
+    nb      Norwegian Bokmål     Kjartan Maraas
+    sv      Swedish              Daniel Nylander
+    th      Thai                 Supranee Thirawatthanasuk and
+                                 Theppitak Karoonboonyanan
+    zh_HK   Traditional Chinese  Chao-Hsiung Liao
+    zh_TW   Traditional Chinese  Chao-Hsiung Liao
+
+==========
+
+2.17.90 - 21-Jan-2007
+
+* Much more work on the Gecko script (to support both Firefox and
+Thunderbird).  Please note that this is still a work in progress
+and much more work needs to be done both inside Orca and inside
+Firefox and Thunderbird.  We're working very very hard.
+
+* More work on the Thunderbird script to accommodate some unique
+aspects of the Thunderbird UI.  We've also logged several bugs
+with the Thunderbird folks to help address these things.
+
+* Fix for bug 376791: Orca now provides better access to the buddy
+list in Gaim 2.0.0 beta 5.
+
+* Fix for bug 397797: Orca now exposes the language attribute of a
+speech synthesizer voice to allow people to more easily disambiguate
+voices.
+
+* Fix for bug 394397: Orca now handles arrowing to the end of a line
+better and prevents the line from being spoken again.
+
+* Fix for bug 392939: "-" is now spoken spoken when used as a negative
+sign at "some" punctuation.
+
+* Fix for bug 395749: make sure we reference any_data values when we
+get an event rather than waiting to work with them asynchronously.
+
+* Added new 'attributes' field to the Python Accessible class
+defined in at-spi.py.  This allows scripts to more easily access
+the attributes of an AT-SPI object.
+
+* New and updated translations (THANKS EVERYONE!!!):
+
+    ar      Arabic               Djihed Afifi and Mohamed Magdy
+    bg      Bulgarian            Alexander Shopov
+    de      German               Hendrik Richter
+    en_GB   English/British      David Lodge
+    mk      Macedonian           Jovan Naumovski
+    sv      Swedish              Daniel Nylander
+
+==========
+
+2.17.5 - 07-Jan-2007
+
+* Brand new script for Adobe Acrobat Reader from Joanie Diggs (Thanks
+  Joanie!!!).  NOTE:  there are still some accessibility issues to
+  be worked out with the team at Adobe, but this script helps provide
+  some level of access to PDF documents via Reader.
+
+* Much more work on Gecko.py script for Firefox 3.0.  There's still
+  much more work to do in the Firefox 3.0 internals as well as the
+  Gecko.py script.  We're still working feverishly on it.
+
+* Update to outloud.py to add more voices and prevent crash when
+  ViaVoice is used (thanks to community member Bart Bunting!!!)
+
+* Adjusted bleeding edge Orca code to work with bleeding edge BrlAPI
+  code.  We expect there to be one more change in BrlAPI 0.5.0 before
+  it stabilizes, but it wasn't ready at the time of this release.
+
+* Work on bug 350233 (actually an RFE): New script for the Liferea
+  application from community member Francisco Javier Dorado Martínez
+  (thanks Javier!!!).
+
+* Work on bug 376517: Orca now speaks the unit of measure (pixels)
+  after the left-margin and/or right-margin text attributes if they
+  differ from the norm.
+
+* Work on bug 347124: Added feature to allow user to tell gksu to
+  disable keyboard grabs.  This is just one of the several pieces
+  of the puzzle to help prevent hangs when launching sysadmin apps
+  from the desktop of a non-root user.
+
+* Fix for bug 393074: Repeated characters are now correctly read.
+  (Thanks to Juan Ramon Jimenez for this fix!!!).
+
+* Fix for bug 362546: Fixed problem speaking status bar contents
+  (Insert+KP_Enter) when the status bar is a single component (e.g.,
+  text field), rather than a container with multiple
+  sub-components.
+
+* Moved the keyboard layout to the first tab in the preferences
+  dialog.
+
+* Fix for bug 388620: Fixed wording of "not not" string.
+
+* Fix for bug 388317: Prevent crash in Adobe Acrobat Reader (thanks
+  Joanie!!!).
+
+* Fix for bug 387556: Make arrowing to end of line in OOo consistent
+  with what happens in gedit (thanks Joanie!!!).
+
+* Fix for bug 388039: prevent stack trace when running orca -t.
+
+* Fix for bug 386267: In Evolution, Orca now speaks/brailles the
+  unread status instead of the read status in the message summary
+  list.
+
+* Fix for bug 382890: Extended dynamic row and column header support
+  to OOo Writer tables.
+
+* New and updated translations (THANKS EVERYONE!!!):
+
+    ar      Arabic               Djihed Afifi
+    en_GB   English/British      David Lodge
+    es      Spanish              Francisco Javier F. Serrador
+    nb      Norwegian Bokmål     Kjartan Maraas
+    sv      Swedish              Daniel Nylander
+
+==========
+
+2.17.4 - 17-Dec-2006
+
+* Added new support to edit your key bindings from the Orca
+  preferences dialog (thanks Jorge Sandín <jorges@elsendero.es>!!!)
+
+* Added new implementation of "Where Am I" based upon the discussion
+  on the Orca user's list (thanks for your work, everyone!).
+
+* Fix for bug 382891: Flat review now works in the face of empty text
+  areas (thanks Joanie Diggs!!).
+
+* Fix for bug 381391: Flat review initialization now handles
+  situations where the caret is at the end of a text area (thanks
+  Joanie Diggs!!).
+
+* Fix for bug 382408: Eliminated significant sluggishness when
+  navigating in OOo Writer tables (many thanks to our Orca users
+  for speaking up about this!).
+
+* Fix for bug 382495: orca --setup is now localized (thanks Takao!).
+
+* Fix for bug 382418: Orca now announces when you enter/leave a table
+  in OOo Writer documents.
+
+* Fix for bug 382880: Orca now provides speech output when tabbing
+  among cells in OOo Writer documents.
+
+* Fix for bug 382888: Orca now announces when you cross a cell boundary
+  in OOo Writer tables.
+
+* Fix for bug 382415: Orca now honors speak cell/row setting in OOo
+  Writer tables.
+
+* Fix for bug 384393: Orca now reports bold or underline in OOo Writer
+  when Insert F is pressed (this was a regression).
+
+* Fix for bug 375395: Orca now speaks blank lines in Evolution when
+  appropriate.
+
+* Allow Orca to run better under gdm for accessible login.  With this
+  work, we've been informed by the gdm maintainer that Orca is the
+  first assistive technology ever that can run without requiring gdm
+  to have a home directory. NOTE: the typical line to add to
+  /etc/X11/gdm/modules/AccessKeyMouseEvents is something like the
+  following, depending upon what you want Orca to do when it starts:
+
+  <Control>o  1 1000 10000  /bin/sh -c "GTK_MODULES=gail:atk-bridge ctrun -l child -i none orca -n -d main-window"
+
+* Improved support for BrlTTY v3.8.  Orca will now first attempt to
+  use the new Python bindings for BrlAPI 0.5 (which is what comes with
+  BrlTTY v3.8) and then fallback to its own bindings for BrlAPI 0.4.1
+  (which is what comes with BrlTTY 3.7.2).  When using BrlTTY v3.8,
+  Orca is now a better BrlTTY citizen: Orca only consumes BrlTTY
+  events that it cares about, and Orca is also smarter about which TTY
+  it chooses. NOTE: Our plan is to eventually retire Orca's BrlAPI 0.4.1
+  Python bindings as BrlAPI 0.5 becomes more prevalent.
+
+* More work done with Gecko.py (the Firefox script), but there's still
+  a lot of work to do here, both on the Firefox and Orca
+  implementations.
+
+* More work done with Thunderbird, but there's still a lot more work
+  to be done with it as well, both on the Firefox and Orca
+  implementations.
+
+* Improvements and additions to the Orca regression test harness.
+
+* New and updated translations (THANKS!):
+
+    es      Spanish              Jorge Sandín and Francisco Javier F. Serrador
+    nb      Norwegian Bokmål     Kjartan Maraas
+    sl      Slovenian            Matic Zgur
+
+==========
+
+2.17.3 - 03-Dec-2006
+
+* Implementation of RFE 373566: Added support to switch between
+  desktop and laptop bindings.  Also added support for allowing the
+  Caps Lock key to act as the Orca modifier.
+
+* Added feature to the preferences dialog to present the key bindings
+  as progress towards RFE 354970.  Many thanks to Jorge Sandín for
+  this work!
+
+* Implementation of RFE 354463 - The "Find" command is now working,
+  with the exception of bug 381391.  Many thanks to Joanie Diggs for
+  her hard work on this!
+
+* Implementation of RFE 376002: Added command line options to tell
+  Orca to start with speech, braille, and/or magnification.  This
+  is mostly to aid things such as accessible installs and logins.
+
+* Work on RFE 371122: much of the "Where am I" command has been
+  implemented, though we're still testing and refining it.
+
+* A fair amount of work has been done on the Gecko script for Firefox 3.
+  Please note this is still a work in progress and is still somewhat
+  unstable.  The Orca and Firefox teams are working feverishly on the
+  support and are still targetting Firefox 3 for compelling web
+  access.
+
+* Continued work on identifying (and resolving when possible) accessibility
+  issues in other applications.  Please do a search on the "orca" component
+  at http://bugzilla.gnome.org for summaries containing the "[blocked]"
+  string to get a list.
+
+* In the callback for the Cancel button on the Orca Preferences
+  window, the code has been adjusted to destroy that window, so that
+  the next time the user displays the Preferences dialog, all of the
+  settings will reflect the current running state rather than how the
+  user left the GUI components before hitting the Cancel button.
+
+* Fix for bug 372808: Orca now reports the appropriate header
+  information when tabbing between tables.
+
+* Fix for bug 377085: family-name text attribute are no longer
+  malformed for multi-word family names.
+
+* Implementation of RFE 377955: Suggested additions to pronunciation
+  dictionary.
+
+* Fix for bug 376347: Orca no longer speaks new-line in the
+  Evolution menu bar.
+
+* Fix for bug 372964: Added text-attribute settings.
+
+* Fix for bug 376006: Handle minimum increment value of 0.0 when
+  calculating decimal places to present for sliders.
+
+* Fix for bug 358467: Mapped the time-admin to the users-admin
+  script so that Orca can correctly read the table of time servers.
+
+* Change for bug 364529. Initial value in the Preferences Glade file
+  for pitch is now 5.0 and not 9.0.  Also allow voice styles to be
+  undefined.  The hypertext link voice will now initially derive
+  its values from the default voice settings.
+
+* Partial fix for bug 356060: Provide access to tree item level and
+  state in OOo Navigator.
+
+* Defensive fix for bug 353432: Orca no longer announces name changes
+  for objects who tell us their name has changed when it really
+  hasn't.
+
+* Work on bug 363815: Implement the ability to have application
+  specific settings.
+
+* Fix for bug 364452: make sure Orca's name shows up as "orca" and not
+  "-c" in at-poke.
+
+* Fix for bug 319666: Orca now announces "0 items" when encountering
+  various empty objects.
+
+* Fix for bug 381653: Orca now announces the new state of a checkbox
+  when it is changed inside a table cell.
+
+* More work on the specification and regression test suite.
+
+* New and updated translations (THANKS!):
+
+    et      Estonian             Ivar Smolin and Priit Laes
+    hu      Hungarian            Kálmán Kéménczy and Gabor Kelemen
+    sv      Swedish              Daniel Nylander
+
+==========
+
+2.17.2 - 05-Nov-2006
+
+* Updates to requirements and specifications documents.
+
+* Fair amount of work on Gecko.py script, though it is not at all ready
+  for compelling access to Firefox (and hence the web) yet.  Also did
+  a fair amount of work looking at flat review and filing a number of
+  bugs against the AT-SPI implementation in progress in Firefox 3.
+
+* Fix for bug 369292: gcalctool now speaks the new result when
+  the "=" button is activated.
+
+* Fix for bug 337063: Orca now supports an alternate .orca location via
+  the -u and --user-prefs-dir command line options.
+
+* Fix for bug 365939: reading of message list in Evolution now provides
+  more concise information for check box items.
+
+* For for bug 353422: Mapped vte application to gnome-terminal script and
+  also fixed the "backspace" problem in gnome-terminal.
+
+* Workaround for bug 368626: prevent gnome-panel from crashing and add
+  some defensive code to work in the case where there is no event
+  source in an at-spi event.
+
+* Fix for bug 338838: Orca now speaks "newline" only when moving by
+  character or word.
+
+* Fix for bug 358467: Orca now reads check items status
+  in "Users and groups" dialog of users-admin application.
+
+* Fix for bug 355733: SayAll function now works better for OpenOffice.
+
+* Fix for bug 364086: Orca no longer reports "paragraph 0 paragraph"
+  when you begin typing in a OpenOffice Calc cell.
+
+* Fix for bug 363801: Orca provides confirmation when dynamic row and/or
+  column headers are set.  In addition, column numbers in OpenOffice
+  Calc are now spoken as column letters.
+
+* Fix for bug 363807: Orca now reports the number of items in a table.
+
+* Fix for bug 321184: Orca now supports a custom pronunciation dictionary.
+
+* Fix for bug 363802: Orca no longer says "cell" when navigating from
+  cell to cell in OpenOffice Calc.
+
+* Fix for bug 363796: Second press of a letter in learn mode now provides
+  the phonetic ("military") spelling of the letter.
+
+* Fix for bug 355525: Orca handled EMBEDDED_OBJECT_CHARACTERs in text
+  better.
+
+* Fix for bug 357063: If there are a bunch of repeated characters
+  (like the greater thans) on a line that also has text, Orca respects the
+  punctuation settings in Orca.  But, if the repeated characters are on
+  a line by themselves (i.e.  30 greater thans, nothing else), Orca
+  indicates their presence ("30 greater than characters") regardless
+  of the level of punctuation.
+
+* Fix for bug 344249: Orca reports menu mnemonics as part of the
+  "Where am I" functionality.
+
+* Fix for bug 348975: the state for radio buttons is now spoken prior
+  to the role.
+
+* Fix for bug 363423: Orca now speaks the "Applications" menu if it is
+  brought up while the focus is in a GAIM chat window.
+
+* Fix for bug 349956: Orca no longer causes the gedit Print Dialog to slow
+  down.
+
+* Fix for bug 361624: Flat review no longer fails to move to second
+  column of text in OOo Writer documents.
+
+* Fix for bug 357829: Use real active descendant of a table cell when
+  looking for locus of focus in flat review.
+
+* Fix for bug 341406: Orca now presents results when finding files.
+
+* Fix for bug 319783: Orca now speaks/brailles the insensitive states
+  of objects if they are insensitive.
+
+* Fix for bug 338111: Use new BrlAPI Python bindings if they exist.
+
+* Fix for bug 348693: Announcement of new mail in Evolution is now
+  toggleable via Insert-m.
+
+* Fix for bug 361670: flat review no longer fails after minimizing the
+  Orca main window.
+
+* Fix for bug 355893: Network Preferences "Port" label is now reported
+  by Orca.
+
+* New and updated translations (THANKS!):
+
+    et      Estonian             Ivar Smolin and Priit Laes
+    nb      Norwegian Bokmål     Kjartan Maraas
+    sv      Swedish              Daniel Nylander
+
+==========
+
+2.17.1 - 14-Oct-2006
+
+* Implemented RFE 361167: add use of Insert+r and Insert+c as a means
+  to specify dynamic column headers and dynamic row headers in Open
+  Office spreadsheets.
+
+* Fixed bug 361747: provide support for the 'weight' text attribute.
+  Also make sure that character text attributes are handled correctly.
+
+* Implemented RFE 319657: In gedit, Orca now speaks the context of
+  search ('find') results.
+
+* Implemented RFE 339789: Added code to "Where Am I" to report the
+  number of items in menus and submenus as well as the current
+  position of a menu item or menu in its menu.
+
+* Fix for bug 350523: In gcalctool, give reference to accessible name
+  of a button over the text that is being displayed on a button.
+
+* Added use of Python logging API to log speech and braille at the
+  INFO level.  This will dovetail in with the larger testing work
+  being done for GNOME.
+
+* Fix for bug 350219: provide announcement when you create a new
+  document for the very first time in Open Office.
+
+* Fix for bug 354785: read the entire line in the "Process Fields"
+  preferences table in gnome-system-monitor. Fix involved a rework
+  of how table cells are brailled and spoken.
+
+* Fix for bug 349954: do not make assumptions that UTF-8 strings
+  contain only single byte characters.  Handle this by converting
+  to the Python unicode type before doing processing such as
+  string length and character analysis.
+
+* Added 'getText' method to script to provide a means for the script
+  to work around shortcomings in some accessible text implementations.
+
+* Exploratory work on the Gecko.py script to help debug and provide
+  an understanding of what the Gecko AT-SPI implementation is providing
+  us.
+
+* Added ZONE support for goBegin and goEnd functions of flat review
+  (thanks Joanie Diggs!)
+
+* Improvements to the test harness.  NOTE: as a result of the GNOME
+  Boston 2006 Accessibility Summit, we may revise this harness as
+  the overall testing strategy for GNOME develops.
+
+* New and updated translations (THANKS!):
+
+    et      Estonian             Ivar Smolin
+
+==========
+
+2.17.0 - 04-Oct-2006
+
+* Updates to user requirements and functional specification.
+
+* Added Orca man pages.
+
+* New and improved regression test harness.
+
+* Added new Orca main window to allow one to have a GUI option for
+  quitting Orca and invoking the configuration settings.  The appearance
+  of this window can be enabled/disabled in the new "General" tab
+  of the configuration dialog.  Also added "Apply" button the configuration
+  GUI window.
+
+* Added new Orca "Quit" dialog.
+
+* Refactor in default.py and other scripts to add isTextArea method to
+  determine if an object is a text area or not.  This allows us to deal
+  with the growing number of things that are text areas, but choose to
+  give themselves different roles (e.g., GTK's 'text', OpenOffice's
+  'paragraph', and Gecko's 'entry').
+
+* Added Gecko.py toolkit script to cover apps that use the Mozilla
+  Gecko toolkit (e.g., Firefox, Thunderbird, Yelp, etc.).  Some work
+  done with new Firefox 3 at-spi implementation, but much work is
+  still needed.
+
+* Added repeated character count handling (rfe/bug 354469).
+
+* Added military spelling (rfe/bug 354460).
+
+* Fix for bug 351957: Orca now allows the setting of the source and target
+  displays for magnification.
+
+* Fix for bug 351569: no longer hang when gnome-keyring password box
+  appears.
+
+* Fix for bug 344192: no longer hang when the "bug buddy" dialog
+  appears.
+
+* Fix for bug 355602: $ was being echoed twice in terminal with word
+  echo enabled.
+
+* Fix for bug 357150: use 'append' instead of 'extend' to avoid
+  spelling out the 'No focus' message.
+
+* Fix for bug 358508: use obj instead of event.source in
+  visualAppearanceChanged for speech.
+
+* Fix for bug 353532: provide a workaround for a java-access-bridge
+  bug (bug 355011) where popup menu events are not sent to Orca.
+
+* Fix for bug 353531: 'checked'/'unchecked' are no longer reported
+  twice for check boxes in java applications.
+
+* Fix for bug 357556: Insert key no longer sticks after running test
+  keystroke files. The hot-key to start/stop recording of keystrokes
+  within Orca has been reverted to just "Pause".  Also adjusted the
+  "don't write pause keystrokes" code to recognize F21 (which is the
+  Pause key on my Sun type 6 keyboard).
+
+* Partial work on bug 354970: add command_name dictionary from Jorge
+  Sandin (thanks Jorge!).  Also refactored the way keybindings and
+  braille bindings are defined and obtained to make it easier to
+  discover and override their definitions.
+
+* Partial work on bug 349954: become more cognizant of multibyte UTF-8
+  characters.
+
+* Fix for bug 357509: Flat review now uses the "uppercase" voice
+  settings for uppercase text when navigating by line.
+
+* Fix for bug 357507: SayAll now uses the "uppercase" voice settings
+  for uppercase text.
+
+* Fix for bug 356970: repeated character count now works with Evolution
+
+* Fix for bug 356911: Orca no longer generates a traceback with
+  Numpad-Minus when positioned at the end of a line.
+
+* Fix for bug 356179: the test in Orca to determine if the desktop
+  is running now works better.
+
+* Fix for bug 340849: Orca now provides an option to allow the user to
+  automatically logout of the GNOME desktop if the gconf accessibility
+  flag wasn't previously enabled before running the setup utility.
+
+* Fix for bug 355927: duplicate window titles are now spoken when
+  navigating between them using Alt+Tab.
+
+* Fix for bug 350216: "LAYERED_PANE" is no longer in speech context.
+
+* Fix for bug 351797: make sure configuration GUI pops to top.
+
+* Fix for bug 347128: allow pan buttons to be used on braille display
+  while in learn mode.
+
+* Fix for bug 347650: allow a script to determine if it is the active
+  script or not (compare self to orca_state.activeScript).
+
+* For for bug 354983: From Rodrigo Moya <rodrigo@novell.com> (THANKS!) - fill
+  in dead code paths in brlmodule.c.
+
+* Fix for bug 354487: apostrophe no longer delimits a word boundary.
+
+* Fix for bug 354985: gedit script no longer generates a traceback due to
+  a missing import line.
+
+* Fix for bug 342602: StarOffice Writer table cell speaking order fixed.
+
+* Fix for bug 351826: change orca shell script from sh to bash to allow
+  it to better respond to "kill -HUP" signals.
+
+* Fix for bug 352866: add "-q" and "--quit" usage information
+
+* Fix for bug 353600: don't require the user to be root when doing a
+  "make distcheck".
+
+* New and updated translations (THANKS!):
+
+    dz      Dzongkha             Pema Geyleg
+    el      Greek                Simos Xenitellis
+    es      Spanish              Francisco Javier F. Serrador
+    et      Estonian             Priit Laes
+    gl      Galician             Ignacio Casal Quinteiro
+    th      Thai                 Supranee Thirawatthanasuk
+    tr      Turkish              Deniz Kocak and Baris Cicek
+
+==========
+
+1.0.0 - 04-Sep-2006
+
+* Updates to User's Guide, Architecture, Requirements, and Script Writing
+  Guide.
+
+* Fix for bug 353467: run in a terminal if we detect text setup will
+  be used.
+
+* Fix for bug 353476: apply better fallback algorithm to find a
+  working synthesis engine.
+
+* Fix for bug 352578: ensure that checking/unchecking speech in the
+  configuration GUI does the appropriate thing.
+
+* Refixed bug 350854 and fix for bug 353268: do not double read lines
+  in OpenOffice and also make sure focus is properly handled in gedit
+  after a window maximize.
+
+* Fix for bug 353237: prevent COMM_FAILURE messages when trying to get
+  the object state (thanks Oana from Baum!).
+
+* Fix for bug 352866: add "-q" and "--quit" options to orca script to
+  allow one to more easily kill orca (thanks Javier from ONCE!).
+
+* Fix for bug 352240: prevent wrong object report for Java
+  applications in case of different event ordering (thanks Oana from
+  Baum!).
+
+* Fix for bug 352257: improved isSameObject() function (thanks Oana from
+  Baum!).
+
+* Fix for bug 352254: better handling of expand/collapse events for the
+  Java platform (thanks Oana from Baum!).
+
+* Translations:
+    bg      Bulgarian            Alexander Shopov, Rostislav Raykov,
+                                 Vladimir Petkov, and Iassen Pramatarov
+    bn      Bengali              Runa Bhattacharjee
+    bn_IN   Bengali              Runa Bhattacharjee
+    ca      Catalan              Gil Forcada and Josep Puigdemont i Casamajó
+    cs      Czech                Miloslav Trmac
+    cy      Welsh                Rhys Jones
+    de      German               Hendrik Brandt
+    dz      Dzongkha             Guntupalli Karunakar
+    el      Greek                Nikos Charonitakis
+    en_CA   English/Canada       Adam Weinberger
+    en_GB   English/British      David Lodge and Gareth Owen
+    es      Spanish              Francisco Javier F. Serrador
+                                 and Maria Majadas
+    eu      Basque               Iñaki Larrañaga Murgoitio
+    fi      Finnish              Ilkka Tuohela
+    fr      French               Cedric Corazza, Robert-André Mauchin,
+                                 and Christophe Merlet
+    gu      Gujarati             Ankit Patel
+    hi      Hindi                Rajesh Ranjan
+    it      Italian              Aldo Giambelluca and Alessio Frusciante
+    ja      Japanese             Satoru Satoh
+    ko      Korean               Changwoo Ryu
+    lt      Lithuanian           Žygimantas Beručka and Gintautas Miliauskas
+    lv      Latvian              Raivis Dejus
+    mk      Macedonian           Jovan Naumovski
+    ml      Malayalam            Ani Peter
+    mr      Marathi              Rahul Bhalerao
+    nb      Norwegian Bokmål     Kjartan Maraas and Sigurd Gartmann
+    ne      Nepali               Pawan Chitrakar and Shiva Prasad Pokharel
+    nl      Dutch                Tino Meinen, Elros Cyriatan, Taco Witte,
+                                 Vincent van Adrighem, and Wouter Bolsterlee
+    or      Oriya                Subhransu Behera
+    pa      Punjabi              Amanpreet Singh Alam
+    pt_BR   Brazilian Portuguese Raphael Higino, Gustavo Noronha Silva,
+                                 and Estêvão Samuel Procópio
+    pt      Portuguese           Duarte Loreto
+    ru      Russian              Nickolay V. Shmyrev
+    rw      Kinyarwanda          Steve Murphy, Philibert Ndandali,
+                                 Viateur Mugenzi, Noëlla Mupole,
+                                 Carole Karema, Jean Baptiste Ngendahayo,
+                                 Augustin Kiberwa, and Donatien Nsengiyumva
+    sr@Latn Serbian              Danilo Šegan
+    sr      Serbian              Danilo Šegan
+    sv      Swedish              Christian Rose and Daniel Nylander
+    ta      Tamil                I. Felix
+    uk      Ukrainian            Maxim Dziumanenko
+    vi      Vietnamese           Clytie Siddall
+    zh_CN   Simplified Chinese   Funda Wang and Li Shaojie
+    zh_HK   Traditional Chinese  Chao-Hsiung Liao and Woodman Tuen
+    zh_TW   Traditional Chinese  Chao-Hsiung Liao and Woodman Tuen
+
+==========
+
+0.9.0 - 21-Aug-2006
+
+* Updates to the requirements guide and input and output style guides.
+
+* For regression testing purposes, allow us to get what would have
+been spoken even if settings.speechServerFactory is None.
+
+* Improvements to the "orca" shell script.  Provides better
+availability and also provides a better means for killing/restarting
+Orca.
+
+* New orca.desktop file and icon.
+
+* New latent support to allow the setting of the source and target
+displays for magnification.  If it exists,
+settings.magnifierTargetDisplay will be treated as an X Window System
+DISPLAY string (e.g., ":0.1") that says where to display the magnified
+area (the default is split screen magnification on the primary
+display).  If it exists, settings.magnifierSourceDisplay will be
+treated as an X Window System DISPLAY string (e.g., ":0.0") that says
+what is to be magnified.
+
+* Many thanks to our friends at Baum for providing many fixes and testing
+for the Java platform:
+
+   * Fix for bug 351891: provide better handling when receiving an
+     active descendant changed for an object with no active
+     descendant.
+
+   * Fix for bug 350740: report combo box selection change for Java
+     applications.
+
+   * Fix for bug 350736: better presentation for focused lists in Java
+     applications.
+
+   * Fix for bug 350739: improve list navigation for the Java platform.
+
+   * Fix for bug 350724: improve handling of LABEL_FOR and LABELLED_BY
+     objects.
+
+   * Fix for bug 351914: provide better support for combo boxes on
+     Java platform.
+
+   * Fix for bug 352233: prevent exception when getting the child of
+     an object from a Java application.
+
+   * Fix for bug 352238: do not assume last input event was a keyboard
+     event.
+
+* Fix for bug 350213: provide defensive programming for combo box
+braille generator.
+
+* Fix for bug 351501: do not generate a traceback when trying to
+braille Evolution message folder tree.
+
+* Fix for bug 350854: handle object:state-changed:focused events so
+Orca will recognize when GEdit's edit area has focus again after a
+maximize/unmaxmize of GEdit's window on GNOME 2.15/16.
+
+* Fix for bug 352073: provide "gnome-python with bonobo" hint for
+missing dependency.  Also provide a note at the end providing a more
+obvious message when support for BrlTTY/BrlAPI cannot be found.
+
+* Fix for bug 351847: add defensive code in the event the AT-SPI
+implementation gives us a cycle when looking at the
+RELATION_NODE_CHILD_OF relation.
+
+* Fix for bug 349465: take some defensive actions in the event that
+the AT-SPI implementation has implemented getTextAtOffset incorrectly
+(i.e., it gives back garbage for offsets).
+
+* Fix for bug 350218: GtkDemo Editable cells tree demo no longer
+speaks both cells in a row
+
+* Fix for bug 350294: Eliminate TypeError in _initGUIState in GUI prefs.
+
+* Fix for bug 350212: Improve speaking of Spin Button changes.
+
+* New/Updated Translations (Thanks!):
+    Catalan:     Josep Puigdemont i Casamajó (NEW)
+    Chinese:     (Traditional Hong Kong) Chao-Hsiung Liao
+    Chinese:     (Traditional Taiwan) Chao-Hsiung Liao
+    Dutch:       Tino Meinen and Vincent van Adrighem
+    Dzongkha:    Guntupalli Karunakar
+    Finnish:     Ilkka Tuohela
+    German:      Hendrik Brandt
+    Greek:       Nikos Charonitakis
+    Gujarati:    Ankit Patel
+    Japanese:    Satoru SATOH (NEW)
+    Korean:      Changwoo Ryu (NEW)
+    Lithuanian:  Žygimantas Beručka (NEW)
+    Macedonian:  Jovan Naumovski
+    Marathi:     Rahul Bhalerao (NEW)
+    Norwegian:   (Bokmål) Sigurd Gartmann
+    Oriya:       Subhransu Behera (NEW)
+    Russian:     Nickolay V. Shmyrev (NEW)
+    Spanish:     Francisco Javier F. Serrador
+    Swedish:     Danial Nylander
+    Ukrainian:   Maxim Dziumanenko
+    Vietnamese:  Clytie Siddall
+
+==========
+
+0.2.8 - 06-Aug-2006
+* Orca has been approved for inclusion into GNOME 2.16!!!  YEAH!
+  Thanks everyone for your support.
+* Many thanks also to the team from Baum for their contributions in
+  improving the support for the Java platform.
+* Much improvement in the reliability and availability department.
+  Thanks very much to community members for helping test Orca and
+  provide us with constructive feedback and informative bug reports.
+  These community members include: Joanmarie Diggs, Al Puzzuoli,
+  Fco. Javier Dorado Martínez, and Cody Hurst.
+* Improvements to Yelp access.
+* Improvements to Firefox 2 chrome.  NOTE: we are targeting Firefox 3
+  as the means for providing compelling access to web content.
+* The main 'orca' executable is now a shell script that launches the
+  Python process for orca.  It includes some utilities to clean up
+  stray processes and latent support to automatically detect failures
+  in Orca and restart it if necessary.  We will be improving this
+  script prior to the GNOME 2.16 release.  Your testing and feedback
+  will be helpful!
+* Improved support for the emacspeak speech service, including better
+  ACSS support for DECtalk and overall support for rate/pitch
+  parameters.  Many thanks to Joanmarie Diggs for her contributions to
+  this space.  The community model works!
+* Fix for bug 347691: In standard print dialog, printer table items
+  not always spoken/displayed.
+* Fix for bug 345462: Orca should speak changes when moving up a level
+  in menus.
+* Fix for bug 341371: Orca will not report the file name in file
+  picker when there is only one file existing in current folder.
+* Fix for bug 319738: The child routine() needs to be more careful
+  about indices out of bounds.
+* Fix for bug 319660: Exiting learn mode should display current locus
+  of focus.
+* Fix for bug 348980: Get braille cursor routing keys working again.
+* Fix for bug where window activated and deactivated events can arrive
+  out of order.  Thanks to Baum for this fix!
+* Defensive programming in the event that expected object specializations
+  (e.g., text, component, selection, etc.) don't exist.  Thanks to Baum
+  for this fix!
+* Created orca.desktop to add orca to menu items.
+* Migrated to LINGUAS model (http://live.gnome.org/GnomeGoals/PoLinguas).
+* Added additional testing and debugging utilities.  Also added
+  additional helper lines to ~/.orca/user-settings.py that make
+  it more convenient to turn on/off various debugging and testing
+  utilities.
+* Pychecker fixes and also eliminated circular imports in the python
+  modules.
+* Additional keystrokes files for testing.  We're ramping up our regression
+  tests and hope to have a more complete set by the GNOME 2.16
+  release.
+* Provide smoother handling of the crosswires and cursor in the
+  magnifier when tracking the mouse.
+* New/Updated Translations (Thanks!):
+    Latvian:     Raivis Dejus
+    Macedonian:  Jovan Naumovski
+    Dutch:       Tino Meinen and Vincent van Adrighem
+    Gujarati:    Ankit Patel
+    Spanish:     Francisco Javier F. Serrador
+    Greek:       Nikos Charonitakis (NEW)
+
+==========
+
+0.2.7 - 24-Jul-2006
+* Much work on hangs.  It's better, but we still have work to do.
+* Vastly improved work with GAIM.  Also added Insert+{1,2,3,...} to
+  allow you to read the last n messages.
+* Fix bug 348084 - fail gracefully if speech is not available.
+* Handle situations where the label the label for a FILLER or PANEL is
+  done by placing an unbound label as the first child of the
+  FILLER/PANEL and the content of the FILLER/PANEL is the second
+  child.
+* Fix bug 348131 - make SayAll perform properly in Evolution.
+* Moved the Orca specific keybindings out of the init() routine in
+  orca.py over to the setupInputEventHandlers and getKeyBindings()
+  routines in default.py.
+* Reworked how Orca handles "no focus."  It is much better now.
+* Added new keynames for various keys.
+* Fixed bug #347228 - correctly identify state of top level item in
+  some tree tables.
+* Improved access to Evolution and StarOffice set up wizards.
+* Additional work on access to the Java platform.
+* Added in support for numeric keypad 8 double-clicking, which spells
+  the current line, and numeric keypad 5 double clicking, which spells
+  the current word.
+* Translations:
+    Latvian:     Raivis Dejus
+    Spanish:     Francisco Javier F. Serrador
+    Gujarati:    Ankit Patel
+    Norwegian:   Kjartan Maraas
+    Dzongkha:    Guntupalli Karunakar
+    Finnish:     Ilkka Tuohela
+    Bulgarian:   Alexander Shopov
+    Bengali:     Runa Bhattacharjee
+    Macedonian:  Jovan Naumovski
+    Hindi:       Rajesh Ranjan
+    Dutch:       Tino Meinen and Vincent van Adrighem
+    Welsh:       Rhys Jone
+    Tamil:       I. Felix
+
+==========
+
+0.2.6 - 09-Jul-2006
+* Addition of verbalized punctuation settings.
+* Addition of spoken indentation information for lines.
+* Adjustments to brief verbosity settings for speech.
+* Additional work on automatic reading of the entire row for a table cell,
+  which is controlled by the orca.settings.readTableCellRow property.
+* Additional work on the StarOffice script to better support
+  configuration wizards.
+* Additional work on Evolution to better support configuration wizards.
+* Very preliminary support for the Java platform.
+* Moved a number of utilities from various places to util.py.
+* Moved http server support into its own module.  Note that
+  orca.settings.speechServerPort is now defunct and has been replaced
+  by orca.settings.httpServerPort.
+* Fixes for reading table row and column headers.
+* Fix for bug 347054 to allow readTableCellRow and speechVerbosityLevel
+  settings to be set properly from the configuration GUI.
+* Fix for bug 343897 to allow configuration GUI to pop to top when it
+  is shown.  This requires a more recent version of PyGTK (2.9.3) to work.
+* Fix for bug 341388 to stop speech for an object when its window loses focus.
+* Fixes for bug 343133 to do defensive programming in flat review to
+  help prevent hangs.
+* Fix for bug 345472 to not assume the last input event was a keyboard event.
+* More work on bug 319652 to reduce even more hangs.
+* Fix for bug 344880 - process command line arguments even if a11y is not
+  enabled.
+* Updates to the style guide.
+* Translations to date (many thanks!):
+    Bengali:     Runa Bhattacharjee
+    British:     David Lodge and Gareth Owen
+    Bulgarian:   Alexander Shopov
+    Canadian:    Adam Weinberger
+    Chinese:     (Simplified) Funda Wang
+    Czech:       Miloslav Trmac
+    Dutch:       Tino Meinen, Taco Witte, Elros Cyriatan,
+                 and Vincent van Adrighem
+    Dzongkha:    Guntupalli Karunakar
+    Finnish:     Ilkka Tuohela
+    French:      Christophe Merlet
+    German:      Hendrik Brandt
+    Gujarati:    Ankit Patel
+    Hindi:       Rajesh Ranjan
+    Italian:     Alessio Frusciante
+    Kinyarwanda: Steve Murphy
+    Macedonian:  Jovan Naumovski
+    Nepali:      Pawan Chitrakar
+    Portuguese:  (Brazilian) Raphael Higino, Gustavo Noronha Silva,
+                 and Estêvão Samuel Procópio
+    Serbian:     Danilo Šegan
+    Spanish:     Francisco Javier F. Serrador
+    Swedish:     Christian Rose
+    Tamil:       I. Felix
+    Ukrainian:   Maxim Dziumanenko
+    Vietnamese:  Clytie Siddall
+    Welsh:       Rhys Jones
+
+==========
+
+0.2.5 - 11-Jun-2006
+* Re-map keyboard bindings and add additional keyboard bindings.
+  See http://live.gnome.org/Orca/KeyboardCommands for the list.
+* Improvements to StarOffice support to provide better access to text
+  documents and spreadsheets.  Also get rid of spurious "0.00" text
+  that was showing up in braille for StarOffice buttons.
+* Addition of announcing text selection as it is selected and unselected.
+* Generalize the "read table cell row" functionality.  If you press
+  Insert+F11, it will toggle the feature to read the entire row of
+  a table or just the selected table cell when you move from row to row.
+* Improved support for SayAll of text objects (SayAll for flat review
+  is still on the to do list).
+* Addition of self-voicing module to tell Orca to be quiet when a
+  self-voicing application is present.
+* Addition of ability to turn Orca into a speech server that can
+  accessed via simple HTTP commands (default port is 20433, but this
+  is customizable via orca.settings.speechServerPort).  This will
+  allow self-voicing applications to use Orca for their speech, thus
+  letting them get the user's speech settings preferences.
+* Addition of orca.settings.enableBrailleGrouping (default=False).
+  NOTE: this represents a change in the UI for Orca - the behavior to
+  date has been to always group menu items on the braille display.
+  The system responsiveness was bad for large menus, however, so we
+  decided to make this an optional feature turned off by default.
+* Addition of utility to report information on the currently active
+  script.  This is primarily for helping script writers do debugging
+  and is accessed by pressing Insert+F3.
+* Addition of orca.settings.cacheAccessibles (default=True) as a
+  means to turn the local caching of accessible objects on or off.
+  This is primarily an orca developer debugging feature.
+* Fix for bug 344218 - gnome-terminal would not be presented properly
+  if it was started after Orca.
+* Fix for bug 343666: pressing buttons on braille displays could cause
+  a hang.
+* Partial fix for bug 342022 - provide some defensive mechanisms to help
+  prevent some hangs.
+* Fix for bug 343133 - do not hang when doing a flat-review of a man
+  page in gnome-terminal.
+* Fix for bug #343013 - the command line option strings should not be
+  translatable.
+* Partial fix for bug 319652 - become a better Python thread citizen
+  to help reduce hangs.
+* Fix for bug 342303 - stop speech when the user presses the mouse button.
+* Fix for bug 342122 - use all labels for an object when presenting
+  an object.
+* Fix for bug 342133 - do not read all labels in gnome-window-properties
+  application when it appears.
+* Fix for bug 341415 - when moving between workspaces with metacity,
+  eliminate redundant output and also make sure workspace names are
+  announced.
+* Refactor of various modules to move script writing utilities into
+  util.py.
+* More fleshing out of the test plan.
+
+==========
+
+0.2.4 - 15-May-2006
+* Addition of text and GUI preferences configuration tools.
+  NOTE: 0.2.4 eliminates orca-setup and replaces it with the
+  "--setup" (GUI or text, depending upon your environment),
+  "--gui-setup" (GUI), "--text-setup" (text), "--no-setup"
+  (bypass any automatic setup mechanism - useful for running
+  with gdm accessible login) command line options to the
+  "orca" command.  You can also bring up the GUI while orca
+  is running by pressing Insert+space.
+  WARNING: 0.2.4 also introduces an incompatible change to
+  the configuration file and requires you to "rm -rf ~/.orca"
+  and rerun orca setup.
+* Fix for bug 340662 - do not require the desktop to be running
+  to set up orca preferences.
+* Addition of support for magnification similar to that in
+  Gnopernicus.
+* Fix for bug 331512 - addition of key and word echo.  We need
+  community feedback on this.
+* Work on specifying the external dependencies for building
+  and running Orca.
+* Fix for bug where metacity workspaces (accessed via
+  Ctrl+Alt+Arrow) were being announced as inaccessible.
+* Work on dealing with the Java platform giving us
+  CORBA::Unknown objects instead of Bonobo::Unknown objects.
+  Java platform support, however, still has a long way to go.
+* Work on coping with CORBA COMM_FAILURES a little better.
+* Fix for bug 338097 - better support for the "planner"
+  application.
+* Work for bug 338890 - add ""--version" option to orca to
+  output the version.  Orca also now uses the getopt facility
+  to get command line options.
+* Fix for bug 340773 - focus events were interrupting the
+  automatic reading of dialog boxes.
+* Fix for bug 340625 - better handling of table cells.
+* Fix for bugs 340559, 337371 - reduce repetitive output of
+  slider values.
+* Fix for bug 319732 - move .label logic from atspi.spi to
+  something that can be more easily overridden by scripts.
+* Fix for bug 340481 - combo box updates were not being
+  handled correctly.
+* Fix for bug 340305 - combo box labels were not being presented.
+* Fix for bug 340556 - radio button group names were not being
+  presented.
+* Fix for bug 338839 - allow speech to be enabled/disabled using
+  Insert+s.
+* Fix for bug 339932 - shutdown orca better on Ctrl+C from
+  the command line.
+* Fix for bug 339927 - use floating point values for speech
+  rate, gain, and pitch to provide finer granularity of settings.
+* Fix for bug 341415 - attempt to listen for AT-SPI events and
+  present accessible information even if no accessible windows
+  are active when orca starts.
+* Work on bug 340849 - automatically enable desktop accessibility
+  if needed and remind the user to log out and log back in for
+  this to take effect.
+* Additions to and development of the test plan.
+
+==========
+
+0.2.3 - 22-Apr-2006
+* Many changes to the way settings are handled, including allowing them
+  to be dynamically reloaded at run time.
+* Nascent support for configuration GUI (still needs work).
+* First pass at key and word echo (still needs work).
+* Added support for ~/.orca/orca-customizations.py, a file that will
+  not be overwritten, but will also be loaded if it exists.
+* New settings.orcaModifierKeys setting to allow the user to specify
+  which key(s) are to be used as the Orca modifier key.
+* Refactor of script.py to include methods for getKeyBindings,
+  getBrailleBindings, getInputEventHandlers, and getListeners to make it
+  easier for subclasses to override these things.
+* Provide support to allow a script on a toolkit basis versus just being on
+  a per app basis.
+* Fixed the way localized files were being found and used.
+* Reduced repetitive verbosity.
+* Reincorporated nascent support for magnification (still needs work).
+* Updates to the requirements document.
+* Make metacity script recognize apps started after Orca was started.
+* New script for planner.
+* Better handling of spell checking in StarOffice, Evolution, and GEdit.
+* More reliable synchronization of local Accessible cache.
+* Fixes for bugs 338687, 334294, 319643, 319789, 330631, 319651,
+  339690, 334893, 338240, 337857, 337704, 337709, 337489, 337322,
+  336648, 330487.
+
+==========
+
+0.2.2 - 17-Mar-2006
+* CSUN release - the bits we plan to show at CSUN '06.
+* Add output of text attributes at caret - press Insert+f (Rich Burridge)
+* Pre-filter TTS strings to prevent them from being interpreted as commands
+  by DECtalk (Willie Walker)
+* Default to using BrlTTY if it is available (Willie Walker)
+* Fix for bug 333168: scripts were not being reclaimed (Willie Walker)
+* Add extra KeySyms to account for Solaris keyboard layouts (Willie Walker)
+* Beginning of util.py for common script utilities (Rich Burridge and
+  Willie Walker)
+* Fix for speechgenerator._getSpeechForTableCell (Rich Burridge)
+* More work on Evolution script (Rich Burridge)
+* Work on StarOffice script, including spell checking (Rich Burridge)
+* Fix for bug 333765 to allow Orca to better clean up when shutting
+  down under adverse conditions (Willie Walker)
+* Fix for bug 333792 and also provide better fallback for broken
+  speech drivers (Willie Walker)
+* Fix for bug 333915 to transform unicode ellipses into "..." (Willie Walker)
+* Use window manager struts for braille monitor and also adapt better to
+  dynamic changes in size (e.g., themes using larger fonts)
+* Provide better support for accessible login via gdmlogin.
+* A little more work on the Firefox script, but Firefox/Orca are still
+  not ready for prime time (Willie Walker)
+
+==========
+
+0.2.1 - 22-Feb-2006
+* *Much* work on Evolution script - this far outshadows much of the
+  other work done for this release (Rich Burridge and Mike Pedersen)
+* Various code cleanup (Willie Walker and Rich Burridge)
+* Introduction of prototype testing harness (Willie Walker)
+* Creation of bugs/* to keep track of external bug dependencies (team)
+* Additional debug features (Willie Walker):
+  > Insert+Ctrl+F5 - cycle through debug levels
+  > Insert+F7      - print ancestry for locus of focus
+  > Insert+Ctrl+F7 - print entire application hierarchy for app with locus
+                     of focus
+* Minor enhancement to flat review to attempt to better handle parents
+  that manage a very large number of descendants (Willie Walker)
+* Take better care when installing on 64-bit platforms (Willie Walker)
+* Fix gaim.py to better handle text areas (bug 325917) (Willie Walker)
+* Support ABI incompatible change made to AT-SPI 1.7.0 (Willie Walker)
+* Use EventDetails.host_application if it is available (Willie Walker)
+* Internationalize script mappings.
+* Some work with OOo and its new UNO<->ATK bridge (Willie Walker)
+* Allow scripts to be picked up from . directory where orca is run
+  (Willie Walker).
+* Added braille monitor - add useBrailleMonitor=True to
+  ~/.orca/user-settings.py to enable it (Willie Walker)
+* Many localizations also performed by a number of very enthusiastic
+  folks: Francisco Javier F. Serrador, Adam Weinberger, Clytie Siddall
+* Add Insert+s option to manually tell speech to reset should something
+  go awry (Willie Walker)
+* Add KP_Insert as an equivalent of Insert for the Orca modifier.
+  (Willie Walker)
+
+==========
+
+0.2.0 - 29-Nov-2005
+* Many many changes: new scripting architecture; better support for
+speech and braille; decent support for GTK applications; flat review
+mode.
+* Many localizations also performed by a number of very enthusiastic
+folks: Francisco Javier F. Serrador, Pawan Chitrakar, Adam Weinberger,
+Maxim Dziumanenko, Hendrik Brandt, David Lodge, Raphael Higino, Steve
+Murphy, Miloslav Trmac, Christian Rose, Alessio Frusciante, Aldo
+Giambelluca, Vincent van Adrighem, Danilo Segan, Ankit Patel, Estêvão
+Samuel Procópio, Christophe Merlet, Cedric Corazza, Gustavo Noronha
+Silva, Funda Wang, Gareth Owen, and Duarte Loreto.
+
+==========
+
+0.1.0 - 25-Jun-2004
+* Changed scripting model -- scripts are now always all loaded at once
+and the Orca event processor decides which script should receive which
+events
+
+==========
+
+0.0.13 - 10-Jun-2004
+* Added spec file
+* Sorted out packaging issues
+* Fixed automatic dialog reading

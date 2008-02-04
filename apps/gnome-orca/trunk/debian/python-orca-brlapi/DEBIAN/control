@@ -1,0 +1,18 @@
+Package: python-orca-brlapi
+Version: 2.21.0-0~toro
+Section: python
+Priority: optional
+Architecture: i386
+Depends: python (<< 2.6), python (>= 2.4), libbrlapi1, libc6 (>= 2.4-1), libglib2.0-0 (>= 2.12.0)
+Suggests: python-orca-brlapi-dbg
+Replaces: gnome-orca (<< 2.17.91-0ubuntu2)
+Installed-Size: 76
+Maintainer: Ubuntu Accessibility Developers <ubuntu-accessibility-devel@lists.ubuntu.com>
+Source: gnome-orca
+Description: python bindings for braille display access via BRLTTY
+ This package contains the python bindings necessary to run programs which
+ need to communicate with a refreshable braille display.
+ .
+ This package contains the extension built for the python debug interpreter.
+Python-Version: 2.4, 2.5
+Xsbc-Original-Maintainer: Kartik Mistry <kartik.mistry@gmail.com>

@@ -1,0 +1,85 @@
+gnome-orca (2.21.0-0~toro) gutsy; urgency=low
+
+  * New upstream release.
+
+ -- Roberto C. Morano <rcmorano@emergya.es>  Wed, 02 Jan 2008 14:46:33 +0200
+
+gnome-orca (2.20.0-0ubuntu1) gutsy; urgency=low
+
+  * New upstream release.
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Mon, 17 Sep 2007 14:46:33 +0200
+
+gnome-orca (2.19.91-0ubuntu1) gutsy; urgency=low
+
+  * New upstream release (2.19.91)
+  * New upstream release (2.19.90)
+  * New upstream release (2.19.6)
+
+ -- Aron Sisak <aron@ubuntu.hu>  Mon, 27 Aug 2007 11:57:13 +0200
+
+gnome-orca (2.19.5-0ubuntu1) gutsy; urgency=low
+
+  * New upstream release.
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Tue, 10 Jul 2007 21:54:54 +1000
+
+gnome-orca (2.19.4-0ubuntu1) gutsy; urgency=low
+
+  * New upstream release.
+  * debian/control: use ${binary:Version} instead of ${Source-Version}.
+  * debian/patches/01_add_ubiquity-script.dpatch: updated
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Mon, 18 Jun 2007 10:29:13 +0200
+
+gnome-orca (2.19.2-0ubuntu2) gutsy; urgency=low
+
+  * debian/control:
+    - libgnome-speech3-dev -> libgnome-speech-dev.
+    - libgnome-speech3 -> libgnome-speech7 (This is an unpleasant hack. Reason
+      is that the libgnome-speech7 package ships binaries, which should be
+      split out into a separate package.)
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Thu, 31 May 2007 09:52:57 +0200
+
+gnome-orca (2.19.2-0ubuntu1) gutsy; urgency=low
+
+  * New upstream release.
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Wed, 16 May 2007 11:21:06 +0200
+
+gnome-orca (2.19.1-0ubuntu1) gutsy; urgency=low
+
+  * Synchronized with Debian, remaining Ubuntu changes:
+    - debian/control:
+      - newer Depends/Build-Depends, add Packages python-orca-brlapi and
+        python-orca-brlapi-dbg.
+    - debian/patches/01_add_ubiquity-script.dpatch,
+      debian/patches/01_libbrlapi_fix.dpatch,
+      debian/patches/01_link_libbrlapi.dpatch,
+      debian/patches/01_no_default_desktop_item.dpatch,
+      debian/patches/02_libbrlapi_fix.dpatch: added patches.
+    - debian/rules, debian/control:
+      - use pycentral, build python packages.
+    - debian/copyright, debian/README.Debian: give credit to Luke Yelavich.
+    - debian/install: python2.4 -> python*, install *.so files to different
+      package.
+    - debian/watch: added.
+  * New upstream release.
+  * debian/control:
+    - added python-gconf as Build-Depends and Depends.
+    - set Maintainer: Ubuntu Accessibility Developers
+      <ubuntu-accessibility-devel@lists.ubuntu.com>
+  * debian/patches/01_add_ubiquity-script.dpatch:
+    - updated.
+  * debian/patches/01_no_default_desktop_item.dpatch:
+    - removed .rej file.
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Thu, 26 Apr 2007 11:06:56 +0200
+
+gnome-orca (2.17.4-1) experimental; urgency=low
+
+  * Initial release (Closes: #402551)
+  * Added patches from Ubuntu, 01_no_default_desktop and 02_libbrlapi_fix
+
+ -- Kartik Mistry <kartik.mistry@gmail.com>  Sat, 23 Dec 2006 22:52:10 +0530

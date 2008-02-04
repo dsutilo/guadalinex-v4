@@ -1,0 +1,9 @@
+gnome-orca (0.2.0+cvs.06.02.16-0ubuntu1) dapper; urgency=low
+
+This is the first Ubuntu release of orca, please note:
+
+ * It was named gnome-orca to not conflict with the already existing 
+   "orca - Router Monitoring and Graphing System"
+ * You need to run orca --setup to first time configurations.
+
+ -- Luke Yelavich <themuso@themuso.com>  Tue, 21 Feb 2006 16:58:11 +1100

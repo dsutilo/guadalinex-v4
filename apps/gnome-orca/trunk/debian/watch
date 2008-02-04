@@ -1,0 +1,3 @@
+version=3
+ftp://ftp.gnome.org/pub/GNOME/sources/orca/0.2/orca-(.*).tar.gz debian uupdate
+

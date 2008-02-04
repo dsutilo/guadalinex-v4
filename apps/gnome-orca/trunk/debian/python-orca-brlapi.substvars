@@ -1,0 +1,4 @@
+python:Versions=2.4, 2.5
+python:Provides=python2.5-orca-brlapi, python2.4-orca-brlapi
+python:Depends=python (<< 2.6), python (>= 2.4)
+shlibs:Depends=libbrlapi1, libc6 (>= 2.4-1), libglib2.0-0 (>= 2.12.0)

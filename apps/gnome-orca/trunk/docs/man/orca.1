@@ -1,0 +1,108 @@
+.\" Copyright (C) 2005-2007 Sun Microsystems Inc.
+.\"
+.\" This is free software; you may redistribute it and/or modify
+.\" it under the terms of the GNU General Public License as
+.\" published by the Free Software Foundation; either version 2,
+.\" or (at your option) any later version.
+.\"
+.\" This is distributed in the hope that it will be useful, but
+.\" WITHOUT ANY WARRANTY; without even the implied warranty of
+.\" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+.\" GNU General Public License for more details.
+.\"
+.\" You should have received a copy of the GNU General Public License
+.\" along with this; if not write to the Free Software Foundation, Inc.
+.\" 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
+'\"
+.TH orca 1 "28 Mar 2007" "GNOME"
+.SH NAME
+orca \- a screen reader / magnifier
+.SH SYNOPSIS
+.B orca
+.RI [ option... ]
+.SH DESCRIPTION
+.B orca 
+is a screen reader for people with visual impairments,
+and provides alternative access to the desktop by making use
+of speech synthesis, braille, and magnification  support on
+the platform.
+.P
+In addition, 
+.B orca 
+only provides access to
+applications/toolkits that support the assistive technology
+service provide interface (AT-SPI), which include GTK,
+Mozilla, Firefox, Evolution, OpenOffice, StarOffice,
+Java/Swing, etc.
+.SH OPTIONS
+.TP
+.B \-s, --gui-setup, --setup
+When starting
+.BR orca ,
+bring up the GUI configuration dialog.
+.TP
+.B \-t, --text-setup
+When starting 
+.BR orca ,
+initiate the text-based configuration.
+.TP
+.B \-n, --no-setup
+When starting 
+.BR orca ,
+force the application to be started without configuration, even though
+it might have needed it. This is useful when starting 
+.B orca 
+via something like gdm.
+.TP
+.BI "\-u " dirname
+.TP
+.BI "--user-prefs-dir=" dirname
+When starting
+.BR orca ,
+use 
+.I dirname 
+as an alternate directory for the user preferences.
+.TP
+.BI "\-e " speech|braille|braille-monitor|magnifier|main-window
+.TP
+.BI "--enable=" speech|braille|braille-monitor|magnifier|main-window
+When starting
+.BR orca ,
+force the enabling of the supplied options.
+.TP
+.BI "\-d " speech|braille|braille-monitor|magnifier|main-window
+.TP
+.BI "--disable=" speech|braille|braille-monitor|magnifier|main-window
+When starting
+.BR orca ,
+force the disabling of the supplied options.
+.TP
+.B \-?, \-h, \--help
+Show the help 
+message of this release of the 
+.B orca
+program.
+.TP
+.B \-v, --version
+Return the 
+.B orca 
+version number.
+.TP
+.B \-q, --quit
+Quit 
+.BR orca .
+.SH AUTHOR
+.B orca 
+development is a community effort led by the Sun Microsystems Inc. 
+Accessibility Program Office.
+.SH SEE ALSO
+The
+.B orca
+wiki at
+.UR http://live.gnome.org/orca
+<http://live.gnome.org/orca>
+.UE
+.P
+The
+.B orca
+mailing list orca-list@gnome.org

@@ -1,0 +1,12 @@
+# Automatically added by dh_pycentral
+if which pycentral >/dev/null 2>&1; then
+	pycentral pkginstall gnome-orca
+fi
+# End automatically added section
+# Automatically added by dh_icons
+if which gtk-update-icon-cache >/dev/null 2>&1; then
+	for dir in /usr/share/icons/hicolor; do
+		gtk-update-icon-cache --force --quiet "$dir" || true
+	done
+fi
+# End automatically added section
