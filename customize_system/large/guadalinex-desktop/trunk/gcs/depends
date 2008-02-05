@@ -43,7 +43,7 @@ deskbar-applet
 desktop-file-utils
 devede
 dillo
-discover
+discover2
 displayconfig-gtk
 doc-base
 dvd+rw-tools
@@ -149,7 +149,7 @@ language-support-es
 lemurae
 lftp
 libbluetooth2
-libdiscover
+libdiscover2
 libdvdcss2
 libdvdnav4
 libdvdread3
