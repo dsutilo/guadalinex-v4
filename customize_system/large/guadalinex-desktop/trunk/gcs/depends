@@ -152,6 +152,7 @@ libbluetooth2
 libdvdcss2
 libdvdnav4
 libdvdread3
+libgl1-mesa-dri
 libgl1-mesa-glx
 libgnome2-perl
 libgnomevfs2-bin
