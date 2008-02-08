@@ -9,9 +9,7 @@ opensc-dnie
 opensc-ceres
 mozilla-opensc
 opensc
-libopensc2-dev
 pinentry-gtk2
-libssl-dev
 pcscd
 pcsc-tools
 openct
