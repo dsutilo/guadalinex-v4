@@ -33,7 +33,7 @@ xine-ui
 xloadimage 
 xlockmore
 xmms 
-xorg 
+xorg=7.2-0ubuntu11~toro 
 xpdf 
 xpp 
 xsane 
