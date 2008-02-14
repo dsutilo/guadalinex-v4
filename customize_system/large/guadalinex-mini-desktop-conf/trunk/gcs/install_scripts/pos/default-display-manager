@@ -1,3 +1,3 @@
 
-echo "/usr/sbin/wdm" > /etc/X11/default-display-manager
+echo "/usr/bin/wdm" > /etc/X11/default-display-manager
 
