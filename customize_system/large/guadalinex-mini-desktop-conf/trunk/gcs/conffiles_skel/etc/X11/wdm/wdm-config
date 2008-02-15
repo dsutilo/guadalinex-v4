@@ -43,7 +43,7 @@ DisplayManager*wdmWm:         default:icewm:icewm-session
 DisplayManager*wdmReboot:       /sbin/reboot
 DisplayManager*wdmHalt:         /sbin/halt
 DisplayManager*wdmVerify:       true
-DisplayManager*wdmRoot:         true
+DisplayManager*wdmRoot:         false
 DisplayManager*wdmAnimations:   true
 DisplayManager*wdmLoginConfig:  /etc/X11/wdm/wdmlogin.conf
 DisplayManager*useSyslog:	true
