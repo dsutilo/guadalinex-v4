@@ -1,3 +1,9 @@
+ubiquity (1.2.5guada18ubuntu1) gutsy; urgency=low
+
+  * Fixed help, min mem size.
+
+ -- Alfredo Matas <amatas@emergya.es>  Mon, 18 Feb 2008 17:13:48 +0100
+
 ubiquity (1.2.5guada18) edgy; urgency=low
 
   * Added checking of the partitions table's integrity before resize.
