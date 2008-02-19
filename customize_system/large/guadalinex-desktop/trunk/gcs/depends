@@ -152,6 +152,7 @@ libdvdcss2
 libdvdnav4
 libdvdread3
 libgl1-mesa-glx
+libgl1-mesa-dri
 libgnome2-perl
 libgnomevfs2-bin
 libgnomevfs2-extra
