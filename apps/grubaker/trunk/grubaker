@@ -68,11 +68,11 @@ class Menu:
 # So Grubaker must check (and keep) these odd markers 
                                   
 				if line.find(AUTOMAGIC_START) != -1:
-					i=self.liststore.append([gtk.STOCK_GOTO_BOTTOM,"Esta sección ha sido generada automaticamente",-1])
+					i=self.liststore.append([gtk.STOCK_GOTO_BOTTOM,"ATENCION: el sistema puede modificar las siguientes líneas automáticamente",-1])
                                         self.item.append({})
 					continue
 				if line.find(AUTOMAGIC_END) != -1:
-					i=self.liststore.append([gtk.STOCK_GOTO_TOP,"Fin de la sección generada automáticamente",-2])
+					i=self.liststore.append([gtk.STOCK_GOTO_TOP,"Aquí termina la sección que se actualiza automáticamente",-2])
                                         self.item.append({})
 					continue
 				if line[:1] == "#":
