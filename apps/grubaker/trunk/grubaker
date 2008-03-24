@@ -1,10 +1,10 @@
 #!/usr/bin/python
 # -*- coding: iso-8859-1 -*-
 
-# grubaker 1.0.2
+# grubaker 1.1.0
 # author: Alfonso E.M. alfonso@el-magnifico.org
 # date: 15/Apr/2006
-# last update: 15/Mar/2006 by Alfonso E.M.
+# last update: 24/Mar/2008 by Alfonso E.M.
 # Patches by JuanJe Ojeda
 
 import re
@@ -14,6 +14,11 @@ import gtk
 import gtk.glade
 import os,commands,sys
 import getopt
+
+# DEBIAN MARKERS FOR AUTOMAGICALLY GENERATED KERNELS SECTION
+AUTOMAGIC_START="### BEGIN AUTOMAGIC KERNELS LIST"
+AUTOMAGIC_END="### END DEBIAN AUTOMAGIC KERNELS LIST"
+
 
 class Menu:
 	filename=""
@@ -56,8 +61,22 @@ class Menu:
                                        break
                                 if line == "\n":
                                        continue
+# As menu.lst says:
+# "lines between the AUTOMAGIC KERNELS LIST markers will be modified
+# by the debian update-grub script except for the default options below"
+
+# So Grubaker must check (and keep) these odd markers 
+                                  
+				if line.find(AUTOMAGIC_START) != -1:
+					i=self.liststore.append([gtk.STOCK_GOTO_BOTTOM,"Esta sección ha sido generada automaticamente",-1])
+                                        self.item.append({})
+					continue
+				if line.find(AUTOMAGIC_END) != -1:
+					i=self.liststore.append([gtk.STOCK_GOTO_TOP,"Fin de la sección generada automáticamente",-2])
+                                        self.item.append({})
+					continue
 				if line[:1] == "#":
-	                                if re.search("Grubaker",line):	
+	                                if line.find("Grubaker") != -1:	
 						continue
 				        if mustreadcomments:
 				          self.comments=self.comments+line  
@@ -104,6 +123,7 @@ class Menu:
 
 		tmpfilename=self.filename+".tmp"
 		backupfilename=self.filename+".bak"
+		automagic=0
 
 		try:
 			newfile=open(tmpfilename,"w")
@@ -133,23 +153,34 @@ class Menu:
 		while iter != None:
 		      title=self.liststore.get_value(iter,1)
                       id=self.liststore.get_value(iter,2)
-		      newfile.write("title \t"+title+"\n")
+                      
+# Dummy items for DEBIAN AUTOMAGIC KERNEL LIST
+		      if id == -1 and automagic == 0:
+		      	 newfile.write(AUTOMAGIC_START+"\n")
+		      	 automagic = 1
+		      elif id == -2:
+		         if automagic == 0:
+   		      	    newfile.write(AUTOMAGIC_START+"\n")
+		      	 newfile.write(AUTOMAGIC_END+"\n")
+		      	 automagic == 2
+		      else:                      
+   		         newfile.write("title \t"+title+"\n")
 # Order is important !
 # First we'll write Linux options (ordered)
-		      self.write_key(id,'root',newfile)
-		      self.write_key(id,'kernel',newfile)
-		      self.write_key(id,'module',newfile)
-		      self.write_key(id,'initrd',newfile)
+		         self.write_key(id,'root',newfile)
+		         self.write_key(id,'kernel',newfile)
+		         self.write_key(id,'module',newfile)
+		         self.write_key(id,'initrd',newfile)
 # Second, Windows options (ordered)
-		      self.write_key(id,'rootnoverify',newfile)
-		      self.write_key(id,'kernel',newfile)
-		      self.write_key(id,'chainloader',newfile)
+		         self.write_key(id,'rootnoverify',newfile)
+		         self.write_key(id,'kernel',newfile)
+		         self.write_key(id,'chainloader',newfile)
 # Then, whatever left (but "boot")
-		      for key in self.item[id].keys():
-			  if key != 'boot':
-       		            newfile.write(key+" \t"+self.item[id][key]+"\n")
+		         for key in self.item[id].keys():
+			   if key != 'boot':
+       		             newfile.write(key+" \t"+self.item[id][key]+"\n")
 # "Boot", if exists, must be the latest (not needed, indeed!)
-		      self.write_key(id,'boot',newfile)
+		         self.write_key(id,'boot',newfile)
 
                       newfile.write("\n")
 		      iter=self.liststore.iter_next(iter)
@@ -238,9 +269,11 @@ class Appgui:
 	            
         def bt_delete_clicked(self,widget):
                 (iter,id,title)=self.get_selected_item()
-                self.menu.liststore.remove(iter)
-	        self.change_item_buttons_state(False)
-		self.menu_has_changed()
+# Dummy items are not deleteable
+                if id > 0:
+                   self.menu.liststore.remove(iter)
+   	           self.change_item_buttons_state(False)
+		   self.menu_has_changed()
                 return
                 
         def bt_new_clicked(self,widget):
@@ -299,6 +332,9 @@ class Appgui:
 
 	def edit_item(self,treeview,TreePath,TreeViewColumn):
                 (iter,id,title)=self.get_selected_item()
+# Dummy items are not editable
+                if id < 0:
+		   return
 		self.set_text('entry_title',title)
 		self.set_text('hidden_id',str(id))
 		
