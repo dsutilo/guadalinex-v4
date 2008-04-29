@@ -1,3 +1,10 @@
+xapi (1.8-1) edgy; urgency=low
+
+  * Updating xapi, now it launches an apt-get update when a package is not
+    found.
+
+ -- Junta de Andalucía <packmaster@guadalinex.org>  Tue, 29 Apr 2008 17:31:00 +0200
+
 xapi (1.7-2) edgy; urgency=low
 
   * Removing /usr/lib/firefox/firefox.cfg divert, since guadalinex-desktop already includes apt protocol hack in such file.
