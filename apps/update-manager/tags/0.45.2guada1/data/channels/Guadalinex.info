@@ -1,0 +1,46 @@
+ChangelogURI: http://changelogs.ubuntu.com/changelogs/pool/%s/%s/%s/%s_%s/changelog
+
+Suite: toro 
+RepositoryType: deb
+BaseURI: http://v4.guadalinex.org/guadalinex-toro
+MatchURI: v4.guadalinex.org/guadalinex-toro
+MirrorsFile: /usr/share/update-manager/mirrors-gv4.cfg
+Description: Guadalinex v4
+Component: main
+CompDescription: Repositorio principal
+CompDescriptionLong: Repositorio principal de la Junta de Andalucía
+Component: universe
+CompDescription: Community maintained
+CompDescriptionLong: Community maintained Open Source software
+Component: restricted
+CompDescription: Non-free drivers
+CompDescriptionLong: Proprietary drivers for devices
+Component: multiverse
+CompDescription: Restricted software
+CompDescriptionLong: Software restricted by copyright or legal issues
+
+Suite: edgy
+MatchName: .*
+BaseURI: cdrom:\[Ubuntu.*6.10
+Description: Cdrom with Ubuntu 6.10 'Edgy Eft'
+Available: False
+Component: main
+CompDescription: Officially supported
+Component: restricted
+CompDescription: Restricted copyright
+
+Suite: toro-security
+ParentSuite: toro
+RepositoryType: deb
+Description: Important security updates
+
+Suite: toro-updates
+ParentSuite: toro
+RepositoryType: deb
+Description: Recommended updates
+
+Suite: toro-backports
+ParentSuite: toro
+RepositoryType: deb
+Description: Backported updates
+
