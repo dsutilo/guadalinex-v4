@@ -31,7 +31,6 @@ mime-support
 minicom
 nano
 ncftp
-nmap
 parted
 popularity-contest
 ppp
@@ -40,9 +39,7 @@ pppoeconf
 psmisc
 reiserfsprogs
 rsync
-strace
 sqlite
-tcpdump
 telnet
 time
 w3m
