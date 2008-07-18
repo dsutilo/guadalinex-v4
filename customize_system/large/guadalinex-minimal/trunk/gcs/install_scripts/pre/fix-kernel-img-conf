@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo -n "Actualizando fichero /etc/kernel-img.conf... "
+sed -i '/initrd/s/no/yes/g' /etc/kernel-img.conf
+echo "Ok."
+
